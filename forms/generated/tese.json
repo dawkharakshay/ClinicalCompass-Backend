@@ -1,0 +1,180 @@
+{
+  "title": "TESE / Micro-TESE Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assessment",
+    "logicKey": "tese",
+    "hiddenDefaults": {
+      "histologyAvailable": false
+    },
+    "steps": [
+      {
+        "id": "azoospermia-workup",
+        "shortLabel": "Azoospermia",
+        "title": "Azoospermia Workup",
+        "fields": [
+          {
+            "id": "azoospermia-type",
+            "name": "azoospermiaType",
+            "label": "Azoospermia Type",
+            "type": "select",
+            "defaultValue": "non_obstructive",
+            "options": [
+              { "label": "Obstructive (OA) — normal FSH, normal testis volume", "value": "obstructive" },
+              { "label": "Non-Obstructive (NOA) — elevated FSH, small testes", "value": "non_obstructive" },
+              { "label": "Unknown / Under evaluation", "value": "unknown" }
+            ]
+          },
+          {
+            "id": "testis-volume",
+            "name": "testisVolume",
+            "label": "Testicular Volume",
+            "type": "select",
+            "defaultValue": "reduced",
+            "options": [
+              { "label": "Normal (≥15 mL)", "value": "normal" },
+              { "label": "Reduced (10–14 mL)", "value": "reduced" },
+              { "label": "Atrophic (<10 mL)", "value": "atrophic" }
+            ]
+          },
+          {
+            "id": "oncology-patient",
+            "name": "oncologyPatient",
+            "label": "Oncology patient (pre-chemotherapy/radiation sperm banking)",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "hormonal-profile",
+        "shortLabel": "Hormonal",
+        "title": "Hormonal Profile",
+        "fields": [
+          {
+            "id": "fsh-level",
+            "name": "fshLevel",
+            "label": "FSH (mIU/mL)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal",
+            "unit": "mIU/mL"
+          },
+          {
+            "id": "lh-level",
+            "name": "lhLevel",
+            "label": "LH (mIU/mL)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal",
+            "unit": "mIU/mL"
+          },
+          {
+            "id": "testosterone-level",
+            "name": "testosteroneLevel",
+            "label": "Total Testosterone (ng/dL)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal",
+            "unit": "ng/dL"
+          },
+          {
+            "id": "inhibin-b",
+            "name": "inhibinB",
+            "label": "Inhibin B (pg/mL)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal",
+            "unit": "pg/mL"
+          }
+        ]
+      },
+      {
+        "id": "genetic-testing",
+        "shortLabel": "Genetic",
+        "title": "Genetic Testing",
+        "fields": [
+          {
+            "id": "karyotype",
+            "name": "karyotype",
+            "label": "Karyotype / Y-Chromosome Microdeletion",
+            "type": "select",
+            "defaultValue": "not_done",
+            "options": [
+              { "label": "Not yet performed", "value": "not_done" },
+              { "label": "Normal 46,XY", "value": "normal" },
+              { "label": "Klinefelter 47,XXY", "value": "klinefelter" },
+              { "label": "AZFa deletion (complete)", "value": "y_deletion_azfa" },
+              { "label": "AZFb deletion (complete)", "value": "y_deletion_azfb" },
+              { "label": "AZFc deletion", "value": "y_deletion_azfc" },
+              { "label": "Other chromosomal abnormality", "value": "other" }
+            ]
+          },
+          {
+            "id": "cftr-mutation",
+            "name": "cftrMutation",
+            "label": "CFTR mutation identified (CBAVD — congenital bilateral absence of vas deferens)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "histology-pattern",
+            "name": "histologyPattern",
+            "label": "Testicular Histology (if available)",
+            "type": "select",
+            "defaultValue": "not_done",
+            "options": [
+              { "label": "Not available", "value": "not_done" },
+              { "label": "Normal spermatogenesis", "value": "normal" },
+              { "label": "Hypospermatogenesis", "value": "hypospermatogenesis" },
+              { "label": "Maturation arrest", "value": "maturation_arrest" },
+              { "label": "Sertoli cell-only (SCO)", "value": "sertoli_only" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "surgical-planning",
+        "shortLabel": "Surgical",
+        "title": "Surgical Planning",
+        "fields": [
+          {
+            "id": "partner-age",
+            "name": "partnerAge",
+            "label": "Partner Age (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "prior-tese",
+            "name": "priorTESE",
+            "label": "Prior TESE/micro-TESE attempted",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-tese-result",
+            "name": "priorTESEResult",
+            "label": "Prior TESE Result",
+            "type": "select",
+            "defaultValue": "not_done",
+            "options": [
+              { "label": "Sperm found (cryopreserved)", "value": "sperm_found" },
+              { "label": "No sperm found", "value": "no_sperm" },
+              { "label": "Not applicable", "value": "not_done" }
+            ],
+            "visibleWhen": { "field": "priorTESE", "op": "truthy" }
+          },
+          {
+            "id": "micro-tese-info",
+            "type": "alert",
+            "severity": "info",
+            "text": "Micro-TESE vs Conventional TESE: • Micro-TESE (Schlegel 1999): uses operative microscope to identify dilated tubules with active spermatogenesis • Sperm retrieval rate: micro-TESE 1.5× higher than conventional TESE in NOA • Tissue excision: micro-TESE removes 10× less tissue, preserving Leydig cell function"
+          }
+        ]
+      }
+    ]
+  }
+}

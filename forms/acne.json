@@ -1,0 +1,374 @@
+{
+  "id": "acne",
+  "title": "Acne Vulgaris Clinical Compass",
+  "description": "Acne treatment decision support — severity-based pathways, antibiotic stewardship, isotretinoin & hormonal therapy (AAD 2024)",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicRef": "acne",
+    "steps": [
+      {
+        "id": "severity",
+        "shortLabel": "Severity",
+        "title": "Severity & Morphology",
+        "fields": [
+          {
+            "id": "pga",
+            "name": "pgaScore",
+            "label": "PGA Score (Physician Global Assessment)",
+            "type": "select",
+            "required": true,
+            "defaultValue": 2,
+            "options": [
+              { "label": "0 — Clear", "value": 0 },
+              { "label": "1 — Almost Clear", "value": 1 },
+              { "label": "2 — Mild", "value": 2 },
+              { "label": "3 — Moderate", "value": 3 },
+              { "label": "4 — Severe", "value": 4 },
+              { "label": "5 — Very Severe", "value": 5 }
+            ]
+          },
+          {
+            "id": "acneType",
+            "name": "acneType",
+            "label": "Predominant Acne Type",
+            "type": "select",
+            "required": true,
+            "defaultValue": "papulopustular",
+            "options": [
+              { "label": "Comedonal", "value": "comedonal" },
+              { "label": "Papulopustular", "value": "papulopustular" },
+              { "label": "Nodulocystic", "value": "nodulocystic" },
+              { "label": "Mixed", "value": "mixed" }
+            ]
+          },
+          { "id": "scarring", "name": "hasScarring", "label": "Active scarring or post-inflammatory hyperpigmentation", "type": "checkbox", "defaultValue": false },
+          { "id": "psychosocial", "name": "hasPsychosocialBurden", "label": "Significant psychosocial burden / quality of life impact", "type": "checkbox", "defaultValue": false },
+          { "id": "trunk", "name": "hasTrunkInvolvement", "label": "Trunk involvement (chest, back, shoulders)", "type": "checkbox", "defaultValue": false },
+          { "id": "nodules", "name": "hasNodulesCysts", "label": "Nodules or cysts present (≥5mm)", "type": "checkbox", "defaultValue": false }
+        ]
+      },
+      {
+        "id": "demographics",
+        "shortLabel": "Demographics",
+        "title": "Demographics",
+        "fields": [
+          {
+            "id": "sex",
+            "name": "patientSex",
+            "label": "Patient Sex",
+            "type": "select",
+            "required": true,
+            "defaultValue": "male",
+            "options": [
+              { "label": "Male", "value": "male" },
+              { "label": "Female", "value": "female" },
+              { "label": "Other", "value": "other" }
+            ]
+          },
+          {
+            "id": "age",
+            "name": "ageYears",
+            "label": "Age (years)",
+            "type": "select",
+            "required": true,
+            "defaultValue": 0,
+            "prefillFrom": "demographics.age",
+            "options": [
+              { "label": "Select age group", "value": 0 },
+              { "label": "Adolescent (≈13)", "value": 13 },
+              { "label": "Young adult (≈25)", "value": 25 },
+              { "label": "Adult (≈40)", "value": 40 },
+              { "label": "Older adult (≈55)", "value": 55 }
+            ]
+          },
+          {
+            "id": "pcos",
+            "name": "hasPCOS",
+            "label": "Polycystic ovary syndrome (PCOS) diagnosed",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "patientSex", "op": "in", "value": ["female", "other"] }
+          },
+          {
+            "id": "pregnant",
+            "name": "isPregnant",
+            "label": "Currently pregnant",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "patientSex", "op": "in", "value": ["female", "other"] }
+          },
+          {
+            "id": "breastfeeding",
+            "name": "isBreastfeeding",
+            "label": "Currently breastfeeding",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "patientSex", "op": "in", "value": ["female", "other"] }
+          },
+          {
+            "id": "contraception",
+            "name": "desireContraception",
+            "label": "Desires contraception (opens hormonal therapy options)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "patientSex", "op": "in", "value": ["female", "other"] }
+          }
+        ]
+      },
+      {
+        "id": "priorTreatment",
+        "shortLabel": "Prior Tx",
+        "title": "Prior Treatment History",
+        "fields": [
+          {
+            "id": "prior",
+            "name": "priorTreatment",
+            "label": "Prior Treatment History",
+            "type": "select",
+            "required": true,
+            "defaultValue": "none",
+            "options": [
+              { "label": "None", "value": "none" },
+              { "label": "Topicals only", "value": "topicals_only" },
+              { "label": "Topicals and oral antibiotics", "value": "topicals_and_oral_antibiotics" },
+              { "label": "Prior isotretinoin", "value": "prior_isotretinoin" }
+            ]
+          },
+          {
+            "id": "abxMonths",
+            "name": "priorAntibioticMonths",
+            "label": "Total months of prior oral antibiotic use",
+            "type": "select",
+            "required": true,
+            "defaultValue": 0,
+            "options": [
+              { "label": "None", "value": 0 },
+              { "label": "1–3 months", "value": 2 },
+              { "label": "4–6 months", "value": 5 },
+              { "label": "7–12 months", "value": 9 },
+              { "label": "More than 12 months", "value": 18 }
+            ]
+          },
+          {
+            "id": "abxWarning",
+            "type": "alert",
+            "severity": "warning",
+            "text": "AAD 2024: Limit oral antibiotics to ≤3 months; transition to non-antibiotic maintenance.",
+            "visibleWhen": { "field": "priorAntibioticMonths", "op": "gte", "value": 3 }
+          },
+          { "id": "drugInduced", "name": "hasDrugInducedAcne", "label": "Drug-induced acne suspected (steroids, lithium, anticonvulsants, anabolic steroids)", "type": "checkbox", "defaultValue": false }
+        ]
+      },
+      {
+        "id": "comorbidities",
+        "shortLabel": "Safety",
+        "title": "Comorbidities & Safety Profile",
+        "fields": [
+          { "id": "hyperlipidemia", "name": "hasHyperlipidemia", "label": "Hyperlipidemia (isotretinoin monitoring — triglycerides)", "type": "checkbox", "defaultValue": false },
+          { "id": "liver", "name": "hasLiverDisease", "label": "Hepatic impairment (isotretinoin / minocycline caution)", "type": "checkbox", "defaultValue": false },
+          { "id": "ibd", "name": "hasInflammatoryBowelDisease", "label": "Inflammatory bowel disease (no proven isotretinoin link per AAD 2024, but document)", "type": "checkbox", "defaultValue": false },
+          { "id": "hyperkalemia", "name": "hasHyperkalemiaRisk", "label": "Hyperkalemia risk (spironolactone monitoring — renal disease, ACE inhibitor use)", "type": "checkbox", "defaultValue": false }
+        ]
+      }
+    ]
+  },
+
+  "logic": {
+    "set": {
+      "evidenceLevel": "Strong recommendation (AAD 2024, Level A)",
+      "isotretinoinIndicated": false,
+      "references": ["aad2024", "aad2016", "retinoids", "bpo", "doxycycline"]
+    },
+
+    "rules": [
+      {
+        "target": "severity",
+        "when": { "all": [ { "field": "pgaScore", "op": "lte", "value": 2 }, { "any": [ { "field": "hasScarring", "op": "truthy" }, { "field": "hasPsychosocialBurden", "op": "truthy" } ] } ] },
+        "set": { "severity": "severe" }
+      },
+      { "target": "severity", "when": { "field": "pgaScore", "op": "lte", "value": 2 }, "set": { "severity": "mild" } },
+      {
+        "target": "severity",
+        "when": { "all": [ { "field": "pgaScore", "op": "eq", "value": 3 }, { "any": [ { "field": "hasScarring", "op": "truthy" }, { "field": "hasPsychosocialBurden", "op": "truthy" } ] } ] },
+        "set": { "severity": "severe" }
+      },
+      { "target": "severity", "when": { "field": "pgaScore", "op": "eq", "value": 3 }, "set": { "severity": "moderate" } },
+      { "target": "severity", "default": true, "set": { "severity": "severe" } },
+
+      { "target": "pathway", "when": { "field": "severity", "op": "eq", "value": "mild" }, "outcome": "mild" },
+      { "target": "pathway", "when": { "field": "severity", "op": "eq", "value": "moderate" }, "outcome": "moderate" },
+      { "target": "pathway", "default": true, "outcome": "severe" }
+    ],
+
+    "outcomes": {
+      "mild": {
+        "set": {
+          "primaryRecommendation": "Topical multimodal combination therapy — avoid antibiotic monotherapy",
+          "treatmentPathway": "Step 1: Topical retinoid (adapalene 0.1-0.3%, tretinoin 0.025-0.1%, or tazarotene) — cornerstone of acne therapy. Step 2: Add benzoyl peroxide (BPO) 2.5-10% — antibiotic resistance prevention. Step 3: Fixed-dose combination (retinoid + BPO, or antibiotic + BPO) for convenience and adherence. Step 4: Reassess at 8-12 weeks; escalate if inadequate response."
+        },
+        "append": {
+          "specificAgents": [
+            "Adapalene 0.1% gel — first-line retinoid; OTC available; well tolerated",
+            "Benzoyl peroxide 2.5-5% — essential for antibiotic resistance prevention",
+            "Fixed-dose adapalene 0.1% + BPO 2.5% (Epiduo) — convenient combination",
+            "Azelaic acid 15-20% — comedolytic + anti-inflammatory; safe in pregnancy",
+            "Salicylic acid 0.5-2% — comedolytic; OTC option for mild comedonal acne"
+          ]
+        },
+        "appendWhen": {
+          "when": { "field": "acneType", "op": "eq", "value": "comedonal" },
+          "append": { "specificAgents": ["Topical retinoid monotherapy acceptable for pure comedonal acne"] }
+        }
+      },
+      "moderate": {
+        "set": {
+          "primaryRecommendation": "Combination topical + systemic therapy; antibiotic stewardship is mandatory",
+          "treatmentPathway": "Step 1: Topical retinoid + BPO (continue throughout). Step 2: Add oral antibiotic (doxycycline 100mg daily preferred) — limit to ≤3-6 months; always combine with BPO. Step 3: Add hormonal therapy in females (spironolactone 50-200mg or COC). Step 4: If inadequate response after 3 months of antibiotics: escalate to isotretinoin. Step 5: Intralesional corticosteroids for individual large nodules (rapid response)."
+        },
+        "append": {
+          "specificAgents": [
+            "Doxycycline 100mg daily — preferred oral antibiotic (AAD 2024 conditional recommendation over azithromycin)",
+            "Fixed-dose topical antibiotic + BPO (clindamycin 1% + BPO 5%) — reduces resistance",
+            "Adapalene 0.3% + BPO 2.5% (Epiduo Forte) — for moderate-severe papulopustular",
+            "Sarecycline 1.5mg/kg/day — narrow-spectrum tetracycline; less GI side effects",
+            "Intralesional triamcinolone 2.5-5mg/mL — for individual nodules/cysts"
+          ],
+          "antibioticStewardshipNotes": [
+            "Limit oral antibiotic duration to ≤3-6 months (AAD 2024 strong recommendation)",
+            "NEVER use topical antibiotic monotherapy — always combine with BPO",
+            "Do not use oral and topical antibiotics simultaneously",
+            "Continue BPO throughout antibiotic course to prevent resistance"
+          ],
+          "agentsToAvoid": [
+            "Oral antibiotic monotherapy — strongly not recommended (AAD 2024)",
+            "Topical antibiotic monotherapy — promotes resistance",
+            "Azithromycin — less preferred than doxycycline per AAD 2024"
+          ]
+        }
+      },
+      "severe": {
+        "set": {
+          "primaryRecommendation": "Oral isotretinoin is strongly recommended for severe acne or treatment-refractory moderate acne",
+          "treatmentPathway": "Step 1: Oral isotretinoin 0.5-1mg/kg/day — standard daily dosing preferred over intermittent (AAD 2024). Step 2: Target cumulative dose 120-150mg/kg for sustained remission. Step 3: Continue topical retinoid + BPO during and after isotretinoin course. Step 4: Intralesional corticosteroids for acute nodule management during initiation. Step 5: Hormonal therapy (females) as adjunct or maintenance after isotretinoin.",
+          "isotretinoinIndicated": true
+        },
+        "append": {
+          "isotretinoinNotes": [
+            "Isotretinoin strongly recommended for severe acne (PGA 4-5), nodulocystic acne, or acne with scarring/psychosocial burden (AAD 2024)",
+            "iPLEDGE REMS enrollment required for all patients in the US",
+            "Pregnancy prevention mandatory for persons of childbearing potential — 2 forms of contraception or abstinence",
+            "Standard isotretinoin or lidose-isotretinoin (Absorica LD) — both conditionally recommended by AAD 2024",
+            "Traditional daily dosing conditionally recommended over intermittent/low-dose for severe acne",
+            "AAD 2024: No proven increased risk of neuropsychiatric conditions or IBD in population-based studies"
+          ],
+          "specificAgents": [
+            "Isotretinoin 0.5-1mg/kg/day orally — standard daily dosing",
+            "Intralesional triamcinolone — bridge therapy for acute nodule flare",
+            "Topical retinoid + BPO — continue throughout course"
+          ],
+          "monitoringPlan": [
+            "Isotretinoin: LFTs and lipids at baseline and monthly (or as clinically indicated)",
+            "CBC monitoring not needed in healthy patients (AAD 2024)",
+            "Monthly pregnancy test for persons of childbearing potential (iPLEDGE)",
+            "Reassess at 1 month, then every 1-2 months during course"
+          ]
+        }
+      }
+    },
+
+    "appends": [
+      {
+        "when": { "field": "isPregnant", "op": "truthy" },
+        "append": { "urgentFlags": ["PREGNANCY: Isotretinoin is absolutely contraindicated. Avoid tetracyclines (doxycycline, minocycline). Topical azelaic acid and erythromycin are safest options."] }
+      },
+      {
+        "when": { "field": "hasDrugInducedAcne", "op": "truthy" },
+        "append": { "urgentFlags": ["Drug-induced acne suspected — review medications (corticosteroids, lithium, anticonvulsants, anabolic steroids) before initiating acne therapy"] }
+      },
+      {
+        "when": { "all": [
+          { "field": "patientSex", "op": "eq", "value": "female" },
+          { "field": "isPregnant", "op": "falsy" },
+          { "field": "isBreastfeeding", "op": "falsy" },
+          { "any": [ { "field": "hasPCOS", "op": "truthy" }, { "field": "desireContraception", "op": "truthy" }, { "field": "severity", "op": "ne", "value": "mild" } ] }
+        ] },
+        "append": {
+          "hormonalOptions": [
+            "Spironolactone 50-200mg daily — conditionally recommended; anti-androgen; effective for hormonal acne",
+            "Combined oral contraceptive (COC) — FDA-approved for acne; ethinyl estradiol-based",
+            "Clascoterone 1% cream — topical anti-androgen; FDA approved for acne ages ≥12"
+          ],
+          "sharedDecisionPoints": [
+            "Hormonal therapy effective for females with hormonal acne patterns (jawline, chin, perimenstrual flares)",
+            "Spironolactone: potassium monitoring only needed with risk factors per AAD 2024"
+          ]
+        }
+      },
+      {
+        "when": { "all": [
+          { "field": "patientSex", "op": "eq", "value": "female" },
+          { "field": "isPregnant", "op": "falsy" },
+          { "field": "isBreastfeeding", "op": "falsy" },
+          { "any": [ { "field": "hasPCOS", "op": "truthy" }, { "field": "desireContraception", "op": "truthy" }, { "field": "severity", "op": "ne", "value": "mild" } ] },
+          { "field": "hasHyperkalemiaRisk", "op": "truthy" }
+        ] },
+        "append": { "monitoringPlan": ["Spironolactone: check potassium at baseline if risk factors for hyperkalemia (AAD 2024 — routine monitoring not needed in healthy patients)"] }
+      },
+      {
+        "when": { "any": [ { "field": "isPregnant", "op": "truthy" }, { "field": "isBreastfeeding", "op": "truthy" } ] },
+        "append": {
+          "agentsToAvoid": [
+            "Isotretinoin — absolutely contraindicated in pregnancy (Category X)",
+            "Doxycycline, minocycline, tetracycline — contraindicated in pregnancy",
+            "Spironolactone — avoid in pregnancy"
+          ],
+          "specificAgents": [
+            "Topical azelaic acid 15-20% — safe in pregnancy",
+            "Topical erythromycin + BPO — safe in pregnancy",
+            "Topical clindamycin + BPO — generally considered safe in pregnancy"
+          ]
+        }
+      },
+      {
+        "when": { "field": "priorAntibioticMonths", "op": "gt", "value": 6 },
+        "append": {
+          "antibioticStewardshipNotes": ["Prior antibiotic use: {{priorAntibioticMonths}} months — consider antibiotic holiday; escalate to isotretinoin or hormonal therapy"],
+          "urgentFlags": ["Extended prior antibiotic use detected — antibiotic resistance risk; prioritize non-antibiotic systemic options"]
+        }
+      },
+      {
+        "when": { "field": "hasScarring", "op": "truthy" },
+        "append": {
+          "nextSteps": [
+            "Active scarring: expedite isotretinoin referral — early treatment prevents progressive scarring",
+            "Consider dermatology referral for scar treatment (fractional laser, chemical peels, microneedling) after acne control"
+          ]
+        }
+      }
+    ],
+
+    "append": {
+      "nextSteps": [
+        "Reassess at 8-12 weeks; document PGA score at each visit",
+        "Counsel on realistic expectations: 6-8 weeks for topical response, 3 months for systemic",
+        "Sunscreen daily — retinoids increase photosensitivity",
+        "Gentle non-comedogenic skincare; avoid abrasive scrubs"
+      ],
+      "sharedDecisionPoints": [
+        "Antibiotic stewardship: limit duration, always combine with BPO",
+        "Isotretinoin: discuss iPLEDGE requirements, side effect profile, and expected remission rates",
+        "Psychosocial impact: screen for depression/anxiety; acne significantly affects quality of life"
+      ]
+    },
+
+    "references": {
+      "aad2024": { "citation": "AAD 2024 Guidelines of Care for the Management of Acne Vulgaris — Zaenglein AL et al.", "pmid": "38300170", "url": "https://pubmed.ncbi.nlm.nih.gov/38300170/" },
+      "aad2016": { "citation": "AAD 2016 Guidelines of Care for the Management of Acne Vulgaris — Zaenglein AL et al.", "pmid": "26897386", "url": "https://pubmed.ncbi.nlm.nih.gov/26897386/" },
+      "retinoids": { "citation": "Topical Retinoids in Acne Vulgaris: A Systematic Review — Leyden J et al.", "pmid": "30674002", "url": "https://pubmed.ncbi.nlm.nih.gov/30674002/" },
+      "bpo": { "citation": "Topical Benzoyl Peroxide for Acne — Dréno B et al.", "pmid": "32175593", "url": "https://pubmed.ncbi.nlm.nih.gov/32175593/" },
+      "doxycycline": { "citation": "Oral Doxycycline in the Management of Acne Vulgaris — Garner SE et al.", "pmid": "4445892", "url": "https://pubmed.ncbi.nlm.nih.gov/4445892/" }
+    }
+  }
+}

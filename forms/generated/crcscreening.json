@@ -1,0 +1,287 @@
+{
+  "title": "CRC Screening Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "crcscreening",
+    "hiddenDefaults": {
+      "hasFAPVariant": "none"
+    },
+    "steps": [
+      {
+        "id": "demographics-risk",
+        "shortLabel": "Demographics & Risk",
+        "title": "Patient Demographics & Risk",
+        "fields": [
+          {
+            "id": "age-years",
+            "name": "ageYears",
+            "label": "Age (years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "sex",
+            "name": "sex",
+            "label": "Sex",
+            "type": "select",
+            "required": false,
+            "defaultValue": "male",
+            "options": [
+              { "label": "Male", "value": "male" },
+              { "label": "Female", "value": "female" }
+            ]
+          },
+          {
+            "id": "race-ethnicity",
+            "name": "raceEthnicity",
+            "label": "Race / Ethnicity",
+            "type": "select",
+            "required": false,
+            "defaultValue": "white",
+            "options": [
+              { "label": "White / Non-Hispanic", "value": "white" },
+              { "label": "Black / African American", "value": "black_african_american" },
+              { "label": "Hispanic / Latino", "value": "hispanic" },
+              { "label": "Asian", "value": "asian" },
+              { "label": "Other", "value": "other" }
+            ]
+          },
+          {
+            "id": "risk-category",
+            "name": "riskCategory",
+            "label": "Risk Category",
+            "type": "select",
+            "required": false,
+            "defaultValue": "average_risk",
+            "options": [
+              { "label": "Average Risk", "value": "average_risk" },
+              { "label": "Increased Risk — Family History", "value": "increased_risk_family_history" },
+              { "label": "High Risk — Lynch Syndrome", "value": "high_risk_lynch" },
+              { "label": "High Risk — FAP", "value": "high_risk_fap" },
+              { "label": "High Risk — IBD", "value": "high_risk_ibd" },
+              { "label": "High Risk — Prior Adenoma", "value": "high_risk_prior_adenoma" },
+              { "label": "High Risk — Prior CRC", "value": "high_risk_prior_crc" }
+            ]
+          },
+          {
+            "id": "adenoma-history",
+            "name": "adenomaHistory",
+            "label": "Adenoma History",
+            "type": "select",
+            "required": false,
+            "defaultValue": "none",
+            "options": [
+              { "label": "No Prior Adenoma", "value": "none" },
+              { "label": "Low Risk — 1–2 Tubular Adenomas", "value": "low_risk_1_2_tubular" },
+              { "label": "High Risk — 3–4 Adenomas", "value": "high_risk_3_4_adenomas" },
+              { "label": "High Risk — 5+ Adenomas", "value": "high_risk_5_plus" },
+              { "label": "Advanced Adenoma (≥10mm, villous, HGD)", "value": "advanced_adenoma" },
+              { "label": "Serrated Polyp ≥10mm", "value": "serrated_polyp_10mm_plus" },
+              { "label": "Sessile Serrated Lesion", "value": "sessile_serrated_lesion" }
+            ]
+          },
+          {
+            "id": "has-ibd",
+            "name": "hasIBD",
+            "label": "IBD (Crohn's or UC)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "ibd-type",
+            "name": "ibdType",
+            "label": "IBD Type",
+            "type": "select",
+            "required": false,
+            "defaultValue": "uc",
+            "options": [
+              { "label": "Ulcerative Colitis", "value": "uc" },
+              { "label": "Crohn's Disease", "value": "crohns" }
+            ],
+            "visibleWhen": { "field": "hasIBD", "op": "truthy" }
+          },
+          {
+            "id": "ibd-duration-years",
+            "name": "ibdDurationYears",
+            "label": "IBD Duration (years)",
+            "type": "number",
+            "required": false,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "hasIBD", "op": "truthy" }
+          },
+          {
+            "id": "has-psc",
+            "name": "hasPSC",
+            "label": "Primary Sclerosing Cholangitis (PSC)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "family-history",
+        "shortLabel": "Family History",
+        "title": "Family History & Hereditary Syndromes",
+        "fields": [
+          {
+            "id": "has-first-degree-family-history-crc",
+            "name": "hasFirstDegreeFamilyHistoryCRC",
+            "label": "First-Degree Relative with CRC",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "family-history-age",
+            "name": "familyHistoryAge",
+            "label": "Age of CRC Diagnosis in Relative",
+            "type": "number",
+            "required": false,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "hasFirstDegreeFamilyHistoryCRC", "op": "truthy" }
+          },
+          {
+            "id": "has-multiple-family-members-crc",
+            "name": "hasMultipleFamilyMembersCRC",
+            "label": "Multiple Family Members with CRC",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-suspected-lynch-syndrome",
+            "name": "hasSuspectedLynchSyndrome",
+            "label": "Suspected Lynch Syndrome",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-confirmed-lynch-syndrome",
+            "name": "hasConfirmedLynchSyndrome",
+            "label": "Confirmed Lynch Syndrome",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "lynch-gene",
+            "name": "lynchGene",
+            "label": "Lynch Syndrome Gene",
+            "type": "select",
+            "required": false,
+            "defaultValue": "MLH1",
+            "options": [
+              { "label": "MLH1", "value": "MLH1" },
+              { "label": "MSH2", "value": "MSH2" },
+              { "label": "MSH6", "value": "MSH6" },
+              { "label": "PMS2", "value": "PMS2" },
+              { "label": "EPCAM", "value": "EPCAM" }
+            ],
+            "visibleWhen": { "field": "hasConfirmedLynchSyndrome", "op": "truthy" }
+          },
+          {
+            "id": "has-confirmed-fap",
+            "name": "hasConfirmedFAP",
+            "label": "Confirmed FAP",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-prior-crc",
+            "name": "hasPriorCRC",
+            "label": "Prior CRC",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "symptoms-preferences",
+        "shortLabel": "Symptoms & Preferences",
+        "title": "Symptoms & Preferences",
+        "fields": [
+          {
+            "id": "has-rectal-bleeding",
+            "name": "hasRectalBleeding",
+            "label": "Rectal Bleeding",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-iron-deficiency-anemia",
+            "name": "hasIronDeficiencyAnemia",
+            "label": "Iron Deficiency Anemia",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-unexplained-weight-loss",
+            "name": "hasUnexplainedWeightLoss",
+            "label": "Unexplained Weight Loss",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-change-in-bowel-habits",
+            "name": "hasChangeInBowelHabits",
+            "label": "Change in Bowel Habits",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "screening-test-preference",
+            "name": "screeningTestPreference",
+            "label": "Screening Test Preference",
+            "type": "select",
+            "required": false,
+            "defaultValue": "no_preference",
+            "options": [
+              { "label": "No Preference", "value": "no_preference" },
+              { "label": "Prefers Non-Invasive Test", "value": "prefers_noninvasive" },
+              { "label": "Prefers Colonoscopy", "value": "prefers_colonoscopy" },
+              { "label": "Prefers Annual Stool Test (FIT)", "value": "prefers_annual_stool_test" },
+              { "label": "Prefers Cologuard (mt-sDNA)", "value": "prefers_cologuard" }
+            ]
+          },
+          {
+            "id": "has-insurance-coverage",
+            "name": "hasInsuranceCoverage",
+            "label": "Insurance Coverage for Screening",
+            "type": "switch",
+            "required": false,
+            "defaultValue": true
+          },
+          {
+            "id": "is-able-to-do-colonoscopy-prep",
+            "name": "isAbleToDoColonoscopyPrep",
+            "label": "Able to Complete Colonoscopy Prep",
+            "type": "switch",
+            "required": false,
+            "defaultValue": true
+          },
+          {
+            "id": "is-on-anticoagulation",
+            "name": "isOnAnticoagulation",
+            "label": "On Anticoagulation",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Spine Surgery Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "22510, 22513, 63650, 63655",
+      "credentials": "[Credentials]",
+      "icd_codes": "M47.816, M51.36, M48.06, M54.5, M80.08XA, C79.51",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — Lumbar/Cervical Spine Surgery (Fusion/Decompression)\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\nDear Medical Director / Utilization Review Committee,\n\nThis letter serves as an urgent appeal for reconsideration of your denial for Lumbar/Cervical Spine Surgery (Fusion/Decompression) for our patient, {{patient_name}}, born {{patient_dob}}, with policy number {{policy_number}}. The requested procedure is medically necessary and supported by compelling clinical evidence and established guidelines.\n\nClinical Summary:\nOur patient presents with a severe and persistent spinal condition, manifesting as [SYMPTOMS_DESCRIPTION]. Despite exhaustive conservative management including [LIST_CONSERVATIVE_TREATMENTS], the patient's condition has not improved and continues to significantly impair their quality of life and functional capacity. Imaging studies (e.g., MRI, CT) confirm [IMAGING_FINDINGS] which directly correlates with the patient's clinical presentation.\n\nGuideline Support:\nThe medical necessity of this Lumbar/Cervical Spine Surgery (Fusion/Decompression) is strongly supported by the following evidence-based guidelines:\n1. NASS Evidence-Based Clinical Guidelines for Spine Surgery 2020: These guidelines support surgical intervention for patients presenting with severe and persistent spinal condition.\n2. ACS/AANS/CNS Guidelines on Lumbar Fusion 2022: These guidelines provide strong recommendations for Lumbar/Cervical Spine Surgery (Fusion/Decompression) in cases of spinal instability and severe degenerative disc disease.\n3. AAOS Clinical Practice Guidelines on Degenerative Lumbar Spinal Stenosis 2020: These guidelines recommend surgical decompression for patients with symptomatic lumbar spinal stenosis who have failed non-operative treatment.\n4. Spine Patient Outcomes Research Trial (SPORT) data: Long-term data from the SPORT trial consistently demonstrate the effectiveness of surgical intervention for conditions such as lumbar disc herniation and spinal stenosis.\n\nMedical Necessity Statement:\nBased on the patient's clinical presentation, diagnostic findings, and failure of conservative therapies, Lumbar/Cervical Spine Surgery (Fusion/Decompression) is not only medically necessary but also the most appropriate and effective treatment to alleviate pain, restore function, and prevent further neurological deterioration. The procedure is justified by due to intractable pain and neurological deficits unresponsive to conservative treatment, which is supported by high-level evidence.\n\nRisk Without Treatment:\nWithout this critical Lumbar/Cervical Spine Surgery (Fusion/Decompression), the patient faces a high risk of irreversible neurological deficits, chronic intractable pain, progressive functional decline, and a significant reduction in their overall quality of life. Delaying or denying this treatment would be detrimental to the patient's health and well-being.\n\nRequested Action:\nWe urge you to reconsider your denial and approve the authorization for Lumbar/Cervical Spine Surgery (Fusion/Decompression) without further delay. Prompt approval will allow us to provide the necessary care to prevent further complications and improve our patient's health outcomes. Please contact my office if you require any additional information.\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "title": "Parkinson's Disease",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "parkinsons",
+    "hiddenDefaults": {
+      "dbsContraindications": [],
+      "isPregnantOrPlanning": false
+    },
+    "steps": [
+      {
+        "id": "stage",
+        "shortLabel": "Disease Stage & Severity",
+        "title": "Disease Stage & Severity",
+        "fields": [
+          {
+            "id": "stage",
+            "name": "stage",
+            "label": "Disease Stage",
+            "type": "select",
+            "required": false,
+            "defaultValue": "early",
+            "options": [
+              { "label": "Early (H&Y 1–2, minimal disability)", "value": "early" },
+              { "label": "Moderate (H&Y 2–3, motor fluctuations)", "value": "moderate" },
+              { "label": "Advanced (H&Y 4–5, device-aided therapy consideration)", "value": "advanced" }
+            ]
+          },
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Patient Age (years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "updrs-motor-score",
+            "name": "updrsMotorScore",
+            "label": "MDS-UPDRS Part III Motor Score (0–132)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 22,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "hoehn-yahr-scale",
+            "name": "hoehnYahrScale",
+            "label": "Hoehn & Yahr Scale (1–5)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 2,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "tremor-dominant",
+            "name": "tremorDominant",
+            "label": "Tremor-Dominant Phenotype",
+            "type": "switch",
+            "required": false,
+            "defaultValue": true
+          }
+        ]
+      },
+      {
+        "id": "fluctuations",
+        "shortLabel": "Motor Fluctuations & Therapy",
+        "title": "Motor Fluctuations & Therapy",
+        "fields": [
+          {
+            "id": "motor-fluctuations",
+            "name": "motorFluctuations",
+            "label": "Motor Fluctuations",
+            "type": "select",
+            "required": false,
+            "defaultValue": "none",
+            "options": [
+              { "label": "None", "value": "none" },
+              { "label": "Wearing-off (end-of-dose)", "value": "wearing_off" },
+              { "label": "Unpredictable on-off fluctuations", "value": "on_off" },
+              { "label": "Peak-dose dyskinesia", "value": "dyskinesia" },
+              { "label": "Freezing of gait", "value": "freezing" }
+            ]
+          },
+          {
+            "id": "initial-therapy-history",
+            "name": "initialTherapyHistory",
+            "label": "Current / Prior Therapy",
+            "type": "select",
+            "required": false,
+            "defaultValue": "none",
+            "options": [
+              { "label": "No therapy yet", "value": "none" },
+              { "label": "On levodopa/carbidopa", "value": "on_levodopa" },
+              { "label": "On dopamine agonist (pramipexole, ropinirole)", "value": "on_dopamine_agonist" },
+              { "label": "On MAO-B inhibitor (rasagiline, selegiline)", "value": "on_mao_b_inhibitor" },
+              { "label": "On combination therapy", "value": "on_combination" }
+            ]
+          },
+          {
+            "id": "levodopa-daily-dose",
+            "name": "levodopaDailyDose",
+            "label": "Total Daily Levodopa Dose (mg)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 600,
+            "keyboardType": "decimal",
+            "visibleWhen": {
+              "field": "initialTherapyHistory",
+              "op": "in",
+              "value": ["on_levodopa", "on_combination"]
+            }
+          },
+          {
+            "id": "off-time-hours-per-day",
+            "name": "offTimeHoursPerDay",
+            "label": "Off-Time Hours per Day",
+            "type": "number",
+            "required": false,
+            "defaultValue": 2,
+            "keyboardType": "decimal",
+            "visibleWhen": {
+              "field": "initialTherapyHistory",
+              "op": "in",
+              "value": ["on_levodopa", "on_combination"]
+            }
+          },
+          {
+            "id": "wants-non-oral-therapy",
+            "name": "wantsNonOralTherapy",
+            "label": "Prefers Non-Oral Therapy (patch, pump, infusion)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "dbs",
+        "shortLabel": "DBS & Comorbidities",
+        "title": "DBS & Comorbidities",
+        "fields": [
+          {
+            "id": "is-dbs-candidate",
+            "name": "isDBSCandidate",
+            "label": "Clinically Assessed as DBS Candidate",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-dementia",
+            "name": "hasDementia",
+            "label": "Dementia (MMSE <24 or MoCA <21)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-hallucinations",
+            "name": "hasHallucinations",
+            "label": "Visual Hallucinations",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-orthostasis",
+            "name": "hasOrthostasis",
+            "label": "Orthostatic Hypotension",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-impulse-control-disorder",
+            "name": "hasImpulseControlDisorder",
+            "label": "Impulse Control Disorder (gambling, hypersexuality)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-cardiac-history",
+            "name": "hasCardiacHistory",
+            "label": "Cardiac History (relevant for amantadine/anticholinergics)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

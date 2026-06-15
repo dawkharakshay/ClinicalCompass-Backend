@@ -1,0 +1,168 @@
+{
+  "title": "Cholecystectomy Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "CholecystectomyAuthGuide.tsx",
+    "title": "Cholecystectomy Authorization Guide",
+    "subtitle": null,
+    "cptCodes": [
+      { "code": "47562", "description": "Laparoscopic cholecystectomy", "notes": "Standard laparoscopic cholecystectomy — most common approach" },
+      { "code": "47563", "description": "Laparoscopic cholecystectomy with cholangiography", "notes": "With intraoperative cholangiogram — add when CBD stones suspected" },
+      { "code": "47564", "description": "Laparoscopic cholecystectomy with exploration of common duct", "notes": "With laparoscopic CBD exploration" },
+      { "code": "47600", "description": "Cholecystectomy", "notes": "Open cholecystectomy" },
+      { "code": "47605", "description": "Cholecystectomy; with cholangiography", "notes": "Open with cholangiogram" },
+      { "code": "47610", "description": "Cholecystectomy with exploration of common duct", "notes": "Open with CBD exploration" },
+      { "code": "43239", "description": "Upper gastrointestinal endoscopy including esophagus, stomach, and either the duodenum and/or jejunum as appropriate; with injection sclerosis of esophageal varices", "notes": "ERCP for choledocholithiasis — often pre-operative" }
+    ],
+    "icd10Codes": [
+      { "code": "K80.20", "description": "Calculus of gallbladder without cholecystitis, without obstruction", "notes": "Symptomatic cholelithiasis — primary indication" },
+      { "code": "K80.21", "description": "Calculus of gallbladder without cholecystitis, with obstruction", "notes": "Cholelithiasis with obstruction" },
+      { "code": "K81.0", "description": "Acute cholecystitis", "notes": "Acute cholecystitis — urgent/semi-urgent indication" },
+      { "code": "K81.1", "description": "Chronic cholecystitis", "notes": "Chronic cholecystitis" },
+      { "code": "K82.0", "description": "Obstruction of gallbladder", "notes": "Gallbladder obstruction" },
+      { "code": "K82.8", "description": "Other specified diseases of gallbladder", "notes": "Biliary dyskinesia, polyp, other" },
+      { "code": "K80.40", "description": "Calculus of bile duct without cholangitis or cholecystitis, without obstruction", "notes": "Choledocholithiasis" },
+      { "code": "K85.10", "description": "Biliary acute pancreatitis without necrosis or infection", "notes": "Gallstone pancreatitis — urgent indication" }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "Documented symptomatic cholelithiasis confirmed by ultrasound or other imaging",
+              "Clinical documentation of biliary colic, acute cholecystitis, or other biliary complication",
+              "Surgeon documentation of indication for cholecystectomy",
+              "ASA classification and surgical risk assessment"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Symptomatic cholelithiasis with documented biliary colic, nausea, or fatty food intolerance",
+              "Acute or chronic cholecystitis",
+              "Choledocholithiasis or gallstone pancreatitis",
+              "Biliary dyskinesia with ejection fraction <35% on HIDA scan",
+              "Gallbladder polyp ≥10mm"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicare covers elective cholecystectomy for symptomatic cholelithiasis without requiring a specific number of prior conservative treatment attempts. Acute cholecystitis is covered as urgent/semi-urgent. Laparoscopic approach (47562) is preferred and reimbursed at standard rates."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicare (CMS)", "status": "Covered", "notes": "Covered for symptomatic cholelithiasis, acute cholecystitis, choledocholithiasis, gallstone pancreatitis; no mandatory conservative treatment period" }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "Prior authorization may be required depending on state",
+              "Documented symptomatic cholelithiasis on imaging",
+              "Clinical documentation of symptoms"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Symptomatic cholelithiasis with imaging confirmation",
+              "Acute cholecystitis",
+              "Biliary complications"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicaid coverage for elective cholecystectomy is generally available in most states for symptomatic disease. Prior authorization requirements vary by state. Acute cholecystitis is typically covered without prior authorization."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicaid (state-specific)", "status": "Covered", "notes": "Generally covered for symptomatic disease; prior auth requirements vary by state" }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "Prior authorization required by most commercial payers for elective cholecystectomy",
+              "Ultrasound or imaging confirming cholelithiasis or biliary pathology",
+              "Documentation of symptomatic disease (biliary colic, nausea, fatty food intolerance)",
+              "Duration and frequency of symptoms",
+              "For biliary dyskinesia: HIDA scan with ejection fraction <35%",
+              "For gallbladder polyp: imaging documentation of polyp size ≥10mm",
+              "Conservative treatment documentation (dietary modification) — some payers require"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Symptomatic cholelithiasis with ≥2 episodes of biliary colic OR daily symptoms",
+              "Acute or chronic cholecystitis",
+              "Choledocholithiasis or gallstone pancreatitis",
+              "Biliary dyskinesia (HIDA EF <35%) with symptoms",
+              "Gallbladder polyp ≥10mm (malignancy risk)"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Most commercial payers cover elective cholecystectomy for symptomatic cholelithiasis without requiring a mandatory conservative treatment period. Document symptom frequency and severity. For biliary dyskinesia, HIDA scan with EF <35% is required. Acute cholecystitis is typically covered without prior authorization."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "UnitedHealthcare", "status": "Covered", "notes": "Covers symptomatic cholelithiasis; imaging required; biliary dyskinesia requires HIDA EF <35%" },
+          { "payer": "Aetna", "status": "Covered", "notes": "Covers symptomatic cholelithiasis with imaging; acute cholecystitis covered urgently" },
+          { "payer": "Cigna", "status": "Covered", "notes": "Covers for symptomatic disease; documentation of symptoms and imaging required" },
+          { "payer": "Anthem/BCBS", "status": "Covered", "notes": "Covers symptomatic cholelithiasis; prior auth required for elective cases" },
+          { "payer": "Humana", "status": "Covered", "notes": "Covers per standard surgical criteria; imaging confirmation required" }
+        ]
+      }
+    ],
+    "customSections": [],
+    "raw": {
+      "markdown": "# Cholecystectomy Authorization Guide\n\n## CPT Codes — Cholecystectomy\n\n| CPT | Description | Notes |\n| --- | --- | --- |\n| 47562 | Laparoscopic cholecystectomy | Standard laparoscopic cholecystectomy — most common approach |\n| 47563 | Laparoscopic cholecystectomy with cholangiography | With intraoperative cholangiogram — add when CBD stones suspected |\n| 47564 | Laparoscopic cholecystectomy with exploration of common duct | With laparoscopic CBD exploration |\n| 47600 | Cholecystectomy | Open cholecystectomy |\n| 47605 | Cholecystectomy; with cholangiography | Open with cholangiogram |\n| 47610 | Cholecystectomy with exploration of common duct | Open with CBD exploration |\n| 43239 | Upper gastrointestinal endoscopy including esophagus, stomach, and either the duodenum and/or jejunum as appropriate; with injection sclerosis of esophageal varices | ERCP for choledocholithiasis — often pre-operative |\n\n## ICD-10 Codes\n\n| ICD-10 | Description | Notes |\n| --- | --- | --- |\n| K80.20 | Calculus of gallbladder without cholecystitis, without obstruction | Symptomatic cholelithiasis — primary indication |\n| K80.21 | Calculus of gallbladder without cholecystitis, with obstruction | Cholelithiasis with obstruction |\n| K81.0 | Acute cholecystitis | Acute cholecystitis — urgent/semi-urgent indication |\n| K81.1 | Chronic cholecystitis | Chronic cholecystitis |\n| K82.0 | Obstruction of gallbladder | Gallbladder obstruction |\n| K82.8 | Other specified diseases of gallbladder | Biliary dyskinesia, polyp, other |\n| K80.40 | Calculus of bile duct without cholangitis or cholecystitis, without obstruction | Choledocholithiasis |\n| K85.10 | Biliary acute pancreatitis without necrosis or infection | Gallstone pancreatitis — urgent indication |\n\n## Payer Requirements\n\n(Tabbed by payer: Medicare, Medicaid, Private)\n\n### Medicare\n\n**Required Documentation**\n- Documented symptomatic cholelithiasis confirmed by ultrasound or other imaging\n- Clinical documentation of biliary colic, acute cholecystitis, or other biliary complication\n- Surgeon documentation of indication for cholecystectomy\n- ASA classification and surgical risk assessment\n\n**Medical Necessity Criteria**\n- ✓ Symptomatic cholelithiasis with documented biliary colic, nausea, or fatty food intolerance\n- ✓ Acute or chronic cholecystitis\n- ✓ Choledocholithiasis or gallstone pancreatitis\n- ✓ Biliary dyskinesia with ejection fraction <35% on HIDA scan\n- ✓ Gallbladder polyp ≥10mm\n\n**Reimbursement Note**\nMedicare covers elective cholecystectomy for symptomatic cholelithiasis without requiring a specific number of prior conservative treatment attempts. Acute cholecystitis is covered as urgent/semi-urgent. Laparoscopic approach (47562) is preferred and reimbursed at standard rates.\n\n**Known Payer Policies**\n- [Covered] Medicare (CMS): Covered for symptomatic cholelithiasis, acute cholecystitis, choledocholithiasis, gallstone pancreatitis; no mandatory conservative treatment period\n\n### Medicaid\n\n**Required Documentation**\n- Prior authorization may be required depending on state\n- Documented symptomatic cholelithiasis on imaging\n- Clinical documentation of symptoms\n\n**Medical Necessity Criteria**\n- ✓ Symptomatic cholelithiasis with imaging confirmation\n- ✓ Acute cholecystitis\n- ✓ Biliary complications\n\n**Reimbursement Note**\nMedicaid coverage for elective cholecystectomy is generally available in most states for symptomatic disease. Prior authorization requirements vary by state. Acute cholecystitis is typically covered without prior authorization.\n\n**Known Payer Policies**\n- [Covered] Medicaid (state-specific): Generally covered for symptomatic disease; prior auth requirements vary by state\n\n### Private\n\n**Required Documentation**\n- Prior authorization required by most commercial payers for elective cholecystectomy\n- Ultrasound or imaging confirming cholelithiasis or biliary pathology\n- Documentation of symptomatic disease (biliary colic, nausea, fatty food intolerance)\n- Duration and frequency of symptoms\n- For biliary dyskinesia: HIDA scan with ejection fraction <35%\n- For gallbladder polyp: imaging documentation of polyp size ≥10mm\n- Conservative treatment documentation (dietary modification) — some payers require\n\n**Medical Necessity Criteria**\n- ✓ Symptomatic cholelithiasis with ≥2 episodes of biliary colic OR daily symptoms\n- ✓ Acute or chronic cholecystitis\n- ✓ Choledocholithiasis or gallstone pancreatitis\n- ✓ Biliary dyskinesia (HIDA EF <35%) with symptoms\n- ✓ Gallbladder polyp ≥10mm (malignancy risk)\n\n**Reimbursement Note**\nMost commercial payers cover elective cholecystectomy for symptomatic cholelithiasis without requiring a mandatory conservative treatment period. Document symptom frequency and severity. For biliary dyskinesia, HIDA scan with EF <35% is required. Acute cholecystitis is typically covered without prior authorization.\n\n**Known Payer Policies**\n- [Covered] UnitedHealthcare: Covers symptomatic cholelithiasis; imaging required; biliary dyskinesia requires HIDA EF <35%\n- [Covered] Aetna: Covers symptomatic cholelithiasis with imaging; acute cholecystitis covered urgently\n- [Covered] Cigna: Covers for symptomatic disease; documentation of symptoms and imaging required\n- [Covered] Anthem/BCBS: Covers symptomatic cholelithiasis; prior auth required for elective cases\n- [Covered] Humana: Covers per standard surgical criteria; imaging confirmation required\n",
+      "tables": [
+        {
+          "name": "CPT Codes — Cholecystectomy",
+          "header": ["CPT", "Description", "Notes"],
+          "rows": [
+            ["47562", "Laparoscopic cholecystectomy", "Standard laparoscopic cholecystectomy — most common approach"],
+            ["47563", "Laparoscopic cholecystectomy with cholangiography", "With intraoperative cholangiogram — add when CBD stones suspected"],
+            ["47564", "Laparoscopic cholecystectomy with exploration of common duct", "With laparoscopic CBD exploration"],
+            ["47600", "Cholecystectomy", "Open cholecystectomy"],
+            ["47605", "Cholecystectomy; with cholangiography", "Open with cholangiogram"],
+            ["47610", "Cholecystectomy with exploration of common duct", "Open with CBD exploration"],
+            ["43239", "Upper gastrointestinal endoscopy including esophagus, stomach, and either the duodenum and/or jejunum as appropriate; with injection sclerosis of esophageal varices", "ERCP for choledocholithiasis — often pre-operative"]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["ICD-10", "Description", "Notes"],
+          "rows": [
+            ["K80.20", "Calculus of gallbladder without cholecystitis, without obstruction", "Symptomatic cholelithiasis — primary indication"],
+            ["K80.21", "Calculus of gallbladder without cholecystitis, with obstruction", "Cholelithiasis with obstruction"],
+            ["K81.0", "Acute cholecystitis", "Acute cholecystitis — urgent/semi-urgent indication"],
+            ["K81.1", "Chronic cholecystitis", "Chronic cholecystitis"],
+            ["K82.0", "Obstruction of gallbladder", "Gallbladder obstruction"],
+            ["K82.8", "Other specified diseases of gallbladder", "Biliary dyskinesia, polyp, other"],
+            ["K80.40", "Calculus of bile duct without cholangitis or cholecystitis, without obstruction", "Choledocholithiasis"],
+            ["K85.10", "Biliary acute pancreatitis without necrosis or infection", "Gallstone pancreatitis — urgent indication"]
+          ]
+        }
+      ]
+    }
+  }
+}

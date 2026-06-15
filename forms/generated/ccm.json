@@ -1,0 +1,319 @@
+{
+  "title": "Cerebral Cavernous Malformation Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "ccm",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "ccm-characteristics",
+        "shortLabel": "CCM Characteristics",
+        "title": "CCM Characteristics (MRI)",
+        "fields": [
+          {
+            "id": "ccm-type",
+            "name": "ccmType",
+            "label": "CCM Type",
+            "type": "select",
+            "defaultValue": "sporadic",
+            "options": [
+              { "label": "Sporadic (Single lesion, no family history)", "value": "sporadic" },
+              { "label": "Familial (Multiple lesions or family history)", "value": "familial" }
+            ]
+          },
+          {
+            "id": "location",
+            "name": "location",
+            "label": "Location",
+            "type": "select",
+            "defaultValue": "noneloquent_cortical",
+            "options": [
+              { "label": "Cortical — Non-eloquent (Accessible)", "value": "noneloquent_cortical" },
+              { "label": "Cortical — Eloquent (Motor, Language, Sensory)", "value": "eloquent_cortical" },
+              { "label": "Deep Subcortical (Basal ganglia, thalamus)", "value": "deep_subcortical" },
+              { "label": "Brainstem (Pons, midbrain, medulla)", "value": "brainstem" },
+              { "label": "Spinal — Dorsal / Dorsolateral", "value": "spinal_dorsal_dorsolateral" },
+              { "label": "Spinal — Ventral / Embedded", "value": "spinal_ventral_embedded" }
+            ]
+          },
+          {
+            "id": "cm-size-cm",
+            "name": "cmSizeCm",
+            "label": "CCM Size (cm)",
+            "type": "slider",
+            "defaultValue": 1.2,
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "cm"
+          },
+          {
+            "id": "associated-dva",
+            "name": "associatedDVA",
+            "label": "Associated Developmental Venous Anomaly (DVA)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "multiple-lesions",
+            "name": "multiplelesions",
+            "label": "Multiple Lesions (Familial Pattern)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "spinal-cm",
+            "name": "spinalCM",
+            "label": "Spinal Cavernous Malformation",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "clinical-presentation",
+        "shortLabel": "Clinical Presentation",
+        "title": "Clinical Presentation",
+        "fields": [
+          {
+            "id": "symptomatic",
+            "name": "symptomatic",
+            "label": "Symptomatic (Not Incidental)",
+            "type": "radio",
+            "defaultValue": true,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "incidental-finding",
+            "name": "incidentalFinding",
+            "label": "Incidental Finding (Asymptomatic)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "hemorrhage-status",
+            "name": "hemorrhageStatus",
+            "label": "Hemorrhage History",
+            "type": "select",
+            "defaultValue": "single_hemorrhage",
+            "options": [
+              { "label": "No hemorrhage (Incidental)", "value": "no_hemorrhage" },
+              { "label": "Prior single hemorrhage", "value": "single_hemorrhage" },
+              { "label": "Recurrent hemorrhages (≥2 symptomatic bleeds)", "value": "recurrent_hemorrhage" }
+            ]
+          },
+          {
+            "id": "seizure-status",
+            "name": "seizureStatus",
+            "label": "Seizure Status",
+            "type": "select",
+            "defaultValue": "controlled_seizure",
+            "options": [
+              { "label": "No seizures", "value": "no_seizure" },
+              { "label": "Seizures — Controlled on ASM", "value": "controlled_seizure" },
+              { "label": "Seizures — Refractory to ASM", "value": "refractory_seizure" }
+            ]
+          },
+          {
+            "id": "neurologic-deficit",
+            "name": "neurologicDeficit",
+            "label": "Neurologic Deficit (Focal)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "headache-only",
+            "name": "headacheOnly",
+            "label": "Headache Only (No Focal Deficit)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "acute-neurologic-impairment",
+            "name": "acuteNeurologicImpairment",
+            "label": "Acute Neurologic Impairment",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "progressive-neurologic-deterioration",
+            "name": "progressiveNeurologicDeterioration",
+            "label": "Progressive Neurologic Deterioration",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "patient-factors",
+        "shortLabel": "Patient Factors & History",
+        "title": "Patient Factors & History",
+        "fields": [
+          {
+            "id": "age-years",
+            "name": "ageYears",
+            "label": "Age (years)",
+            "type": "slider",
+            "defaultValue": 0,
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "years"
+          },
+          {
+            "id": "pediatric-patient",
+            "name": "pediatricPatient",
+            "label": "Pediatric Patient (Under 18)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "pregnancy-status",
+            "name": "pregnancyStatus",
+            "label": "Pregnancy",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "family-history",
+            "name": "familyHistory",
+            "label": "Family History of CCM",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "known-ccm-gene-variant",
+            "name": "knownCCMGeneVariant",
+            "label": "Known CCM Gene Variant (CCM1/2/3)",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "Not tested / Unknown", "value": "none" },
+              { "label": "CCM1 (KRIT1) — Most common familial", "value": "ccm1" },
+              { "label": "CCM2 (MGC4607)", "value": "ccm2" },
+              { "label": "CCM3 (PDCD10) — Most aggressive phenotype", "value": "ccm3" },
+              { "label": "Variant of uncertain significance", "value": "unknown" }
+            ]
+          },
+          {
+            "id": "prior-cranial-irradiation",
+            "name": "priorCranialIrradiation",
+            "label": "Prior Cranial Irradiation",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "surgical-risk",
+            "name": "surgicalRisk",
+            "label": "Surgical Risk",
+            "type": "select",
+            "defaultValue": "low",
+            "options": [
+              { "label": "Low — Fit for craniotomy", "value": "low" },
+              { "label": "Moderate — Significant comorbidities", "value": "moderate" },
+              { "label": "High — Poor surgical candidate", "value": "high" }
+            ]
+          },
+          {
+            "id": "prior-surgery",
+            "name": "priorSurgery",
+            "label": "Prior Surgical Resection",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "prior-srs",
+            "name": "priorSRS",
+            "label": "Prior Stereotactic Radiosurgery (SRS)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "prior-asm",
+            "name": "priorASM",
+            "label": "On Antiseizure Medication (ASM)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "asm-response",
+            "name": "asmResponse",
+            "label": "ASM Response",
+            "type": "select",
+            "defaultValue": "controlled",
+            "options": [
+              { "label": "Seizures controlled on ASM", "value": "controlled" },
+              { "label": "Refractory (Failed ≥2 ASMs)", "value": "refractory" }
+            ],
+            "visibleWhen": { "field": "priorASM", "op": "truthy" }
+          }
+        ]
+      }
+    ]
+  }
+}

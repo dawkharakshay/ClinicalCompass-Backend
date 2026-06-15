@@ -1,0 +1,30 @@
+{
+  "title": "RLS / PLMD Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "95810, 99213–99215, 96372, J1439, J1436",
+      "credentials": "[Credentials]",
+      "icd_codes": "G25.81, G47.61, G47.69, E61.1, N18.1–N18.9, O26.89",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "To Whom It May Concern,\n\nI am writing to formally appeal the denial of prior authorization for [requestedTreatment] for my patient, {{patient_name}} (DOB: {{patient_dob}}, Member ID: {{member_id}}), dated [denialDate].\n\nCLINICAL SUMMARY\n\nThis patient carries a confirmed diagnosis of Restless Legs Syndrome (ICD-10: G25.81) based on the IRLSSG 5 essential diagnostic criteria:\n1. Urge to move the legs, usually accompanied by uncomfortable sensations\n2. Symptoms begin or worsen during periods of rest or inactivity\n3. Symptoms are partially or totally relieved by movement\n4. Symptoms are worse in the evening or night than during the day\n5. Symptoms not solely accounted for by another medical or behavioral condition\n\nPRIOR TREATMENT HISTORY\n\nPrior treatment history is documented in the attached clinical notes. Alpha-2-delta ligand therapy is the appropriate next step per AASM 2024 CPG.\n\nEVIDENCE BASE FOR REQUESTED TREATMENT\n\nThe requested treatment, [requestedTreatment], is supported by the American Academy of Sleep Medicine (AASM) 2024 Clinical Practice Guideline for the Treatment of Restless Legs Syndrome and Periodic Limb Movement Disorder in Adults (Trotti LM, et al., J Clin Sleep Med. 2024). The AASM 2024 CPG provides STRONG recommendations for alpha-2-delta ligands (gabapentin enacarbil, pregabalin, gabapentin) as first-line pharmacotherapy for RLS.\n\nIMPORTANT 2024 GUIDELINE UPDATE: The AASM 2024 CPG now CONDITIONALLY RECOMMENDS AGAINST dopamine agonists (pramipexole, ropinirole) as first-line therapy due to augmentation risk (prevalence 8–68% on long-term therapy). Any step therapy requirement for a dopamine agonist trial before approving an alpha-2-delta ligand is inconsistent with current evidence-based guidelines.\n\nBASIS FOR APPEAL\n\nThe requested treatment is the appropriate first-line pharmacotherapy per AASM 2024 CPG. Denial of this treatment leaves the patient with a condition associated with significant sleep disruption, cardiovascular risk, depression, and reduced quality of life.\n\n\nREQUESTED ACTION\n\nI respectfully request immediate approval of [requestedTreatment] for this patient. I am available for a peer-to-peer review with the medical director at your earliest convenience.\n\nSincerely,\n\n[Physician Name, MD/DO]\n[Specialty: Sleep Medicine / Neurology]\n{{practice_name}}\n{{practice_phone}} | {{practice_fax}}\n{{npi}}\n\nReferences:\n1. Trotti LM, et al. \"Treatment of Restless Legs Syndrome and Periodic Limb Movement Disorder in Adults: An AASM Clinical Practice Guideline.\" J Clin Sleep Med. 2024.\n2. Allen RP, et al. \"Restless legs syndrome/Willis-Ekbom disease diagnostic criteria: updated IRLSSG consensus criteria.\" Sleep Med. 2014;15(8):860–873.\n3. Garcia-Borreguero D, et al. \"Guidelines for the first-line treatment of restless legs syndrome/Willis-Ekbom disease.\" Sleep Med. 2016;21:1–11.\n4. AASM Practice Guidelines: https://aasm.org/clinical-resources/practice-standards/practice-guidelines/"
+  }
+}

@@ -1,0 +1,331 @@
+{
+  "title": null,
+  "auth_guide": {
+    "sourceFile": "UFEAuthGuide.tsx",
+    "title": "UFE Clinical Compass",
+    "subtitle": "Uterine Fibroid Embolization Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "37243",
+        "description": "Vascular embolization or occlusion, inclusive of all radiological supervision and interpretation, intraprocedural roadmapping, and imaging guidance necessary to complete the procedure, for tumors, organ ischemia, or hemorrhage, uterus, fibroids.",
+        "device": "Embolic agents (e.g., microspheres, PVA particles, coils)",
+        "access": "Femoral artery access",
+        "rvu": "11.45",
+        "includes": [
+          "All radiological supervision and interpretation",
+          "Intraprocedural roadmapping",
+          "Imaging guidance necessary to complete the procedure"
+        ],
+        "note": "This code is for the embolization of uterine fibroids. It includes all imaging guidance and supervision."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "D25.0",
+        "description": "Submucous leiomyoma of uterus",
+        "notes": "Fibroid located directly beneath the endometrial lining.",
+        "required": false
+      },
+      {
+        "code": "D25.1",
+        "description": "Intramural leiomyoma of uterus",
+        "notes": "Fibroid located within the muscular wall of the uterus.",
+        "required": false
+      },
+      {
+        "code": "D25.2",
+        "description": "Subserosal leiomyoma of uterus",
+        "notes": "Fibroid located on the outer surface of the uterus.",
+        "required": false
+      },
+      {
+        "code": "D25.9",
+        "description": "Leiomyoma of uterus, unspecified",
+        "notes": "Used when the specific location of the fibroid is not documented.",
+        "required": true
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with Medical Necessity",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is typically required and based on medical necessity criteria, often aligning with commercial payer guidelines due to the lack of a specific NCD for UFE for uterine fibroids. Refer to UnitedHealthcare's Commercial Medical Policy for detailed criteria.",
+        "overview": "Uterine Fibroid Embolization (UFE) is generally covered by Medicare when medically necessary for symptomatic uterine fibroids. Coverage is guided by the general National Coverage Determination (NCD) for Therapeutic Embolization (20.28) and supplemented by local coverage determinations or commercial medical policies.",
+        "reimbursementNote": "Reimbursement for UFE (CPT 37243) is based on the Medicare Physician Fee Schedule (MPFS) and facility fees. RVUs are assigned to the CPT code, which are then multiplied by a conversion factor to determine payment. Co-pays and deductibles may apply.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Patient Selection",
+            "items": [
+              "Symptomatic uterine fibroids (e.g., heavy menstrual bleeding, pelvic pain, pressure symptoms)",
+              "Failed or contraindicated medical management",
+              "Patient desires uterine preservation",
+              "Patient is not pregnant",
+              "No suspected malignancy"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Fibroid Characteristics",
+            "items": [
+              "Fibroid size and number causing symptoms",
+              "Appropriate fibroid type for embolization (e.g., not pedunculated subserosal fibroids that may detach)"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Detailed patient history and physical examination",
+              "Documentation of symptoms and their impact on quality of life",
+              "Results of prior medical management and reasons for failure or contraindication",
+              "Imaging studies (e.g., MRI, ultrasound) confirming fibroid presence, size, and location",
+              "Pathology reports if any biopsies were performed",
+              "Informed consent for UFE procedure"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify patient eligibility and benefits.",
+              "Submit prior authorization request with complete clinical documentation, including imaging reports and physician notes.",
+              "Await approval before scheduling the procedure.",
+              "Submit claims with CPT 37243 and appropriate ICD-10 codes (D25.x)."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity (e.g., asymptomatic fibroids)",
+              "Incomplete clinical documentation or missing imaging reports",
+              "Failure to attempt or document failed medical management",
+              "Suspected malignancy",
+              "Fibroid characteristics not suitable for embolization (e.g., pedunculated subserosal fibroids)"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Ensure thorough documentation of symptoms, failed medical therapies, and patient desire for uterine preservation.",
+              "Provide high-quality imaging (MRI preferred) to clearly characterize fibroids.",
+              "Clearly articulate why UFE is the most appropriate treatment option for the patient."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "UnitedHealthcare Medicare Advantage",
+            "status": "Covered with Medical Necessity",
+            "notes": "Follows general NCD for Therapeutic Embolization and supplements with commercial policy criteria."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered with Medical Necessity",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is generally required and varies by state Medicaid program. Medical necessity must be clearly demonstrated.",
+        "overview": "Medicaid coverage for UFE is typically available for symptomatic uterine fibroids when medically necessary. Policies can vary significantly by state, so it is crucial to check specific state Medicaid guidelines.",
+        "reimbursementNote": "Reimbursement rates for UFE under Medicaid vary by state. Providers should be aware of the specific fee schedules and billing requirements for their state's Medicaid program.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Patient Selection",
+            "items": [
+              "Symptomatic uterine fibroids impacting quality of life",
+              "Conservative treatments have failed or are contraindicated",
+              "Patient is not pregnant",
+              "No contraindications to embolization"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Physician's notes detailing symptoms and diagnosis",
+              "Imaging reports (ultrasound, MRI) confirming fibroids",
+              "Documentation of prior treatment attempts and outcomes",
+              "Informed consent"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify state-specific Medicaid guidelines for UFE.",
+              "Submit prior authorization request with all required clinical documentation.",
+              "Follow up on authorization status regularly.",
+              "Submit claims using CPT 37243 and appropriate ICD-10 codes (D25.x)."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of state-specific medical necessity criteria being met",
+              "Insufficient documentation of symptoms or failed conservative therapy",
+              "Administrative errors in the submission process"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Consult the specific state Medicaid provider manual for detailed UFE coverage policies.",
+              "Ensure all documentation is complete and clearly supports medical necessity."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Maryland Medicaid",
+            "status": "Covered",
+            "notes": "Generally covers UFE for symptomatic fibroids."
+          },
+          {
+            "payer": "Virginia Medicaid",
+            "status": "Covered",
+            "notes": "Covers UFE with medical necessity."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Covered with Medical Necessity",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for UFE. Coverage is typically based on medical necessity criteria outlined in their clinical policies.",
+        "overview": "UFE is widely covered by most major commercial insurance plans for the treatment of symptomatic uterine fibroids. Coverage criteria are usually well-defined and focus on medical necessity and appropriate patient selection.",
+        "reimbursementNote": "Reimbursement for UFE by private insurance plans varies based on the specific plan, negotiated rates, and patient's benefits (e.g., deductibles, co-insurance). Providers should confirm benefits prior to the procedure.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Patient Eligibility",
+            "items": [
+              "Diagnosis of symptomatic uterine fibroids (e.g., menorrhagia, pelvic pain, bulk symptoms)",
+              "Failure of or contraindication to alternative medical therapies",
+              "Patient desires uterine preservation",
+              "No evidence of uterine malignancy",
+              "Patient is not pregnant"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Fibroid Characteristics",
+            "items": [
+              "Fibroid size and location amenable to embolization",
+              "Absence of pedunculated subserosal fibroids that could detach"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Records",
+            "items": [
+              "Comprehensive medical history and physical exam",
+              "Documentation of symptoms and impact on daily activities",
+              "Results of diagnostic imaging (MRI, ultrasound) with detailed fibroid mapping",
+              "Records of prior medical or surgical treatments and their outcomes",
+              "Pathology reports if available",
+              "Informed consent for UFE"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request through the payer's portal or fax with all supporting clinical documentation.",
+              "Ensure the request includes CPT 37243 and relevant ICD-10 codes (D25.x).",
+              "Follow up with the insurance company for authorization status.",
+              "Once approved, schedule and perform the procedure, then submit claims."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented symptoms or medical necessity",
+              "Inadequate imaging documentation",
+              "Failure to meet specific plan criteria (e.g., fibroid size limits, number of fibroids)",
+              "Incomplete or missing prior authorization forms",
+              "Suspected malignancy not ruled out"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with each private payer's specific clinical policy for UFE.",
+              "Provide clear, concise, and comprehensive documentation that directly addresses all coverage criteria.",
+              "Utilize the payer's online resources or provider services for policy details and submission requirements."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Aetna",
+            "status": "Covered with Medical Necessity",
+            "notes": "Refer to Aetna's clinical policy bulletin for fibroid treatment."
+          },
+          {
+            "payer": "Cigna",
+            "status": "Covered with Medical Necessity",
+            "notes": "Refer to Cigna's clinical policy for Uterine Fibroid Embolization."
+          },
+          {
+            "payer": "Humana",
+            "status": "Covered with Medical Necessity",
+            "notes": "Refer to Humana's policy on Uterine Fibroid Surgical Treatments."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Procedure Codes — Card Note",
+        "kind": "prose",
+        "text": "CPT 37243 displays RVU 11.45. Device/Access: Embolic agents (e.g., microspheres, PVA particles, coils); Femoral artery access. Included in this code (do NOT bill separately): All radiological supervision and interpretation; Intraprocedural roadmapping; Imaging guidance necessary to complete the procedure. Note: This code is for the embolization of uterine fibroids. It includes all imaging guidance and supervision."
+      },
+      {
+        "heading": "Page Navigation",
+        "kind": "link",
+        "text": "Back to Assessment",
+        "href": "/ufe"
+      }
+    ],
+    "raw": {
+      "markdown": "# UFE Clinical Compass\n## Uterine Fibroid Embolization Insurance Authorization Guide\n\n[Back to Assessment] (link: /ufe)\n\n---\n\n## Procedure Codes\n\n### CPT 37243 (RVU 11.45)\n\nVascular embolization or occlusion, inclusive of all radiological supervision and interpretation, intraprocedural roadmapping, and imaging guidance necessary to complete the procedure, for tumors, organ ischemia, or hemorrhage, uterus, fibroids.\n\n**Device/Access:** Embolic agents (e.g., microspheres, PVA particles, coils) / Femoral artery access\n\n**Included in this code (do NOT bill separately):**\n- All radiological supervision and interpretation\n- Intraprocedural roadmapping\n- Imaging guidance necessary to complete the procedure\n\n*This code is for the embolization of uterine fibroids. It includes all imaging guidance and supervision.*\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **D25.0** — Submucous leiomyoma of uterus. Fibroid located directly beneath the endometrial lining.\n- **D25.1** — Intramural leiomyoma of uterus. Fibroid located within the muscular wall of the uterus.\n- **D25.2** — Subserosal leiomyoma of uterus. Fibroid located on the outer surface of the uterus.\n- **D25.9** (Primary / required) — Leiomyoma of uterus, unspecified. Used when the specific location of the fibroid is not documented.\n\n---\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\n\nBadges: Prior Auth Required | Covered with Medical Necessity\n\n**Prior Auth Note:** Prior authorization is typically required and based on medical necessity criteria, often aligning with commercial payer guidelines due to the lack of a specific NCD for UFE for uterine fibroids. Refer to UnitedHealthcare's Commercial Medical Policy for detailed criteria.\n\n**Overview:** Uterine Fibroid Embolization (UFE) is generally covered by Medicare when medically necessary for symptomatic uterine fibroids. Coverage is guided by the general National Coverage Determination (NCD) for Therapeutic Embolization (20.28) and supplemented by local coverage determinations or commercial medical policies.\n\n**Coverage Criteria**\n\n*Patient Selection*\n- Symptomatic uterine fibroids (e.g., heavy menstrual bleeding, pelvic pain, pressure symptoms)\n- Failed or contraindicated medical management\n- Patient desires uterine preservation\n- Patient is not pregnant\n- No suspected malignancy\n\n*Fibroid Characteristics*\n- Fibroid size and number causing symptoms\n- Appropriate fibroid type for embolization (e.g., not pedunculated subserosal fibroids that may detach)\n\n**Required Documentation**\n\n*Clinical Documentation*\n- Detailed patient history and physical examination\n- Documentation of symptoms and their impact on quality of life\n- Results of prior medical management and reasons for failure or contraindication\n- Imaging studies (e.g., MRI, ultrasound) confirming fibroid presence, size, and location\n- Pathology reports if any biopsies were performed\n- Informed consent for UFE procedure\n\n**Submission Process**\n1. Verify patient eligibility and benefits.\n2. Submit prior authorization request with complete clinical documentation, including imaging reports and physician notes.\n3. Await approval before scheduling the procedure.\n4. Submit claims with CPT 37243 and appropriate ICD-10 codes (D25.x).\n\n**Common Denial Reasons**\n- Lack of documented medical necessity (e.g., asymptomatic fibroids)\n- Incomplete clinical documentation or missing imaging reports\n- Failure to attempt or document failed medical management\n- Suspected malignancy\n- Fibroid characteristics not suitable for embolization (e.g., pedunculated subserosal fibroids)\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| UnitedHealthcare Medicare Advantage | Covered with Medical Necessity | Follows general NCD for Therapeutic Embolization and supplements with commercial policy criteria. |\n\n**Reimbursement Note:** Reimbursement for UFE (CPT 37243) is based on the Medicare Physician Fee Schedule (MPFS) and facility fees. RVUs are assigned to the CPT code, which are then multiplied by a conversion factor to determine payment. Co-pays and deductibles may apply.\n\n**Authorization Tips**\n- Ensure thorough documentation of symptoms, failed medical therapies, and patient desire for uterine preservation.\n- Provide high-quality imaging (MRI preferred) to clearly characterize fibroids.\n- Clearly articulate why UFE is the most appropriate treatment option for the patient.\n\n### Medicaid\n\nBadges: Prior Auth Required | Covered with Medical Necessity\n\n**Prior Auth Note:** Prior authorization is generally required and varies by state Medicaid program. Medical necessity must be clearly demonstrated.\n\n**Overview:** Medicaid coverage for UFE is typically available for symptomatic uterine fibroids when medically necessary. Policies can vary significantly by state, so it is crucial to check specific state Medicaid guidelines.\n\n**Coverage Criteria**\n\n*Patient Selection*\n- Symptomatic uterine fibroids impacting quality of life\n- Conservative treatments have failed or are contraindicated\n- Patient is not pregnant\n- No contraindications to embolization\n\n**Required Documentation**\n\n*Clinical Documentation*\n- Physician's notes detailing symptoms and diagnosis\n- Imaging reports (ultrasound, MRI) confirming fibroids\n- Documentation of prior treatment attempts and outcomes\n- Informed consent\n\n**Submission Process**\n1. Verify state-specific Medicaid guidelines for UFE.\n2. Submit prior authorization request with all required clinical documentation.\n3. Follow up on authorization status regularly.\n4. Submit claims using CPT 37243 and appropriate ICD-10 codes (D25.x).\n\n**Common Denial Reasons**\n- Lack of state-specific medical necessity criteria being met\n- Insufficient documentation of symptoms or failed conservative therapy\n- Administrative errors in the submission process\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Maryland Medicaid | Covered | Generally covers UFE for symptomatic fibroids. |\n| Virginia Medicaid | Covered | Covers UFE with medical necessity. |\n\n**Reimbursement Note:** Reimbursement rates for UFE under Medicaid vary by state. Providers should be aware of the specific fee schedules and billing requirements for their state's Medicaid program.\n\n**Authorization Tips**\n- Consult the specific state Medicaid provider manual for detailed UFE coverage policies.\n- Ensure all documentation is complete and clearly supports medical necessity.\n\n### Private Insurance\n\nBadges: Prior Auth Required | Covered with Medical Necessity\n\n**Prior Auth Note:** Most private insurance plans require prior authorization for UFE. Coverage is typically based on medical necessity criteria outlined in their clinical policies.\n\n**Overview:** UFE is widely covered by most major commercial insurance plans for the treatment of symptomatic uterine fibroids. Coverage criteria are usually well-defined and focus on medical necessity and appropriate patient selection.\n\n**Coverage Criteria**\n\n*Patient Eligibility*\n- Diagnosis of symptomatic uterine fibroids (e.g., menorrhagia, pelvic pain, bulk symptoms)\n- Failure of or contraindication to alternative medical therapies\n- Patient desires uterine preservation\n- No evidence of uterine malignancy\n- Patient is not pregnant\n\n*Fibroid Characteristics*\n- Fibroid size and location amenable to embolization\n- Absence of pedunculated subserosal fibroids that could detach\n\n**Required Documentation**\n\n*Clinical Records*\n- Comprehensive medical history and physical exam\n- Documentation of symptoms and impact on daily activities\n- Results of diagnostic imaging (MRI, ultrasound) with detailed fibroid mapping\n- Records of prior medical or surgical treatments and their outcomes\n- Pathology reports if available\n- Informed consent for UFE\n\n**Submission Process**\n1. Submit prior authorization request through the payer's portal or fax with all supporting clinical documentation.\n2. Ensure the request includes CPT 37243 and relevant ICD-10 codes (D25.x).\n3. Follow up with the insurance company for authorization status.\n4. Once approved, schedule and perform the procedure, then submit claims.\n\n**Common Denial Reasons**\n- Lack of documented symptoms or medical necessity\n- Inadequate imaging documentation\n- Failure to meet specific plan criteria (e.g., fibroid size limits, number of fibroids)\n- Incomplete or missing prior authorization forms\n- Suspected malignancy not ruled out\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Aetna | Covered with Medical Necessity | Refer to Aetna's clinical policy bulletin for fibroid treatment. |\n| Cigna | Covered with Medical Necessity | Refer to Cigna's clinical policy for Uterine Fibroid Embolization. |\n| Humana | Covered with Medical Necessity | Refer to Humana's policy on Uterine Fibroid Surgical Treatments. |\n\n**Reimbursement Note:** Reimbursement for UFE by private insurance plans varies based on the specific plan, negotiated rates, and patient's benefits (e.g., deductibles, co-insurance). Providers should confirm benefits prior to the procedure.\n\n**Authorization Tips**\n- Familiarize yourself with each private payer's specific clinical policy for UFE.\n- Provide clear, concise, and comprehensive documentation that directly addresses all coverage criteria.\n- Utilize the payer's online resources or provider services for policy details and submission requirements.\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "RVU", "Description", "Device/Access", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            ["37243", "11.45", "Vascular embolization or occlusion, inclusive of all radiological supervision and interpretation, intraprocedural roadmapping, and imaging guidance necessary to complete the procedure, for tumors, organ ischemia, or hemorrhage, uterus, fibroids.", "Embolic agents (e.g., microspheres, PVA particles, coils); Femoral artery access", "All radiological supervision and interpretation; Intraprocedural roadmapping; Imaging guidance necessary to complete the procedure", "This code is for the embolization of uterine fibroids. It includes all imaging guidance and supervision."]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["Code", "Description", "Notes", "Required/Primary"],
+          "rows": [
+            ["D25.0", "Submucous leiomyoma of uterus", "Fibroid located directly beneath the endometrial lining.", "No"],
+            ["D25.1", "Intramural leiomyoma of uterus", "Fibroid located within the muscular wall of the uterus.", "No"],
+            ["D25.2", "Subserosal leiomyoma of uterus", "Fibroid located on the outer surface of the uterus.", "No"],
+            ["D25.9", "Leiomyoma of uterus, unspecified", "Used when the specific location of the fibroid is not documented.", "Yes (Primary)"]
+          ]
+        },
+        {
+          "name": "Medicare — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["UnitedHealthcare Medicare Advantage", "Covered with Medical Necessity", "Follows general NCD for Therapeutic Embolization and supplements with commercial policy criteria."]
+          ]
+        },
+        {
+          "name": "Medicaid — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Maryland Medicaid", "Covered", "Generally covers UFE for symptomatic fibroids."],
+            ["Virginia Medicaid", "Covered", "Covers UFE with medical necessity."]
+          ]
+        },
+        {
+          "name": "Private Insurance — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Aetna", "Covered with Medical Necessity", "Refer to Aetna's clinical policy bulletin for fibroid treatment."],
+            ["Cigna", "Covered with Medical Necessity", "Refer to Cigna's clinical policy for Uterine Fibroid Embolization."],
+            ["Humana", "Covered with Medical Necessity", "Refer to Humana's policy on Uterine Fibroid Surgical Treatments."]
+          ]
+        }
+      ]
+    }
+  }
+}

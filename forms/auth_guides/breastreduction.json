@@ -1,0 +1,150 @@
+{
+  "title": "Breast Reduction Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "BreastReductionAuthGuide.tsx",
+    "title": "Breast Reduction Authorization Guide",
+    "subtitle": null,
+    "cptCodes": [
+      { "code": "19318", "description": "Reduction mammaplasty", "notes": "Primary CPT for breast reduction — bilateral or unilateral" },
+      { "code": "19316", "description": "Mastopexy", "notes": "Breast lift — typically cosmetic unless combined with functional indication" },
+      { "code": "19350", "description": "Nipple/areola reconstruction", "notes": "Reconstruction of nipple/areola complex" }
+    ],
+    "icd10Codes": [
+      { "code": "N62", "description": "Hypertrophy of breast", "notes": "Primary diagnosis for macromastia / gigantomastia — most important code" },
+      { "code": "M54.5", "description": "Low back pain", "notes": "Back pain attributed to macromastia" },
+      { "code": "M54.2", "description": "Cervicalgia (neck pain)", "notes": "Neck pain attributed to macromastia" },
+      { "code": "M79.621", "description": "Pain in right upper arm", "notes": "Shoulder/arm pain from bra strap grooving" },
+      { "code": "L30.4", "description": "Erythema intertrigo", "notes": "Inframammary intertrigo / skin breakdown" },
+      { "code": "M40.04", "description": "Postural kyphosis, thoracic region", "notes": "Postural problems from macromastia" }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "overview": "Medicare follows CMS LCD L35041 for reduction mammaplasty. Coverage requires: (1) macromastia with functional symptoms, (2) estimated resection weight meeting Schnur Scale minimum for BSA, and (3) documentation of conservative treatment failure. Medicare does not cover cosmetic breast reduction. The Schnur Scale is the primary objective criterion — document estimated resection weight per breast and patient BSA.",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "Documentation of macromastia (N62) with functional symptoms",
+              "Schnur Scale: estimated resection weight ≥ minimum for patient's BSA",
+              "Conservative treatment documentation: ≥3 months physical therapy",
+              "Documentation of functional symptoms: back pain, shoulder pain, intertrigo, shoulder grooving, postural problems",
+              "Surgeon documentation of estimated resection weight per breast",
+              "BMI documentation"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Macromastia (N62) with documented functional symptoms",
+              "Estimated resection weight meets Schnur Scale minimum for BSA",
+              "Conservative treatment failure (≥3 months PT, supportive bra, NSAIDs)",
+              "Functional impairment: back pain, shoulder pain, intertrigo, postural problems"
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicare (CMS LCD L35041)", "status": "Covered", "notes": "Covered if Schnur Scale met + functional symptoms + conservative treatment failure (≥3 months PT)" }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "overview": "Medicaid coverage for reduction mammoplasty varies significantly by state. Most states follow CMS LCD L35041 criteria or similar Schnur Scale-based criteria. Prior authorization is required in most states. Some states have more restrictive criteria (e.g., requiring BMI <35 or more months of PT).",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "Documentation of macromastia with functional symptoms",
+              "Schnur Scale or equivalent weight-based criterion (varies by state)",
+              "Conservative treatment documentation",
+              "Prior authorization required in most states"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Macromastia with documented functional symptoms",
+              "Weight-based criterion met (Schnur Scale or state-specific)",
+              "Conservative treatment failure"
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicaid (state-specific)", "status": "Covered", "notes": "Coverage varies by state; most require Schnur Scale + functional symptoms + conservative treatment failure" }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private",
+        "overview": "Commercial payers typically follow CMS LCD L35041 criteria or similar. The Schnur Scale is the most commonly used objective criterion — document estimated resection weight per breast and calculate BSA. Most payers require ≥3 months of physical therapy. Document all functional symptoms with dates and severity. Some payers (e.g., Cigna) require BMI <35 or documented weight loss attempt.",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "Prior authorization required by all commercial payers",
+              "Documentation of macromastia (N62) with functional symptoms",
+              "Schnur Scale: estimated resection weight ≥ minimum for BSA (most payers use this)",
+              "Conservative treatment: ≥3–6 months physical therapy (varies by payer)",
+              "Supportive bra documentation",
+              "Weight loss attempt documentation (some payers require BMI <35 or weight loss attempt)",
+              "Surgeon documentation with estimated resection weight per breast",
+              "Photos documenting macromastia and shoulder grooving"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Macromastia with ≥2 functional symptoms (back pain, shoulder pain, intertrigo, shoulder grooving, postural problems, headaches, numbness)",
+              "Estimated resection weight meets Schnur Scale minimum for BSA",
+              "Physical therapy ≥3 months without adequate relief",
+              "Supportive bra tried without adequate relief",
+              "BMI <40 (some payers require <35)"
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "UnitedHealthcare", "status": "Covered", "notes": "Follows Schnur Scale; requires ≥3 months PT + functional symptoms; BMI <40; prior auth required" },
+          { "payer": "Aetna", "status": "Covered", "notes": "Follows Schnur Scale; requires ≥3 months PT + ≥2 functional symptoms; prior auth required" },
+          { "payer": "Cigna", "status": "Covered", "notes": "Follows Schnur Scale; requires ≥3 months PT; BMI <35 preferred; weight loss attempt if BMI >35" },
+          { "payer": "Anthem/BCBS", "status": "Covered", "notes": "Follows Schnur Scale; requires ≥3 months PT + functional symptoms; prior auth required" },
+          { "payer": "Humana", "status": "Covered", "notes": "Follows Schnur Scale criteria; conservative treatment documentation required" }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Schnur Scale — Key Authorization Tool",
+        "kind": "prose",
+        "text": "The Schnur Scale determines the minimum resection weight (grams per breast) required for insurance coverage based on the patient's body surface area (BSA). Document the estimated resection weight per breast and the patient's BSA in every prior authorization request."
+      }
+    ],
+    "raw": {
+      "markdown": "# Breast Reduction Authorization Guide\n\n## Schnur Scale — Key Authorization Tool\n\nThe Schnur Scale determines the minimum resection weight (grams per breast) required for insurance coverage based on the patient's body surface area (BSA). Document the estimated resection weight per breast and the patient's BSA in every prior authorization request.\n\n## CPT Codes — Breast Reduction\n\n| CPT | Description | Notes |\n| --- | --- | --- |\n| 19318 | Reduction mammaplasty | Primary CPT for breast reduction — bilateral or unilateral |\n| 19316 | Mastopexy | Breast lift — typically cosmetic unless combined with functional indication |\n| 19350 | Nipple/areola reconstruction | Reconstruction of nipple/areola complex |\n\n## ICD-10 Codes\n\n| ICD-10 | Description | Notes |\n| --- | --- | --- |\n| N62 | Hypertrophy of breast | Primary diagnosis for macromastia / gigantomastia — most important code |\n| M54.5 | Low back pain | Back pain attributed to macromastia |\n| M54.2 | Cervicalgia (neck pain) | Neck pain attributed to macromastia |\n| M79.621 | Pain in right upper arm | Shoulder/arm pain from bra strap grooving |\n| L30.4 | Erythema intertrigo | Inframammary intertrigo / skin breakdown |\n| M40.04 | Postural kyphosis, thoracic region | Postural problems from macromastia |\n\n## Payer Requirements\n\nPayer tabs: Medicare | Medicaid | Private\n\n### Medicare\n\n**Required Documentation**\n\n- Documentation of macromastia (N62) with functional symptoms\n- Schnur Scale: estimated resection weight ≥ minimum for patient's BSA\n- Conservative treatment documentation: ≥3 months physical therapy\n- Documentation of functional symptoms: back pain, shoulder pain, intertrigo, shoulder grooving, postural problems\n- Surgeon documentation of estimated resection weight per breast\n- BMI documentation\n\n**Medical Necessity Criteria**\n\n- Macromastia (N62) with documented functional symptoms\n- Estimated resection weight meets Schnur Scale minimum for BSA\n- Conservative treatment failure (≥3 months PT, supportive bra, NSAIDs)\n- Functional impairment: back pain, shoulder pain, intertrigo, postural problems\n\n**Reimbursement Note:** Medicare follows CMS LCD L35041 for reduction mammaplasty. Coverage requires: (1) macromastia with functional symptoms, (2) estimated resection weight meeting Schnur Scale minimum for BSA, and (3) documentation of conservative treatment failure. Medicare does not cover cosmetic breast reduction. The Schnur Scale is the primary objective criterion — document estimated resection weight per breast and patient BSA.\n\n**Known Payer Policies**\n\n- [Covered] Medicare (CMS LCD L35041): Covered if Schnur Scale met + functional symptoms + conservative treatment failure (≥3 months PT)\n\n### Medicaid\n\n**Required Documentation**\n\n- Documentation of macromastia with functional symptoms\n- Schnur Scale or equivalent weight-based criterion (varies by state)\n- Conservative treatment documentation\n- Prior authorization required in most states\n\n**Medical Necessity Criteria**\n\n- Macromastia with documented functional symptoms\n- Weight-based criterion met (Schnur Scale or state-specific)\n- Conservative treatment failure\n\n**Reimbursement Note:** Medicaid coverage for reduction mammoplasty varies significantly by state. Most states follow CMS LCD L35041 criteria or similar Schnur Scale-based criteria. Prior authorization is required in most states. Some states have more restrictive criteria (e.g., requiring BMI <35 or more months of PT).\n\n**Known Payer Policies**\n\n- [Covered] Medicaid (state-specific): Coverage varies by state; most require Schnur Scale + functional symptoms + conservative treatment failure\n\n### Private\n\n**Required Documentation**\n\n- Prior authorization required by all commercial payers\n- Documentation of macromastia (N62) with functional symptoms\n- Schnur Scale: estimated resection weight ≥ minimum for BSA (most payers use this)\n- Conservative treatment: ≥3–6 months physical therapy (varies by payer)\n- Supportive bra documentation\n- Weight loss attempt documentation (some payers require BMI <35 or weight loss attempt)\n- Surgeon documentation with estimated resection weight per breast\n- Photos documenting macromastia and shoulder grooving\n\n**Medical Necessity Criteria**\n\n- Macromastia with ≥2 functional symptoms (back pain, shoulder pain, intertrigo, shoulder grooving, postural problems, headaches, numbness)\n- Estimated resection weight meets Schnur Scale minimum for BSA\n- Physical therapy ≥3 months without adequate relief\n- Supportive bra tried without adequate relief\n- BMI <40 (some payers require <35)\n\n**Reimbursement Note:** Commercial payers typically follow CMS LCD L35041 criteria or similar. The Schnur Scale is the most commonly used objective criterion — document estimated resection weight per breast and calculate BSA. Most payers require ≥3 months of physical therapy. Document all functional symptoms with dates and severity. Some payers (e.g., Cigna) require BMI <35 or documented weight loss attempt.\n\n**Known Payer Policies**\n\n- [Covered] UnitedHealthcare: Follows Schnur Scale; requires ≥3 months PT + functional symptoms; BMI <40; prior auth required\n- [Covered] Aetna: Follows Schnur Scale; requires ≥3 months PT + ≥2 functional symptoms; prior auth required\n- [Covered] Cigna: Follows Schnur Scale; requires ≥3 months PT; BMI <35 preferred; weight loss attempt if BMI >35\n- [Covered] Anthem/BCBS: Follows Schnur Scale; requires ≥3 months PT + functional symptoms; prior auth required\n- [Covered] Humana: Follows Schnur Scale criteria; conservative treatment documentation required\n",
+      "tables": [
+        {
+          "name": "CPT Codes — Breast Reduction",
+          "header": ["CPT", "Description", "Notes"],
+          "rows": [
+            ["19318", "Reduction mammaplasty", "Primary CPT for breast reduction — bilateral or unilateral"],
+            ["19316", "Mastopexy", "Breast lift — typically cosmetic unless combined with functional indication"],
+            ["19350", "Nipple/areola reconstruction", "Reconstruction of nipple/areola complex"]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["ICD-10", "Description", "Notes"],
+          "rows": [
+            ["N62", "Hypertrophy of breast", "Primary diagnosis for macromastia / gigantomastia — most important code"],
+            ["M54.5", "Low back pain", "Back pain attributed to macromastia"],
+            ["M54.2", "Cervicalgia (neck pain)", "Neck pain attributed to macromastia"],
+            ["M79.621", "Pain in right upper arm", "Shoulder/arm pain from bra strap grooving"],
+            ["L30.4", "Erythema intertrigo", "Inframammary intertrigo / skin breakdown"],
+            ["M40.04", "Postural kyphosis, thoracic region", "Postural problems from macromastia"]
+          ]
+        }
+      ]
+    }
+  }
+}

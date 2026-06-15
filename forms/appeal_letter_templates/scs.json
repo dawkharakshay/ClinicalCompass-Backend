@@ -1,0 +1,30 @@
+{
+  "title": "Spinal Cord Stimulator Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "63650, 63655, 63685, 63688, 63663, 95970, 95971",
+      "credentials": "[Credentials]",
+      "icd_codes": "G89.29, G89.21, M54.4, M96.1, G57.10, I73.9, G54.2, G89.28",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\nRe: Medical Necessity Appeal — Spinal Cord Stimulator (SCS) SCS Trial\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\n\nDear Medical Director / Utilization Review Committee,\n\nI am writing to formally appeal the denial of prior authorization for a Spinal Cord Stimulator (SCS) SCS Trial for my patient. This procedure is medically necessary and is supported by the highest level of evidence from current multisociety guidelines, randomized controlled trials, and CMS coverage policy.\n\nCLINICAL SUMMARY\n\nMy patient presents with chronic neuropathic pain requiring [urgency] neuromodulation therapy. Following comprehensive clinical evaluation using the SCS Compass™ clinical decision support tool (based on NANS and ASIPP guidelines), the recommended intervention is: [SCS Recommendation].\n\nPhase: SCS Trial\n\n\n\nGUIDELINE SUPPORT\n\nThis recommendation is based on the following evidence-based guidelines and peer-reviewed literature:\n\n1. PROCESS Trial (Kumar K et al., Neurosurgery 2007;60:1254–1261): SCS significantly superior to conventional medical management for neuropathic pain at 6 and 24 months — the highest level of evidence for SCS efficacy.\n\n2. Randomized Trial (North RB et al., Spine 2005;30:2206–2212): SCS more effective and less costly than reoperation for failed back surgery syndrome.\n\n3. NEJM Randomized Trial (Kemler MA et al., 2000;343:618–624): Significant pain reduction and improved quality of life with SCS vs. physical therapy alone for CRPS.\n\n4. NANS Appropriate Use Criteria (Deer TR et al., Neuromodulation 2017;20:310–339): Comprehensive multisociety consensus supporting SCS for FBSS, CRPS, and refractory neuropathic pain.\n\n5. CMS Coverage Policy: SCS covered for chronic intractable pain of the trunk or limbs after failure of conventional therapy.\n\nMEDICAL NECESSITY\n\nWithout this intervention, my patient faces:\n• Continued severe chronic neuropathic pain refractory to all conservative measures\n• Ongoing high-dose opioid requirements with associated risks\n• Significant functional impairment, disability, and reduced quality of life\n• Increased risk of depression, anxiety, and social isolation from uncontrolled chronic pain\n\nConservative measures including physical therapy, pharmacotherapy (including opioids, anticonvulsants, and antidepressants), interventional procedures, and psychological support have been exhausted without adequate pain relief. SCS is the appropriate next intervention per multisociety guidelines.\n\nCOST-EFFECTIVENESS\n\nMultiple health economic analyses have demonstrated that SCS is cost-effective compared to continued conventional medical management for FBSS and CRPS. Approval of SCS will reduce long-term healthcare utilization, medication costs, and repeated procedural interventions.\n\nREQUESTED ACTION\n\nI respectfully request that you overturn the denial and authorize the requested SCS SCS Trial. I am available to discuss this case further and can provide comprehensive documentation including pain scores, functional assessments, prior treatment records, and psychological evaluation upon request.\n\n{{additional_clinical_notes}}\n\nSincerely,\n\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

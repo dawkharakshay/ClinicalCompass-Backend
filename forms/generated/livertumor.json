@@ -1,0 +1,259 @@
+{
+  "title": "Liver Tumor Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "livertumor",
+    "hiddenDefaults": {
+      "subcapsular": false
+    },
+    "steps": [
+      {
+        "id": "tumor-characteristics",
+        "shortLabel": "Tumor Characteristics",
+        "title": "Tumor Characteristics",
+        "fields": [
+          {
+            "id": "tumor-type",
+            "name": "tumorType",
+            "label": "Tumor Type",
+            "type": "select",
+            "defaultValue": "hcc",
+            "options": [
+              { "label": "HCC (Hepatocellular Carcinoma)", "value": "hcc" },
+              { "label": "iCCA (Intrahepatic Cholangiocarcinoma)", "value": "icca" },
+              { "label": "Metastatic (Colorectal / Other)", "value": "metastatic" },
+              { "label": "Unknown / Under evaluation", "value": "unknown" }
+            ]
+          },
+          {
+            "id": "tumor-count",
+            "name": "tumorCount",
+            "label": "Number of Lesions",
+            "type": "slider",
+            "defaultValue": 1
+          },
+          {
+            "id": "max-tumor-size",
+            "name": "maxTumorSize",
+            "label": "Largest Lesion",
+            "type": "slider",
+            "defaultValue": 3,
+            "unit": "cm"
+          },
+          {
+            "id": "vascular-invasion",
+            "name": "vascularInvasion",
+            "label": "Vascular Invasion",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "None", "value": "none" },
+              { "label": "Microvascular invasion", "value": "micro" },
+              { "label": "Macrovascular — branch portal vein", "value": "macro_branch" },
+              { "label": "Macrovascular — main portal vein / hepatic vein", "value": "macro_main" }
+            ]
+          },
+          {
+            "id": "extrahepatic",
+            "name": "extrahepatic",
+            "label": "Extrahepatic Disease",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "afp-level",
+            "name": "afpLevel",
+            "label": "AFP Level",
+            "type": "slider",
+            "defaultValue": 50,
+            "unit": "ng/mL"
+          },
+          {
+            "id": "adjacent-vessel",
+            "name": "adjacentVessel",
+            "label": "Adjacent to Major Vessel (<1 cm)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "peri-hilar",
+            "name": "periHilar",
+            "label": "Perihilar Location",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "liver-function",
+        "shortLabel": "Liver Function",
+        "title": "Liver Function Assessment",
+        "fields": [
+          {
+            "id": "child-pugh",
+            "name": "childPugh",
+            "label": "Child-Pugh Score",
+            "type": "select",
+            "defaultValue": "A5",
+            "options": [
+              { "label": "A5 — Well-compensated", "value": "A5" },
+              { "label": "A6 — Well-compensated", "value": "A6" },
+              { "label": "B7 — Significant dysfunction", "value": "B7" },
+              { "label": "B8 — Significant dysfunction", "value": "B8" },
+              { "label": "B9 — Significant dysfunction", "value": "B9" },
+              { "label": "C10 — Decompensated", "value": "C10" },
+              { "label": "C11 — Decompensated", "value": "C11" },
+              { "label": "C12 — Decompensated", "value": "C12" },
+              { "label": "C13 — Decompensated", "value": "C13" },
+              { "label": "C14 — Decompensated", "value": "C14" },
+              { "label": "C15 — Decompensated", "value": "C15" }
+            ]
+          },
+          {
+            "id": "albi-grade",
+            "name": "albiGrade",
+            "label": "ALBI Grade",
+            "type": "select",
+            "defaultValue": 1,
+            "options": [
+              { "label": "Grade 1 — Excellent function (ALBI ≤-2.60)", "value": 1 },
+              { "label": "Grade 2 — Moderate function (-2.60 to -1.39)", "value": 2 },
+              { "label": "Grade 3 — Poor function (>-1.39)", "value": 3 }
+            ]
+          },
+          {
+            "id": "portal-htn",
+            "name": "portalHTN",
+            "label": "Portal Hypertension",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "None (HVPG <6 mmHg)", "value": "none" },
+              { "label": "Clinically significant (HVPG 6-10 mmHg)", "value": "clinically_significant" },
+              { "label": "Severe (HVPG >10 mmHg / varices / splenomegaly)", "value": "severe" }
+            ]
+          },
+          {
+            "id": "tace-suitability",
+            "name": "taceSuitability",
+            "label": "TACE Suitability",
+            "type": "select",
+            "defaultValue": "suitable",
+            "options": [
+              { "label": "Suitable for TACE", "value": "suitable" },
+              { "label": "Unsuitable — Infiltrative/diffuse pattern", "value": "unsuitable_infiltrative" },
+              { "label": "Unsuitable — Portal vein occlusion", "value": "unsuitable_portal_occlusion" },
+              { "label": "Unsuitable — Liver function (Child-Pugh B/C)", "value": "unsuitable_liver_function" }
+            ]
+          },
+          {
+            "id": "future-liver-remnant",
+            "name": "futureLiverRemnant",
+            "label": "Future Liver Remnant",
+            "type": "slider",
+            "defaultValue": 0,
+            "unit": "%"
+          }
+        ]
+      },
+      {
+        "id": "patient-factors",
+        "shortLabel": "Patient Factors",
+        "title": "Patient Factors & Transplant Eligibility",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age",
+            "type": "slider",
+            "defaultValue": 0,
+            "unit": "years"
+          },
+          {
+            "id": "ecog-ps",
+            "name": "ecogPS",
+            "label": "ECOG Performance Status",
+            "type": "select",
+            "defaultValue": 0,
+            "options": [
+              { "label": "0 — Fully active", "value": 0 },
+              { "label": "1 — Restricted but ambulatory", "value": 1 },
+              { "label": "2 — Ambulatory, limited self-care", "value": 2 },
+              { "label": "3 — Limited self-care, >50% in bed", "value": 3 },
+              { "label": "4 — Completely disabled", "value": 4 }
+            ]
+          },
+          {
+            "id": "transplant-eligible",
+            "name": "transplantEligible",
+            "label": "Transplant Eligible",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "milan-criteria",
+            "name": "milanCriteria",
+            "label": "Within Milan Criteria",
+            "type": "radio",
+            "defaultValue": true,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "prior-liver-resection",
+            "name": "priorLiverResection",
+            "label": "Prior Liver Resection",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "prior-ablation",
+            "name": "priorAblation",
+            "label": "Prior Ablation",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "prior-tace",
+            "name": "priorTACE",
+            "label": "Prior TACE",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Blepharoplasty / Ptosis Repair Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "15822, 15823, 15820, 15821, 67900, 67901, 67902, 67903, 67904, 67906, 67908",
+      "credentials": "[Credentials]",
+      "icd_codes": "H02.401, H02.402, H02.403, H02.831, H02.832, H02.833, H02.101, H02.001, H02.20A",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\nRe: Medical Necessity Appeal — Blepharoplasty / Ptosis Repair\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\n\nDear Medical Director / Utilization Review Committee,\n\nI am writing to formally appeal the denial of prior authorization for functional blepharoplasty / ptosis repair for my patient. This procedure is medically necessary and is supported by CMS LCD L34462, the American Academy of Ophthalmology Preferred Practice Pattern for Ptosis (2018), and the ASOPRS Position Statement on Functional Blepharoplasty (2019).\n\nCLINICAL ASSESSMENT SUMMARY:\nOur Clinical Compass Blepharoplasty Decision Support tool assessed this patient as: [Recommendation]\n\nFunctional Criteria Met: Borderline — see documentation below\nCoverage Expectation: \n\n\n\nCLINICAL INDICATION:\nThis patient presents with [UPPER EYELID DERMATOCHALASIS / PTOSIS / ECTROPION / ENTROPION — specify] causing functional visual impairment. The eyelid condition has resulted in the following documented functional deficits:\n\n• Visual obstruction: [DESCRIBE — skin/ptosis obstructing superior visual field]\n• Functional limitations: [DESCRIBE — difficulty reading, driving, performing daily activities]\n• Frontalis overuse: [DESCRIBE — if applicable — compensatory brow elevation causing headaches, brow ache]\n• [ADD ADDITIONAL FINDINGS AS APPLICABLE]\n\nOBJECTIVE MEASUREMENTS:\n• Visual field testing: [DESCRIBE — Humphrey / Goldmann perimetry results]\n  - Superior visual field loss (natural position): [DEGREES]°\n  - Superior visual field loss (with eyelid taped): [DEGREES]° (improvement with taping confirms eyelid etiology)\n• MRD1 (Marginal Reflex Distance): [VALUE] mm [Normal: 4-5mm; Ptosis: ≤2mm]\n• Levator function: [VALUE] mm excursion [Poor: <4mm, Fair: 4-7mm, Good: >7mm]\n• Photographs: [CONFIRM ATTACHED — document eyelid position and visual obstruction]\n\nFUNCTIONAL CRITERIA MET:\nPer CMS LCD L34462, functional blepharoplasty is covered when:\n1. Superior visual field loss ≥12° on perimetry — [Patient demonstrates [VALUE]° superior visual field loss]\n2. For ptosis: MRD1 ≤2mm — [Patient's MRD1 is [VALUE] mm]\n3. Functional impairment documented — [Patient has documented difficulty with [ACTIVITIES]]\n\nEVIDENCE-BASED JUSTIFICATION:\n\n1. CMS LCD L34462:\nCMS LCD L34462 establishes that upper blepharoplasty is covered when visual field testing demonstrates ≥12° superior visual field defect in the natural eyelid position. Ptosis repair is covered when MRD1 ≤2mm or when visual field criteria are met. This patient [MEETS / BORDERLINE MEETS] these criteria as documented above.\n\n2. AAO PREFERRED PRACTICE PATTERN — PTOSIS (2018):\nThe American Academy of Ophthalmology Preferred Practice Pattern for Ptosis (2018) classifies ptosis as severe when MRD1 ≤1mm, moderate when MRD1 2mm, and mild when MRD1 3mm. Functional ptosis repair is indicated for moderate-to-severe ptosis (MRD1 ≤2mm) or when ptosis causes functional visual impairment.\n\n3. OUTCOMES EVIDENCE:\nCahill et al. (Ophthalmology 2011;118:2510-2517) demonstrated significant improvement in functional visual field and quality of life following upper blepharoplasty and ptosis repair in patients meeting functional criteria. Denial of this procedure will result in continued visual impairment and progressive functional limitation.\n\nADDITIONAL CLINICAL NOTES:\n{{additional_clinical_notes}}\n\nIn summary, functional blepharoplasty / ptosis repair is medically necessary for this patient based on documented visual field impairment, objective eyelid measurements, and functional limitations consistent with CMS LCD L34462 criteria. I respectfully request approval and am available for peer-to-peer review.\n\nSincerely,\n\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

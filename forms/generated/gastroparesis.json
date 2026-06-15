@@ -1,0 +1,290 @@
+{
+  "title": "Gastroparesis Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "gastroparesis",
+    "hiddenDefaults": {
+      "hasPostprandialFullness": true,
+      "hasPriorGastricSurgery": false,
+      "isOnDomperidone": false,
+      "isOnProkinetic": false,
+      "isOnAntiemetic": false,
+      "hasParkinson": false,
+      "hasPriorPyloroplasty": false
+    },
+    "steps": [
+      {
+        "id": "diagnosis-symptoms",
+        "shortLabel": "Diagnosis & Symptoms",
+        "title": "Diagnosis & Symptoms",
+        "fields": [
+          {
+            "id": "diagnostic-status",
+            "name": "diagnosticStatus",
+            "label": "Diagnostic Status",
+            "type": "select",
+            "required": false,
+            "defaultValue": "ges_4h_confirmed",
+            "options": [
+              { "label": "Not Yet Tested", "value": "not_tested" },
+              { "label": "Confirmed by 4-Hour GES Scintigraphy", "value": "ges_4h_confirmed" },
+              { "label": "2-Hour GES Only (insufficient)", "value": "ges_2h_only" },
+              { "label": "Wireless Motility Capsule", "value": "wireless_motility_capsule" },
+              { "label": "Breath Test", "value": "breath_test" },
+              { "label": "Clinical Diagnosis Only", "value": "clinical_diagnosis_only" }
+            ]
+          },
+          {
+            "id": "etiology",
+            "name": "etiology",
+            "label": "Etiology",
+            "type": "select",
+            "required": false,
+            "defaultValue": "diabetic",
+            "options": [
+              { "label": "Diabetic", "value": "diabetic" },
+              { "label": "Post-Surgical", "value": "post_surgical" },
+              { "label": "Idiopathic", "value": "idiopathic" },
+              { "label": "Post-Viral", "value": "post_viral" },
+              { "label": "Autoimmune", "value": "autoimmune" },
+              { "label": "Parkinson's Disease", "value": "parkinson" },
+              { "label": "Connective Tissue Disease", "value": "connective_tissue" },
+              { "label": "Medication-Induced", "value": "medication_induced" }
+            ]
+          },
+          {
+            "id": "severity",
+            "name": "severity",
+            "label": "Severity",
+            "type": "select",
+            "required": false,
+            "defaultValue": "moderate",
+            "options": [
+              { "label": "Mild — Manageable symptoms, no hospitalizations", "value": "mild" },
+              { "label": "Moderate — Frequent symptoms, some hospitalizations", "value": "moderate" },
+              { "label": "Severe — Refractory, frequent hospitalizations, nutritional compromise", "value": "severe" }
+            ]
+          },
+          {
+            "id": "gastric-retention-4h",
+            "name": "gastricRetentionPercent4h",
+            "label": "Gastric Retention at 4 Hours (%)",
+            "type": "number",
+            "required": false,
+            "keyboardType": "decimal",
+            "unit": "%"
+          },
+          {
+            "id": "has-nausea",
+            "name": "hasNausea",
+            "label": "Nausea",
+            "type": "switch",
+            "required": false,
+            "defaultValue": true
+          },
+          {
+            "id": "has-vomiting",
+            "name": "hasVomiting",
+            "label": "Vomiting",
+            "type": "switch",
+            "required": false,
+            "defaultValue": true
+          },
+          {
+            "id": "has-early-fullness",
+            "name": "hasEarlyFullness",
+            "label": "Early Satiety / Fullness",
+            "type": "switch",
+            "required": false,
+            "defaultValue": true
+          },
+          {
+            "id": "has-abdominal-pain",
+            "name": "hasAbdominalPain",
+            "label": "Predominant Abdominal Pain",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-type1-diabetes",
+            "name": "hasType1Diabetes",
+            "label": "Type 1 Diabetes",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-type2-diabetes",
+            "name": "hasType2Diabetes",
+            "label": "Type 2 Diabetes",
+            "type": "switch",
+            "required": false,
+            "defaultValue": true
+          }
+        ]
+      },
+      {
+        "id": "severity-nutrition",
+        "shortLabel": "Severity & Nutrition",
+        "title": "Severity & Nutrition",
+        "fields": [
+          {
+            "id": "has-hospitalizations",
+            "name": "hasHospitalizationsInPastYear",
+            "label": "Hospitalizations in Past Year",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "hospitalization-count",
+            "name": "hospitalizationCount",
+            "label": "Number of Hospitalizations",
+            "type": "number",
+            "required": false,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "hasHospitalizationsInPastYear", "op": "truthy" }
+          },
+          {
+            "id": "has-weight-loss",
+            "name": "hasWeightLoss",
+            "label": "Significant Weight Loss",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-dehydration",
+            "name": "hasDehydration",
+            "label": "Dehydration",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "requires-nutritional-support",
+            "name": "requiresNutritionalSupport",
+            "label": "Requires Nutritional Support (tube feeds/TPN)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-anxiety-depression",
+            "name": "hasAnxietyDepression",
+            "label": "Anxiety or Depression",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-narcotic-bowel-syndrome",
+            "name": "hasNarcoticBowelSyndrome",
+            "label": "Narcotic Bowel Syndrome",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "medications-interventions",
+        "shortLabel": "Medications & Interventions",
+        "title": "Medications & Interventions",
+        "fields": [
+          {
+            "id": "is-on-opioids",
+            "name": "isOnOpioids",
+            "label": "On Opioids (worsens gastroparesis)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "is-on-anticholinergics",
+            "name": "isOnAnticholinergics",
+            "label": "On Anticholinergics (worsens gastroparesis)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "is-on-glp1-agonist",
+            "name": "isOnGLP1Agonist",
+            "label": "On GLP-1 Agonist (delays gastric emptying)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "is-on-metoclopramide",
+            "name": "isOnMetoclopramide",
+            "label": "On Metoclopramide",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "is-on-erythromycin",
+            "name": "isOnErythromycin",
+            "label": "On Erythromycin",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-qt-prolongation",
+            "name": "hasQTProlongation",
+            "label": "QT Prolongation (ECG)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-tardive-dyskinesia",
+            "name": "hasTardivedyskinesia",
+            "label": "Tardive Dyskinesia (metoclopramide contraindicated)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-prior-ges",
+            "name": "hasPriorGES",
+            "label": "Prior Gastric Electrical Stimulation (Enterra)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-prior-gpoem",
+            "name": "hasPriorGPOEM",
+            "label": "Prior G-POEM",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-prior-botox-injection",
+            "name": "hasPriorBotoxInjection",
+            "label": "Prior Botox Injection (pylorus)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-prior-dietary-modification",
+            "name": "hasPriorDietaryModification",
+            "label": "Prior Dietary Modification Attempted",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

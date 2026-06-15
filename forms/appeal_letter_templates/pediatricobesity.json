@@ -1,0 +1,30 @@
+{
+  "title": "Pediatric Obesity Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "99213, 99401, G0447",
+      "credentials": "[Credentials]",
+      "icd_codes": "E66.01, Z68.53, Z68.52, Z68.51",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — Intensive Health Behavior Intervention / Pharmacotherapy / Bariatric Surgery for Pediatric Obesity\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\nDear Medical Director / Utilization Review Committee,\n\nI am writing to appeal the denial of coverage for intensive health behavior intervention for my patient, {{patient_name}}, who presents with elevated BMI percentile and associated health risks. This treatment is medically necessary and aligns with established clinical guidelines for pediatric obesity management.\n\nClinical Summary:\n{{patient_name}} is a [AGE]-year-old [GENDER] with a diagnosis of pediatric obesity (ICD-10: E66.01, E66.09, Z68.54, Z68.55). The patient's condition is complex, with [relevant co-morbidities, e.g., prediabetes, dyslipidemia, sleep apnea]. Given the patient's clinical presentation, intensive health behavior intervention is crucial to prevent further progression of obesity-related complications and improve long-term health outcomes. Intensive Health Behavior Intervention is not indicated, Pharmacotherapy is not indicated, and Bariatric Surgery is not indicated.\n\nGuideline Support:\n1.  The AAP Clinical Practice Guideline for the Evaluation and Treatment of Children and Adolescents with Obesity (2023) recommends comprehensive, family-centered, and evidence-based treatment for pediatric obesity, including intensive health behavior and pharmacotherapy for eligible adolescents.\n2.  The ASMBS Pediatric Metabolic and Bariatric Surgery Guidelines (2018) provide criteria for considering bariatric surgery in adolescents with severe obesity and co-morbidities, emphasizing its role in achieving significant and sustained weight loss.\n3.  The Endocrine Society Clinical Practice Guideline on Pediatric Obesity (2017) supports a multi-faceted approach to pediatric obesity, including lifestyle interventions and pharmacologic agents where appropriate.\n4.  The USPSTF Recommendation on Weight Loss to Prevent Obesity-Related Morbidity in Children (2017) highlights the importance of effective interventions to mitigate the long-term health consequences of childhood obesity.\n\nMedical Necessity:\nBased on the patient's clinical status and the robust evidence from multiple clinical guidelines, the requested intensive health behavior intervention is medically necessary. The rationale for this treatment is based on current clinical evidence and patient-specific factors, supported by an strong level of evidence. Delaying or denying this essential treatment would significantly jeopardize the patient's health and well-being.\n\nRisk Without Treatment:\nWithout appropriate intervention, {{patient_name}} is at high risk for developing or exacerbating severe obesity-related complications, including type 2 diabetes, cardiovascular disease, non-alcoholic fatty liver disease, and psychosocial issues. These conditions can lead to irreversible health damage and significantly reduce quality of life.\n\nRequested Action:\nI urge you to reconsider your denial and approve coverage for the recommended intensive health behavior intervention for {{patient_name}}. Prompt authorization of this treatment is critical for the patient's health. Please contact my office at {{practice_phone}} if you require any further information.\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

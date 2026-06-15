@@ -1,0 +1,162 @@
+{
+  "title": "Artificial Disc Replacement Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assess",
+    "logicKey": "artificialdisc",
+    "hiddenDefaults": {
+      "symptomDurationMonths": ""
+    },
+    "steps": [
+      {
+        "id": "patient-info",
+        "shortLabel": "Patient Info",
+        "title": "Patient Information",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "number",
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "pain-score",
+            "name": "painScore",
+            "label": "Pain Score (0-10)",
+            "type": "number",
+            "required": true,
+            "defaultValue": "",
+            "min": 0,
+            "max": 10,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "disc-level",
+            "name": "discLevel",
+            "label": "Disc Level",
+            "type": "buttongroup",
+            "required": true,
+            "defaultValue": "",
+            "options": [
+              { "label": "Cervical", "value": "cervical" },
+              { "label": "Lumbar", "value": "lumbar" }
+            ]
+          },
+          {
+            "id": "affected-levels",
+            "name": "affectedLevels",
+            "label": "Affected Levels (e.g., C5-6, L4-5)",
+            "type": "text",
+            "defaultValue": ""
+          }
+        ]
+      },
+      {
+        "id": "clinical-assessment",
+        "shortLabel": "Clinical Assessment",
+        "title": "Clinical Assessment",
+        "fields": [
+          {
+            "id": "conservative-therapy-months",
+            "name": "conservativeTherapyMonths",
+            "label": "Conservative Therapy Duration (months)",
+            "type": "number",
+            "required": true,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "neurologic-deficits",
+            "name": "neurologicDeficits",
+            "label": "Neurologic Deficits",
+            "type": "multiselect",
+            "defaultValue": [],
+            "options": [
+              { "label": "Radiculopathy (dermatomal pain/paresthesia)", "value": "radiculopathy" },
+              { "label": "Motor weakness (myotomal distribution)", "value": "motor-weakness" },
+              { "label": "Myelopathy (cervical — gait, hand function)", "value": "myelopathy" }
+            ]
+          },
+          {
+            "id": "comorbidities",
+            "name": "comorbidities",
+            "label": "Conservative Therapies Tried",
+            "type": "multiselect",
+            "defaultValue": [],
+            "options": [
+              { "label": "Physical therapy (≥6 weeks)", "value": "pt" },
+              { "label": "NSAIDs / analgesics (≥4 weeks)", "value": "nsaids" },
+              { "label": "Epidural steroid injection(s)", "value": "epidural" },
+              { "label": "Activity modification", "value": "activity-mod" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "imaging-contraindications",
+        "shortLabel": "Imaging & Contraindications",
+        "title": "Imaging & Contraindications",
+        "fields": [
+          {
+            "id": "imaging-findings",
+            "name": "imagingFindings",
+            "label": "Imaging Findings (MRI required)",
+            "type": "multiselect",
+            "defaultValue": [],
+            "options": [
+              { "label": "Disc herniation with nerve root compression", "value": "disc-herniation" },
+              { "label": "Degenerative disc disease (DDD) at 1-2 levels", "value": "disc-degeneration" },
+              { "label": "Foraminal stenosis", "value": "foraminal-stenosis" },
+              { "label": "Central canal stenosis", "value": "central-stenosis" }
+            ]
+          },
+          {
+            "id": "osteoporosis",
+            "name": "osteoporosis",
+            "label": "Osteoporosis (T-score ≤ -2.5) — absolute contraindication",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "active-infection",
+            "name": "activeInfection",
+            "label": "Active infection",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "instability",
+            "name": "instability",
+            "label": "Segmental instability",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "spondylolisthesis",
+            "name": "spondylolisthesis",
+            "label": "Spondylolisthesis at affected level",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "facet-arthrosis",
+            "name": "facetArthrosis",
+            "label": "Significant facet arthrosis",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-spine-surgery",
+            "name": "priorSpineSurgery",
+            "label": "Prior surgery at same level",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

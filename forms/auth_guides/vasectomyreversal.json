@@ -1,0 +1,106 @@
+{
+  "title": "Vasectomy Reversal Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "VasectomyReversalAuthGuide.tsx",
+    "title": "Vasectomy Reversal — Authorization Guide",
+    "subtitle": "CPT Codes · ICD-10 · Payer Requirements",
+    "cptCodes": [
+      {"code": "55400", "description": "Vasovasostomy, vasovasorrhaphy", "type": "Primary"},
+      {"code": "54900", "description": "Epididymovasostomy, unilateral", "type": "Primary"},
+      {"code": "54901", "description": "Epididymovasostomy, bilateral", "type": "Primary"},
+      {"code": "55250", "description": "Vasectomy, unilateral or bilateral (separate procedure), including postoperative semen examination(s)", "type": "Related"},
+      {"code": "76872", "description": "Ultrasound, transrectal", "type": "Diagnostic"},
+      {"code": "89300", "description": "Semen analysis; presence and/or motility of sperm including Huhner test (post coital)", "type": "Diagnostic"}
+    ],
+    "icd10Codes": [
+      {"code": "N46.01", "description": "Organic azoospermia"},
+      {"code": "N46.021", "description": "Azoospermia due to obstructive causes"},
+      {"code": "N46.029", "description": "Azoospermia due to other obstructive causes"},
+      {"code": "N46.11", "description": "Organic oligospermia"},
+      {"code": "Z30.2", "description": "Encounter for sterilization (vasectomy status)"},
+      {"code": "Z31.0", "description": "Encounter for reversal of previous sterilization"},
+      {"code": "N50.89", "description": "Other specified disorders of male genital organs"}
+    ],
+    "payers": [],
+    "customSections": [
+      {
+        "heading": "Coverage Landscape — Common Denial Reasons",
+        "kind": "list",
+        "items": [
+          "\"Elective/voluntary sterilization reversal\" exclusion",
+          "\"Infertility treatment\" blanket exclusion",
+          "\"Not medically necessary\" (fertility not a covered benefit)"
+        ]
+      },
+      {
+        "heading": "Coverage Landscape — Strongest Coverage Arguments",
+        "kind": "list",
+        "items": [
+          "State mandate for infertility coverage (15+ states require coverage)",
+          "Obstructive azoospermia as a diagnosable medical condition (N46.021)",
+          "Reversal is more cost-effective than IVF/ICSI over multiple cycles",
+          "AUA/ASRM guidelines support reversal as first-line treatment for obstructive azoospermia"
+        ]
+      },
+      {
+        "heading": "Prior Authorization Requirements — Required Documentation",
+        "kind": "list",
+        "items": [
+          "Semen analysis (azoospermia or severe oligospermia)",
+          "Vasectomy operative report or confirmation of vasectomy status",
+          "Years since vasectomy (obstructive interval)",
+          "Female partner age and fertility evaluation results",
+          "FSH, LH, testosterone levels",
+          "Scrotal ultrasound if epididymal obstruction suspected",
+          "Letter of medical necessity from urologist/reproductive specialist"
+        ]
+      },
+      {
+        "heading": "Prior Authorization Requirements — Medical Necessity Criteria",
+        "kind": "list",
+        "items": [
+          "Documented azoospermia on ≥2 semen analyses",
+          "Obstructive etiology confirmed (normal FSH, normal testicular volume)",
+          "Desire for biological paternity with current partner",
+          "Female partner fertility evaluation completed (or documented attempt)",
+          "Microsurgical expertise available (fellowship-trained microsurgeon)"
+        ]
+      },
+      {
+        "heading": "Prior Authorization Requirements — Cost-Effectiveness Argument",
+        "kind": "prose",
+        "text": "Vasectomy reversal ($5,000–$15,000 one-time) is significantly more cost-effective than IVF/ICSI ($12,000–$20,000 per cycle) when the female partner is <37 years and obstructive interval is <15 years. ASRM Practice Committee guidelines explicitly recommend reversal as first-line treatment in appropriate candidates."
+      }
+    ],
+    "raw": {
+      "markdown": "# Vasectomy Reversal — Authorization Guide\n\n_Subtitle: CPT Codes · ICD-10 · Payer Requirements_\n\n_backHref: /vasectomy-reversal_\n\n## CPT Codes\n\n| CPT | Description | Type |\n| --- | --- | --- |\n| 55400 | Vasovasostomy, vasovasorrhaphy | Primary |\n| 54900 | Epididymovasostomy, unilateral | Primary |\n| 54901 | Epididymovasostomy, bilateral | Primary |\n| 55250 | Vasectomy, unilateral or bilateral (separate procedure), including postoperative semen examination(s) | Related |\n| 76872 | Ultrasound, transrectal | Diagnostic |\n| 89300 | Semen analysis; presence and/or motility of sperm including Huhner test (post coital) | Diagnostic |\n\n## ICD-10 Diagnoses\n\n| ICD-10 | Description |\n| --- | --- |\n| N46.01 | Organic azoospermia |\n| N46.021 | Azoospermia due to obstructive causes |\n| N46.029 | Azoospermia due to other obstructive causes |\n| N46.11 | Organic oligospermia |\n| Z30.2 | Encounter for sterilization (vasectomy status) |\n| Z31.0 | Encounter for reversal of previous sterilization |\n| N50.89 | Other specified disorders of male genital organs |\n\n## Coverage Landscape\n\n### Common Denial Reasons\n\n- \"Elective/voluntary sterilization reversal\" exclusion\n- \"Infertility treatment\" blanket exclusion\n- \"Not medically necessary\" (fertility not a covered benefit)\n\n### Strongest Coverage Arguments\n\n- State mandate for infertility coverage (15+ states require coverage)\n- Obstructive azoospermia as a diagnosable medical condition (N46.021)\n- Reversal is more cost-effective than IVF/ICSI over multiple cycles\n- AUA/ASRM guidelines support reversal as first-line treatment for obstructive azoospermia\n\n## Prior Authorization Requirements\n\n### Required Documentation\n\n- Semen analysis (azoospermia or severe oligospermia)\n- Vasectomy operative report or confirmation of vasectomy status\n- Years since vasectomy (obstructive interval)\n- Female partner age and fertility evaluation results\n- FSH, LH, testosterone levels\n- Scrotal ultrasound if epididymal obstruction suspected\n- Letter of medical necessity from urologist/reproductive specialist\n\n### Medical Necessity Criteria\n\n- Documented azoospermia on ≥2 semen analyses\n- Obstructive etiology confirmed (normal FSH, normal testicular volume)\n- Desire for biological paternity with current partner\n- Female partner fertility evaluation completed (or documented attempt)\n- Microsurgical expertise available (fellowship-trained microsurgeon)\n\n### Cost-Effectiveness Argument\n\nVasectomy reversal ($5,000–$15,000 one-time) is significantly more cost-effective than IVF/ICSI ($12,000–$20,000 per cycle) when the female partner is <37 years and obstructive interval is <15 years. ASRM Practice Committee guidelines explicitly recommend reversal as first-line treatment in appropriate candidates.\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["CPT", "Description", "Type"],
+          "rows": [
+            ["55400", "Vasovasostomy, vasovasorrhaphy", "Primary"],
+            ["54900", "Epididymovasostomy, unilateral", "Primary"],
+            ["54901", "Epididymovasostomy, bilateral", "Primary"],
+            ["55250", "Vasectomy, unilateral or bilateral (separate procedure), including postoperative semen examination(s)", "Related"],
+            ["76872", "Ultrasound, transrectal", "Diagnostic"],
+            ["89300", "Semen analysis; presence and/or motility of sperm including Huhner test (post coital)", "Diagnostic"]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnoses",
+          "header": ["ICD-10", "Description"],
+          "rows": [
+            ["N46.01", "Organic azoospermia"],
+            ["N46.021", "Azoospermia due to obstructive causes"],
+            ["N46.029", "Azoospermia due to other obstructive causes"],
+            ["N46.11", "Organic oligospermia"],
+            ["Z30.2", "Encounter for sterilization (vasectomy status)"],
+            ["Z31.0", "Encounter for reversal of previous sterilization"],
+            ["N50.89", "Other specified disorders of male genital organs"]
+          ]
+        }
+      ]
+    }
+  }
+}

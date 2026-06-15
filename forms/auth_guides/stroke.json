@@ -1,0 +1,381 @@
+{
+  "title": "Acute Ischemic Stroke",
+  "auth_guide": {
+    "sourceFile": "StrokeAuthGuide.tsx",
+    "title": "Stroke Clinical Compass",
+    "subtitle": "Acute Stroke Intervention Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "37195",
+        "description": "Thrombolysis, cerebral, by intravenous infusion, including all associated radiological supervision and interpretation",
+        "device": "IV infusion of thrombolytic agent (e.g., tPA)",
+        "access": "Intravenous",
+        "rvu": "15.50",
+        "includes": [
+          "Initial patient evaluation and management related to thrombolysis",
+          "Monitoring of patient during infusion",
+          "Associated diagnostic imaging (e.g., CT, MRI) for patient selection and follow-up"
+        ],
+        "note": "CPT 37195 is typically used for intravenous thrombolysis in acute ischemic stroke. Ensure documentation supports medical necessity and timing criteria."
+      },
+      {
+        "code": "61645",
+        "description": "Percutaneous intracranial mechanical thrombectomy, arterial, for acute ischemic stroke, including all associated radiological supervision and interpretation",
+        "device": "Mechanical thrombectomy device (e.g., stent retriever, aspiration catheter)",
+        "access": "Intra-arterial (femoral or radial approach)",
+        "rvu": "45.75",
+        "includes": [
+          "Catheterization and navigation to intracranial vessel",
+          "Deployment and retrieval of thrombectomy device",
+          "Angiography for lesion identification and post-procedure assessment",
+          "Associated diagnostic imaging (e.g., CT perfusion, CTA) for patient selection"
+        ],
+        "note": "CPT 61645 is specific for intracranial mechanical thrombectomy in acute ischemic stroke. This code includes all components of the procedure within a single vascular territory."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "I63.9",
+        "description": "Cerebral infarction, unspecified",
+        "notes": "Used when the specific type or location of ischemic stroke is not documented.",
+        "required": false
+      },
+      {
+        "code": "I63.00",
+        "description": "Cerebral infarction due to thrombosis of unspecified precerebral artery",
+        "notes": "Ischemic stroke caused by a clot in an artery leading to the brain.",
+        "required": true
+      },
+      {
+        "code": "I63.511",
+        "description": "Cerebral infarction due to unspecified occlusion or stenosis of right middle cerebral artery",
+        "notes": "Specific ischemic stroke affecting the right middle cerebral artery.",
+        "required": true
+      },
+      {
+        "code": "I63.512",
+        "description": "Cerebral infarction due to unspecified occlusion or stenosis of left middle cerebral artery",
+        "notes": "Specific ischemic stroke affecting the left middle cerebral artery.",
+        "required": true
+      },
+      {
+        "code": "I61.9",
+        "description": "Nontraumatic intracerebral hemorrhage, unspecified",
+        "notes": "Bleeding within the brain tissue not caused by trauma.",
+        "required": false
+      },
+      {
+        "code": "I60.9",
+        "description": "Nontraumatic subarachnoid hemorrhage, unspecified",
+        "notes": "Bleeding into the space between the brain and the surrounding membrane not caused by trauma.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Medicare generally covers tPA and mechanical thrombectomy for acute ischemic stroke when medical necessity criteria are met. Prior authorization is typically not required for emergency procedures, but thorough documentation is crucial.",
+        "coverageStatus": "Covered for Medically Necessary Cases",
+        "overview": "Medicare covers acute stroke interventions, including intravenous thrombolysis (tPA) and mechanical thrombectomy, for beneficiaries presenting with acute ischemic stroke within established time windows and meeting clinical guidelines. Coverage is contingent upon adherence to evidence-based protocols and appropriate patient selection.",
+        "reimbursementNote": "Reimbursement for stroke interventions is generally robust under Medicare when all medical necessity and documentation requirements are strictly adhered to. Specific DRG assignments will depend on the procedures performed and patient comorbidities.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Intravenous Thrombolysis (tPA)",
+            "items": [
+              "Diagnosis of acute ischemic stroke causing measurable neurological deficit.",
+              "Onset of symptoms less than 4.5 hours prior to treatment initiation.",
+              "Age 18 years or older.",
+              "Absence of contraindications for tPA (e.g., active bleeding, recent surgery, uncontrolled hypertension).",
+              "CT scan negative for intracranial hemorrhage."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Mechanical Thrombectomy",
+            "items": [
+              "Diagnosis of acute ischemic stroke with large vessel occlusion in the anterior circulation.",
+              "Onset of symptoms less than 6 hours (or up to 24 hours in select cases based on imaging) prior to groin puncture.",
+              "Age 18 years or older.",
+              "Pre-stroke modified Rankin Scale (mRS) score of 0-1.",
+              "CT or MRI demonstrating small infarct core and salvageable brain tissue."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Notes",
+            "items": [
+              "Detailed history of present illness, including exact time of symptom onset.",
+              "Neurological examination findings (e.g., NIHSS score).",
+              "Documentation of patient eligibility and contraindications for treatment.",
+              "Informed consent for procedure."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Imaging Reports",
+            "items": [
+              "Head CT scan report (initial and follow-up).",
+              "CT angiography (CTA) or MR angiography (MRA) report demonstrating large vessel occlusion (for thrombectomy).",
+              "CT perfusion or MRI diffusion-perfusion imaging report (for extended window thrombectomy)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Procedure Reports",
+            "items": [
+              "Thrombolysis administration record (drug, dose, start/end times).",
+              "Mechanical thrombectomy operative report (devices used, number of passes, recanalization grade)."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims with appropriate CPT and ICD-10 codes.",
+              "Ensure all supporting documentation (clinical notes, imaging, procedure reports) is readily available for review.",
+              "Follow Medicare billing guidelines for emergency services and inpatient admissions."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of clear documentation of symptom onset time.",
+              "Failure to meet established time windows for intervention.",
+              "Inadequate documentation of imaging findings (e.g., large infarct core).",
+              "Absence of documented large vessel occlusion for thrombectomy."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Document symptom onset time precisely (last known well).",
+              "Ensure all imaging reports clearly state findings relevant to stroke diagnosis and treatment eligibility.",
+              "For thrombectomy, clearly document the presence of large vessel occlusion and favorable penumbra on advanced imaging."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS",
+            "status": "Covered",
+            "notes": "National Coverage Determination (NCD) for Acute Ischemic Stroke Treatment."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid coverage for stroke interventions often requires prior authorization, especially for mechanical thrombectomy, though emergency tPA may be exempt. State-specific policies vary significantly.",
+        "coverageStatus": "Covered with Prior Authorization (State-Specific)",
+        "overview": "Medicaid programs across states generally cover acute stroke treatments, including tPA and mechanical thrombectomy, for eligible beneficiaries. Coverage criteria largely align with national guidelines but may include additional state-specific requirements or prior authorization processes.",
+        "reimbursementNote": "Medicaid reimbursement rates can vary by state and may be lower than Medicare or private insurance. Timely and accurate submission, along with proper authorization, is key to avoiding denials.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Stroke Intervention",
+            "items": [
+              "Diagnosis of acute ischemic stroke.",
+              "Patient meets established clinical guidelines for tPA or mechanical thrombectomy.",
+              "Treatment initiated within approved time windows.",
+              "Absence of contraindications."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Prior Authorization Specifics",
+            "items": [
+              "For mechanical thrombectomy, submission of advanced imaging (CTA/MRA, perfusion imaging) demonstrating large vessel occlusion and salvageable brain.",
+              "Clinical justification for intervention beyond standard time windows."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Emergency department notes detailing presentation and neurological status.",
+              "Stroke team consultation notes.",
+              "Documentation of tPA administration or thrombectomy procedure."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Authorization Records",
+            "items": [
+              "Approved prior authorization number (if applicable).",
+              "Communication logs with Medicaid payer regarding authorization status."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify state-specific Medicaid policies for acute stroke interventions.",
+              "Obtain prior authorization for mechanical thrombectomy as required by the state program.",
+              "Submit claims with all necessary documentation and authorization numbers."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to obtain prior authorization when required.",
+              "Lack of adherence to state-specific coverage criteria.",
+              "Insufficient documentation of medical necessity or patient eligibility."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state’s specific Medicaid guidelines for stroke care.",
+              "Initiate prior authorization requests promptly, even in emergency situations, if required.",
+              "Maintain clear and comprehensive records of all clinical decisions and interventions."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (e.g., California Medi-Cal)",
+            "status": "Covered with PA",
+            "notes": "Requires prior authorization for mechanical thrombectomy; tPA typically covered without PA in emergency."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for mechanical thrombectomy and may require it for tPA administration, especially if administered outside of strict emergency protocols or in non-contracted facilities. Benefits vary widely by plan.",
+        "coverageStatus": "Covered with Prior Authorization (Plan-Specific)",
+        "overview": "Private insurance plans generally cover acute stroke interventions, including tPA and mechanical thrombectomy, based on medical necessity and adherence to clinical guidelines. However, prior authorization requirements, specific coverage criteria, and out-of-pocket costs can differ significantly between plans and carriers.",
+        "reimbursementNote": "Reimbursement from private payers can vary based on negotiated rates and plan deductibles/copayments. Ensure proper coding and complete documentation to maximize reimbursement and minimize patient financial burden.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Coverage",
+            "items": [
+              "Diagnosis of acute ischemic stroke confirmed by imaging.",
+              "Treatment aligns with current evidence-based guidelines (e.g., AHA/ASA).",
+              "Patient meets age, time window, and clinical eligibility criteria."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Specific Requirements",
+            "items": [
+              "Prior authorization for mechanical thrombectomy, often requiring detailed clinical and imaging data.",
+              "Documentation of discussion with patient/family regarding risks and benefits."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Authorization Request",
+            "items": [
+              "Completed prior authorization form with clinical summary.",
+              "Relevant imaging reports (CT, CTA, MRI, MRA, perfusion scans).",
+              "Physician order for tPA or thrombectomy."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Medical Records",
+            "items": [
+              "Emergency room records, neurologist consultation notes.",
+              "Admission orders and progress notes.",
+              "Discharge summary."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Contact the patient’s insurance carrier to verify benefits and prior authorization requirements.",
+              "Submit a comprehensive prior authorization request with all supporting clinical documentation.",
+              "Follow up on authorization status and appeal any denials promptly."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization.",
+              "Failure to demonstrate medical necessity based on plan-specific criteria.",
+              "Incomplete or insufficient clinical documentation.",
+              "Treatment provided by out-of-network provider without emergency justification."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify insurance benefits and prior authorization requirements for each patient.",
+              "Provide detailed clinical rationale and imaging evidence in prior authorization requests.",
+              "Be prepared to appeal denials with additional clinical information and peer-to-peer reviews."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Covered with PA",
+            "notes": "Requires prior authorization for mechanical thrombectomy; tPA may require notification."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered with PA",
+            "notes": "Requires prior authorization for mechanical thrombectomy; tPA coverage based on medical policy."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment (navigates to /stroke)",
+        "href": "/stroke"
+      },
+      {
+        "heading": "Procedure Codes - UI Note",
+        "kind": "prose",
+        "text": "Each CPT code card displays a 'Included in this code (do NOT bill separately):' list along with the procedure description, RVU, and Device/Access information."
+      },
+      {
+        "heading": "ICD-10 Diagnosis Codes - UI Note",
+        "kind": "prose",
+        "text": "Required ICD-10 codes are visually marked with a green badge and a 'Primary' label; non-required codes are shown with a neutral slate badge."
+      }
+    ],
+    "raw": {
+      "markdown": "# Stroke Clinical Compass\n## Acute Stroke Intervention Insurance Authorization Guide\n\n[Button] Back to Assessment (navigates to /stroke)\n\n---\n\n## Procedure Codes (CPT Codes)\n\n### CPT 37195 — RVU 15.50\nThrombolysis, cerebral, by intravenous infusion, including all associated radiological supervision and interpretation\n\nDevice/Access: IV infusion of thrombolytic agent (e.g., tPA) | Intravenous\n\nIncluded in this code (do NOT bill separately):\n- Initial patient evaluation and management related to thrombolysis\n- Monitoring of patient during infusion\n- Associated diagnostic imaging (e.g., CT, MRI) for patient selection and follow-up\n\nNote: CPT 37195 is typically used for intravenous thrombolysis in acute ischemic stroke. Ensure documentation supports medical necessity and timing criteria.\n\n### CPT 61645 — RVU 45.75\nPercutaneous intracranial mechanical thrombectomy, arterial, for acute ischemic stroke, including all associated radiological supervision and interpretation\n\nDevice/Access: Mechanical thrombectomy device (e.g., stent retriever, aspiration catheter) | Intra-arterial (femoral or radial approach)\n\nIncluded in this code (do NOT bill separately):\n- Catheterization and navigation to intracranial vessel\n- Deployment and retrieval of thrombectomy device\n- Angiography for lesion identification and post-procedure assessment\n- Associated diagnostic imaging (e.g., CT perfusion, CTA) for patient selection\n\nNote: CPT 61645 is specific for intracranial mechanical thrombectomy in acute ischemic stroke. This code includes all components of the procedure within a single vascular territory.\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- I63.9 — Cerebral infarction, unspecified. Used when the specific type or location of ischemic stroke is not documented. (Not required)\n- I63.00 (Primary) — Cerebral infarction due to thrombosis of unspecified precerebral artery. Ischemic stroke caused by a clot in an artery leading to the brain. (Required)\n- I63.511 (Primary) — Cerebral infarction due to unspecified occlusion or stenosis of right middle cerebral artery. Specific ischemic stroke affecting the right middle cerebral artery. (Required)\n- I63.512 (Primary) — Cerebral infarction due to unspecified occlusion or stenosis of left middle cerebral artery. Specific ischemic stroke affecting the left middle cerebral artery. (Required)\n- I61.9 — Nontraumatic intracerebral hemorrhage, unspecified. Bleeding within the brain tissue not caused by trauma. (Not required)\n- I60.9 — Nontraumatic subarachnoid hemorrhage, unspecified. Bleeding into the space between the brain and the surrounding membrane not caused by trauma. (Not required)\n\n---\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\nStatus badges: No Prior Auth (FFS) | Covered for Medically Necessary Cases\n\nPrior Auth Note: Medicare generally covers tPA and mechanical thrombectomy for acute ischemic stroke when medical necessity criteria are met. Prior authorization is typically not required for emergency procedures, but thorough documentation is crucial.\n\nOverview: Medicare covers acute stroke interventions, including intravenous thrombolysis (tPA) and mechanical thrombectomy, for beneficiaries presenting with acute ischemic stroke within established time windows and meeting clinical guidelines. Coverage is contingent upon adherence to evidence-based protocols and appropriate patient selection.\n\n#### Coverage Criteria\n\n**Intravenous Thrombolysis (tPA)**\n- Diagnosis of acute ischemic stroke causing measurable neurological deficit.\n- Onset of symptoms less than 4.5 hours prior to treatment initiation.\n- Age 18 years or older.\n- Absence of contraindications for tPA (e.g., active bleeding, recent surgery, uncontrolled hypertension).\n- CT scan negative for intracranial hemorrhage.\n\n**Mechanical Thrombectomy**\n- Diagnosis of acute ischemic stroke with large vessel occlusion in the anterior circulation.\n- Onset of symptoms less than 6 hours (or up to 24 hours in select cases based on imaging) prior to groin puncture.\n- Age 18 years or older.\n- Pre-stroke modified Rankin Scale (mRS) score of 0-1.\n- CT or MRI demonstrating small infarct core and salvageable brain tissue.\n\n#### Required Documentation\n\n**Clinical Notes**\n- Detailed history of present illness, including exact time of symptom onset.\n- Neurological examination findings (e.g., NIHSS score).\n- Documentation of patient eligibility and contraindications for treatment.\n- Informed consent for procedure.\n\n**Imaging Reports**\n- Head CT scan report (initial and follow-up).\n- CT angiography (CTA) or MR angiography (MRA) report demonstrating large vessel occlusion (for thrombectomy).\n- CT perfusion or MRI diffusion-perfusion imaging report (for extended window thrombectomy).\n\n**Procedure Reports**\n- Thrombolysis administration record (drug, dose, start/end times).\n- Mechanical thrombectomy operative report (devices used, number of passes, recanalization grade).\n\n#### Submission Process\n1. Submit claims with appropriate CPT and ICD-10 codes.\n2. Ensure all supporting documentation (clinical notes, imaging, procedure reports) is readily available for review.\n3. Follow Medicare billing guidelines for emergency services and inpatient admissions.\n\n#### Common Denial Reasons\n- Lack of clear documentation of symptom onset time.\n- Failure to meet established time windows for intervention.\n- Inadequate documentation of imaging findings (e.g., large infarct core).\n- Absence of documented large vessel occlusion for thrombectomy.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS | Covered | National Coverage Determination (NCD) for Acute Ischemic Stroke Treatment. |\n\n#### Reimbursement Note\nReimbursement for stroke interventions is generally robust under Medicare when all medical necessity and documentation requirements are strictly adhered to. Specific DRG assignments will depend on the procedures performed and patient comorbidities.\n\n#### Authorization Tips\n- Document symptom onset time precisely (last known well).\n- Ensure all imaging reports clearly state findings relevant to stroke diagnosis and treatment eligibility.\n- For thrombectomy, clearly document the presence of large vessel occlusion and favorable penumbra on advanced imaging.\n\n### Medicaid\nStatus badges: Prior Auth Required | Covered with Prior Authorization (State-Specific)\n\nPrior Auth Note: Medicaid coverage for stroke interventions often requires prior authorization, especially for mechanical thrombectomy, though emergency tPA may be exempt. State-specific policies vary significantly.\n\nOverview: Medicaid programs across states generally cover acute stroke treatments, including tPA and mechanical thrombectomy, for eligible beneficiaries. Coverage criteria largely align with national guidelines but may include additional state-specific requirements or prior authorization processes.\n\n#### Coverage Criteria\n\n**General Stroke Intervention**\n- Diagnosis of acute ischemic stroke.\n- Patient meets established clinical guidelines for tPA or mechanical thrombectomy.\n- Treatment initiated within approved time windows.\n- Absence of contraindications.\n\n**Prior Authorization Specifics**\n- For mechanical thrombectomy, submission of advanced imaging (CTA/MRA, perfusion imaging) demonstrating large vessel occlusion and salvageable brain.\n- Clinical justification for intervention beyond standard time windows.\n\n#### Required Documentation\n\n**Clinical Documentation**\n- Emergency department notes detailing presentation and neurological status.\n- Stroke team consultation notes.\n- Documentation of tPA administration or thrombectomy procedure.\n\n**Authorization Records**\n- Approved prior authorization number (if applicable).\n- Communication logs with Medicaid payer regarding authorization status.\n\n#### Submission Process\n1. Verify state-specific Medicaid policies for acute stroke interventions.\n2. Obtain prior authorization for mechanical thrombectomy as required by the state program.\n3. Submit claims with all necessary documentation and authorization numbers.\n\n#### Common Denial Reasons\n- Failure to obtain prior authorization when required.\n- Lack of adherence to state-specific coverage criteria.\n- Insufficient documentation of medical necessity or patient eligibility.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (e.g., California Medi-Cal) | Covered with PA | Requires prior authorization for mechanical thrombectomy; tPA typically covered without PA in emergency. |\n\n#### Reimbursement Note\nMedicaid reimbursement rates can vary by state and may be lower than Medicare or private insurance. Timely and accurate submission, along with proper authorization, is key to avoiding denials.\n\n#### Authorization Tips\n- Familiarize yourself with your state’s specific Medicaid guidelines for stroke care.\n- Initiate prior authorization requests promptly, even in emergency situations, if required.\n- Maintain clear and comprehensive records of all clinical decisions and interventions.\n\n### Private Insurance\nStatus badges: Prior Auth Required | Covered with Prior Authorization (Plan-Specific)\n\nPrior Auth Note: Most private insurance plans require prior authorization for mechanical thrombectomy and may require it for tPA administration, especially if administered outside of strict emergency protocols or in non-contracted facilities. Benefits vary widely by plan.\n\nOverview: Private insurance plans generally cover acute stroke interventions, including tPA and mechanical thrombectomy, based on medical necessity and adherence to clinical guidelines. However, prior authorization requirements, specific coverage criteria, and out-of-pocket costs can differ significantly between plans and carriers.\n\n#### Coverage Criteria\n\n**General Coverage**\n- Diagnosis of acute ischemic stroke confirmed by imaging.\n- Treatment aligns with current evidence-based guidelines (e.g., AHA/ASA).\n- Patient meets age, time window, and clinical eligibility criteria.\n\n**Specific Requirements**\n- Prior authorization for mechanical thrombectomy, often requiring detailed clinical and imaging data.\n- Documentation of discussion with patient/family regarding risks and benefits.\n\n#### Required Documentation\n\n**Authorization Request**\n- Completed prior authorization form with clinical summary.\n- Relevant imaging reports (CT, CTA, MRI, MRA, perfusion scans).\n- Physician order for tPA or thrombectomy.\n\n**Medical Records**\n- Emergency room records, neurologist consultation notes.\n- Admission orders and progress notes.\n- Discharge summary.\n\n#### Submission Process\n1. Contact the patient’s insurance carrier to verify benefits and prior authorization requirements.\n2. Submit a comprehensive prior authorization request with all supporting clinical documentation.\n3. Follow up on authorization status and appeal any denials promptly.\n\n#### Common Denial Reasons\n- Lack of prior authorization.\n- Failure to demonstrate medical necessity based on plan-specific criteria.\n- Incomplete or insufficient clinical documentation.\n- Treatment provided by out-of-network provider without emergency justification.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Blue Cross Blue Shield | Covered with PA | Requires prior authorization for mechanical thrombectomy; tPA may require notification. |\n| UnitedHealthcare | Covered with PA | Requires prior authorization for mechanical thrombectomy; tPA coverage based on medical policy. |\n\n#### Reimbursement Note\nReimbursement from private payers can vary based on negotiated rates and plan deductibles/copayments. Ensure proper coding and complete documentation to maximize reimbursement and minimize patient financial burden.\n\n#### Authorization Tips\n- Always verify insurance benefits and prior authorization requirements for each patient.\n- Provide detailed clinical rationale and imaging evidence in prior authorization requests.\n- Be prepared to appeal denials with additional clinical information and peer-to-peer reviews.\n",
+      "tables": [
+        {
+          "name": "CPT Procedure Codes",
+          "header": ["Code", "Description", "Device", "Access", "RVU"],
+          "rows": [
+            ["37195", "Thrombolysis, cerebral, by intravenous infusion, including all associated radiological supervision and interpretation", "IV infusion of thrombolytic agent (e.g., tPA)", "Intravenous", "15.50"],
+            ["61645", "Percutaneous intracranial mechanical thrombectomy, arterial, for acute ischemic stroke, including all associated radiological supervision and interpretation", "Mechanical thrombectomy device (e.g., stent retriever, aspiration catheter)", "Intra-arterial (femoral or radial approach)", "45.75"]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required"],
+          "rows": [
+            ["I63.9", "Cerebral infarction, unspecified", "Used when the specific type or location of ischemic stroke is not documented.", "No"],
+            ["I63.00", "Cerebral infarction due to thrombosis of unspecified precerebral artery", "Ischemic stroke caused by a clot in an artery leading to the brain.", "Yes"],
+            ["I63.511", "Cerebral infarction due to unspecified occlusion or stenosis of right middle cerebral artery", "Specific ischemic stroke affecting the right middle cerebral artery.", "Yes"],
+            ["I63.512", "Cerebral infarction due to unspecified occlusion or stenosis of left middle cerebral artery", "Specific ischemic stroke affecting the left middle cerebral artery.", "Yes"],
+            ["I61.9", "Nontraumatic intracerebral hemorrhage, unspecified", "Bleeding within the brain tissue not caused by trauma.", "No"],
+            ["I60.9", "Nontraumatic subarachnoid hemorrhage, unspecified", "Bleeding into the space between the brain and the surrounding membrane not caused by trauma.", "No"]
+          ]
+        },
+        {
+          "name": "Medicare Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS", "Covered", "National Coverage Determination (NCD) for Acute Ischemic Stroke Treatment."]
+          ]
+        },
+        {
+          "name": "Medicaid Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., California Medi-Cal)", "Covered with PA", "Requires prior authorization for mechanical thrombectomy; tPA typically covered without PA in emergency."]
+          ]
+        },
+        {
+          "name": "Private Insurance Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield", "Covered with PA", "Requires prior authorization for mechanical thrombectomy; tPA may require notification."],
+            ["UnitedHealthcare", "Covered with PA", "Requires prior authorization for mechanical thrombectomy; tPA coverage based on medical policy."]
+          ]
+        }
+      ]
+    }
+  }
+}

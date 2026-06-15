@@ -1,0 +1,198 @@
+{
+  "title": "Chronic Insomnia Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Assessment",
+    "logicKey": "chronicinsomnia",
+    "hiddenDefaults": {
+      "cbti_completed": false
+    },
+    "steps": [
+      {
+        "id": "characteristics",
+        "shortLabel": "Insomnia Characteristics",
+        "title": "Insomnia Characteristics",
+        "fields": [
+          {
+            "id": "type",
+            "name": "type",
+            "label": "Primary Insomnia Type",
+            "type": "select",
+            "required": true,
+            "defaultValue": "both",
+            "options": [
+              { "label": "Sleep onset insomnia (difficulty falling asleep)", "value": "sleep_onset" },
+              { "label": "Sleep maintenance insomnia (difficulty staying asleep)", "value": "sleep_maintenance" },
+              { "label": "Mixed (onset + maintenance)", "value": "both" },
+              { "label": "Early morning awakening", "value": "early_awakening" }
+            ]
+          },
+          {
+            "id": "frequency-nights-per-week",
+            "name": "frequency_nights_per_week",
+            "label": "Frequency (nights per week)",
+            "type": "number",
+            "required": true,
+            "defaultValue": "",
+            "min": 1,
+            "max": 7,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "daytime-impairment",
+            "name": "daytime_impairment",
+            "label": "Daytime impairment present (fatigue, concentration, mood, performance)",
+            "type": "checkbox",
+            "defaultValue": true
+          }
+        ]
+      },
+      {
+        "id": "duration-severity",
+        "shortLabel": "Duration & Severity",
+        "title": "Duration & Severity",
+        "fields": [
+          {
+            "id": "duration-months",
+            "name": "duration_months",
+            "label": "Duration (months)",
+            "type": "number",
+            "required": true,
+            "defaultValue": "",
+            "min": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "isi-score",
+            "name": "isi_score",
+            "label": "Insomnia Severity Index (ISI) Score (0–28)",
+            "type": "number",
+            "defaultValue": "",
+            "min": 0,
+            "max": 28,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "age-over-65",
+            "name": "age_over_65",
+            "label": "Patient age ≥65 years (fall risk — avoid benzodiazepines)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "pregnancy",
+            "name": "pregnancy",
+            "label": "Pregnancy or breastfeeding (pharmacotherapy contraindicated)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "hepatic-impairment",
+            "name": "hepatic_impairment",
+            "label": "Hepatic impairment (affects orexin antagonist dosing)",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "comorbidities",
+        "shortLabel": "Comorbidities",
+        "title": "Comorbidities",
+        "fields": [
+          {
+            "id": "comorbid-depression",
+            "name": "comorbid_depression",
+            "label": "Major depressive disorder or persistent depressive disorder",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "comorbid-anxiety",
+            "name": "comorbid_anxiety",
+            "label": "Generalized anxiety disorder or PTSD",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "comorbid-pain",
+            "name": "comorbid_pain",
+            "label": "Chronic pain condition",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "comorbid-osa",
+            "name": "comorbid_osa",
+            "label": "Obstructive sleep apnea (on or off PAP therapy)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "comorbid-rls",
+            "name": "comorbid_rls",
+            "label": "Restless legs syndrome",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "comorbid-substance",
+            "name": "comorbid_substance",
+            "label": "Substance use disorder (alcohol, opioids, sedatives)",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "prior-treatment",
+        "shortLabel": "Prior Treatment",
+        "title": "Prior Treatment",
+        "fields": [
+          {
+            "id": "cbti-response",
+            "name": "cbti_response",
+            "label": "CBT-I Status",
+            "type": "select",
+            "defaultValue": "not_tried",
+            "options": [
+              { "label": "Not yet attempted", "value": "not_tried" },
+              { "label": "Partial response (some improvement)", "value": "partial" },
+              { "label": "Inadequate response (no meaningful improvement)", "value": "inadequate" },
+              { "label": "Contraindicated or unavailable", "value": "contraindicated" }
+            ]
+          },
+          {
+            "id": "prior-benzo",
+            "name": "prior_benzo",
+            "label": "Benzodiazepine (temazepam, triazolam, clonazepam)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-zdrug",
+            "name": "prior_zdrug",
+            "label": "Z-drug (zolpidem, eszopiclone, zaleplon)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-orexin",
+            "name": "prior_orexin",
+            "label": "Orexin antagonist (suvorexant, lemborexant)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-doxepin",
+            "name": "prior_doxepin",
+            "label": "Low-dose doxepin (3–6 mg)",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

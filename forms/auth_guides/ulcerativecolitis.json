@@ -1,0 +1,390 @@
+{
+  "title": "Ulcerative Colitis Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "UlcerativeColitisAuthGuide.tsx",
+    "title": "UlcerativeColitis Clinical Compass",
+    "subtitle": "Ulcerative Colitis Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "J1745",
+        "description": "Injection, infliximab, excludes biosimilar, 10 mg",
+        "device": "IV Infusion",
+        "access": "Intravenous",
+        "rvu": "N/A",
+        "includes": [
+          "Drug cost for infliximab (10mg increments)",
+          "Preparation and administration of the drug"
+        ],
+        "note": "This code is for the drug itself. Administration codes (96413, 96415) should be billed separately."
+      },
+      {
+        "code": "96413",
+        "description": "Chemotherapy administration, intravenous infusion technique; up to 1 hour, single or initial substance or drug",
+        "device": "IV Infusion Pump",
+        "access": "Intravenous",
+        "rvu": "2.50",
+        "includes": [
+          "Pre-infusion patient assessment",
+          "IV line insertion (if not already present)",
+          "Monitoring during the first hour of infusion"
+        ],
+        "note": "Used for the initial hour of intravenous infusion of chemotherapy or other complex therapeutic agents like biologics."
+      },
+      {
+        "code": "96415",
+        "description": "Chemotherapy administration, intravenous infusion technique; each additional hour (List separately in addition to code for primary procedure)",
+        "device": "IV Infusion Pump",
+        "access": "Intravenous",
+        "rvu": "1.25",
+        "includes": [
+          "Monitoring during each additional hour of infusion"
+        ],
+        "note": "Used for each additional hour of intravenous infusion after the first hour, in conjunction with 96413."
+      },
+      {
+        "code": "J3380",
+        "description": "Injection, vedolizumab, intravenous, 1 mg",
+        "device": "IV Infusion",
+        "access": "Intravenous",
+        "rvu": "N/A",
+        "includes": [
+          "Drug cost for vedolizumab (1mg increments)",
+          "Preparation and administration of the drug"
+        ],
+        "note": "This code is for the drug itself. Administration code (96365) should be billed separately."
+      },
+      {
+        "code": "96365",
+        "description": "Intravenous infusion, for therapy, prophylaxis, or diagnosis; initial, up to 1 hour",
+        "device": "IV Infusion Pump",
+        "access": "Intravenous",
+        "rvu": "1.50",
+        "includes": [
+          "Pre-infusion patient assessment",
+          "IV line insertion (if not already present)",
+          "Monitoring during the first hour of infusion"
+        ],
+        "note": "Used for the initial hour of intravenous infusion of non-chemotherapeutic therapeutic agents like biologics."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "K51.00",
+        "description": "Ulcerative (chronic) pancolitis without complications",
+        "notes": "Primary diagnosis for extensive ulcerative colitis affecting the entire colon.",
+        "required": true
+      },
+      {
+        "code": "K51.20",
+        "description": "Ulcerative (chronic) proctitis without complications",
+        "notes": "Diagnosis for ulcerative colitis limited to the rectum.",
+        "required": false
+      },
+      {
+        "code": "K51.90",
+        "description": "Ulcerative colitis, unspecified, without complications",
+        "notes": "Used when the extent or specific type of ulcerative colitis is not documented.",
+        "required": false
+      },
+      {
+        "code": "K51.40",
+        "description": "Pseudopolyposis of colon without complications",
+        "notes": "Complication of ulcerative colitis, often indicating severe or chronic inflammation.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with Prior Authorization",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is generally required for biologic agents used in Ulcerative Colitis to ensure medical necessity and appropriate use according to FDA-approved indications and clinical guidelines.",
+        "overview": "Medicare covers biologic therapies for moderately to severely active Ulcerative Colitis when specific medical necessity criteria are met and prior authorization is obtained. Coverage is typically for FDA-approved indications and may require a trial and failure of conventional therapies.",
+        "reimbursementNote": "Reimbursement for infliximab and vedolizumab is typically under Medicare Part B for infusions administered in a physician’s office or outpatient hospital setting. Ozanimod is covered under Medicare Part D as an oral medication. Co-insurance and deductibles apply.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Criteria for Biologics (Infliximab, Vedolizumab)",
+            "items": [
+              "Patient has a diagnosis of moderately to severely active Ulcerative Colitis.",
+              "Diagnosis is confirmed by endoscopy and histology.",
+              "Patient has failed, is intolerant to, or has contraindications to conventional therapy (e.g., corticosteroids, immunomodulators like azathioprine or 6-mercaptopurine) for at least 3 months.",
+              "Absence of active infection, including latent tuberculosis (TB) and hepatitis B, prior to initiation of therapy.",
+              "Patient is not pregnant or breastfeeding, or appropriate precautions are taken.",
+              "For Infliximab: Documentation of disease-specific relevant symptoms and signs being treated and followed to assess response.",
+              "For Vedolizumab: Used for induction and maintenance of clinical response and remission."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Specific Criteria for Ozanimod (Oral)",
+            "items": [
+              "Patient has moderately to severely active Ulcerative Colitis.",
+              "Diagnosis confirmed by endoscopy and histology.",
+              "Patient has failed, is intolerant to, or has contraindications to at least one conventional therapy (e.g., corticosteroids, immunomodulators) or biologic therapy.",
+              "Baseline liver function tests (LFTs) and complete blood count (CBC) within normal limits or acceptable range.",
+              "Baseline ophthalmologic evaluation (macular edema screening) for patients with a history of uveitis or diabetes."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Medical records supporting the diagnosis of Ulcerative Colitis, including endoscopy and biopsy reports.",
+              "Documentation of disease activity (e.g., Mayo score, UCDAI).",
+              "History of prior treatments, including dates, dosages, and reasons for failure, intolerance, or contraindication to conventional therapies.",
+              "Results of latent TB screening (e.g., PPD or IGRA) and hepatitis B screening.",
+              "Patient’s weight for appropriate dosing of IV biologics.",
+              "For Ozanimod: Baseline LFTs, CBC, and ophthalmologic evaluation results."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Provider Information",
+            "items": [
+              "Prescribing physician’s NPI and contact information.",
+              "Letter of medical necessity detailing the patient’s condition, treatment plan, and rationale for biologic use."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request form (CMS-approved) with all required clinical documentation.",
+              "Ensure all sections of the form are completed accurately and legibly.",
+              "Attach supporting medical records, including lab results, endoscopy reports, and treatment history.",
+              "Submit via electronic portal, fax, or mail as per Medicare contractor guidelines.",
+              "Follow up with the payer within 5-7 business days if no response is received."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented failure or intolerance to conventional therapies.",
+              "Incomplete or insufficient clinical documentation (e.g., missing lab results, endoscopy reports).",
+              "Failure to provide evidence of latent TB screening or treatment.",
+              "Off-label use not supported by recognized compendia.",
+              "Dosage exceeding FDA-approved or compendia-recommended limits."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Clearly document the patient’s disease activity and response to previous treatments.",
+              "Ensure all diagnostic tests (endoscopy, histology, TB, hepatitis B) are completed and results are included.",
+              "Highlight the medical necessity for biologic therapy, emphasizing the severity of UC and impact on quality of life.",
+              "Keep detailed records of all communications with the payer regarding the authorization request."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS (Medicare)",
+            "status": "Covered",
+            "notes": "Requires prior authorization and adherence to LCD/NCD guidelines for biologics."
+          },
+          {
+            "payer": "Noridian Healthcare Solutions (MAC A/B)",
+            "status": "Covered",
+            "notes": "Follows CMS guidelines; specific forms and submission processes may apply."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered with Prior Authorization (State-Specific)",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid programs typically require prior authorization for high-cost biologic medications to manage costs and ensure appropriate utilization. Criteria vary by state.",
+        "overview": "Medicaid coverage for Ulcerative Colitis biologics varies significantly by state. Most states require prior authorization, step therapy, and documentation of medical necessity, often aligning with FDA indications and clinical guidelines.",
+        "reimbursementNote": "Reimbursement rates and coverage policies are determined by individual state Medicaid programs. Co-pays may apply based on state regulations.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Criteria (Varies by State)",
+            "items": [
+              "Diagnosis of moderately to severely active Ulcerative Colitis.",
+              "Failure or intolerance to conventional therapies (e.g., 5-ASAs, corticosteroids, immunomodulators).",
+              "Absence of contraindications to the specific biologic agent.",
+              "Patient must be managed by a gastroenterologist or other specialist experienced in IBD treatment."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Medical records confirming UC diagnosis and disease severity.",
+              "Documentation of previous treatment failures or intolerances.",
+              "Relevant lab results and imaging studies."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit state-specific Medicaid prior authorization form.",
+              "Provide comprehensive clinical notes and supporting documentation.",
+              "Adhere to state-specific submission deadlines and review processes."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet state-specific step therapy requirements.",
+              "Incomplete or non-specific documentation.",
+              "Lack of documented medical necessity."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state’s Medicaid formulary and prior authorization guidelines.",
+              "Clearly articulate the patient’s clinical need and how the chosen biologic aligns with state criteria."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (e.g., California Medi-Cal)",
+            "status": "Covered",
+            "notes": "Requires PA; may have specific step-therapy protocols and quantity limits."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Covered with Prior Authorization (Plan-Specific)",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for biologic agents due to their high cost and to ensure adherence to evidence-based guidelines.",
+        "overview": "Private insurance coverage for Ulcerative Colitis biologics is highly variable and depends on the specific plan and its formulary. Prior authorization, step therapy, and medical necessity documentation are almost always required.",
+        "reimbursementNote": "Reimbursement depends on the individual plan’s negotiated rates. Patient out-of-pocket costs will vary based on deductibles, co-insurance, and co-pays.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Criteria (Varies by Plan)",
+            "items": [
+              "Diagnosis of moderately to severely active Ulcerative Colitis.",
+              "Failure or intolerance to conventional therapies (e.g., 5-ASAs, corticosteroids, immunomodulators).",
+              "Absence of contraindications to the specific biologic agent.",
+              "Patient must be under the care of a specialist (e.g., gastroenterologist)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Detailed medical history and physical examination findings.",
+              "Endoscopy and histology reports confirming UC diagnosis.",
+              "Documentation of disease activity and impact on daily life.",
+              "Records of all previous treatments and their outcomes.",
+              "Relevant laboratory and imaging results."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Complete the insurance plan’s specific prior authorization form.",
+              "Submit all requested clinical documentation, including a letter of medical necessity.",
+              "Utilize the plan’s online portal, fax, or phone for submission.",
+              "Be prepared for potential peer-to-peer review if initially denied."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet step therapy requirements.",
+              "Insufficient documentation of disease severity or previous treatment failures.",
+              "Lack of adherence to plan-specific formulary guidelines.",
+              "Missing or incomplete prior authorization form."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify the patient’s specific plan benefits and formulary for UC biologics.",
+              "Pre-certify treatment before administration to avoid denials.",
+              "Maintain thorough and accurate medical records to support medical necessity.",
+              "Be persistent with appeals and peer-to-peer reviews if necessary."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield (e.g., Anthem)",
+            "status": "Covered",
+            "notes": "Requires PA; often has step therapy and specific criteria for biologic use."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered",
+            "notes": "Requires PA; follows clinical guidelines and may have preferred drug lists."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment",
+        "href": "/ulcerativecolitis"
+      },
+      {
+        "heading": "Reimbursement Note (Medicare)",
+        "kind": "prose",
+        "text": "Reimbursement for infliximab and vedolizumab is typically under Medicare Part B for infusions administered in a physician’s office or outpatient hospital setting. Ozanimod is covered under Medicare Part D as an oral medication. Co-insurance and deductibles apply."
+      },
+      {
+        "heading": "Reimbursement Note (Medicaid)",
+        "kind": "prose",
+        "text": "Reimbursement rates and coverage policies are determined by individual state Medicaid programs. Co-pays may apply based on state regulations."
+      },
+      {
+        "heading": "Reimbursement Note (Private Insurance)",
+        "kind": "prose",
+        "text": "Reimbursement depends on the individual plan’s negotiated rates. Patient out-of-pocket costs will vary based on deductibles, co-insurance, and co-pays."
+      }
+    ],
+    "raw": {
+      "markdown": "# UlcerativeColitis Clinical Compass\n## Ulcerative Colitis Insurance Authorization Guide\n\n[Button] Back to Assessment -> /ulcerativecolitis\n\n## Procedure Codes\n\n### CPT J1745 (RVU N/A)\nInjection, infliximab, excludes biosimilar, 10 mg\nDevice/Access: IV Infusion (Intravenous)\nIncluded in this code (do NOT bill separately):\n- Drug cost for infliximab (10mg increments)\n- Preparation and administration of the drug\nNote: This code is for the drug itself. Administration codes (96413, 96415) should be billed separately.\n\n### CPT 96413 (RVU 2.50)\nChemotherapy administration, intravenous infusion technique; up to 1 hour, single or initial substance or drug\nDevice/Access: IV Infusion Pump (Intravenous)\nIncluded in this code (do NOT bill separately):\n- Pre-infusion patient assessment\n- IV line insertion (if not already present)\n- Monitoring during the first hour of infusion\nNote: Used for the initial hour of intravenous infusion of chemotherapy or other complex therapeutic agents like biologics.\n\n### CPT 96415 (RVU 1.25)\nChemotherapy administration, intravenous infusion technique; each additional hour (List separately in addition to code for primary procedure)\nDevice/Access: IV Infusion Pump (Intravenous)\nIncluded in this code (do NOT bill separately):\n- Monitoring during each additional hour of infusion\nNote: Used for each additional hour of intravenous infusion after the first hour, in conjunction with 96413.\n\n### CPT J3380 (RVU N/A)\nInjection, vedolizumab, intravenous, 1 mg\nDevice/Access: IV Infusion (Intravenous)\nIncluded in this code (do NOT bill separately):\n- Drug cost for vedolizumab (1mg increments)\n- Preparation and administration of the drug\nNote: This code is for the drug itself. Administration code (96365) should be billed separately.\n\n### CPT 96365 (RVU 1.50)\nIntravenous infusion, for therapy, prophylaxis, or diagnosis; initial, up to 1 hour\nDevice/Access: IV Infusion Pump (Intravenous)\nIncluded in this code (do NOT bill separately):\n- Pre-infusion patient assessment\n- IV line insertion (if not already present)\n- Monitoring during the first hour of infusion\nNote: Used for the initial hour of intravenous infusion of non-chemotherapeutic therapeutic agents like biologics.\n\n## ICD-10 Diagnosis Codes\n\n- K51.00 (Primary / Required) — Ulcerative (chronic) pancolitis without complications. Notes: Primary diagnosis for extensive ulcerative colitis affecting the entire colon.\n- K51.20 — Ulcerative (chronic) proctitis without complications. Notes: Diagnosis for ulcerative colitis limited to the rectum.\n- K51.90 — Ulcerative colitis, unspecified, without complications. Notes: Used when the extent or specific type of ulcerative colitis is not documented.\n- K51.40 — Pseudopolyposis of colon without complications. Notes: Complication of ulcerative colitis, often indicating severe or chronic inflammation.\n\n## Payer-Specific Authorization Requirements\n\n### Medicare\nStatus badges: Prior Auth Required | Covered with Prior Authorization\nPrior Auth Note: Prior authorization is generally required for biologic agents used in Ulcerative Colitis to ensure medical necessity and appropriate use according to FDA-approved indications and clinical guidelines.\nOverview: Medicare covers biologic therapies for moderately to severely active Ulcerative Colitis when specific medical necessity criteria are met and prior authorization is obtained. Coverage is typically for FDA-approved indications and may require a trial and failure of conventional therapies.\n\n#### Coverage Criteria\n**General Criteria for Biologics (Infliximab, Vedolizumab)**\n- Patient has a diagnosis of moderately to severely active Ulcerative Colitis.\n- Diagnosis is confirmed by endoscopy and histology.\n- Patient has failed, is intolerant to, or has contraindications to conventional therapy (e.g., corticosteroids, immunomodulators like azathioprine or 6-mercaptopurine) for at least 3 months.\n- Absence of active infection, including latent tuberculosis (TB) and hepatitis B, prior to initiation of therapy.\n- Patient is not pregnant or breastfeeding, or appropriate precautions are taken.\n- For Infliximab: Documentation of disease-specific relevant symptoms and signs being treated and followed to assess response.\n- For Vedolizumab: Used for induction and maintenance of clinical response and remission.\n\n**Specific Criteria for Ozanimod (Oral)**\n- Patient has moderately to severely active Ulcerative Colitis.\n- Diagnosis confirmed by endoscopy and histology.\n- Patient has failed, is intolerant to, or has contraindications to at least one conventional therapy (e.g., corticosteroids, immunomodulators) or biologic therapy.\n- Baseline liver function tests (LFTs) and complete blood count (CBC) within normal limits or acceptable range.\n- Baseline ophthalmologic evaluation (macular edema screening) for patients with a history of uveitis or diabetes.\n\n#### Required Documentation\n**Clinical Documentation**\n- Medical records supporting the diagnosis of Ulcerative Colitis, including endoscopy and biopsy reports.\n- Documentation of disease activity (e.g., Mayo score, UCDAI).\n- History of prior treatments, including dates, dosages, and reasons for failure, intolerance, or contraindication to conventional therapies.\n- Results of latent TB screening (e.g., PPD or IGRA) and hepatitis B screening.\n- Patient’s weight for appropriate dosing of IV biologics.\n- For Ozanimod: Baseline LFTs, CBC, and ophthalmologic evaluation results.\n\n**Provider Information**\n- Prescribing physician’s NPI and contact information.\n- Letter of medical necessity detailing the patient’s condition, treatment plan, and rationale for biologic use.\n\n#### Submission Process\n1. Submit prior authorization request form (CMS-approved) with all required clinical documentation.\n2. Ensure all sections of the form are completed accurately and legibly.\n3. Attach supporting medical records, including lab results, endoscopy reports, and treatment history.\n4. Submit via electronic portal, fax, or mail as per Medicare contractor guidelines.\n5. Follow up with the payer within 5-7 business days if no response is received.\n\n#### Common Denial Reasons\n- Lack of documented failure or intolerance to conventional therapies.\n- Incomplete or insufficient clinical documentation (e.g., missing lab results, endoscopy reports).\n- Failure to provide evidence of latent TB screening or treatment.\n- Off-label use not supported by recognized compendia.\n- Dosage exceeding FDA-approved or compendia-recommended limits.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS (Medicare) | Covered | Requires prior authorization and adherence to LCD/NCD guidelines for biologics. |\n| Noridian Healthcare Solutions (MAC A/B) | Covered | Follows CMS guidelines; specific forms and submission processes may apply. |\n\n#### Reimbursement Note\nReimbursement for infliximab and vedolizumab is typically under Medicare Part B for infusions administered in a physician’s office or outpatient hospital setting. Ozanimod is covered under Medicare Part D as an oral medication. Co-insurance and deductibles apply.\n\n#### Authorization Tips\n- Clearly document the patient’s disease activity and response to previous treatments.\n- Ensure all diagnostic tests (endoscopy, histology, TB, hepatitis B) are completed and results are included.\n- Highlight the medical necessity for biologic therapy, emphasizing the severity of UC and impact on quality of life.\n- Keep detailed records of all communications with the payer regarding the authorization request.\n\n### Medicaid\nStatus badges: Prior Auth Required | Covered with Prior Authorization (State-Specific)\nPrior Auth Note: Medicaid programs typically require prior authorization for high-cost biologic medications to manage costs and ensure appropriate utilization. Criteria vary by state.\nOverview: Medicaid coverage for Ulcerative Colitis biologics varies significantly by state. Most states require prior authorization, step therapy, and documentation of medical necessity, often aligning with FDA indications and clinical guidelines.\n\n#### Coverage Criteria\n**General Criteria (Varies by State)**\n- Diagnosis of moderately to severely active Ulcerative Colitis.\n- Failure or intolerance to conventional therapies (e.g., 5-ASAs, corticosteroids, immunomodulators).\n- Absence of contraindications to the specific biologic agent.\n- Patient must be managed by a gastroenterologist or other specialist experienced in IBD treatment.\n\n#### Required Documentation\n**Clinical Documentation**\n- Medical records confirming UC diagnosis and disease severity.\n- Documentation of previous treatment failures or intolerances.\n- Relevant lab results and imaging studies.\n\n#### Submission Process\n1. Submit state-specific Medicaid prior authorization form.\n2. Provide comprehensive clinical notes and supporting documentation.\n3. Adhere to state-specific submission deadlines and review processes.\n\n#### Common Denial Reasons\n- Failure to meet state-specific step therapy requirements.\n- Incomplete or non-specific documentation.\n- Lack of documented medical necessity.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (e.g., California Medi-Cal) | Covered | Requires PA; may have specific step-therapy protocols and quantity limits. |\n\n#### Reimbursement Note\nReimbursement rates and coverage policies are determined by individual state Medicaid programs. Co-pays may apply based on state regulations.\n\n#### Authorization Tips\n- Familiarize yourself with your state’s Medicaid formulary and prior authorization guidelines.\n- Clearly articulate the patient’s clinical need and how the chosen biologic aligns with state criteria.\n\n### Private Insurance\nStatus badges: Prior Auth Required | Covered with Prior Authorization (Plan-Specific)\nPrior Auth Note: Most private insurance plans require prior authorization for biologic agents due to their high cost and to ensure adherence to evidence-based guidelines.\nOverview: Private insurance coverage for Ulcerative Colitis biologics is highly variable and depends on the specific plan and its formulary. Prior authorization, step therapy, and medical necessity documentation are almost always required.\n\n#### Coverage Criteria\n**General Criteria (Varies by Plan)**\n- Diagnosis of moderately to severely active Ulcerative Colitis.\n- Failure or intolerance to conventional therapies (e.g., 5-ASAs, corticosteroids, immunomodulators).\n- Absence of contraindications to the specific biologic agent.\n- Patient must be under the care of a specialist (e.g., gastroenterologist).\n\n#### Required Documentation\n**Clinical Documentation**\n- Detailed medical history and physical examination findings.\n- Endoscopy and histology reports confirming UC diagnosis.\n- Documentation of disease activity and impact on daily life.\n- Records of all previous treatments and their outcomes.\n- Relevant laboratory and imaging results.\n\n#### Submission Process\n1. Complete the insurance plan’s specific prior authorization form.\n2. Submit all requested clinical documentation, including a letter of medical necessity.\n3. Utilize the plan’s online portal, fax, or phone for submission.\n4. Be prepared for potential peer-to-peer review if initially denied.\n\n#### Common Denial Reasons\n- Failure to meet step therapy requirements.\n- Insufficient documentation of disease severity or previous treatment failures.\n- Lack of adherence to plan-specific formulary guidelines.\n- Missing or incomplete prior authorization form.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Blue Cross Blue Shield (e.g., Anthem) | Covered | Requires PA; often has step therapy and specific criteria for biologic use. |\n| UnitedHealthcare | Covered | Requires PA; follows clinical guidelines and may have preferred drug lists. |\n\n#### Reimbursement Note\nReimbursement depends on the individual plan’s negotiated rates. Patient out-of-pocket costs will vary based on deductibles, co-insurance, and co-pays.\n\n#### Authorization Tips\n- Verify the patient’s specific plan benefits and formulary for UC biologics.\n- Pre-certify treatment before administration to avoid denials.\n- Maintain thorough and accurate medical records to support medical necessity.\n- Be persistent with appeals and peer-to-peer reviews if necessary.\n",
+      "tables": [
+        {
+          "name": "CPT / Procedure Codes",
+          "header": ["Code", "Description", "Device", "Access", "RVU", "Includes", "Note"],
+          "rows": [
+            ["J1745", "Injection, infliximab, excludes biosimilar, 10 mg", "IV Infusion", "Intravenous", "N/A", "Drug cost for infliximab (10mg increments); Preparation and administration of the drug", "This code is for the drug itself. Administration codes (96413, 96415) should be billed separately."],
+            ["96413", "Chemotherapy administration, intravenous infusion technique; up to 1 hour, single or initial substance or drug", "IV Infusion Pump", "Intravenous", "2.50", "Pre-infusion patient assessment; IV line insertion (if not already present); Monitoring during the first hour of infusion", "Used for the initial hour of intravenous infusion of chemotherapy or other complex therapeutic agents like biologics."],
+            ["96415", "Chemotherapy administration, intravenous infusion technique; each additional hour (List separately in addition to code for primary procedure)", "IV Infusion Pump", "Intravenous", "1.25", "Monitoring during each additional hour of infusion", "Used for each additional hour of intravenous infusion after the first hour, in conjunction with 96413."],
+            ["J3380", "Injection, vedolizumab, intravenous, 1 mg", "IV Infusion", "Intravenous", "N/A", "Drug cost for vedolizumab (1mg increments); Preparation and administration of the drug", "This code is for the drug itself. Administration code (96365) should be billed separately."],
+            ["96365", "Intravenous infusion, for therapy, prophylaxis, or diagnosis; initial, up to 1 hour", "IV Infusion Pump", "Intravenous", "1.50", "Pre-infusion patient assessment; IV line insertion (if not already present); Monitoring during the first hour of infusion", "Used for the initial hour of intravenous infusion of non-chemotherapeutic therapeutic agents like biologics."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required/Primary"],
+          "rows": [
+            ["K51.00", "Ulcerative (chronic) pancolitis without complications", "Primary diagnosis for extensive ulcerative colitis affecting the entire colon.", "Yes (Primary)"],
+            ["K51.20", "Ulcerative (chronic) proctitis without complications", "Diagnosis for ulcerative colitis limited to the rectum.", "No"],
+            ["K51.90", "Ulcerative colitis, unspecified, without complications", "Used when the extent or specific type of ulcerative colitis is not documented.", "No"],
+            ["K51.40", "Pseudopolyposis of colon without complications", "Complication of ulcerative colitis, often indicating severe or chronic inflammation.", "No"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Medicare",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS (Medicare)", "Covered", "Requires prior authorization and adherence to LCD/NCD guidelines for biologics."],
+            ["Noridian Healthcare Solutions (MAC A/B)", "Covered", "Follows CMS guidelines; specific forms and submission processes may apply."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., California Medi-Cal)", "Covered", "Requires PA; may have specific step-therapy protocols and quantity limits."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Private Insurance",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield (e.g., Anthem)", "Covered", "Requires PA; often has step therapy and specific criteria for biologic use."],
+            ["UnitedHealthcare", "Covered", "Requires PA; follows clinical guidelines and may have preferred drug lists."]
+          ]
+        }
+      ]
+    }
+  }
+}

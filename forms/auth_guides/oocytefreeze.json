@@ -1,0 +1,93 @@
+{
+  "title": "Oocyte Cryopreservation Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "OocyteFreezeAuthGuide.tsx",
+    "title": "Oocyte Cryopreservation — Authorization Guide",
+    "subtitle": "CPT Codes · ICD-10 · Payer Requirements",
+    "cptCodes": [
+      { "code": "58970", "description": "Follicle puncture for oocyte retrieval, any method", "type": "Egg retrieval" },
+      { "code": "89337", "description": "Cryopreservation, mature oocyte(s)", "type": "Egg freezing" },
+      { "code": "89352", "description": "Thawing of cryopreserved; oocyte(s)", "type": "Egg thaw" },
+      { "code": "89353", "description": "Thawing of cryopreserved; embryo(s)", "type": "Embryo thaw" },
+      { "code": "89250", "description": "Culture of oocyte(s)/embryo(s), less than 4 days", "type": "Lab — culture" },
+      { "code": "89254", "description": "Oocyte identification from follicular fluid", "type": "Lab — oocyte ID" },
+      { "code": "89280", "description": "Assisted oocyte fertilization, microtechnique; ≤10 oocytes (ICSI)", "type": "ICSI at thaw" },
+      { "code": "96372", "description": "Therapeutic, prophylactic, or diagnostic injection", "type": "Trigger injection" }
+    ],
+    "icd10Codes": [
+      { "code": "Z31.62", "description": "Encounter for fertility preservation procedure" },
+      { "code": "E28.31", "description": "Premature menopause" },
+      { "code": "E28.39", "description": "Other primary ovarian failure" },
+      { "code": "C50.919", "description": "Malignant neoplasm of unspecified site of unspecified female breast (oncofertility)" },
+      { "code": "C56.9", "description": "Malignant neoplasm of unspecified ovary" },
+      { "code": "Z79.899", "description": "Other long-term (current) drug therapy (chemotherapy)" },
+      { "code": "Z31.83", "description": "Encounter for assisted reproductive fertility procedure cycle" }
+    ],
+    "payers": [],
+    "customSections": [
+      {
+        "heading": "Coverage Landscape — Common Denial Reasons",
+        "kind": "list",
+        "items": [
+          "Elective egg freezing: almost universally excluded",
+          "\"Experimental\" (incorrect since ASRM removed experimental label in 2013)",
+          "Storage fees (89337 annual storage) often excluded separately",
+          "Oncofertility denied if oncology diagnosis not clearly linked"
+        ]
+      },
+      {
+        "heading": "Coverage Landscape — Strongest Coverage Arguments",
+        "kind": "list",
+        "items": [
+          "Oncofertility: ASCO 2018 guideline — fertility preservation is standard of care before gonadotoxic therapy",
+          "ASRM 2013: oocyte cryopreservation is no longer experimental",
+          "POI/genetic condition: medical necessity for fertility preservation",
+          "Some state mandates (IL, NY, CT, NJ) include fertility preservation for iatrogenic infertility"
+        ]
+      },
+      {
+        "heading": "Prior Authorization Requirements — Required Documentation",
+        "kind": "list",
+        "items": [
+          "For oncofertility: oncology treatment plan documenting gonadotoxic therapy type and timeline",
+          "Ovarian reserve testing (AMH, AFC, Day 3 FSH)",
+          "Letter of medical necessity from REI specialist",
+          "For POI/genetic: documentation of diagnosis",
+          "ASCO fertility preservation referral note (if oncofertility)"
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# Oocyte Cryopreservation — Authorization Guide\n\n_Subtitle: CPT Codes · ICD-10 · Payer Requirements_\n_Back link: /oocyte-freeze_\n\n## CPT Codes\n\n| CPT | Description | Type |\n| --- | --- | --- |\n| 58970 | Follicle puncture for oocyte retrieval, any method | Egg retrieval |\n| 89337 | Cryopreservation, mature oocyte(s) | Egg freezing |\n| 89352 | Thawing of cryopreserved; oocyte(s) | Egg thaw |\n| 89353 | Thawing of cryopreserved; embryo(s) | Embryo thaw |\n| 89250 | Culture of oocyte(s)/embryo(s), less than 4 days | Lab — culture |\n| 89254 | Oocyte identification from follicular fluid | Lab — oocyte ID |\n| 89280 | Assisted oocyte fertilization, microtechnique; ≤10 oocytes (ICSI) | ICSI at thaw |\n| 96372 | Therapeutic, prophylactic, or diagnostic injection | Trigger injection |\n\n## ICD-10 Diagnoses\n\n| ICD-10 | Description |\n| --- | --- |\n| Z31.62 | Encounter for fertility preservation procedure |\n| E28.31 | Premature menopause |\n| E28.39 | Other primary ovarian failure |\n| C50.919 | Malignant neoplasm of unspecified site of unspecified female breast (oncofertility) |\n| C56.9 | Malignant neoplasm of unspecified ovary |\n| Z79.899 | Other long-term (current) drug therapy (chemotherapy) |\n| Z31.83 | Encounter for assisted reproductive fertility procedure cycle |\n\n## Coverage Landscape\n\n### Common Denial Reasons\n\n- Elective egg freezing: almost universally excluded\n- \"Experimental\" (incorrect since ASRM removed experimental label in 2013)\n- Storage fees (89337 annual storage) often excluded separately\n- Oncofertility denied if oncology diagnosis not clearly linked\n\n### Strongest Coverage Arguments\n\n- Oncofertility: ASCO 2018 guideline — fertility preservation is standard of care before gonadotoxic therapy\n- ASRM 2013: oocyte cryopreservation is no longer experimental\n- POI/genetic condition: medical necessity for fertility preservation\n- Some state mandates (IL, NY, CT, NJ) include fertility preservation for iatrogenic infertility\n\n## Prior Authorization Requirements\n\n### Required Documentation\n\n- For oncofertility: oncology treatment plan documenting gonadotoxic therapy type and timeline\n- Ovarian reserve testing (AMH, AFC, Day 3 FSH)\n- Letter of medical necessity from REI specialist\n- For POI/genetic: documentation of diagnosis\n- ASCO fertility preservation referral note (if oncofertility)\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["CPT", "Description", "Type"],
+          "rows": [
+            ["58970", "Follicle puncture for oocyte retrieval, any method", "Egg retrieval"],
+            ["89337", "Cryopreservation, mature oocyte(s)", "Egg freezing"],
+            ["89352", "Thawing of cryopreserved; oocyte(s)", "Egg thaw"],
+            ["89353", "Thawing of cryopreserved; embryo(s)", "Embryo thaw"],
+            ["89250", "Culture of oocyte(s)/embryo(s), less than 4 days", "Lab — culture"],
+            ["89254", "Oocyte identification from follicular fluid", "Lab — oocyte ID"],
+            ["89280", "Assisted oocyte fertilization, microtechnique; ≤10 oocytes (ICSI)", "ICSI at thaw"],
+            ["96372", "Therapeutic, prophylactic, or diagnostic injection", "Trigger injection"]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnoses",
+          "header": ["ICD-10", "Description"],
+          "rows": [
+            ["Z31.62", "Encounter for fertility preservation procedure"],
+            ["E28.31", "Premature menopause"],
+            ["E28.39", "Other primary ovarian failure"],
+            ["C50.919", "Malignant neoplasm of unspecified site of unspecified female breast (oncofertility)"],
+            ["C56.9", "Malignant neoplasm of unspecified ovary"],
+            ["Z79.899", "Other long-term (current) drug therapy (chemotherapy)"],
+            ["Z31.83", "Encounter for assisted reproductive fertility procedure cycle"]
+          ]
+        }
+      ]
+    }
+  }
+}

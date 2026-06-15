@@ -1,0 +1,833 @@
+{
+  "guides": [
+    {
+      "name": "Acne",
+      "sourceFile": "client/src/pages/AcneAuthGuide.tsx",
+      "title": "Acne Vulgaris Clinical Compass",
+      "slug": "acne",
+      "outFile": "acne.json",
+      "orphan": false
+    },
+    {
+      "name": "ACS",
+      "sourceFile": "client/src/pages/ACSAuthGuide.tsx",
+      "title": "Acute Coronary Syndrome Clinical Compass",
+      "slug": "acs",
+      "outFile": "acs.json",
+      "orphan": false
+    },
+    {
+      "name": "AFAblation",
+      "sourceFile": "client/src/pages/AFAblationAuthGuide.tsx",
+      "title": "AF Ablation Clinical Compass",
+      "slug": "afablation",
+      "outFile": "afablation.json",
+      "orphan": false
+    },
+    {
+      "name": "ALL",
+      "sourceFile": "client/src/pages/ALLAuthGuide.tsx",
+      "title": "Acute Lymphoblastic Leukemia & CAR-T Clinical Compass",
+      "slug": "all",
+      "outFile": "all.json",
+      "orphan": false
+    },
+    {
+      "name": "AMD",
+      "sourceFile": "client/src/pages/AMDAuthGuide.tsx",
+      "title": "Age-Related Macular Degeneration",
+      "slug": "amd",
+      "outFile": "amd.json",
+      "orphan": false
+    },
+    {
+      "name": "AML",
+      "sourceFile": "client/src/pages/AMLAuthGuide.tsx",
+      "title": "Acute Myeloid Leukemia Clinical Compass",
+      "slug": "aml",
+      "outFile": "aml.json",
+      "orphan": false
+    },
+    {
+      "name": "Amyloidosis",
+      "sourceFile": "client/src/pages/AmyloidosisAuthGuide.tsx",
+      "title": "Amyloidosis Diagnostic Clinical Compass",
+      "slug": "amyloidosis",
+      "outFile": "amyloidosis.json",
+      "orphan": false
+    },
+    {
+      "name": "AplasticAnemia",
+      "sourceFile": "client/src/pages/AplasticAnemiaAuthGuide.tsx",
+      "title": "Aplastic Anemia Clinical Compass",
+      "slug": "aplasticanemia",
+      "outFile": "aplasticanemia.json",
+      "orphan": false
+    },
+    {
+      "name": "ArtificialDisc",
+      "sourceFile": "client/src/pages/ArtificialDiscAuthGuide.tsx",
+      "title": "Artificial Disc Replacement Clinical Compass",
+      "slug": "artificialdisc",
+      "outFile": "artificialdisc.json",
+      "orphan": false
+    },
+    {
+      "name": "Atherecтomy",
+      "sourceFile": "client/src/pages/AtherecтomyAuthGuide.tsx",
+      "title": "Peripheral Atherectomy Clinical Compass",
+      "slug": "atherecтomy",
+      "outFile": "atherecтomy.json",
+      "orphan": false
+    },
+    {
+      "name": "AtopicDermatitis",
+      "sourceFile": "client/src/pages/AtopicDermatitisAuthGuide.tsx",
+      "title": "Atopic Dermatitis Clinical Compass",
+      "slug": "atopicdermatitis",
+      "outFile": "atopicdermatitis.json",
+      "orphan": false
+    },
+    {
+      "name": "Bariatric",
+      "sourceFile": "client/src/pages/BariatricAuthGuide.tsx",
+      "title": "Bariatric Surgery Clinical Compass",
+      "slug": "bariatric",
+      "outFile": "bariatric.json",
+      "orphan": false
+    },
+    {
+      "name": "BiliaryStrictures",
+      "sourceFile": "client/src/pages/BiliaryStricturesAuthGuide.tsx",
+      "title": "Biliary Strictures Clinical Compass",
+      "slug": "biliarystrictures",
+      "outFile": "biliarystrictures.json",
+      "orphan": false
+    },
+    {
+      "name": "Blepharoplasty",
+      "sourceFile": "client/src/pages/BlepharoplastyAuthGuide.tsx",
+      "title": "Blepharoplasty / Ptosis Repair Clinical Compass",
+      "slug": "blepharoplasty",
+      "outFile": "blepharoplasty.json",
+      "orphan": false
+    },
+    {
+      "name": "BoneCancer",
+      "sourceFile": "client/src/pages/BoneCancerAuthGuide.tsx",
+      "title": "Bone Cancer Interventional Oncology Clinical Compass",
+      "slug": "bonecancer",
+      "outFile": "bonecancer.json",
+      "orphan": false
+    },
+    {
+      "name": "BrainMetastases",
+      "sourceFile": "client/src/pages/BrainMetastasesAuthGuide.tsx",
+      "title": "Brain Metastases Clinical Compass",
+      "slug": "brainmetastases",
+      "outFile": "brainmetastases.json",
+      "orphan": false
+    },
+    {
+      "name": "BreastReduction",
+      "sourceFile": "client/src/pages/BreastReductionAuthGuide.tsx",
+      "title": "Breast Reduction Clinical Compass",
+      "slug": "breastreduction",
+      "outFile": "breastreduction.json",
+      "orphan": false
+    },
+    {
+      "name": "BrightFutures",
+      "sourceFile": "client/src/pages/BrightFuturesAuthGuide.tsx",
+      "title": "Bright Futures Well-Child Clinical Compass",
+      "slug": "brightfutures",
+      "outFile": "brightfutures.json",
+      "orphan": false
+    },
+    {
+      "name": "CCM",
+      "sourceFile": "client/src/pages/CCMAuthGuide.tsx",
+      "title": "Cerebral Cavernous Malformation Compass",
+      "slug": "ccm",
+      "outFile": "ccm.json",
+      "orphan": false
+    },
+    {
+      "name": "CentralSleepApnea",
+      "sourceFile": "client/src/pages/CentralSleepApneaAuthGuide.tsx",
+      "title": "Central Sleep Apnea Clinical Compass",
+      "slug": "centralsleepapnea",
+      "outFile": "centralsleepapnea.json",
+      "orphan": false
+    },
+    {
+      "name": "Cholecystectomy",
+      "sourceFile": "client/src/pages/CholecystectomyAuthGuide.tsx",
+      "title": "Cholecystectomy Clinical Compass",
+      "slug": "cholecystectomy",
+      "outFile": "cholecystectomy.json",
+      "orphan": false
+    },
+    {
+      "name": "ChronicInsomnia",
+      "sourceFile": "client/src/pages/ChronicInsomniaAuthGuide.tsx",
+      "title": "Chronic Insomnia Clinical Compass",
+      "slug": "chronicinsomnia",
+      "outFile": "chronicinsomnia.json",
+      "orphan": false
+    },
+    {
+      "name": "ChronicPancreatitis",
+      "sourceFile": "client/src/pages/ChronicPancreatitisAuthGuide.tsx",
+      "title": "Chronic Pancreatitis Clinical Compass",
+      "slug": "chronicpancreatitis",
+      "outFile": "chronicpancreatitis.json",
+      "orphan": false
+    },
+    {
+      "name": "CRCScreening",
+      "sourceFile": "client/src/pages/CRCScreeningAuthGuide.tsx",
+      "title": "CRC Screening Clinical Compass",
+      "slug": "crcscreening",
+      "outFile": "crcscreening.json",
+      "orphan": false
+    },
+    {
+      "name": "CrohnsDisease",
+      "sourceFile": "client/src/pages/CrohnsDiseaseAuthGuide.tsx",
+      "title": "Crohn's Disease Clinical Compass",
+      "slug": "crohnsdisease",
+      "outFile": "crohnsdisease.json",
+      "orphan": false
+    },
+    {
+      "name": "DyslipidemiaDS",
+      "sourceFile": "client/src/pages/DyslipidemiaDSAuthGuide.tsx",
+      "title": "Dyslipidemia Clinical Compass",
+      "slug": "dyslipidemiads",
+      "outFile": "dyslipidemiads.json",
+      "orphan": false
+    },
+    {
+      "name": "EmbryoCryo",
+      "sourceFile": "client/src/pages/EmbryoCryoAuthGuide.tsx",
+      "title": "Embryo Cryopreservation Clinical Compass",
+      "slug": "embryocryo",
+      "outFile": "embryocryo.json",
+      "orphan": false
+    },
+    {
+      "name": "EndovenousAblation",
+      "sourceFile": "client/src/pages/EndovenousAblationAuthGuide.tsx",
+      "title": "Endovenous Ablation Clinical Compass",
+      "slug": "endovenousablation",
+      "outFile": "endovenousablation.json",
+      "orphan": false
+    },
+    {
+      "name": "EpiduralSteroid",
+      "sourceFile": "client/src/pages/EpiduralSteroidAuthGuide.tsx",
+      "title": "Epidural Steroid Injection Clinical Compass",
+      "slug": "epiduralsteroid",
+      "outFile": "epiduralsteroid.json",
+      "orphan": false
+    },
+    {
+      "name": "FacetJoint",
+      "sourceFile": "client/src/pages/FacetJointAuthGuide.tsx",
+      "title": "Facet Joint Injection Clinical Compass",
+      "slug": "facetjoint",
+      "outFile": "facetjoint.json",
+      "orphan": false
+    },
+    {
+      "name": "FebrilInfant",
+      "sourceFile": "client/src/pages/FebrilInfantAuthGuide.tsx",
+      "title": "Febrile Infant Clinical Compass",
+      "slug": "febrilinfant",
+      "outFile": "febrilinfant.json",
+      "orphan": false
+    },
+    {
+      "name": "FunctionalSeizures",
+      "sourceFile": "client/src/pages/FunctionalSeizuresAuthGuide.tsx",
+      "title": "Functional Seizures (PNES)",
+      "slug": "functionalseizures",
+      "outFile": "functionalseizures.json",
+      "orphan": false
+    },
+    {
+      "name": "GAE",
+      "sourceFile": "client/src/pages/GAEAuthGuide.tsx",
+      "title": "Geniculate Artery Embolization Clinical Compass",
+      "slug": "gae",
+      "outFile": "gae.json",
+      "orphan": false
+    },
+    {
+      "name": "Gastroparesis",
+      "sourceFile": "client/src/pages/GastroparesisAuthGuide.tsx",
+      "title": "Gastroparesis Clinical Compass",
+      "slug": "gastroparesis",
+      "outFile": "gastroparesis.json",
+      "orphan": false
+    },
+    {
+      "name": "GenderAffirmingUro",
+      "sourceFile": "client/src/pages/GenderAffirmingUroAuthGuide.tsx",
+      "title": "Gender-Affirming Urologic Procedures Clinical Compass",
+      "slug": "genderaffirminguro",
+      "outFile": "genderaffirminguro.json",
+      "orphan": false
+    },
+    {
+      "name": "GestationalCarrier",
+      "sourceFile": "client/src/pages/GestationalCarrierAuthGuide.tsx",
+      "title": "Gestational Carrier Clinical Compass",
+      "slug": "gestationalcarrier",
+      "outFile": "gestationalcarrier.json",
+      "orphan": false
+    },
+    {
+      "name": "Glaucoma",
+      "sourceFile": "client/src/pages/GlaucomaAuthGuide.tsx",
+      "title": "Glaucoma",
+      "slug": "glaucoma",
+      "outFile": "glaucoma.json",
+      "orphan": false
+    },
+    {
+      "name": "Hernia",
+      "sourceFile": "client/src/pages/HerniaAuthGuide.tsx",
+      "title": "Hernia Repair Clinical Compass",
+      "slug": "hernia",
+      "outFile": "hernia.json",
+      "orphan": false
+    },
+    {
+      "name": "HighMyopia",
+      "sourceFile": "client/src/pages/HighMyopiaAuthGuide.tsx",
+      "title": "High Myopia / Pathologic Myopia",
+      "slug": "highmyopia",
+      "outFile": "highmyopia.json",
+      "orphan": false
+    },
+    {
+      "name": "IBDPreventiveCare",
+      "sourceFile": "client/src/pages/IBDPreventiveCareAuthGuide.tsx",
+      "title": "IBD Preventive Care Clinical Compass",
+      "slug": "ibdpreventivecare",
+      "outFile": "ibdpreventivecare.json",
+      "orphan": false
+    },
+    {
+      "name": "ICSI",
+      "sourceFile": "client/src/pages/ICSIAuthGuide.tsx",
+      "title": "Intracytoplasmic Sperm Injection Clinical Compass",
+      "slug": "icsi",
+      "outFile": "icsi.json",
+      "orphan": false
+    },
+    {
+      "name": "InfluenzaPrevention",
+      "sourceFile": "client/src/pages/InfluenzaPreventionAuthGuide.tsx",
+      "title": "Influenza Prevention Clinical Compass",
+      "slug": "influenzaprevention",
+      "outFile": "influenzaprevention.json",
+      "orphan": false
+    },
+    {
+      "name": "IVF",
+      "sourceFile": "client/src/pages/IVFAuthGuide.tsx",
+      "title": "In Vitro Fertilization Clinical Compass",
+      "slug": "ivf",
+      "outFile": "ivf.json",
+      "orphan": false
+    },
+    {
+      "name": "LAAC",
+      "sourceFile": "client/src/pages/LAACAuthGuide.tsx",
+      "title": "LAAC / Watchman Clinical Compass",
+      "slug": "laac",
+      "outFile": "laac.json",
+      "orphan": false
+    },
+    {
+      "name": "LiverTumor",
+      "sourceFile": "client/src/pages/LiverTumorAuthGuide.tsx",
+      "title": "Liver Tumor Clinical Compass",
+      "slug": "livertumor",
+      "outFile": "livertumor.json",
+      "orphan": false
+    },
+    {
+      "name": "LowGradeGlioma",
+      "sourceFile": "client/src/pages/LowGradeGliomaAuthGuide.tsx",
+      "title": "Low-Grade Glioma Clinical Compass",
+      "slug": "lowgradeglioma",
+      "outFile": "lowgradeglioma.json",
+      "orphan": false
+    },
+    {
+      "name": "MASLD",
+      "sourceFile": "client/src/pages/MASLDAuthGuide.tsx",
+      "title": "MASLD / MASH Clinical Compass",
+      "slug": "masld",
+      "outFile": "masld.json",
+      "orphan": false
+    },
+    {
+      "name": "MeniscusRepair",
+      "sourceFile": "client/src/pages/MeniscusRepairAuthGuide.tsx",
+      "title": "Meniscus Repair Clinical Compass",
+      "slug": "meniscusrepair",
+      "outFile": "meniscusrepair.json",
+      "orphan": false
+    },
+    {
+      "name": "MensHealth",
+      "sourceFile": "client/src/pages/MensHealthAuthGuide.tsx",
+      "title": "Prostatic Artery Embolization Clinical Compass",
+      "slug": "menshealth",
+      "outFile": "menshealth.json",
+      "orphan": false
+    },
+    {
+      "name": "Migraine",
+      "sourceFile": "client/src/pages/MigraineAuthGuide.tsx",
+      "title": "Migraine",
+      "slug": "migraine",
+      "outFile": "migraine.json",
+      "orphan": false
+    },
+    {
+      "name": "MultipleSclerosis",
+      "sourceFile": "client/src/pages/MultipleSclerosisAuthGuide.tsx",
+      "title": "Multiple Sclerosis",
+      "slug": "multiplesclerosis",
+      "outFile": "multiplesclerosis.json",
+      "orphan": false
+    },
+    {
+      "name": "Narcolepsy",
+      "sourceFile": "client/src/pages/NarcolepsyAuthGuide.tsx",
+      "title": "Narcolepsy Clinical Compass",
+      "slug": "narcolepsy",
+      "outFile": "narcolepsy.json",
+      "orphan": false
+    },
+    {
+      "name": "NeonatalHyperbilirubinemia",
+      "sourceFile": "client/src/pages/NeonatalHyperbilirubinemiaAuthGuide.tsx",
+      "title": "Neonatal Hyperbilirubinemia Clinical Compass",
+      "slug": "neonatalhyperbilirubinemia",
+      "outFile": "neonatalhyperbilirubinemia.json",
+      "orphan": false
+    },
+    {
+      "name": "Obesity",
+      "sourceFile": "client/src/pages/ObesityAuthGuide.tsx",
+      "title": "Obesity Treatment Clinical Compass",
+      "slug": "obesity",
+      "outFile": "obesity.json",
+      "orphan": false
+    },
+    {
+      "name": "OocyteFreeze",
+      "sourceFile": "client/src/pages/OocyteFreezeAuthGuide.tsx",
+      "title": "Oocyte Cryopreservation Clinical Compass",
+      "slug": "oocytefreeze",
+      "outFile": "oocytefreeze.json",
+      "orphan": false
+    },
+    {
+      "name": "OSA",
+      "sourceFile": "client/src/pages/OSAAuthGuide.tsx",
+      "title": "OSA Clinical Compass",
+      "slug": "osa",
+      "outFile": "osa.json",
+      "orphan": false
+    },
+    {
+      "name": "OSAObesity",
+      "sourceFile": "client/src/pages/OSAObesityAuthGuide.tsx",
+      "title": "OSA + Obesity Clinical Compass",
+      "slug": "osaobesity",
+      "outFile": "osaobesity.json",
+      "orphan": false
+    },
+    {
+      "name": "OvulationInduction",
+      "sourceFile": "client/src/pages/OvulationInductionAuthGuide.tsx",
+      "title": "Ovulation Induction Clinical Compass",
+      "slug": "ovulationinduction",
+      "outFile": "ovulationinduction.json",
+      "orphan": false
+    },
+    {
+      "name": "PAD",
+      "sourceFile": "client/src/pages/PADAuthGuide.tsx",
+      "title": "PAD Revascularization Clinical Compass",
+      "slug": "pad",
+      "outFile": "pad.json",
+      "orphan": false
+    },
+    {
+      "name": "PADQualityMeasures",
+      "sourceFile": "client/src/pages/PADQualityAppealLetter.tsx",
+      "title": "PAD Clinical Performance & Quality Measures Clinical Compass",
+      "slug": "padqualitymeasures",
+      "outFile": "padqualitymeasures.json",
+      "orphan": false
+    },
+    {
+      "name": "PancreaticMass",
+      "sourceFile": "client/src/pages/PancreaticMassAuthGuide.tsx",
+      "title": "Pancreatic Mass Evaluation Clinical Compass",
+      "slug": "pancreaticmass",
+      "outFile": "pancreaticmass.json",
+      "orphan": false
+    },
+    {
+      "name": "Parkinsons",
+      "sourceFile": "client/src/pages/ParkinsonsAuthGuide.tsx",
+      "title": "Parkinson's Disease",
+      "slug": "parkinsons",
+      "outFile": "parkinsons.json",
+      "orphan": false
+    },
+    {
+      "name": "PAVF",
+      "sourceFile": "client/src/pages/PAVFAuthGuide.tsx",
+      "title": "Percutaneous AV Fistula Clinical Compass",
+      "slug": "pavf",
+      "outFile": "pavf.json",
+      "orphan": false
+    },
+    {
+      "name": "PCI",
+      "sourceFile": "client/src/pages/PCIAuthGuide.tsx",
+      "title": "Elective PCI Clinical Compass",
+      "slug": "pci",
+      "outFile": "pci.json",
+      "orphan": false
+    },
+    {
+      "name": "PE",
+      "sourceFile": "client/src/pages/PEAuthGuide.tsx",
+      "title": "Pulmonary Embolism Clinical Compass",
+      "slug": "pe",
+      "outFile": "pe.json",
+      "orphan": false
+    },
+    {
+      "name": "PediatricImmunization",
+      "sourceFile": "client/src/pages/PediatricImmunizationAuthGuide.tsx",
+      "title": "Pediatric Immunization Clinical Compass",
+      "slug": "pediatricimmunization",
+      "outFile": "pediatricimmunization.json",
+      "orphan": false
+    },
+    {
+      "name": "PediatricMentalHealth",
+      "sourceFile": "client/src/pages/PediatricMentalHealthAuthGuide.tsx",
+      "title": "Pediatric Mental Health Clinical Compass",
+      "slug": "pediatricmentalhealth",
+      "outFile": "pediatricmentalhealth.json",
+      "orphan": false
+    },
+    {
+      "name": "PediatricObesity",
+      "sourceFile": "client/src/pages/PediatricObesityAuthGuide.tsx",
+      "title": "Pediatric Obesity Clinical Compass",
+      "slug": "pediatricobesity",
+      "outFile": "pediatricobesity.json",
+      "orphan": false
+    },
+    {
+      "name": "Peyronies",
+      "sourceFile": "client/src/pages/PeyroniesAuthGuide.tsx",
+      "title": "Peyronie's Disease Surgery Clinical Compass",
+      "slug": "peyronies",
+      "outFile": "peyronies.json",
+      "orphan": false
+    },
+    {
+      "name": "PGT",
+      "sourceFile": "client/src/pages/PGTAuthGuide.tsx",
+      "title": "Preimplantation Genetic Testing Clinical Compass",
+      "slug": "pgt",
+      "outFile": "pgt.json",
+      "orphan": false
+    },
+    {
+      "name": "PituitaryAdenoma",
+      "sourceFile": "client/src/pages/PituitaryAdenomaAuthGuide.tsx",
+      "title": "Pituitary Adenoma Clinical Compass",
+      "slug": "pituitaryadenoma",
+      "outFile": "pituitaryadenoma.json",
+      "orphan": false
+    },
+    {
+      "name": "PortalHypertension",
+      "sourceFile": "client/src/pages/PortalHypertensionAuthGuide.tsx",
+      "title": "Portal Hypertension Clinical Compass",
+      "slug": "portalhypertension",
+      "outFile": "portalhypertension.json",
+      "orphan": false
+    },
+    {
+      "name": "Psoriasis",
+      "sourceFile": "client/src/pages/PsoriasisAuthGuide.tsx",
+      "title": "Psoriasis Clinical Compass",
+      "slug": "psoriasis",
+      "outFile": "psoriasis.json",
+      "orphan": false
+    },
+    {
+      "name": "Psychiatry",
+      "sourceFile": "client/src/pages/PsychiatryAuthGuide.tsx",
+      "title": "Psychiatry Clinical Compass",
+      "slug": "psychiatry",
+      "outFile": "psychiatry.json",
+      "orphan": false
+    },
+    {
+      "name": "RadOnc",
+      "sourceFile": "client/src/pages/RadOncAuthGuide.tsx",
+      "title": "Radiation Oncology Clinical Compass",
+      "slug": "radonc",
+      "outFile": "radonc.json",
+      "orphan": false
+    },
+    {
+      "name": "RectalCancer",
+      "sourceFile": "client/src/pages/RectalCancerAuthGuide.tsx",
+      "title": "Rectal Cancer Clinical Compass",
+      "slug": "rectalcancer",
+      "outFile": "rectalcancer.json",
+      "orphan": false
+    },
+    {
+      "name": "RenalCryoablation",
+      "sourceFile": "client/src/pages/RenalCryoablationAuthGuide.tsx",
+      "title": "Renal Cryoablation Clinical Compass",
+      "slug": "renalcryoablation",
+      "outFile": "renalcryoablation.json",
+      "orphan": false
+    },
+    {
+      "name": "RFA",
+      "sourceFile": "client/src/pages/RFAAuthGuide.tsx",
+      "title": "Radiofrequency Ablation Clinical Compass",
+      "slug": "rfa",
+      "outFile": "rfa.json",
+      "orphan": false
+    },
+    {
+      "name": "RLSPLMD",
+      "sourceFile": "client/src/pages/RLSPLMDAuthGuide.tsx",
+      "title": "RLS / PLMD Clinical Compass",
+      "slug": "rlsplmd",
+      "outFile": "rlsplmd.json",
+      "orphan": false
+    },
+    {
+      "name": "RotatorCuff",
+      "sourceFile": "client/src/pages/RotatorCuffAuthGuide.tsx",
+      "title": "Rotator Cuff Repair Clinical Compass",
+      "slug": "rotatorcuff",
+      "outFile": "rotatorcuff.json",
+      "orphan": false
+    },
+    {
+      "name": "RSVPrevention",
+      "sourceFile": "client/src/pages/RSVPreventionAuthGuide.tsx",
+      "title": "RSV Prevention Clinical Compass",
+      "slug": "rsvprevention",
+      "outFile": "rsvprevention.json",
+      "orphan": false
+    },
+    {
+      "name": "Sacroplasty",
+      "sourceFile": "client/src/pages/SacroplastyAuthGuide.tsx",
+      "title": "Sacroplasty Clinical Compass",
+      "slug": "sacroplasty",
+      "outFile": "sacroplasty.json",
+      "orphan": false
+    },
+    {
+      "name": "Sclerotherapy",
+      "sourceFile": "client/src/pages/SclerotherapyAuthGuide.tsx",
+      "title": "Sclerotherapy Clinical Compass",
+      "slug": "sclerotherapy",
+      "outFile": "sclerotherapy.json",
+      "orphan": false
+    },
+    {
+      "name": "SCS",
+      "sourceFile": "client/src/pages/SCSAuthGuide.tsx",
+      "title": "Spinal Cord Stimulator Clinical Compass",
+      "slug": "scs",
+      "outFile": "scs.json",
+      "orphan": false
+    },
+    {
+      "name": "SpinalFusion",
+      "sourceFile": "client/src/pages/SpinalFusionAuthGuide.tsx",
+      "title": "Spinal Fusion Clinical Compass",
+      "slug": "spinalfusion",
+      "outFile": "spinalfusion.json",
+      "orphan": false
+    },
+    {
+      "name": "Spine",
+      "sourceFile": "client/src/pages/SpineAuthGuide.tsx",
+      "title": "Spine Surgery Clinical Compass",
+      "slug": "spine",
+      "outFile": "spine.json",
+      "orphan": false
+    },
+    {
+      "name": "SpineAntithrombotic",
+      "sourceFile": "client/src/pages/SpineAntithromboticAuthGuide.tsx",
+      "title": "Spine Antithrombotic Compass",
+      "slug": "spineantithrombotic",
+      "outFile": "spineantithrombotic.json",
+      "orphan": false
+    },
+    {
+      "name": "Stroke",
+      "sourceFile": "client/src/pages/StrokeAuthGuide.tsx",
+      "title": "Acute Ischemic Stroke",
+      "slug": "stroke",
+      "outFile": "stroke.json",
+      "orphan": false
+    },
+    {
+      "name": "TESE",
+      "sourceFile": "client/src/pages/TESEAuthGuide.tsx",
+      "title": "TESE / Micro-TESE Clinical Compass",
+      "slug": "tese",
+      "outFile": "tese.json",
+      "orphan": false
+    },
+    {
+      "name": "THA",
+      "sourceFile": "client/src/pages/THAAuthGuide.tsx",
+      "title": "Total Hip Arthroplasty Clinical Compass",
+      "slug": "tha",
+      "outFile": "tha.json",
+      "orphan": false
+    },
+    {
+      "name": "TherapeuticEUS",
+      "sourceFile": "client/src/pages/TherapeuticEUSAuthGuide.tsx",
+      "title": "Therapeutic EUS Clinical Compass",
+      "slug": "therapeuticeus",
+      "outFile": "therapeuticeus.json",
+      "orphan": false
+    },
+    {
+      "name": "ThyroidNodule",
+      "sourceFile": "client/src/pages/ThyroidNoduleAuthGuide.tsx",
+      "title": "Thyroid Nodule Clinical Compass",
+      "slug": "thyroidnodule",
+      "outFile": "thyroidnodule.json",
+      "orphan": false
+    },
+    {
+      "name": "TKA",
+      "sourceFile": "client/src/pages/TKAAuthGuide.tsx",
+      "title": "Total Knee Arthroplasty Clinical Compass",
+      "slug": "tka",
+      "outFile": "tka.json",
+      "orphan": false
+    },
+    {
+      "name": "UFE",
+      "sourceFile": "client/src/pages/UFEAuthGuide.tsx",
+      "title": null,
+      "slug": "ufe",
+      "outFile": "_orphan_ufe.json",
+      "orphan": true
+    },
+    {
+      "name": "UlcerativeColitis",
+      "sourceFile": "client/src/pages/UlcerativeColitisAuthGuide.tsx",
+      "title": "Ulcerative Colitis Clinical Compass",
+      "slug": "ulcerativecolitis",
+      "outFile": "ulcerativecolitis.json",
+      "orphan": false
+    },
+    {
+      "name": "Varicocele",
+      "sourceFile": "client/src/pages/VaricoceleAuthGuide.tsx",
+      "title": "Varicocele Embolization Clinical Compass",
+      "slug": "varicocele",
+      "outFile": "varicocele.json",
+      "orphan": false
+    },
+    {
+      "name": "Varicocelectomy",
+      "sourceFile": "client/src/pages/VaricocelectomyAuthGuide.tsx",
+      "title": "Varicocelectomy Clinical Compass",
+      "slug": "varicocelectomy",
+      "outFile": "varicocelectomy.json",
+      "orphan": false
+    },
+    {
+      "name": "VasectomyReversal",
+      "sourceFile": "client/src/pages/VasectomyReversalAuthGuide.tsx",
+      "title": "Vasectomy Reversal Clinical Compass",
+      "slug": "vasectomyreversal",
+      "outFile": "vasectomyreversal.json",
+      "orphan": false
+    },
+    {
+      "name": "Vertebroplasty",
+      "sourceFile": "client/src/pages/VertebroplastyAuthGuide.tsx",
+      "title": "Vertebroplasty / Kyphoplasty Clinical Compass",
+      "slug": "vertebroplasty",
+      "outFile": "vertebroplasty.json",
+      "orphan": false
+    },
+    {
+      "name": "VestibularSchwaноma",
+      "sourceFile": "client/src/pages/VestibularSchwaноmaAuthGuide.tsx",
+      "title": "Vestibular Schwannoma Clinical Compass",
+      "slug": "vestibularschwaноma",
+      "outFile": "vestibularschwaноma.json",
+      "orphan": false
+    },
+    {
+      "name": "VTE",
+      "sourceFile": "client/src/pages/VTEAuthGuide.tsx",
+      "title": "Venous Thromboembolism Clinical Compass",
+      "slug": "vte",
+      "outFile": "vte.json",
+      "orphan": false
+    },
+    {
+      "name": "WomensHealth",
+      "sourceFile": "client/src/pages/WomensHealthAuthGuide.tsx",
+      "title": "Women's Health Clinical Compass",
+      "slug": "womenshealth",
+      "outFile": "womenshealth.json",
+      "orphan": false
+    },
+    {
+      "name": "Y90",
+      "sourceFile": "client/src/pages/Y90AuthGuide.tsx",
+      "title": "Y-90 Radioembolization Clinical Compass",
+      "slug": "y90",
+      "outFile": "y90.json",
+      "orphan": false
+    }
+  ],
+  "count": 103,
+  "no_guide_modules": [
+    "Melanoma Clinical Compass",
+    "Hidradenitis Suppurativa Clinical Compass"
+  ]
+}

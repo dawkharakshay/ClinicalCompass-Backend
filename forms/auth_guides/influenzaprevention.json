@@ -1,0 +1,297 @@
+{
+  "title": "Influenza Prevention Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "InfluenzaPreventionAuthGuide.tsx",
+    "title": "Influenza Prevention Clinical Compass",
+    "subtitle": "Influenza Vaccine Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "90686",
+        "description": "Influenza virus vaccine, quadrivalent (IIV4), split virus, preservative free, 0.5 mL dosage, for intramuscular use",
+        "device": "Intramuscular injection",
+        "access": "Direct administration",
+        "rvu": "0.25",
+        "includes": [
+          "Vaccine product supply",
+          "Administration of the vaccine"
+        ],
+        "note": "For individuals 3 years of age and older. Specific vaccine brand may vary."
+      },
+      {
+        "code": "90688",
+        "description": "Influenza virus vaccine, quadrivalent (IIV4), split virus, 0.5 mL dosage, for intramuscular use",
+        "device": "Intramuscular injection",
+        "access": "Direct administration",
+        "rvu": "0.25",
+        "includes": [
+          "Vaccine product supply",
+          "Administration of the vaccine"
+        ],
+        "note": "For individuals 3 years of age and older. This code is often used for multi-dose vials or when preservative is not specified as free."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "Z23",
+        "description": "Encounter for immunization",
+        "notes": "Used for routine prophylactic immunization against influenza.",
+        "required": true
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Influenza vaccines are generally covered by Medicare Part B without prior authorization when administered by an eligible provider.",
+        "overview": "Medicare Part B covers influenza virus vaccines. Beneficiaries are eligible for one influenza immunization per flu season. No deductible or copayment applies.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria - Eligibility",
+            "items": ["Beneficiary is enrolled in Medicare Part B."]
+          },
+          {
+            "heading": "Coverage Criteria - Frequency",
+            "items": ["One influenza immunization per flu season."]
+          },
+          {
+            "heading": "Required Documentation - Medical Record",
+            "items": [
+              "Date of administration",
+              "Vaccine type and dosage",
+              "Route of administration",
+              "Site of administration",
+              "Manufacturer and lot number",
+              "Expiration date",
+              "Name and title of person administering vaccine"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claim with appropriate CPT code (e.g., 90686, 90688) and ICD-10 code Z23.",
+              "Ensure correct place of service and rendering provider information."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Incorrect CPT or ICD-10 coding.",
+              "Duplicate billing for the same flu season.",
+              "Missing or incomplete documentation."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": ["Medicare typically reimburses for the vaccine product and its administration. Payment is usually 100% of the Medicare-approved amount, with no patient cost-sharing."]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify patient eligibility and Medicare Part B enrollment prior to administration.",
+              "Keep detailed records of vaccine administration.",
+              "Stay updated on annual Medicare influenza vaccine policies."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS",
+            "status": "Covered",
+            "notes": "Annual influenza vaccine is a preventive service covered under Medicare Part B."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Influenza vaccines are typically covered by Medicaid without prior authorization, especially for children and at-risk adults.",
+        "overview": "Medicaid programs generally cover influenza vaccines for eligible beneficiaries, often following ACIP recommendations. Coverage details may vary by state.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria - Eligibility",
+            "items": ["Beneficiary is enrolled in state Medicaid program."]
+          },
+          {
+            "heading": "Coverage Criteria - Age/Risk Factors",
+            "items": ["Coverage often aligns with ACIP recommendations for age groups and risk factors."]
+          },
+          {
+            "heading": "Required Documentation - Medical Record",
+            "items": [
+              "Date of administration",
+              "Vaccine type and dosage",
+              "Route of administration",
+              "Site of administration",
+              "Manufacturer and lot number",
+              "Expiration date",
+              "Name and title of person administering vaccine"
+            ]
+          },
+          {
+            "heading": "Required Documentation - State-Specific",
+            "items": ["Any additional state-mandated documentation for vaccine administration."]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claim to state Medicaid program with appropriate CPT code (e.g., 90686, 90688) and ICD-10 code Z23.",
+              "Adhere to state-specific billing guidelines and deadlines."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Patient not eligible for Medicaid on date of service.",
+              "Incorrect or missing state-specific identifiers.",
+              "Failure to follow state-specific vaccine administration guidelines."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": ["Medicaid reimbursement rates for influenza vaccines and administration vary by state. Providers should consult their state's Medicaid fee schedule."]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state's specific Medicaid policies for immunizations.",
+              "Verify patient eligibility through the state Medicaid portal before administering the vaccine."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (e.g., California Medi-Cal)",
+            "status": "Covered",
+            "notes": "Covers influenza vaccines for all eligible beneficiaries according to ACIP guidelines."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Covered (usually 100%)",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Most private insurance plans cover influenza vaccines as a preventive service without prior authorization, often with no cost-sharing.",
+        "overview": "Private health insurance plans typically cover influenza vaccinations as a preventive benefit, often at 100% with no copayment or deductible when received from an in-network provider.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria - Plan Benefits",
+            "items": ["Coverage is subject to individual plan benefits and network participation."]
+          },
+          {
+            "heading": "Coverage Criteria - Preventive Care",
+            "items": ["Generally covered as a preventive service as per ACA guidelines."]
+          },
+          {
+            "heading": "Required Documentation - Medical Record",
+            "items": [
+              "Date of administration",
+              "Vaccine type and dosage",
+              "Route of administration",
+              "Site of administration",
+              "Manufacturer and lot number",
+              "Expiration date",
+              "Name and title of person administering vaccine"
+            ]
+          },
+          {
+            "heading": "Required Documentation - Claim Submission",
+            "items": ["Accurate patient demographic and insurance information."]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claim to the patient's private insurance company using appropriate CPT code (e.g., 90686, 90688) and ICD-10 code Z23.",
+              "Verify patient's insurance benefits prior to service to confirm coverage and cost-sharing."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Out-of-network provider.",
+              "Lack of medical necessity (rare for flu vaccine).",
+              "Incorrect coding or missing patient insurance details."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": ["Reimbursement for private insurance plans varies. Many plans cover preventive vaccines at 100% of the allowed amount. Negotiated rates apply."]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify insurance benefits and network status before administering the vaccine.",
+              "Inform patients about potential out-of-pocket costs if they are out-of-network or if their plan has unusual coverage terms."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Covered",
+            "notes": "Typically covers annual flu shots as a preventive service with no cost-sharing."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered",
+            "notes": "Generally covers flu vaccines at no cost to the member when administered by an in-network provider."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment",
+        "href": "/influenzaprevention"
+      }
+    ],
+    "raw": {
+      "markdown": "# Influenza Prevention Clinical Compass\n## Influenza Vaccine Insurance Authorization Guide\n\n[Back to Assessment] (link: /influenzaprevention)\n\n## Procedure Codes (CPT Codes)\n\n### CPT 90686 (RVU 0.25)\nInfluenza virus vaccine, quadrivalent (IIV4), split virus, preservative free, 0.5 mL dosage, for intramuscular use\nDevice/Access: Intramuscular injection\nIncluded in this code (do NOT bill separately):\n- Vaccine product supply\n- Administration of the vaccine\nNote: For individuals 3 years of age and older. Specific vaccine brand may vary.\n\n### CPT 90688 (RVU 0.25)\nInfluenza virus vaccine, quadrivalent (IIV4), split virus, 0.5 mL dosage, for intramuscular use\nDevice/Access: Intramuscular injection\nIncluded in this code (do NOT bill separately):\n- Vaccine product supply\n- Administration of the vaccine\nNote: For individuals 3 years of age and older. This code is often used for multi-dose vials or when preservative is not specified as free.\n\n## ICD-10 Diagnosis Codes\n\n- Z23 (Primary / Required): Encounter for immunization. Used for routine prophylactic immunization against influenza.\n\n## Payer-Specific Authorization Requirements\n\nPayer tabs: Medicare, Medicaid, Private Insurance.\n\n### Medicare\nStatus badges: No Prior Auth (FFS) | Covered\nPrior Auth Note: Influenza vaccines are generally covered by Medicare Part B without prior authorization when administered by an eligible provider.\nOverview: Medicare Part B covers influenza virus vaccines. Beneficiaries are eligible for one influenza immunization per flu season. No deductible or copayment applies.\n\n#### Coverage Criteria\nEligibility:\n- Beneficiary is enrolled in Medicare Part B.\nFrequency:\n- One influenza immunization per flu season.\n\n#### Required Documentation\nMedical Record:\n- Date of administration\n- Vaccine type and dosage\n- Route of administration\n- Site of administration\n- Manufacturer and lot number\n- Expiration date\n- Name and title of person administering vaccine\n\n#### Submission Process\n1. Submit claim with appropriate CPT code (e.g., 90686, 90688) and ICD-10 code Z23.\n2. Ensure correct place of service and rendering provider information.\n\n#### Common Denial Reasons\n- Incorrect CPT or ICD-10 coding.\n- Duplicate billing for the same flu season.\n- Missing or incomplete documentation.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS | Covered | Annual influenza vaccine is a preventive service covered under Medicare Part B. |\n\n#### Reimbursement Note\nMedicare typically reimburses for the vaccine product and its administration. Payment is usually 100% of the Medicare-approved amount, with no patient cost-sharing.\n\n#### Authorization Tips\n- Verify patient eligibility and Medicare Part B enrollment prior to administration.\n- Keep detailed records of vaccine administration.\n- Stay updated on annual Medicare influenza vaccine policies.\n\n### Medicaid\nStatus badges: No Prior Auth (FFS) | Covered\nPrior Auth Note: Influenza vaccines are typically covered by Medicaid without prior authorization, especially for children and at-risk adults.\nOverview: Medicaid programs generally cover influenza vaccines for eligible beneficiaries, often following ACIP recommendations. Coverage details may vary by state.\n\n#### Coverage Criteria\nEligibility:\n- Beneficiary is enrolled in state Medicaid program.\nAge/Risk Factors:\n- Coverage often aligns with ACIP recommendations for age groups and risk factors.\n\n#### Required Documentation\nMedical Record:\n- Date of administration\n- Vaccine type and dosage\n- Route of administration\n- Site of administration\n- Manufacturer and lot number\n- Expiration date\n- Name and title of person administering vaccine\nState-Specific:\n- Any additional state-mandated documentation for vaccine administration.\n\n#### Submission Process\n1. Submit claim to state Medicaid program with appropriate CPT code (e.g., 90686, 90688) and ICD-10 code Z23.\n2. Adhere to state-specific billing guidelines and deadlines.\n\n#### Common Denial Reasons\n- Patient not eligible for Medicaid on date of service.\n- Incorrect or missing state-specific identifiers.\n- Failure to follow state-specific vaccine administration guidelines.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (e.g., California Medi-Cal) | Covered | Covers influenza vaccines for all eligible beneficiaries according to ACIP guidelines. |\n\n#### Reimbursement Note\nMedicaid reimbursement rates for influenza vaccines and administration vary by state. Providers should consult their state's Medicaid fee schedule.\n\n#### Authorization Tips\n- Familiarize yourself with your state's specific Medicaid policies for immunizations.\n- Verify patient eligibility through the state Medicaid portal before administering the vaccine.\n\n### Private Insurance\nStatus badges: No Prior Auth (FFS) | Covered (usually 100%)\nPrior Auth Note: Most private insurance plans cover influenza vaccines as a preventive service without prior authorization, often with no cost-sharing.\nOverview: Private health insurance plans typically cover influenza vaccinations as a preventive benefit, often at 100% with no copayment or deductible when received from an in-network provider.\n\n#### Coverage Criteria\nPlan Benefits:\n- Coverage is subject to individual plan benefits and network participation.\nPreventive Care:\n- Generally covered as a preventive service as per ACA guidelines.\n\n#### Required Documentation\nMedical Record:\n- Date of administration\n- Vaccine type and dosage\n- Route of administration\n- Site of administration\n- Manufacturer and lot number\n- Expiration date\n- Name and title of person administering vaccine\nClaim Submission:\n- Accurate patient demographic and insurance information.\n\n#### Submission Process\n1. Submit claim to the patient's private insurance company using appropriate CPT code (e.g., 90686, 90688) and ICD-10 code Z23.\n2. Verify patient's insurance benefits prior to service to confirm coverage and cost-sharing.\n\n#### Common Denial Reasons\n- Out-of-network provider.\n- Lack of medical necessity (rare for flu vaccine).\n- Incorrect coding or missing patient insurance details.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Blue Cross Blue Shield | Covered | Typically covers annual flu shots as a preventive service with no cost-sharing. |\n| UnitedHealthcare | Covered | Generally covers flu vaccines at no cost to the member when administered by an in-network provider. |\n\n#### Reimbursement Note\nReimbursement for private insurance plans varies. Many plans cover preventive vaccines at 100% of the allowed amount. Negotiated rates apply.\n\n#### Authorization Tips\n- Always verify insurance benefits and network status before administering the vaccine.\n- Inform patients about potential out-of-pocket costs if they are out-of-network or if their plan has unusual coverage terms.\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "RVU", "Description", "Device/Access", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            ["90686", "0.25", "Influenza virus vaccine, quadrivalent (IIV4), split virus, preservative free, 0.5 mL dosage, for intramuscular use", "Intramuscular injection / Direct administration", "Vaccine product supply; Administration of the vaccine", "For individuals 3 years of age and older. Specific vaccine brand may vary."],
+            ["90688", "0.25", "Influenza virus vaccine, quadrivalent (IIV4), split virus, 0.5 mL dosage, for intramuscular use", "Intramuscular injection / Direct administration", "Vaccine product supply; Administration of the vaccine", "For individuals 3 years of age and older. This code is often used for multi-dose vials or when preservative is not specified as free."]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["Code", "Description", "Notes", "Required"],
+          "rows": [
+            ["Z23", "Encounter for immunization", "Used for routine prophylactic immunization against influenza.", "true (Primary)"]
+          ]
+        },
+        {
+          "name": "Medicare - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS", "Covered", "Annual influenza vaccine is a preventive service covered under Medicare Part B."]
+          ]
+        },
+        {
+          "name": "Medicaid - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., California Medi-Cal)", "Covered", "Covers influenza vaccines for all eligible beneficiaries according to ACIP guidelines."]
+          ]
+        },
+        {
+          "name": "Private Insurance - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield", "Covered", "Typically covers annual flu shots as a preventive service with no cost-sharing."],
+            ["UnitedHealthcare", "Covered", "Generally covers flu vaccines at no cost to the member when administered by an in-network provider."]
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Women's Health Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "37241, 36011, 36012",
+      "credentials": "[Credentials]",
+      "icd_codes": "N94.89, I86.2, R10.2, N94.1, N94.0, I87.1",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "Appeal Letter - Ovarian Vein Embolization\n\n            Date:\n            {{letter_date}}\n\n        Provider Information\n\n            Physician:\n            {{physician_name}}, {{credentials}}\n\n            NPI:\n            {{npi}}\n\n            Practice:\n            {{practice_name}}\n\n            Address:\n            {{practice_address}}\n\n            Phone:\n            {{practice_phone}}\n\n            Email:\n            {{practice_email}}\n\n        Insurance Information\n\n            Insurance Company:\n            {{insurance_name}}\n\n            Medical Director:\n            {{medical_director}}\n\n            Address:\n            {{insurance_address}}\n\n            Claim Number:\n            {{claim_number}}\n\n            Denial Date:\n            [denialDate]\n\n        Procedure Information\n\n            Procedure:\n            {{procedure_description}}\n\n            CPT Code(s):\n            {{cpt_codes}}\n\n            ICD-10 Code(s):\n            {{icd_codes}}\n\n        Clinical Justification\n\n          Medical Necessity Statement:\n\n          This patient has been diagnosed with Pelvic Venous Disorder (PeVD), a recognized clinical entity supported by the Society of Interventional Radiology, American Vein & Lymphatic Society, and American Venous Forum. Ovarian vein embolization is a minimally invasive, evidence-based treatment for symptomatic PeVD.\n\n          Supporting Evidence:\n\n• Ovarian vein embolization (OVE) is a minimally invasive, evidence-based procedure for Pelvic Venous Disorder (PeVD)\n\n• Multiple systematic reviews demonstrate significant symptom relief and improved quality of life\n\n• Society of Interventional Radiology (SIR) supports OVE as medically necessary for PeVD\n\n• Published efficacy data shows 70-80% symptom improvement at 12-month follow-up\n\n• Procedure has low complication rates and excellent safety profile\n\n• PeVD is now recognized as a distinct clinical entity replacing legacy terminology\n\n            Additional Clinical Notes:\n\n            {{additional_clinical_notes}}\n\n          Respectfully submitted,\n\n          {{physician_name}}, {{credentials}}\n\n          {{practice_name}}"
+  }
+}

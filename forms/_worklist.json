@@ -1,0 +1,608 @@
+[
+ {
+  "title": "Pulmonary Embolism Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/PECompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/peClassification.ts",
+  "slug": "pe"
+ },
+ {
+  "title": "Women's Health Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/WomensHealthModule.tsx",
+  "logic": null,
+  "slug": "womenshealthmodule"
+ },
+ {
+  "title": "Prostatic Artery Embolization Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/MensHealthCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/trpc.ts",
+  "slug": "menshealth"
+ },
+ {
+  "title": "Varicocele Embolization Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/VaricoceleCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/varicoceleLogic.ts",
+  "slug": "varicocele"
+ },
+ {
+  "title": "Portal Hypertension Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/PortalHypertensionCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/portalHypertensionLogic.ts",
+  "slug": "portalhypertension"
+ },
+ {
+  "title": "Percutaneous AV Fistula Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/PAVFCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/trpc.ts",
+  "slug": "pavf"
+ },
+ {
+  "title": "Bone Cancer Interventional Oncology Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/BoneCancerCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/trpc.ts",
+  "slug": "bonecancer"
+ },
+ {
+  "title": "Y-90 Radioembolization Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/Y90Compass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/trpc.ts",
+  "slug": "y90"
+ },
+ {
+  "title": "Endovenous Ablation Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/EndovenousAblationCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/endovenousAblationLogic.ts",
+  "slug": "endovenousablation"
+ },
+ {
+  "title": "Sclerotherapy Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/SclerotherapyCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/sclerotherapyLogic.ts",
+  "slug": "sclerotherapy"
+ },
+ {
+  "title": "Vertebroplasty / Kyphoplasty Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/VertebroplastyCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/vertebroplastyLogic.ts",
+  "slug": "vertebroplasty"
+ },
+ {
+  "title": "Sacroplasty Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/SacroplastyCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/sacroplastyLogic.ts",
+  "slug": "sacroplasty"
+ },
+ {
+  "title": "Peripheral Atherectomy Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/AtherecтomyCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/atherectomyLogic.ts",
+  "slug": "atherecтomy"
+ },
+ {
+  "title": "Renal Cryoablation Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/RenalCryoablationCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/renalCryoablationLogic.ts",
+  "slug": "renalcryoablation"
+ },
+ {
+  "title": "Vasectomy Reversal Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/VasectomyReversalCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/pdfExport.ts",
+  "slug": "vasectomyreversal"
+ },
+ {
+  "title": "Varicocelectomy Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/VaricocelectomyCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/pdfExport.ts",
+  "slug": "varicocelectomy"
+ },
+ {
+  "title": "TESE / Micro-TESE Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/TESECompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/pdfExport.ts",
+  "slug": "tese"
+ },
+ {
+  "title": "Peyronie's Disease Surgery Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/PeyroniesCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/pdfExport.ts",
+  "slug": "peyronies"
+ },
+ {
+  "title": "Gender-Affirming Urologic Procedures Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/GenderAffirmingUroCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/pdfExport.ts",
+  "slug": "genderaffirminguro"
+ },
+ {
+  "title": "In Vitro Fertilization Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/IVFCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/pdfExport.ts",
+  "slug": "ivf"
+ },
+ {
+  "title": "Intracytoplasmic Sperm Injection Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/ICSICompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/pdfExport.ts",
+  "slug": "icsi"
+ },
+ {
+  "title": "Preimplantation Genetic Testing Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/PGTCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/pdfExport.ts",
+  "slug": "pgt"
+ },
+ {
+  "title": "Oocyte Cryopreservation Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/OocyteFreezeCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/pdfExport.ts",
+  "slug": "oocytefreeze"
+ },
+ {
+  "title": "Embryo Cryopreservation Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/EmbryoCryoCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/pdfExport.ts",
+  "slug": "embryocryo"
+ },
+ {
+  "title": "Ovulation Induction Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/OvulationInductionCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/pdfExport.ts",
+  "slug": "ovulationinduction"
+ },
+ {
+  "title": "Gestational Carrier Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/GestationalCarrierCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/pdfExport.ts",
+  "slug": "gestationalcarrier"
+ },
+ {
+  "title": "Acute Coronary Syndrome Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/ACSCompass.tsx",
+  "logic": null,
+  "slug": "acs"
+ },
+ {
+  "title": "Dyslipidemia Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/DyslipidemiaDSCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/dyslipidemia-logic.ts",
+  "slug": "dyslipidemiads"
+ },
+ {
+  "title": "PAD Revascularization Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/PADCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/padLogic.ts",
+  "slug": "pad"
+ },
+ {
+  "title": "PAD Clinical Performance & Quality Measures Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/PADQualityMeasures.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/padQMLogic.ts",
+  "slug": "padqualitymeasures"
+ },
+ {
+  "title": "Venous Thromboembolism Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/VTECompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/vteLogic.ts",
+  "slug": "vte"
+ },
+ {
+  "title": "Acute Myeloid Leukemia Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/AMLCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/amlLogic.ts",
+  "slug": "aml"
+ },
+ {
+  "title": "Acute Lymphoblastic Leukemia & CAR-T Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/ALLCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/allLogic.ts",
+  "slug": "all"
+ },
+ {
+  "title": "Aplastic Anemia Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/AplasticAnemiaCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/aplasticAnemiaLogic.ts",
+  "slug": "aplasticanemia"
+ },
+ {
+  "title": "Rectal Cancer Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/RectalCancerCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/rectalCancerLogic.ts",
+  "slug": "rectalcancer"
+ },
+ {
+  "title": "Liver Tumor Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/LiverTumorCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/liverTumorLogic.ts",
+  "slug": "livertumor"
+ },
+ {
+  "title": "Obesity Treatment Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/ObesityCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/obesityLogic.ts",
+  "slug": "obesity"
+ },
+ {
+  "title": "Spine Surgery Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/SpineCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/spineLogic.ts",
+  "slug": "spine"
+ },
+ {
+  "title": "Thyroid Nodule Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/ThyroidNoduleCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/thyroidNoduleLogic.ts",
+  "slug": "thyroidnodule"
+ },
+ {
+  "title": "OSA Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/OSACompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/osaLogic.ts",
+  "slug": "osa"
+ },
+ {
+  "title": "Narcolepsy Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/NarcolepsyCompass.tsx",
+  "logic": null,
+  "slug": "narcolepsy"
+ },
+ {
+  "title": "Chronic Insomnia Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/ChronicInsomniaCompass.tsx",
+  "logic": null,
+  "slug": "chronicinsomnia"
+ },
+ {
+  "title": "Central Sleep Apnea Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/CentralSleepApneaCompass.tsx",
+  "logic": null,
+  "slug": "centralsleepapnea"
+ },
+ {
+  "title": "RLS / PLMD Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/RLSPLMDCompass.tsx",
+  "logic": null,
+  "slug": "rlsplmd"
+ },
+ {
+  "title": "OSA + Obesity Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/OSAObesityCompass.tsx",
+  "logic": null,
+  "slug": "osaobesity"
+ },
+ {
+  "title": "Pituitary Adenoma Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/PituitaryAdenomaCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/pituitaryAdenomaLogic.ts",
+  "slug": "pituitaryadenoma"
+ },
+ {
+  "title": "Vestibular Schwannoma Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/VestibularSchwaноmaCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/vestibularSchwaноmaLogic.ts",
+  "slug": "vestibularschwaноma"
+ },
+ {
+  "title": "Brain Metastases Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/BrainMetastasesCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/brainMetastasesLogic.ts",
+  "slug": "brainmetastases"
+ },
+ {
+  "title": "Low-Grade Glioma Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/LowGradeGliomaCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/lowGradeGliomaLogic.ts",
+  "slug": "lowgradeglioma"
+ },
+ {
+  "title": "Cerebral Cavernous Malformation Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/CCMCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/ccmLogic.ts",
+  "slug": "ccm"
+ },
+ {
+  "title": "Spine Antithrombotic Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/SpineAntithromboticCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/spineAntithromboticLogic.ts",
+  "slug": "spineantithrombotic"
+ },
+ {
+  "title": "Atopic Dermatitis Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/AtopicDermatitisCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/atopicDermatitisLogic.ts",
+  "slug": "atopicdermatitis"
+ },
+ {
+  "title": "Acne Vulgaris Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/AcneCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/acneLogic.ts",
+  "slug": "acne"
+ },
+ {
+  "title": "Psoriasis Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/PsoriasisCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/psoriasisLogic.ts",
+  "slug": "psoriasis"
+ },
+ {
+  "title": "Amyloidosis Diagnostic Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/AmyloidosisCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/amyloidosisLogic.ts",
+  "slug": "amyloidosis"
+ },
+ {
+  "title": "Functional Seizures (PNES)",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/FunctionalSeizuresCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/functionalSeizuresLogic.ts",
+  "slug": "functionalseizures"
+ },
+ {
+  "title": "Acute Ischemic Stroke",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/StrokeCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/strokeLogic.ts",
+  "slug": "stroke"
+ },
+ {
+  "title": "Migraine",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/MigraineCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/migraineLogic.ts",
+  "slug": "migraine"
+ },
+ {
+  "title": "Multiple Sclerosis",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/MultipleSclerosisCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/multipleSclerosisLogic.ts",
+  "slug": "multiplesclerosis"
+ },
+ {
+  "title": "Parkinson's Disease",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/ParkinsonsCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/parkinsonsLogic.ts",
+  "slug": "parkinsons"
+ },
+ {
+  "title": "Age-Related Macular Degeneration",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/AMDCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/amdLogic.ts",
+  "slug": "amd"
+ },
+ {
+  "title": "High Myopia / Pathologic Myopia",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/HighMyopiaCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/highMyopiaLogic.ts",
+  "slug": "highmyopia"
+ },
+ {
+  "title": "Glaucoma",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/GlaucomaCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/glaucomaLogic.ts",
+  "slug": "glaucoma"
+ },
+ {
+  "title": "Crohn's Disease Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/CrohnsDiseaseCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/crohnsDiseaseLogic.ts",
+  "slug": "crohnsdisease"
+ },
+ {
+  "title": "Ulcerative Colitis Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/UlcerativeColitisCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/ulcerativeColitisLogic.ts",
+  "slug": "ulcerativecolitis"
+ },
+ {
+  "title": "MASLD / MASH Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/MASLDCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/masldLogic.ts",
+  "slug": "masld"
+ },
+ {
+  "title": "Gastroparesis Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/GastroparesisCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/gastroparesisLogic.ts",
+  "slug": "gastroparesis"
+ },
+ {
+  "title": "CRC Screening Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/CRCScreeningCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/crcScreeningLogic.ts",
+  "slug": "crcscreening"
+ },
+ {
+  "title": "IBD Preventive Care Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/IBDPreventiveCareCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/ibdPreventiveCareLogic.ts",
+  "slug": "ibdpreventivecare"
+ },
+ {
+  "title": "Pancreatic Mass Evaluation Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/PancreaticMassCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/pancreaticMassLogic.ts",
+  "slug": "pancreaticmass"
+ },
+ {
+  "title": "Therapeutic EUS Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/TherapeuticEUSCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/therapeuticEUSLogic.ts",
+  "slug": "therapeuticeus"
+ },
+ {
+  "title": "Chronic Pancreatitis Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/ChronicPancreatitisCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/chronicPancreatitisLogic.ts",
+  "slug": "chronicpancreatitis"
+ },
+ {
+  "title": "Biliary Strictures Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/BiliaryStricturesCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/biliaryStricturesLogic.ts",
+  "slug": "biliarystrictures"
+ },
+ {
+  "title": "Pediatric Immunization Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/PediatricImmunizationCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/pediatricImmunizationLogic.ts",
+  "slug": "pediatricimmunization"
+ },
+ {
+  "title": "Bright Futures Well-Child Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/BrightFuturesCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/brightFuturesLogic.ts",
+  "slug": "brightfutures"
+ },
+ {
+  "title": "Pediatric Obesity Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/PediatricObesityCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/pediatricObesityLogic.ts",
+  "slug": "pediatricobesity"
+ },
+ {
+  "title": "Febrile Infant Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/FebrilInfantCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/febrilInfantLogic.ts",
+  "slug": "febrilinfant"
+ },
+ {
+  "title": "Neonatal Hyperbilirubinemia Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/NeonatalHyperbilirubinemiaCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/neonatalHyperbilirubinemiaLogic.ts",
+  "slug": "neonatalhyperbilirubinemia"
+ },
+ {
+  "title": "Influenza Prevention Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/InfluenzaPreventionCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/influenzaPreventionLogic.ts",
+  "slug": "influenzaprevention"
+ },
+ {
+  "title": "RSV Prevention Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/RSVPreventionCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/rsvPreventionLogic.ts",
+  "slug": "rsvprevention"
+ },
+ {
+  "title": "Pediatric Mental Health Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/PediatricMentalHealthCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/pediatricMentalHealthLogic.ts",
+  "slug": "pediatricmentalhealth"
+ },
+ {
+  "title": "Radiation Oncology Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/RadOncCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/radOncLogic.ts",
+  "slug": "radonc"
+ },
+ {
+  "title": "Psychiatry Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/PsychiatryCompass.tsx",
+  "logic": null,
+  "slug": "psychiatry"
+ },
+ {
+  "title": "Total Knee Arthroplasty Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/TKACompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/tkaLogic.ts",
+  "slug": "tka"
+ },
+ {
+  "title": "Total Hip Arthroplasty Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/THACompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/thaLogic.ts",
+  "slug": "tha"
+ },
+ {
+  "title": "Spinal Fusion Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/SpinalFusionCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/spinalFusionLogic.ts",
+  "slug": "spinalfusion"
+ },
+ {
+  "title": "Artificial Disc Replacement Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/ArtificialDiscCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/artificialDiscLogic.ts",
+  "slug": "artificialdisc"
+ },
+ {
+  "title": "Rotator Cuff Repair Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/RotatorCuffCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/rotatorCuffLogic.ts",
+  "slug": "rotatorcuff"
+ },
+ {
+  "title": "Meniscus Repair Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/MeniscusRepairCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/meniscusRepairLogic.ts",
+  "slug": "meniscusrepair"
+ },
+ {
+  "title": "Epidural Steroid Injection Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/EpiduralSteroidCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/epiduralSteroidLogic.ts",
+  "slug": "epiduralsteroid"
+ },
+ {
+  "title": "Facet Joint Injection Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/FacetJointCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/facetJointLogic.ts",
+  "slug": "facetjoint"
+ },
+ {
+  "title": "Radiofrequency Ablation Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/RFACompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/rfaLogic.ts",
+  "slug": "rfa"
+ },
+ {
+  "title": "Spinal Cord Stimulator Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/SCSCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/scsLogic.ts",
+  "slug": "scs"
+ },
+ {
+  "title": "Elective PCI Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/PCICompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/pciLogic.ts",
+  "slug": "pci"
+ },
+ {
+  "title": "AF Ablation Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/AFAblationCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/afAblationLogic.ts",
+  "slug": "afablation"
+ },
+ {
+  "title": "LAAC / Watchman Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/LAACCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/laacLogic.ts",
+  "slug": "laac"
+ },
+ {
+  "title": "Bariatric Surgery Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/BariatricCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/bariatricLogic.ts",
+  "slug": "bariatric"
+ },
+ {
+  "title": "Cholecystectomy Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/CholecystectomyCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/cholecystectomyLogic.ts",
+  "slug": "cholecystectomy"
+ },
+ {
+  "title": "Hernia Repair Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/HerniaCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/herniaLogic.ts",
+  "slug": "hernia"
+ },
+ {
+  "title": "Breast Reduction Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/BreastReductionCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/breastReductionLogic.ts",
+  "slug": "breastreduction"
+ },
+ {
+  "title": "Blepharoplasty / Ptosis Repair Clinical Compass",
+  "page": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/pages/BlepharoplastyCompass.tsx",
+  "logic": "/home/akshay/code/ClinicalCompass/old_static_code/client/src/lib/blepharoplastyLogic.ts",
+  "slug": "blepharoplasty"
+ }
+]

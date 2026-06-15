@@ -1,0 +1,30 @@
+{
+  "title": "Narcolepsy Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "95810, 95805, 95806, 99213–99215, G0399",
+      "credentials": "[Credentials]",
+      "icd_codes": "G47.411, G47.419, G47.421, G47.429, G47.10, G47.19",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "To Whom It May Concern,\n\nI am writing to formally appeal the denial of prior authorization for [requestedMed] for my patient, {{patient_name}} (DOB: {{patient_dob}}, Member ID: {{member_id}}), dated [denialDate].\n\nCLINICAL SUMMARY\n\nThis patient carries a confirmed diagnosis of Narcolepsy Type 2 (ICD-10: G47.419) based on the following objective findings:\n\n\nEVIDENCE BASE FOR REQUESTED TREATMENT\n\nThe requested medication, [requestedMed], carries a Strong recommendation in the American Academy of Sleep Medicine (AASM) 2021 Clinical Practice Guideline for the Treatment of Central Disorders of Hypersomnolence (Maski K, et al., J Clin Sleep Med. 2021;17(9):1881–1893). This guideline is based on systematic review and meta-analysis of randomized controlled trials and represents the current standard of care for narcolepsy management.\n\n\nBASIS FOR APPEAL\n\nThe requested treatment is medically necessary per AASM 2021 guidelines. Untreated narcolepsy is associated with a 3–7 fold increased risk of motor vehicle accidents (Aldrich MS, Sleep 1989), significant occupational impairment, and substantially reduced quality of life. The risks of withholding effective treatment far outweigh any cost considerations.\n\n\nREQUESTED ACTION\n\nI respectfully request immediate approval of [requestedMed] for this patient. If additional information is required, please contact our office directly. I am also available for a peer-to-peer review with the medical director at your earliest convenience.\n\nSincerely,\n\n[Physician Name, MD/DO]\n[Specialty: Sleep Medicine / Neurology]\n{{practice_name}}\n{{practice_phone}} | {{practice_fax}}\n{{npi}}\n\nReferences:\n1. Maski K, et al. AASM CPG Treatment of Central Disorders of Hypersomnolence. J Clin Sleep Med. 2021;17(9):1881–1893.\n2. ICSD-3. American Academy of Sleep Medicine. 2014.\n3. Dauvilliers Y, et al. Narcolepsy with cataplexy. Lancet. 2007;369(9560):499–511.\n4. AASM Practice Guidelines: https://aasm.org/clinical-resources/practice-standards/practice-guidelines/"
+  }
+}

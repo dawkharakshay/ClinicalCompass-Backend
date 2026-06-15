@@ -1,0 +1,30 @@
+{
+  "title": "Chronic Pancreatitis Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "43231, 43262, 64530",
+      "credentials": "[Credentials]",
+      "icd_codes": "K86.1, K86.0, K85.9, K86.8, R10.84",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — Endoscopic / Surgical Treatment for Chronic Pancreatitis\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\nDear Medical Director / Utilization Review Committee,\n\nThis letter serves as an urgent appeal for authorization of Endoscopic / Surgical Treatment for Chronic Pancreatitis for our patient, {{patient_name}}, born {{patient_dob}}, policy number {{policy_number}}. This treatment is medically necessary and aligns with established clinical guidelines for chronic pancreatitis management.\n\nClinical Summary:\nOur patient presents with chronic pancreatitis, characterized by severe, intractable abdominal pain and significant impact on quality of life. Diagnostic imaging and clinical evaluation confirm the presence of pancreatic ductal changes/complications requiring intervention. The current assessment indicates medical management. Specifically, Endoscopic therapy is not indicated. The patient exhibits no specific surgical indication and is currently managed with multimodal pain management. Furthermore, the patient has no exocrine pancreatic insufficiency.\n\nGuideline Support:\n1.  The AGA Clinical Practice Guidelines on Chronic Pancreatitis (2020) recommend endoscopic or surgical intervention for symptomatic chronic pancreatitis refractory to medical management.\n2.  The ACG Clinical Guidelines on Chronic Pancreatitis (2020) support surgical drainage or resection for patients with pancreatic duct obstruction and intractable pain.\n3.  The ESGE Clinical Guideline on Endoscopic Treatment of Chronic Pancreatitis (2018) outlines indications for endoscopic therapy, including ductal stones, strictures, and pseudocysts.\n4.  The IAP/APA Evidence-Based Guidelines on Chronic Pancreatitis (2017) endorse surgical management for pain relief and prevention of disease progression in selected patients.\n\nMedical Necessity Statement:\nThe proposed Endoscopic / Surgical Treatment for Chronic Pancreatitis is medically necessary to alleviate severe pain, prevent further pancreatic damage, and improve the patient's nutritional status and overall quality of life. Without this intervention, the patient is at high risk for continued pain, recurrent hospitalizations, malnutrition, and progression to more severe complications, including pancreatic cancer. The decision for this intervention is supported by leading clinical guidelines with an evidence level of Level B, and is justified based on the patient's clinical presentation and diagnostic findings.\n\nRisk Without Treatment:\nDelay or denial of this medically necessary procedure will lead to continued suffering, increased morbidity, and potential for irreversible pancreatic damage. The patient's current condition is significantly impacting their ability to perform daily activities and maintain adequate nutrition. Prolonged conservative management has proven ineffective in controlling symptoms and preventing disease progression.\n\nRequested Action:\nWe respectfully request immediate approval for Endoscopic / Surgical Treatment for Chronic Pancreatitis. Please find attached supporting clinical documentation, including imaging reports, consultation notes, and relevant laboratory results. We are available to provide any additional information or discuss this case further at your convenience.\n\n{{additional_clinical_notes}}\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

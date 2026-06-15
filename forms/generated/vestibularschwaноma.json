@@ -1,0 +1,291 @@
+{
+  "title": "Vestibular Schwannoma Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "vestibularschwaноma",
+    "hiddenDefaults": {
+      "lateralIACInvolvement": false,
+      "asymmetricTinnitus": true,
+      "asymmetricSNHL": true
+    },
+    "steps": [
+      {
+        "id": "tumor-hearing",
+        "shortLabel": "Tumor & Hearing Status",
+        "title": "Tumor & Hearing Status (MRI + Audiogram)",
+        "fields": [
+          {
+            "id": "tumor-size-class",
+            "name": "tumorSizeClass",
+            "label": "Tumor Size Class",
+            "type": "select",
+            "defaultValue": "medium",
+            "options": [
+              { "label": "Intracanalicular (confined to IAC)", "value": "intracanalicular" },
+              { "label": "Small — 1–15 mm CPA component", "value": "small" },
+              { "label": "Medium — 15–30 mm CPA component", "value": "medium" },
+              { "label": "Large — 30–40 mm CPA component", "value": "large" },
+              { "label": "Giant — >40 mm CPA component", "value": "giant" }
+            ]
+          },
+          {
+            "id": "tumor-size-cm",
+            "name": "tumorSizeCm",
+            "label": "Tumor Size (cm)",
+            "type": "slider",
+            "defaultValue": 1.8,
+            "unit": "cm"
+          },
+          {
+            "id": "hearing-class",
+            "name": "hearingClass",
+            "label": "Hearing Class (AAO-HNS)",
+            "type": "select",
+            "defaultValue": "class_b",
+            "options": [
+              { "label": "Class A — PTA ≤30 dB, WRS ≥70% (Excellent)", "value": "class_a" },
+              { "label": "Class B — PTA ≤50 dB, WRS ≥50% (Serviceable)", "value": "class_b" },
+              { "label": "Class C — PTA >50 dB, WRS ≥50% (Non-serviceable)", "value": "class_c" },
+              { "label": "Class D — WRS <50% (Poor)", "value": "class_d" }
+            ]
+          },
+          {
+            "id": "gardner-robertson-grade",
+            "name": "gardnerRobertsonGrade",
+            "label": "Gardner-Robertson Grade",
+            "type": "select",
+            "defaultValue": "gr2",
+            "options": [
+              { "label": "Grade 1 — PTA ≤30 dB, WRS 70–100%", "value": "gr1" },
+              { "label": "Grade 2 — PTA 31–50 dB, WRS 50–69%", "value": "gr2" },
+              { "label": "Grade 3 — PTA 51–90 dB, WRS 5–49%", "value": "gr3" },
+              { "label": "Grade 4 — PTA >90 dB, WRS 1–4%", "value": "gr4" },
+              { "label": "Grade 5 — No serviceable hearing", "value": "gr5" }
+            ]
+          },
+          {
+            "id": "serviceable-hearing",
+            "name": "serviceableHearing",
+            "label": "Serviceable Hearing (Class A/B or GR 1/2)",
+            "type": "radio",
+            "defaultValue": true,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "sudden-snhl",
+            "name": "suddenSNHL",
+            "label": "Sudden SNHL at Presentation",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "cystic-component",
+            "name": "cysticComponent",
+            "label": "Cystic Component on MRI",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "fundal-csf-cap",
+            "name": "fundalCSFCap",
+            "label": "Fundal CSF Cap Present (Hearing preservation favorable)",
+            "type": "radio",
+            "defaultValue": true,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tumor-behavior",
+        "shortLabel": "Tumor Behavior & Patient Factors",
+        "title": "Tumor Behavior & Patient Factors",
+        "fields": [
+          {
+            "id": "prior-observation",
+            "name": "priorObservation",
+            "label": "Prior Observation Period",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "tumor-growth-on-observation",
+            "name": "tumorGrowthOnObservation",
+            "label": "Tumor Growth on Observation (≥2 mm)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ],
+            "visibleWhen": { "field": "priorObservation", "op": "truthy" }
+          },
+          {
+            "id": "observation-duration-months",
+            "name": "observationDurationMonths",
+            "label": "Observation Duration (months)",
+            "type": "slider",
+            "defaultValue": 12,
+            "unit": "months",
+            "visibleWhen": { "field": "priorObservation", "op": "truthy" }
+          },
+          {
+            "id": "age-years",
+            "name": "ageYears",
+            "label": "Age (years)",
+            "type": "slider",
+            "defaultValue": 0,
+            "unit": "years"
+          },
+          {
+            "id": "nf2-status",
+            "name": "nf2Status",
+            "label": "NF2 (Bilateral Vestibular Schwannomas)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "contralateral-hearing-loss",
+            "name": "contralateralHearingLoss",
+            "label": "Contralateral Hearing Loss",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "balance-problems",
+            "name": "balanceProblems",
+            "label": "Balance Problems / Disequilibrium",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "trigeminal-neuralgia-symptoms",
+            "name": "trigeminalNeuralgiaSymptoms",
+            "label": "Trigeminal Neuralgia Symptoms",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "facial-nerve-function-hb",
+            "name": "facialNerveFunctionHB",
+            "label": "Facial Nerve Function (House-Brackmann)",
+            "type": "select",
+            "defaultValue": 1,
+            "options": [
+              { "label": "HB Grade I — Normal", "value": 1 },
+              { "label": "HB Grade II — Slight dysfunction", "value": 2 },
+              { "label": "HB Grade III — Moderate dysfunction", "value": 3 },
+              { "label": "HB Grade IV — Moderately severe", "value": 4 },
+              { "label": "HB Grade V — Severe dysfunction", "value": 5 },
+              { "label": "HB Grade VI — Total paralysis", "value": 6 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "preferences-history",
+        "shortLabel": "Preferences & History",
+        "title": "Preferences & Treatment History",
+        "fields": [
+          {
+            "id": "hearing-preservation-priority",
+            "name": "hearingPreservationPriority",
+            "label": "Hearing Preservation Priority",
+            "type": "radio",
+            "defaultValue": true,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "prefer-minimally-invasive",
+            "name": "preferMinimallyInvasive",
+            "label": "Patient Prefers Minimally Invasive Approach",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "prior-srs",
+            "name": "priorSRS",
+            "label": "Prior Stereotactic Radiosurgery (SRS)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "prior-surgery",
+            "name": "priorSurgery",
+            "label": "Prior Surgical Resection",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "cochlear-dose-gy",
+            "name": "cochlearDoseGy",
+            "label": "Cochlear Dose (Gy)",
+            "type": "slider",
+            "defaultValue": 4,
+            "unit": "Gy",
+            "visibleWhen": { "field": "priorSRS", "op": "truthy" }
+          },
+          {
+            "id": "marginal-dose-gy",
+            "name": "marginalDoseGy",
+            "label": "Marginal Dose (Gy)",
+            "type": "slider",
+            "defaultValue": 12,
+            "unit": "Gy",
+            "visibleWhen": { "field": "priorSRS", "op": "truthy" }
+          }
+        ]
+      }
+    ]
+  }
+}

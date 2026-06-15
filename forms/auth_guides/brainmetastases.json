@@ -1,0 +1,368 @@
+{
+  "title": "Brain Metastases Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "BrainMetastasesAuthGuide.tsx",
+    "title": "BrainMetastases Clinical Compass",
+    "subtitle": "SRS/SBRT, Craniotomy Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "77371",
+        "description": "Radiation treatment delivery, stereotactic radiosurgery, intracranial, complete course of treatment in one session",
+        "device": "Linear accelerator, Gamma Knife, CyberKnife",
+        "access": "External beam",
+        "rvu": "35.00",
+        "includes": [
+          "Treatment planning and simulation",
+          "Dosimetry and physics consultation",
+          "Treatment delivery supervision"
+        ],
+        "note": "Used for single-session intracranial radiosurgery."
+      },
+      {
+        "code": "77372",
+        "description": "Radiation treatment delivery, stereotactic radiosurgery, extracranial, complete course of treatment in one session",
+        "device": "Linear accelerator, CyberKnife",
+        "access": "External beam",
+        "rvu": "30.00",
+        "includes": [
+          "Treatment planning and simulation",
+          "Dosimetry and physics consultation",
+          "Treatment delivery supervision"
+        ],
+        "note": "Used for single-session extracranial radiosurgery, e.g., for spinal metastases."
+      },
+      {
+        "code": "61510",
+        "description": "Craniotomy for excision of brain tumor, supratentorial; except for pituitary tumor and craniopharyngioma",
+        "device": "Surgical instruments",
+        "access": "Open surgical approach",
+        "rvu": "100.00",
+        "includes": [
+          "Pre-operative imaging review",
+          "Intraoperative neurophysiological monitoring (if performed by surgeon)",
+          "Post-operative care (initial hospital stay)"
+        ],
+        "note": "Covers the surgical removal of brain metastases."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "C79.31",
+        "description": "Secondary malignant neoplasm of brain",
+        "notes": "This code specifies metastatic cancer that has spread to the brain from a primary site elsewhere in the body.",
+        "required": true
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with Medical Necessity",
+        "overview": "Medicare covers treatments for brain metastases when deemed medically necessary and appropriate for the patient's condition, often based on NCCN guidelines. Coverage extends to both surgical and radiation therapies.",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Medicare generally covers medically necessary treatments for brain metastases. Prior authorization is typically not required for established procedures like SRS/SBRT or craniotomy, but medical necessity documentation is crucial.",
+        "reimbursementNote": "Reimbursement for brain metastases treatments is generally stable, but adherence to documentation guidelines is critical to avoid claim denials. Consider utilizing appropriate modifiers when necessary.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Stereotactic Radiosurgery (SRS/SBRT)",
+            "items": [
+              "Diagnosis of brain metastases confirmed by imaging (MRI with contrast) and/or biopsy.",
+              "Limited number of brain metastases (typically 1-4, but may vary).",
+              "Lesion size amenable to SRS (generally <3-4 cm).",
+              "Karnofsky Performance Status (KPS) ≥ 70.",
+              "Patient not a candidate for or declined whole brain radiation therapy (WBRT)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Craniotomy for Excision",
+            "items": [
+              "Diagnosis of brain metastases confirmed by imaging and/or biopsy.",
+              "Symptomatic lesion causing neurological deficit.",
+              "Large lesion size not suitable for SRS.",
+              "Need for tissue diagnosis.",
+              "Recurrent lesion after prior radiation."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Detailed history and physical examination notes.",
+              "Neurological examination findings.",
+              "Consultation notes from neurosurgeon, radiation oncologist, and medical oncologist.",
+              "Karnofsky Performance Status (KPS) score."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Imaging Reports",
+            "items": [
+              "MRI brain with and without contrast (most recent).",
+              "CT brain with and without contrast (if applicable).",
+              "Pathology report confirming metastatic disease (if biopsy performed)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Treatment Plan",
+            "items": [
+              "Radiation oncology treatment plan (for SRS/SBRT).",
+              "Operative report (for craniotomy)."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Ensure all medical records support the medical necessity of the procedure.",
+              "Submit claims with appropriate CPT and ICD-10 codes.",
+              "Respond promptly to any requests for additional documentation from Medicare."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity.",
+              "Inadequate imaging to support diagnosis.",
+              "Treatment considered experimental or investigational.",
+              "Incorrect coding."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Clearly document the patient's neurological symptoms and how the treatment addresses them.",
+              "Reference NCCN guidelines or other evidence-based criteria in documentation.",
+              "Ensure all CPT and ICD-10 codes are specific and accurate."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Medicare National Coverage Determination (NCD)",
+            "status": "Covered",
+            "notes": "Covers stereotactic radiosurgery for intracranial lesions. Local Coverage Determinations (LCDs) may provide further specifics."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Requires Prior Authorization",
+        "overview": "Medicaid coverage for brain metastases treatments varies by state. Most states require prior authorization and demonstrate medical necessity, often aligning with national guidelines but with specific state-level nuances.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid programs typically require prior authorization for high-cost procedures like SRS/SBRT and craniotomy for brain metastases. Approval is contingent on strict adherence to state-specific medical necessity criteria.",
+        "reimbursementNote": "Medicaid reimbursement rates can be lower than Medicare or private payers. Prior authorization is a critical step to ensure any reimbursement.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Requirements",
+            "items": [
+              "Patient must be eligible for Medicaid in the specific state.",
+              "Diagnosis of brain metastases confirmed by imaging and/or biopsy.",
+              "Treatment must be considered medically necessary and appropriate for the patient's condition."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Specific to SRS/SBRT or Craniotomy",
+            "items": [
+              "Failure or contraindication to conventional therapies (e.g., WBRT).",
+              "Detailed justification for the chosen treatment modality over alternatives.",
+              "Prognosis indicating a reasonable expectation of benefit from treatment."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization Request Form",
+            "items": [
+              "Completed state-specific prior authorization form.",
+              "Physician's order for the procedure."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Medical Records",
+            "items": [
+              "All clinical documentation as required by Medicare, plus any state-specific requirements.",
+              "Documentation of previous treatments and their outcomes."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Imaging and Pathology",
+            "items": [
+              "Current imaging studies (MRI/CT) with official reports.",
+              "Pathology reports confirming diagnosis."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request well in advance of the planned procedure.",
+              "Ensure all required fields on the PA form are completed accurately.",
+              "Follow up regularly on the status of the authorization request."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization.",
+              "Failure to meet state-specific medical necessity criteria.",
+              "Incomplete or insufficient documentation.",
+              "Treatment deemed not medically necessary or experimental."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Be familiar with your state's specific Medicaid guidelines for oncology and neurosurgery.",
+              "Provide comprehensive documentation, anticipating potential questions.",
+              "Appeal denials promptly with additional supporting clinical evidence."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid Policy (e.g., [State Name])",
+            "status": "Requires PA",
+            "notes": "Specific criteria for brain tumor treatment, including metastases, are outlined in state manuals."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Requires Prior Authorization",
+        "overview": "Private insurance coverage for brain metastases treatments is highly dependent on the individual's plan benefits and the insurer's medical policies. Prior authorization is almost always required, and medical necessity must be clearly established.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for SRS/SBRT and craniotomy for brain metastases. Coverage is based on the specific plan benefits, medical policy, and demonstration of medical necessity.",
+        "reimbursementNote": "Reimbursement rates vary significantly by plan and contract. Ensure all services are pre-authorized to maximize the likelihood of payment.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Medical Necessity",
+            "items": [
+              "Diagnosis of brain metastases confirmed by imaging and/or biopsy.",
+              "Treatment is considered standard of care for the patient's condition (e.g., NCCN guidelines).",
+              "Patient's overall health and prognosis support the intervention."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Specific to SRS/SBRT or Craniotomy",
+            "items": [
+              "Detailed clinical rationale for the chosen treatment modality.",
+              "Consideration of alternative treatments and why they are not appropriate or have failed.",
+              "Expected clinical benefit and improvement in quality of life."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization Request",
+            "items": [
+              "Completed insurer-specific prior authorization form.",
+              "Letter of medical necessity from the treating physician(s)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Records",
+            "items": [
+              "Comprehensive medical history, physical exam, and neurological assessment.",
+              "Consultation reports from all involved specialists (neuro-oncology, radiation oncology, neurosurgery)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Diagnostic Reports",
+            "items": [
+              "Latest MRI/CT brain reports with contrast.",
+              "Pathology reports, if available."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify patient's benefits and specific plan requirements prior to submission.",
+              "Submit prior authorization request through the insurer's portal or fax.",
+              "Be prepared to provide peer-to-peer review if initial authorization is denied."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization.",
+              "Treatment deemed experimental or investigational by the payer.",
+              "Not meeting specific policy criteria.",
+              "Insufficient documentation of medical necessity.",
+              "Out-of-network provider issues."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always check the specific payer's medical policy for brain metastases treatment.",
+              "Maintain clear and concise documentation that directly addresses policy criteria.",
+              "Be persistent with appeals and peer-to-peer reviews, providing all relevant clinical data."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Requires PA",
+            "notes": "Policies often align with NCCN guidelines but may have specific criteria for number/size of lesions for SRS."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Requires PA",
+            "notes": "Requires detailed clinical documentation and may have specific pathways for advanced imaging and treatment."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment (navigates to /brainmetastases)",
+        "href": "/brainmetastases"
+      },
+      {
+        "heading": "Procedure Codes — section note",
+        "kind": "prose",
+        "text": "For each CPT code, the listed 'Included in this code' items are explicitly labeled: 'Included in this code (do NOT bill separately).'"
+      }
+    ],
+    "raw": {
+      "markdown": "# BrainMetastases Clinical Compass\n\n**Subtitle:** SRS/SBRT, Craniotomy Insurance Authorization Guide\n\n[Button: Back to Assessment] (navigates to /brainmetastases)\n\n---\n\n## Procedure Codes (CPT Codes)\n\n### CPT 77371 — RVU 35.00\nRadiation treatment delivery, stereotactic radiosurgery, intracranial, complete course of treatment in one session\n\n- **Device/Access:** Linear accelerator, Gamma Knife, CyberKnife (External beam)\n\n**Included in this code (do NOT bill separately):**\n- Treatment planning and simulation\n- Dosimetry and physics consultation\n- Treatment delivery supervision\n\n*Note: Used for single-session intracranial radiosurgery.*\n\n### CPT 77372 — RVU 30.00\nRadiation treatment delivery, stereotactic radiosurgery, extracranial, complete course of treatment in one session\n\n- **Device/Access:** Linear accelerator, CyberKnife (External beam)\n\n**Included in this code (do NOT bill separately):**\n- Treatment planning and simulation\n- Dosimetry and physics consultation\n- Treatment delivery supervision\n\n*Note: Used for single-session extracranial radiosurgery, e.g., for spinal metastases.*\n\n### CPT 61510 — RVU 100.00\nCraniotomy for excision of brain tumor, supratentorial; except for pituitary tumor and craniopharyngioma\n\n- **Device/Access:** Surgical instruments (Open surgical approach)\n\n**Included in this code (do NOT bill separately):**\n- Pre-operative imaging review\n- Intraoperative neurophysiological monitoring (if performed by surgeon)\n- Post-operative care (initial hospital stay)\n\n*Note: Covers the surgical removal of brain metastases.*\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **C79.31** (Primary) — Secondary malignant neoplasm of brain\n  - This code specifies metastatic cancer that has spread to the brain from a primary site elsewhere in the body.\n\n---\n\n## Payer-Specific Authorization Requirements\n\n### Medicare\n\n- **No Prior Auth (FFS)** | **Covered with Medical Necessity**\n- **Prior Auth Note:** Medicare generally covers medically necessary treatments for brain metastases. Prior authorization is typically not required for established procedures like SRS/SBRT or craniotomy, but medical necessity documentation is crucial.\n- **Overview:** Medicare covers treatments for brain metastases when deemed medically necessary and appropriate for the patient's condition, often based on NCCN guidelines. Coverage extends to both surgical and radiation therapies.\n\n**Coverage Criteria**\n\n*Stereotactic Radiosurgery (SRS/SBRT)*\n- Diagnosis of brain metastases confirmed by imaging (MRI with contrast) and/or biopsy.\n- Limited number of brain metastases (typically 1-4, but may vary).\n- Lesion size amenable to SRS (generally <3-4 cm).\n- Karnofsky Performance Status (KPS) ≥ 70.\n- Patient not a candidate for or declined whole brain radiation therapy (WBRT).\n\n*Craniotomy for Excision*\n- Diagnosis of brain metastases confirmed by imaging and/or biopsy.\n- Symptomatic lesion causing neurological deficit.\n- Large lesion size not suitable for SRS.\n- Need for tissue diagnosis.\n- Recurrent lesion after prior radiation.\n\n**Required Documentation**\n\n*Clinical Documentation*\n- Detailed history and physical examination notes.\n- Neurological examination findings.\n- Consultation notes from neurosurgeon, radiation oncologist, and medical oncologist.\n- Karnofsky Performance Status (KPS) score.\n\n*Imaging Reports*\n- MRI brain with and without contrast (most recent).\n- CT brain with and without contrast (if applicable).\n- Pathology report confirming metastatic disease (if biopsy performed).\n\n*Treatment Plan*\n- Radiation oncology treatment plan (for SRS/SBRT).\n- Operative report (for craniotomy).\n\n**Submission Process**\n1. Ensure all medical records support the medical necessity of the procedure.\n2. Submit claims with appropriate CPT and ICD-10 codes.\n3. Respond promptly to any requests for additional documentation from Medicare.\n\n**Common Denial Reasons**\n- Lack of documented medical necessity.\n- Inadequate imaging to support diagnosis.\n- Treatment considered experimental or investigational.\n- Incorrect coding.\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicare National Coverage Determination (NCD) | Covered | Covers stereotactic radiosurgery for intracranial lesions. Local Coverage Determinations (LCDs) may provide further specifics. |\n\n**Reimbursement Note:** Reimbursement for brain metastases treatments is generally stable, but adherence to documentation guidelines is critical to avoid claim denials. Consider utilizing appropriate modifiers when necessary.\n\n**Authorization Tips**\n- Clearly document the patient's neurological symptoms and how the treatment addresses them.\n- Reference NCCN guidelines or other evidence-based criteria in documentation.\n- Ensure all CPT and ICD-10 codes are specific and accurate.\n\n### Medicaid\n\n- **Prior Auth Required** | **Requires Prior Authorization**\n- **Prior Auth Note:** Medicaid programs typically require prior authorization for high-cost procedures like SRS/SBRT and craniotomy for brain metastases. Approval is contingent on strict adherence to state-specific medical necessity criteria.\n- **Overview:** Medicaid coverage for brain metastases treatments varies by state. Most states require prior authorization and demonstrate medical necessity, often aligning with national guidelines but with specific state-level nuances.\n\n**Coverage Criteria**\n\n*General Requirements*\n- Patient must be eligible for Medicaid in the specific state.\n- Diagnosis of brain metastases confirmed by imaging and/or biopsy.\n- Treatment must be considered medically necessary and appropriate for the patient's condition.\n\n*Specific to SRS/SBRT or Craniotomy*\n- Failure or contraindication to conventional therapies (e.g., WBRT).\n- Detailed justification for the chosen treatment modality over alternatives.\n- Prognosis indicating a reasonable expectation of benefit from treatment.\n\n**Required Documentation**\n\n*Prior Authorization Request Form*\n- Completed state-specific prior authorization form.\n- Physician's order for the procedure.\n\n*Medical Records*\n- All clinical documentation as required by Medicare, plus any state-specific requirements.\n- Documentation of previous treatments and their outcomes.\n\n*Imaging and Pathology*\n- Current imaging studies (MRI/CT) with official reports.\n- Pathology reports confirming diagnosis.\n\n**Submission Process**\n1. Submit prior authorization request well in advance of the planned procedure.\n2. Ensure all required fields on the PA form are completed accurately.\n3. Follow up regularly on the status of the authorization request.\n\n**Common Denial Reasons**\n- Lack of prior authorization.\n- Failure to meet state-specific medical necessity criteria.\n- Incomplete or insufficient documentation.\n- Treatment deemed not medically necessary or experimental.\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid Policy (e.g., [State Name]) | Requires PA | Specific criteria for brain tumor treatment, including metastases, are outlined in state manuals. |\n\n**Reimbursement Note:** Medicaid reimbursement rates can be lower than Medicare or private payers. Prior authorization is a critical step to ensure any reimbursement.\n\n**Authorization Tips**\n- Be familiar with your state's specific Medicaid guidelines for oncology and neurosurgery.\n- Provide comprehensive documentation, anticipating potential questions.\n- Appeal denials promptly with additional supporting clinical evidence.\n\n### Private Insurance\n\n- **Prior Auth Required** | **Requires Prior Authorization**\n- **Prior Auth Note:** Most private insurance plans require prior authorization for SRS/SBRT and craniotomy for brain metastases. Coverage is based on the specific plan benefits, medical policy, and demonstration of medical necessity.\n- **Overview:** Private insurance coverage for brain metastases treatments is highly dependent on the individual's plan benefits and the insurer's medical policies. Prior authorization is almost always required, and medical necessity must be clearly established.\n\n**Coverage Criteria**\n\n*General Medical Necessity*\n- Diagnosis of brain metastases confirmed by imaging and/or biopsy.\n- Treatment is considered standard of care for the patient's condition (e.g., NCCN guidelines).\n- Patient's overall health and prognosis support the intervention.\n\n*Specific to SRS/SBRT or Craniotomy*\n- Detailed clinical rationale for the chosen treatment modality.\n- Consideration of alternative treatments and why they are not appropriate or have failed.\n- Expected clinical benefit and improvement in quality of life.\n\n**Required Documentation**\n\n*Prior Authorization Request*\n- Completed insurer-specific prior authorization form.\n- Letter of medical necessity from the treating physician(s).\n\n*Clinical Records*\n- Comprehensive medical history, physical exam, and neurological assessment.\n- Consultation reports from all involved specialists (neuro-oncology, radiation oncology, neurosurgery).\n\n*Diagnostic Reports*\n- Latest MRI/CT brain reports with contrast.\n- Pathology reports, if available.\n\n**Submission Process**\n1. Verify patient's benefits and specific plan requirements prior to submission.\n2. Submit prior authorization request through the insurer's portal or fax.\n3. Be prepared to provide peer-to-peer review if initial authorization is denied.\n\n**Common Denial Reasons**\n- Lack of prior authorization.\n- Treatment deemed experimental or investigational by the payer.\n- Not meeting specific policy criteria.\n- Insufficient documentation of medical necessity.\n- Out-of-network provider issues.\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Blue Cross Blue Shield | Requires PA | Policies often align with NCCN guidelines but may have specific criteria for number/size of lesions for SRS. |\n| UnitedHealthcare | Requires PA | Requires detailed clinical documentation and may have specific pathways for advanced imaging and treatment. |\n\n**Reimbursement Note:** Reimbursement rates vary significantly by plan and contract. Ensure all services are pre-authorized to maximize the likelihood of payment.\n\n**Authorization Tips**\n- Always check the specific payer's medical policy for brain metastases treatment.\n- Maintain clear and concise documentation that directly addresses policy criteria.\n- Be persistent with appeals and peer-to-peer reviews, providing all relevant clinical data.\n",
+      "tables": [
+        {
+          "name": "CPT Procedure Codes",
+          "header": ["Code", "Description", "Device", "Access", "RVU", "Includes", "Note"],
+          "rows": [
+            ["77371", "Radiation treatment delivery, stereotactic radiosurgery, intracranial, complete course of treatment in one session", "Linear accelerator, Gamma Knife, CyberKnife", "External beam", "35.00", "Treatment planning and simulation; Dosimetry and physics consultation; Treatment delivery supervision", "Used for single-session intracranial radiosurgery."],
+            ["77372", "Radiation treatment delivery, stereotactic radiosurgery, extracranial, complete course of treatment in one session", "Linear accelerator, CyberKnife", "External beam", "30.00", "Treatment planning and simulation; Dosimetry and physics consultation; Treatment delivery supervision", "Used for single-session extracranial radiosurgery, e.g., for spinal metastases."],
+            ["61510", "Craniotomy for excision of brain tumor, supratentorial; except for pituitary tumor and craniopharyngioma", "Surgical instruments", "Open surgical approach", "100.00", "Pre-operative imaging review; Intraoperative neurophysiological monitoring (if performed by surgeon); Post-operative care (initial hospital stay)", "Covers the surgical removal of brain metastases."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required"],
+          "rows": [
+            ["C79.31", "Secondary malignant neoplasm of brain", "This code specifies metastatic cancer that has spread to the brain from a primary site elsewhere in the body.", "true (Primary)"]
+          ]
+        },
+        {
+          "name": "Medicare — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicare National Coverage Determination (NCD)", "Covered", "Covers stereotactic radiosurgery for intracranial lesions. Local Coverage Determinations (LCDs) may provide further specifics."]
+          ]
+        },
+        {
+          "name": "Medicaid — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid Policy (e.g., [State Name])", "Requires PA", "Specific criteria for brain tumor treatment, including metastases, are outlined in state manuals."]
+          ]
+        },
+        {
+          "name": "Private Insurance — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield", "Requires PA", "Policies often align with NCCN guidelines but may have specific criteria for number/size of lesions for SRS."],
+            ["UnitedHealthcare", "Requires PA", "Requires detailed clinical documentation and may have specific pathways for advanced imaging and treatment."]
+          ]
+        }
+      ]
+    }
+  }
+}

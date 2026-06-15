@@ -1,0 +1,30 @@
+{
+  "title": "In Vitro Fertilization Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "58970, 58974, 58976, 89250, 89251, 89253, 89254, 89255, 89257, 89258, 89259, 89260, 89261, 89268, 89272, 89280, 89281, 89290, 89291, 89337",
+      "credentials": "[Credentials]",
+      "icd_codes": "N97.0, N97.1, N97.2, N97.8, N97.9, N46.01, N46.11, E28.2, E28.31, E28.39, N80.1, N80.3, Z31.41, Z31.81, Z31.83",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "To Whom It May Concern,\n\nI am writing to formally appeal the denial of prior authorization for in vitro fertilization (IVF) for my patient. IVF is medically necessary and is supported by the American Society for Reproductive Medicine (ASRM), the World Health Organization (WHO), and the American College of Obstetricians and Gynecologists (ACOG).\n\nCLINICAL SUMMARY\n\nMy patient has been diagnosed with infertility (ICD-10 [N97.x]) after [X] months of unprotected intercourse. The complete infertility evaluation has been performed, including hysterosalpingography, ovarian reserve testing (AMH: [X] ng/mL, AFC: [X]), and semen analysis. The specific indication for IVF is [tubal factor / severe male factor / diminished ovarian reserve / unexplained infertility after 3 failed IUI cycles / oncofertility].\n\nDENIAL REBUTTAL\n\nIf denied as \"not medically necessary\" or \"infertility exclusion\": Infertility is recognized as a disease by the World Health Organization, the American Medical Association, and the American Society for Reproductive Medicine. It is not an elective condition. IVF is the medically necessary treatment for this patient's specific diagnosis.\n\nIf denied due to \"prior treatment not completed\": [If applicable] The patient has completed [X] IUI cycles without success. Per ASRM guidelines, IVF is the appropriate next step after failed IUI cycles in patients with [indication].\n\nIf denied for [tubal factor]: Bilateral tubal occlusion is an absolute indication for IVF — IUI is physiologically impossible. No alternative treatment exists.\n\nIf denied for [severe male factor]: Severe oligospermia/azoospermia requires IVF/ICSI — natural conception and IUI are not feasible options.\n\nEVIDENCE BASE\n\nThe ASRM Practice Committee defines infertility as a disease and IVF as a medically necessary treatment when indicated (Fertil Steril. 2020;113(3):533-535). The WHO classifies infertility as a disease of the reproductive system (ICD-11 GA20). Multiple studies demonstrate that IVF is the most effective treatment for the diagnoses present in this patient.\n\n[If state mandate applies]: Additionally, [state] law requires coverage of infertility treatment including IVF under [state statute]. This patient's plan is subject to this mandate.\n\nCONCLUSION\n\nI respectfully request immediate reconsideration and approval of IVF treatment for my patient.\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\n{{letter_date}}"
+  }
+}

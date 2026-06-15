@@ -1,0 +1,30 @@
+{
+  "title": "Embryo Cryopreservation Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "89258, 89352, 89353, 89344, 89346, 58974, 89253, 76830, 82670, 84144",
+      "credentials": "[Credentials]",
+      "icd_codes": "Z31.83, Z31.62, N97.9, Z79.899, N70.11, N46.01",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "To Whom It May Concern,\n\nI am writing to formally appeal the denial of prior authorization for embryo cryopreservation for my patient. Embryo cryopreservation is medically necessary and is supported by the American Society for Reproductive Medicine (ASRM) and the American Society of Clinical Oncology (ASCO).\n\nCLINICAL SUMMARY\n\n[Select applicable scenario:]\n\nSCENARIO A — Oncofertility: My patient has been diagnosed with [cancer diagnosis] and is scheduled to begin gonadotoxic therapy on {{letter_date}}. Embryo cryopreservation is the most effective method of fertility preservation before treatment. Without this procedure, my patient will be rendered permanently infertile by her cancer treatment.\n\nSCENARIO B — Freeze-All (OHSS Prevention): During my patient's IVF cycle, she developed signs of ovarian hyperstimulation syndrome (OHSS) with estradiol of [X] pg/mL and [X] follicles. Fresh embryo transfer was medically contraindicated due to OHSS risk. Embryo cryopreservation with deferred frozen embryo transfer (FET) is the medically appropriate management to prevent life-threatening OHSS.\n\nSCENARIO C — Standard IVF: Embryo cryopreservation of supernumerary embryos is a standard component of IVF treatment. Single embryo transfer policy requires cryopreservation of additional embryos for future FET cycles. CPT 89258 (embryo cryopreservation) is a distinct service from IVF and is not bundled per AMA CPT guidelines.\n\nDENIAL REBUTTAL\n\nIf denied as \"not medically necessary\": Embryo cryopreservation is medically necessary for [selected scenario above]. It is standard of care endorsed by ASRM and ASCO.\n\nIf denied as \"bundled\" with IVF: CPT 89258 (cryopreservation of embryos) is a separate and distinct service from IVF procedures. Per AMA CPT guidelines, these codes are not bundled.\n\nEVIDENCE BASE\n\nASRM Practice Committee (Fertil Steril. 2013;99(1):37-43) states that embryo cryopreservation is a well-established procedure and is the most effective method of fertility preservation. For oncofertility: ASCO Clinical Practice Guideline (J Clin Oncol. 2018;36(19):1994-2001) recommends embryo cryopreservation as standard of care before gonadotoxic therapy.\n\nCONCLUSION\n\nI respectfully request reconsideration and approval of embryo cryopreservation for my patient.\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\n{{letter_date}}"
+  }
+}

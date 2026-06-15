@@ -1,0 +1,657 @@
+{
+  "sourceFile": "client/src/lib/denialTemplates.ts",
+  "description": "Cross-module library of pre-written appeal paragraphs, organized by denial reason, inserted into appeal letters.",
+  "categories": [
+    {
+      "value": "medical-necessity",
+      "label": "Medical Necessity",
+      "color": "bg-red-100 text-red-800"
+    },
+    {
+      "value": "conservative-treatment",
+      "label": "Conservative Treatment",
+      "color": "bg-orange-100 text-orange-800"
+    },
+    {
+      "value": "frequency-limits",
+      "label": "Frequency / Quantity Limits",
+      "color": "bg-yellow-100 text-yellow-800"
+    },
+    {
+      "value": "experimental-investigational",
+      "label": "Experimental / Investigational",
+      "color": "bg-purple-100 text-purple-800"
+    },
+    {
+      "value": "not-covered",
+      "label": "Not Covered / Exclusion",
+      "color": "bg-gray-100 text-gray-800"
+    },
+    {
+      "value": "prior-auth-missing",
+      "label": "Prior Auth / Referral",
+      "color": "bg-blue-100 text-blue-800"
+    },
+    {
+      "value": "documentation",
+      "label": "Insufficient Documentation",
+      "color": "bg-teal-100 text-teal-800"
+    },
+    {
+      "value": "peer-to-peer",
+      "label": "Peer-to-Peer / IRO",
+      "color": "bg-indigo-100 text-indigo-800"
+    },
+    {
+      "value": "clinical-criteria",
+      "label": "Clinical Criteria Not Met",
+      "color": "bg-pink-100 text-pink-800"
+    },
+    {
+      "value": "coding-billing",
+      "label": "Coding / Billing Error",
+      "color": "bg-lime-100 text-lime-800"
+    },
+    {
+      "value": "level-of-care",
+      "label": "Level of Care / Setting",
+      "color": "bg-cyan-100 text-cyan-800"
+    },
+    {
+      "value": "out-of-network",
+      "label": "Out-of-Network",
+      "color": "bg-rose-100 text-rose-800"
+    }
+  ],
+  "templates": [
+    {
+      "id": "mn-001",
+      "category": "medical-necessity",
+      "title": "General Medical Necessity — Chronic Pain with Functional Impairment",
+      "denialReason": "Procedure deemed not medically necessary",
+      "applicableTo": [
+        "ESI",
+        "Facet Joint",
+        "RFA",
+        "SCS",
+        "PAD",
+        "General"
+      ],
+      "text": "This procedure is medically necessary for the treatment of [PATIENT NAME]'s documented chronic pain condition, which has resulted in significant functional impairment and reduced quality of life. The patient has exhausted conservative measures including physical therapy, oral analgesics, and non-interventional management over a period of [DURATION], without adequate relief. The requested intervention is consistent with established evidence-based guidelines and represents the next appropriate step in the patient's individualized pain management plan. Denial of this procedure would leave the patient without effective treatment options and risks further functional decline, increased opioid dependence, and preventable disability.",
+      "references": [
+        "ASIPP Guidelines 2013",
+        "APS Clinical Practice Guidelines",
+        "CMS LCD L35937"
+      ]
+    },
+    {
+      "id": "mn-002",
+      "category": "medical-necessity",
+      "title": "Medical Necessity — Radiculopathy with Imaging Correlation",
+      "denialReason": "Procedure deemed not medically necessary",
+      "applicableTo": [
+        "ESI",
+        "General"
+      ],
+      "text": "The medical necessity of this intervention is supported by objective imaging findings that directly correlate with the patient's clinical presentation. MRI/CT imaging dated [IMAGING DATE] demonstrates [IMAGING FINDING — e.g., disc herniation at L4-L5 with right-sided foraminal stenosis], which is anatomically consistent with the patient's reported dermatomal pain pattern, sensory deficits, and positive provocative testing. The combination of clinical symptoms and confirmatory imaging meets the medical necessity criteria established by the North American Spine Society (NASS), the American Society of Interventional Pain Physicians (ASIPP), and CMS Local Coverage Determinations for the requested procedure.",
+      "references": [
+        "NASS Coverage Policy Recommendations",
+        "ASIPP Guidelines 2013",
+        "CMS LCD L35937"
+      ]
+    },
+    {
+      "id": "mn-003",
+      "category": "medical-necessity",
+      "title": "Medical Necessity — Failed Opioid Reduction Strategy",
+      "denialReason": "Procedure deemed not medically necessary",
+      "applicableTo": [
+        "ESI",
+        "Facet Joint",
+        "RFA",
+        "SCS",
+        "General"
+      ],
+      "text": "This interventional procedure is medically necessary as part of a multimodal, opioid-sparing pain management strategy. The patient is currently on [OPIOID MEDICATION/DOSE], and the treating physician has determined that interventional pain management is essential to reduce opioid burden and associated risks. Consistent with CDC Opioid Prescribing Guidelines (2022) and CMS opioid stewardship initiatives, interventional procedures such as the one requested are preferred over continued opioid escalation in patients with chronic non-cancer pain. Denial of this procedure is inconsistent with current federal opioid reduction policy and places the patient at increased risk of opioid-related adverse events.",
+      "references": [
+        "CDC Clinical Practice Guideline for Prescribing Opioids 2022",
+        "CMS Opioid Stewardship Program"
+      ]
+    },
+    {
+      "id": "mn-004",
+      "category": "medical-necessity",
+      "title": "Medical Necessity — Vascular Intervention for Limb Salvage",
+      "denialReason": "Procedure deemed not medically necessary",
+      "applicableTo": [
+        "PAD",
+        "pAVF",
+        "General"
+      ],
+      "text": "The requested vascular intervention is medically necessary to prevent limb loss and preserve ambulatory function. The patient presents with [DIAGNOSIS — e.g., critical limb-threatening ischemia, Rutherford Class IV-VI], with objective evidence of hemodynamically significant disease on [ABI/TBI/DUPLEX/CTA/MRA dated DATE]. Without timely revascularization, the patient faces a high risk of major amputation, which carries a 30-day mortality of 5–10% and a 1-year mortality exceeding 30% in this population. The Society for Vascular Surgery (SVS), the Society of Interventional Radiology (SIR), and the American Heart Association (AHA) all endorse revascularization as the standard of care for limb-threatening ischemia when anatomy is suitable.",
+      "references": [
+        "SVS Practice Guidelines for PAD 2015",
+        "AHA/ACC PAD Guidelines 2016",
+        "TASC II Document"
+      ]
+    },
+    {
+      "id": "ct-001",
+      "category": "conservative-treatment",
+      "title": "Conservative Treatment Failure — Physical Therapy",
+      "denialReason": "Conservative treatment not adequately tried",
+      "applicableTo": [
+        "ESI",
+        "Facet Joint",
+        "RFA",
+        "SCS",
+        "TKA",
+        "THA",
+        "Spinal Fusion",
+        "General"
+      ],
+      "text": "The patient has completed a documented course of physical therapy consisting of [NUMBER] sessions over [DURATION] with [PROVIDER NAME/FACILITY], which failed to provide adequate pain relief or functional improvement. Physical therapy records dated [DATE RANGE] confirm attendance, compliance, and lack of meaningful response. The patient's pain scores remained [PAIN SCORE] out of 10 throughout the course of therapy, and functional assessments demonstrated [FUNCTIONAL LIMITATION]. This documented failure of conservative physical therapy satisfies the prerequisite requirements established by [PAYER NAME]'s coverage policy and the applicable clinical guidelines for the requested procedure.",
+      "references": [
+        "ASIPP Guidelines 2013",
+        "NASS Coverage Policy Recommendations"
+      ]
+    },
+    {
+      "id": "ct-002",
+      "category": "conservative-treatment",
+      "title": "Conservative Treatment Failure — NSAIDs and Oral Medications",
+      "denialReason": "Conservative treatment not adequately tried",
+      "applicableTo": [
+        "ESI",
+        "Facet Joint",
+        "RFA",
+        "SCS",
+        "General"
+      ],
+      "text": "The patient has trialed multiple oral analgesic regimens without adequate relief. Specifically, the patient has used [MEDICATION 1 — e.g., naproxen 500 mg BID] for [DURATION], [MEDICATION 2 — e.g., cyclobenzaprine 10 mg TID] for [DURATION], and [MEDICATION 3] for [DURATION], all of which provided insufficient pain control and/or were discontinued due to adverse effects including [SIDE EFFECTS — e.g., GI intolerance, elevated blood pressure]. The patient's comorbidities, including [COMORBIDITIES — e.g., chronic kidney disease, peptic ulcer disease], further limit the safe use of long-term NSAID therapy. These documented medication trials satisfy the conservative treatment requirements for the requested interventional procedure.",
+      "references": [
+        "ASIPP Guidelines 2013",
+        "APS Pain Management Guidelines"
+      ]
+    },
+    {
+      "id": "ct-003",
+      "category": "conservative-treatment",
+      "title": "Conservative Treatment Failure — Chiropractic / Manual Therapy",
+      "denialReason": "Conservative treatment not adequately tried",
+      "applicableTo": [
+        "ESI",
+        "Facet Joint",
+        "RFA",
+        "Spinal Fusion",
+        "General"
+      ],
+      "text": "The patient underwent a course of chiropractic/manual therapy treatment consisting of [NUMBER] visits over [DURATION] at [PROVIDER/FACILITY], which failed to produce meaningful or sustained improvement in pain or function. Treatment records confirm compliance with the prescribed regimen. Despite this conservative intervention, the patient continues to experience [PAIN LEVEL] pain with [FUNCTIONAL LIMITATIONS — e.g., inability to perform activities of daily living, work-related disability]. This documented failure of manual therapy, in conjunction with the failure of other conservative modalities, supports the medical necessity of the requested interventional procedure under applicable clinical guidelines.",
+      "references": [
+        "NASS Coverage Policy Recommendations",
+        "ASIPP Guidelines 2013"
+      ]
+    },
+    {
+      "id": "ct-004",
+      "category": "conservative-treatment",
+      "title": "Conservative Treatment Contraindicated",
+      "denialReason": "Conservative treatment not adequately tried",
+      "applicableTo": [
+        "ESI",
+        "Facet Joint",
+        "RFA",
+        "SCS",
+        "TKA",
+        "THA",
+        "General"
+      ],
+      "text": "In this patient's case, certain conservative treatment modalities are medically contraindicated and therefore cannot be required as a prerequisite to the requested procedure. Specifically, [CONTRAINDICATED TREATMENT — e.g., high-impact physical therapy, NSAID therapy] is contraindicated due to [REASON — e.g., severe osteoporosis with fracture risk, stage 3 chronic kidney disease with eGFR of 38 mL/min, active GI bleeding history]. Requiring the patient to undergo contraindicated treatments before approving medically necessary interventional care is not consistent with evidence-based clinical practice and could result in patient harm. The treating physician's clinical judgment regarding contraindications is supported by [GUIDELINE/REFERENCE].",
+      "references": [
+        "ADA Standards of Medical Care",
+        "KDIGO CKD Guidelines",
+        "ASIPP Guidelines 2013"
+      ]
+    },
+    {
+      "id": "ct-005",
+      "category": "conservative-treatment",
+      "title": "Conservative Treatment — Neurological Urgency Precludes Delay",
+      "denialReason": "Conservative treatment not adequately tried",
+      "applicableTo": [
+        "ESI",
+        "Spinal Fusion",
+        "Artificial Disc",
+        "General"
+      ],
+      "text": "The patient's clinical presentation includes progressive neurological deficits that preclude a prolonged trial of conservative therapy. Specifically, the patient has developed [NEUROLOGICAL FINDING — e.g., progressive foot drop, bowel/bladder dysfunction, worsening myelopathic signs] over the past [DURATION]. In the setting of progressive neurological compromise, delaying intervention to complete a conservative treatment trial risks irreversible neurological damage. This is explicitly recognized in the NASS Coverage Policy Recommendations and ASIPP Guidelines, which waive the conservative treatment prerequisite when neurological urgency is present. Immediate intervention is therefore medically indicated and should not be conditioned on further conservative treatment trials.",
+      "references": [
+        "NASS Coverage Policy Recommendations",
+        "ASIPP Guidelines 2013",
+        "Spine Journal Clinical Guidelines"
+      ]
+    },
+    {
+      "id": "fl-001",
+      "category": "frequency-limits",
+      "title": "Frequency Limit — Inadequate Response Justifies Repeat Treatment",
+      "denialReason": "Exceeds frequency or quantity limits",
+      "applicableTo": [
+        "ESI",
+        "Facet Joint",
+        "RFA",
+        "General"
+      ],
+      "text": "While [PAYER NAME]'s standard policy limits this procedure to [PAYER LIMIT] per [TIME PERIOD], the patient's clinical circumstances warrant an exception to this frequency limit. The patient experienced [DURATION OF RELIEF — e.g., 6–8 weeks] of significant pain relief following the previous procedure, which is consistent with the known duration of action for this intervention. The patient's pain has now returned to baseline levels of [PAIN SCORE]/10 with functional impairment, and the treating physician has determined that repeat treatment is medically necessary to maintain the patient's functional status and quality of life. The ASIPP guidelines and CMS Local Coverage Determinations acknowledge that individualized treatment frequency based on clinical response is appropriate and that rigid frequency limits may not apply to all patients.",
+      "references": [
+        "ASIPP Guidelines 2013",
+        "CMS LCD L35937",
+        "ISIS Practice Guidelines"
+      ]
+    },
+    {
+      "id": "fl-002",
+      "category": "frequency-limits",
+      "title": "Frequency Limit — Different Anatomical Level Justifies Additional Procedure",
+      "denialReason": "Exceeds frequency or quantity limits",
+      "applicableTo": [
+        "ESI",
+        "Facet Joint",
+        "RFA",
+        "General"
+      ],
+      "text": "The requested procedure targets a different anatomical level than the previously performed intervention and should not be counted against the patient's frequency limit for that prior procedure. The previous [PROCEDURE] was performed at [PRIOR LEVEL — e.g., L4-L5], while the current request is for [CURRENT LEVEL — e.g., L5-S1], which represents a distinct anatomical site with independent pathology confirmed on [IMAGING]. Applying a single frequency limit across multiple distinct anatomical levels is not supported by the applicable clinical guidelines and would deprive the patient of medically necessary treatment for a separate, documented pain generator.",
+      "references": [
+        "ASIPP Guidelines 2013",
+        "ISIS Practice Guidelines",
+        "CMS LCD L35937"
+      ]
+    },
+    {
+      "id": "fl-003",
+      "category": "frequency-limits",
+      "title": "Frequency Limit — Nerve Regeneration Justifies RFA Repeat",
+      "denialReason": "Exceeds frequency or quantity limits",
+      "applicableTo": [
+        "RFA"
+      ],
+      "text": "The request for repeat radiofrequency ablation (RFA) is medically appropriate and consistent with the known biology of this procedure. RFA achieves pain relief by thermally coagulating the medial branch nerves; however, peripheral nerves regenerate over time, typically within 6–18 months, resulting in recurrence of facetogenic pain. The patient previously responded to RFA with [DURATION OF RELIEF] of significant pain relief (NRS reduction of [POINTS] points), confirming the facet joint as the primary pain generator. Repeat RFA is explicitly endorsed by the International Spine Intervention Society (ISIS) Practice Guidelines and the ASIPP Guidelines for patients who demonstrated a positive response to prior RFA, as nerve regeneration is an expected physiological outcome rather than a treatment failure.",
+      "references": [
+        "ISIS Practice Guidelines for Spinal Diagnostic and Treatment Procedures",
+        "ASIPP Guidelines 2013",
+        "Dreyfuss P et al. Spine 2000"
+      ]
+    },
+    {
+      "id": "fl-004",
+      "category": "frequency-limits",
+      "title": "Frequency Limit — Bilateral Procedure Counted as Single Encounter",
+      "denialReason": "Exceeds frequency or quantity limits",
+      "applicableTo": [
+        "Facet Joint",
+        "RFA",
+        "ESI",
+        "General"
+      ],
+      "text": "The denial appears to have incorrectly counted bilateral procedures performed at the same encounter as two separate procedures for frequency limit purposes. The bilateral [PROCEDURE] performed on [DATE] was a single clinical encounter targeting bilateral pain generators at [LEVEL], which is clinically and procedurally distinct from a unilateral procedure. Bilateral treatment at a single encounter is appropriately billed with modifier -50 and should be counted as one procedure for frequency limit calculations, not two. This interpretation is consistent with CMS billing guidelines and the applicable Local Coverage Determination. We respectfully request that the frequency count be corrected accordingly.",
+      "references": [
+        "CMS Billing Guidelines Modifier -50",
+        "CMS LCD L35937",
+        "AMA CPT Guidelines"
+      ]
+    },
+    {
+      "id": "ei-001",
+      "category": "experimental-investigational",
+      "title": "Not Experimental — Established Guideline-Endorsed Procedure",
+      "denialReason": "Procedure classified as experimental or investigational",
+      "applicableTo": [
+        "SCS",
+        "RFA",
+        "ESI",
+        "Facet Joint",
+        "General"
+      ],
+      "text": "The classification of this procedure as \"experimental or investigational\" is incorrect and inconsistent with the current state of the medical evidence. [PROCEDURE NAME] has been in clinical use for over [YEARS] years and is endorsed by multiple major specialty societies including [SOCIETY 1], [SOCIETY 2], and [SOCIETY 3]. The procedure is covered by Medicare under Local Coverage Determination [LCD NUMBER] and is included in the coverage policies of the majority of commercial health plans. The published literature includes [NUMBER] randomized controlled trials, systematic reviews, and meta-analyses demonstrating efficacy and safety. A procedure with this level of evidence, regulatory approval, and guideline endorsement does not meet any accepted definition of \"experimental\" or \"investigational.\"",
+      "references": [
+        "CMS LCD Coverage Determination",
+        "ASIPP Guidelines 2013",
+        "Cochrane Systematic Review"
+      ]
+    },
+    {
+      "id": "ei-002",
+      "category": "experimental-investigational",
+      "title": "Not Experimental — Spinal Cord Stimulator FDA Approved",
+      "denialReason": "Procedure classified as experimental or investigational",
+      "applicableTo": [
+        "SCS"
+      ],
+      "text": "Spinal cord stimulation (SCS) is an FDA-approved therapy that has been commercially available since 1989 and is explicitly covered by Medicare and most commercial health plans for the indications present in this patient. The FDA has approved SCS devices from multiple manufacturers (Medtronic, Abbott, Boston Scientific, Nevro) for the treatment of chronic intractable pain of the trunk and/or limbs. The procedure is endorsed by the Neuromodulation Appropriateness Consensus Committee (NACC), the American Academy of Pain Medicine (AAPM), and the American Society of Anesthesiologists (ASA) Task Force on Chronic Pain Management. Classification of SCS as experimental or investigational for this indication is factually incorrect and constitutes an improper basis for denial.",
+      "references": [
+        "FDA 510(k) Clearance for SCS Devices",
+        "NACC Recommendations 2017",
+        "CMS NCD 160.7.1",
+        "AAPM Guidelines"
+      ]
+    },
+    {
+      "id": "ei-003",
+      "category": "experimental-investigational",
+      "title": "Not Experimental — Procedure Consistent with Standard of Care",
+      "denialReason": "Procedure classified as experimental or investigational",
+      "applicableTo": [
+        "General"
+      ],
+      "text": "The requested procedure represents the established standard of care for this patient's condition and cannot be characterized as experimental or investigational. Standard of care is defined as treatment that is accepted by medical experts as a proper treatment for a certain type of disease and that is widely used by healthcare professionals. [PROCEDURE NAME] meets this definition: it is taught in accredited residency and fellowship training programs, performed routinely at academic medical centers, included in major specialty society guidelines, and reimbursed by federal healthcare programs including Medicare and Medicaid. The treating physician's recommendation is consistent with the standard of care and reflects current best practices in [SPECIALTY] medicine.",
+      "references": [
+        "Specialty Society Clinical Practice Guidelines",
+        "CMS Coverage Determination"
+      ]
+    },
+    {
+      "id": "nc-001",
+      "category": "not-covered",
+      "title": "Coverage Exclusion — Exception for Medically Necessary Care",
+      "denialReason": "Procedure excluded from coverage",
+      "applicableTo": [
+        "General"
+      ],
+      "text": "While [PAYER NAME]'s standard benefit plan may exclude [PROCEDURE] under certain circumstances, the patient's clinical situation warrants an exception to this exclusion on the basis of medical necessity. Under most state insurance regulations and federal law, health plans are required to cover services that are medically necessary even when a general exclusion exists, provided the treating physician documents the clinical necessity. The treating physician has documented [CLINICAL JUSTIFICATION] demonstrating that this procedure is the only clinically appropriate intervention for this patient's condition. We request that [PAYER NAME] apply its medical necessity exception process and approve coverage for this medically necessary service.",
+      "references": [
+        "State Insurance Code Medical Necessity Exception",
+        "ACA Essential Health Benefits Requirements"
+      ]
+    },
+    {
+      "id": "nc-002",
+      "category": "not-covered",
+      "title": "Coverage Exclusion — Misclassification of Procedure",
+      "denialReason": "Procedure excluded from coverage",
+      "applicableTo": [
+        "General"
+      ],
+      "text": "The denial appears to be based on a misclassification of the requested procedure. The procedure described in the authorization request — [PROCEDURE DESCRIPTION] — is not the same as the excluded service referenced in the denial letter. Specifically, [PAYER NAME]'s exclusion applies to [EXCLUDED PROCEDURE], while the requested procedure is [REQUESTED PROCEDURE], which is a distinct clinical service with a different CPT code ([CPT CODE]), different clinical indication, and different coverage status under the patient's benefit plan. We respectfully request that [PAYER NAME] review the correct procedure code and reprocess this claim under the applicable coverage policy for [REQUESTED PROCEDURE].",
+      "references": [
+        "AMA CPT Code Definitions",
+        "CMS Physician Fee Schedule"
+      ]
+    },
+    {
+      "id": "pa-001",
+      "category": "prior-auth-missing",
+      "title": "Prior Auth — Retroactive Authorization for Emergency/Urgent Care",
+      "denialReason": "Prior authorization not obtained",
+      "applicableTo": [
+        "General"
+      ],
+      "text": "The procedure was performed without prior authorization due to the urgent/emergent nature of the patient's clinical presentation. At the time of the procedure, the patient presented with [URGENT CLINICAL FINDING — e.g., acute neurological deterioration, critical limb ischemia with rest pain, hemodynamic instability], which required immediate intervention to prevent serious harm. Under [PAYER NAME]'s coverage policy and applicable state law, prior authorization requirements are waived for emergency and urgent care. We respectfully request retroactive authorization for this medically necessary urgent procedure and ask that the claim be reprocessed accordingly.",
+      "references": [
+        "State Insurance Code Emergency Care Provisions",
+        "ACA Emergency Services Coverage Requirements"
+      ]
+    },
+    {
+      "id": "pa-002",
+      "category": "prior-auth-missing",
+      "title": "Prior Auth — Administrative Error / System Failure",
+      "denialReason": "Prior authorization not obtained",
+      "applicableTo": [
+        "General"
+      ],
+      "text": "Prior authorization for this procedure was requested in a timely manner; however, the authorization was not properly recorded in [PAYER NAME]'s system due to [REASON — e.g., a system error, a miscommunication between the authorization department and the claims processing department, a fax transmission failure]. Our office has documentation confirming that the prior authorization request was submitted on [DATE] via [METHOD — phone/fax/portal], and we received [CONFIRMATION NUMBER/VERBAL CONFIRMATION] at that time. We are providing this documentation as an attachment to this appeal and respectfully request that the claim be reprocessed as authorized.",
+      "references": []
+    },
+    {
+      "id": "pa-003",
+      "category": "prior-auth-missing",
+      "title": "Prior Auth — Continuity of Care for Established Treatment",
+      "denialReason": "Prior authorization not obtained",
+      "applicableTo": [
+        "ESI",
+        "Facet Joint",
+        "RFA",
+        "SCS",
+        "General"
+      ],
+      "text": "This procedure represents a continuation of an established treatment regimen that has been previously authorized and performed without issue. The patient has received [PROCEDURE] under prior authorizations [PRIOR AUTH NUMBERS] on [PRIOR DATES], and the current request is for the same procedure at the same anatomical level for the same clinical indication. The failure to obtain prior authorization for this specific encounter was an administrative oversight and does not reflect any change in the patient's clinical status or the medical necessity of the procedure. We request that [PAYER NAME] apply its continuity of care provisions and approve this claim retroactively.",
+      "references": []
+    },
+    {
+      "id": "doc-001",
+      "category": "documentation",
+      "title": "Documentation — Submitting Additional Clinical Records",
+      "denialReason": "Insufficient documentation",
+      "applicableTo": [
+        "General"
+      ],
+      "text": "In response to [PAYER NAME]'s request for additional documentation, we are providing the following records as attachments to this appeal: (1) Office visit notes from [DATE RANGE] documenting the patient's diagnosis, symptom severity, functional impairment, and treatment history; (2) Imaging reports (MRI/CT/X-ray) dated [DATES] with findings; (3) Physical therapy records confirming completion of [NUMBER] sessions with documented lack of adequate response; (4) Medication history demonstrating trials of [MEDICATIONS] with inadequate relief or adverse effects; (5) Functional assessment scores including [ASSESSMENT TOOL — e.g., ODI, VAS, NRS] demonstrating [SCORE/IMPAIRMENT LEVEL]. We believe this documentation comprehensively establishes the medical necessity of the requested procedure and satisfies all documentation requirements under [PAYER NAME]'s coverage policy.",
+      "references": []
+    },
+    {
+      "id": "doc-002",
+      "category": "documentation",
+      "title": "Documentation — Imaging Findings Supporting Procedure",
+      "denialReason": "Insufficient documentation — imaging not provided",
+      "applicableTo": [
+        "ESI",
+        "Facet Joint",
+        "RFA",
+        "Spinal Fusion",
+        "General"
+      ],
+      "text": "We are providing the following imaging documentation in support of this appeal. MRI of the [SPINE REGION] performed on [DATE] at [FACILITY] demonstrates [FINDING 1 — e.g., disc herniation at L4-L5 with right-sided foraminal stenosis causing nerve root compression], [FINDING 2], and [FINDING 3]. These findings are directly correlated with the patient's clinical presentation of [SYMPTOMS — e.g., right L5 dermatomal pain, paresthesias, and positive straight leg raise at 45 degrees]. The imaging findings meet the radiographic criteria specified in [PAYER NAME]'s coverage policy and the applicable clinical guidelines for the requested procedure. The full imaging report and CD/digital images are enclosed with this appeal.",
+      "references": [
+        "NASS Coverage Policy Recommendations",
+        "ASIPP Guidelines 2013"
+      ]
+    },
+    {
+      "id": "doc-003",
+      "category": "documentation",
+      "title": "Documentation — Diagnostic Block Results for RFA",
+      "denialReason": "Insufficient documentation — diagnostic block results not provided",
+      "applicableTo": [
+        "RFA",
+        "Facet Joint"
+      ],
+      "text": "Documentation of the diagnostic medial branch block (MBB) results is provided herewith. The patient underwent [NUMBER] diagnostic MBBs on [DATE(S)] targeting the [LEVEL] medial branches bilaterally/unilaterally. Following the procedure(s), the patient reported [PERCENTAGE]% pain relief for a duration of [HOURS/DAYS], which meets the positive response threshold (≥80% relief per ISIS guidelines, or ≥50% relief per ASIPP guidelines) required to confirm facet joint-mediated pain and establish candidacy for radiofrequency ablation. The diagnostic block procedure notes and patient pain diary are enclosed. This positive diagnostic response satisfies the prerequisite criteria for RFA under [PAYER NAME]'s coverage policy and applicable clinical guidelines.",
+      "references": [
+        "ISIS Practice Guidelines 2013",
+        "ASIPP Guidelines 2013",
+        "CMS LCD L35937"
+      ]
+    },
+    {
+      "id": "ptp-001",
+      "category": "peer-to-peer",
+      "title": "Peer-to-Peer — Request for Physician Reviewer Discussion",
+      "denialReason": "Adverse determination after peer-to-peer review",
+      "applicableTo": [
+        "General"
+      ],
+      "text": "We respectfully request a peer-to-peer discussion between the treating physician, [PHYSICIAN NAME, CREDENTIALS], and [PAYER NAME]'s medical reviewer to discuss the clinical basis for this denial. The treating physician is available at [PHONE NUMBER] during [AVAILABLE HOURS] and is prepared to provide a detailed clinical presentation of the patient's history, examination findings, diagnostic workup, and treatment course. We believe that a direct clinical discussion will clarify the medical necessity of the requested procedure and resolve this denial. Please contact our office at [CONTACT NUMBER] to schedule this peer-to-peer review at the earliest convenience.",
+      "references": []
+    },
+    {
+      "id": "ptp-002",
+      "category": "peer-to-peer",
+      "title": "Peer-to-Peer — Disagreement with Reviewer Specialty",
+      "denialReason": "Adverse determination after peer-to-peer review",
+      "applicableTo": [
+        "ESI",
+        "Facet Joint",
+        "RFA",
+        "SCS",
+        "General"
+      ],
+      "text": "We respectfully challenge the adverse determination on the basis that the reviewing physician does not appear to have equivalent specialty training in [SPECIALTY — e.g., interventional pain management, interventional radiology, spine surgery]. Under the applicable state insurance code and URAC accreditation standards, adverse determinations for specialty procedures must be made by a physician with equivalent specialty training. The requested procedure — [PROCEDURE NAME] — falls within the scope of [SPECIALTY], and we request that the appeal be reviewed by a board-certified [SPECIALTY] physician with active clinical experience in this procedure. If an independent review organization (IRO) review is available, we request that option as well.",
+      "references": [
+        "State Insurance Code Utilization Review Standards",
+        "URAC Accreditation Standards",
+        "NCQA Standards"
+      ]
+    },
+    {
+      "id": "ptp-003",
+      "category": "peer-to-peer",
+      "title": "IRO — Request for Independent Review Organization Review",
+      "denialReason": "Requesting external independent review",
+      "applicableTo": [
+        "General"
+      ],
+      "text": "Having exhausted the internal appeal process, we formally request an external review of this adverse determination by an Independent Review Organization (IRO) as provided under [STATE] law and the applicable federal regulations. The patient's right to external review is protected under the Affordable Care Act (ACA) and state insurance law. We request that [PAYER NAME] provide the required notice of the patient's right to external review and facilitate the transfer of the complete medical record and claims file to the designated IRO within the timeframes required by law. The treating physician and patient are prepared to provide any additional information requested by the IRO.",
+      "references": [
+        "ACA External Review Provisions 45 CFR 147.136",
+        "State External Review Law"
+      ]
+    },
+    {
+      "id": "cc-001",
+      "category": "clinical-criteria",
+      "title": "Clinical Criteria — SCS Trial Success Criteria Met",
+      "denialReason": "Clinical criteria for permanent implant not met",
+      "applicableTo": [
+        "SCS"
+      ],
+      "text": "The patient successfully completed a spinal cord stimulator trial from [TRIAL START DATE] to [TRIAL END DATE], achieving [PERCENTAGE]% reduction in pain scores (pre-trial NRS [SCORE]/10, post-trial NRS [SCORE]/10) and [FUNCTIONAL IMPROVEMENT — e.g., improved ambulation, reduced opioid use, return to activities of daily living]. This response meets and exceeds the standard trial success criteria of ≥50% pain relief endorsed by the Neuromodulation Appropriateness Consensus Committee (NACC) and required by [PAYER NAME]'s coverage policy. The patient expressed strong preference for permanent implantation based on the quality of life improvement experienced during the trial. The treating physician has determined that the patient is an appropriate candidate for permanent SCS implantation based on the successful trial outcome, psychological clearance, and absence of contraindications.",
+      "references": [
+        "NACC Recommendations 2017",
+        "CMS NCD 160.7.1",
+        "Kumar K et al. Neurosurgery 2008"
+      ]
+    },
+    {
+      "id": "cc-002",
+      "category": "clinical-criteria",
+      "title": "Clinical Criteria — BMI Threshold for Joint Replacement",
+      "denialReason": "BMI exceeds threshold for surgical candidacy",
+      "applicableTo": [
+        "TKA",
+        "THA"
+      ],
+      "text": "While the patient's BMI of [BMI] exceeds certain institutional thresholds, the treating surgeon has determined that the patient is an appropriate surgical candidate based on a comprehensive risk-benefit analysis. The American Academy of Orthopaedic Surgeons (AAOS) does not endorse a specific BMI cutoff as an absolute contraindication to total joint arthroplasty. Published evidence demonstrates that obese patients can achieve meaningful improvements in pain and function following TKA/THA, and that the risks of surgical complications, while elevated, are manageable with appropriate perioperative optimization. The patient has been counseled regarding surgical risks, has been evaluated by [ANESTHESIA/MEDICINE] and cleared for surgery, and has undergone [PREOPERATIVE OPTIMIZATION MEASURES — e.g., weight loss program, cardiac evaluation]. Denial based solely on BMI is not supported by current AAOS guidelines.",
+      "references": [
+        "AAOS Clinical Practice Guidelines for TKA",
+        "AAOS Clinical Practice Guidelines for THA",
+        "Kerkhoffs GM et al. Acta Orthop 2012"
+      ]
+    },
+    {
+      "id": "cc-003",
+      "category": "clinical-criteria",
+      "title": "Clinical Criteria — Kellgren-Lawrence Grade for TKA",
+      "denialReason": "Radiographic severity insufficient for surgical candidacy",
+      "applicableTo": [
+        "TKA"
+      ],
+      "text": "The patient's radiographic findings demonstrate [KL GRADE] Kellgren-Lawrence osteoarthritis on weight-bearing X-rays of the [RIGHT/LEFT] knee, which is consistent with [MODERATE/SEVERE] degenerative joint disease. The clinical decision for total knee arthroplasty is appropriately based on the combination of radiographic severity and clinical symptoms, not radiographic findings alone. The AAOS Clinical Practice Guidelines for TKA explicitly state that the decision for surgery should be individualized based on the patient's symptoms, functional impairment, and quality of life impact, in conjunction with radiographic findings. This patient's [PAIN SCORE]/10 pain, [FUNCTIONAL LIMITATION], and failure of [CONSERVATIVE TREATMENTS] collectively support surgical candidacy regardless of the specific KL grade.",
+      "references": [
+        "AAOS Clinical Practice Guidelines for TKA 2015",
+        "Losina E et al. Arthritis Rheum 2009"
+      ]
+    },
+    {
+      "id": "cb-001",
+      "category": "coding-billing",
+      "title": "Coding Error — Correct CPT Code for Procedure",
+      "denialReason": "Incorrect procedure code / coding error",
+      "applicableTo": [
+        "ESI",
+        "Facet Joint",
+        "RFA",
+        "General"
+      ],
+      "text": "The denial appears to be based on an incorrect procedure code. The procedure performed was [PROCEDURE DESCRIPTION], which is correctly billed under CPT code [CORRECT CPT CODE]. The denial references CPT code [DENIED CPT CODE], which describes [DIFFERENT PROCEDURE] and does not accurately reflect the service rendered. We are resubmitting this claim with the correct CPT code [CORRECT CPT CODE] and supporting documentation including the operative/procedure note confirming the nature of the service performed. We request that [PAYER NAME] reprocess this claim under the correct procedure code.",
+      "references": [
+        "AMA CPT Code Definitions",
+        "CMS Physician Fee Schedule"
+      ]
+    },
+    {
+      "id": "cb-002",
+      "category": "coding-billing",
+      "title": "Coding Error — Fluoroscopic Guidance Separately Billable",
+      "denialReason": "Fluoroscopic guidance bundled / not separately payable",
+      "applicableTo": [
+        "ESI",
+        "Facet Joint",
+        "RFA",
+        "General"
+      ],
+      "text": "Fluoroscopic guidance (CPT 77003) is separately billable and payable for [PROCEDURE] and is not bundled into the primary procedure code under current CMS and AMA coding guidelines. The use of fluoroscopic guidance for this procedure is medically necessary to ensure accurate needle placement, minimize complications, and improve clinical outcomes. The ASIPP guidelines and the applicable CMS Local Coverage Determination explicitly support the use of and separate billing for fluoroscopic guidance in interventional pain procedures. We request that [PAYER NAME] reprocess the claim for CPT 77003 as a separately payable service.",
+      "references": [
+        "AMA CPT Code 77003 Definition",
+        "CMS Physician Fee Schedule",
+        "ASIPP Guidelines 2013"
+      ]
+    },
+    {
+      "id": "loc-001",
+      "category": "level-of-care",
+      "title": "Level of Care — Outpatient Setting Appropriate",
+      "denialReason": "Procedure requires inpatient / higher level of care",
+      "applicableTo": [
+        "ESI",
+        "Facet Joint",
+        "RFA",
+        "SCS",
+        "General"
+      ],
+      "text": "The requested procedure is appropriately performed in an outpatient setting and does not require inpatient hospitalization. [PROCEDURE NAME] is routinely and safely performed in outpatient surgery centers and office-based procedure suites across the country. The patient's clinical status — including [RELEVANT CLINICAL FACTORS — e.g., stable vital signs, no active cardiac or pulmonary decompensation, ASA Class II] — is appropriate for outpatient management. The use of an outpatient setting is consistent with CMS coverage policies, the applicable Local Coverage Determination, and standard clinical practice guidelines. Requiring inpatient hospitalization for this procedure would be medically unnecessary and would impose an undue financial burden on the patient.",
+      "references": [
+        "CMS Outpatient Prospective Payment System",
+        "CMS LCD L35937",
+        "ASA Physical Status Classification"
+      ]
+    },
+    {
+      "id": "loc-002",
+      "category": "level-of-care",
+      "title": "Level of Care — Inpatient Admission Medically Necessary",
+      "denialReason": "Inpatient admission not medically necessary",
+      "applicableTo": [
+        "TKA",
+        "THA",
+        "Spinal Fusion",
+        "General"
+      ],
+      "text": "Inpatient hospitalization for this procedure is medically necessary based on the patient's clinical complexity and postoperative care requirements. The patient's comorbidities — including [COMORBIDITIES — e.g., insulin-dependent diabetes, severe obesity BMI >40, prior DVT requiring anticoagulation management, significant cardiac history] — require close postoperative monitoring, multispecialty coordination, and inpatient-level nursing care that cannot be safely provided in an outpatient or observation setting. The treating surgeon and anesthesiologist have jointly determined that inpatient admission is the appropriate level of care for this patient. This determination is consistent with Milliman Care Guidelines and InterQual criteria for inpatient admission following [PROCEDURE].",
+      "references": [
+        "Milliman Care Guidelines",
+        "InterQual Clinical Criteria",
+        "CMS Two-Midnight Rule"
+      ]
+    },
+    {
+      "id": "oon-001",
+      "category": "out-of-network",
+      "title": "Out-of-Network — No In-Network Provider with Equivalent Expertise",
+      "denialReason": "Out-of-network provider / no in-network benefit",
+      "applicableTo": [
+        "General"
+      ],
+      "text": "The patient was treated by an out-of-network provider because no in-network provider with equivalent expertise and experience in [PROCEDURE/SPECIALTY] was reasonably available within [PAYER NAME]'s network in the patient's geographic area. The treating physician, [PHYSICIAN NAME], has specialized training and experience in [SPECIFIC EXPERTISE — e.g., complex spinal cord stimulator implantation, revision total joint arthroplasty, hepatic arterial interventions] that is not available among in-network providers. Under the No Surprises Act (effective January 1, 2022) and applicable state surprise billing protections, the patient's cost-sharing for this out-of-network service should be limited to in-network cost-sharing amounts. We request that [PAYER NAME] apply the appropriate out-of-network access exception and process this claim at the in-network benefit level.",
+      "references": [
+        "No Surprises Act (42 U.S.C. § 300gg-111)",
+        "State Surprise Billing Law",
+        "ACA Network Adequacy Standards"
+      ]
+    },
+    {
+      "id": "oon-002",
+      "category": "out-of-network",
+      "title": "Out-of-Network — Emergency Care Protections",
+      "denialReason": "Out-of-network provider / emergency care",
+      "applicableTo": [
+        "General"
+      ],
+      "text": "The out-of-network services provided to this patient were rendered in the context of an emergency medical condition and are therefore subject to the emergency care protections under the Affordable Care Act and the No Surprises Act. Under these federal laws, health plans must cover emergency services provided by out-of-network providers at the in-network cost-sharing level, without requiring prior authorization. The patient presented to [FACILITY] on [DATE] with [EMERGENCY DIAGNOSIS], which constitutes an emergency medical condition as defined under EMTALA and the ACA. We request that [PAYER NAME] reprocess this claim under the applicable emergency care provisions and apply in-network cost-sharing.",
+      "references": [
+        "No Surprises Act (42 U.S.C. § 300gg-111)",
+        "ACA Emergency Services Coverage 45 CFR 147.138",
+        "EMTALA 42 U.S.C. § 1395dd"
+      ]
+    }
+  ]
+}

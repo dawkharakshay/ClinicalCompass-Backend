@@ -1,0 +1,252 @@
+{
+  "title": "Pediatric Immunization Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendations",
+    "logicKey": "pediatricimmunization",
+    "hiddenDefaults": {
+      "gestationalAgeWeeks": 40,
+      "catchUpVaccines": []
+    },
+    "steps": [
+      {
+        "id": "patient-age-visit-type",
+        "shortLabel": "Patient Age & Visit Type",
+        "title": "Patient Age & Visit Type",
+        "fields": [
+          {
+            "id": "age-group",
+            "name": "ageGroup",
+            "label": "Age Group",
+            "type": "select",
+            "required": false,
+            "defaultValue": "2_months",
+            "options": [
+              { "label": "Newborn (Birth)", "value": "newborn" },
+              { "label": "2 Months", "value": "2_months" },
+              { "label": "4 Months", "value": "4_months" },
+              { "label": "6 Months", "value": "6_months" },
+              { "label": "9 Months", "value": "9_months" },
+              { "label": "12 Months", "value": "12_months" },
+              { "label": "15 Months", "value": "15_months" },
+              { "label": "18 Months", "value": "18_months" },
+              { "label": "24 Months", "value": "24_months" },
+              { "label": "2–3 Years", "value": "2_3_years" },
+              { "label": "4–6 Years", "value": "4_6_years" },
+              { "label": "7–10 Years", "value": "7_10_years" },
+              { "label": "11–12 Years", "value": "11_12_years" },
+              { "label": "13–15 Years", "value": "13_15_years" },
+              { "label": "16–18 Years", "value": "16_18_years" }
+            ]
+          },
+          {
+            "id": "special-population",
+            "name": "specialPopulation",
+            "label": "Special Population",
+            "type": "select",
+            "required": false,
+            "defaultValue": "none",
+            "options": [
+              { "label": "None (Standard)", "value": "none" },
+              { "label": "Preterm Infant", "value": "preterm" },
+              { "label": "Immunocompromised", "value": "immunocompromised" },
+              { "label": "HIV Positive", "value": "hiv_positive" },
+              { "label": "Asplenia", "value": "asplenia" },
+              { "label": "Chronic Disease", "value": "chronic_disease" },
+              { "label": "International Travel", "value": "international_travel" },
+              { "label": "Catch-Up Visit", "value": "catch_up" }
+            ]
+          },
+          {
+            "id": "is-preterm",
+            "name": "isPreterm",
+            "label": "Preterm birth",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-catch-up-needs",
+            "name": "hasCatchUpNeeds",
+            "label": "Catch-up immunization needs",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "current-season",
+            "name": "currentSeason",
+            "label": "Current Season",
+            "type": "select",
+            "required": false,
+            "defaultValue": "off_season",
+            "options": [
+              { "label": "Influenza Season (Oct–Mar)", "value": "influenza_season" },
+              { "label": "Off-Season", "value": "off_season" }
+            ]
+          },
+          {
+            "id": "rsv-season-active",
+            "name": "rsvSeasonActive",
+            "label": "RSV season active",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "medical-history-risk-factors",
+        "shortLabel": "Medical History & Risk Factors",
+        "title": "Medical History & Risk Factors",
+        "fields": [
+          {
+            "id": "mother-hbsag-positive",
+            "name": "motherHBsAgPositive",
+            "label": "Mother HBsAg positive",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-asplenia",
+            "name": "hasAsplenia",
+            "label": "Asplenia (functional or anatomic)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-sickle-cell-disease",
+            "name": "hasSickleCellDisease",
+            "label": "Sickle cell disease",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-chronic-lung-disease",
+            "name": "hasChronicLungDisease",
+            "label": "Chronic lung disease (asthma, BPD, CF)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-chronic-heart-disease",
+            "name": "hasChronicHeartDisease",
+            "label": "Chronic heart disease",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-chronic-kidney-disease",
+            "name": "hasChronicKidneyDisease",
+            "label": "Chronic kidney disease",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-diabetes",
+            "name": "hasDiabetes",
+            "label": "Diabetes mellitus",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "is-pregnant",
+            "name": "isPregnant",
+            "label": "Pregnant adolescent",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "travel-destination",
+            "name": "travelDestination",
+            "label": "International Travel Destination",
+            "type": "select",
+            "required": false,
+            "defaultValue": "none",
+            "options": [
+              { "label": "No international travel", "value": "none" },
+              { "label": "Endemic Hepatitis A region", "value": "endemic_hepatitis_a" },
+              { "label": "Endemic Meningococcal region", "value": "endemic_meningococcal" },
+              { "label": "Endemic Typhoid region", "value": "endemic_typhoid" },
+              { "label": "Endemic Yellow Fever region", "value": "endemic_yellow_fever" }
+            ]
+          },
+          {
+            "id": "covid-vaccination-status",
+            "name": "covidVaccinationStatus",
+            "label": "COVID-19 Vaccination Status",
+            "type": "select",
+            "required": false,
+            "defaultValue": "not_started",
+            "options": [
+              { "label": "Not Started", "value": "not_started" },
+              { "label": "Partial", "value": "partial" },
+              { "label": "Up to Date", "value": "up_to_date" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "allergy-special-considerations",
+        "shortLabel": "Allergy & Special Considerations",
+        "title": "Allergy & Special Considerations",
+        "fields": [
+          {
+            "id": "is-immunocompromised",
+            "name": "isImmunocompromised",
+            "label": "Immunocompromised (any cause)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "hiv-status",
+            "name": "hivStatus",
+            "label": "HIV Status",
+            "type": "select",
+            "required": false,
+            "defaultValue": "negative",
+            "options": [
+              { "label": "HIV Negative", "value": "negative" },
+              { "label": "HIV Positive", "value": "positive" },
+              { "label": "Unknown", "value": "unknown" }
+            ]
+          },
+          {
+            "id": "has-egg-allergy",
+            "name": "hasEggAllergy",
+            "label": "Egg allergy",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-gelatin-allergy",
+            "name": "hasGelatinAllergy",
+            "label": "Gelatin allergy",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-yeast-allergy",
+            "name": "hasYeastAllergy",
+            "label": "Yeast allergy",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

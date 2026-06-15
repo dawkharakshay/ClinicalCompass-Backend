@@ -1,0 +1,184 @@
+{
+  "title": "Varicocelectomy Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assessment",
+    "logicKey": "varicocelectomy",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "varicocele-grade",
+        "shortLabel": "Varicocele Grade",
+        "title": "Varicocele Grade",
+        "fields": [
+          {
+            "id": "grade",
+            "name": "grade",
+            "label": "Varicocele Grade (Dubin-Amelar)",
+            "type": "select",
+            "required": false,
+            "defaultValue": "II",
+            "options": [
+              { "label": "Subclinical — ultrasound only, not palpable", "value": "subclinical" },
+              { "label": "Grade I — palpable only with Valsalva", "value": "I" },
+              { "label": "Grade II — palpable without Valsalva, not visible", "value": "II" },
+              { "label": "Grade III — visible through scrotal skin", "value": "III" }
+            ]
+          },
+          {
+            "id": "bilateral",
+            "name": "bilateral",
+            "label": "Bilateral varicocele",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "testis-volume-diff",
+            "name": "testisVolumeDiff",
+            "label": "Testicular Volume Differential (%)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "unit": "%",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "adolescent",
+            "name": "adolescent",
+            "label": "Adolescent patient (<18 years)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "pain-present",
+            "name": "painPresent",
+            "label": "Varicocele-associated scrotal pain",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "semen-analysis",
+        "shortLabel": "Semen Analysis",
+        "title": "Semen Analysis",
+        "fields": [
+          {
+            "id": "total-motile-count",
+            "name": "totalMotileCount",
+            "label": "Total Motile Count (million)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "unit": "million",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "sperm-concentration",
+            "name": "spermConcentration",
+            "label": "Sperm Concentration (million/mL)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "unit": "million/mL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "progressive-motility",
+            "name": "progressiveMotility",
+            "label": "Progressive Motility (%)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "unit": "%",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "morphology-kruger",
+            "name": "morphologyKruger",
+            "label": "Strict Morphology — Kruger (%)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "unit": "%",
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "hormonal-profile",
+        "shortLabel": "Hormonal Profile",
+        "title": "Hormonal Profile",
+        "fields": [
+          {
+            "id": "fsh-level",
+            "name": "fshLevel",
+            "label": "FSH Level (mIU/mL)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "unit": "mIU/mL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "testosterone-level",
+            "name": "testosteroneLevel",
+            "label": "Total Testosterone (ng/dL)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "unit": "ng/dL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "prior-varicocelectomy",
+            "name": "priorVaricocelectomy",
+            "label": "Prior varicocelectomy (recurrence)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "fertility-goals",
+        "shortLabel": "Fertility Goals",
+        "title": "Fertility Goals",
+        "fields": [
+          {
+            "id": "infertility-duration",
+            "name": "infertilityDuration",
+            "label": "Duration of Infertility (months)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "unit": "months",
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "partner-age",
+            "name": "partnerAge",
+            "label": "Female Partner Age (years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "unit": "years",
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "partner-fertility-normal",
+            "name": "partnerFertilityNormal",
+            "label": "Female partner fertility evaluation normal",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": true
+          }
+        ]
+      }
+    ]
+  }
+}

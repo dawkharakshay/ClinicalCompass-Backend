@@ -1,0 +1,30 @@
+{
+  "title": "Total Knee Arthroplasty Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "27447, 27438, 27487, 27486, 27599",
+      "credentials": "[Credentials]",
+      "icd_codes": "M17.11, M17.12, M17.31, M17.32, M17.21, M17.0, M05.761, M05.762, M08.061",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\n{{insurance_name}}\n{{insurance_address}}\nAttn: Medical Director / Appeals Department\nRe: Prior Authorization Appeal — Total Knee Arthroplasty (TKA)\nPatient: {{patient_name}} | DOB: {{patient_dob}} | Member ID: {{member_id}}\nClaim/Auth #: {{claim_number}} | Date of Denial: [DENIAL DATE]\nCPT Code(s): 27447 | ICD-10: M17.11 / M17.12\n\nDear Medical Director,\n\nI am writing to formally appeal the denial of prior authorization for Total Knee Arthroplasty (TKA) for my patient {{patient_name}}. The Clinical Compass™ TKA Decision Support assessment yielded a recommendation of \"[TKA Recommendation]\" (Class of Recommendation [COR]) based on the 2024 AAOS Clinical Practice Guideline for Total Knee Arthroplasty.\n\nCLINICAL JUSTIFICATION:\n• Patient presents with severe symptomatic knee osteoarthritis with significant functional impairment\n• Radiographic evidence of advanced OA (Kellgren-Lawrence Grade ≥3)\n• KOOS Pain and ADL scores indicate substantial disability\n• Failure of ≥3 months of conservative therapy documented\n\nCONSERVATIVE THERAPY DOCUMENTATION:\nThis patient has completed a comprehensive course of conservative management including:\n• Physical therapy: [DURATION, NUMBER OF SESSIONS, OUTCOMES]\n• NSAIDs / analgesic medications: [MEDICATIONS, DURATION, RESPONSE]\n• Intra-articular corticosteroid injections: [NUMBER, DATES, RESPONSE]\n• Viscosupplementation (if applicable): [DATES, RESPONSE]\n• Activity modification and weight management: [DETAILS]\n\nRADIOGRAPHIC FINDINGS:\n• Standing AP, lateral, and sunrise radiographs demonstrate: [DESCRIBE — joint space narrowing, osteophytes, subchondral sclerosis, varus/valgus deformity]\n• Kellgren-Lawrence Grade: [GRADE]\n• Alignment: [DESCRIBE varus/valgus deformity if present]\n\nFUNCTIONAL ASSESSMENT:\n• KOOS Pain Score: [SCORE] (normal ≥75; severe impairment <45)\n• KOOS ADL Score: [SCORE] (normal ≥75; severe impairment <50)\n• VAS Pain Score: [SCORE]/10\n• Patient-reported functional limitations: [DESCRIBE — difficulty with ambulation, stair climbing, ADLs]\n\nMEDICAL NECESSITY:\nTotal Knee Arthroplasty is medically necessary for this patient based on:\n1. Severe symptomatic knee OA unresponsive to ≥3 months of conservative therapy\n2. Radiographic evidence of advanced OA (KL Grade ≥3) with joint space narrowing\n3. Significant functional impairment documented by validated outcome scores\n4. Patient is medically optimized and appropriate surgical candidate\n5. Meets AAOS Class I (Recommended) criteria per 2024 Clinical Practice Guideline\n\nGUIDELINE SUPPORT:\nThe 2024 AAOS Clinical Practice Guideline for Total Knee Arthroplasty provides a Class I recommendation for TKA in patients with symptomatic knee OA with radiographic evidence of moderate-to-severe disease who have failed conservative management. The AAOS Appropriate Use Criteria (2022) further supports TKA in this clinical scenario.\n\nWithout surgical intervention, this patient faces continued progressive joint destruction, worsening functional disability, and deteriorating quality of life. Deferral of indicated TKA is associated with worse surgical outcomes and increased complication rates.\n\nI respectfully request immediate reconsideration and approval of prior authorization for Total Knee Arthroplasty (CPT 27447). Please contact my office at {{practice_phone}} or {{practice_email}} if additional clinical documentation is required.\n\nSincerely,\n\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\n{{practice_phone}} | {{practice_email}}"
+  }
+}

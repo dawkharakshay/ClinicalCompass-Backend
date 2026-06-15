@@ -1,0 +1,391 @@
+{
+  "title": "Psoriasis Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "PsoriasisAuthGuide.tsx",
+    "title": "Psoriasis Clinical Compass",
+    "subtitle": "Biologic Therapy Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "96372",
+        "description": "Therapeutic, prophylactic, or diagnostic injection (specify substance or drug); subcutaneous or intramuscular",
+        "device": "Biologic agents (e.g., secukinumab, ixekizumab, risankizumab)",
+        "access": "Injection",
+        "rvu": "0.45",
+        "includes": [
+          "Preparation of medication",
+          "Patient education on self-administration (if applicable)",
+          "Monitoring for immediate adverse reactions"
+        ],
+        "note": "This code is for the administration of the biologic agent. The drug itself is billed separately with a J-code."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "L40.0",
+        "description": "Psoriasis vulgaris",
+        "notes": "Most common form of psoriasis, characterized by well-demarcated, erythematous plaques with silvery scales.",
+        "required": true
+      },
+      {
+        "code": "L40.5",
+        "description": "Arthropathic psoriasis",
+        "notes": "Psoriasis with joint involvement, also known as psoriatic arthritis.",
+        "required": false
+      },
+      {
+        "code": "L40.8",
+        "description": "Other specified psoriasis",
+        "notes": "Includes forms like erythrodermic psoriasis, generalized pustular psoriasis.",
+        "required": false
+      },
+      {
+        "code": "L40.9",
+        "description": "Psoriasis, unspecified",
+        "notes": "Used when the specific type of psoriasis is not documented.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered under Part B or Part D",
+        "overview": "Medicare Part B covers biologics administered by a healthcare provider (e.g., IV infusions, injections in a doctor's office). Medicare Part D covers biologics that are self-administered at home. Specific coverage and out-of-pocket costs vary by plan.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required",
+              "Prior authorization is typically required for most biologic therapies for psoriasis under Medicare Part B and Part D. Coverage depends on the site of administration and specific plan details."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Diagnosis Confirmation",
+            "items": [
+              "Confirmed diagnosis of moderate to severe plaque psoriasis or psoriatic arthritis."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Disease Activity",
+            "items": [
+              "Evidence of active disease despite conventional therapies (e.g., topical treatments, phototherapy, systemic non-biologic agents).",
+              "PASI score or other objective measures indicating disease severity."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Trial and Failure",
+            "items": [
+              "Documentation of trial and failure or contraindication to at least one or more conventional systemic therapies (e.g., methotrexate, cyclosporine)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Absence of Contraindications",
+            "items": [
+              "No contraindications to the requested biologic therapy."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Records",
+            "items": [
+              "Detailed physician notes documenting diagnosis, disease severity, previous treatments, and response.",
+              "PASI scores, BSA, or other objective measures of disease activity."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Laboratory Results",
+            "items": [
+              "Relevant lab tests (e.g., TB screening, Hepatitis B/C screening, CBC, LFTs) as required by the specific biologic."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prescription Information",
+            "items": [
+              "Prescription for the specific biologic agent, including dosage, frequency, and route of administration."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Physician submits prior authorization request to Medicare Part B or Part D plan.",
+              "Include all supporting clinical documentation (chart notes, lab results, treatment history).",
+              "Follow up with the plan to confirm receipt and status of the authorization request."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of medical necessity or insufficient documentation of disease severity.",
+              "Failure to meet step therapy requirements (e.g., not trying conventional therapies first).",
+              "Incomplete or missing clinical documentation.",
+              "Incorrect coding for diagnosis or procedure."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Biologic therapies for psoriasis can be very expensive. Patients may have significant out-of-pocket costs, including deductibles, co-insurance, and co-payments, depending on their Medicare plan (Original Medicare with Medigap, Medicare Advantage, or Part D). Patient assistance programs may be available."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Maintain thorough and accurate medical records, including detailed notes on disease activity and response to prior treatments.",
+              "Be familiar with the specific coverage criteria and prior authorization requirements of the patient's Medicare plan (Part B or Part D).",
+              "Submit all required documentation promptly and follow up regularly on the status of authorization requests.",
+              "Prepare for potential appeals by having all clinical evidence readily available."
+            ]
+          }
+        ],
+        "knownPolicies": []
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Varies by State Medicaid Plan",
+        "overview": "Medicaid programs are state-specific, and coverage for biologic therapies for psoriasis can differ widely. Most states require prior authorization, and many have preferred drug lists and step therapy requirements. Eligibility for Medicaid is based on income and other factors.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required",
+              "Medicaid coverage for psoriasis biologics varies significantly by state. Prior authorization is almost always required, and specific criteria, preferred drug lists, and step therapy protocols must be followed."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Diagnosis Confirmation",
+            "items": [
+              "Confirmed diagnosis of moderate to severe plaque psoriasis or psoriatic arthritis."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Disease Activity",
+            "items": [
+              "Evidence of active disease despite conventional therapies.",
+              "Objective measures of disease severity (e.g., PASI, BSA)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Trial and Failure",
+            "items": [
+              "Documentation of trial and failure or contraindication to multiple conventional systemic therapies (e.g., methotrexate, cyclosporine, phototherapy)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Prescriber Specialization",
+            "items": [
+              "Prescribed by or in consultation with a dermatologist or rheumatologist."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Absence of Contraindications",
+            "items": [
+              "No contraindications to the requested biologic therapy."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Records",
+            "items": [
+              "Detailed physician notes supporting diagnosis, disease severity, and treatment history.",
+              "Documentation of previous failed therapies and reasons for failure."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Laboratory Results",
+            "items": [
+              "Relevant lab tests (e.g., TB screening, Hepatitis B/C screening, CBC, LFTs) as per specific biologic requirements."
+            ]
+          },
+          {
+            "heading": "Required Documentation: State-Specific Forms",
+            "items": [
+              "Completed state Medicaid prior authorization forms."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit state-specific prior authorization form with all required clinical documentation to the Medicaid program.",
+              "Adhere to state-specific preferred drug lists and step therapy protocols.",
+              "Monitor the status of the prior authorization request and be prepared to provide additional information or appeal if denied."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet state-specific coverage criteria or step therapy requirements.",
+              "Incomplete or insufficient clinical documentation.",
+              "Lack of medical necessity as determined by the state Medicaid program.",
+              "Prescribing physician not meeting specialization requirements."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicaid typically covers the full cost of approved biologic therapies for eligible beneficiaries, though some states may have nominal co-payments. However, access can be challenging due to stringent prior authorization and step therapy requirements."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Thoroughly review the specific Medicaid guidelines for your state regarding psoriasis biologic coverage.",
+              "Ensure all documentation clearly demonstrates medical necessity and adherence to step therapy requirements.",
+              "Utilize state Medicaid provider portals for efficient submission and status tracking of prior authorization requests.",
+              "Be prepared for a potentially lengthy approval process and have an appeal strategy in place."
+            ]
+          }
+        ],
+        "knownPolicies": []
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Varies by Plan",
+        "overview": "Commercial health insurance plans typically cover biologic therapies for psoriasis, but almost always require prior authorization. Coverage criteria, preferred drug lists, and step therapy protocols differ significantly between plans and insurers. Patients may also have high out-of-pocket costs due to deductibles, co-insurance, and co-payments.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required",
+              "Private insurance coverage for psoriasis biologics is highly variable depending on the specific plan and insurer. Prior authorization, step therapy, and formulary restrictions are common."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Diagnosis Confirmation",
+            "items": [
+              "Confirmed diagnosis of moderate to severe plaque psoriasis or psoriatic arthritis."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Disease Activity",
+            "items": [
+              "Evidence of active disease (e.g., PASI score, BSA, PGA) despite conventional therapies."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Trial and Failure",
+            "items": [
+              "Documentation of trial and failure or contraindication to a specified number of conventional systemic therapies (e.g., methotrexate, cyclosporine, phototherapy)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Prescriber Specialization",
+            "items": [
+              "Prescribed by or in consultation with a dermatologist or rheumatologist."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Absence of Contraindications",
+            "items": [
+              "No contraindications to the requested biologic therapy."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Records",
+            "items": [
+              "Detailed medical records supporting diagnosis, disease severity, and prior treatment history.",
+              "Objective measures of disease activity and response to previous treatments."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Laboratory Results",
+            "items": [
+              "Relevant lab tests (e.g., TB screening, Hepatitis B/C screening, CBC, LFTs) as per specific biologic requirements and plan policy."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization Form",
+            "items": [
+              "Completed and signed prior authorization form specific to the insurance plan."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Physician's office submits prior authorization request with all necessary clinical documentation to the private insurer.",
+              "Adhere to the insurer's specific formulary and step therapy requirements.",
+              "Follow up with the insurance company regularly to track the status of the authorization and address any requests for additional information.",
+              "Be prepared to appeal adverse decisions, providing comprehensive clinical justification."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet medical necessity criteria as defined by the plan.",
+              "Inadequate documentation of disease severity or prior treatment failures.",
+              "Non-adherence to step therapy protocols or formulary restrictions.",
+              "Missing or incomplete prior authorization forms/documentation."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Out-of-pocket costs for biologic therapies can be substantial under private insurance, often involving high deductibles, co-insurance, and co-payments. Patients should be aware of their plan's specific cost-sharing arrangements. Patient assistance programs are crucial for affordability."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify the patient's specific insurance benefits and prior authorization requirements for biologics before prescribing.",
+              "Maintain meticulous records of all treatments, responses, and reasons for discontinuing therapies.",
+              "Utilize manufacturer patient assistance programs and co-pay cards to help mitigate patient out-of-pocket costs.",
+              "Educate patients on the prior authorization process and potential delays."
+            ]
+          }
+        ],
+        "knownPolicies": []
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Procedure Codes - CPT 96372 Included Items",
+        "kind": "list",
+        "text": "Included in this code (do NOT bill separately):",
+        "items": [
+          "Preparation of medication",
+          "Patient education on self-administration (if applicable)",
+          "Monitoring for immediate adverse reactions"
+        ]
+      },
+      {
+        "heading": "Procedure Codes - CPT 96372 Note",
+        "kind": "prose",
+        "text": "This code is for the administration of the biologic agent. The drug itself is billed separately with a J-code."
+      },
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment",
+        "href": "/psoriasis"
+      }
+    ],
+    "raw": {
+      "markdown": "# Psoriasis Clinical Compass\n## Biologic Therapy Insurance Authorization Guide\n\n[Button] Back to Assessment (links to /psoriasis)\n\n## Procedure Codes (CPT Codes)\n\n### CPT 96372 — RVU 0.45\nTherapeutic, prophylactic, or diagnostic injection (specify substance or drug); subcutaneous or intramuscular\n\n**Device/Access:** Biologic agents (e.g., secukinumab, ixekizumab, risankizumab)\n\n**Included in this code (do NOT bill separately):**\n- Preparation of medication\n- Patient education on self-administration (if applicable)\n- Monitoring for immediate adverse reactions\n\n*This code is for the administration of the biologic agent. The drug itself is billed separately with a J-code.*\n\n## ICD-10 Diagnosis Codes\n\n- **L40.0** (Primary) — Psoriasis vulgaris — Most common form of psoriasis, characterized by well-demarcated, erythematous plaques with silvery scales.\n- **L40.5** — Arthropathic psoriasis — Psoriasis with joint involvement, also known as psoriatic arthritis.\n- **L40.8** — Other specified psoriasis — Includes forms like erythrodermic psoriasis, generalized pustular psoriasis.\n- **L40.9** — Psoriasis, unspecified — Used when the specific type of psoriasis is not documented.\n\n## Payer-Specific Authorization Requirements\n\n### Medicare\n\n**Prior Auth Required** | Coverage Status: Covered under Part B or Part D\n\n**Prior Auth Note:** Prior authorization is typically required for most biologic therapies for psoriasis under Medicare Part B and Part D. Coverage depends on the site of administration and specific plan details.\n\n**Overview:** Medicare Part B covers biologics administered by a healthcare provider (e.g., IV infusions, injections in a doctor's office). Medicare Part D covers biologics that are self-administered at home. Specific coverage and out-of-pocket costs vary by plan.\n\n**Coverage Criteria**\n\n_Diagnosis Confirmation_\n- Confirmed diagnosis of moderate to severe plaque psoriasis or psoriatic arthritis.\n\n_Disease Activity_\n- Evidence of active disease despite conventional therapies (e.g., topical treatments, phototherapy, systemic non-biologic agents).\n- PASI score or other objective measures indicating disease severity.\n\n_Trial and Failure_\n- Documentation of trial and failure or contraindication to at least one or more conventional systemic therapies (e.g., methotrexate, cyclosporine).\n\n_Absence of Contraindications_\n- No contraindications to the requested biologic therapy.\n\n**Required Documentation**\n\n_Clinical Records_\n- Detailed physician notes documenting diagnosis, disease severity, previous treatments, and response.\n- PASI scores, BSA, or other objective measures of disease activity.\n\n_Laboratory Results_\n- Relevant lab tests (e.g., TB screening, Hepatitis B/C screening, CBC, LFTs) as required by the specific biologic.\n\n_Prescription Information_\n- Prescription for the specific biologic agent, including dosage, frequency, and route of administration.\n\n**Submission Process**\n1. Physician submits prior authorization request to Medicare Part B or Part D plan.\n2. Include all supporting clinical documentation (chart notes, lab results, treatment history).\n3. Follow up with the plan to confirm receipt and status of the authorization request.\n\n**Common Denial Reasons**\n- Lack of medical necessity or insufficient documentation of disease severity.\n- Failure to meet step therapy requirements (e.g., not trying conventional therapies first).\n- Incomplete or missing clinical documentation.\n- Incorrect coding for diagnosis or procedure.\n\n**Reimbursement Note:** Biologic therapies for psoriasis can be very expensive. Patients may have significant out-of-pocket costs, including deductibles, co-insurance, and co-payments, depending on their Medicare plan (Original Medicare with Medigap, Medicare Advantage, or Part D). Patient assistance programs may be available.\n\n**Authorization Tips**\n- Maintain thorough and accurate medical records, including detailed notes on disease activity and response to prior treatments.\n- Be familiar with the specific coverage criteria and prior authorization requirements of the patient's Medicare plan (Part B or Part D).\n- Submit all required documentation promptly and follow up regularly on the status of authorization requests.\n- Prepare for potential appeals by having all clinical evidence readily available.\n\n_Known Payer Policies: none._\n\n### Medicaid\n\n**Prior Auth Required** | Coverage Status: Varies by State Medicaid Plan\n\n**Prior Auth Note:** Medicaid coverage for psoriasis biologics varies significantly by state. Prior authorization is almost always required, and specific criteria, preferred drug lists, and step therapy protocols must be followed.\n\n**Overview:** Medicaid programs are state-specific, and coverage for biologic therapies for psoriasis can differ widely. Most states require prior authorization, and many have preferred drug lists and step therapy requirements. Eligibility for Medicaid is based on income and other factors.\n\n**Coverage Criteria**\n\n_Diagnosis Confirmation_\n- Confirmed diagnosis of moderate to severe plaque psoriasis or psoriatic arthritis.\n\n_Disease Activity_\n- Evidence of active disease despite conventional therapies.\n- Objective measures of disease severity (e.g., PASI, BSA).\n\n_Trial and Failure_\n- Documentation of trial and failure or contraindication to multiple conventional systemic therapies (e.g., methotrexate, cyclosporine, phototherapy).\n\n_Prescriber Specialization_\n- Prescribed by or in consultation with a dermatologist or rheumatologist.\n\n_Absence of Contraindications_\n- No contraindications to the requested biologic therapy.\n\n**Required Documentation**\n\n_Clinical Records_\n- Detailed physician notes supporting diagnosis, disease severity, and treatment history.\n- Documentation of previous failed therapies and reasons for failure.\n\n_Laboratory Results_\n- Relevant lab tests (e.g., TB screening, Hepatitis B/C screening, CBC, LFTs) as per specific biologic requirements.\n\n_State-Specific Forms_\n- Completed state Medicaid prior authorization forms.\n\n**Submission Process**\n1. Submit state-specific prior authorization form with all required clinical documentation to the Medicaid program.\n2. Adhere to state-specific preferred drug lists and step therapy protocols.\n3. Monitor the status of the prior authorization request and be prepared to provide additional information or appeal if denied.\n\n**Common Denial Reasons**\n- Failure to meet state-specific coverage criteria or step therapy requirements.\n- Incomplete or insufficient clinical documentation.\n- Lack of medical necessity as determined by the state Medicaid program.\n- Prescribing physician not meeting specialization requirements.\n\n**Reimbursement Note:** Medicaid typically covers the full cost of approved biologic therapies for eligible beneficiaries, though some states may have nominal co-payments. However, access can be challenging due to stringent prior authorization and step therapy requirements.\n\n**Authorization Tips**\n- Thoroughly review the specific Medicaid guidelines for your state regarding psoriasis biologic coverage.\n- Ensure all documentation clearly demonstrates medical necessity and adherence to step therapy requirements.\n- Utilize state Medicaid provider portals for efficient submission and status tracking of prior authorization requests.\n- Be prepared for a potentially lengthy approval process and have an appeal strategy in place.\n\n_Known Payer Policies: none._\n\n### Private Insurance\n\n**Prior Auth Required** | Coverage Status: Varies by Plan\n\n**Prior Auth Note:** Private insurance coverage for psoriasis biologics is highly variable depending on the specific plan and insurer. Prior authorization, step therapy, and formulary restrictions are common.\n\n**Overview:** Commercial health insurance plans typically cover biologic therapies for psoriasis, but almost always require prior authorization. Coverage criteria, preferred drug lists, and step therapy protocols differ significantly between plans and insurers. Patients may also have high out-of-pocket costs due to deductibles, co-insurance, and co-payments.\n\n**Coverage Criteria**\n\n_Diagnosis Confirmation_\n- Confirmed diagnosis of moderate to severe plaque psoriasis or psoriatic arthritis.\n\n_Disease Activity_\n- Evidence of active disease (e.g., PASI score, BSA, PGA) despite conventional therapies.\n\n_Trial and Failure_\n- Documentation of trial and failure or contraindication to a specified number of conventional systemic therapies (e.g., methotrexate, cyclosporine, phototherapy).\n\n_Prescriber Specialization_\n- Prescribed by or in consultation with a dermatologist or rheumatologist.\n\n_Absence of Contraindications_\n- No contraindications to the requested biologic therapy.\n\n**Required Documentation**\n\n_Clinical Records_\n- Detailed medical records supporting diagnosis, disease severity, and prior treatment history.\n- Objective measures of disease activity and response to previous treatments.\n\n_Laboratory Results_\n- Relevant lab tests (e.g., TB screening, Hepatitis B/C screening, CBC, LFTs) as per specific biologic requirements and plan policy.\n\n_Prior Authorization Form_\n- Completed and signed prior authorization form specific to the insurance plan.\n\n**Submission Process**\n1. Physician's office submits prior authorization request with all necessary clinical documentation to the private insurer.\n2. Adhere to the insurer's specific formulary and step therapy requirements.\n3. Follow up with the insurance company regularly to track the status of the authorization and address any requests for additional information.\n4. Be prepared to appeal adverse decisions, providing comprehensive clinical justification.\n\n**Common Denial Reasons**\n- Failure to meet medical necessity criteria as defined by the plan.\n- Inadequate documentation of disease severity or prior treatment failures.\n- Non-adherence to step therapy protocols or formulary restrictions.\n- Missing or incomplete prior authorization forms/documentation.\n\n**Reimbursement Note:** Out-of-pocket costs for biologic therapies can be substantial under private insurance, often involving high deductibles, co-insurance, and co-payments. Patients should be aware of their plan's specific cost-sharing arrangements. Patient assistance programs are crucial for affordability.\n\n**Authorization Tips**\n- Verify the patient's specific insurance benefits and prior authorization requirements for biologics before prescribing.\n- Maintain meticulous records of all treatments, responses, and reasons for discontinuing therapies.\n- Utilize manufacturer patient assistance programs and co-pay cards to help mitigate patient out-of-pocket costs.\n- Educate patients on the prior authorization process and potential delays.\n\n_Known Payer Policies: none._\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "RVU", "Description", "Device/Access", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            [
+              "96372",
+              "0.45",
+              "Therapeutic, prophylactic, or diagnostic injection (specify substance or drug); subcutaneous or intramuscular",
+              "Biologic agents (e.g., secukinumab, ixekizumab, risankizumab)",
+              "Preparation of medication; Patient education on self-administration (if applicable); Monitoring for immediate adverse reactions",
+              "This code is for the administration of the biologic agent. The drug itself is billed separately with a J-code."
+            ]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["Code", "Description", "Notes", "Required/Primary"],
+          "rows": [
+            ["L40.0", "Psoriasis vulgaris", "Most common form of psoriasis, characterized by well-demarcated, erythematous plaques with silvery scales.", "Primary"],
+            ["L40.5", "Arthropathic psoriasis", "Psoriasis with joint involvement, also known as psoriatic arthritis.", ""],
+            ["L40.8", "Other specified psoriasis", "Includes forms like erythrodermic psoriasis, generalized pustular psoriasis.", ""],
+            ["L40.9", "Psoriasis, unspecified", "Used when the specific type of psoriasis is not documented.", ""]
+          ]
+        }
+      ]
+    }
+  }
+}

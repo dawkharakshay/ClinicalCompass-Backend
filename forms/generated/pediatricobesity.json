@@ -1,0 +1,235 @@
+{
+  "title": "Pediatric Obesity Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendations",
+    "logicKey": "pediatricobesity",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "anthropometrics-demographics",
+        "shortLabel": "Anthropometrics",
+        "title": "Anthropometrics & Demographics",
+        "fields": [
+          {
+            "id": "age-years",
+            "name": "ageYears",
+            "label": "Age (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "sex",
+            "name": "sex",
+            "label": "Sex",
+            "type": "select",
+            "defaultValue": "male",
+            "options": [
+              { "label": "Male", "value": "male" },
+              { "label": "Female", "value": "female" }
+            ]
+          },
+          {
+            "id": "bmi-percentile",
+            "name": "bmiPercentile",
+            "label": "BMI Percentile",
+            "type": "number",
+            "defaultValue": 97,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "bmi-percent-of-p95",
+            "name": "bmiPercentOfP95",
+            "label": "BMI as % of 95th Percentile",
+            "type": "number",
+            "defaultValue": 120,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "obesity-category",
+            "name": "obesityCategory",
+            "label": "Obesity Category",
+            "type": "select",
+            "defaultValue": "class_1",
+            "options": [
+              { "label": "Overweight (BMI 85th–94th %ile)", "value": "overweight" },
+              { "label": "Class 1 Obesity (BMI ≥95th %ile)", "value": "class_1" },
+              { "label": "Class 2 Obesity (BMI ≥120% of 95th)", "value": "class_2" },
+              { "label": "Class 3 Obesity (BMI ≥140% of 95th)", "value": "class_3" }
+            ]
+          },
+          {
+            "id": "duration-of-obesity-years",
+            "name": "durationOfObesityYears",
+            "label": "Duration of Obesity (years)",
+            "type": "number",
+            "defaultValue": 2,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "family-motivation",
+            "name": "familyMotivation",
+            "label": "Family Motivation Level",
+            "type": "select",
+            "defaultValue": "moderate",
+            "options": [
+              { "label": "High", "value": "high" },
+              { "label": "Moderate", "value": "moderate" },
+              { "label": "Low", "value": "low" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "comorbidities",
+        "shortLabel": "Comorbidities",
+        "title": "Comorbidities",
+        "fields": [
+          {
+            "id": "has-type-2-diabetes",
+            "name": "hasType2Diabetes",
+            "label": "Type 2 Diabetes",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-prediabetes",
+            "name": "hasPrediabetes",
+            "label": "Prediabetes",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-hypertension",
+            "name": "hasHypertension",
+            "label": "Hypertension",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-dyslipidemia",
+            "name": "hasDyslipidemia",
+            "label": "Dyslipidemia",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-nash",
+            "name": "hasNASH",
+            "label": "NASH / MASH (fatty liver)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-osa",
+            "name": "hasOSA",
+            "label": "Obstructive Sleep Apnea",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-pcos",
+            "name": "hasPCOS",
+            "label": "PCOS (females)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-orthopedic-complications",
+            "name": "hasOrthopedicComplications",
+            "label": "Orthopedic complications (SCFE, Blount)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-idiopathic-intracranial-hypertension",
+            "name": "hasIdiopathicIntracranialHypertension",
+            "label": "Idiopathic intracranial hypertension",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-depression",
+            "name": "hasDepression",
+            "label": "Depression",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-binge-eating-disorder",
+            "name": "hasBingeEatingDisorder",
+            "label": "Binge eating disorder",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "family-history-obesity",
+            "name": "familyHistoryObesity",
+            "label": "Family history of obesity",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "family-history-t2dm",
+            "name": "familyHistoryT2DM",
+            "label": "Family history of T2DM",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "treatment-history-readiness",
+        "shortLabel": "Treatment History",
+        "title": "Treatment History & Readiness",
+        "fields": [
+          {
+            "id": "prior-treatment-attempts",
+            "name": "priorTreatmentAttempts",
+            "label": "Prior lifestyle intervention attempts",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "prior-glp1-use",
+            "name": "priorGLP1Use",
+            "label": "Prior GLP-1 RA use",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-metformin-use",
+            "name": "priorMetforminUse",
+            "label": "Prior metformin use",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-contraindication-to-glp1",
+            "name": "hasContraindicationToGLP1",
+            "label": "Contraindication to GLP-1 RA (MEN2, pancreatitis)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "is-ready-for-bariatric",
+            "name": "isReadyForBariatric",
+            "label": "Patient/family ready for bariatric evaluation",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-bariatric-contraindication",
+            "name": "hasBariatricContraindication",
+            "label": "Contraindication to bariatric surgery",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

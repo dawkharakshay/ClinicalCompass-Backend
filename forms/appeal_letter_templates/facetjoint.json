@@ -1,0 +1,30 @@
+{
+  "title": "Facet Joint Injection Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "64490, 64491, 64492, 64493, 64494, 64495",
+      "credentials": "[Credentials]",
+      "icd_codes": "M54.5, M47.816, M47.812, M54.2, M47.896, M54.59",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\nRe: Medical Necessity Appeal — Facet Joint Injection / Medial Branch Block\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\n\nDear Medical Director / Utilization Review Committee,\n\nI am writing to formally appeal the denial of prior authorization for Medial Branch Block (MBB) for my patient. This procedure is medically necessary and is supported by the highest level of evidence from current multisociety guidelines and peer-reviewed literature.\n\nCLINICAL SUMMARY\n\nMy patient presents with lumbar facetogenic pain requiring [urgency] intervention. Following comprehensive clinical evaluation using the Facet Joint Compass™ clinical decision support tool (based on ASIPP 2013 and NASS guidelines), the recommended intervention is: [Facet Joint Recommendation].\n\nRegion: Lumbar spine\nProcedure: Medial Branch Block (MBB)\n\n\n\nGUIDELINE SUPPORT\n\nThis recommendation is based on the following evidence-based guidelines and peer-reviewed literature:\n\n1. ASIPP Guidelines (Manchikanti L et al., Pain Physician 2013;16:S1–S111): Level I evidence supporting facet joint interventions for chronic low back pain with axial, extension-related pain pattern.\n\n2. Anesthesiology (Cohen SP et al., 2013;118:93–108): Medial branch blocks are the diagnostic gold standard for facetogenic pain, with ≥80% pain relief defining a positive response.\n\n3. NASS Coverage Policy: Facet joint injections and medial branch blocks supported for axial spine pain with extension-related pattern after failure of conservative therapy ≥3 months.\n\n4. ASIPP Diagnostic Guidelines: Two positive medial branch blocks (≥80% relief each) are required before radiofrequency ablation authorization — this procedure is a necessary diagnostic step.\n\nMEDICAL NECESSITY\n\nWithout this intervention, my patient faces:\n• Continued severe axial spine pain limiting activities of daily living\n• Inability to complete physical therapy due to uncontrolled pain\n• Inability to proceed to definitive RFA treatment without diagnostic block confirmation\n• Significant functional impairment and reduced quality of life\n\nConservative measures including physical therapy, NSAIDs, and oral analgesics have been attempted and have provided inadequate relief. The patient's clinical presentation is consistent with facetogenic pain and necessitates this procedure as the next appropriate diagnostic and therapeutic step.\n\nREQUESTED ACTION\n\nI respectfully request that you overturn the denial and authorize the requested facet joint injection / medial branch block. I am available to discuss this case further and can provide additional clinical documentation, imaging reports, and prior treatment records upon request.\n\n{{additional_clinical_notes}}\n\nSincerely,\n\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

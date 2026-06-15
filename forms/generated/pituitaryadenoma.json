@@ -1,0 +1,286 @@
+{
+  "title": "Pituitary Adenoma Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "pituitaryadenoma",
+    "hiddenDefaults": {
+      "tumorSize": "macroadenoma",
+      "postopCortisolUgDl": null,
+      "hoursPostSurgery": null
+    },
+    "steps": [
+      {
+        "id": "tumor-characteristics",
+        "shortLabel": "Tumor",
+        "title": "Tumor Characteristics",
+        "fields": [
+          {
+            "id": "tumor-type",
+            "name": "tumorType",
+            "label": "Tumor Type",
+            "type": "select",
+            "required": true,
+            "defaultValue": "nonfunctioning",
+            "options": [
+              { "label": "Nonfunctioning (NFPA)", "value": "nonfunctioning" },
+              { "label": "Prolactinoma (PRL-secreting)", "value": "prolactinoma" },
+              { "label": "Acromegaly (GH-secreting)", "value": "acromegaly_gh" },
+              { "label": "Cushing's Disease (ACTH-secreting)", "value": "cushings_acth" },
+              { "label": "TSH-secreting (TSHoma)", "value": "tshoma" }
+            ]
+          },
+          {
+            "id": "tumor-size-mm",
+            "name": "tumorSizeMm",
+            "label": "Tumor Size (mm)",
+            "type": "slider",
+            "defaultValue": 18,
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "mm"
+          },
+          {
+            "id": "cavernous-sinus-invasion",
+            "name": "cavernousSinusInvasion",
+            "label": "Cavernous Sinus Invasion (MRI)",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "None — Knosp 0–2", "value": "none" },
+              { "label": "Unilateral — Knosp 3 (one side)", "value": "unilateral" },
+              { "label": "Bilateral — Knosp 3–4 (both sides)", "value": "bilateral" }
+            ]
+          },
+          {
+            "id": "suprasellar-extension",
+            "name": "suprasellarExtension",
+            "label": "Suprasellar Extension",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "cystic-component",
+            "name": "cysticComponent",
+            "label": "Cystic Component",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hormonal-functional-status",
+        "shortLabel": "Hormonal",
+        "title": "Hormonal & Functional Status",
+        "fields": [
+          {
+            "id": "pituitary-apoplexy",
+            "name": "pituitaryApoplexy",
+            "label": "Pituitary Apoplexy (Acute)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "visual-field-defect",
+            "name": "visualFieldDefect",
+            "label": "Visual Field Defect (Perimetry)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "cranial-nerve-palsy",
+            "name": "cranialNervePalsy",
+            "label": "Cranial Nerve Palsy (III, IV, VI)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "hypopituitarism",
+            "name": "hypopituitarism",
+            "label": "Hypopituitarism (Any axis)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "prolactin-level-ng-ml",
+            "name": "prolactinLevelNgMl",
+            "label": "Prolactin Level (ng/mL)",
+            "type": "slider",
+            "defaultValue": 0,
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "ng/mL",
+            "visibleWhen": { "field": "tumorType", "op": "eq", "value": "prolactinoma" }
+          },
+          {
+            "id": "prior-medical-therapy",
+            "name": "priorMedicalTherapy",
+            "label": "Prior Medical Therapy (Cabergoline/Bromocriptine)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ],
+            "visibleWhen": { "field": "tumorType", "op": "eq", "value": "prolactinoma" }
+          },
+          {
+            "id": "medical-therapy-response",
+            "name": "medicalTherapyResponse",
+            "label": "Medical Therapy Response",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "Complete response (PRL normalized)", "value": "complete" },
+              { "label": "Partial response", "value": "partial" },
+              { "label": "No response (DA-resistant)", "value": "none" }
+            ],
+            "visibleWhen": {
+              "all": [
+                { "field": "tumorType", "op": "eq", "value": "prolactinoma" },
+                { "field": "priorMedicalTherapy", "op": "truthy" }
+              ]
+            }
+          },
+          {
+            "id": "igf1-elevated",
+            "name": "igf1Elevated",
+            "label": "IGF-1 Elevated (above ULN for age/sex)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ],
+            "visibleWhen": { "field": "tumorType", "op": "eq", "value": "acromegaly_gh" }
+          },
+          {
+            "id": "late-night-salivary-cortisol-elevated",
+            "name": "lateNightSalivaryCortisolElevated",
+            "label": "Late-Night Salivary Cortisol Elevated",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ],
+            "visibleWhen": { "field": "tumorType", "op": "eq", "value": "cushings_acth" }
+          },
+          {
+            "id": "tsh-elevated",
+            "name": "tshElevated",
+            "label": "TSH Elevated with High T4/T3 (Confirmed TSHoma)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ],
+            "visibleWhen": { "field": "tumorType", "op": "eq", "value": "tshoma" }
+          }
+        ]
+      },
+      {
+        "id": "patient-factors",
+        "shortLabel": "Patient",
+        "title": "Patient Factors",
+        "fields": [
+          {
+            "id": "age-years",
+            "name": "ageYears",
+            "label": "Age (years)",
+            "type": "slider",
+            "defaultValue": 0,
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "years"
+          },
+          {
+            "id": "prior-surgery",
+            "name": "priorSurgery",
+            "label": "Prior Transsphenoidal Surgery",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "prior-radiation",
+            "name": "priorRadiation",
+            "label": "Prior Radiation / Radiosurgery",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "pregnancy-desired",
+            "name": "pregnancyDesired",
+            "label": "Pregnancy Desired",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "surgical-risk",
+            "name": "surgicalRisk",
+            "label": "Surgical Risk",
+            "type": "select",
+            "defaultValue": "low",
+            "options": [
+              { "label": "Low — Fit for general anesthesia", "value": "low" },
+              { "label": "Moderate — Significant comorbidities", "value": "moderate" },
+              { "label": "High — Poor surgical candidate", "value": "high" }
+            ]
+          },
+          {
+            "id": "prefer-minimally-invasive",
+            "name": "preferMinimallyInvasive",
+            "label": "Patient Prefers Minimally Invasive Approach",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

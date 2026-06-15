@@ -1,0 +1,275 @@
+{
+  "title": "Thyroid Nodule Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "thyroidnodule",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "ultrasound-characteristics",
+        "shortLabel": "Ultrasound",
+        "title": "Ultrasound Characteristics",
+        "fields": [
+          {
+            "id": "nodule-size",
+            "name": "noduleSize",
+            "label": "Nodule Size (cm)",
+            "type": "slider",
+            "defaultValue": 1.5,
+            "unit": "cm"
+          },
+          {
+            "id": "composition",
+            "name": "composition",
+            "label": "Composition",
+            "type": "select",
+            "defaultValue": "solid",
+            "options": [
+              { "label": "Cystic or almost completely cystic (0 pts)", "value": "cystic" },
+              { "label": "Spongiform (0 pts)", "value": "spongiform" },
+              { "label": "Mixed cystic and solid (1 pt)", "value": "mixed" },
+              { "label": "Solid or almost completely solid (2 pts)", "value": "solid" },
+              { "label": "Predominantly solid (2 pts)", "value": "predominantly_solid" }
+            ]
+          },
+          {
+            "id": "echogenicity",
+            "name": "echogenicity",
+            "label": "Echogenicity",
+            "type": "select",
+            "defaultValue": "hypoechoic",
+            "options": [
+              { "label": "Anechoic (0 pts)", "value": "anechoic" },
+              { "label": "Hyperechoic (1 pt)", "value": "hyperechoic" },
+              { "label": "Isoechoic (1 pt)", "value": "isoechoic" },
+              { "label": "Hypoechoic (2 pts)", "value": "hypoechoic" },
+              { "label": "Markedly hypoechoic (3 pts)", "value": "markedly_hypoechoic" }
+            ]
+          },
+          {
+            "id": "shape",
+            "name": "shape",
+            "label": "Shape",
+            "type": "radio",
+            "defaultValue": "wider_than_tall",
+            "options": [
+              { "label": "Wider than tall (0 pts)", "value": "wider_than_tall" },
+              { "label": "Taller than wide (3 pts)", "value": "taller_than_wide" }
+            ]
+          },
+          {
+            "id": "margin",
+            "name": "margin",
+            "label": "Margin",
+            "type": "select",
+            "defaultValue": "smooth",
+            "options": [
+              { "label": "Smooth (0 pts)", "value": "smooth" },
+              { "label": "Ill-defined (0 pts)", "value": "ill_defined" },
+              { "label": "Lobulated (2 pts)", "value": "lobulated" },
+              { "label": "Irregular (2 pts)", "value": "irregular" },
+              { "label": "Extrathyroidal extension (3 pts)", "value": "extrathyroidal" }
+            ]
+          },
+          {
+            "id": "echogenic-foci",
+            "name": "echogenicFoci",
+            "label": "Echogenic Foci",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "None or large comet-tail artifacts (0 pts)", "value": "none" },
+              { "label": "Large comet-tail artifacts (0 pts)", "value": "large_comet_tail" },
+              { "label": "Macrocalcifications (1 pt)", "value": "macrocalcifications" },
+              { "label": "Peripheral (rim) calcifications (2 pts)", "value": "peripheral_calcifications" },
+              { "label": "Punctate echogenic foci (3 pts)", "value": "punctate_echogenic_foci" }
+            ]
+          },
+          {
+            "id": "multinodular-goiter",
+            "name": "multinodularGoiter",
+            "label": "Multinodular Goiter",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "dominant-nodule",
+            "name": "dominantNodule",
+            "label": "Dominant Nodule",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ],
+            "visibleWhen": { "field": "multinodularGoiter", "op": "truthy" }
+          }
+        ]
+      },
+      {
+        "id": "clinical-factors",
+        "shortLabel": "Clinical",
+        "title": "Clinical Factors",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "slider",
+            "defaultValue": 0,
+            "unit": "years"
+          },
+          {
+            "id": "sex",
+            "name": "sex",
+            "label": "Sex",
+            "type": "radio",
+            "defaultValue": "female",
+            "options": [
+              { "label": "Female", "value": "female" },
+              { "label": "Male", "value": "male" }
+            ]
+          },
+          {
+            "id": "tsh-level",
+            "name": "tshLevel",
+            "label": "TSH (mIU/L)",
+            "type": "slider",
+            "defaultValue": 1.5,
+            "unit": "mIU/L"
+          },
+          {
+            "id": "prior-head-neck-rt",
+            "name": "priorHeadNeckRT",
+            "label": "Prior Radiation to Head/Neck",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "family-history-thyroid-cancer",
+            "name": "familyHistoryThyroidCancer",
+            "label": "Family History of Thyroid Cancer",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "family-history-men2",
+            "name": "familyHistoryMEN2",
+            "label": "Family History of MEN2 / RET Mutation",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "prior-thyroid-cancer",
+            "name": "priorThyroidCancer",
+            "label": "Prior Thyroid Cancer",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "compressive-symptoms",
+            "name": "compressiveSymptoms",
+            "label": "Compressive Symptoms (dyspnea, stridor)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "dysphagia",
+            "name": "dysphagia",
+            "label": "Dysphagia",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "dysphonia",
+            "name": "dysphonia",
+            "label": "Dysphonia / Hoarseness",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "suspicious-lymphadenopathy",
+            "name": "suspiciousLymphadenopathy",
+            "label": "Suspicious Cervical Lymphadenopathy",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "biopsy-results",
+        "shortLabel": "Biopsy",
+        "title": "Biopsy Results",
+        "fields": [
+          {
+            "id": "bethesda-category",
+            "name": "bethesdaCategory",
+            "label": "Bethesda Category (if FNA performed)",
+            "type": "select",
+            "defaultValue": "not_done",
+            "options": [
+              { "label": "FNA not yet performed", "value": "not_done" },
+              { "label": "I — Non-diagnostic / Unsatisfactory", "value": "I" },
+              { "label": "II — Benign (0-3% malignancy risk)", "value": "II" },
+              { "label": "III — AUS/FLUS (6-18% risk)", "value": "III" },
+              { "label": "IV — Follicular Neoplasm (10-40% risk)", "value": "IV" },
+              { "label": "V — Suspicious for Malignancy (45-75% risk)", "value": "V" },
+              { "label": "VI — Malignant (94-96% risk)", "value": "VI" }
+            ]
+          },
+          {
+            "id": "molecular-test-result",
+            "name": "molecularTestResult",
+            "label": "Molecular Testing Result (if performed)",
+            "type": "select",
+            "defaultValue": "not_done",
+            "options": [
+              { "label": "Not performed", "value": "not_done" },
+              { "label": "Benign / GEC negative (Afirma/ThyroSeq)", "value": "benign" },
+              { "label": "Suspicious / GEC positive", "value": "suspicious" },
+              { "label": "Malignant mutation identified", "value": "malignant" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,363 @@
+{
+  "title": "Acute Lymphoblastic Leukemia & CAR-T Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "ALLAuthGuide.tsx",
+    "title": "ALL Clinical Compass",
+    "subtitle": "Acute Lymphoblastic Leukemia Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "96413",
+        "description": "Chemotherapy administration, intravenous infusion technique; up to 1 hour, single or initial substance/drug",
+        "device": "N/A",
+        "access": "IV",
+        "rvu": "1.50",
+        "includes": ["Initial setup and administration of chemotherapy infusion for up to 1 hour"],
+        "note": "Used for initial chemotherapy infusions in ALL treatment."
+      },
+      {
+        "code": "96415",
+        "description": "Chemotherapy administration, intravenous infusion technique; each additional hour (List separately in addition to code for primary procedure)",
+        "device": "N/A",
+        "access": "IV",
+        "rvu": "0.75",
+        "includes": ["Each subsequent hour of chemotherapy infusion after the first hour"],
+        "note": "Billed in conjunction with 96413 for infusions lasting longer than one hour."
+      },
+      {
+        "code": "0537T",
+        "description": "Chimeric antigen receptor T-cell (CAR-T) therapy; CAR-T cell administration, autologous",
+        "device": "CAR-T cell product",
+        "access": "IV",
+        "rvu": "5.00",
+        "includes": ["Preparation and administration of autologous CAR-T cell product"],
+        "note": "Specific code for the administration of CAR-T cell therapy. Often requires prior authorization and specialized facility."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "C91.00",
+        "description": "Acute lymphoblastic leukemia, not having achieved remission",
+        "notes": "Primary diagnosis for active ALL.",
+        "required": true
+      },
+      {
+        "code": "C91.01",
+        "description": "Acute lymphoblastic leukemia, in remission",
+        "notes": "Used when the patient is in a state of remission after treatment.",
+        "required": false
+      },
+      {
+        "code": "C91.02",
+        "description": "Acute lymphoblastic leukemia, in relapse",
+        "notes": "Used when the disease has returned after a period of remission.",
+        "required": false
+      },
+      {
+        "code": "Z51.12",
+        "description": "Encounter for antineoplastic immunotherapy",
+        "notes": "Secondary code for encounters involving CAR-T or other immunotherapy.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Conditional Coverage",
+        "overview": "Medicare covers CAR-T cell therapy and chemotherapy for ALL under specific conditions, typically after failure of other approved therapies. Coverage is often tied to participation in clinical trials or specific criteria.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is required for all CAR-T cell therapies and complex chemotherapy regimens. Failure to obtain prior authorization will result in denial.",
+        "reimbursementNote": "Reimbursement for CAR-T therapy is complex and often includes separate payments for the product and administration. Ensure accurate coding for both.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: CAR-T Therapy Specific Criteria",
+            "items": [
+              "Diagnosis of B-cell ALL that is refractory or relapsed after at least two prior lines of therapy.",
+              "Performance status (e.g., ECOG 0-1) suitable for high-intensity treatment.",
+              "Adequate organ function (cardiac, renal, hepatic, pulmonary).",
+              "Absence of active central nervous system (CNS) leukemia.",
+              "Patient must be treated at a Medicare-approved facility with expertise in CAR-T therapy."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Chemotherapy Specific Criteria",
+            "items": [
+              "Diagnosis of ALL confirmed by bone marrow biopsy and flow cytometry.",
+              "Treatment plan aligns with NCCN guidelines for ALL.",
+              "Absence of contraindications to specific chemotherapeutic agents."
+            ]
+          },
+          {
+            "heading": "Required Documentation: General Requirements",
+            "items": [
+              "Detailed clinical notes supporting diagnosis and disease status.",
+              "Pathology reports (bone marrow biopsy, flow cytometry).",
+              "Previous treatment history and response to therapy.",
+              "Current performance status and comorbidities."
+            ]
+          },
+          {
+            "heading": "Required Documentation: CAR-T Therapy Specific",
+            "items": [
+              "Documentation of prior lines of therapy and refractory/relapsed status.",
+              "CAR-T treatment plan from an approved facility.",
+              "Informed consent for CAR-T therapy."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request through the Medicare portal or designated fax number.",
+              "Include all supporting clinical documentation and treatment plan.",
+              "Allow 10-15 business days for review. Expedited review available for urgent cases."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity for CAR-T therapy (e.g., insufficient prior lines of therapy).",
+              "Incomplete clinical documentation or missing pathology reports.",
+              "Treatment at a non-approved facility for CAR-T therapy.",
+              "Failure to meet specific performance status or organ function criteria."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Ensure all prior authorization forms are completely filled out and signed.",
+              "Provide comprehensive clinical notes detailing disease progression and previous treatments.",
+              "Verify the treatment facility is approved by Medicare for CAR-T administration."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS (Medicare)",
+            "status": "Covered with Evidence Development",
+            "notes": "National Coverage Determination (NCD) for CAR-T cell therapy."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "State-Specific Coverage",
+        "overview": "Medicaid coverage for ALL treatments, including CAR-T and chemotherapy, varies by state. Most states require strict adherence to medical necessity criteria and may have preferred drug lists.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is mandatory for all high-cost therapies including CAR-T and many chemotherapy drugs. State-specific guidelines apply.",
+        "reimbursementNote": "Medicaid reimbursement rates are often lower than Medicare or private insurance. Be aware of state-specific fee schedules.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General ALL Treatment Criteria",
+            "items": [
+              "Diagnosis of ALL confirmed by state-approved criteria.",
+              "Treatment consistent with nationally recognized guidelines (e.g., NCCN).",
+              "Patient meets state-specific eligibility requirements for Medicaid."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: CAR-T Therapy Specific Criteria",
+            "items": [
+              "Relapsed or refractory B-cell ALL after at least two prior lines of systemic therapy.",
+              "Approval by a multidisciplinary tumor board.",
+              "Treatment at a designated CAR-T center within the state or approved out-of-state facility."
+            ]
+          },
+          {
+            "heading": "Required Documentation: General Requirements",
+            "items": [
+              "Comprehensive medical history and physical examination.",
+              "Laboratory results (CBC, chemistry, bone marrow biopsy).",
+              "Documentation of ALL diagnosis and staging.",
+              "Justification for chosen treatment regimen."
+            ]
+          },
+          {
+            "heading": "Required Documentation: CAR-T Therapy Specific",
+            "items": [
+              "Proof of failure of conventional therapies.",
+              "Detailed CAR-T treatment plan and facility accreditation.",
+              "Patient consent and counseling documentation."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request via the state Medicaid portal or fax.",
+              "Ensure all state-specific forms are completed and attached.",
+              "Follow up regularly as processing times can vary significantly by state."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet state-specific medical necessity criteria.",
+              "Lack of documentation for prior treatment failures.",
+              "Non-participation in required care management programs.",
+              "Incomplete or incorrectly submitted prior authorization forms."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state's specific Medicaid guidelines for oncology and advanced therapies.",
+              "Maintain thorough documentation of all prior treatments and patient responses.",
+              "Consider engaging a patient advocate for complex cases."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (e.g., CA Medi-Cal)",
+            "status": "Covered with Prior Authorization",
+            "notes": "Specific criteria for CAR-T therapy for ALL."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Policy-Dependent Coverage",
+        "overview": "Private insurance coverage for ALL treatments, including CAR-T and chemotherapy, is highly dependent on the specific plan and insurer. Policies vary widely regarding medical necessity, preferred providers, and step therapy requirements.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is almost always required for CAR-T cell therapy and often for high-cost chemotherapy drugs. Benefit verification is crucial.",
+        "reimbursementNote": "Negotiated rates with private insurers vary. Out-of-pocket costs for patients can be substantial, even with coverage.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General ALL Treatment Criteria",
+            "items": [
+              "Diagnosis of ALL confirmed by pathology and clinical findings.",
+              "Treatment regimen aligns with evidence-based guidelines (e.g., NCCN, ASCO).",
+              "Patient meets specific criteria outlined in the insurance policy for the requested therapy."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: CAR-T Therapy Specific Criteria",
+            "items": [
+              "Relapsed or refractory B-cell ALL after at least two prior lines of therapy, or as specified by policy.",
+              "Patient is a candidate for CAR-T therapy as determined by a qualified specialist.",
+              "Treatment at an in-network, accredited CAR-T center."
+            ]
+          },
+          {
+            "heading": "Required Documentation: General Requirements",
+            "items": [
+              "Detailed physician notes, including diagnosis, staging, and treatment rationale.",
+              "All relevant diagnostic test results (e.g., bone marrow biopsy, cytogenetics, molecular studies).",
+              "Documentation of prior therapies and their outcomes."
+            ]
+          },
+          {
+            "heading": "Required Documentation: CAR-T Therapy Specific",
+            "items": [
+              "Letter of medical necessity from the treating oncologist.",
+              "CAR-T cell product information and administration plan.",
+              "Proof of facility accreditation for CAR-T therapy."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request through the insurer's online portal or fax.",
+              "Verify benefits and eligibility prior to initiating treatment.",
+              "Be prepared for potential peer-to-peer reviews and appeals processes."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of medical necessity as defined by the insurer's policy.",
+              "Failure to complete required step therapy or use preferred drugs.",
+              "Treatment at an out-of-network facility without proper authorization.",
+              "Insufficient documentation to support the requested therapy."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify patient benefits and obtain prior authorization before starting high-cost treatments.",
+              "Understand the specific policy language for oncology and advanced therapies.",
+              "Be proactive in submitting appeals with strong clinical justification if a denial occurs."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Covered with Prior Authorization",
+            "notes": "Requires specific criteria for CAR-T in ALL."
+          },
+          {
+            "payer": "Aetna",
+            "status": "Covered with Prior Authorization",
+            "notes": "Medical policy for Chimeric Antigen Receptor T-cell (CAR-T) Therapy."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Navigation",
+        "kind": "link",
+        "text": "Back to Assessment (button links to /all route)",
+        "href": "/all"
+      },
+      {
+        "heading": "CPT Codes Card Note",
+        "kind": "prose",
+        "text": "Procedure Codes card. For each CPT code the page displays an RVU badge, the description, a Device/Access line, an \"Included in this code (do NOT bill separately)\" list, and an italic note."
+      },
+      {
+        "heading": "ICD-10 Codes Card Note",
+        "kind": "prose",
+        "text": "ICD-10 Diagnosis Codes card. Codes marked required display a \"Primary\" badge; required code C91.00 is the primary diagnosis for active ALL."
+      }
+    ],
+    "raw": {
+      "markdown": "# ALL Clinical Compass\n## Acute Lymphoblastic Leukemia Insurance Authorization Guide\n\n[Button] Back to Assessment (navigates to /all)\n\n---\n\n## Procedure Codes (CPT Codes)\n\n### CPT 96413 — RVU 1.50\nChemotherapy administration, intravenous infusion technique; up to 1 hour, single or initial substance/drug\nDevice/Access: N/A (IV)\nIncluded in this code (do NOT bill separately):\n- Initial setup and administration of chemotherapy infusion for up to 1 hour\nNote: Used for initial chemotherapy infusions in ALL treatment.\n\n### CPT 96415 — RVU 0.75\nChemotherapy administration, intravenous infusion technique; each additional hour (List separately in addition to code for primary procedure)\nDevice/Access: N/A (IV)\nIncluded in this code (do NOT bill separately):\n- Each subsequent hour of chemotherapy infusion after the first hour\nNote: Billed in conjunction with 96413 for infusions lasting longer than one hour.\n\n### CPT 0537T — RVU 5.00\nChimeric antigen receptor T-cell (CAR-T) therapy; CAR-T cell administration, autologous\nDevice/Access: CAR-T cell product (IV)\nIncluded in this code (do NOT bill separately):\n- Preparation and administration of autologous CAR-T cell product\nNote: Specific code for the administration of CAR-T cell therapy. Often requires prior authorization and specialized facility.\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- C91.00 (Primary / required) — Acute lymphoblastic leukemia, not having achieved remission. Primary diagnosis for active ALL.\n- C91.01 — Acute lymphoblastic leukemia, in remission. Used when the patient is in a state of remission after treatment.\n- C91.02 — Acute lymphoblastic leukemia, in relapse. Used when the disease has returned after a period of remission.\n- Z51.12 — Encounter for antineoplastic immunotherapy. Secondary code for encounters involving CAR-T or other immunotherapy.\n\n---\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\nStatus badges: Prior Auth Required | Conditional Coverage\nPrior Auth Note: Prior authorization is required for all CAR-T cell therapies and complex chemotherapy regimens. Failure to obtain prior authorization will result in denial.\nOverview: Medicare covers CAR-T cell therapy and chemotherapy for ALL under specific conditions, typically after failure of other approved therapies. Coverage is often tied to participation in clinical trials or specific criteria.\n\n#### Coverage Criteria\n**CAR-T Therapy Specific Criteria**\n- Diagnosis of B-cell ALL that is refractory or relapsed after at least two prior lines of therapy.\n- Performance status (e.g., ECOG 0-1) suitable for high-intensity treatment.\n- Adequate organ function (cardiac, renal, hepatic, pulmonary).\n- Absence of active central nervous system (CNS) leukemia.\n- Patient must be treated at a Medicare-approved facility with expertise in CAR-T therapy.\n\n**Chemotherapy Specific Criteria**\n- Diagnosis of ALL confirmed by bone marrow biopsy and flow cytometry.\n- Treatment plan aligns with NCCN guidelines for ALL.\n- Absence of contraindications to specific chemotherapeutic agents.\n\n#### Required Documentation\n**General Requirements**\n- Detailed clinical notes supporting diagnosis and disease status.\n- Pathology reports (bone marrow biopsy, flow cytometry).\n- Previous treatment history and response to therapy.\n- Current performance status and comorbidities.\n\n**CAR-T Therapy Specific**\n- Documentation of prior lines of therapy and refractory/relapsed status.\n- CAR-T treatment plan from an approved facility.\n- Informed consent for CAR-T therapy.\n\n#### Submission Process\n1. Submit prior authorization request through the Medicare portal or designated fax number.\n2. Include all supporting clinical documentation and treatment plan.\n3. Allow 10-15 business days for review. Expedited review available for urgent cases.\n\n#### Common Denial Reasons\n- Lack of documented medical necessity for CAR-T therapy (e.g., insufficient prior lines of therapy).\n- Incomplete clinical documentation or missing pathology reports.\n- Treatment at a non-approved facility for CAR-T therapy.\n- Failure to meet specific performance status or organ function criteria.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS (Medicare) | Covered with Evidence Development | National Coverage Determination (NCD) for CAR-T cell therapy. |\n\n#### Reimbursement Note\nReimbursement for CAR-T therapy is complex and often includes separate payments for the product and administration. Ensure accurate coding for both.\n\n#### Authorization Tips\n- Ensure all prior authorization forms are completely filled out and signed.\n- Provide comprehensive clinical notes detailing disease progression and previous treatments.\n- Verify the treatment facility is approved by Medicare for CAR-T administration.\n\n### Medicaid\nStatus badges: Prior Auth Required | State-Specific Coverage\nPrior Auth Note: Prior authorization is mandatory for all high-cost therapies including CAR-T and many chemotherapy drugs. State-specific guidelines apply.\nOverview: Medicaid coverage for ALL treatments, including CAR-T and chemotherapy, varies by state. Most states require strict adherence to medical necessity criteria and may have preferred drug lists.\n\n#### Coverage Criteria\n**General ALL Treatment Criteria**\n- Diagnosis of ALL confirmed by state-approved criteria.\n- Treatment consistent with nationally recognized guidelines (e.g., NCCN).\n- Patient meets state-specific eligibility requirements for Medicaid.\n\n**CAR-T Therapy Specific Criteria**\n- Relapsed or refractory B-cell ALL after at least two prior lines of systemic therapy.\n- Approval by a multidisciplinary tumor board.\n- Treatment at a designated CAR-T center within the state or approved out-of-state facility.\n\n#### Required Documentation\n**General Requirements**\n- Comprehensive medical history and physical examination.\n- Laboratory results (CBC, chemistry, bone marrow biopsy).\n- Documentation of ALL diagnosis and staging.\n- Justification for chosen treatment regimen.\n\n**CAR-T Therapy Specific**\n- Proof of failure of conventional therapies.\n- Detailed CAR-T treatment plan and facility accreditation.\n- Patient consent and counseling documentation.\n\n#### Submission Process\n1. Submit prior authorization request via the state Medicaid portal or fax.\n2. Ensure all state-specific forms are completed and attached.\n3. Follow up regularly as processing times can vary significantly by state.\n\n#### Common Denial Reasons\n- Failure to meet state-specific medical necessity criteria.\n- Lack of documentation for prior treatment failures.\n- Non-participation in required care management programs.\n- Incomplete or incorrectly submitted prior authorization forms.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (e.g., CA Medi-Cal) | Covered with Prior Authorization | Specific criteria for CAR-T therapy for ALL. |\n\n#### Reimbursement Note\nMedicaid reimbursement rates are often lower than Medicare or private insurance. Be aware of state-specific fee schedules.\n\n#### Authorization Tips\n- Familiarize yourself with your state's specific Medicaid guidelines for oncology and advanced therapies.\n- Maintain thorough documentation of all prior treatments and patient responses.\n- Consider engaging a patient advocate for complex cases.\n\n### Private Insurance\nStatus badges: Prior Auth Required | Policy-Dependent Coverage\nPrior Auth Note: Prior authorization is almost always required for CAR-T cell therapy and often for high-cost chemotherapy drugs. Benefit verification is crucial.\nOverview: Private insurance coverage for ALL treatments, including CAR-T and chemotherapy, is highly dependent on the specific plan and insurer. Policies vary widely regarding medical necessity, preferred providers, and step therapy requirements.\n\n#### Coverage Criteria\n**General ALL Treatment Criteria**\n- Diagnosis of ALL confirmed by pathology and clinical findings.\n- Treatment regimen aligns with evidence-based guidelines (e.g., NCCN, ASCO).\n- Patient meets specific criteria outlined in the insurance policy for the requested therapy.\n\n**CAR-T Therapy Specific Criteria**\n- Relapsed or refractory B-cell ALL after at least two prior lines of therapy, or as specified by policy.\n- Patient is a candidate for CAR-T therapy as determined by a qualified specialist.\n- Treatment at an in-network, accredited CAR-T center.\n\n#### Required Documentation\n**General Requirements**\n- Detailed physician notes, including diagnosis, staging, and treatment rationale.\n- All relevant diagnostic test results (e.g., bone marrow biopsy, cytogenetics, molecular studies).\n- Documentation of prior therapies and their outcomes.\n\n**CAR-T Therapy Specific**\n- Letter of medical necessity from the treating oncologist.\n- CAR-T cell product information and administration plan.\n- Proof of facility accreditation for CAR-T therapy.\n\n#### Submission Process\n1. Submit prior authorization request through the insurer's online portal or fax.\n2. Verify benefits and eligibility prior to initiating treatment.\n3. Be prepared for potential peer-to-peer reviews and appeals processes.\n\n#### Common Denial Reasons\n- Lack of medical necessity as defined by the insurer's policy.\n- Failure to complete required step therapy or use preferred drugs.\n- Treatment at an out-of-network facility without proper authorization.\n- Insufficient documentation to support the requested therapy.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Blue Cross Blue Shield | Covered with Prior Authorization | Requires specific criteria for CAR-T in ALL. |\n| Aetna | Covered with Prior Authorization | Medical policy for Chimeric Antigen Receptor T-cell (CAR-T) Therapy. |\n\n#### Reimbursement Note\nNegotiated rates with private insurers vary. Out-of-pocket costs for patients can be substantial, even with coverage.\n\n#### Authorization Tips\n- Always verify patient benefits and obtain prior authorization before starting high-cost treatments.\n- Understand the specific policy language for oncology and advanced therapies.\n- Be proactive in submitting appeals with strong clinical justification if a denial occurs.\n",
+      "tables": [
+        {
+          "name": "CPT / Procedure Codes",
+          "header": ["CPT Code", "RVU", "Description", "Device/Access", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            ["96413", "1.50", "Chemotherapy administration, intravenous infusion technique; up to 1 hour, single or initial substance/drug", "N/A (IV)", "Initial setup and administration of chemotherapy infusion for up to 1 hour", "Used for initial chemotherapy infusions in ALL treatment."],
+            ["96415", "0.75", "Chemotherapy administration, intravenous infusion technique; each additional hour (List separately in addition to code for primary procedure)", "N/A (IV)", "Each subsequent hour of chemotherapy infusion after the first hour", "Billed in conjunction with 96413 for infusions lasting longer than one hour."],
+            ["0537T", "5.00", "Chimeric antigen receptor T-cell (CAR-T) therapy; CAR-T cell administration, autologous", "CAR-T cell product (IV)", "Preparation and administration of autologous CAR-T cell product", "Specific code for the administration of CAR-T cell therapy. Often requires prior authorization and specialized facility."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required/Primary"],
+          "rows": [
+            ["C91.00", "Acute lymphoblastic leukemia, not having achieved remission", "Primary diagnosis for active ALL.", "Primary"],
+            ["C91.01", "Acute lymphoblastic leukemia, in remission", "Used when the patient is in a state of remission after treatment.", ""],
+            ["C91.02", "Acute lymphoblastic leukemia, in relapse", "Used when the disease has returned after a period of remission.", ""],
+            ["Z51.12", "Encounter for antineoplastic immunotherapy", "Secondary code for encounters involving CAR-T or other immunotherapy.", ""]
+          ]
+        },
+        {
+          "name": "Medicare - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS (Medicare)", "Covered with Evidence Development", "National Coverage Determination (NCD) for CAR-T cell therapy."]
+          ]
+        },
+        {
+          "name": "Medicaid - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., CA Medi-Cal)", "Covered with Prior Authorization", "Specific criteria for CAR-T therapy for ALL."]
+          ]
+        },
+        {
+          "name": "Private Insurance - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield", "Covered with Prior Authorization", "Requires specific criteria for CAR-T in ALL."],
+            ["Aetna", "Covered with Prior Authorization", "Medical policy for Chimeric Antigen Receptor T-cell (CAR-T) Therapy."]
+          ]
+        }
+      ]
+    }
+  }
+}

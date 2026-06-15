@@ -1,0 +1,246 @@
+{
+  "title": "Bone Cancer Interventional Oncology Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assess Candidacy",
+    "logicKey": "bonecancer",
+    "hiddenDefaults": {
+      "medicalComorbidities": [],
+      "priorTreatments": [],
+      "diseaseStatus": "primary",
+      "proposedEmbolizationType": null
+    },
+    "steps": [
+      {
+        "id": "patient",
+        "shortLabel": "Patient",
+        "title": "Bone Cancer Assessment — Step 1: Patient Information",
+        "fields": [
+          {
+            "id": "patient-name",
+            "name": "patientName",
+            "label": "Patient Name",
+            "type": "text",
+            "defaultValue": ""
+          },
+          {
+            "id": "patient-id",
+            "name": "patientId",
+            "label": "Patient ID (Optional)",
+            "type": "text",
+            "defaultValue": ""
+          },
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "performance-status",
+            "name": "performanceStatus",
+            "label": "ECOG Performance Status",
+            "type": "radio",
+            "defaultValue": "0",
+            "options": [
+              { "label": "0", "value": "0" },
+              { "label": "1", "value": "1" },
+              { "label": "2", "value": "2" },
+              { "label": "3", "value": "3" },
+              { "label": "4", "value": "4" }
+            ]
+          },
+          {
+            "id": "has-coagulopathy",
+            "name": "hasCoagulopathy",
+            "label": "Has coagulopathy",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "coagulopathy-correctible",
+            "name": "coagulopathyCorrectible",
+            "label": "Coagulopathy is correctable",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "hasCoagulopathy", "op": "truthy" }
+          },
+          {
+            "id": "active-infection",
+            "name": "activeInfection",
+            "label": "Active infection",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "tumor",
+        "shortLabel": "Tumor",
+        "title": "Bone Cancer Assessment — Step 2: Tumor Characteristics",
+        "fields": [
+          {
+            "id": "tumor-type",
+            "name": "tumorType",
+            "label": "Tumor Type",
+            "type": "radio",
+            "defaultValue": "osteosarcoma",
+            "options": [
+              { "label": "Osteosarcoma", "value": "osteosarcoma" },
+              { "label": "Chondrosarcoma", "value": "chondrosarcoma" },
+              { "label": "Giant Cell Tumor of Bone (GCTB)", "value": "gctb" },
+              { "label": "Aneurysmal Bone Cyst (ABC)", "value": "abc" },
+              { "label": "Bone Metastases", "value": "bone-metastases" },
+              { "label": "Chordoma", "value": "chordoma" },
+              { "label": "Other", "value": "other" }
+            ]
+          },
+          {
+            "id": "resectability-status",
+            "name": "resectabilityStatus",
+            "label": "Resectability Status",
+            "type": "radio",
+            "defaultValue": "unresectable",
+            "options": [
+              { "label": "Resectable", "value": "resectable" },
+              { "label": "Unresectable", "value": "unresectable" },
+              { "label": "Relapsed/Refractory", "value": "relapsed-refractory" }
+            ]
+          },
+          {
+            "id": "location",
+            "name": "location",
+            "label": "Tumor Location",
+            "type": "radio",
+            "defaultValue": "femur",
+            "options": [
+              { "label": "Spine", "value": "spine" },
+              { "label": "Pelvis", "value": "pelvis" },
+              { "label": "Femur", "value": "femur" },
+              { "label": "Tibia", "value": "tibia" },
+              { "label": "Humerus", "value": "humerus" },
+              { "label": "Other Extremity", "value": "other-extremity" }
+            ]
+          },
+          {
+            "id": "size-in-cm",
+            "name": "sizeInCm",
+            "label": "Tumor Size (cm)",
+            "type": "number",
+            "defaultValue": 5,
+            "unit": "cm",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "is-painful",
+            "name": "isPainful",
+            "label": "Painful tumor",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "pain-severity",
+            "name": "painSeverity",
+            "label": "Pain Severity (0-10)",
+            "type": "number",
+            "defaultValue": 0,
+            "min": 0,
+            "max": 10,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "isPainful", "op": "truthy" }
+          },
+          {
+            "id": "has-vascular-involvement",
+            "name": "hasVascularInvolvement",
+            "label": "Hypervascular tumor (vascular involvement)",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "procedure",
+        "shortLabel": "Procedure",
+        "title": "Bone Cancer Assessment — Step 3: Procedure Planning",
+        "fields": [
+          {
+            "id": "treatment-goal",
+            "name": "treatmentGoal",
+            "label": "Treatment Goal",
+            "type": "radio",
+            "defaultValue": "curative",
+            "options": [
+              { "label": "Curative", "value": "curative" },
+              { "label": "Palliative", "value": "palliative" },
+              { "label": "Preoperative", "value": "preoperative" }
+            ]
+          },
+          {
+            "id": "proposed-ablation-modality",
+            "name": "proposedAblationModality",
+            "label": "Proposed Ablation Modality",
+            "type": "radio",
+            "defaultValue": "rfa",
+            "options": [
+              { "label": "Radiofrequency Ablation (RFA)", "value": "rfa" },
+              { "label": "Microwave Ablation (MWA)", "value": "mwa" },
+              { "label": "Cryoablation", "value": "cryoablation" },
+              { "label": "High-Intensity Focused Ultrasound (HIFU)", "value": "hifu" },
+              { "label": "Combination", "value": "combination" }
+            ]
+          },
+          {
+            "id": "combination-therapy",
+            "name": "combinationTherapy",
+            "label": "Combination Therapies",
+            "type": "multiselect",
+            "defaultValue": [],
+            "options": [
+              { "label": "Augmentation", "value": "augmentation" },
+              { "label": "Embolization", "value": "embolization" },
+              { "label": "Radiation", "value": "radiation" }
+            ]
+          },
+          {
+            "id": "thermal-protection-needed",
+            "name": "thermalProtectionNeeded",
+            "label": "Thermal protection strategies needed",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "critical-structures-nearby",
+            "name": "criticalStructuresNearby",
+            "label": "Critical structures nearby",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "uncorrectable-coagulopathy",
+            "name": "uncorrectableCoagulopathy",
+            "label": "Uncorrectable coagulopathy",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "active-infection-in-area",
+            "name": "activeInfectionInArea",
+            "label": "Active infection in treatment area",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "unprotectable-critical-structures",
+            "name": "unprotectableCriticalStructures",
+            "label": "Unprotectable critical structures",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

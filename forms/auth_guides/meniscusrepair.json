@@ -1,0 +1,247 @@
+{
+  "title": "Meniscus Repair Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "MeniscusRepairAuthGuide.tsx",
+    "title": null,
+    "subtitle": null,
+    "cptCodes": [
+      { "code": "29882", "description": "Arthroscopy, knee, surgical; with meniscus repair (medial OR lateral)", "rvu": "12.84", "notes": "Primary repair code — specify medial or lateral" },
+      { "code": "29883", "description": "Arthroscopy, knee, surgical; with meniscus repair (medial AND lateral)", "rvu": "15.22", "notes": "Both menisci repaired in same session" },
+      { "code": "29880", "description": "Arthroscopy, knee, surgical; with meniscectomy (medial AND lateral)", "rvu": "10.44", "notes": "Partial or total meniscectomy" },
+      { "code": "29881", "description": "Arthroscopy, knee, surgical; with meniscectomy (medial OR lateral)", "rvu": "9.18", "notes": "Partial or total meniscectomy — one compartment" },
+      { "code": "29879", "description": "Arthroscopy, knee, surgical; abrasion arthroplasty or multiple drilling or microfracture", "rvu": "8.92", "notes": "Chondroplasty if cartilage defect present" },
+      { "code": "29876", "description": "Arthroscopy, knee, surgical; synovectomy, major, 2 or more compartments", "rvu": "7.65", "notes": "If synovitis present" }
+    ],
+    "icd10Codes": [
+      { "code": "M23.200", "description": "Derangement of unspecified meniscus due to old tear or injury, unspecified knee", "notes": "Chronic/degenerative tear" },
+      { "code": "M23.201", "description": "Derangement of unspecified meniscus due to old tear or injury, right knee", "notes": "" },
+      { "code": "M23.202", "description": "Derangement of unspecified meniscus due to old tear or injury, left knee", "notes": "" },
+      { "code": "S83.200A", "description": "Tear of unspecified meniscus, current injury, unspecified knee, initial encounter", "notes": "Acute traumatic tear" },
+      { "code": "M23.000", "description": "Cystic meniscus, unspecified meniscus, unspecified knee", "notes": "Meniscal cyst" },
+      { "code": "M23.400", "description": "Free body in joint, unspecified knee", "notes": "Loose body — may be co-billed" }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "overview": "Medicare covers knee arthroscopy for traumatic tears with mechanical symptoms. For degenerative tears with OA, Medicare follows AAOS guidelines and may deny based on NEJM trial evidence. Document absence of significant OA.",
+        "sections": [
+          {
+            "heading": "Prior Authorization Requirements",
+            "items": [
+              "MRI confirming meniscal tear with characterization (location, pattern, size)",
+              "Documentation of mechanical symptoms (locking, giving way) OR failed conservative therapy ≥6 weeks",
+              "Functional assessment documenting impairment",
+              "Physician attestation of medical necessity",
+              "For degenerative tears: documentation of failed PT (≥6 weeks) — Medicare follows evidence against arthroscopy for degenerative tears with OA"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Acute traumatic tear with mechanical symptoms (locking, giving way)",
+              "Bucket-handle tear causing locked knee",
+              "Symptomatic tear in younger patient (<50) without significant OA",
+              "Peripheral (vascular zone) tear amenable to repair"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Medicare covers knee arthroscopy for traumatic tears with mechanical symptoms. For degenerative tears with OA, Medicare follows AAOS guidelines and may deny based on NEJM trial evidence. Document absence of significant OA."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicare (CMS)", "status": "Yes", "notes": "Covered for traumatic/mechanical tears; degenerative tears with OA may be denied" }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "overview": "Medicaid coverage and rates vary by state. Prior authorization required in most states. Degenerative tears may face higher scrutiny.",
+        "sections": [
+          {
+            "heading": "Prior Authorization Requirements",
+            "items": [
+              "State-specific prior authorization required",
+              "MRI confirming tear",
+              "Documentation of mechanical symptoms or failed conservative therapy",
+              "Physician attestation"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Acute traumatic tear with mechanical symptoms",
+              "Failed conservative therapy for symptomatic tear without significant OA"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Medicaid coverage and rates vary by state. Prior authorization required in most states. Degenerative tears may face higher scrutiny."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicaid (state-specific)", "status": "Yes", "notes": "Prior auth required; rates and criteria vary by state" }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "overview": "Commercial payers generally cover knee arthroscopy for traumatic tears. Degenerative tears face increasing scrutiny based on NEJM/AAOS evidence. Document clinical justification carefully.",
+        "sections": [
+          {
+            "heading": "Prior Authorization Requirements",
+            "items": [
+              "Prior authorization required by most commercial payers",
+              "MRI report confirming tear with pattern and location",
+              "Documentation of mechanical symptoms OR ≥6 weeks conservative therapy failure",
+              "Functional outcome scores (KOOS, WOMAC, or Lysholm)",
+              "For degenerative tears: explicit documentation of absence of significant OA",
+              "Peer-to-peer review may be required for degenerative tears"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Acute traumatic tear with mechanical symptoms",
+              "Symptomatic tear in active patient without significant OA",
+              "Failed conservative therapy (PT, NSAIDs, injection) for ≥6 weeks"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Commercial payers generally cover knee arthroscopy for traumatic tears. Degenerative tears face increasing scrutiny based on NEJM/AAOS evidence. Document clinical justification carefully."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Aetna", "status": "Yes", "notes": "Covered for traumatic tears; degenerative tears require absence of OA documentation" },
+          { "payer": "UnitedHealthcare", "status": "Yes", "notes": "Covered with prior auth; mechanical symptoms or PT failure required" },
+          { "payer": "BCBS (most plans)", "status": "Yes", "notes": "Covered; degenerative tears with OA may be denied" },
+          { "payer": "Cigna", "status": "Yes", "notes": "Covered for acute/mechanical tears; degenerative tears scrutinized" }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Required Documentation — Imaging",
+        "kind": "list",
+        "items": [
+          "MRI knee with tear characterization (location, pattern, zone, size)",
+          "X-rays (weight-bearing AP, lateral, Merchant) to assess OA grade"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Clinical Documentation",
+        "kind": "list",
+        "items": [
+          "H&P documenting symptom duration, mechanism (acute vs. chronic), and mechanical symptoms",
+          "Functional outcome scores (KOOS, WOMAC, or Lysholm)",
+          "Pain scores at multiple visits",
+          "Documentation of absence of significant OA if degenerative tear"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Conservative Therapy",
+        "kind": "list",
+        "items": [
+          "PT notes documenting ≥6 weeks of quadriceps/hamstring strengthening",
+          "NSAIDs trial documentation",
+          "Intraarticular injection record (if performed)"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Surgical Planning",
+        "kind": "list",
+        "items": [
+          "Operative plan documenting repair vs. meniscectomy decision",
+          "Anesthesia clearance if comorbidities present"
+        ]
+      },
+      {
+        "heading": "Submission Process",
+        "kind": "list",
+        "items": [
+          "Obtain MRI confirming meniscal tear with radiologist characterization",
+          "Document mechanical symptoms (locking, giving way) if present — strongest indication",
+          "If no mechanical symptoms, document ≥6 weeks conservative therapy failure",
+          "Complete functional outcome assessment (KOOS or Lysholm score)",
+          "Submit prior authorization with CPT codes (29882 or 29881), ICD-10 codes, and clinical documentation",
+          "Include MRI report, PT notes, and functional scores",
+          "For degenerative tears, explicitly document absence of significant OA (KL grade <3)",
+          "If denied for degenerative tear, request peer-to-peer and present mechanical symptom evidence"
+        ]
+      },
+      {
+        "heading": "Common Denial Reasons",
+        "kind": "list",
+        "items": [
+          "Degenerative tear with concurrent OA — most common denial; document KL grade and absence of bone-on-bone changes",
+          "Insufficient conservative therapy documentation (document ≥6 weeks PT explicitly)",
+          "Missing functional outcome scores (KOOS, WOMAC, or Lysholm required by many payers)",
+          "MRI not confirming tear or showing only degenerative signal change without discrete tear",
+          "Incorrect CPT code selection (29882 vs. 29881 — specify medial or lateral)",
+          "Meniscectomy (29880/29881) bundled with other arthroscopic procedures — verify modifier requirements"
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# Meniscus Repair Clinical Compass\n\n## CPT Codes\n\n| CPT | Description | RVU | Notes |\n| --- | --- | --- | --- |\n| 29882 | Arthroscopy, knee, surgical; with meniscus repair (medial OR lateral) | 12.84 | Primary repair code — specify medial or lateral |\n| 29883 | Arthroscopy, knee, surgical; with meniscus repair (medial AND lateral) | 15.22 | Both menisci repaired in same session |\n| 29880 | Arthroscopy, knee, surgical; with meniscectomy (medial AND lateral) | 10.44 | Partial or total meniscectomy |\n| 29881 | Arthroscopy, knee, surgical; with meniscectomy (medial OR lateral) | 9.18 | Partial or total meniscectomy — one compartment |\n| 29879 | Arthroscopy, knee, surgical; abrasion arthroplasty or multiple drilling or microfracture | 8.92 | Chondroplasty if cartilage defect present |\n| 29876 | Arthroscopy, knee, surgical; synovectomy, major, 2 or more compartments | 7.65 | If synovitis present |\n\n## ICD-10 Codes\n\n| ICD-10 | Description | Notes |\n| --- | --- | --- |\n| M23.200 | Derangement of unspecified meniscus due to old tear or injury, unspecified knee | Chronic/degenerative tear |\n| M23.201 | Derangement of unspecified meniscus due to old tear or injury, right knee | |\n| M23.202 | Derangement of unspecified meniscus due to old tear or injury, left knee | |\n| S83.200A | Tear of unspecified meniscus, current injury, unspecified knee, initial encounter | Acute traumatic tear |\n| M23.000 | Cystic meniscus, unspecified meniscus, unspecified knee | Meniscal cyst |\n| M23.400 | Free body in joint, unspecified knee | Loose body — may be co-billed |\n\n## Payer Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\n\n**Prior Authorization Requirements**\n- MRI confirming meniscal tear with characterization (location, pattern, size)\n- Documentation of mechanical symptoms (locking, giving way) OR failed conservative therapy ≥6 weeks\n- Functional assessment documenting impairment\n- Physician attestation of medical necessity\n- For degenerative tears: documentation of failed PT (≥6 weeks) — Medicare follows evidence against arthroscopy for degenerative tears with OA\n\n**Medical Necessity Criteria**\n- ✓ Acute traumatic tear with mechanical symptoms (locking, giving way)\n- ✓ Bucket-handle tear causing locked knee\n- ✓ Symptomatic tear in younger patient (<50) without significant OA\n- ✓ Peripheral (vascular zone) tear amenable to repair\n\n**Reimbursement:** Medicare covers knee arthroscopy for traumatic tears with mechanical symptoms. For degenerative tears with OA, Medicare follows AAOS guidelines and may deny based on NEJM trial evidence. Document absence of significant OA.\n\n**Known Payer Policies**\n\n| Payer | Policy | Covered |\n| --- | --- | --- |\n| Medicare (CMS) | Covered for traumatic/mechanical tears; degenerative tears with OA may be denied | Yes |\n\n### Medicaid\n\n**Prior Authorization Requirements**\n- State-specific prior authorization required\n- MRI confirming tear\n- Documentation of mechanical symptoms or failed conservative therapy\n- Physician attestation\n\n**Medical Necessity Criteria**\n- ✓ Acute traumatic tear with mechanical symptoms\n- ✓ Failed conservative therapy for symptomatic tear without significant OA\n\n**Reimbursement:** Medicaid coverage and rates vary by state. Prior authorization required in most states. Degenerative tears may face higher scrutiny.\n\n**Known Payer Policies**\n\n| Payer | Policy | Covered |\n| --- | --- | --- |\n| Medicaid (state-specific) | Prior auth required; rates and criteria vary by state | Yes |\n\n### Private Insurance\n\n**Prior Authorization Requirements**\n- Prior authorization required by most commercial payers\n- MRI report confirming tear with pattern and location\n- Documentation of mechanical symptoms OR ≥6 weeks conservative therapy failure\n- Functional outcome scores (KOOS, WOMAC, or Lysholm)\n- For degenerative tears: explicit documentation of absence of significant OA\n- Peer-to-peer review may be required for degenerative tears\n\n**Medical Necessity Criteria**\n- ✓ Acute traumatic tear with mechanical symptoms\n- ✓ Symptomatic tear in active patient without significant OA\n- ✓ Failed conservative therapy (PT, NSAIDs, injection) for ≥6 weeks\n\n**Reimbursement:** Commercial payers generally cover knee arthroscopy for traumatic tears. Degenerative tears face increasing scrutiny based on NEJM/AAOS evidence. Document clinical justification carefully.\n\n**Known Payer Policies**\n\n| Payer | Policy | Covered |\n| --- | --- | --- |\n| Aetna | Covered for traumatic tears; degenerative tears require absence of OA documentation | Yes |\n| UnitedHealthcare | Covered with prior auth; mechanical symptoms or PT failure required | Yes |\n| BCBS (most plans) | Covered; degenerative tears with OA may be denied | Yes |\n| Cigna | Covered for acute/mechanical tears; degenerative tears scrutinized | Yes |\n\n## Required Documentation\n\n### Imaging\n- □ MRI knee with tear characterization (location, pattern, zone, size)\n- □ X-rays (weight-bearing AP, lateral, Merchant) to assess OA grade\n\n### Clinical Documentation\n- □ H&P documenting symptom duration, mechanism (acute vs. chronic), and mechanical symptoms\n- □ Functional outcome scores (KOOS, WOMAC, or Lysholm)\n- □ Pain scores at multiple visits\n- □ Documentation of absence of significant OA if degenerative tear\n\n### Conservative Therapy\n- □ PT notes documenting ≥6 weeks of quadriceps/hamstring strengthening\n- □ NSAIDs trial documentation\n- □ Intraarticular injection record (if performed)\n\n### Surgical Planning\n- □ Operative plan documenting repair vs. meniscectomy decision\n- □ Anesthesia clearance if comorbidities present\n\n## Submission Process\n\n1. Obtain MRI confirming meniscal tear with radiologist characterization\n2. Document mechanical symptoms (locking, giving way) if present — strongest indication\n3. If no mechanical symptoms, document ≥6 weeks conservative therapy failure\n4. Complete functional outcome assessment (KOOS or Lysholm score)\n5. Submit prior authorization with CPT codes (29882 or 29881), ICD-10 codes, and clinical documentation\n6. Include MRI report, PT notes, and functional scores\n7. For degenerative tears, explicitly document absence of significant OA (KL grade <3)\n8. If denied for degenerative tear, request peer-to-peer and present mechanical symptom evidence\n\n## Common Denial Reasons\n\n- ⚠ Degenerative tear with concurrent OA — most common denial; document KL grade and absence of bone-on-bone changes\n- ⚠ Insufficient conservative therapy documentation (document ≥6 weeks PT explicitly)\n- ⚠ Missing functional outcome scores (KOOS, WOMAC, or Lysholm required by many payers)\n- ⚠ MRI not confirming tear or showing only degenerative signal change without discrete tear\n- ⚠ Incorrect CPT code selection (29882 vs. 29881 — specify medial or lateral)\n- ⚠ Meniscectomy (29880/29881) bundled with other arthroscopic procedures — verify modifier requirements\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["CPT", "Description", "RVU", "Notes"],
+          "rows": [
+            ["29882", "Arthroscopy, knee, surgical; with meniscus repair (medial OR lateral)", "12.84", "Primary repair code — specify medial or lateral"],
+            ["29883", "Arthroscopy, knee, surgical; with meniscus repair (medial AND lateral)", "15.22", "Both menisci repaired in same session"],
+            ["29880", "Arthroscopy, knee, surgical; with meniscectomy (medial AND lateral)", "10.44", "Partial or total meniscectomy"],
+            ["29881", "Arthroscopy, knee, surgical; with meniscectomy (medial OR lateral)", "9.18", "Partial or total meniscectomy — one compartment"],
+            ["29879", "Arthroscopy, knee, surgical; abrasion arthroplasty or multiple drilling or microfracture", "8.92", "Chondroplasty if cartilage defect present"],
+            ["29876", "Arthroscopy, knee, surgical; synovectomy, major, 2 or more compartments", "7.65", "If synovitis present"]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["ICD-10", "Description", "Notes"],
+          "rows": [
+            ["M23.200", "Derangement of unspecified meniscus due to old tear or injury, unspecified knee", "Chronic/degenerative tear"],
+            ["M23.201", "Derangement of unspecified meniscus due to old tear or injury, right knee", ""],
+            ["M23.202", "Derangement of unspecified meniscus due to old tear or injury, left knee", ""],
+            ["S83.200A", "Tear of unspecified meniscus, current injury, unspecified knee, initial encounter", "Acute traumatic tear"],
+            ["M23.000", "Cystic meniscus, unspecified meniscus, unspecified knee", "Meniscal cyst"],
+            ["M23.400", "Free body in joint, unspecified knee", "Loose body — may be co-billed"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicare",
+          "header": ["Payer", "Policy", "Covered"],
+          "rows": [
+            ["Medicare (CMS)", "Covered for traumatic/mechanical tears; degenerative tears with OA may be denied", "Yes"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicaid",
+          "header": ["Payer", "Policy", "Covered"],
+          "rows": [
+            ["Medicaid (state-specific)", "Prior auth required; rates and criteria vary by state", "Yes"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Private Insurance",
+          "header": ["Payer", "Policy", "Covered"],
+          "rows": [
+            ["Aetna", "Covered for traumatic tears; degenerative tears require absence of OA documentation", "Yes"],
+            ["UnitedHealthcare", "Covered with prior auth; mechanical symptoms or PT failure required", "Yes"],
+            ["BCBS (most plans)", "Covered; degenerative tears with OA may be denied", "Yes"],
+            ["Cigna", "Covered for acute/mechanical tears; degenerative tears scrutinized", "Yes"]
+          ]
+        }
+      ]
+    }
+  }
+}

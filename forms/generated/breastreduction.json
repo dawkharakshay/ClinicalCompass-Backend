@@ -1,0 +1,241 @@
+{
+  "title": "Breast Reduction Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assess Candidacy",
+    "logicKey": "breastreduction",
+    "hiddenDefaults": {
+      "bmi": 0,
+      "bsaM2": 0,
+      "schnurPercentile": 0
+    },
+    "steps": [
+      {
+        "id": "patient-anthropometrics",
+        "shortLabel": "Patient & Anthropometrics",
+        "title": "Patient & Anthropometrics",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "sex",
+            "name": "sex",
+            "label": "Sex",
+            "type": "select",
+            "defaultValue": "female",
+            "options": [
+              { "label": "Female", "value": "female" },
+              { "label": "Male", "value": "male" }
+            ]
+          },
+          {
+            "id": "height",
+            "name": "height",
+            "label": "Height (inches)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "weight",
+            "name": "weight",
+            "label": "Weight (lbs)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "estimated-resection-grams",
+            "name": "estimatedResectionGrams",
+            "label": "Estimated Resection Weight per Breast (grams)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "asa",
+            "name": "asa",
+            "label": "ASA Classification",
+            "type": "select",
+            "defaultValue": 1,
+            "options": [
+              { "label": "ASA I — Healthy", "value": 1 },
+              { "label": "ASA II — Mild systemic disease", "value": 2 },
+              { "label": "ASA III — Severe systemic disease", "value": 3 },
+              { "label": "ASA IV — Life-threatening disease", "value": 4 }
+            ]
+          },
+          {
+            "id": "smoking",
+            "name": "smoking",
+            "label": "Active smoking",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "diabetes",
+            "name": "diabetes",
+            "label": "Diabetes mellitus",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-breast-surgery",
+            "name": "priorBreastSurgery",
+            "label": "Prior breast surgery",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "functional-symptoms",
+        "shortLabel": "Symptoms & Function",
+        "title": "Functional Symptoms",
+        "fields": [
+          {
+            "id": "neck-pain",
+            "name": "neckPain",
+            "label": "Neck pain attributed to macromastia",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "shoulder-pain",
+            "name": "shoulderPain",
+            "label": "Shoulder pain attributed to macromastia",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "back-pain",
+            "name": "backPain",
+            "label": "Back pain / thoracic kyphosis",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "shoulder-grooving",
+            "name": "shoulderGrooving",
+            "label": "Bra strap shoulder grooving",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "intertrigo",
+            "name": "intertrigo",
+            "label": "Inframammary intertrigo / skin breakdown / rash",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "postural-problems",
+            "name": "posturalProblems",
+            "label": "Postural problems / forward head posture",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "headaches",
+            "name": "headaches",
+            "label": "Headaches attributed to macromastia / brow compensation",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "numbness",
+            "name": "numbness",
+            "label": "Upper extremity numbness / paresthesias",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "limited-activity",
+            "name": "limitedActivity",
+            "label": "Limited physical activity due to breast size",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "pain-level",
+            "name": "painLevel",
+            "label": "Pain Level (0–10)",
+            "type": "number",
+            "defaultValue": 0,
+            "min": 0,
+            "max": 10,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "symptom-duration-months",
+            "name": "symptomDurationMonths",
+            "label": "Symptom Duration (months)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "conservative-treatment",
+        "shortLabel": "Conservative Tx",
+        "title": "Conservative Treatment History",
+        "fields": [
+          {
+            "id": "tried-supportive-bra",
+            "name": "triedSupportiveBra",
+            "label": "Supportive bra / minimizer bra tried",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "tried-medications",
+            "name": "triedMedications",
+            "label": "NSAIDs / muscle relaxants tried for pain",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "tried-weight-loss",
+            "name": "triedWeightLoss",
+            "label": "Weight loss attempted",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "tried-physical-therapy",
+            "name": "triedPhysicalTherapy",
+            "label": "Physical therapy completed",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "pt-duration-months",
+            "name": "ptDurationMonths",
+            "label": "Physical Therapy Duration (months)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "triedPhysicalTherapy", "op": "truthy" }
+          },
+          {
+            "id": "weight-loss-attempt-months",
+            "name": "weightLossAttemptMonths",
+            "label": "Weight Loss Attempt Duration (months)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "triedWeightLoss", "op": "truthy" }
+          }
+        ]
+      }
+    ]
+  }
+}

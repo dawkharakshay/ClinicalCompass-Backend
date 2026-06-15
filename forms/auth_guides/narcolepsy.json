@@ -1,0 +1,151 @@
+{
+  "title": "Narcolepsy Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "NarcolepsyAuthGuide.tsx",
+    "title": "Narcolepsy Authorization Guide",
+    "subtitle": "Decision Support",
+    "cptCodes": [
+      {
+        "code": "95810",
+        "description": "Polysomnography (PSG) — ≥6 parameters, attended",
+        "authRequired": "Often",
+        "notes": "Required before MSLT per AASM"
+      },
+      {
+        "code": "95805",
+        "description": "Multiple Sleep Latency Test (MSLT)",
+        "authRequired": "Often",
+        "notes": "Must follow PSG; 5 nap opportunities"
+      },
+      {
+        "code": "95806",
+        "description": "Sleep study, unattended, Type III",
+        "authRequired": "Sometimes",
+        "notes": "Not appropriate for narcolepsy workup"
+      },
+      {
+        "code": "99213–99215",
+        "description": "Office visit — E&M (sleep specialist)",
+        "authRequired": "Rarely",
+        "notes": "Document EDS, cataplexy, ESS score"
+      },
+      {
+        "code": "G0399",
+        "description": "Home sleep apnea test (Type III)",
+        "authRequired": "Rarely",
+        "notes": "Not diagnostic for narcolepsy"
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "G47.411",
+        "description": "Narcolepsy with cataplexy (Type 1)",
+        "useWhen": "Cataplexy confirmed; CSF hypocretin low or absent"
+      },
+      {
+        "code": "G47.419",
+        "description": "Narcolepsy without cataplexy (Type 2)",
+        "useWhen": "EDS + MSLT positive; no cataplexy; normal CSF"
+      },
+      {
+        "code": "G47.421",
+        "description": "Narcolepsy in conditions classified elsewhere, with cataplexy",
+        "useWhen": "Secondary narcolepsy with cataplexy"
+      },
+      {
+        "code": "G47.429",
+        "description": "Narcolepsy in conditions classified elsewhere, without cataplexy",
+        "useWhen": "Secondary narcolepsy without cataplexy"
+      },
+      {
+        "code": "G47.10",
+        "description": "Hypersomnia, unspecified",
+        "useWhen": "Pending full diagnostic workup"
+      },
+      {
+        "code": "G47.19",
+        "description": "Other hypersomnia",
+        "useWhen": "Idiopathic hypersomnia, Kleine-Levin"
+      }
+    ],
+    "payers": [],
+    "customSections": [
+      {
+        "heading": "Medication Prior Authorization Requirements",
+        "kind": "list",
+        "items": [
+          "Sodium Oxybate (Xyrem) — Brand: Xyrem / Jazz Pharmaceuticals — Schedule: Schedule III (REMS program required) — Requirements: Confirmed narcolepsy diagnosis (PSG + MSLT); DEA Schedule III — REMS enrollment mandatory; Prescriber must be REMS-certified; Pharmacy: Certified specialty pharmacy only; Step therapy: Modafinil or stimulant trial often required first — Common denial reason: REMS non-compliance, step therapy not met",
+          "Low-Sodium Oxybate (Lumryz) — Brand: Lumryz / Avadel — Schedule: Schedule III (REMS program required) — Requirements: Same as Xyrem; once-nightly formulation; REMS enrollment required; Step therapy: Prior Xyrem or stimulant trial — Common denial reason: Step therapy, formulary preference for Xyrem",
+          "Pitolisant (Wakix) — Brand: Wakix / Harmony Biosciences — Schedule: Non-scheduled (H3 receptor antagonist) — Requirements: Confirmed narcolepsy diagnosis; PSG + MSLT documentation; Step therapy: Modafinil trial often required; Preferred for patients with substance use risk — Common denial reason: Step therapy not met, off-label use for Type 2",
+          "Solriamfetol (Sunosi) — Brand: Sunosi / Jazz Pharmaceuticals — Schedule: Schedule IV — Requirements: Confirmed narcolepsy diagnosis; PSG + MSLT documentation; Step therapy: Modafinil trial often required — Common denial reason: Step therapy, formulary tier restrictions",
+          "Modafinil (Provigil) / Armodafinil (Nuvigil) — Brand: Provigil / Nuvigil (generics available) — Schedule: Schedule IV — Requirements: Narcolepsy diagnosis (ICD-10 G47.41x); Often first-line per payer step therapy — Common denial reason: Rarely denied for confirmed narcolepsy"
+        ]
+      },
+      {
+        "heading": "Documentation Checklist for Prior Auth",
+        "kind": "list",
+        "items": [
+          "PSG report with total sleep time, sleep efficiency, REM latency, and SOREMP notation",
+          "MSLT report: mean sleep onset latency ≤8 min AND ≥2 SOREMPs",
+          "ESS score ≥10 documented in clinic note",
+          "Cataplexy description (if Type 1): specific emotional triggers, duration, frequency",
+          "CSF hypocretin-1 level (if obtained): ≤110 pg/mL diagnostic for NT1",
+          "Sleep specialist attestation of ICSD-3 diagnostic criteria",
+          "Step therapy documentation: prior stimulant/modafinil trial with inadequate response",
+          "REMS enrollment confirmation (for sodium oxybate)",
+          "Absence of contraindications (e.g., MAOIs for pitolisant; severe hepatic impairment for oxybate)"
+        ]
+      },
+      {
+        "heading": "References",
+        "kind": "list",
+        "items": [
+          "1. Maski K, et al. \"Treatment of Central Disorders of Hypersomnolence: An American Academy of Sleep Medicine Clinical Practice Guideline.\" J Clin Sleep Med. 2021;17(9):1881–1893.",
+          "2. American Academy of Sleep Medicine. International Classification of Sleep Disorders, 3rd ed. Darien, IL: AASM; 2014.",
+          "3. Dauvilliers Y, et al. \"Narcolepsy with cataplexy.\" Lancet. 2007;369(9560):499–511.",
+          "4. Thorpy MJ, et al. \"Consensus practice parameters for the treatment of narcolepsy.\" Sleep. 2001;24(4):451–466.",
+          "5. AASM Practice Guidelines: aasm.org/clinical-resources/practice-standards/practice-guidelines/ (https://aasm.org/clinical-resources/practice-standards/practice-guidelines/)"
+        ]
+      },
+      {
+        "heading": "Generate Appeal Letter",
+        "kind": "link",
+        "text": "Generate Appeal Letter (button) — navigates to /sleep/narcolepsy/appeal-letter. Also available via the onAppealLetter action on the page layout.",
+        "href": "/sleep/narcolepsy/appeal-letter"
+      },
+      {
+        "heading": "Page Metadata",
+        "kind": "prose",
+        "text": "Module page layout — specialty: Sleep Medicine. Logo URL: /manus-storage/narcolepsy-compass-logo_980d50d6.png. Title: Narcolepsy Authorization Guide. Subtitle: Decision Support."
+      }
+    ],
+    "raw": {
+      "markdown": "# Narcolepsy Authorization Guide\n_Decision Support_\n\nSpecialty: Sleep Medicine\nLogo URL: /manus-storage/narcolepsy-compass-logo_980d50d6.png\nAppeal letter action navigates to: /sleep/narcolepsy/appeal-letter\n\n## CPT Codes — Narcolepsy Workup & Management\n\n| CPT Code | Description | Auth Required | Notes |\n| --- | --- | --- | --- |\n| 95810 | Polysomnography (PSG) — ≥6 parameters, attended | Often | Required before MSLT per AASM |\n| 95805 | Multiple Sleep Latency Test (MSLT) | Often | Must follow PSG; 5 nap opportunities |\n| 95806 | Sleep study, unattended, Type III | Sometimes | Not appropriate for narcolepsy workup |\n| 99213–99215 | Office visit — E&M (sleep specialist) | Rarely | Document EDS, cataplexy, ESS score |\n| G0399 | Home sleep apnea test (Type III) | Rarely | Not diagnostic for narcolepsy |\n\n## ICD-10-CM Diagnosis Codes\n\n| ICD-10 | Description | Use When |\n| --- | --- | --- |\n| G47.411 | Narcolepsy with cataplexy (Type 1) | Cataplexy confirmed; CSF hypocretin low or absent |\n| G47.419 | Narcolepsy without cataplexy (Type 2) | EDS + MSLT positive; no cataplexy; normal CSF |\n| G47.421 | Narcolepsy in conditions classified elsewhere, with cataplexy | Secondary narcolepsy with cataplexy |\n| G47.429 | Narcolepsy in conditions classified elsewhere, without cataplexy | Secondary narcolepsy without cataplexy |\n| G47.10 | Hypersomnia, unspecified | Pending full diagnostic workup |\n| G47.19 | Other hypersomnia | Idiopathic hypersomnia, Kleine-Levin |\n\n## Medication Prior Authorization Requirements\n\n### Sodium Oxybate (Xyrem)\nBrand: Xyrem / Jazz Pharmaceuticals\nSchedule: Schedule III (REMS program required)\nRequirements:\n- Confirmed narcolepsy diagnosis (PSG + MSLT)\n- DEA Schedule III — REMS enrollment mandatory\n- Prescriber must be REMS-certified\n- Pharmacy: Certified specialty pharmacy only\n- Step therapy: Modafinil or stimulant trial often required first\nCommon denial reason: REMS non-compliance, step therapy not met\n\n### Low-Sodium Oxybate (Lumryz)\nBrand: Lumryz / Avadel\nSchedule: Schedule III (REMS program required)\nRequirements:\n- Same as Xyrem; once-nightly formulation\n- REMS enrollment required\n- Step therapy: Prior Xyrem or stimulant trial\nCommon denial reason: Step therapy, formulary preference for Xyrem\n\n### Pitolisant (Wakix)\nBrand: Wakix / Harmony Biosciences\nSchedule: Non-scheduled (H3 receptor antagonist)\nRequirements:\n- Confirmed narcolepsy diagnosis\n- PSG + MSLT documentation\n- Step therapy: Modafinil trial often required\n- Preferred for patients with substance use risk\nCommon denial reason: Step therapy not met, off-label use for Type 2\n\n### Solriamfetol (Sunosi)\nBrand: Sunosi / Jazz Pharmaceuticals\nSchedule: Schedule IV\nRequirements:\n- Confirmed narcolepsy diagnosis\n- PSG + MSLT documentation\n- Step therapy: Modafinil trial often required\nCommon denial reason: Step therapy, formulary tier restrictions\n\n### Modafinil (Provigil) / Armodafinil (Nuvigil)\nBrand: Provigil / Nuvigil (generics available)\nSchedule: Schedule IV\nRequirements:\n- Narcolepsy diagnosis (ICD-10 G47.41x)\n- Often first-line per payer step therapy\nCommon denial reason: Rarely denied for confirmed narcolepsy\n\n## Documentation Checklist for Prior Auth\n- PSG report with total sleep time, sleep efficiency, REM latency, and SOREMP notation\n- MSLT report: mean sleep onset latency ≤8 min AND ≥2 SOREMPs\n- ESS score ≥10 documented in clinic note\n- Cataplexy description (if Type 1): specific emotional triggers, duration, frequency\n- CSF hypocretin-1 level (if obtained): ≤110 pg/mL diagnostic for NT1\n- Sleep specialist attestation of ICSD-3 diagnostic criteria\n- Step therapy documentation: prior stimulant/modafinil trial with inadequate response\n- REMS enrollment confirmation (for sodium oxybate)\n- Absence of contraindications (e.g., MAOIs for pitolisant; severe hepatic impairment for oxybate)\n\n## References\n1. Maski K, et al. \"Treatment of Central Disorders of Hypersomnolence: An American Academy of Sleep Medicine Clinical Practice Guideline.\" J Clin Sleep Med. 2021;17(9):1881–1893.\n2. American Academy of Sleep Medicine. International Classification of Sleep Disorders, 3rd ed. Darien, IL: AASM; 2014.\n3. Dauvilliers Y, et al. \"Narcolepsy with cataplexy.\" Lancet. 2007;369(9560):499–511.\n4. Thorpy MJ, et al. \"Consensus practice parameters for the treatment of narcolepsy.\" Sleep. 2001;24(4):451–466.\n5. AASM Practice Guidelines: https://aasm.org/clinical-resources/practice-standards/practice-guidelines/\n\n[Button] Generate Appeal Letter → /sleep/narcolepsy/appeal-letter",
+      "tables": [
+        {
+          "name": "CPT Codes — Narcolepsy Workup & Management",
+          "header": ["CPT Code", "Description", "Auth Required", "Notes"],
+          "rows": [
+            ["95810", "Polysomnography (PSG) — ≥6 parameters, attended", "Often", "Required before MSLT per AASM"],
+            ["95805", "Multiple Sleep Latency Test (MSLT)", "Often", "Must follow PSG; 5 nap opportunities"],
+            ["95806", "Sleep study, unattended, Type III", "Sometimes", "Not appropriate for narcolepsy workup"],
+            ["99213–99215", "Office visit — E&M (sleep specialist)", "Rarely", "Document EDS, cataplexy, ESS score"],
+            ["G0399", "Home sleep apnea test (Type III)", "Rarely", "Not diagnostic for narcolepsy"]
+          ]
+        },
+        {
+          "name": "ICD-10-CM Diagnosis Codes",
+          "header": ["ICD-10", "Description", "Use When"],
+          "rows": [
+            ["G47.411", "Narcolepsy with cataplexy (Type 1)", "Cataplexy confirmed; CSF hypocretin low or absent"],
+            ["G47.419", "Narcolepsy without cataplexy (Type 2)", "EDS + MSLT positive; no cataplexy; normal CSF"],
+            ["G47.421", "Narcolepsy in conditions classified elsewhere, with cataplexy", "Secondary narcolepsy with cataplexy"],
+            ["G47.429", "Narcolepsy in conditions classified elsewhere, without cataplexy", "Secondary narcolepsy without cataplexy"],
+            ["G47.10", "Hypersomnia, unspecified", "Pending full diagnostic workup"],
+            ["G47.19", "Other hypersomnia", "Idiopathic hypersomnia, Kleine-Levin"]
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Liver Tumor Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "47382, 47383, 47381",
+      "credentials": "[Credentials]",
+      "icd_codes": "C22.0, C78.7",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — Liver Tumor Ablation / TACE / TARE / Resection\nCPT Code(s): 47370, 47371, 47380, 47381, 47382, 37243, 77427\nICD-10 Code(s): C22.0, C22.1, C78.7, D13.4\nDear Medical Director / Utilization Review Committee,\n\nThis letter serves as an urgent appeal for coverage of Liver Tumor Ablation / TACE / TARE / Resection for our patient, {{patient_name}}, born {{patient_dob}}, policy number {{policy_number}}. The patient has been diagnosed with a liver tumor, and based on an appropriate stage and current clinical status, the recommended treatment is medically necessary.\n\nClinical Summary:\n{{patient_name}} presents with [BRIEF_CLINICAL_SUMMARY_INCLUDING_DIAGNOSIS_AND_SYMPTOMS]. Diagnostic imaging and laboratory findings confirm the presence of a liver tumor, which is currently at an appropriate stage. Without timely intervention, the patient faces significant risks of disease progression, worsening liver function, and reduced survival.\n\nGuideline Support:\n1. The AASLD HCC Practice Guidance 2022, EASL Clinical Practice Guidelines on HCC 2022, NCCN Hepatobiliary Cancers Guidelines v2.2024, and BCLC Staging and Treatment Algorithm 2022 all support a comprehensive treatment strategy for patients with similar clinical profiles. These guidelines provide strong evidence for the efficacy and necessity of Liver Tumor Ablation / TACE / TARE / Resection in managing liver tumors.\n2. Specifically, the guidelines recommend intervention for tumors of this size and location to prevent metastatic spread and improve long-term outcomes. Our patient's condition aligns precisely with the criteria for intervention outlined in these nationally recognized guidelines.\n\nMedical Necessity Statement:\nThe requested Liver Tumor Ablation / TACE / TARE / Resection is not only appropriate but also medically essential for {{patient_name}}. This procedure is expected to [EXPECTED_BENEFITS_E.G._ERADICATE_TUMOR,_CONTROL_DISEASE,_IMPROVE_QUALITY_OF_LIFE] and is the most effective treatment option to address the patient's condition, as supported by the clinical rationale.\n\nRisk Without Treatment:\nDelay or denial of this critical procedure would expose {{patient_name}} to severe and irreversible health consequences, including continued tumor growth, potential for metastasis, liver failure, and ultimately, a significant reduction in life expectancy. The risks associated with delaying treatment far outweigh any potential risks of the procedure itself.\n\nRequested Action:\nWe respectfully request that you reconsider your denial and approve coverage for Liver Tumor Ablation / TACE / TARE / Resection without further delay. Prompt authorization is crucial for {{patient_name}}'s prognosis and well-being. Please contact my office at your earliest convenience to discuss this matter further.\n\n{{additional_clinical_notes}}\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

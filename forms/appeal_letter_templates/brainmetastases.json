@@ -1,0 +1,30 @@
+{
+  "title": "Brain Metastases Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "77371, 77372, 61510",
+      "credentials": "[Credentials]",
+      "icd_codes": "C79.31",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — Brain Metastases Treatment (SRS / WBRT / Surgery)\nCPT Code(s): 77371, 77372, 77373, 61510, 61512\nICD-10 Code(s): C79.31, C79.32, C79.49\nDear Medical Director / Utilization Review Committee,\n\nThe patient, a patient with brain metastases, has been thoroughly evaluated. The recommended treatment is treatment.\n\n\nGuideline Support:\n1. NCCN Central Nervous System Cancers Guidelines v2.2024: These guidelines support the recommended treatment based on the patient's clinical presentation and disease characteristics.\n2. ASTRO Stereotactic Radiosurgery for Brain Metastases Guidelines 2022: These guidelines provide evidence for the efficacy of SRS in similar patient populations.\n3. AANS/CNS Guidelines on Brain Metastases 2019: These guidelines support surgical intervention when appropriate, followed by adjuvant therapy.\n4. EANO Guidelines on Brain Metastases 2021: These guidelines advocate for a personalized, multidisciplinary approach to brain metastases management, aligning with our treatment plan.\n\nRationale: Based on comprehensive clinical assessment and current evidence-based guidelines, the proposed treatment is medically necessary.\n\n\nMedical Necessity Statement: The requested Brain Metastases Treatment (SRS / WBRT / Surgery) is medically necessary to achieve local control of brain metastases, preserve neurological function, alleviate symptoms, and improve overall survival. This treatment aligns with established national and international guidelines for optimal patient management.\n\n\nRisk Without Treatment: Without the recommended treatment, the patient is at high risk for progressive neurological deficits, increased intracranial pressure, seizures, and a significant reduction in quality of life and life expectancy.\n\n\nRequested Action: We respectfully request immediate authorization for the Brain Metastases Treatment (SRS / WBRT / Surgery) for this patient. Please contact our office if additional information is required.\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

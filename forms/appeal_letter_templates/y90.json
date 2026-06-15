@@ -1,0 +1,30 @@
+{
+  "title": "Y-90 Radioembolization Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "79445, 37243, 78816, 78816",
+      "credentials": "[Credentials]",
+      "icd_codes": "C22.0, C78.7, C22.1, C18.9, C25.9, K76.89",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "Re: Prior Authorization Appeal — Yttrium-90 Radioembolization (Y90 TARE)\n\nDear Medical Director,\n\nI am writing to formally appeal the denial of prior authorization for Yttrium-90 transarterial radioembolization (Y90 TARE) for my patient who presents with primary or metastatic hepatic malignancy requiring locoregional therapy.\n\nCLINICAL ASSESSMENT SUMMARY\n\nOur clinical decision support assessment classified this patient as ELIGIBLE for Y90 radioembolization. \n\nCLINICAL INDICATION\n\nThis patient has documented hepatic malignancy (primary hepatocellular carcinoma [HCC] or liver-dominant metastases) with preserved hepatic function (Child-Pugh A or B7) and performance status (ECOG 0–2) appropriate for locoregional therapy. The patient is not a candidate for curative-intent resection or ablation, or has failed prior systemic therapy, making Y90 TARE the medically appropriate next intervention.\n\nEVIDENCE BASE FOR Y90 RADIOEMBOLIZATION\n\n1. Salem R et al. Y90 Radioembolization for HCC — DOSISPHERE-01 Trial. Hepatology 2021; PMID 32767622 — randomized trial demonstrating superior tumor response and overall survival with personalized Y90 dosimetry vs. standard dosing.\n\n2. Ricke J et al. Y90 Radioembolization for Liver Metastases — SORAMIC Trial. Lancet Oncol 2019; PMID 31303375 — phase III trial evaluating Y90 + sorafenib in HCC.\n\n3. Sangro B et al. A Prospective Phase II Study of Yttrium-90 Resin Microspheres in Patients with Unresectable HCC. J Hepatol 2006; PMID 16815578 — 24% complete/partial response rate in unresectable HCC.\n\n4. Kennedy A et al. Radioembolization for Unresectable Neuroendocrine Hepatic Metastases. Cancer 2008; PMID 18240129 — 50% objective response rate in neuroendocrine liver metastases.\n\n5. CMS National Coverage Determination 260.1 — Intravenous Immune Globulin for the Treatment of Autoimmune Mucocutaneous Blistering Diseases (as applicable); Medicare covers Y90 for HCC and colorectal liver metastases under LCD L38072 and related policies.\n\n6. NCCN Clinical Practice Guidelines — Hepatocellular Carcinoma (2024) — recommends Y90 TARE as a Category 2A option for intermediate-stage HCC (BCLC B) and as a bridge/downstaging strategy.\n\n7. ASCO/SSO/ASTRO Guidelines — Y90 is endorsed for liver-dominant metastatic colorectal cancer (mCRC) following failure of first-line chemotherapy (SIRFLOX, FOXFIRE, FOXFIRE-Global trials).\n\nMEDICAL NECESSITY\n\nDenial of Y90 radioembolization would leave this patient without an effective locoregional treatment option. Systemic therapy alone has demonstrated inferior outcomes in liver-dominant disease. Y90 TARE is a well-established, guideline-supported procedure with a favorable safety profile, performed as an outpatient procedure, and has demonstrated durable tumor control and survival benefit in multiple phase III trials.\n\nREQUESTED ACTION\n\nI respectfully request reconsideration and approval of prior authorization for:\n- CPT {{cpt_codes}} — Y90 Radioembolization\n- ICD-10 {{icd_codes}}\n\nI am available for a peer-to-peer review. Please contact me at {{practice_phone}}.\n\nSincerely,\n\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\n{{practice_address}}\nPhone: {{practice_phone}} | Fax: {{practice_fax}}\n{{practice_email}}"
+  }
+}

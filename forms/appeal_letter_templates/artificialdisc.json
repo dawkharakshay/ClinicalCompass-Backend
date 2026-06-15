@@ -1,0 +1,30 @@
+{
+  "title": "Artificial Disc Replacement Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "22856, 22858, 22861, 22857, 22862",
+      "credentials": "[Credentials]",
+      "icd_codes": "M50.12, M50.22, M47.812, M51.16, M51.17, M47.816",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\n{{insurance_name}}\n{{insurance_address}}\nAttn: Medical Director / Appeals Department\nRe: Prior Authorization Appeal — Cervical Artificial Disc Replacement (ADR)\nPatient: {{patient_name}} | DOB: {{patient_dob}} | Member ID: {{member_id}}\nClaim/Auth #: {{claim_number}} | Date of Denial: [DATE OF DENIAL]\nCPT Code(s): 22856, 22858 | ICD-10: M51.16, M54.4\n\nDear Medical Director,\n\nI am writing to formally appeal the denial of prior authorization for Cervical Artificial Disc Replacement (ADR) for my patient {{patient_name}}. The Clinical Compass™ ADR Decision Support assessment yielded a recommendation of \"[ADR Recommendation]\" (Class of Recommendation [COR]) based on FDA approval criteria and NASS clinical guidelines.\n\nCLINICAL JUSTIFICATION:\n• Patient presents with symptomatic cervical disc disease with radiculopathy or myelopathy\n• MRI evidence of disc herniation/degeneration with neural compression at [LEVEL(S)]\n• Failure of ≥6 weeks conservative therapy documented\n• Patient meets FDA-approved indications for cervical TDR\n\nDIAGNOSIS:\n• Primary diagnosis: Cervical degenerative disc disease with [radiculopathy / myelopathy]\n• Level(s) involved: [e.g., C5-C6, C6-C7] — [single / two-level]\n• Neurological symptoms: [DESCRIBE — arm pain, numbness, weakness, myelopathic symptoms]\n• NDI Score: [SCORE]% (moderate disability 30-50%; severe >50%)\n\nCONSERVATIVE THERAPY DOCUMENTATION:\nThis patient has completed a comprehensive course of conservative management including:\n• Physical therapy / cervical traction: [DURATION — minimum 6 weeks, OUTCOMES]\n• NSAIDs / analgesic medications: [MEDICATIONS, DURATION, RESPONSE]\n• Cervical epidural steroid injections: [NUMBER, DATES, RESPONSE]\n• Activity modification and cervical collar (if applicable): [DETAILS]\n\nIMAGING FINDINGS:\n• MRI cervical spine ({{letter_date}}): [DESCRIBE — disc herniation, foraminal stenosis, cord compression, disc height loss]\n• CT cervical spine ({{letter_date}}, if applicable): [DESCRIBE — bony anatomy, osteophytes]\n• Disc height loss: [PERCENTAGE] at [LEVEL(S)]\n• Neural compression: [DESCRIBE — foraminal narrowing, cord signal change if myelopathy]\n\nFDA-APPROVED INDICATIONS MET:\nThis patient meets all FDA-approved indications for cervical total disc replacement:\n• Symptomatic cervical DDD at [1 or 2] level(s) between C3-C7\n• Radiculopathy or myelopathy refractory to ≥6 weeks conservative therapy\n• Skeletally mature patient (age [AGE])\n• Absence of contraindications: no cervical instability, no significant osteoporosis, no active infection, no allergy to device materials\n• Appropriate disc height preservation (>3mm) for device implantation\n\nMEDICAL NECESSITY AND ADVANTAGE OVER FUSION:\nCervical ADR is medically necessary and preferred over ACDF for this patient because:\n1. Motion preservation reduces adjacent segment degeneration — a known long-term complication of fusion\n2. FDA-approved devices have demonstrated non-inferiority or superiority to ACDF in multiple Level I RCTs\n3. Patient's age and activity level make motion preservation clinically advantageous\n4. Long-term data (7+ years) demonstrate superior outcomes with TDR vs ACDF (Gornet et al., 2019)\n\nGUIDELINE SUPPORT:\nMultiple FDA-approved cervical disc replacement devices have demonstrated safety and efficacy in Level I randomized controlled trials with 7-10 year follow-up. NASS coverage policy supports cervical TDR for single or two-level cervical DDD with radiculopathy or myelopathy refractory to conservative care. The procedure is covered under CMS LCD L36920 when FDA-approved indications are met.\n\nI respectfully request immediate reconsideration and approval of prior authorization for Cervical Artificial Disc Replacement. Please contact my office at {{practice_phone}} or {{practice_email}} if additional clinical documentation is required.\n\nSincerely,\n\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\n{{practice_phone}} | {{practice_email}}"
+  }
+}

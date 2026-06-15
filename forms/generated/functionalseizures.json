@@ -1,0 +1,203 @@
+{
+  "title": "Functional Seizures (PNES)",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "functionalseizures",
+    "hiddenDefaults": {
+      "isPediatric": false
+    },
+    "steps": [
+      {
+        "id": "diagnostic-workup",
+        "shortLabel": "Diagnostic Workup",
+        "title": "Diagnostic Workup",
+        "fields": [
+          {
+            "id": "diagnostic-certainty",
+            "name": "diagnosticCertainty",
+            "label": "Diagnostic Certainty",
+            "type": "select",
+            "defaultValue": "probable",
+            "options": [
+              { "label": "Definite — VEEG-confirmed ictal event, no EEG correlate", "value": "definite" },
+              { "label": "Probable — Clinical diagnosis without VEEG capture", "value": "probable" },
+              { "label": "Possible — Suspected but insufficient evidence", "value": "possible" },
+              { "label": "Not yet assessed", "value": "not_yet_assessed" }
+            ]
+          },
+          {
+            "id": "veeg-performed",
+            "name": "veegPerformed",
+            "label": "VEEG Performed",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "veeg-result",
+            "name": "veegResult",
+            "label": "VEEG Result",
+            "type": "select",
+            "defaultValue": "not_done",
+            "visibleWhen": { "field": "veegPerformed", "op": "truthy" },
+            "options": [
+              { "label": "PNES confirmed — ictal event, no EEG correlate", "value": "pnes_confirmed" },
+              { "label": "Epilepsy confirmed — EEG correlate present", "value": "epilepsy_confirmed" },
+              { "label": "Non-diagnostic", "value": "non_diagnostic" },
+              { "label": "Not done", "value": "not_done" }
+            ]
+          },
+          {
+            "id": "semiology",
+            "name": "semiology",
+            "label": "Seizure Semiology",
+            "type": "select",
+            "defaultValue": "motor_thrashing",
+            "options": [
+              { "label": "Motor thrashing / waxing-waning / side-to-side head movement", "value": "motor_thrashing" },
+              { "label": "Prolonged unresponsiveness without motor features", "value": "prolonged_unresponsive" },
+              { "label": "Mixed / variable presentations", "value": "mixed_features" },
+              { "label": "Unclear", "value": "unclear" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "co-occurring-conditions",
+        "shortLabel": "Co-occurring Conditions",
+        "title": "Co-occurring Conditions",
+        "fields": [
+          {
+            "id": "has-co-occurring-epilepsy",
+            "name": "hasCoOccurringEpilepsy",
+            "label": "Co-occurring Epilepsy",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "epilepsy-seizure-type",
+            "name": "epilepsySeizureType",
+            "label": "Epilepsy Seizure Type",
+            "type": "select",
+            "defaultValue": "unknown",
+            "visibleWhen": { "field": "hasCoOccurringEpilepsy", "op": "truthy" },
+            "options": [
+              { "label": "Focal", "value": "focal" },
+              { "label": "Generalized", "value": "generalized" },
+              { "label": "Unknown", "value": "unknown" }
+            ]
+          },
+          {
+            "id": "psychiatric-comorbidity",
+            "name": "psychiatricComorbidity",
+            "label": "Psychiatric Comorbidity",
+            "type": "select",
+            "defaultValue": "depression_anxiety",
+            "options": [
+              { "label": "None identified", "value": "none" },
+              { "label": "PTSD", "value": "ptsd" },
+              { "label": "Depression / Anxiety", "value": "depression_anxiety" },
+              { "label": "Somatic Symptom Disorder", "value": "somatic_symptom_disorder" },
+              { "label": "Dissociative Disorder", "value": "dissociative_disorder" },
+              { "label": "Multiple comorbidities", "value": "multiple" }
+            ]
+          },
+          {
+            "id": "has-other-functional-neurologic-symptoms",
+            "name": "hasOtherFunctionalNeurologicSymptoms",
+            "label": "Other Functional Neurologic Symptoms",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "current-management",
+        "shortLabel": "Current Management",
+        "title": "Current Management",
+        "fields": [
+          {
+            "id": "currently-on-antiseizure-meds",
+            "name": "currentlyOnAntiseizureMeds",
+            "label": "Currently on Antiseizure Medications",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "antiseizure-meds-for-functional-only",
+            "name": "antiseizureMedsForFunctionalOnly",
+            "label": "ASMs prescribed for functional seizures only (no epilepsy)",
+            "type": "switch",
+            "defaultValue": false,
+            "visibleWhen": {
+              "all": [
+                { "field": "currentlyOnAntiseizureMeds", "op": "truthy" },
+                { "field": "hasCoOccurringEpilepsy", "op": "falsy" }
+              ]
+            }
+          },
+          {
+            "id": "currently-in-psychotherapy",
+            "name": "currentlyInPsychotherapy",
+            "label": "Currently in Psychotherapy",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "psychotherapy-type",
+            "name": "psychotherapyType",
+            "label": "Psychotherapy Type",
+            "type": "select",
+            "defaultValue": "none",
+            "visibleWhen": { "field": "currentlyInPsychotherapy", "op": "truthy" },
+            "options": [
+              { "label": "CBT (Cognitive Behavioral Therapy)", "value": "cbt" },
+              { "label": "Mindfulness-based therapy", "value": "mindfulness" },
+              { "label": "Neurobehavioral therapy", "value": "neuro_behavioral" },
+              { "label": "Other", "value": "other" },
+              { "label": "Not currently in therapy", "value": "none" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "patient-context",
+        "shortLabel": "Patient Context",
+        "title": "Patient Context",
+        "fields": [
+          {
+            "id": "patient-age-years",
+            "name": "patientAgeYears",
+            "label": "Patient Age (years)",
+            "type": "number",
+            "defaultValue": 35,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "diagnosis-delay-years",
+            "name": "diagnosisDelayYears",
+            "label": "Diagnosis Delay (years from symptom onset to diagnosis)",
+            "type": "number",
+            "defaultValue": 3,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "has-emergency-presentations",
+            "name": "hasEmergencyPresentations",
+            "label": "Recurrent Emergency Department Presentations",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "family-involved-in-care",
+            "name": "familyInvolvedInCare",
+            "label": "Family / Caregiver Involved in Care",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

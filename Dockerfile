@@ -1,0 +1,27 @@
+# syntax=docker/dockerfile:1
+FROM python:3.10-slim
+
+# Bring in uv from the official distroless image.
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+
+WORKDIR /app
+
+ENV UV_LINK_MODE=copy \
+    UV_COMPILE_BYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+# Install dependencies first (cached layer) using only the lockfile.
+COPY pyproject.toml uv.lock ./
+RUN uv sync --frozen --no-dev --no-install-project
+
+# Then copy the app and finish the sync.
+COPY . .
+RUN uv sync --frozen --no-dev
+RUN chmod +x /app/docker-entrypoint.sh
+
+EXPOSE 8000
+
+# Entrypoint seeds the catalog (idempotent) before starting the API; CMD is the
+# command it execs. Disable seeding with SEED_ON_STARTUP=0.
+ENTRYPOINT ["/app/docker-entrypoint.sh"]
+CMD ["uv", "run", "--no-dev", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

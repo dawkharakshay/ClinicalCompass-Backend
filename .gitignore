@@ -1,0 +1,35 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Secrets / local env — never commit (.env.example is the committed template)
+.env
+.env.*
+!.env.example
+
+# Local database & data
+*.db
+clinicalcompass.db
+
+# IDE / editor
+.idea/
+.vscode/
+
+# Tooling caches
+.ruff_cache/
+.pytest_cache/
+
+# Claude Code project memory (not part of the backend)
+memory/
+.claude/
+
+# Legacy reference material (kept locally for the port, not in the repo)
+old_static_code/
+old data/

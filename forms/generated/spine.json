@@ -1,0 +1,320 @@
+{
+  "title": "Spine Surgery Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "spine",
+    "hiddenDefaults": {
+      "conservativeTreatmentsTrialed": ["PT", "NSAIDs"]
+    },
+    "steps": [
+      {
+        "id": "condition-neurology",
+        "shortLabel": "Condition & Neurology",
+        "title": "Spinal Condition & Neurologic Status",
+        "fields": [
+          {
+            "id": "condition",
+            "name": "condition",
+            "label": "Spinal Condition",
+            "type": "select",
+            "required": false,
+            "defaultValue": "lumbar_disc_herniation",
+            "options": [
+              { "label": "Lumbar Disc Herniation", "value": "lumbar_disc_herniation" },
+              { "label": "Lumbar Spinal Stenosis", "value": "lumbar_stenosis" },
+              { "label": "Lumbar Spondylolisthesis", "value": "lumbar_spondylolisthesis" },
+              { "label": "Cervical Radiculopathy", "value": "cervical_radiculopathy" },
+              { "label": "Cervical Myelopathy", "value": "cervical_myelopathy" },
+              { "label": "Lumbar Degenerative Disc Disease (Axial LBP)", "value": "lumbar_degenerative_disc" },
+              { "label": "Spinal Fracture", "value": "spinal_fracture" },
+              { "label": "Spinal Tumor", "value": "spinal_tumor" },
+              { "label": "Spinal Infection (Discitis/Osteomyelitis)", "value": "spinal_infection" }
+            ]
+          },
+          {
+            "id": "neurologic-status",
+            "name": "neurologicStatus",
+            "label": "Neurologic Status",
+            "type": "select",
+            "required": false,
+            "defaultValue": "radiculopathy_only",
+            "options": [
+              { "label": "Neurologically intact", "value": "intact" },
+              { "label": "Radiculopathy only (pain/paresthesia)", "value": "radiculopathy_only" },
+              { "label": "Progressive motor deficit", "value": "progressive_deficit" },
+              { "label": "Cauda equina syndrome", "value": "cauda_equina" },
+              { "label": "Mild myelopathy (cervical)", "value": "myelopathy_mild" },
+              { "label": "Moderate myelopathy (cervical)", "value": "myelopathy_moderate" },
+              { "label": "Severe myelopathy (cervical)", "value": "myelopathy_severe" }
+            ]
+          },
+          {
+            "id": "red-flags-header",
+            "type": "alert",
+            "severity": "error",
+            "text": "RED FLAGS — Check All That Apply"
+          },
+          {
+            "id": "cauda-equina-syndrome",
+            "name": "cauda_equina_syndrome",
+            "label": "Cauda Equina Syndrome",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "progressive-neurologic-deficit",
+            "name": "progressiveNeurologicDeficit",
+            "label": "Progressive Neurologic Deficit",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "malignancy",
+            "name": "malignancy",
+            "label": "Known Malignancy",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "infection",
+            "name": "infection",
+            "label": "Spinal Infection",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "fracture",
+            "name": "fracture",
+            "label": "Spinal Fracture",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "spinal-instability",
+            "name": "spinalInstability",
+            "label": "Spinal Instability",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "symptoms-imaging",
+        "shortLabel": "Symptoms & Imaging",
+        "title": "Symptoms, Conservative Trial & Imaging",
+        "fields": [
+          {
+            "id": "pain-duration-weeks",
+            "name": "painDurationWeeks",
+            "label": "Pain Duration (weeks)",
+            "type": "slider",
+            "required": false,
+            "defaultValue": 8,
+            "unit": "weeks"
+          },
+          {
+            "id": "pain-severity-vas",
+            "name": "painSeverityVAS",
+            "label": "Pain Severity (VAS) /10",
+            "type": "slider",
+            "required": false,
+            "defaultValue": 6,
+            "unit": "/10"
+          },
+          {
+            "id": "functional-impairment",
+            "name": "functionalImpairment",
+            "label": "Functional Impairment",
+            "type": "select",
+            "required": false,
+            "defaultValue": "moderate",
+            "options": [
+              { "label": "None", "value": "none" },
+              { "label": "Mild — minimal activity limitation", "value": "mild" },
+              { "label": "Moderate — significant activity limitation", "value": "moderate" },
+              { "label": "Severe — unable to perform daily activities", "value": "severe" }
+            ]
+          },
+          {
+            "id": "conservative-trial-duration",
+            "name": "conservativeTrialDuration",
+            "label": "Conservative Trial Duration",
+            "type": "select",
+            "required": false,
+            "defaultValue": "6_to_12_weeks",
+            "options": [
+              { "label": "None — no conservative treatment", "value": "none" },
+              { "label": "Less than 6 weeks", "value": "less_than_6_weeks" },
+              { "label": "6–12 weeks", "value": "6_to_12_weeks" },
+              { "label": "More than 12 weeks (failed)", "value": "more_than_12_weeks" }
+            ]
+          },
+          {
+            "id": "imaging-findings",
+            "name": "imagingFindings",
+            "label": "Imaging Findings",
+            "type": "select",
+            "required": false,
+            "defaultValue": "disc_herniation",
+            "options": [
+              { "label": "No imaging performed", "value": "no_imaging" },
+              { "label": "Disc bulge only (no herniation)", "value": "disc_bulge_only" },
+              { "label": "Disc herniation", "value": "disc_herniation" },
+              { "label": "Moderate stenosis", "value": "moderate_stenosis" },
+              { "label": "Severe stenosis", "value": "severe_stenosis" },
+              { "label": "Spondylolisthesis Grade I", "value": "spondylolisthesis_grade1" },
+              { "label": "Spondylolisthesis Grade II+", "value": "spondylolisthesis_grade2_plus" },
+              { "label": "Stable fracture", "value": "fracture_stable" },
+              { "label": "Unstable fracture", "value": "fracture_unstable" },
+              { "label": "Tumor or infection", "value": "tumor_or_infection" }
+            ]
+          },
+          {
+            "id": "imaging-clinical-correlation",
+            "name": "imagingClinicalCorrelation",
+            "label": "Imaging Correlates with Symptoms",
+            "type": "radio",
+            "required": false,
+            "defaultValue": true,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "patient-factors",
+        "shortLabel": "Patient Factors",
+        "title": "Patient Factors & Surgical Risk",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "slider",
+            "required": false,
+            "defaultValue": 0,
+            "unit": "years"
+          },
+          {
+            "id": "smoker",
+            "name": "smoker",
+            "label": "Smoker",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "obesity",
+            "name": "obesity",
+            "label": "Obesity (BMI ≥35)",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "diabetes",
+            "name": "diabetes",
+            "label": "Diabetes",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "osteoporosis",
+            "name": "osteoporosis",
+            "label": "Osteoporosis",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "psychosocial-factors",
+            "name": "psychosocialFactors",
+            "label": "Psychosocial Factors (depression, catastrophizing, work-related)",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "prior-spine-surgery",
+            "name": "priorSpineSurgery",
+            "label": "Prior Spine Surgery",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "patient-prefers-surgery",
+            "name": "patientPrefersSurgery",
+            "label": "Patient Prefers Surgery",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

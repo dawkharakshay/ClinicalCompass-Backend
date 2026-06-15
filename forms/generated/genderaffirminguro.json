@@ -1,0 +1,179 @@
+{
+  "title": "Gender-Affirming Urologic Procedures Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assessment",
+    "logicKey": "genderaffirminguro",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "patient-identity",
+        "shortLabel": "Patient Identity",
+        "title": "Patient Identity",
+        "fields": [
+          {
+            "id": "gender-identity",
+            "name": "genderIdentity",
+            "label": "Gender Identity",
+            "type": "select",
+            "required": false,
+            "defaultValue": "trans_woman",
+            "options": [
+              { "label": "Transgender woman (MTF)", "value": "trans_woman" },
+              { "label": "Transgender man (FTM)", "value": "trans_man" },
+              { "label": "Non-binary / gender diverse", "value": "non_binary" },
+              { "label": "Other gender identity", "value": "other" }
+            ]
+          },
+          {
+            "id": "patient-age",
+            "name": "patientAge",
+            "label": "Patient Age (years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "proposed-procedure",
+            "name": "proposedProcedure",
+            "label": "Proposed Urologic Procedure",
+            "type": "select",
+            "required": false,
+            "defaultValue": "vaginoplasty",
+            "options": [
+              { "label": "Vaginoplasty (penile inversion / peritoneal pull-through)", "value": "vaginoplasty" },
+              { "label": "Phalloplasty (radial forearm / ALT flap)", "value": "phalloplasty" },
+              { "label": "Metoidioplasty", "value": "metoidioplasty" },
+              { "label": "Orchiectomy (bilateral)", "value": "orchiectomy" },
+              { "label": "Hysterectomy + bilateral oophorectomy", "value": "hysterectomy_oophorectomy" },
+              { "label": "Urethroplasty (urethral lengthening)", "value": "urethroplasty" },
+              { "label": "Scrotoplasty", "value": "scrotoplasty" },
+              { "label": "Other gender-affirming urologic procedure", "value": "other" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "wpath-criteria",
+        "shortLabel": "WPATH Criteria",
+        "title": "WPATH Criteria",
+        "fields": [
+          {
+            "id": "wpath-info",
+            "label": "WPATH SOC-8 Criteria for Genital Surgery",
+            "type": "alert",
+            "severity": "info",
+            "text": "The following criteria are based on WPATH Standards of Care Version 8 (2022), which replaced the SOC-7 two-letter requirement with a more individualized, informed-consent model for many procedures."
+          },
+          {
+            "id": "diagnosis-gender-dysphoria",
+            "name": "diagnosisGenderDysphoria",
+            "label": "Gender dysphoria diagnosis documented (DSM-5 F64.0 or ICD-11 HA60)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "persistent-dysphoria",
+            "name": "persistentDysphoria",
+            "label": "Persistent, well-documented gender dysphoria",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "duration-months",
+            "name": "durationMonths",
+            "label": "Duration of Gender Dysphoria (months)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "numeric"
+          }
+        ]
+      },
+      {
+        "id": "medical-readiness",
+        "shortLabel": "Medical Readiness",
+        "title": "Medical Readiness",
+        "fields": [
+          {
+            "id": "mental-health-evaluation",
+            "name": "mentalHealthEvaluation",
+            "label": "Mental health evaluation completed by qualified provider",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "mental-health-clearance",
+            "name": "mentalHealthClearance",
+            "label": "Surgical clearance obtained from mental health provider",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "comorbid-mental-health-treated",
+            "name": "comorbidMentalHealthTreated",
+            "label": "Comorbid mental health conditions treated and stable",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": true
+          },
+          {
+            "id": "informed-consent",
+            "name": "informedConsent",
+            "label": "Informed consent process completed (risks, benefits, alternatives)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "two-letters-obtained",
+            "name": "twoLettersObtained",
+            "label": "Two letters of support from qualified mental health professionals obtained (legacy payer requirement)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "procedure-selection",
+        "shortLabel": "Procedure Selection",
+        "title": "Procedure Selection",
+        "fields": [
+          {
+            "id": "hormone-therapy-months",
+            "name": "hormoneTherapyMonths",
+            "label": "Duration of Hormone Therapy (months)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "hormone-therapy-contraindicated",
+            "name": "hormoneTherapyContraindicated",
+            "label": "Hormone therapy medically contraindicated (documented)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "real-life-experience-months",
+            "name": "realLifeExperienceMonths",
+            "label": "Real-Life Experience in Affirmed Gender (months)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "numeric"
+          }
+        ]
+      }
+    ]
+  }
+}

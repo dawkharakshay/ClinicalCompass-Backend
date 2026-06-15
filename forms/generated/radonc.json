@@ -1,0 +1,817 @@
+{
+  "title": "Radiation Oncology Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Get Recommendations",
+    "logicKey": "radonc",
+    "hiddenDefaults": {
+      "alk": false,
+      "priorProstatectomy": false,
+      "hccPriorTACE": false
+    },
+    "steps": [
+      {
+        "id": "disease-site",
+        "shortLabel": "Disease Site",
+        "title": "Select Disease Site",
+        "fields": [
+          {
+            "id": "disease-category",
+            "name": "diseaseCategory",
+            "label": "Disease Site",
+            "type": "buttongroup",
+            "required": true,
+            "defaultValue": "",
+            "options": [
+              { "label": "CNS Tumors", "value": "cns" },
+              { "label": "Head & Neck", "value": "head_neck" },
+              { "label": "NSCLC", "value": "nsclc" },
+              { "label": "SCLC", "value": "sclc" },
+              { "label": "Prostate", "value": "prostate" },
+              { "label": "Esophageal / GEJ", "value": "esophageal" },
+              { "label": "Gastric", "value": "gastric" },
+              { "label": "Rectal", "value": "rectal" },
+              { "label": "Lymphoma", "value": "lymphoma" },
+              { "label": "Hepatocellular Carcinoma", "value": "hcc" },
+              { "label": "Breast", "value": "breast" },
+              { "label": "Skin (BCC / cSCC)", "value": "skin" },
+              { "label": "Palliative / Oligometastatic", "value": "palliative" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "clinical-details",
+        "shortLabel": "Clinical Details",
+        "title": "Clinical Details",
+        "fields": [
+          {
+            "id": "cns-histology",
+            "name": "cnsHistology",
+            "label": "CNS Histology",
+            "type": "select",
+            "defaultValue": "",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "cns" },
+            "options": [
+              { "label": "Select histology", "value": "" },
+              { "label": "Glioblastoma (GBM)", "value": "GBM" },
+              { "label": "Low-Grade Glioma (IDH-mutant)", "value": "LGG" },
+              { "label": "Meningioma", "value": "Meningioma" },
+              { "label": "Brain Metastases", "value": "Brain_Mets" },
+              { "label": "Primary CNS Lymphoma", "value": "PCNSL" },
+              { "label": "Ependymoma", "value": "Ependymoma" },
+              { "label": "Medulloblastoma", "value": "Medulloblastoma" }
+            ]
+          },
+          {
+            "id": "kps-score",
+            "name": "kpsScore",
+            "label": "Karnofsky Performance Status (KPS)",
+            "type": "number",
+            "defaultValue": 0,
+            "min": 0,
+            "max": 100,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "cns" }
+          },
+          {
+            "id": "mgmt-methylated",
+            "name": "mgmtMethylated",
+            "label": "MGMT promoter methylated",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "all": [
+              { "field": "diseaseCategory", "op": "eq", "value": "cns" },
+              { "field": "cnsHistology", "op": "eq", "value": "GBM" }
+            ] }
+          },
+          {
+            "id": "idh1-mutated",
+            "name": "idh1Mutated",
+            "label": "IDH1 mutation present",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "all": [
+              { "field": "diseaseCategory", "op": "eq", "value": "cns" },
+              { "field": "cnsHistology", "op": "eq", "value": "GBM" }
+            ] }
+          },
+          {
+            "id": "brain-mets-count",
+            "name": "brainMetsCount",
+            "label": "Number of Brain Mets",
+            "type": "number",
+            "defaultValue": 0,
+            "min": 0,
+            "keyboardType": "decimal",
+            "visibleWhen": { "all": [
+              { "field": "diseaseCategory", "op": "eq", "value": "cns" },
+              { "field": "cnsHistology", "op": "eq", "value": "Brain_Mets" }
+            ] }
+          },
+          {
+            "id": "brain-mets-max-diameter",
+            "name": "brainMetsMaxDiameter",
+            "label": "Max Diameter (cm)",
+            "type": "number",
+            "defaultValue": 0,
+            "min": 0,
+            "unit": "cm",
+            "keyboardType": "decimal",
+            "visibleWhen": { "all": [
+              { "field": "diseaseCategory", "op": "eq", "value": "cns" },
+              { "field": "cnsHistology", "op": "eq", "value": "Brain_Mets" }
+            ] }
+          },
+          {
+            "id": "hn-site",
+            "name": "hnSite",
+            "label": "H&N Primary Site",
+            "type": "select",
+            "defaultValue": "",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "head_neck" },
+            "options": [
+              { "label": "Select site", "value": "" },
+              { "label": "Oropharynx", "value": "Oropharynx" },
+              { "label": "Larynx", "value": "Larynx" },
+              { "label": "Hypopharynx", "value": "Hypopharynx" },
+              { "label": "Oral Cavity", "value": "Oral_Cavity" },
+              { "label": "Nasopharynx", "value": "Nasopharynx" },
+              { "label": "Salivary Gland", "value": "Salivary" },
+              { "label": "Thyroid", "value": "Thyroid" },
+              { "label": "Unknown Primary", "value": "Unknown_Primary" }
+            ]
+          },
+          {
+            "id": "hpv-status",
+            "name": "hpvStatus",
+            "label": "HPV/p16 Status",
+            "type": "buttongroup",
+            "defaultValue": "Unknown",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "head_neck" },
+            "options": [
+              { "label": "Positive", "value": "Positive" },
+              { "label": "Negative", "value": "Negative" },
+              { "label": "Unknown", "value": "Unknown" }
+            ]
+          },
+          {
+            "id": "hn-t",
+            "name": "hnT",
+            "label": "T Stage",
+            "type": "select",
+            "defaultValue": "",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "head_neck" },
+            "options": [
+              { "label": "T?", "value": "" },
+              { "label": "T1", "value": "T1" },
+              { "label": "T2", "value": "T2" },
+              { "label": "T3", "value": "T3" },
+              { "label": "T4a", "value": "T4a" },
+              { "label": "T4b", "value": "T4b" }
+            ]
+          },
+          {
+            "id": "hn-n",
+            "name": "hnN",
+            "label": "N Stage",
+            "type": "select",
+            "defaultValue": "",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "head_neck" },
+            "options": [
+              { "label": "N?", "value": "" },
+              { "label": "N0", "value": "N0" },
+              { "label": "N1", "value": "N1" },
+              { "label": "N2a", "value": "N2a" },
+              { "label": "N2b", "value": "N2b" },
+              { "label": "N2c", "value": "N2c" },
+              { "label": "N3", "value": "N3" }
+            ]
+          },
+          {
+            "id": "hn-m",
+            "name": "hnM",
+            "label": "M Stage",
+            "type": "select",
+            "defaultValue": "",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "head_neck" },
+            "options": [
+              { "label": "M?", "value": "" },
+              { "label": "M0", "value": "M0" },
+              { "label": "M1", "value": "M1" }
+            ]
+          },
+          {
+            "id": "ece",
+            "name": "ece",
+            "label": "Extracapsular extension (ECE)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "head_neck" }
+          },
+          {
+            "id": "post-op-margins",
+            "name": "postOpMargins",
+            "label": "Post-op Surgical Margins",
+            "type": "select",
+            "defaultValue": "Unknown",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "head_neck" },
+            "options": [
+              { "label": "Not applicable / Unknown", "value": "Unknown" },
+              { "label": "Negative", "value": "Negative" },
+              { "label": "Close (<5 mm)", "value": "Close" },
+              { "label": "Positive (R1)", "value": "Positive" }
+            ]
+          },
+          {
+            "id": "lung-histology",
+            "name": "lungHistology",
+            "label": "Histology",
+            "type": "select",
+            "defaultValue": "",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "nsclc" },
+            "options": [
+              { "label": "Select histology", "value": "" },
+              { "label": "Adenocarcinoma", "value": "Adenocarcinoma" },
+              { "label": "Squamous Cell Carcinoma", "value": "Squamous" },
+              { "label": "Large Cell Carcinoma", "value": "Large_Cell" }
+            ]
+          },
+          {
+            "id": "lung-stage",
+            "name": "lungStage",
+            "label": "Clinical Stage",
+            "type": "select",
+            "defaultValue": "",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "nsclc" },
+            "options": [
+              { "label": "Select stage", "value": "" },
+              { "label": "IA", "value": "IA" },
+              { "label": "IB", "value": "IB" },
+              { "label": "IIA", "value": "IIA" },
+              { "label": "IIB", "value": "IIB" },
+              { "label": "IIIA", "value": "IIIA" },
+              { "label": "IIIB", "value": "IIIB" },
+              { "label": "IIIC", "value": "IIIC" },
+              { "label": "IVA", "value": "IVA" },
+              { "label": "IVB", "value": "IVB" }
+            ]
+          },
+          {
+            "id": "medically-inoperable",
+            "name": "medicallyInoperable",
+            "label": "Medically inoperable",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "nsclc" }
+          },
+          {
+            "id": "egfr-mutation",
+            "name": "egfrMutation",
+            "label": "EGFR mutation positive",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "nsclc" }
+          },
+          {
+            "id": "pdl1-expression",
+            "name": "pdl1Expression",
+            "label": "PD-L1 Expression (%)",
+            "type": "number",
+            "defaultValue": 0,
+            "min": 0,
+            "max": 100,
+            "unit": "%",
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "nsclc" }
+          },
+          {
+            "id": "limited-vs-extensive",
+            "name": "limitedVsExtensive",
+            "label": "Disease Extent",
+            "type": "buttongroup",
+            "defaultValue": "",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "sclc" },
+            "options": [
+              { "label": "Limited-Stage SCLC", "value": "Limited" },
+              { "label": "Extensive-Stage SCLC", "value": "Extensive" }
+            ]
+          },
+          {
+            "id": "prostate-risk-group",
+            "name": "prostateRiskGroup",
+            "label": "Risk Group",
+            "type": "select",
+            "defaultValue": "",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "prostate" },
+            "options": [
+              { "label": "Select risk group", "value": "" },
+              { "label": "Very Low Risk", "value": "Very_Low" },
+              { "label": "Low Risk", "value": "Low" },
+              { "label": "Intermediate Favorable", "value": "Intermediate_Favorable" },
+              { "label": "Intermediate Unfavorable", "value": "Intermediate_Unfavorable" },
+              { "label": "High Risk", "value": "High" },
+              { "label": "Very High Risk", "value": "Very_High" },
+              { "label": "Metastatic", "value": "Metastatic" }
+            ]
+          },
+          {
+            "id": "gleason-score",
+            "name": "gleasonScore",
+            "label": "Gleason Score",
+            "type": "number",
+            "defaultValue": 0,
+            "min": 6,
+            "max": 10,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "prostate" }
+          },
+          {
+            "id": "psa-at-dx",
+            "name": "psaAtDx",
+            "label": "PSA at Diagnosis (ng/mL)",
+            "type": "number",
+            "defaultValue": 0,
+            "min": 0,
+            "unit": "ng/mL",
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "prostate" }
+          },
+          {
+            "id": "biochemical-recurrence",
+            "name": "biochemicalRecurrence",
+            "label": "Biochemical recurrence after prostatectomy",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "prostate" }
+          },
+          {
+            "id": "pelvic-node-involvement",
+            "name": "pelvicNodeInvolvement",
+            "label": "Pelvic node involvement (pN1)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "prostate" }
+          },
+          {
+            "id": "psma-positive",
+            "name": "psmaPositive",
+            "label": "PSMA PET-CT positive",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "prostate" }
+          },
+          {
+            "id": "esophageal-histology",
+            "name": "esophagealHistology",
+            "label": "Histology",
+            "type": "buttongroup",
+            "defaultValue": "",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "esophageal" },
+            "options": [
+              { "label": "Squamous Cell", "value": "SCC" },
+              { "label": "Adenocarcinoma", "value": "Adenocarcinoma" }
+            ]
+          },
+          {
+            "id": "esophageal-location",
+            "name": "esophagealLocation",
+            "label": "Tumor Location",
+            "type": "select",
+            "defaultValue": "",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "esophageal" },
+            "options": [
+              { "label": "Select location", "value": "" },
+              { "label": "Upper esophagus", "value": "Upper" },
+              { "label": "Middle esophagus", "value": "Middle" },
+              { "label": "Lower esophagus / GEJ", "value": "Lower_GEJ" }
+            ]
+          },
+          {
+            "id": "gastric-resectable",
+            "name": "gastricResectable",
+            "label": "Resectable disease",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "gastric" }
+          },
+          {
+            "id": "gastric-her2",
+            "name": "gastricHer2",
+            "label": "HER2 positive",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "gastric" }
+          },
+          {
+            "id": "rectal-t",
+            "name": "rectalT",
+            "label": "T Stage",
+            "type": "select",
+            "defaultValue": "",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "rectal" },
+            "options": [
+              { "label": "T?", "value": "" },
+              { "label": "T1", "value": "T1" },
+              { "label": "T2", "value": "T2" },
+              { "label": "T3", "value": "T3" },
+              { "label": "T4", "value": "T4" }
+            ]
+          },
+          {
+            "id": "rectal-n",
+            "name": "rectalN",
+            "label": "N Stage",
+            "type": "select",
+            "defaultValue": "",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "rectal" },
+            "options": [
+              { "label": "N?", "value": "" },
+              { "label": "N0", "value": "N0" },
+              { "label": "N1", "value": "N1" },
+              { "label": "N2", "value": "N2" }
+            ]
+          },
+          {
+            "id": "rectal-distance-from-verge",
+            "name": "rectalDistanceFromVerge",
+            "label": "Distance from Anal Verge (cm)",
+            "type": "number",
+            "defaultValue": 0,
+            "min": 0,
+            "unit": "cm",
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "rectal" }
+          },
+          {
+            "id": "rectal-mrf-involvement",
+            "name": "rectalMRFInvolvement",
+            "label": "Mesorectal fascia (MRF) involvement on MRI",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "rectal" }
+          },
+          {
+            "id": "rectal-watch-and-wait",
+            "name": "rectalWatchAndWait",
+            "label": "Watch-and-wait strategy being considered",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "rectal" }
+          },
+          {
+            "id": "lymphoma-type",
+            "name": "lymphomaType",
+            "label": "Lymphoma Type",
+            "type": "select",
+            "defaultValue": "",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "lymphoma" },
+            "options": [
+              { "label": "Select type", "value": "" },
+              { "label": "Hodgkin Lymphoma", "value": "Hodgkin" },
+              { "label": "DLBCL", "value": "DLBCL" },
+              { "label": "Follicular Lymphoma", "value": "Follicular" },
+              { "label": "Marginal Zone Lymphoma", "value": "Marginal_Zone" },
+              { "label": "Other NHL", "value": "Other_NHL" }
+            ]
+          },
+          {
+            "id": "lymphoma-stage",
+            "name": "lymphomaStage",
+            "label": "Ann Arbor Stage",
+            "type": "buttongroup",
+            "defaultValue": "",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "lymphoma" },
+            "options": [
+              { "label": "I", "value": "I" },
+              { "label": "II", "value": "II" },
+              { "label": "III", "value": "III" },
+              { "label": "IV", "value": "IV" }
+            ]
+          },
+          {
+            "id": "bulky-disease",
+            "name": "bulkyDisease",
+            "label": "Bulky disease (≥10 cm)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "lymphoma" }
+          },
+          {
+            "id": "pet-cr-after-chemo",
+            "name": "petCrAfterChemo",
+            "label": "PET-CR (Deauville 1–2) after chemotherapy",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "lymphoma" }
+          },
+          {
+            "id": "deauville-score",
+            "name": "deauvilleScore",
+            "label": "Deauville Score (post-chemo PET)",
+            "type": "number",
+            "defaultValue": 0,
+            "min": 1,
+            "max": 5,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "lymphoma" }
+          },
+          {
+            "id": "hcc-child-pugh",
+            "name": "hccChildPugh",
+            "label": "Child-Pugh Class",
+            "type": "buttongroup",
+            "defaultValue": "",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "hcc" },
+            "options": [
+              { "label": "Child-Pugh A", "value": "A" },
+              { "label": "Child-Pugh B", "value": "B" },
+              { "label": "Child-Pugh C", "value": "C" }
+            ]
+          },
+          {
+            "id": "hcc-bclc",
+            "name": "hccBCLC",
+            "label": "BCLC Stage",
+            "type": "select",
+            "defaultValue": "",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "hcc" },
+            "options": [
+              { "label": "Select BCLC stage", "value": "" },
+              { "label": "0 (Very early)", "value": "0" },
+              { "label": "A (Early)", "value": "A" },
+              { "label": "B (Intermediate)", "value": "B" },
+              { "label": "C (Advanced)", "value": "C" },
+              { "label": "D (Terminal)", "value": "D" }
+            ]
+          },
+          {
+            "id": "hcc-tumor-count",
+            "name": "hccTumorCount",
+            "label": "Tumor Count",
+            "type": "number",
+            "defaultValue": 0,
+            "min": 0,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "hcc" }
+          },
+          {
+            "id": "hcc-max-diameter",
+            "name": "hccMaxDiameter",
+            "label": "Max Diameter (cm)",
+            "type": "number",
+            "defaultValue": 0,
+            "min": 0,
+            "unit": "cm",
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "hcc" }
+          },
+          {
+            "id": "hcc-portal-vein-thrombosis",
+            "name": "hccPortalVeinThrombosis",
+            "label": "Portal vein thrombosis (PVT)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "hcc" }
+          },
+          {
+            "id": "hcc-transplant-candidate",
+            "name": "hccTransplantCandidate",
+            "label": "Liver transplant candidate",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "hcc" }
+          },
+          {
+            "id": "breast-surgery",
+            "name": "breastSurgery",
+            "label": "Surgery Type",
+            "type": "buttongroup",
+            "defaultValue": "None",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "breast" },
+            "options": [
+              { "label": "Lumpectomy", "value": "Lumpectomy" },
+              { "label": "Mastectomy", "value": "Mastectomy" },
+              { "label": "None", "value": "None" }
+            ]
+          },
+          {
+            "id": "breast-receptor-status",
+            "name": "breastReceptorStatus",
+            "label": "Receptor Status",
+            "type": "select",
+            "defaultValue": "",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "breast" },
+            "options": [
+              { "label": "Select receptor status", "value": "" },
+              { "label": "HR+ / HER2−", "value": "HR+HER2-" },
+              { "label": "HR+ / HER2+", "value": "HR+HER2+" },
+              { "label": "HR− / HER2+", "value": "HR-HER2+" },
+              { "label": "Triple Negative (TNBC)", "value": "TNBC" }
+            ]
+          },
+          {
+            "id": "breast-stage",
+            "name": "breastStage",
+            "label": "Stage",
+            "type": "select",
+            "defaultValue": "",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "breast" },
+            "options": [
+              { "label": "Select stage", "value": "" },
+              { "label": "Stage 0", "value": "0" },
+              { "label": "Stage I", "value": "I" },
+              { "label": "Stage II", "value": "II" },
+              { "label": "Stage III", "value": "III" },
+              { "label": "Stage IV", "value": "IV" }
+            ]
+          },
+          {
+            "id": "breast-age",
+            "name": "breastAge",
+            "label": "Age",
+            "type": "number",
+            "defaultValue": 0,
+            "min": 0,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "breast" }
+          },
+          {
+            "id": "breast-node-positive",
+            "name": "breastNodePositive",
+            "label": "Node positive (pN1+)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "breast" }
+          },
+          {
+            "id": "breast-lvi",
+            "name": "breastLVI",
+            "label": "Lymphovascular invasion (LVI)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "breast" }
+          },
+          {
+            "id": "breast-close-margins",
+            "name": "breastCloseMargins",
+            "label": "Close or positive surgical margins",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "breast" }
+          },
+          {
+            "id": "breast-preop-rt",
+            "name": "breastPreopRT",
+            "label": "Considering preoperative RT (ASTRO 2024)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "breast" }
+          },
+          {
+            "id": "skin-type",
+            "name": "skinType",
+            "label": "Skin Cancer Type",
+            "type": "buttongroup",
+            "defaultValue": "",
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "skin" },
+            "options": [
+              { "label": "Basal Cell Carcinoma", "value": "BCC" },
+              { "label": "Cutaneous SCC", "value": "cSCC" }
+            ]
+          },
+          {
+            "id": "skin-high-risk",
+            "name": "skinHighRisk",
+            "label": "High-risk features (size >2 cm, perineural invasion, recurrent)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "skin" }
+          },
+          {
+            "id": "skin-unresectable",
+            "name": "skinUnresectable",
+            "label": "Unresectable disease",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "skin" }
+          },
+          {
+            "id": "skin-immuncompromised",
+            "name": "skinImmuncompromised",
+            "label": "Immunocompromised patient",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "diseaseCategory", "op": "eq", "value": "skin" }
+          },
+          {
+            "id": "palliative-intent",
+            "name": "palliativeIntent",
+            "label": "Palliative Intent",
+            "type": "select",
+            "defaultValue": "",
+            "visibleWhen": { "field": "diseaseCategory", "op": "in", "value": ["palliative", "oligometastatic"] },
+            "options": [
+              { "label": "Select intent", "value": "" },
+              { "label": "Bone Metastases (pain/fracture prevention)", "value": "Bone" },
+              { "label": "Brain Metastases (palliative)", "value": "Brain_Palliative" },
+              { "label": "Malignant Spinal Cord Compression", "value": "Cord_Compression" },
+              { "label": "Hemostasis (bleeding tumor)", "value": "Hemostasis" },
+              { "label": "Oligometastatic Disease (SBRT/SABR)", "value": "Oligomets" }
+            ]
+          },
+          {
+            "id": "oligo-met-count",
+            "name": "oligoMetCount",
+            "label": "Number of Metastatic Sites",
+            "type": "number",
+            "defaultValue": 0,
+            "min": 1,
+            "max": 10,
+            "keyboardType": "decimal",
+            "visibleWhen": { "all": [
+              { "field": "diseaseCategory", "op": "in", "value": ["palliative", "oligometastatic"] },
+              { "field": "palliativeIntent", "op": "eq", "value": "Oligomets" }
+            ] }
+          },
+          {
+            "id": "oligo-primary-controlled",
+            "name": "oligoPrimaryControlled",
+            "label": "Primary tumor controlled",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "all": [
+              { "field": "diseaseCategory", "op": "in", "value": ["palliative", "oligometastatic"] },
+              { "field": "palliativeIntent", "op": "eq", "value": "Oligomets" }
+            ] }
+          },
+          {
+            "id": "ecog-ps",
+            "name": "ecogPs",
+            "label": "ECOG Performance Status",
+            "type": "select",
+            "defaultValue": 0,
+            "visibleWhen": { "field": "diseaseCategory", "op": "in", "value": ["palliative", "oligometastatic"] },
+            "options": [
+              { "label": "0 — Fully active", "value": 0 },
+              { "label": "1 — Restricted but ambulatory", "value": 1 },
+              { "label": "2 — Ambulatory, self-care, >50% awake", "value": 2 },
+              { "label": "3 — Limited self-care, >50% in bed", "value": 3 },
+              { "label": "4 — Completely disabled", "value": 4 }
+            ]
+          },
+          {
+            "id": "prior-rt-site",
+            "name": "priorRTSite",
+            "label": "Prior RT to same site (re-irradiation)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "diseaseCategory", "op": "in", "value": ["palliative", "oligometastatic"] }
+          }
+        ]
+      },
+      {
+        "id": "staging-pathology",
+        "shortLabel": "Staging & Pathology",
+        "title": "Staging & Pathology",
+        "fields": [
+          {
+            "id": "clinical-stage",
+            "name": "clinicalStage",
+            "label": "Clinical Stage (free text)",
+            "type": "text",
+            "defaultValue": ""
+          },
+          {
+            "id": "histology",
+            "name": "histology",
+            "label": "Histology (free text)",
+            "type": "text",
+            "defaultValue": ""
+          },
+          {
+            "id": "metastatic",
+            "name": "metastatic",
+            "label": "Metastatic disease (M1)",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "treatment-context",
+        "shortLabel": "Treatment Context",
+        "title": "Treatment Context",
+        "fields": [
+          {
+            "id": "decision-support-disclaimer",
+            "type": "alert",
+            "severity": "warning",
+            "text": "Clinical Decision Support Only. Recommendations are based on NCCN 2025–2026 and ASTRO guidelines. All treatment decisions must be individualized by a qualified radiation oncologist and reviewed by a multidisciplinary tumor board. This tool does not replace clinical judgment."
+          }
+        ]
+      }
+    ]
+  }
+}

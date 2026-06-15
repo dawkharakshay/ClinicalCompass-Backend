@@ -1,0 +1,30 @@
+{
+  "title": "Vertebroplasty / Kyphoplasty Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "22510, 22511, 22512, 22513, 22514, 22515, 72291, 72292",
+      "credentials": "[Credentials]",
+      "icd_codes": "M80.08XA, M80.08XD, M80.88XA, M84.58XA, M48.50XA, M48.52XA, M48.54XA, M48.56XA",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "To Whom It May Concern,\n\nI am writing to formally appeal the denial of prior authorization for vertebral augmentation (vertebroplasty/kyphoplasty) for my patient {{patient_name}}, Date of Birth {{patient_dob}}, Member ID {{member_id}}.\n\nCLINICAL SUMMARY:\nThis patient presents with an acute/subacute vertebral compression fracture at [FRACTURE LEVEL], occurring approximately [WEEKS] weeks ago. MRI demonstrates bone marrow edema on STIR sequences confirming fracture acuity. The patient reports a VAS pain score of [VAS]/10 with significant functional impairment (Oswestry Disability Index: [ODI]). A [WEEKS]-week trial of conservative management including analgesics and bracing has been completed with persistent refractory pain.\n\nGUIDELINE SUPPORT:\nVertebral augmentation is supported by multiple high-quality randomized controlled trials and society guidelines:\n\n• VERTOS II (Klazen CA, et al. Lancet. 2010;376:1085-1092): Vertebroplasty demonstrated statistically significant pain relief compared to conservative treatment at 1 month (VAS reduction 2.6 vs 1.9, p<0.001) and maintained superiority through 12 months in patients with acute osteoporotic VCF and MRI-confirmed bone marrow edema.\n\n• FREE Trial (Wardlaw D, et al. Lancet. 2009;373:1016-1024): Balloon kyphoplasty demonstrated significant improvement in SF-36 physical component score vs non-surgical management (p=0.0003) at 1 month, with sustained benefit at 24 months.\n\n• ACR Appropriateness Criteria (2022): Vertebral augmentation is rated \"Usually Appropriate\" for acute osteoporotic VCF with MRI bone marrow edema, VAS ≥4, and failed conservative therapy.\n\n• CMS LCD L35050: Vertebral augmentation is a covered benefit for acute VCF with MRI-confirmed bone marrow edema, significant pain, and failed conservative therapy.\n\nMEDICAL NECESSITY:\n1. Acute/subacute vertebral compression fracture confirmed on MRI with bone marrow edema\n2. Refractory pain (VAS [VAS]/10) despite [WEEKS] weeks of conservative therapy\n3. Significant functional impairment (ODI [ODI]) affecting activities of daily living\n4. Posterior vertebral wall intact — safe anatomic candidate for vertebral augmentation\n5. [Osteoporotic / Pathologic] fracture etiology\n\nCONCLUSION:\nDenial of this procedure is inconsistent with current evidence-based guidelines and will result in continued severe pain, functional decline, and risk of progressive vertebral collapse. I respectfully request immediate reconsideration and approval.\n\nSincerely,\n{{physician_name}}, {{credentials}}\nNPI: {{npi}}\n{{letter_date}}"
+  }
+}

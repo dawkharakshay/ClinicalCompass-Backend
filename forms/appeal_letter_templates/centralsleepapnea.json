@@ -1,0 +1,30 @@
+{
+  "title": "Central Sleep Apnea Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "95810, 95811, 94660, E0601, E0470, E0471, E0601 + modifier, 99213–99215, 94762",
+      "credentials": "[Credentials]",
+      "icd_codes": "G47.31, G47.37, G47.39, R06.3, I50.20–I50.9, F11.20–F11.99",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "To Whom It May Concern,\n\nI am writing to formally appeal the denial of prior authorization for [requestedDevice] for my patient, {{patient_name}} (DOB: {{patient_dob}}, Member ID: {{member_id}}), dated [denialDate].\n\nCLINICAL SUMMARY\n\nThis patient carries a confirmed diagnosis of Central Sleep Apnea (ICD-10: G47.31/G47.37) based on in-lab polysomnography demonstrating:\n• Predominantly central events (>50% of total apneas)\n• Documented daytime impairment (fatigue, cognitive dysfunction, cardiovascular risk)\n\nPRIOR TREATMENT HISTORY\n\nCPAP therapy was trialed as documented in attached compliance reports. Residual CAI remained elevated, consistent with persistent CSA requiring escalation of PAP therapy.\n\nEVIDENCE BASE FOR REQUESTED TREATMENT\n\nThe requested device, [requestedDevice], is supported by the American Academy of Sleep Medicine (AASM) 2025 Clinical Practice Guideline for the Treatment of Central Sleep Apnea Syndromes in Adults (Donovan LM, et al., J Clin Sleep Med. 2025). The AASM 2025 CPG provides conditional recommendations for ASV and BPAP with backup rate in appropriate CSA subtypes.\n\nIMPORTANT SAFETY NOTE: This patient's LVEF has been confirmed ≥45% (or HF is not present), confirming that the SERVE-HF contraindication to ASV in HFrEF does not apply to this patient.\n\nBASIS FOR APPEAL\n\nCentral sleep apnea is a serious sleep-related breathing disorder associated with increased cardiovascular mortality, arrhythmia, stroke risk, and neurocognitive dysfunction. The requested device is the appropriate next step per AASM 2025 guidelines after documented CPAP failure.\n\n\nREQUESTED ACTION\n\nI respectfully request immediate approval of [requestedDevice] for this patient. I am available for a peer-to-peer review with the medical director at your earliest convenience.\n\nSincerely,\n\n[Physician Name, MD/DO]\n[Specialty: Sleep Medicine / Pulmonology]\n{{practice_name}}\n{{practice_phone}} | {{practice_fax}}\n{{npi}}\n\nReferences:\n1. Donovan LM, et al. AASM CPG Treatment of Central Sleep Apnea Syndromes in Adults. J Clin Sleep Med. 2025.\n2. Cowie MR, et al. SERVE-HF: ASV for Central Sleep Apnea in Systolic Heart Failure. N Engl J Med. 2015;373:1095–1105.\n3. Malhotra A, et al. SURMOUNT-OSA: Tirzepatide for OSA and Obesity. N Engl J Med. 2024;391:1421–1432.\n4. AASM Practice Guidelines: https://aasm.org/clinical-resources/practice-standards/practice-guidelines/"
+  }
+}

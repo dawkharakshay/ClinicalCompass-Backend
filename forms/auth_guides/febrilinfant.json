@@ -1,0 +1,366 @@
+{
+  "title": "Febrile Infant Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "FebrilInfantAuthGuide.tsx",
+    "title": "Febrile Infant Clinical Compass",
+    "subtitle": "Febrile Infant Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "62270",
+        "description": "Spinal puncture, lumbar, diagnostic",
+        "device": "N/A",
+        "access": "Lumbar region",
+        "rvu": "2.50",
+        "includes": [
+          "Needle insertion and removal",
+          "Collection of cerebrospinal fluid (CSF) samples",
+          "Basic interpretation of CSF appearance"
+        ],
+        "note": "Modifier -63 (Procedure performed on infants less than 4kg) may be applicable for increased complexity."
+      },
+      {
+        "code": "87040",
+        "description": "Culture, blood, routine; aerobic",
+        "device": "Blood collection kit",
+        "access": "Venipuncture",
+        "rvu": "0.50",
+        "includes": [
+          "Collection of blood sample",
+          "Initial culture setup and incubation"
+        ],
+        "note": "Additional codes for identification and susceptibility testing (e.g., 87076, 87106) may be billed separately if performed."
+      },
+      {
+        "code": "96365",
+        "description": "Intravenous infusion, for therapy, prophylaxis, or diagnosis; initial, up to 1 hour",
+        "device": "IV line, infusion pump",
+        "access": "Peripheral or central venous access",
+        "rvu": "1.20",
+        "includes": [
+          "Setup of IV line and infusion pump",
+          "Administration of initial IV antibiotic dose",
+          "Monitoring during the first hour of infusion"
+        ],
+        "note": "Use add-on codes (e.g., 96366) for prolonged infusions beyond the initial hour."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "R50.9",
+        "description": "Fever, unspecified",
+        "notes": "Used when the specific cause of fever is not yet determined.",
+        "required": true
+      },
+      {
+        "code": "P81.9",
+        "description": "Disturbance of temperature regulation of newborn, unspecified",
+        "notes": "Applicable for newborns (0-28 days) with fever or temperature instability.",
+        "required": false
+      },
+      {
+        "code": "P36.9",
+        "description": "Bacterial sepsis of newborn, unspecified",
+        "notes": "Used when sepsis is suspected or confirmed in a newborn.",
+        "required": false
+      },
+      {
+        "code": "P39.3",
+        "description": "Neonatal urinary tract infection",
+        "notes": "Used when a UTI is diagnosed in a newborn.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered (Medically Necessary)",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Medicare generally does not require prior authorization for emergency services like febrile infant evaluation. However, services must be medically necessary and follow established clinical guidelines.",
+        "overview": "Medicare covers medically necessary services for eligible infants, typically those enrolled due to disability or specific conditions. Coverage for febrile infant evaluation and management follows standard guidelines for acute care.",
+        "reimbursementNote": "Reimbursement for febrile infant care is typically based on established fee schedules for emergency and inpatient services. Specific rates vary by geographic location and facility type.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Medical Necessity",
+            "items": [
+              "Infant age 0-90 days with documented fever (rectal temperature ≥ 38.0°C)",
+              "Clinical signs and symptoms consistent with potential serious bacterial infection (SBI)",
+              "Evaluation and management performed in an appropriate setting (e.g., emergency department, inpatient hospital)"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Documentation Requirements",
+            "items": [
+              "Detailed history and physical examination findings",
+              "Temperature readings and method of measurement",
+              "Results of all diagnostic tests (e.g., CBC, blood culture, urine culture, CSF analysis)",
+              "Medical decision-making supporting the chosen management plan"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Physician orders for all tests and treatments",
+              "Nursing notes detailing vital signs, intake/output, and clinical observations",
+              "Laboratory and radiology reports",
+              "Consultation notes from specialists (e.g., infectious disease, neonatology) if applicable"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Billing Documentation",
+            "items": [
+              "Itemized bill with CPT and ICD-10 codes",
+              "Proof of medical necessity if requested"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims electronically using standard CMS-1500 form (or UB-04 for hospitals)",
+              "Ensure all CPT and ICD-10 codes are accurate and supported by documentation",
+              "Respond promptly to any requests for additional medical records"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of medical necessity documentation",
+              "Incorrect coding or missing modifiers",
+              "Services deemed experimental or investigational (rare for febrile infant care)",
+              "Timely filing limits exceeded"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Document thoroughly, especially the medical decision-making process.",
+              "Ensure all diagnostic workup results are clearly recorded.",
+              "Be familiar with Medicare guidelines for pediatric services, even though infants are not typical Medicare beneficiaries."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS",
+            "status": "Covered",
+            "notes": "Follows general acute care and emergency service guidelines."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered (State-specific guidelines)",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Medicaid programs generally cover emergency and acute care for infants without prior authorization. Some non-emergent follow-up services or specific medications may require authorization.",
+        "overview": "Medicaid provides comprehensive coverage for eligible low-income infants and children. Coverage for febrile infant evaluation and management adheres to state-specific guidelines, which often align with national pediatric recommendations.",
+        "reimbursementNote": "Medicaid reimbursement rates are typically lower than commercial payers and vary significantly by state. Providers should consult their state’s Medicaid fee schedule.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Eligibility and Medical Necessity",
+            "items": [
+              "Infant enrolled in state Medicaid program",
+              "Documented fever (rectal temperature ≥ 38.0°C) in an infant 0-90 days old",
+              "Evaluation and management consistent with state-adopted clinical pathways (e.g., AAP guidelines, local hospital protocols)"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Service-Specific Criteria",
+            "items": [
+              "Lumbar puncture for infants ≤ 28 days old, or older infants with specific risk factors",
+              "Blood cultures for all febrile infants ≤ 90 days old",
+              "IV antibiotics for suspected or confirmed serious bacterial infection"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Comprehensive medical history and physical exam",
+              "Growth charts and immunization status",
+              "Detailed record of diagnostic workup and results",
+              "Treatment plan and response to therapy"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Administrative Documentation",
+            "items": [
+              "Medicaid eligibility verification",
+              "Referral documentation if required for specific services"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims to the state Medicaid agency or managed care organization",
+              "Adhere to state-specific billing regulations and timelines",
+              "Utilize appropriate CPT and ICD-10 codes, including any state-mandated modifiers"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Patient not eligible for Medicaid on date of service",
+              "Services not deemed medically necessary per state guidelines",
+              "Missing or incomplete documentation",
+              "Failure to follow state-specific prior authorization rules for non-emergent services"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state’s specific Medicaid guidelines for pediatric acute care.",
+              "Ensure accurate and timely eligibility verification.",
+              "Document all parent/guardian education and consent."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid",
+            "status": "Covered",
+            "notes": "Coverage varies by state, generally follows AAP guidelines for febrile infants."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Covered (Plan-dependent)",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization may be required for certain inpatient admissions, advanced imaging, or specific antibiotic regimens, especially if not initiated in an emergency setting. Always verify with the specific plan.",
+        "overview": "Private insurance coverage for febrile infant evaluation and management is highly variable and depends on the specific health plan benefits, deductibles, co-pays, and network restrictions. Most plans cover medically necessary emergency care.",
+        "reimbursementNote": "Reimbursement rates are negotiated between providers and private insurance companies. Out-of-pocket costs for patients will depend on their specific plan’s deductible, co-insurance, and out-of-pocket maximums.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Medical Necessity and Plan Benefits",
+            "items": [
+              "Infant covered under a private health insurance plan",
+              "Documented fever (rectal temperature ≥ 38.0°C) in an infant 0-90 days old",
+              "Services must be consistent with evidence-based medical practice and plan-specific clinical policies"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Prior Authorization Triggers",
+            "items": [
+              "Inpatient admission beyond 24-48 hours",
+              "Use of certain broad-spectrum or high-cost antibiotics",
+              "Non-emergent diagnostic procedures (e.g., follow-up imaging)"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Comprehensive medical record including all assessments, interventions, and outcomes",
+              "Justification for all diagnostic and therapeutic interventions",
+              "Communication with primary care physician and specialists"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Authorization Documentation",
+            "items": [
+              "Prior authorization approval numbers (if applicable)",
+              "Clinical notes supporting the medical necessity for authorized services"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims to the private insurance carrier",
+              "Verify patient benefits and eligibility prior to or at the time of service",
+              "Obtain prior authorization for services as required by the plan",
+              "Follow up on denied claims with appeals process if appropriate"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization for covered services",
+              "Services not deemed medically necessary per plan guidelines",
+              "Out-of-network services utilized without proper referral",
+              "Deductibles or co-insurance not met by the patient",
+              "Incomplete or insufficient medical records"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify benefits and eligibility for each patient, as plans vary widely.",
+              "Proactively seek prior authorization for any service that might require it, especially for inpatient stays.",
+              "Maintain clear and concise documentation to support medical necessity and facilitate appeals."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Various Private Insurers",
+            "status": "Variable",
+            "notes": "Highly dependent on individual plan benefits and medical policies. Always verify."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Navigation",
+        "kind": "link",
+        "text": "Back to Assessment (links to /febrile-infant)",
+        "href": "/febrile-infant"
+      },
+      {
+        "heading": "Procedure Codes - CPT note",
+        "kind": "prose",
+        "text": "For each CPT code, the page displays: a CPT code badge, an RVU badge, the description, a Device/Access line, an 'Included in this code (do NOT bill separately)' list, and an italic note."
+      },
+      {
+        "heading": "Payer UI behavior",
+        "kind": "prose",
+        "text": "The payer section is presented as a tab/pill selector (Medicare, Medicaid, Private Insurance) defaulting to Medicare. For the selected payer it shows a Prior Auth status badge (either 'Prior Auth Required' for prior-auth payers or 'No Prior Auth (FFS)' otherwise), a coverage status badge, an amber prior-authorization note callout, an overview, Coverage Criteria, Required Documentation, Submission Process (numbered), Common Denial Reasons, a Known Payer Policies table, a blue Reimbursement Note callout, and Authorization Tips."
+      }
+    ],
+    "raw": {
+      "markdown": "# Febrile Infant Clinical Compass\n## Febrile Infant Insurance Authorization Guide\n\n[Button] Back to Assessment -> /febrile-infant\n\n---\n\n## Procedure Codes (CPT Codes)\n\n### CPT 62270 (RVU 2.50)\nSpinal puncture, lumbar, diagnostic\nDevice/Access: N/A (Lumbar region)\nIncluded in this code (do NOT bill separately):\n- Needle insertion and removal\n- Collection of cerebrospinal fluid (CSF) samples\n- Basic interpretation of CSF appearance\nNote: Modifier -63 (Procedure performed on infants less than 4kg) may be applicable for increased complexity.\n\n### CPT 87040 (RVU 0.50)\nCulture, blood, routine; aerobic\nDevice/Access: Blood collection kit (Venipuncture)\nIncluded in this code (do NOT bill separately):\n- Collection of blood sample\n- Initial culture setup and incubation\nNote: Additional codes for identification and susceptibility testing (e.g., 87076, 87106) may be billed separately if performed.\n\n### CPT 96365 (RVU 1.20)\nIntravenous infusion, for therapy, prophylaxis, or diagnosis; initial, up to 1 hour\nDevice/Access: IV line, infusion pump (Peripheral or central venous access)\nIncluded in this code (do NOT bill separately):\n- Setup of IV line and infusion pump\n- Administration of initial IV antibiotic dose\n- Monitoring during the first hour of infusion\nNote: Use add-on codes (e.g., 96366) for prolonged infusions beyond the initial hour.\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- R50.9 (Primary) — Fever, unspecified. Used when the specific cause of fever is not yet determined.\n- P81.9 — Disturbance of temperature regulation of newborn, unspecified. Applicable for newborns (0-28 days) with fever or temperature instability.\n- P36.9 — Bacterial sepsis of newborn, unspecified. Used when sepsis is suspected or confirmed in a newborn.\n- P39.3 — Neonatal urinary tract infection. Used when a UTI is diagnosed in a newborn.\n\n---\n\n## Payer-Specific Authorization Requirements\n\n(Tabs: Medicare | Medicaid | Private Insurance)\n\n### Medicare\nStatus badges: No Prior Auth (FFS) | Covered (Medically Necessary)\nPrior Auth Note: Medicare generally does not require prior authorization for emergency services like febrile infant evaluation. However, services must be medically necessary and follow established clinical guidelines.\nOverview: Medicare covers medically necessary services for eligible infants, typically those enrolled due to disability or specific conditions. Coverage for febrile infant evaluation and management follows standard guidelines for acute care.\n\n#### Coverage Criteria\nMedical Necessity\n- Infant age 0-90 days with documented fever (rectal temperature ≥ 38.0°C)\n- Clinical signs and symptoms consistent with potential serious bacterial infection (SBI)\n- Evaluation and management performed in an appropriate setting (e.g., emergency department, inpatient hospital)\nDocumentation Requirements\n- Detailed history and physical examination findings\n- Temperature readings and method of measurement\n- Results of all diagnostic tests (e.g., CBC, blood culture, urine culture, CSF analysis)\n- Medical decision-making supporting the chosen management plan\n\n#### Required Documentation\nClinical Documentation\n- Physician orders for all tests and treatments\n- Nursing notes detailing vital signs, intake/output, and clinical observations\n- Laboratory and radiology reports\n- Consultation notes from specialists (e.g., infectious disease, neonatology) if applicable\nBilling Documentation\n- Itemized bill with CPT and ICD-10 codes\n- Proof of medical necessity if requested\n\n#### Submission Process\n1. Submit claims electronically using standard CMS-1500 form (or UB-04 for hospitals)\n2. Ensure all CPT and ICD-10 codes are accurate and supported by documentation\n3. Respond promptly to any requests for additional medical records\n\n#### Common Denial Reasons\n- Lack of medical necessity documentation\n- Incorrect coding or missing modifiers\n- Services deemed experimental or investigational (rare for febrile infant care)\n- Timely filing limits exceeded\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS | Covered | Follows general acute care and emergency service guidelines. |\n\n#### Reimbursement Note\nReimbursement for febrile infant care is typically based on established fee schedules for emergency and inpatient services. Specific rates vary by geographic location and facility type.\n\n#### Authorization Tips\n- Document thoroughly, especially the medical decision-making process.\n- Ensure all diagnostic workup results are clearly recorded.\n- Be familiar with Medicare guidelines for pediatric services, even though infants are not typical Medicare beneficiaries.\n\n### Medicaid\nStatus badges: No Prior Auth (FFS) | Covered (State-specific guidelines)\nPrior Auth Note: Medicaid programs generally cover emergency and acute care for infants without prior authorization. Some non-emergent follow-up services or specific medications may require authorization.\nOverview: Medicaid provides comprehensive coverage for eligible low-income infants and children. Coverage for febrile infant evaluation and management adheres to state-specific guidelines, which often align with national pediatric recommendations.\n\n#### Coverage Criteria\nEligibility and Medical Necessity\n- Infant enrolled in state Medicaid program\n- Documented fever (rectal temperature ≥ 38.0°C) in an infant 0-90 days old\n- Evaluation and management consistent with state-adopted clinical pathways (e.g., AAP guidelines, local hospital protocols)\nService-Specific Criteria\n- Lumbar puncture for infants ≤ 28 days old, or older infants with specific risk factors\n- Blood cultures for all febrile infants ≤ 90 days old\n- IV antibiotics for suspected or confirmed serious bacterial infection\n\n#### Required Documentation\nClinical Documentation\n- Comprehensive medical history and physical exam\n- Growth charts and immunization status\n- Detailed record of diagnostic workup and results\n- Treatment plan and response to therapy\nAdministrative Documentation\n- Medicaid eligibility verification\n- Referral documentation if required for specific services\n\n#### Submission Process\n1. Submit claims to the state Medicaid agency or managed care organization\n2. Adhere to state-specific billing regulations and timelines\n3. Utilize appropriate CPT and ICD-10 codes, including any state-mandated modifiers\n\n#### Common Denial Reasons\n- Patient not eligible for Medicaid on date of service\n- Services not deemed medically necessary per state guidelines\n- Missing or incomplete documentation\n- Failure to follow state-specific prior authorization rules for non-emergent services\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid | Covered | Coverage varies by state, generally follows AAP guidelines for febrile infants. |\n\n#### Reimbursement Note\nMedicaid reimbursement rates are typically lower than commercial payers and vary significantly by state. Providers should consult their state’s Medicaid fee schedule.\n\n#### Authorization Tips\n- Familiarize yourself with your state’s specific Medicaid guidelines for pediatric acute care.\n- Ensure accurate and timely eligibility verification.\n- Document all parent/guardian education and consent.\n\n### Private Insurance\nStatus badges: Prior Auth Required | Covered (Plan-dependent)\nPrior Auth Note: Prior authorization may be required for certain inpatient admissions, advanced imaging, or specific antibiotic regimens, especially if not initiated in an emergency setting. Always verify with the specific plan.\nOverview: Private insurance coverage for febrile infant evaluation and management is highly variable and depends on the specific health plan benefits, deductibles, co-pays, and network restrictions. Most plans cover medically necessary emergency care.\n\n#### Coverage Criteria\nMedical Necessity and Plan Benefits\n- Infant covered under a private health insurance plan\n- Documented fever (rectal temperature ≥ 38.0°C) in an infant 0-90 days old\n- Services must be consistent with evidence-based medical practice and plan-specific clinical policies\nPrior Authorization Triggers\n- Inpatient admission beyond 24-48 hours\n- Use of certain broad-spectrum or high-cost antibiotics\n- Non-emergent diagnostic procedures (e.g., follow-up imaging)\n\n#### Required Documentation\nClinical Documentation\n- Comprehensive medical record including all assessments, interventions, and outcomes\n- Justification for all diagnostic and therapeutic interventions\n- Communication with primary care physician and specialists\nAuthorization Documentation\n- Prior authorization approval numbers (if applicable)\n- Clinical notes supporting the medical necessity for authorized services\n\n#### Submission Process\n1. Submit claims to the private insurance carrier\n2. Verify patient benefits and eligibility prior to or at the time of service\n3. Obtain prior authorization for services as required by the plan\n4. Follow up on denied claims with appeals process if appropriate\n\n#### Common Denial Reasons\n- Lack of prior authorization for covered services\n- Services not deemed medically necessary per plan guidelines\n- Out-of-network services utilized without proper referral\n- Deductibles or co-insurance not met by the patient\n- Incomplete or insufficient medical records\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Various Private Insurers | Variable | Highly dependent on individual plan benefits and medical policies. Always verify. |\n\n#### Reimbursement Note\nReimbursement rates are negotiated between providers and private insurance companies. Out-of-pocket costs for patients will depend on their specific plan’s deductible, co-insurance, and out-of-pocket maximums.\n\n#### Authorization Tips\n- Always verify benefits and eligibility for each patient, as plans vary widely.\n- Proactively seek prior authorization for any service that might require it, especially for inpatient stays.\n- Maintain clear and concise documentation to support medical necessity and facilitate appeals.\n",
+      "tables": [
+        {
+          "name": "CPT Procedure Codes",
+          "header": ["Code", "Description", "Device", "Access", "RVU", "Note"],
+          "rows": [
+            ["62270", "Spinal puncture, lumbar, diagnostic", "N/A", "Lumbar region", "2.50", "Modifier -63 (Procedure performed on infants less than 4kg) may be applicable for increased complexity."],
+            ["87040", "Culture, blood, routine; aerobic", "Blood collection kit", "Venipuncture", "0.50", "Additional codes for identification and susceptibility testing (e.g., 87076, 87106) may be billed separately if performed."],
+            ["96365", "Intravenous infusion, for therapy, prophylaxis, or diagnosis; initial, up to 1 hour", "IV line, infusion pump", "Peripheral or central venous access", "1.20", "Use add-on codes (e.g., 96366) for prolonged infusions beyond the initial hour."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Primary/Required"],
+          "rows": [
+            ["R50.9", "Fever, unspecified", "Used when the specific cause of fever is not yet determined.", "Yes (Primary)"],
+            ["P81.9", "Disturbance of temperature regulation of newborn, unspecified", "Applicable for newborns (0-28 days) with fever or temperature instability.", "No"],
+            ["P36.9", "Bacterial sepsis of newborn, unspecified", "Used when sepsis is suspected or confirmed in a newborn.", "No"],
+            ["P39.3", "Neonatal urinary tract infection", "Used when a UTI is diagnosed in a newborn.", "No"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Medicare",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS", "Covered", "Follows general acute care and emergency service guidelines."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid", "Covered", "Coverage varies by state, generally follows AAP guidelines for febrile infants."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Private Insurance",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Various Private Insurers", "Variable", "Highly dependent on individual plan benefits and medical policies. Always verify."]
+          ]
+        }
+      ]
+    }
+  }
+}

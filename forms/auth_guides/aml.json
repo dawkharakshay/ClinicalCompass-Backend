@@ -1,0 +1,374 @@
+{
+  "title": "Acute Myeloid Leukemia Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "AMLAuthGuide.tsx",
+    "title": "AML Clinical Compass",
+    "subtitle": "Acute Myeloid Leukemia Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "96413",
+        "description": "Chemotherapy administration, intravenous infusion technique; up to 1 hour, single or initial substance/drug",
+        "device": "IV access (e.g., peripheral IV, central line)",
+        "access": "Intravenous",
+        "rvu": "3.8",
+        "includes": [
+          "Pre-infusion assessment and patient education",
+          "Preparation of chemotherapy agent",
+          "Monitoring during infusion",
+          "Post-infusion care coordination"
+        ],
+        "note": "This code covers the initial hour of intravenous chemotherapy administration. Additional hours are billed with add-on codes (e.g., 96415)."
+      },
+      {
+        "code": "38240",
+        "description": "Hematopoietic progenitor cell (HPC); allogeneic transplantation, per donor",
+        "device": "Central venous catheter",
+        "access": "Intravenous",
+        "rvu": "7.2",
+        "includes": [
+          "Coordination of donor and recipient",
+          "Infusion of hematopoietic stem cells",
+          "Immediate post-infusion monitoring"
+        ],
+        "note": "This code covers the allogeneic stem cell transplantation procedure itself. Pre-transplant conditioning and post-transplant management are billed separately."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "C92.00",
+        "description": "Acute myeloblastic leukemia, not having achieved remission",
+        "notes": "Primary diagnosis for newly diagnosed or refractory AML.",
+        "required": true
+      },
+      {
+        "code": "C92.01",
+        "description": "Acute myeloblastic leukemia, in remission",
+        "notes": "Used for patients in complete remission, often during maintenance therapy or follow-up.",
+        "required": false
+      },
+      {
+        "code": "C92.02",
+        "description": "Acute myeloblastic leukemia, in relapse",
+        "notes": "Used when AML recurs after a period of remission.",
+        "required": false
+      },
+      {
+        "code": "D61.09",
+        "description": "Other aplastic anemias",
+        "notes": "May be used in cases of severe bone marrow failure associated with AML or its treatment.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is required for most chemotherapy regimens and allogeneic stem cell transplantation for AML. Coverage is typically for FDA-approved indications and medically necessary treatments.",
+        "coverageStatus": "Covered with Prior Authorization",
+        "overview": "Medicare covers chemotherapy and allogeneic stem cell transplantation for Acute Myeloid Leukemia (AML) when deemed medically necessary and performed in an approved facility. Coverage is subject to specific criteria and often requires extensive documentation.",
+        "reimbursementNote": "Reimbursement for AML treatment, including chemotherapy and stem cell transplantation, is complex and depends on the specific services rendered, facility type, and patient's Medicare plan (e.g., Original Medicare vs. Medicare Advantage). Co-pays and deductibles apply.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Chemotherapy",
+            "items": [
+              "Diagnosis of AML confirmed by bone marrow biopsy and genetic testing.",
+              "Treatment plan aligns with NCCN guidelines or other recognized clinical pathways.",
+              "Patient meets performance status and organ function requirements for treatment."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Allogeneic Stem Cell Transplantation",
+            "items": [
+              "Diagnosis of AML in complete remission or with high-risk features after induction therapy.",
+              "Suitable donor identified and matched.",
+              "Patient meets age, comorbidity, and performance status criteria for transplant.",
+              "Transplant performed in a Medicare-approved facility."
+            ]
+          },
+          {
+            "heading": "Required Documentation — General",
+            "items": [
+              "Detailed clinical notes supporting AML diagnosis and stage.",
+              "Pathology reports (bone marrow biopsy, cytogenetics, molecular studies).",
+              "Treatment plan including proposed chemotherapy agents and cycles.",
+              "Patient's performance status (e.g., ECOG, Karnofsky)."
+            ]
+          },
+          {
+            "heading": "Required Documentation — For Stem Cell Transplant",
+            "items": [
+              "Donor match documentation.",
+              "Transplant center evaluation and recommendation.",
+              "Documentation of prior induction therapy and response."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request through the Medicare Administrative Contractor (MAC) portal.",
+              "Include all supporting clinical documentation and proposed treatment plan.",
+              "Await approval before initiating treatment, especially for transplantation."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of medical necessity documentation.",
+              "Treatment not aligning with established guidelines.",
+              "Incomplete or missing prior authorization.",
+              "Transplant performed in a non-approved facility."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Ensure all diagnostic reports and clinical notes are thorough and clearly support the diagnosis and treatment plan.",
+              "Adhere strictly to NCCN guidelines for AML treatment.",
+              "Verify facility accreditation for stem cell transplantation.",
+              "Submit prior authorization requests well in advance of planned treatment."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS",
+            "status": "Covered",
+            "notes": "National Coverage Determination (NCD) for Stem Cell Transplantation (110.23) outlines coverage criteria."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid coverage for AML treatment, including chemotherapy and stem cell transplantation, varies by state. Prior authorization is almost always required and typically follows state-specific guidelines, often aligning with Medicare or NCCN.",
+        "coverageStatus": "Covered with State-Specific Prior Authorization",
+        "overview": "Medicaid programs cover medically necessary AML treatments, including chemotherapy and stem cell transplantation, for eligible beneficiaries. State-specific policies and prior authorization requirements must be met.",
+        "reimbursementNote": "Medicaid reimbursement rates are typically lower than Medicare or private insurance. Providers should confirm participation status and reimbursement schedules with their state Medicaid program.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — General",
+            "items": [
+              "Diagnosis of AML confirmed by appropriate clinical and laboratory findings.",
+              "Treatment plan is consistent with generally accepted medical standards and state Medicaid guidelines.",
+              "Patient meets state-specific eligibility criteria for Medicaid services."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Stem Cell Transplantation",
+            "items": [
+              "Similar criteria to Medicare regarding diagnosis, donor match, and patient suitability.",
+              "Transplant must be performed in a Medicaid-approved facility within the state or through an approved out-of-state referral."
+            ]
+          },
+          {
+            "heading": "Required Documentation — General",
+            "items": [
+              "Comprehensive medical records, including diagnosis, staging, and treatment history.",
+              "Documentation of medical necessity for all proposed treatments.",
+              "State-specific prior authorization forms."
+            ]
+          },
+          {
+            "heading": "Required Documentation — For Stem Cell Transplant",
+            "items": [
+              "Transplant evaluation and recommendation from a state-approved center.",
+              "Evidence of donor availability and compatibility."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request to the state Medicaid agency.",
+              "Follow state-specific submission portals and documentation requirements.",
+              "Expedited review may be available for urgent cases, but standard review times can be lengthy."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet state-specific medical necessity criteria.",
+              "Incomplete or incorrect prior authorization submission.",
+              "Lack of documentation supporting the chosen treatment regimen.",
+              "Treatment sought at a non-participating or non-approved facility."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state's specific Medicaid policies for oncology and transplantation.",
+              "Ensure all forms are completely and accurately filled out.",
+              "Maintain clear communication with the state Medicaid agency throughout the authorization process."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (e.g., NC Medicaid)",
+            "status": "Covered",
+            "notes": "Specific clinical policies for oncology and transplantation are available on state Medicaid websites."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Private insurance plans almost universally require prior authorization for AML chemotherapy and allogeneic stem cell transplantation. Coverage is based on medical necessity, plan benefits, and adherence to clinical guidelines (e.g., NCCN).",
+        "coverageStatus": "Covered with Strict Prior Authorization",
+        "overview": "Private insurance plans cover AML treatment, including chemotherapy and stem cell transplantation, based on the individual's policy benefits, medical necessity, and adherence to evidence-based clinical guidelines. Prior authorization is a critical step.",
+        "reimbursementNote": "Reimbursement rates vary significantly by plan and negotiated provider contracts. Out-of-pocket costs for patients can be substantial, including deductibles, co-insurance, and out-of-pocket maximums.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — General",
+            "items": [
+              "Confirmed diagnosis of AML.",
+              "Treatment plan consistent with NCCN guidelines or other nationally recognized standards.",
+              "Patient meets clinical criteria for the specific chemotherapy regimen or transplant."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Stem Cell Transplantation",
+            "items": [
+              "AML in remission or with high-risk features.",
+              "Appropriate donor identified.",
+              "Patient suitability for transplant based on age, comorbidities, and functional status.",
+              "Transplant performed at an in-network, accredited facility."
+            ]
+          },
+          {
+            "heading": "Required Documentation — General",
+            "items": [
+              "Detailed medical history and physical examination notes.",
+              "All diagnostic test results (bone marrow, cytogenetics, molecular).",
+              "Consultation notes from hematologist/oncologist and transplant physician (if applicable).",
+              "Proposed treatment regimen and expected outcomes."
+            ]
+          },
+          {
+            "heading": "Required Documentation — For Stem Cell Transplant",
+            "items": [
+              "Donor search and match results.",
+              "Transplant center's comprehensive evaluation and treatment plan.",
+              "Documentation of patient's informed consent."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request via the insurer's provider portal or fax.",
+              "Attach all required clinical documentation, emphasizing medical necessity and guideline adherence.",
+              "Be prepared for potential peer-to-peer review if initial authorization is denied or delayed."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of medical necessity as defined by the plan's clinical policies.",
+              "Failure to obtain prior authorization.",
+              "Treatment considered experimental or investigational by the insurer.",
+              "Out-of-network services without proper authorization.",
+              "Incomplete or insufficient clinical documentation."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Thoroughly review the patient's specific insurance policy for oncology and transplant benefits.",
+              "Ensure all documentation clearly references NCCN guidelines or other evidence-based criteria.",
+              "Proactively engage in peer-to-peer reviews to advocate for patient coverage.",
+              "Document all communications with the insurance company."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Various Private Insurers",
+            "status": "Varies",
+            "notes": "Policies are highly individualized; always verify benefits and requirements for each patient's specific plan."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Navigation",
+        "kind": "list",
+        "items": [
+          "Back to Assessment (link to /aml)"
+        ]
+      },
+      {
+        "heading": "CPT Codes — UI Note",
+        "kind": "prose",
+        "text": "Procedure Codes card. For each CPT code the page displays: a 'CPT {code}' badge, an 'RVU {rvu}' badge, the description, a 'Device/Access:' line, an 'Included in this code (do NOT bill separately):' list, and an italic note."
+      },
+      {
+        "heading": "ICD-10 Codes — UI Note",
+        "kind": "prose",
+        "text": "ICD-10 Diagnosis Codes card. Required (primary) codes are highlighted and flagged with a 'Primary' badge; non-required codes are shown in a muted style."
+      }
+    ],
+    "raw": {
+      "markdown": "# AML Clinical Compass\n\n_Acute Myeloid Leukemia Insurance Authorization Guide_\n\n[Back to Assessment] (navigates to /aml)\n\n---\n\n## Procedure Codes (CPT)\n\n### CPT 96413  —  RVU 3.8\n**Chemotherapy administration, intravenous infusion technique; up to 1 hour, single or initial substance/drug**\n\n- Device/Access: IV access (e.g., peripheral IV, central line)\n- Access: Intravenous\n\nIncluded in this code (do NOT bill separately):\n- Pre-infusion assessment and patient education\n- Preparation of chemotherapy agent\n- Monitoring during infusion\n- Post-infusion care coordination\n\n_Note: This code covers the initial hour of intravenous chemotherapy administration. Additional hours are billed with add-on codes (e.g., 96415)._\n\n### CPT 38240  —  RVU 7.2\n**Hematopoietic progenitor cell (HPC); allogeneic transplantation, per donor**\n\n- Device/Access: Central venous catheter\n- Access: Intravenous\n\nIncluded in this code (do NOT bill separately):\n- Coordination of donor and recipient\n- Infusion of hematopoietic stem cells\n- Immediate post-infusion monitoring\n\n_Note: This code covers the allogeneic stem cell transplantation procedure itself. Pre-transplant conditioning and post-transplant management are billed separately._\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **C92.00** (Primary / Required) — Acute myeloblastic leukemia, not having achieved remission. Notes: Primary diagnosis for newly diagnosed or refractory AML.\n- **C92.01** — Acute myeloblastic leukemia, in remission. Notes: Used for patients in complete remission, often during maintenance therapy or follow-up.\n- **C92.02** — Acute myeloblastic leukemia, in relapse. Notes: Used when AML recurs after a period of remission.\n- **D61.09** — Other aplastic anemias. Notes: May be used in cases of severe bone marrow failure associated with AML or its treatment.\n\n---\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\n\n**Badges:** Prior Auth Required · Covered with Prior Authorization\n\n**Prior Authorization Note (alert):** Prior authorization is required for most chemotherapy regimens and allogeneic stem cell transplantation for AML. Coverage is typically for FDA-approved indications and medically necessary treatments.\n\n**Overview:** Medicare covers chemotherapy and allogeneic stem cell transplantation for Acute Myeloid Leukemia (AML) when deemed medically necessary and performed in an approved facility. Coverage is subject to specific criteria and often requires extensive documentation.\n\n#### Coverage Criteria\n\n**Chemotherapy**\n- Diagnosis of AML confirmed by bone marrow biopsy and genetic testing.\n- Treatment plan aligns with NCCN guidelines or other recognized clinical pathways.\n- Patient meets performance status and organ function requirements for treatment.\n\n**Allogeneic Stem Cell Transplantation**\n- Diagnosis of AML in complete remission or with high-risk features after induction therapy.\n- Suitable donor identified and matched.\n- Patient meets age, comorbidity, and performance status criteria for transplant.\n- Transplant performed in a Medicare-approved facility.\n\n#### Required Documentation\n\n**General**\n- Detailed clinical notes supporting AML diagnosis and stage.\n- Pathology reports (bone marrow biopsy, cytogenetics, molecular studies).\n- Treatment plan including proposed chemotherapy agents and cycles.\n- Patient's performance status (e.g., ECOG, Karnofsky).\n\n**For Stem Cell Transplant**\n- Donor match documentation.\n- Transplant center evaluation and recommendation.\n- Documentation of prior induction therapy and response.\n\n#### Submission Process\n1. Submit prior authorization request through the Medicare Administrative Contractor (MAC) portal.\n2. Include all supporting clinical documentation and proposed treatment plan.\n3. Await approval before initiating treatment, especially for transplantation.\n\n#### Common Denial Reasons\n- Lack of medical necessity documentation.\n- Treatment not aligning with established guidelines.\n- Incomplete or missing prior authorization.\n- Transplant performed in a non-approved facility.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS | Covered | National Coverage Determination (NCD) for Stem Cell Transplantation (110.23) outlines coverage criteria. |\n\n#### Reimbursement Note\nReimbursement for AML treatment, including chemotherapy and stem cell transplantation, is complex and depends on the specific services rendered, facility type, and patient's Medicare plan (e.g., Original Medicare vs. Medicare Advantage). Co-pays and deductibles apply.\n\n#### Authorization Tips\n- Ensure all diagnostic reports and clinical notes are thorough and clearly support the diagnosis and treatment plan.\n- Adhere strictly to NCCN guidelines for AML treatment.\n- Verify facility accreditation for stem cell transplantation.\n- Submit prior authorization requests well in advance of planned treatment.\n\n### Medicaid\n\n**Badges:** Prior Auth Required · Covered with State-Specific Prior Authorization\n\n**Prior Authorization Note (alert):** Medicaid coverage for AML treatment, including chemotherapy and stem cell transplantation, varies by state. Prior authorization is almost always required and typically follows state-specific guidelines, often aligning with Medicare or NCCN.\n\n**Overview:** Medicaid programs cover medically necessary AML treatments, including chemotherapy and stem cell transplantation, for eligible beneficiaries. State-specific policies and prior authorization requirements must be met.\n\n#### Coverage Criteria\n\n**General**\n- Diagnosis of AML confirmed by appropriate clinical and laboratory findings.\n- Treatment plan is consistent with generally accepted medical standards and state Medicaid guidelines.\n- Patient meets state-specific eligibility criteria for Medicaid services.\n\n**Stem Cell Transplantation**\n- Similar criteria to Medicare regarding diagnosis, donor match, and patient suitability.\n- Transplant must be performed in a Medicaid-approved facility within the state or through an approved out-of-state referral.\n\n#### Required Documentation\n\n**General**\n- Comprehensive medical records, including diagnosis, staging, and treatment history.\n- Documentation of medical necessity for all proposed treatments.\n- State-specific prior authorization forms.\n\n**For Stem Cell Transplant**\n- Transplant evaluation and recommendation from a state-approved center.\n- Evidence of donor availability and compatibility.\n\n#### Submission Process\n1. Submit prior authorization request to the state Medicaid agency.\n2. Follow state-specific submission portals and documentation requirements.\n3. Expedited review may be available for urgent cases, but standard review times can be lengthy.\n\n#### Common Denial Reasons\n- Failure to meet state-specific medical necessity criteria.\n- Incomplete or incorrect prior authorization submission.\n- Lack of documentation supporting the chosen treatment regimen.\n- Treatment sought at a non-participating or non-approved facility.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (e.g., NC Medicaid) | Covered | Specific clinical policies for oncology and transplantation are available on state Medicaid websites. |\n\n#### Reimbursement Note\nMedicaid reimbursement rates are typically lower than Medicare or private insurance. Providers should confirm participation status and reimbursement schedules with their state Medicaid program.\n\n#### Authorization Tips\n- Familiarize yourself with your state's specific Medicaid policies for oncology and transplantation.\n- Ensure all forms are completely and accurately filled out.\n- Maintain clear communication with the state Medicaid agency throughout the authorization process.\n\n### Private Insurance\n\n**Badges:** Prior Auth Required · Covered with Strict Prior Authorization\n\n**Prior Authorization Note (alert):** Private insurance plans almost universally require prior authorization for AML chemotherapy and allogeneic stem cell transplantation. Coverage is based on medical necessity, plan benefits, and adherence to clinical guidelines (e.g., NCCN).\n\n**Overview:** Private insurance plans cover AML treatment, including chemotherapy and stem cell transplantation, based on the individual's policy benefits, medical necessity, and adherence to evidence-based clinical guidelines. Prior authorization is a critical step.\n\n#### Coverage Criteria\n\n**General**\n- Confirmed diagnosis of AML.\n- Treatment plan consistent with NCCN guidelines or other nationally recognized standards.\n- Patient meets clinical criteria for the specific chemotherapy regimen or transplant.\n\n**Stem Cell Transplantation**\n- AML in remission or with high-risk features.\n- Appropriate donor identified.\n- Patient suitability for transplant based on age, comorbidities, and functional status.\n- Transplant performed at an in-network, accredited facility.\n\n#### Required Documentation\n\n**General**\n- Detailed medical history and physical examination notes.\n- All diagnostic test results (bone marrow, cytogenetics, molecular).\n- Consultation notes from hematologist/oncologist and transplant physician (if applicable).\n- Proposed treatment regimen and expected outcomes.\n\n**For Stem Cell Transplant**\n- Donor search and match results.\n- Transplant center's comprehensive evaluation and treatment plan.\n- Documentation of patient's informed consent.\n\n#### Submission Process\n1. Submit prior authorization request via the insurer's provider portal or fax.\n2. Attach all required clinical documentation, emphasizing medical necessity and guideline adherence.\n3. Be prepared for potential peer-to-peer review if initial authorization is denied or delayed.\n\n#### Common Denial Reasons\n- Lack of medical necessity as defined by the plan's clinical policies.\n- Failure to obtain prior authorization.\n- Treatment considered experimental or investigational by the insurer.\n- Out-of-network services without proper authorization.\n- Incomplete or insufficient clinical documentation.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Various Private Insurers | Varies | Policies are highly individualized; always verify benefits and requirements for each patient's specific plan. |\n\n#### Reimbursement Note\nReimbursement rates vary significantly by plan and negotiated provider contracts. Out-of-pocket costs for patients can be substantial, including deductibles, co-insurance, and out-of-pocket maximums.\n\n#### Authorization Tips\n- Thoroughly review the patient's specific insurance policy for oncology and transplant benefits.\n- Ensure all documentation clearly references NCCN guidelines or other evidence-based criteria.\n- Proactively engage in peer-to-peer reviews to advocate for patient coverage.\n- Document all communications with the insurance company.\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "Description", "Device/Access", "Access", "RVU", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            [
+              "96413",
+              "Chemotherapy administration, intravenous infusion technique; up to 1 hour, single or initial substance/drug",
+              "IV access (e.g., peripheral IV, central line)",
+              "Intravenous",
+              "3.8",
+              "Pre-infusion assessment and patient education; Preparation of chemotherapy agent; Monitoring during infusion; Post-infusion care coordination",
+              "This code covers the initial hour of intravenous chemotherapy administration. Additional hours are billed with add-on codes (e.g., 96415)."
+            ],
+            [
+              "38240",
+              "Hematopoietic progenitor cell (HPC); allogeneic transplantation, per donor",
+              "Central venous catheter",
+              "Intravenous",
+              "7.2",
+              "Coordination of donor and recipient; Infusion of hematopoietic stem cells; Immediate post-infusion monitoring",
+              "This code covers the allogeneic stem cell transplantation procedure itself. Pre-transplant conditioning and post-transplant management are billed separately."
+            ]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["Code", "Description", "Notes", "Required/Primary"],
+          "rows": [
+            ["C92.00", "Acute myeloblastic leukemia, not having achieved remission", "Primary diagnosis for newly diagnosed or refractory AML.", "Yes (Primary)"],
+            ["C92.01", "Acute myeloblastic leukemia, in remission", "Used for patients in complete remission, often during maintenance therapy or follow-up.", "No"],
+            ["C92.02", "Acute myeloblastic leukemia, in relapse", "Used when AML recurs after a period of remission.", "No"],
+            ["D61.09", "Other aplastic anemias", "May be used in cases of severe bone marrow failure associated with AML or its treatment.", "No"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicare",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS", "Covered", "National Coverage Determination (NCD) for Stem Cell Transplantation (110.23) outlines coverage criteria."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., NC Medicaid)", "Covered", "Specific clinical policies for oncology and transplantation are available on state Medicaid websites."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Private Insurance",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Various Private Insurers", "Varies", "Policies are highly individualized; always verify benefits and requirements for each patient's specific plan."]
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,247 @@
+{
+  "title": "Radiofrequency Ablation Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "RFAAuthGuide.tsx",
+    "title": null,
+    "subtitle": null,
+    "cptCodes": [
+      { "code": "64633", "description": "Destruction by neurolytic agent, paravertebral facet joint nerve; cervical or thoracic, single facet joint", "rvu": "5.12", "notes": "Cervical/thoracic RFA — single level" },
+      { "code": "64634", "description": "Destruction by neurolytic agent, paravertebral facet joint nerve; cervical or thoracic, each additional facet joint", "rvu": "2.44", "notes": "Add-on code — each additional cervical/thoracic level" },
+      { "code": "64635", "description": "Destruction by neurolytic agent, paravertebral facet joint nerve; lumbar or sacral, single facet joint", "rvu": "4.88", "notes": "Lumbar/sacral RFA — single level" },
+      { "code": "64636", "description": "Destruction by neurolytic agent, paravertebral facet joint nerve; lumbar or sacral, each additional facet joint", "rvu": "2.28", "notes": "Add-on code — each additional lumbar/sacral level" }
+    ],
+    "icd10Codes": [
+      { "code": "M54.5", "description": "Low back pain", "notes": "Primary code for lumbar facet syndrome" },
+      { "code": "M47.816", "description": "Spondylosis without myelopathy or radiculopathy, lumbar region", "notes": "Lumbar facet arthropathy" },
+      { "code": "M47.812", "description": "Spondylosis without myelopathy or radiculopathy, cervical region", "notes": "Cervical facet arthropathy" },
+      { "code": "M54.2", "description": "Cervicalgia", "notes": "Cervical facet pain" },
+      { "code": "M54.59", "description": "Other low back pain", "notes": "Non-specific low back pain" }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "sections": [
+          {
+            "heading": "Prior Authorization Requirements",
+            "items": [
+              "Two positive diagnostic medial branch blocks (MBBs) with ≥80% pain relief each",
+              "MBBs performed on separate dates (typically 2–4 weeks apart)",
+              "Pain diary documenting % relief at 30 min and 2 hours post-MBB",
+              "Clinical diagnosis of facetogenic pain (axial pain, extension-provoked)",
+              "Documentation of conservative therapy failure: ≥3 months PT and analgesics",
+              "Imaging (X-ray or MRI) showing facet arthropathy",
+              "Frequency limit: typically once per 6 months per region (Medicare LCD)"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Two positive diagnostic MBBs with ≥80% relief each",
+              "Axial spine pain with facetogenic pattern",
+              "Failed conservative therapy for ≥3 months",
+              "No predominant radicular component"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Medicare covers RFA under applicable LCD. Two positive confirmatory MBBs are required. Fluoroscopic guidance is included in the CPT code. Document MBB dates, % relief, and duration of relief."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicare (CMS)", "status": "Yes", "notes": "Covered per LCD; requires 2 positive MBBs (≥80% relief each); once per 6 months per region" }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "sections": [
+          {
+            "heading": "Prior Authorization Requirements",
+            "items": [
+              "State-specific prior authorization required",
+              "Two positive diagnostic MBBs documentation",
+              "Clinical diagnosis documentation",
+              "Conservative therapy failure documentation"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Two positive diagnostic MBBs with ≥80% relief",
+              "Axial pain with facetogenic pattern",
+              "Failed conservative therapy"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Medicaid coverage varies by state. Prior authorization typically required. Some states require 3 positive MBBs or have stricter criteria."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicaid (state-specific)", "status": "Yes", "notes": "Prior auth required; MBB requirements vary by state" }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "sections": [
+          {
+            "heading": "Prior Authorization Requirements",
+            "items": [
+              "Prior authorization required by most commercial payers",
+              "Two positive diagnostic MBBs with ≥50–80% pain relief (threshold varies by payer)",
+              "MBBs performed on separate dates",
+              "Pain diary documenting % relief post-MBB",
+              "Clinical documentation of facetogenic pain pattern",
+              "Imaging showing facet arthropathy",
+              "Documentation of ≥3 months conservative therapy failure"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Two positive diagnostic MBBs (threshold varies: ≥50–80% by payer)",
+              "Axial spine pain with facetogenic pattern",
+              "Failed conservative therapy (PT, NSAIDs) for ≥3 months"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Commercial payers typically cover RFA with prior authorization and positive MBB documentation. Relief threshold varies (50–80%). Some payers require only one positive MBB."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Aetna", "status": "Yes", "notes": "Covered; requires 2 positive MBBs with ≥80% relief each" },
+          { "payer": "UnitedHealthcare", "status": "Yes", "notes": "Covered with prior auth; 2 positive MBBs required" },
+          { "payer": "BCBS (most plans)", "status": "Yes", "notes": "Covered; 2 positive MBBs with ≥50% relief; prior auth required" },
+          { "payer": "Cigna", "status": "Yes", "notes": "Covered with prior auth; positive MBB documentation required" },
+          { "payer": "Humana", "status": "Yes", "notes": "Covered; prior auth and 2 positive MBBs required" }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Required Documentation — Diagnostic MBB Documentation",
+        "kind": "list",
+        "items": [
+          "MBB procedure notes for both blocks (dates, levels, agent, volume)",
+          "Pain diary showing ≥80% relief at 30 min and 2 hours post-MBB for each block",
+          "Duration of relief documentation (days/weeks)",
+          "Functional improvement documentation post-MBB"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Imaging",
+        "kind": "list",
+        "items": [
+          "X-ray or MRI showing facet arthropathy or spondylosis at treated levels",
+          "Absence of significant disc herniation or nerve root compression"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Clinical Documentation",
+        "kind": "list",
+        "items": [
+          "H&P documenting axial pain pattern, extension provocation, and referred pain distribution",
+          "Pain scores at multiple visits (NRS or VAS)",
+          "Functional impairment documentation",
+          "Documentation of absence of predominant neurologic deficit"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Conservative Therapy",
+        "kind": "list",
+        "items": [
+          "PT notes documenting ≥3 months of spinal stabilization program",
+          "NSAIDs or analgesics trial documentation"
+        ]
+      },
+      {
+        "heading": "Submission Process",
+        "kind": "list",
+        "items": [
+          "Perform first diagnostic MBB with fluoroscopy — document % relief at 30 min and 2 hours",
+          "Perform second confirmatory MBB on a separate date (2–4 weeks later) — document % relief",
+          "Ensure both MBBs show ≥80% relief (or payer-specific threshold) at 30 min and 2 hours",
+          "Submit prior authorization with CPT codes (64635 ± 64636 for lumbar), ICD-10 codes, and MBB documentation",
+          "Include both MBB procedure notes, pain diaries, imaging report, and PT notes",
+          "Document levels treated and number of add-on codes needed",
+          "If denied for insufficient MBB relief, request peer-to-peer review",
+          "For repeat RFA: document duration of prior relief and recurrence of symptoms"
+        ]
+      },
+      {
+        "heading": "Common Denial Reasons",
+        "kind": "list",
+        "items": [
+          "Insufficient MBB documentation — most common denial; document % relief at 30 min AND 2 hours for BOTH blocks",
+          "Only one positive MBB documented (most payers require two)",
+          "MBBs not performed on separate dates",
+          "Pain relief threshold not met (document ≥80% relief explicitly — not just 'significant improvement')",
+          "Missing pain diary documentation for post-MBB relief",
+          "Wrong CPT code for level (cervical vs. lumbar) or add-on codes not used correctly",
+          "Frequency limit exceeded — document recurrence of symptoms and duration of prior relief",
+          "Prior authorization not obtained before procedure"
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# Radiofrequency Ablation Clinical Compass\n\n## CPT Codes\n\n| CPT | Description | RVU | Notes |\n| --- | --- | --- | --- |\n| 64633 | Destruction by neurolytic agent, paravertebral facet joint nerve; cervical or thoracic, single facet joint | 5.12 | Cervical/thoracic RFA — single level |\n| 64634 | Destruction by neurolytic agent, paravertebral facet joint nerve; cervical or thoracic, each additional facet joint | 2.44 | Add-on code — each additional cervical/thoracic level |\n| 64635 | Destruction by neurolytic agent, paravertebral facet joint nerve; lumbar or sacral, single facet joint | 4.88 | Lumbar/sacral RFA — single level |\n| 64636 | Destruction by neurolytic agent, paravertebral facet joint nerve; lumbar or sacral, each additional facet joint | 2.28 | Add-on code — each additional lumbar/sacral level |\n\n## ICD-10 Codes\n\n| ICD-10 | Description | Notes |\n| --- | --- | --- |\n| M54.5 | Low back pain | Primary code for lumbar facet syndrome |\n| M47.816 | Spondylosis without myelopathy or radiculopathy, lumbar region | Lumbar facet arthropathy |\n| M47.812 | Spondylosis without myelopathy or radiculopathy, cervical region | Cervical facet arthropathy |\n| M54.2 | Cervicalgia | Cervical facet pain |\n| M54.59 | Other low back pain | Non-specific low back pain |\n\n## Payer Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\n\n**Prior Authorization Requirements**\n- Two positive diagnostic medial branch blocks (MBBs) with ≥80% pain relief each\n- MBBs performed on separate dates (typically 2–4 weeks apart)\n- Pain diary documenting % relief at 30 min and 2 hours post-MBB\n- Clinical diagnosis of facetogenic pain (axial pain, extension-provoked)\n- Documentation of conservative therapy failure: ≥3 months PT and analgesics\n- Imaging (X-ray or MRI) showing facet arthropathy\n- Frequency limit: typically once per 6 months per region (Medicare LCD)\n\n**Medical Necessity Criteria**\n- ✓ Two positive diagnostic MBBs with ≥80% relief each\n- ✓ Axial spine pain with facetogenic pattern\n- ✓ Failed conservative therapy for ≥3 months\n- ✓ No predominant radicular component\n\n**Reimbursement:** Medicare covers RFA under applicable LCD. Two positive confirmatory MBBs are required. Fluoroscopic guidance is included in the CPT code. Document MBB dates, % relief, and duration of relief.\n\n**Known Payer Policies**\n\n| Payer | Policy | Covered |\n| --- | --- | --- |\n| Medicare (CMS) | Covered per LCD; requires 2 positive MBBs (≥80% relief each); once per 6 months per region | Yes |\n\n### Medicaid\n\n**Prior Authorization Requirements**\n- State-specific prior authorization required\n- Two positive diagnostic MBBs documentation\n- Clinical diagnosis documentation\n- Conservative therapy failure documentation\n\n**Medical Necessity Criteria**\n- ✓ Two positive diagnostic MBBs with ≥80% relief\n- ✓ Axial pain with facetogenic pattern\n- ✓ Failed conservative therapy\n\n**Reimbursement:** Medicaid coverage varies by state. Prior authorization typically required. Some states require 3 positive MBBs or have stricter criteria.\n\n**Known Payer Policies**\n\n| Payer | Policy | Covered |\n| --- | --- | --- |\n| Medicaid (state-specific) | Prior auth required; MBB requirements vary by state | Yes |\n\n### Private Insurance\n\n**Prior Authorization Requirements**\n- Prior authorization required by most commercial payers\n- Two positive diagnostic MBBs with ≥50–80% pain relief (threshold varies by payer)\n- MBBs performed on separate dates\n- Pain diary documenting % relief post-MBB\n- Clinical documentation of facetogenic pain pattern\n- Imaging showing facet arthropathy\n- Documentation of ≥3 months conservative therapy failure\n\n**Medical Necessity Criteria**\n- ✓ Two positive diagnostic MBBs (threshold varies: ≥50–80% by payer)\n- ✓ Axial spine pain with facetogenic pattern\n- ✓ Failed conservative therapy (PT, NSAIDs) for ≥3 months\n\n**Reimbursement:** Commercial payers typically cover RFA with prior authorization and positive MBB documentation. Relief threshold varies (50–80%). Some payers require only one positive MBB.\n\n**Known Payer Policies**\n\n| Payer | Policy | Covered |\n| --- | --- | --- |\n| Aetna | Covered; requires 2 positive MBBs with ≥80% relief each | Yes |\n| UnitedHealthcare | Covered with prior auth; 2 positive MBBs required | Yes |\n| BCBS (most plans) | Covered; 2 positive MBBs with ≥50% relief; prior auth required | Yes |\n| Cigna | Covered with prior auth; positive MBB documentation required | Yes |\n| Humana | Covered; prior auth and 2 positive MBBs required | Yes |\n\n## Required Documentation\n\n### Diagnostic MBB Documentation\n- □ MBB procedure notes for both blocks (dates, levels, agent, volume)\n- □ Pain diary showing ≥80% relief at 30 min and 2 hours post-MBB for each block\n- □ Duration of relief documentation (days/weeks)\n- □ Functional improvement documentation post-MBB\n\n### Imaging\n- □ X-ray or MRI showing facet arthropathy or spondylosis at treated levels\n- □ Absence of significant disc herniation or nerve root compression\n\n### Clinical Documentation\n- □ H&P documenting axial pain pattern, extension provocation, and referred pain distribution\n- □ Pain scores at multiple visits (NRS or VAS)\n- □ Functional impairment documentation\n- □ Documentation of absence of predominant neurologic deficit\n\n### Conservative Therapy\n- □ PT notes documenting ≥3 months of spinal stabilization program\n- □ NSAIDs or analgesics trial documentation\n\n## Submission Process\n\n1. Perform first diagnostic MBB with fluoroscopy — document % relief at 30 min and 2 hours\n2. Perform second confirmatory MBB on a separate date (2–4 weeks later) — document % relief\n3. Ensure both MBBs show ≥80% relief (or payer-specific threshold) at 30 min and 2 hours\n4. Submit prior authorization with CPT codes (64635 ± 64636 for lumbar), ICD-10 codes, and MBB documentation\n5. Include both MBB procedure notes, pain diaries, imaging report, and PT notes\n6. Document levels treated and number of add-on codes needed\n7. If denied for insufficient MBB relief, request peer-to-peer review\n8. For repeat RFA: document duration of prior relief and recurrence of symptoms\n\n## Common Denial Reasons\n\n- ⚠ Insufficient MBB documentation — most common denial; document % relief at 30 min AND 2 hours for BOTH blocks\n- ⚠ Only one positive MBB documented (most payers require two)\n- ⚠ MBBs not performed on separate dates\n- ⚠ Pain relief threshold not met (document ≥80% relief explicitly — not just 'significant improvement')\n- ⚠ Missing pain diary documentation for post-MBB relief\n- ⚠ Wrong CPT code for level (cervical vs. lumbar) or add-on codes not used correctly\n- ⚠ Frequency limit exceeded — document recurrence of symptoms and duration of prior relief\n- ⚠ Prior authorization not obtained before procedure\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["CPT", "Description", "RVU", "Notes"],
+          "rows": [
+            ["64633", "Destruction by neurolytic agent, paravertebral facet joint nerve; cervical or thoracic, single facet joint", "5.12", "Cervical/thoracic RFA — single level"],
+            ["64634", "Destruction by neurolytic agent, paravertebral facet joint nerve; cervical or thoracic, each additional facet joint", "2.44", "Add-on code — each additional cervical/thoracic level"],
+            ["64635", "Destruction by neurolytic agent, paravertebral facet joint nerve; lumbar or sacral, single facet joint", "4.88", "Lumbar/sacral RFA — single level"],
+            ["64636", "Destruction by neurolytic agent, paravertebral facet joint nerve; lumbar or sacral, each additional facet joint", "2.28", "Add-on code — each additional lumbar/sacral level"]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["ICD-10", "Description", "Notes"],
+          "rows": [
+            ["M54.5", "Low back pain", "Primary code for lumbar facet syndrome"],
+            ["M47.816", "Spondylosis without myelopathy or radiculopathy, lumbar region", "Lumbar facet arthropathy"],
+            ["M47.812", "Spondylosis without myelopathy or radiculopathy, cervical region", "Cervical facet arthropathy"],
+            ["M54.2", "Cervicalgia", "Cervical facet pain"],
+            ["M54.59", "Other low back pain", "Non-specific low back pain"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicare",
+          "header": ["Payer", "Policy", "Covered"],
+          "rows": [
+            ["Medicare (CMS)", "Covered per LCD; requires 2 positive MBBs (≥80% relief each); once per 6 months per region", "Yes"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicaid",
+          "header": ["Payer", "Policy", "Covered"],
+          "rows": [
+            ["Medicaid (state-specific)", "Prior auth required; MBB requirements vary by state", "Yes"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Private Insurance",
+          "header": ["Payer", "Policy", "Covered"],
+          "rows": [
+            ["Aetna", "Covered; requires 2 positive MBBs with ≥80% relief each", "Yes"],
+            ["UnitedHealthcare", "Covered with prior auth; 2 positive MBBs required", "Yes"],
+            ["BCBS (most plans)", "Covered; 2 positive MBBs with ≥50% relief; prior auth required", "Yes"],
+            ["Cigna", "Covered with prior auth; positive MBB documentation required", "Yes"],
+            ["Humana", "Covered; prior auth and 2 positive MBBs required", "Yes"]
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,338 @@
+{
+  "title": "Portal Hypertension Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "PortalHypertensionAuthGuide.tsx",
+    "title": "PortalHypertension Clinical Compass",
+    "subtitle": "Portal Hypertension Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "37182",
+        "description": "Transvenous intrahepatic portosystemic shunt (TIPS) creation, primary or revision; including venography and ultrasound guidance, when performed",
+        "device": "Stent, Catheter",
+        "access": "Transjugular",
+        "rvu": 30.00,
+        "includes": [
+          "Venography",
+          "Ultrasound guidance"
+        ],
+        "note": "Used for portal decompression in cases of portal hypertension."
+      },
+      {
+        "code": "43244",
+        "description": "Esophagogastroduodenoscopy, flexible, transoral; with band ligation of esophageal/gastric varices",
+        "device": "Endoscope, Band Ligator",
+        "access": "Transoral",
+        "rvu": 15.00,
+        "includes": [
+          "Diagnostic EGD",
+          "Identification of varices"
+        ],
+        "note": "Treatment for bleeding or high-risk esophageal/gastric varices due to portal hypertension."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "K76.6",
+        "description": "Portal hypertension",
+        "notes": "Primary diagnosis for portal hypertension",
+        "required": true
+      },
+      {
+        "code": "I85.00",
+        "description": "Esophageal varices without bleeding",
+        "notes": "Used when varices are present but not actively bleeding",
+        "required": false
+      },
+      {
+        "code": "I85.01",
+        "description": "Esophageal varices with bleeding",
+        "notes": "Used when varices are actively bleeding",
+        "required": true
+      },
+      {
+        "code": "I86.4",
+        "description": "Gastric varices",
+        "notes": "Varices located in the stomach, often associated with portal hypertension",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with medical necessity",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is generally required for TIPS (CPT 37182) and often for variceal banding (CPT 43244) depending on medical necessity and specific local coverage determinations (LCDs). Documentation must clearly support medical necessity.",
+        "overview": "Medicare covers medically necessary procedures for portal hypertension and its complications, such as TIPS and variceal banding, when specific criteria are met. Coverage is subject to national and local coverage determinations.",
+        "reimbursementNote": "CPT 37182 has a 0-day global period, allowing for separate billing of related E/M services on subsequent days if medically necessary. Reimbursement for CPT 43244 is typically bundled with the EGD component.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — TIPS (CPT 37182)",
+            "items": [
+              "Refractory ascites or hepatic hydrothorax unresponsive to medical therapy",
+              "Recurrent variceal hemorrhage despite endoscopic and pharmacological therapy",
+              "Bridging to liver transplantation",
+              "Absence of contraindications such as severe heart failure, severe pulmonary hypertension, or uncontrolled systemic infection"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Variceal Banding (CPT 43244)",
+            "items": [
+              "Diagnosis of esophageal or gastric varices",
+              "Evidence of recent variceal bleeding or high risk for bleeding",
+              "Performed as primary prophylaxis in high-risk patients or secondary prophylaxis after a bleed"
+            ]
+          },
+          {
+            "heading": "Required Documentation — General",
+            "items": [
+              "Detailed patient history and physical examination",
+              "Relevant laboratory results (e.g., liver function tests, coagulation profile)",
+              "Imaging studies (e.g., ultrasound, CT, MRI) confirming portal hypertension and varices",
+              "Endoscopy reports detailing variceal size, location, and stigmata of recent hemorrhage"
+            ]
+          },
+          {
+            "heading": "Required Documentation — For TIPS (CPT 37182)",
+            "items": [
+              "Documentation of failed medical and endoscopic management for ascites or variceal bleeding",
+              "Assessment of liver function and MELD score",
+              "Cardiovascular evaluation to rule out contraindications"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify patient eligibility and benefits",
+              "Obtain prior authorization if required by specific Medicare Advantage plan or LCD",
+              "Submit claims with appropriate CPT and ICD-10 codes",
+              "Ensure all supporting documentation is readily available for review"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity",
+              "Incomplete or insufficient clinical documentation",
+              "Failure to obtain prior authorization",
+              "Procedure considered experimental or investigational for the specific indication"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Thoroughly document all conservative management attempts and their outcomes.",
+              "Clearly state the indication for the procedure and how it meets coverage criteria.",
+              "Ensure all diagnostic reports (imaging, endoscopy) are included and support the procedure."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS (Medicare)",
+            "status": "Covered",
+            "notes": "Subject to LCDs and NCDs for specific indications."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Varies by state, generally covered with strict criteria",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid coverage for portal hypertension procedures varies by state. Prior authorization is almost always required and strict medical necessity criteria apply.",
+        "overview": "Medicaid programs cover essential medical services, including procedures for portal hypertension, but policies and coverage criteria can differ significantly between states. It is crucial to check the specific state Medicaid guidelines.",
+        "reimbursementNote": "Reimbursement rates and policies are determined at the state level and can be significantly different from Medicare or private payers.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — General",
+            "items": [
+              "Diagnosis of portal hypertension and related complications",
+              "Medical necessity clearly established by a physician",
+              "Conservative treatments have failed or are contraindicated"
+            ]
+          },
+          {
+            "heading": "Required Documentation — General",
+            "items": [
+              "Comprehensive medical records",
+              "Proof of medical necessity",
+              "Documentation of previous treatments and their ineffectiveness"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify state-specific Medicaid eligibility and benefits",
+              "Obtain prior authorization according to state guidelines",
+              "Submit claims with appropriate CPT and ICD-10 codes, adhering to state-specific billing rules"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of state-specific prior authorization",
+              "Failure to meet state-specific medical necessity criteria",
+              "Inadequate documentation",
+              "Procedure considered elective or not life-saving"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Consult the specific state Medicaid provider manual for detailed coverage policies.",
+              "Ensure all documentation explicitly addresses the state’s medical necessity criteria.",
+              "Be prepared for potential appeals processes due to varying state interpretations."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (e.g., California Medi-Cal)",
+            "status": "Covered with PA",
+            "notes": "Specific criteria apply; check state guidelines."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Generally covered with prior authorization and medical policy adherence",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for TIPS and variceal banding. Coverage depends on the specific plan benefits and medical policy.",
+        "overview": "Private insurance coverage for portal hypertension procedures is typically robust but always requires adherence to the plan’s medical policies and often prior authorization. Benefits can vary widely between different insurance carriers and plans.",
+        "reimbursementNote": "Reimbursement rates are negotiated between the provider and the insurance company. Out-of-network benefits may apply if the provider is not contracted.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — General",
+            "items": [
+              "Diagnosis of portal hypertension and its complications",
+              "Consistent with evidence-based medical guidelines",
+              "Conservative management failure or contraindication"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — TIPS (CPT 37182)",
+            "items": [
+              "Refractory variceal bleeding",
+              "Refractory ascites",
+              "Hepatic hydrothorax"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Variceal Banding (CPT 43244)",
+            "items": [
+              "Acute variceal hemorrhage",
+              "Prophylaxis of first variceal hemorrhage in high-risk patients",
+              "Prevention of re-bleeding"
+            ]
+          },
+          {
+            "heading": "Required Documentation — General",
+            "items": [
+              "Physician’s order and detailed clinical notes",
+              "Results of diagnostic tests (e.g., endoscopy, imaging, labs)",
+              "Documentation of medical necessity and expected outcomes"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify patient benefits and plan-specific requirements",
+              "Submit prior authorization request with all supporting clinical documentation",
+              "Follow up on authorization status and appeal if necessary",
+              "Submit claims with correct CPT and ICD-10 codes"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization",
+              "Not meeting plan-specific medical policy criteria",
+              "Insufficient documentation to support medical necessity",
+              "Procedure considered experimental or investigational"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Review the patient’s specific insurance policy for coverage details and exclusions.",
+              "Provide comprehensive clinical notes and test results with the prior authorization request.",
+              "Be prepared to engage in peer-to-peer reviews if initial authorization is denied."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Covered with PA",
+            "notes": "Requires medical necessity and adherence to clinical guidelines."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered with PA",
+            "notes": "Specific criteria for TIPS and variceal management."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Procedure Codes — Section Note",
+        "kind": "prose",
+        "text": "Each CPT code lists items that are included in this code and must NOT be billed separately."
+      },
+      {
+        "heading": "Navigation",
+        "kind": "link",
+        "text": "Back to Assessment",
+        "href": "/portalhypertension"
+      }
+    ],
+    "raw": {
+      "markdown": "# PortalHypertension Clinical Compass\n## Portal Hypertension Insurance Authorization Guide\n\n[Back to Assessment] (link: /portalhypertension)\n\n---\n\n## Procedure Codes (CPT Codes)\n\n### CPT 37182 — RVU 30\nTransvenous intrahepatic portosystemic shunt (TIPS) creation, primary or revision; including venography and ultrasound guidance, when performed\n- Device/Access: Stent, Catheter (Access: Transjugular)\n- Included in this code (do NOT bill separately):\n  - Venography\n  - Ultrasound guidance\n- Note: Used for portal decompression in cases of portal hypertension.\n\n### CPT 43244 — RVU 15\nEsophagogastroduodenoscopy, flexible, transoral; with band ligation of esophageal/gastric varices\n- Device/Access: Endoscope, Band Ligator (Access: Transoral)\n- Included in this code (do NOT bill separately):\n  - Diagnostic EGD\n  - Identification of varices\n- Note: Treatment for bleeding or high-risk esophageal/gastric varices due to portal hypertension.\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **K76.6** — Portal hypertension. Primary diagnosis for portal hypertension. (Required / Primary)\n- **I85.00** — Esophageal varices without bleeding. Used when varices are present but not actively bleeding. (Not required)\n- **I85.01** — Esophageal varices with bleeding. Used when varices are actively bleeding. (Required / Primary)\n- **I86.4** — Gastric varices. Varices located in the stomach, often associated with portal hypertension. (Not required)\n\n---\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\n- Prior Auth Required\n- Coverage Status: Covered with medical necessity\n- Prior Auth Note: Prior authorization is generally required for TIPS (CPT 37182) and often for variceal banding (CPT 43244) depending on medical necessity and specific local coverage determinations (LCDs). Documentation must clearly support medical necessity.\n- Overview: Medicare covers medically necessary procedures for portal hypertension and its complications, such as TIPS and variceal banding, when specific criteria are met. Coverage is subject to national and local coverage determinations.\n\n#### Coverage Criteria\n**TIPS (CPT 37182)**\n- Refractory ascites or hepatic hydrothorax unresponsive to medical therapy\n- Recurrent variceal hemorrhage despite endoscopic and pharmacological therapy\n- Bridging to liver transplantation\n- Absence of contraindications such as severe heart failure, severe pulmonary hypertension, or uncontrolled systemic infection\n\n**Variceal Banding (CPT 43244)**\n- Diagnosis of esophageal or gastric varices\n- Evidence of recent variceal bleeding or high risk for bleeding\n- Performed as primary prophylaxis in high-risk patients or secondary prophylaxis after a bleed\n\n#### Required Documentation\n**General**\n- Detailed patient history and physical examination\n- Relevant laboratory results (e.g., liver function tests, coagulation profile)\n- Imaging studies (e.g., ultrasound, CT, MRI) confirming portal hypertension and varices\n- Endoscopy reports detailing variceal size, location, and stigmata of recent hemorrhage\n\n**For TIPS (CPT 37182)**\n- Documentation of failed medical and endoscopic management for ascites or variceal bleeding\n- Assessment of liver function and MELD score\n- Cardiovascular evaluation to rule out contraindications\n\n#### Submission Process\n1. Verify patient eligibility and benefits\n2. Obtain prior authorization if required by specific Medicare Advantage plan or LCD\n3. Submit claims with appropriate CPT and ICD-10 codes\n4. Ensure all supporting documentation is readily available for review\n\n#### Common Denial Reasons\n- Lack of documented medical necessity\n- Incomplete or insufficient clinical documentation\n- Failure to obtain prior authorization\n- Procedure considered experimental or investigational for the specific indication\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS (Medicare) | Covered | Subject to LCDs and NCDs for specific indications. |\n\n#### Reimbursement Note\nCPT 37182 has a 0-day global period, allowing for separate billing of related E/M services on subsequent days if medically necessary. Reimbursement for CPT 43244 is typically bundled with the EGD component.\n\n#### Authorization Tips\n- Thoroughly document all conservative management attempts and their outcomes.\n- Clearly state the indication for the procedure and how it meets coverage criteria.\n- Ensure all diagnostic reports (imaging, endoscopy) are included and support the procedure.\n\n### Medicaid\n- Prior Auth Required\n- Coverage Status: Varies by state, generally covered with strict criteria\n- Prior Auth Note: Medicaid coverage for portal hypertension procedures varies by state. Prior authorization is almost always required and strict medical necessity criteria apply.\n- Overview: Medicaid programs cover essential medical services, including procedures for portal hypertension, but policies and coverage criteria can differ significantly between states. It is crucial to check the specific state Medicaid guidelines.\n\n#### Coverage Criteria\n**General**\n- Diagnosis of portal hypertension and related complications\n- Medical necessity clearly established by a physician\n- Conservative treatments have failed or are contraindicated\n\n#### Required Documentation\n**General**\n- Comprehensive medical records\n- Proof of medical necessity\n- Documentation of previous treatments and their ineffectiveness\n\n#### Submission Process\n1. Verify state-specific Medicaid eligibility and benefits\n2. Obtain prior authorization according to state guidelines\n3. Submit claims with appropriate CPT and ICD-10 codes, adhering to state-specific billing rules\n\n#### Common Denial Reasons\n- Lack of state-specific prior authorization\n- Failure to meet state-specific medical necessity criteria\n- Inadequate documentation\n- Procedure considered elective or not life-saving\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (e.g., California Medi-Cal) | Covered with PA | Specific criteria apply; check state guidelines. |\n\n#### Reimbursement Note\nReimbursement rates and policies are determined at the state level and can be significantly different from Medicare or private payers.\n\n#### Authorization Tips\n- Consult the specific state Medicaid provider manual for detailed coverage policies.\n- Ensure all documentation explicitly addresses the state’s medical necessity criteria.\n- Be prepared for potential appeals processes due to varying state interpretations.\n\n### Private Insurance\n- Prior Auth Required\n- Coverage Status: Generally covered with prior authorization and medical policy adherence\n- Prior Auth Note: Most private insurance plans require prior authorization for TIPS and variceal banding. Coverage depends on the specific plan benefits and medical policy.\n- Overview: Private insurance coverage for portal hypertension procedures is typically robust but always requires adherence to the plan’s medical policies and often prior authorization. Benefits can vary widely between different insurance carriers and plans.\n\n#### Coverage Criteria\n**General**\n- Diagnosis of portal hypertension and its complications\n- Consistent with evidence-based medical guidelines\n- Conservative management failure or contraindication\n\n**TIPS (CPT 37182)**\n- Refractory variceal bleeding\n- Refractory ascites\n- Hepatic hydrothorax\n\n**Variceal Banding (CPT 43244)**\n- Acute variceal hemorrhage\n- Prophylaxis of first variceal hemorrhage in high-risk patients\n- Prevention of re-bleeding\n\n#### Required Documentation\n**General**\n- Physician’s order and detailed clinical notes\n- Results of diagnostic tests (e.g., endoscopy, imaging, labs)\n- Documentation of medical necessity and expected outcomes\n\n#### Submission Process\n1. Verify patient benefits and plan-specific requirements\n2. Submit prior authorization request with all supporting clinical documentation\n3. Follow up on authorization status and appeal if necessary\n4. Submit claims with correct CPT and ICD-10 codes\n\n#### Common Denial Reasons\n- Lack of prior authorization\n- Not meeting plan-specific medical policy criteria\n- Insufficient documentation to support medical necessity\n- Procedure considered experimental or investigational\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Blue Cross Blue Shield | Covered with PA | Requires medical necessity and adherence to clinical guidelines. |\n| UnitedHealthcare | Covered with PA | Specific criteria for TIPS and variceal management. |\n\n#### Reimbursement Note\nReimbursement rates are negotiated between the provider and the insurance company. Out-of-network benefits may apply if the provider is not contracted.\n\n#### Authorization Tips\n- Review the patient’s specific insurance policy for coverage details and exclusions.\n- Provide comprehensive clinical notes and test results with the prior authorization request.\n- Be prepared to engage in peer-to-peer reviews if initial authorization is denied.\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "Description", "Device/Access", "RVU", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            ["37182", "Transvenous intrahepatic portosystemic shunt (TIPS) creation, primary or revision; including venography and ultrasound guidance, when performed", "Stent, Catheter / Transjugular", "30", "Venography; Ultrasound guidance", "Used for portal decompression in cases of portal hypertension."],
+            ["43244", "Esophagogastroduodenoscopy, flexible, transoral; with band ligation of esophageal/gastric varices", "Endoscope, Band Ligator / Transoral", "15", "Diagnostic EGD; Identification of varices", "Treatment for bleeding or high-risk esophageal/gastric varices due to portal hypertension."]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["Code", "Description", "Notes", "Required (Primary)"],
+          "rows": [
+            ["K76.6", "Portal hypertension", "Primary diagnosis for portal hypertension", "Yes"],
+            ["I85.00", "Esophageal varices without bleeding", "Used when varices are present but not actively bleeding", "No"],
+            ["I85.01", "Esophageal varices with bleeding", "Used when varices are actively bleeding", "Yes"],
+            ["I86.4", "Gastric varices", "Varices located in the stomach, often associated with portal hypertension", "No"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicare",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS (Medicare)", "Covered", "Subject to LCDs and NCDs for specific indications."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., California Medi-Cal)", "Covered with PA", "Specific criteria apply; check state guidelines."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Private Insurance",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield", "Covered with PA", "Requires medical necessity and adherence to clinical guidelines."],
+            ["UnitedHealthcare", "Covered with PA", "Specific criteria for TIPS and variceal management."]
+          ]
+        }
+      ]
+    }
+  }
+}

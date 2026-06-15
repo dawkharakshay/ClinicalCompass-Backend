@@ -1,0 +1,258 @@
+{
+  "title": "Peripheral Atherectomy Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "AtherecтomyAuthGuide.tsx",
+    "title": "Peripheral Atherectomy — Authorization Guide",
+    "subtitle": "CPT Codes · ICD-10 · Payer Requirements",
+    "cptCodes": [
+      {
+        "code": "37225",
+        "description": "Revascularization, endovascular, open or percutaneous, femoral, popliteal artery(s), unilateral; with atherectomy, includes angioplasty within the same vessel, when performed",
+        "deviceType": "Any"
+      },
+      {
+        "code": "37227",
+        "description": "Revascularization, endovascular, open or percutaneous, femoral, popliteal artery(s), unilateral; with transluminal stent placement(s) and atherectomy, includes angioplasty within the same vessel, when performed",
+        "deviceType": "Any"
+      },
+      {
+        "code": "37229",
+        "description": "Revascularization, endovascular, open or percutaneous, tibial, peroneal artery, unilateral; with atherectomy, includes angioplasty within the same vessel, when performed",
+        "deviceType": "Any"
+      },
+      {
+        "code": "37231",
+        "description": "Revascularization, endovascular, open or percutaneous, tibial, peroneal artery, unilateral; with transluminal stent placement(s) and atherectomy, includes angioplasty within the same vessel, when performed",
+        "deviceType": "Any"
+      },
+      {
+        "code": "37221",
+        "description": "Revascularization, endovascular, open or percutaneous, iliac artery, unilateral; with atherectomy, includes angioplasty within the same vessel, when performed",
+        "deviceType": "Any"
+      },
+      {
+        "code": "37223",
+        "description": "Revascularization, endovascular, open or percutaneous, iliac artery, unilateral; with transluminal stent placement(s) and atherectomy, includes angioplasty within the same vessel, when performed",
+        "deviceType": "Any"
+      },
+      {
+        "code": "37232",
+        "description": "Revascularization, endovascular, open or percutaneous, tibial/peroneal artery, each additional vessel; with atherectomy (List separately in addition to code for primary procedure)",
+        "deviceType": "Add-on"
+      },
+      {
+        "code": "37234",
+        "description": "Revascularization, endovascular, open or percutaneous, tibial/peroneal artery, each additional vessel; with transluminal stent placement(s) and atherectomy (List separately in addition to code for primary procedure)",
+        "deviceType": "Add-on"
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "I70.211",
+        "description": "Atherosclerosis of native arteries of extremities with intermittent claudication, right leg",
+        "rutherford": "2–3"
+      },
+      {
+        "code": "I70.212",
+        "description": "Atherosclerosis of native arteries of extremities with intermittent claudication, left leg",
+        "rutherford": "2–3"
+      },
+      {
+        "code": "I70.221",
+        "description": "Atherosclerosis of native arteries of extremities with rest pain, right leg",
+        "rutherford": "4"
+      },
+      {
+        "code": "I70.222",
+        "description": "Atherosclerosis of native arteries of extremities with rest pain, left leg",
+        "rutherford": "4"
+      },
+      {
+        "code": "I70.231",
+        "description": "Atherosclerosis of native arteries of right leg with ulceration of thigh",
+        "rutherford": "5"
+      },
+      {
+        "code": "I70.241",
+        "description": "Atherosclerosis of native arteries of right leg with ulceration of heel and midfoot",
+        "rutherford": "5"
+      },
+      {
+        "code": "I70.261",
+        "description": "Atherosclerosis of native arteries of extremities with gangrene, right leg",
+        "rutherford": "6"
+      },
+      {
+        "code": "I70.262",
+        "description": "Atherosclerosis of native arteries of extremities with gangrene, left leg",
+        "rutherford": "6"
+      },
+      {
+        "code": "I70.291",
+        "description": "Other atherosclerosis of native arteries of extremities, right leg",
+        "rutherford": "1–3"
+      },
+      {
+        "code": "I70.292",
+        "description": "Other atherosclerosis of native arteries of extremities, left leg",
+        "rutherford": "1–3"
+      },
+      {
+        "code": "I70.311",
+        "description": "Atherosclerosis of unspecified type of bypass graft(s) of the extremities with intermittent claudication, right leg",
+        "rutherford": "2–3"
+      },
+      {
+        "code": "I70.411",
+        "description": "Atherosclerosis of autologous vein bypass graft(s) of the extremities with intermittent claudication, right leg",
+        "rutherford": "2–3"
+      }
+    ],
+    "payers": [
+      {
+        "key": "cms",
+        "label": "CMS / Medicare (LCD L35041 — Peripheral Vascular Disease)",
+        "sections": [
+          {
+            "heading": "Covered Indications",
+            "items": [
+              "Symptomatic PAD (Rutherford 2–6) with hemodynamically significant stenosis (>50%) confirmed by duplex ultrasound, CTA, MRA, or angiography",
+              "Critical limb ischemia (Rutherford 4–6) — strongest indication; limb salvage intent",
+              "In-stent restenosis of peripheral vessels",
+              "Calcified lesions where atherectomy facilitates balloon or stent delivery"
+            ]
+          },
+          {
+            "heading": "Non-Covered / Limitations",
+            "items": [
+              "Asymptomatic PAD (Rutherford 0)",
+              "Mild claudication (Rutherford 1) without failed conservative therapy",
+              "Atherectomy billed separately from angioplasty in the same vessel (bundled per CPT rules)"
+            ]
+          },
+          {
+            "heading": "Documentation Requirements",
+            "items": [
+              "ABI and/or duplex ultrasound confirming hemodynamically significant disease",
+              "Rutherford classification documented in procedure note",
+              "Failure or contraindication to supervised exercise therapy (claudication)",
+              "Wound care documentation for CLI/tissue loss cases"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bcbs",
+        "label": "BlueCross BlueShield",
+        "sections": [
+          {
+            "heading": "Requirements",
+            "items": [
+              "Covered for Rutherford 3–6 with angiographic confirmation of >50% stenosis",
+              "Rutherford 2: requires documentation of failure of supervised exercise therapy ≥3 months and optimized medical therapy",
+              "Prior authorization required for elective (claudication) cases; CLI cases may be expedited",
+              "Peer-to-peer review available and recommended for complex TASC C/D lesions",
+              "SIR/OEIS/SCAI 2022 joint statement accepted as supporting evidence"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "aetna",
+        "label": "Aetna",
+        "sections": [
+          {
+            "heading": "Requirements",
+            "items": [
+              "Covered for CLI (Rutherford 4–6) and moderate-to-severe claudication (Rutherford 3) with hemodynamically significant disease",
+              "Atherectomy as vessel preparation for DCB: covered when calcification grade is moderate-severe or ISR is present",
+              "Requires documentation: ABI, duplex or angiographic imaging, Rutherford classification, wound documentation if applicable",
+              "Aetna Clinical Policy Bulletin #0282: Peripheral Atherectomy — updated 2023"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "cigna",
+        "label": "Cigna",
+        "sections": [
+          {
+            "heading": "Requirements",
+            "items": [
+              "Covered for symptomatic PAD (Rutherford 2–6) with >50% stenosis confirmed by imaging",
+              "Rutherford 2–3: requires failure of 3-month supervised exercise program and optimized antiplatelet/statin therapy",
+              "ISR: covered without additional conservative therapy requirement",
+              "Calcified lesions: atherectomy as vessel preparation covered when calcification is documented on fluoroscopy or IVUS",
+              "Prior authorization required; clinical notes, ABI, and imaging must be submitted"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "uhc",
+        "label": "UnitedHealthcare",
+        "sections": [
+          {
+            "heading": "Requirements",
+            "items": [
+              "Covered for CLI (Rutherford 4–6) without additional requirements",
+              "Claudication (Rutherford 2–3): requires ABI <0.8, failure of supervised exercise ≥3 months, and optimized medical therapy",
+              "UHC Medical Policy: Endovascular Procedures for Peripheral Arterial Disease (updated 2024)",
+              "Peer-to-peer review strongly recommended for TASC C/D lesions in claudicants",
+              "SIR/OEIS/SCAI 2022 evidence-based letter referenced in UHC policy as supporting documentation"
+            ]
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "CPT Codes — Note",
+        "kind": "prose",
+        "text": "Note: Atherectomy CPT codes include angioplasty within the same vessel. Do not separately bill angioplasty (37224, 37228, 37230) when atherectomy is performed in the same vessel."
+      },
+      {
+        "heading": "SIR / OEIS / SCAI 2022 Joint Evidence-Based Statement",
+        "kind": "prose",
+        "text": "The Society of Interventional Radiology (SIR), Outpatient Endovascular and Interventional Society (OEIS), and Society for Cardiovascular Angiography and Interventions (SCAI) issued a joint evidence-based letter in 2022 specifically addressing insurer denials of peripheral atherectomy.\n\nKey points from the joint statement:\n- Peripheral atherectomy is a covered, evidence-based treatment for symptomatic PAD supported by Level A/B evidence from multiple prospective trials (DEFINITIVE LE, LIBERTY 360, CONFIRM registries)\n- Atherectomy as vessel preparation prior to DCB or stenting is clinically appropriate and reduces the need for stenting in calcified lesions\n- ISR is a well-established indication for atherectomy; repeat stenting in ISR is associated with worse outcomes\n- Blanket coverage denials for atherectomy are inconsistent with the published evidence base and societal guidelines\n- The joint statement is available for inclusion in prior authorization requests and appeal letters\n\nReference: SIR/OEIS/SCAI Joint Evidence-Based Letter on Peripheral Atherectomy Coverage, 2022. Available at sir.org, oeis.org, and scai.org."
+      }
+    ],
+    "raw": {
+      "markdown": "# Peripheral Atherectomy — Authorization Guide\n\n_CPT Codes · ICD-10 · Payer Requirements_\n\n(Back link: /atherectomy)\n\n## CPT Codes\n\n| CPT Code | Description | Device Type |\n| --- | --- | --- |\n| 37225 | Revascularization, endovascular, open or percutaneous, femoral, popliteal artery(s), unilateral; with atherectomy, includes angioplasty within the same vessel, when performed | Any |\n| 37227 | Revascularization, endovascular, open or percutaneous, femoral, popliteal artery(s), unilateral; with transluminal stent placement(s) and atherectomy, includes angioplasty within the same vessel, when performed | Any |\n| 37229 | Revascularization, endovascular, open or percutaneous, tibial, peroneal artery, unilateral; with atherectomy, includes angioplasty within the same vessel, when performed | Any |\n| 37231 | Revascularization, endovascular, open or percutaneous, tibial, peroneal artery, unilateral; with transluminal stent placement(s) and atherectomy, includes angioplasty within the same vessel, when performed | Any |\n| 37221 | Revascularization, endovascular, open or percutaneous, iliac artery, unilateral; with atherectomy, includes angioplasty within the same vessel, when performed | Any |\n| 37223 | Revascularization, endovascular, open or percutaneous, iliac artery, unilateral; with transluminal stent placement(s) and atherectomy, includes angioplasty within the same vessel, when performed | Any |\n| 37232 | Revascularization, endovascular, open or percutaneous, tibial/peroneal artery, each additional vessel; with atherectomy (List separately in addition to code for primary procedure) | Add-on |\n| 37234 | Revascularization, endovascular, open or percutaneous, tibial/peroneal artery, each additional vessel; with transluminal stent placement(s) and atherectomy (List separately in addition to code for primary procedure) | Add-on |\n\n_Note: Atherectomy CPT codes include angioplasty within the same vessel. Do not separately bill angioplasty (37224, 37228, 37230) when atherectomy is performed in the same vessel._\n\n## Covered ICD-10 Diagnoses\n\n| ICD-10 | Description | Rutherford |\n| --- | --- | --- |\n| I70.211 | Atherosclerosis of native arteries of extremities with intermittent claudication, right leg | 2–3 |\n| I70.212 | Atherosclerosis of native arteries of extremities with intermittent claudication, left leg | 2–3 |\n| I70.221 | Atherosclerosis of native arteries of extremities with rest pain, right leg | 4 |\n| I70.222 | Atherosclerosis of native arteries of extremities with rest pain, left leg | 4 |\n| I70.231 | Atherosclerosis of native arteries of right leg with ulceration of thigh | 5 |\n| I70.241 | Atherosclerosis of native arteries of right leg with ulceration of heel and midfoot | 5 |\n| I70.261 | Atherosclerosis of native arteries of extremities with gangrene, right leg | 6 |\n| I70.262 | Atherosclerosis of native arteries of extremities with gangrene, left leg | 6 |\n| I70.291 | Other atherosclerosis of native arteries of extremities, right leg | 1–3 |\n| I70.292 | Other atherosclerosis of native arteries of extremities, left leg | 1–3 |\n| I70.311 | Atherosclerosis of unspecified type of bypass graft(s) of the extremities with intermittent claudication, right leg | 2–3 |\n| I70.411 | Atherosclerosis of autologous vein bypass graft(s) of the extremities with intermittent claudication, right leg | 2–3 |\n\n## Payer-Specific Requirements\n\n### CMS / Medicare (LCD L35041 — Peripheral Vascular Disease)\n\n**Covered Indications:**\n- Symptomatic PAD (Rutherford 2–6) with hemodynamically significant stenosis (>50%) confirmed by duplex ultrasound, CTA, MRA, or angiography\n- Critical limb ischemia (Rutherford 4–6) — strongest indication; limb salvage intent\n- In-stent restenosis of peripheral vessels\n- Calcified lesions where atherectomy facilitates balloon or stent delivery\n\n**Non-Covered / Limitations:**\n- Asymptomatic PAD (Rutherford 0)\n- Mild claudication (Rutherford 1) without failed conservative therapy\n- Atherectomy billed separately from angioplasty in the same vessel (bundled per CPT rules)\n\n**Documentation Requirements:**\n- ABI and/or duplex ultrasound confirming hemodynamically significant disease\n- Rutherford classification documented in procedure note\n- Failure or contraindication to supervised exercise therapy (claudication)\n- Wound care documentation for CLI/tissue loss cases\n\n### BlueCross BlueShield\n- Covered for Rutherford 3–6 with angiographic confirmation of >50% stenosis\n- Rutherford 2: requires documentation of failure of supervised exercise therapy ≥3 months and optimized medical therapy\n- Prior authorization required for elective (claudication) cases; CLI cases may be expedited\n- Peer-to-peer review available and recommended for complex TASC C/D lesions\n- SIR/OEIS/SCAI 2022 joint statement accepted as supporting evidence\n\n### Aetna\n- Covered for CLI (Rutherford 4–6) and moderate-to-severe claudication (Rutherford 3) with hemodynamically significant disease\n- Atherectomy as vessel preparation for DCB: covered when calcification grade is moderate-severe or ISR is present\n- Requires documentation: ABI, duplex or angiographic imaging, Rutherford classification, wound documentation if applicable\n- Aetna Clinical Policy Bulletin #0282: Peripheral Atherectomy — updated 2023\n\n### Cigna\n- Covered for symptomatic PAD (Rutherford 2–6) with >50% stenosis confirmed by imaging\n- Rutherford 2–3: requires failure of 3-month supervised exercise program and optimized antiplatelet/statin therapy\n- ISR: covered without additional conservative therapy requirement\n- Calcified lesions: atherectomy as vessel preparation covered when calcification is documented on fluoroscopy or IVUS\n- Prior authorization required; clinical notes, ABI, and imaging must be submitted\n\n### UnitedHealthcare\n- Covered for CLI (Rutherford 4–6) without additional requirements\n- Claudication (Rutherford 2–3): requires ABI <0.8, failure of supervised exercise ≥3 months, and optimized medical therapy\n- UHC Medical Policy: Endovascular Procedures for Peripheral Arterial Disease (updated 2024)\n- Peer-to-peer review strongly recommended for TASC C/D lesions in claudicants\n- SIR/OEIS/SCAI 2022 evidence-based letter referenced in UHC policy as supporting documentation\n\n## SIR / OEIS / SCAI 2022 Joint Evidence-Based Statement\n\nThe Society of Interventional Radiology (SIR), Outpatient Endovascular and Interventional Society (OEIS), and Society for Cardiovascular Angiography and Interventions (SCAI) issued a joint evidence-based letter in 2022 specifically addressing insurer denials of peripheral atherectomy.\n\nKey points from the joint statement:\n- Peripheral atherectomy is a covered, evidence-based treatment for symptomatic PAD supported by Level A/B evidence from multiple prospective trials (DEFINITIVE LE, LIBERTY 360, CONFIRM registries)\n- Atherectomy as vessel preparation prior to DCB or stenting is clinically appropriate and reduces the need for stenting in calcified lesions\n- ISR is a well-established indication for atherectomy; repeat stenting in ISR is associated with worse outcomes\n- Blanket coverage denials for atherectomy are inconsistent with the published evidence base and societal guidelines\n- The joint statement is available for inclusion in prior authorization requests and appeal letters\n\n_Reference: SIR/OEIS/SCAI Joint Evidence-Based Letter on Peripheral Atherectomy Coverage, 2022. Available at sir.org, oeis.org, and scai.org._",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["CPT Code", "Description", "Device Type"],
+          "rows": [
+            ["37225", "Revascularization, endovascular, open or percutaneous, femoral, popliteal artery(s), unilateral; with atherectomy, includes angioplasty within the same vessel, when performed", "Any"],
+            ["37227", "Revascularization, endovascular, open or percutaneous, femoral, popliteal artery(s), unilateral; with transluminal stent placement(s) and atherectomy, includes angioplasty within the same vessel, when performed", "Any"],
+            ["37229", "Revascularization, endovascular, open or percutaneous, tibial, peroneal artery, unilateral; with atherectomy, includes angioplasty within the same vessel, when performed", "Any"],
+            ["37231", "Revascularization, endovascular, open or percutaneous, tibial, peroneal artery, unilateral; with transluminal stent placement(s) and atherectomy, includes angioplasty within the same vessel, when performed", "Any"],
+            ["37221", "Revascularization, endovascular, open or percutaneous, iliac artery, unilateral; with atherectomy, includes angioplasty within the same vessel, when performed", "Any"],
+            ["37223", "Revascularization, endovascular, open or percutaneous, iliac artery, unilateral; with transluminal stent placement(s) and atherectomy, includes angioplasty within the same vessel, when performed", "Any"],
+            ["37232", "Revascularization, endovascular, open or percutaneous, tibial/peroneal artery, each additional vessel; with atherectomy (List separately in addition to code for primary procedure)", "Add-on"],
+            ["37234", "Revascularization, endovascular, open or percutaneous, tibial/peroneal artery, each additional vessel; with transluminal stent placement(s) and atherectomy (List separately in addition to code for primary procedure)", "Add-on"]
+          ]
+        },
+        {
+          "name": "Covered ICD-10 Diagnoses",
+          "header": ["ICD-10", "Description", "Rutherford"],
+          "rows": [
+            ["I70.211", "Atherosclerosis of native arteries of extremities with intermittent claudication, right leg", "2–3"],
+            ["I70.212", "Atherosclerosis of native arteries of extremities with intermittent claudication, left leg", "2–3"],
+            ["I70.221", "Atherosclerosis of native arteries of extremities with rest pain, right leg", "4"],
+            ["I70.222", "Atherosclerosis of native arteries of extremities with rest pain, left leg", "4"],
+            ["I70.231", "Atherosclerosis of native arteries of right leg with ulceration of thigh", "5"],
+            ["I70.241", "Atherosclerosis of native arteries of right leg with ulceration of heel and midfoot", "5"],
+            ["I70.261", "Atherosclerosis of native arteries of extremities with gangrene, right leg", "6"],
+            ["I70.262", "Atherosclerosis of native arteries of extremities with gangrene, left leg", "6"],
+            ["I70.291", "Other atherosclerosis of native arteries of extremities, right leg", "1–3"],
+            ["I70.292", "Other atherosclerosis of native arteries of extremities, left leg", "1–3"],
+            ["I70.311", "Atherosclerosis of unspecified type of bypass graft(s) of the extremities with intermittent claudication, right leg", "2–3"],
+            ["I70.411", "Atherosclerosis of autologous vein bypass graft(s) of the extremities with intermittent claudication, right leg", "2–3"]
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Varicocelectomy Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "55530, 55535, 55540, 37241, 74185, 93971",
+      "credentials": "[Credentials]",
+      "icd_codes": "I86.1, N46.11, N46.121, N46.129, N46.8, N46.9, N50.89, Z31.81",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "To Whom It May Concern,\n\nI am writing to formally appeal the denial of prior authorization for microsurgical varicocelectomy for my patient. This procedure is medically necessary and is supported by a Grade A recommendation from the American Urological Association (AUA) and the American Society for Reproductive Medicine (ASRM).\n\nCLINICAL SUMMARY\n\nMy patient presents with a clinically palpable varicocele (Grade [I/II/III]) confirmed on physical examination and scrotal Doppler ultrasound. Semen analysis demonstrates abnormal parameters including [oligospermia/asthenospermia/teratospermia]. The couple has been attempting conception for [X] months without success. Female partner fertility evaluation is [normal/completed].\n\nMEDICAL NECESSITY — AUA/ASRM GRADE A EVIDENCE\n\nThe AUA/ASRM Guideline on Diagnosis and Treatment of Infertility in Men (Schlegel et al., J Urol. 2021;205(2):397-398) provides a Grade A (strong) recommendation for varicocelectomy when:\n1. A palpable varicocele is present (Grade I–III on physical examination)\n2. Semen parameters are abnormal\n3. The couple has documented infertility (≥12 months)\n4. Female partner fertility is normal or correctable\n\nAll four criteria are met in this patient.\n\nEVIDENCE BASE\n\nA landmark meta-analysis (Baazeem et al., Eur Urol. 2011;59(5):796-808) of 17 randomized controlled trials demonstrated that varicocelectomy significantly improves sperm concentration, progressive motility, and morphology, with an odds ratio of 2.87 for spontaneous pregnancy compared to observation or no treatment.\n\nThe EAU Guidelines on Male Infertility (2024) similarly recommend varicocelectomy as standard of care for clinical varicocele with impaired semen quality.\n\nCOST-EFFECTIVENESS\n\nMicrosurgical varicocelectomy ($3,000–$6,000 one-time) is substantially more cost-effective than IVF/ICSI ($12,000–$20,000 per cycle). In patients meeting AUA criteria, varicocelectomy should be offered as first-line treatment before proceeding to assisted reproduction.\n\nCONCLUSION\n\nDenial of this medically necessary procedure is inconsistent with the highest level of evidence in the reproductive urology literature. I respectfully request immediate reconsideration and approval.\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\n{{letter_date}}"
+  }
+}

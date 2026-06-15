@@ -1,0 +1,274 @@
+{
+  "title": "Bariatric Surgery Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assess Bariatric Candidacy",
+    "logicKey": "bariatric",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "patient-bmi",
+        "shortLabel": "Patient & BMI",
+        "title": "Patient Information & BMI",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "sex",
+            "name": "sex",
+            "label": "Sex",
+            "type": "select",
+            "required": false,
+            "defaultValue": "male",
+            "options": [
+              { "label": "Male", "value": "male" },
+              { "label": "Female", "value": "female" }
+            ]
+          },
+          {
+            "id": "bmi",
+            "name": "bmi",
+            "label": "BMI (kg/m²)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "procedure-type",
+            "name": "procedureType",
+            "label": "Procedure Preference",
+            "type": "select",
+            "required": false,
+            "defaultValue": "undecided",
+            "options": [
+              { "label": "Undecided / To be determined", "value": "undecided" },
+              { "label": "Sleeve Gastrectomy", "value": "sleeve" },
+              { "label": "Roux-en-Y Gastric Bypass (RYGB)", "value": "bypass" },
+              { "label": "Adjustable Gastric Band", "value": "band" },
+              { "label": "Biliopancreatic Diversion / Duodenal Switch", "value": "duodenal-switch" }
+            ]
+          },
+          {
+            "id": "weight-loss-attempts",
+            "name": "weightLossAttempts",
+            "label": "Prior Weight Loss Attempts",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "supervised-program-duration",
+            "name": "supervisedProgramDuration",
+            "label": "Supervised Program (months)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "comorbidities",
+        "shortLabel": "Comorbidities",
+        "title": "Obesity-Related Comorbidities",
+        "fields": [
+          {
+            "id": "type2-diabetes",
+            "name": "type2Diabetes",
+            "label": "Type 2 Diabetes Mellitus",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "hypertension",
+            "name": "hypertension",
+            "label": "Hypertension",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "sleep-apnea",
+            "name": "sleepApnea",
+            "label": "Obstructive sleep apnea",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "dyslipidemia",
+            "name": "dyslipidemia",
+            "label": "Dyslipidemia / hyperlipidemia",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "nafld",
+            "name": "nafld",
+            "label": "NAFLD / NASH (non-alcoholic fatty liver disease)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "gerd",
+            "name": "gerd",
+            "label": "GERD / gastroesophageal reflux disease",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "osteoarthritis",
+            "name": "osteoarthritis",
+            "label": "Osteoarthritis (weight-bearing joints)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "heart-failure",
+            "name": "heartFailure",
+            "label": "Heart failure",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "afib",
+            "name": "afib",
+            "label": "Atrial fibrillation",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "pseudotumor-cerebri",
+            "name": "pseudotumorCerebri",
+            "label": "Pseudotumor cerebri (idiopathic intracranial hypertension)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "pcos",
+            "name": "pcos",
+            "label": "Polycystic ovary syndrome (PCOS)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "infertility",
+            "name": "infertility",
+            "label": "Obesity-related infertility",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "hba1c",
+            "name": "hba1c",
+            "label": "HbA1c (%)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "type2Diabetes", "op": "truthy" }
+          }
+        ]
+      },
+      {
+        "id": "preop-workup",
+        "shortLabel": "Pre-op Workup",
+        "title": "Pre-operative Workup & Contraindications",
+        "fields": [
+          {
+            "id": "psychological-clearance",
+            "name": "psychologicalClearance",
+            "label": "Psychological evaluation and clearance completed",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "nutrition-consult-completed",
+            "name": "nutritionConsultCompleted",
+            "label": "Nutrition consultation completed",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "prior-abdominal-surgery",
+            "name": "priorAbdominalSurgery",
+            "label": "Prior abdominal surgery (increases complexity)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "prior-bariatric-surgery",
+            "name": "priorBariatricSurgery",
+            "label": "Prior bariatric surgery (revision case)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "active-substance-abuse",
+            "name": "activeSubstanceAbuse",
+            "label": "Active substance abuse (alcohol or drugs)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "uncontrolled-psychiatric-disorder",
+            "name": "uncontrolledPsychiatricDisorder",
+            "label": "Uncontrolled psychiatric disorder",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "cirrhosis",
+            "name": "cirrhosis",
+            "label": "Liver cirrhosis",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "portal-hypertension",
+            "name": "portalHypertension",
+            "label": "Portal hypertension",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "esophageal-motility-disorder",
+            "name": "esophagealMotilityDisorder",
+            "label": "Esophageal motility disorder (achalasia, severe dysmotility)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

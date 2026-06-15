@@ -1,0 +1,249 @@
+{
+  "title": "Facet Joint Injection Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "FacetJointAuthGuide.tsx",
+    "title": null,
+    "subtitle": null,
+    "cptCodes": [
+      { "code": "64490", "description": "Injection(s), diagnostic or therapeutic agent, paravertebral facet (zygapophyseal) joint (or nerves innervating that joint) with image guidance; cervical or thoracic, single level", "rvu": "3.44", "notes": "Cervical/thoracic facet injection or MBB — single level" },
+      { "code": "64491", "description": "Injection(s), diagnostic or therapeutic agent, paravertebral facet joint; cervical or thoracic, second level", "rvu": "1.82", "notes": "Add-on code — second level" },
+      { "code": "64492", "description": "Injection(s), diagnostic or therapeutic agent, paravertebral facet joint; cervical or thoracic, third and any additional level(s)", "rvu": "1.62", "notes": "Add-on code — third+ level" },
+      { "code": "64493", "description": "Injection(s), diagnostic or therapeutic agent, paravertebral facet joint; lumbar or sacral, single level", "rvu": "3.28", "notes": "Lumbar/sacral facet injection or MBB — single level" },
+      { "code": "64494", "description": "Injection(s), diagnostic or therapeutic agent, paravertebral facet joint; lumbar or sacral, second level", "rvu": "1.72", "notes": "Add-on code — second level" },
+      { "code": "64495", "description": "Injection(s), diagnostic or therapeutic agent, paravertebral facet joint; lumbar or sacral, third and any additional level(s)", "rvu": "1.52", "notes": "Add-on code — third+ level" }
+    ],
+    "icd10Codes": [
+      { "code": "M54.5", "description": "Low back pain", "notes": "Primary code for lumbar facet syndrome" },
+      { "code": "M47.816", "description": "Spondylosis without myelopathy or radiculopathy, lumbar region", "notes": "Lumbar facet arthropathy" },
+      { "code": "M47.812", "description": "Spondylosis without myelopathy or radiculopathy, cervical region", "notes": "Cervical facet arthropathy" },
+      { "code": "M54.2", "description": "Cervicalgia", "notes": "Cervical facet pain" },
+      { "code": "M47.896", "description": "Other spondylosis, lumbar region", "notes": "Lumbar spondylosis" },
+      { "code": "M54.59", "description": "Other low back pain", "notes": "Non-specific low back pain" }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "sections": [
+          {
+            "heading": "Prior Authorization Requirements",
+            "items": [
+              "Clinical diagnosis of facetogenic pain (axial pain, extension-provoked, no neurologic deficit)",
+              "Documentation of conservative therapy failure: ≥3 months PT and analgesics",
+              "Imaging (X-ray or MRI) showing facet arthropathy or spondylosis",
+              "Physician attestation of medical necessity",
+              "Frequency limit: 3 injections per region per year (Medicare LCD)",
+              "For MBB: documentation of intent to proceed to RFA if positive response"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Axial spine pain with extension/rotation provocation pattern",
+              "Clinical pattern consistent with facetogenic pain (referred pain to buttock/groin/posterior thigh)",
+              "Failed conservative therapy (PT, NSAIDs, analgesics) for ≥3 months",
+              "No predominant radicular component"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Medicare covers facet injections and medial branch blocks under applicable LCD. Fluoroscopic guidance is included in the CPT code. Frequency limits apply — document each injection date and response."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicare (CMS)", "status": "Yes", "notes": "Covered per LCD; 3 injections/region/year; fluoroscopy included in CPT" }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "sections": [
+          {
+            "heading": "Prior Authorization Requirements",
+            "items": [
+              "State-specific prior authorization required",
+              "Clinical diagnosis documentation",
+              "Conservative therapy failure documentation",
+              "Physician attestation"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Axial pain with facetogenic pattern",
+              "Failed conservative therapy"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Medicaid coverage varies by state. Prior authorization typically required. Some states have strict frequency limits."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicaid (state-specific)", "status": "Yes", "notes": "Prior auth required; frequency limits vary by state" }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "sections": [
+          {
+            "heading": "Prior Authorization Requirements",
+            "items": [
+              "Prior authorization required by most commercial payers",
+              "Clinical documentation of facetogenic pain pattern",
+              "Imaging showing facet arthropathy",
+              "Documentation of ≥3 months conservative therapy failure",
+              "Frequency limit: typically 3 injections per region per year",
+              "For MBB series: documentation of RFA plan if positive response"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Axial spine pain with extension provocation and facetogenic referral pattern",
+              "Imaging-confirmed facet arthropathy or spondylosis",
+              "Failed conservative therapy (PT, NSAIDs) for ≥3 months"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Commercial payers typically cover facet injections and MBBs with prior authorization. Fluoroscopy is included in the CPT code. Some payers require step therapy (PT before injections)."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Aetna", "status": "Yes", "notes": "Covered; requires 3-month PT failure and imaging correlation" },
+          { "payer": "UnitedHealthcare", "status": "Yes", "notes": "Covered with prior auth; clinical documentation required" },
+          { "payer": "BCBS (most plans)", "status": "Yes", "notes": "Covered; 3 injections/region/year; prior auth required" },
+          { "payer": "Cigna", "status": "Yes", "notes": "Covered with prior auth; facetogenic pain pattern documentation required" },
+          { "payer": "Humana", "status": "Yes", "notes": "Covered; prior auth and conservative therapy documentation required" }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Required Documentation — Imaging",
+        "kind": "list",
+        "items": [
+          "X-ray or MRI showing facet arthropathy or spondylosis at symptomatic levels",
+          "Absence of significant disc herniation or nerve root compression (to distinguish from radiculopathy)"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Clinical Documentation",
+        "kind": "list",
+        "items": [
+          "H&P documenting axial pain pattern, extension provocation, and referred pain distribution",
+          "Pain scores at multiple visits (NRS or VAS)",
+          "Functional impairment documentation",
+          "Documentation of absence of predominant neurologic deficit"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Conservative Therapy",
+        "kind": "list",
+        "items": [
+          "PT notes documenting ≥3 months of lumbar/cervical stabilization and core strengthening",
+          "NSAIDs or analgesics trial documentation",
+          "Activity modification documentation"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Procedure Documentation",
+        "kind": "list",
+        "items": [
+          "Fluoroscopy confirmation of needle placement at facet joint or medial branch",
+          "Volume and agent documentation (local anesthetic ± steroid)",
+          "Post-procedure pain diary (for MBB — document % relief at 30 min and 2 hours)"
+        ]
+      },
+      {
+        "heading": "Submission Process",
+        "kind": "list",
+        "items": [
+          "1. Establish clinical diagnosis of facetogenic pain (axial pain, extension-provoked, no neurologic deficit)",
+          "2. Obtain imaging showing facet arthropathy or spondylosis",
+          "3. Document conservative therapy failure (≥3 months PT and analgesics)",
+          "4. Submit prior authorization with CPT codes (64493 ± 64494 for lumbar), ICD-10 codes, and clinical documentation",
+          "5. Include imaging report, PT notes, and pain score documentation",
+          "6. For MBB: document intent to proceed to RFA if ≥80% relief achieved",
+          "7. Document post-procedure pain diary results for diagnostic blocks",
+          "8. If denied, request peer-to-peer review citing clinical pattern and PT failure"
+        ]
+      },
+      {
+        "heading": "Common Denial Reasons",
+        "kind": "list",
+        "items": [
+          "Frequency limit exceeded (3/region/year) — document exceptional circumstances",
+          "Missing clinical documentation of facetogenic pain pattern (axial pain, extension provocation)",
+          "Imaging not confirming facet arthropathy — ensure X-ray or MRI shows facet changes",
+          "Insufficient conservative therapy documentation (document ≥3 months PT explicitly)",
+          "Wrong CPT code for level (cervical vs. lumbar) or add-on codes not used correctly",
+          "Prior authorization not obtained before procedure",
+          "Missing post-procedure pain diary for diagnostic MBB (required for RFA authorization)"
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# Facet Joint Injection Clinical Compass\n\n## CPT Codes\n\n| CPT | Description | RVU | Notes |\n| --- | --- | --- | --- |\n| 64490 | Injection(s), diagnostic or therapeutic agent, paravertebral facet (zygapophyseal) joint (or nerves innervating that joint) with image guidance; cervical or thoracic, single level | 3.44 | Cervical/thoracic facet injection or MBB — single level |\n| 64491 | Injection(s), diagnostic or therapeutic agent, paravertebral facet joint; cervical or thoracic, second level | 1.82 | Add-on code — second level |\n| 64492 | Injection(s), diagnostic or therapeutic agent, paravertebral facet joint; cervical or thoracic, third and any additional level(s) | 1.62 | Add-on code — third+ level |\n| 64493 | Injection(s), diagnostic or therapeutic agent, paravertebral facet joint; lumbar or sacral, single level | 3.28 | Lumbar/sacral facet injection or MBB — single level |\n| 64494 | Injection(s), diagnostic or therapeutic agent, paravertebral facet joint; lumbar or sacral, second level | 1.72 | Add-on code — second level |\n| 64495 | Injection(s), diagnostic or therapeutic agent, paravertebral facet joint; lumbar or sacral, third and any additional level(s) | 1.52 | Add-on code — third+ level |\n\n## ICD-10 Codes\n\n| ICD-10 | Description | Notes |\n| --- | --- | --- |\n| M54.5 | Low back pain | Primary code for lumbar facet syndrome |\n| M47.816 | Spondylosis without myelopathy or radiculopathy, lumbar region | Lumbar facet arthropathy |\n| M47.812 | Spondylosis without myelopathy or radiculopathy, cervical region | Cervical facet arthropathy |\n| M54.2 | Cervicalgia | Cervical facet pain |\n| M47.896 | Other spondylosis, lumbar region | Lumbar spondylosis |\n| M54.59 | Other low back pain | Non-specific low back pain |\n\n## Payer Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\n\n**Prior Authorization Requirements**\n- Clinical diagnosis of facetogenic pain (axial pain, extension-provoked, no neurologic deficit)\n- Documentation of conservative therapy failure: ≥3 months PT and analgesics\n- Imaging (X-ray or MRI) showing facet arthropathy or spondylosis\n- Physician attestation of medical necessity\n- Frequency limit: 3 injections per region per year (Medicare LCD)\n- For MBB: documentation of intent to proceed to RFA if positive response\n\n**Medical Necessity Criteria**\n- ✓ Axial spine pain with extension/rotation provocation pattern\n- ✓ Clinical pattern consistent with facetogenic pain (referred pain to buttock/groin/posterior thigh)\n- ✓ Failed conservative therapy (PT, NSAIDs, analgesics) for ≥3 months\n- ✓ No predominant radicular component\n\n**Reimbursement:** Medicare covers facet injections and medial branch blocks under applicable LCD. Fluoroscopic guidance is included in the CPT code. Frequency limits apply — document each injection date and response.\n\n**Known Payer Policies**\n\n| Payer | Policy | Covered |\n| --- | --- | --- |\n| Medicare (CMS) | Covered per LCD; 3 injections/region/year; fluoroscopy included in CPT | Yes |\n\n### Medicaid\n\n**Prior Authorization Requirements**\n- State-specific prior authorization required\n- Clinical diagnosis documentation\n- Conservative therapy failure documentation\n- Physician attestation\n\n**Medical Necessity Criteria**\n- ✓ Axial pain with facetogenic pattern\n- ✓ Failed conservative therapy\n\n**Reimbursement:** Medicaid coverage varies by state. Prior authorization typically required. Some states have strict frequency limits.\n\n**Known Payer Policies**\n\n| Payer | Policy | Covered |\n| --- | --- | --- |\n| Medicaid (state-specific) | Prior auth required; frequency limits vary by state | Yes |\n\n### Private Insurance\n\n**Prior Authorization Requirements**\n- Prior authorization required by most commercial payers\n- Clinical documentation of facetogenic pain pattern\n- Imaging showing facet arthropathy\n- Documentation of ≥3 months conservative therapy failure\n- Frequency limit: typically 3 injections per region per year\n- For MBB series: documentation of RFA plan if positive response\n\n**Medical Necessity Criteria**\n- ✓ Axial spine pain with extension provocation and facetogenic referral pattern\n- ✓ Imaging-confirmed facet arthropathy or spondylosis\n- ✓ Failed conservative therapy (PT, NSAIDs) for ≥3 months\n\n**Reimbursement:** Commercial payers typically cover facet injections and MBBs with prior authorization. Fluoroscopy is included in the CPT code. Some payers require step therapy (PT before injections).\n\n**Known Payer Policies**\n\n| Payer | Policy | Covered |\n| --- | --- | --- |\n| Aetna | Covered; requires 3-month PT failure and imaging correlation | Yes |\n| UnitedHealthcare | Covered with prior auth; clinical documentation required | Yes |\n| BCBS (most plans) | Covered; 3 injections/region/year; prior auth required | Yes |\n| Cigna | Covered with prior auth; facetogenic pain pattern documentation required | Yes |\n| Humana | Covered; prior auth and conservative therapy documentation required | Yes |\n\n## Required Documentation\n\n### Imaging\n- X-ray or MRI showing facet arthropathy or spondylosis at symptomatic levels\n- Absence of significant disc herniation or nerve root compression (to distinguish from radiculopathy)\n\n### Clinical Documentation\n- H&P documenting axial pain pattern, extension provocation, and referred pain distribution\n- Pain scores at multiple visits (NRS or VAS)\n- Functional impairment documentation\n- Documentation of absence of predominant neurologic deficit\n\n### Conservative Therapy\n- PT notes documenting ≥3 months of lumbar/cervical stabilization and core strengthening\n- NSAIDs or analgesics trial documentation\n- Activity modification documentation\n\n### Procedure Documentation\n- Fluoroscopy confirmation of needle placement at facet joint or medial branch\n- Volume and agent documentation (local anesthetic ± steroid)\n- Post-procedure pain diary (for MBB — document % relief at 30 min and 2 hours)\n\n## Submission Process\n\n1. Establish clinical diagnosis of facetogenic pain (axial pain, extension-provoked, no neurologic deficit)\n2. Obtain imaging showing facet arthropathy or spondylosis\n3. Document conservative therapy failure (≥3 months PT and analgesics)\n4. Submit prior authorization with CPT codes (64493 ± 64494 for lumbar), ICD-10 codes, and clinical documentation\n5. Include imaging report, PT notes, and pain score documentation\n6. For MBB: document intent to proceed to RFA if ≥80% relief achieved\n7. Document post-procedure pain diary results for diagnostic blocks\n8. If denied, request peer-to-peer review citing clinical pattern and PT failure\n\n## Common Denial Reasons\n\n- ⚠ Frequency limit exceeded (3/region/year) — document exceptional circumstances\n- ⚠ Missing clinical documentation of facetogenic pain pattern (axial pain, extension provocation)\n- ⚠ Imaging not confirming facet arthropathy — ensure X-ray or MRI shows facet changes\n- ⚠ Insufficient conservative therapy documentation (document ≥3 months PT explicitly)\n- ⚠ Wrong CPT code for level (cervical vs. lumbar) or add-on codes not used correctly\n- ⚠ Prior authorization not obtained before procedure\n- ⚠ Missing post-procedure pain diary for diagnostic MBB (required for RFA authorization)\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["CPT", "Description", "RVU", "Notes"],
+          "rows": [
+            ["64490", "Injection(s), diagnostic or therapeutic agent, paravertebral facet (zygapophyseal) joint (or nerves innervating that joint) with image guidance; cervical or thoracic, single level", "3.44", "Cervical/thoracic facet injection or MBB — single level"],
+            ["64491", "Injection(s), diagnostic or therapeutic agent, paravertebral facet joint; cervical or thoracic, second level", "1.82", "Add-on code — second level"],
+            ["64492", "Injection(s), diagnostic or therapeutic agent, paravertebral facet joint; cervical or thoracic, third and any additional level(s)", "1.62", "Add-on code — third+ level"],
+            ["64493", "Injection(s), diagnostic or therapeutic agent, paravertebral facet joint; lumbar or sacral, single level", "3.28", "Lumbar/sacral facet injection or MBB — single level"],
+            ["64494", "Injection(s), diagnostic or therapeutic agent, paravertebral facet joint; lumbar or sacral, second level", "1.72", "Add-on code — second level"],
+            ["64495", "Injection(s), diagnostic or therapeutic agent, paravertebral facet joint; lumbar or sacral, third and any additional level(s)", "1.52", "Add-on code — third+ level"]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["ICD-10", "Description", "Notes"],
+          "rows": [
+            ["M54.5", "Low back pain", "Primary code for lumbar facet syndrome"],
+            ["M47.816", "Spondylosis without myelopathy or radiculopathy, lumbar region", "Lumbar facet arthropathy"],
+            ["M47.812", "Spondylosis without myelopathy or radiculopathy, cervical region", "Cervical facet arthropathy"],
+            ["M54.2", "Cervicalgia", "Cervical facet pain"],
+            ["M47.896", "Other spondylosis, lumbar region", "Lumbar spondylosis"],
+            ["M54.59", "Other low back pain", "Non-specific low back pain"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicare",
+          "header": ["Payer", "Policy", "Covered"],
+          "rows": [
+            ["Medicare (CMS)", "Covered per LCD; 3 injections/region/year; fluoroscopy included in CPT", "Yes"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicaid",
+          "header": ["Payer", "Policy", "Covered"],
+          "rows": [
+            ["Medicaid (state-specific)", "Prior auth required; frequency limits vary by state", "Yes"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Private Insurance",
+          "header": ["Payer", "Policy", "Covered"],
+          "rows": [
+            ["Aetna", "Covered; requires 3-month PT failure and imaging correlation", "Yes"],
+            ["UnitedHealthcare", "Covered with prior auth; clinical documentation required", "Yes"],
+            ["BCBS (most plans)", "Covered; 3 injections/region/year; prior auth required", "Yes"],
+            ["Cigna", "Covered with prior auth; facetogenic pain pattern documentation required", "Yes"],
+            ["Humana", "Covered; prior auth and conservative therapy documentation required", "Yes"]
+          ]
+        }
+      ]
+    }
+  }
+}

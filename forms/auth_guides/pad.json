@@ -1,0 +1,413 @@
+{
+  "title": "PAD Revascularization Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "PADAuthGuide.tsx",
+    "title": "PAD Clinical Compass",
+    "subtitle": "Peripheral Artery Disease Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "37254",
+        "description": "Endovascular revascularization, iliac artery, angioplasty, straightforward, initial vessel",
+        "device": "Balloon catheter",
+        "access": "Percutaneous",
+        "rvu": "15.00 (estimated)",
+        "includes": [
+          "Catheterization of the selective or non-selective target vessel(s)",
+          "Lesion traversal",
+          "Radiological supervision and interpretation",
+          "Embolic protection (if used)",
+          "Arteriotomy closure (if applicable)",
+          "Imaging to document completion"
+        ],
+        "note": "Use for straightforward angioplasty of the initial iliac artery."
+      },
+      {
+        "code": "37267",
+        "description": "Endovascular revascularization, femoral/popliteal artery, stent placement, straightforward, initial vessel",
+        "device": "Stent (bare metal or drug-eluting)",
+        "access": "Percutaneous",
+        "rvu": "20.50 (estimated)",
+        "includes": [
+          "Catheterization of the selective or non-selective target vessel(s)",
+          "Lesion traversal",
+          "Radiological supervision and interpretation",
+          "Embolic protection (if used)",
+          "Arteriotomy closure (if applicable)",
+          "Imaging to document completion"
+        ],
+        "note": "Use for straightforward stent placement in the initial femoral/popliteal artery."
+      },
+      {
+        "code": "37271",
+        "description": "Endovascular revascularization, femoral/popliteal artery, atherectomy, straightforward, initial vessel",
+        "device": "Atherectomy device (directional, rotational, or laser)",
+        "access": "Percutaneous",
+        "rvu": "22.00 (estimated)",
+        "includes": [
+          "Catheterization of the selective or non-selective target vessel(s)",
+          "Lesion traversal",
+          "Radiological supervision and interpretation",
+          "Embolic protection (if used)",
+          "Arteriotomy closure (if applicable)",
+          "Imaging to document completion"
+        ],
+        "note": "Use for straightforward atherectomy of the initial femoral/popliteal artery."
+      },
+      {
+        "code": "37280",
+        "description": "Endovascular revascularization, tibial/peroneal artery, angioplasty, straightforward, initial vessel",
+        "device": "Balloon catheter",
+        "access": "Percutaneous",
+        "rvu": "18.25 (estimated)",
+        "includes": [
+          "Catheterization of the selective or non-selective target vessel(s)",
+          "Lesion traversal",
+          "Radiological supervision and interpretation",
+          "Embolic protection (if used)",
+          "Arteriotomy closure (if applicable)",
+          "Imaging to document completion"
+        ],
+        "note": "Use for straightforward angioplasty of the initial tibial/peroneal artery."
+      },
+      {
+        "code": "37288",
+        "description": "Endovascular revascularization, tibial/peroneal artery, atherectomy, straightforward, initial vessel",
+        "device": "Atherectomy device (directional, rotational, or laser)",
+        "access": "Percutaneous",
+        "rvu": "25.75 (estimated)",
+        "includes": [
+          "Catheterization of the selective or non-selective target vessel(s)",
+          "Lesion traversal",
+          "Radiological supervision and interpretation",
+          "Embolic protection (if used)",
+          "Arteriotomy closure (if applicable)",
+          "Imaging to document completion"
+        ],
+        "note": "Use for straightforward atherectomy of the initial tibial/peroneal artery."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "I70.211",
+        "description": "Atherosclerosis of native arteries of extremities with intermittent claudication, right leg",
+        "notes": "Primary diagnosis for PAD with claudication affecting the right leg.",
+        "required": true
+      },
+      {
+        "code": "I70.212",
+        "description": "Atherosclerosis of native arteries of extremities with intermittent claudication, left leg",
+        "notes": "Primary diagnosis for PAD with claudication affecting the left leg.",
+        "required": true
+      },
+      {
+        "code": "I70.219",
+        "description": "Atherosclerosis of native arteries of extremities with intermittent claudication, unspecified extremity",
+        "notes": "Use when laterality is not specified or bilateral involvement.",
+        "required": false
+      },
+      {
+        "code": "I73.9",
+        "description": "Peripheral vascular disease, unspecified",
+        "notes": "Use when specific type of peripheral vascular disease is not documented.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with Medical Necessity",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Medicare generally does not require prior authorization for medically necessary peripheral artery disease interventions, but documentation must support medical necessity.",
+        "overview": "Medicare covers endovascular revascularization procedures for PAD when deemed medically necessary and performed in an appropriate setting. Coverage typically follows national and local coverage determinations (NCD/LCDs).",
+        "reimbursementNote": "Reimbursement is based on the Medicare Physician Fee Schedule (MPFS) and Outpatient Prospective Payment System (OPPS) rates. RVUs are assigned to each CPT code.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Clinical Indications",
+            "items": [
+              "Symptomatic PAD (e.g., claudication, rest pain, non-healing wounds)",
+              "Objective evidence of PAD (e.g., ABI < 0.9, significant stenosis on imaging)",
+              "Failure of conservative management (e.g., exercise, risk factor modification)",
+              "Procedure performed by a qualified physician in an appropriate facility"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Vessel Specific Criteria",
+            "items": [
+              "Significant stenosis or occlusion (typically >50-70%) in target vessel",
+              "Lesion amenable to endovascular treatment"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Patient History and Physical",
+            "items": [
+              "Detailed history of PAD symptoms and duration",
+              "Physical examination findings (e.g., diminished pulses, skin changes)",
+              "Assessment of functional limitations due to PAD"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Diagnostic Test Results",
+            "items": [
+              "Ankle-Brachial Index (ABI) measurements",
+              "Duplex ultrasound, CTA, or MRA reports demonstrating vessel pathology",
+              "Angiography reports, if performed"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Conservative Management",
+            "items": [
+              "Documentation of supervised exercise program, if applicable",
+              "Records of pharmacotherapy (e.g., antiplatelets, statins) and lifestyle modifications"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Ensure all medical records support medical necessity as per NCD/LCDs.",
+              "Submit claims with appropriate CPT and ICD-10 codes.",
+              "Respond promptly to any Additional Documentation Requests (ADRs)."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity",
+              "Insufficient documentation of conservative therapy failure",
+              "Inappropriate coding or modifier usage",
+              "Services considered experimental or investigational"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Thoroughly document all symptoms, physical findings, and functional limitations.",
+              "Clearly state the failure of conservative management strategies.",
+              "Reference relevant NCD/LCDs in your documentation."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS",
+            "status": "Covered",
+            "notes": "Follows NCD 20.7 for Percutaneous Transluminal Angioplasty (PTA)."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Requires Prior Authorization",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid programs often require prior authorization for endovascular PAD procedures. Requirements vary by state.",
+        "overview": "Medicaid coverage for PAD interventions varies by state. Most states require prior authorization and adherence to specific medical necessity criteria, often similar to Medicare but with additional administrative steps.",
+        "reimbursementNote": "Reimbursement rates are determined by individual state Medicaid programs and may differ from Medicare rates.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Clinical Indications",
+            "items": [
+              "Severe claudication limiting daily activities",
+              "Rest pain or tissue loss (ulcers, gangrene)",
+              "Objective evidence of significant arterial disease",
+              "Documented failure of medical management and lifestyle changes"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Authorization Request Form",
+            "items": [
+              "Completed state-specific prior authorization form",
+              "Physician order for the procedure"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Medical Records",
+            "items": [
+              "Recent history and physical examination notes",
+              "Relevant diagnostic imaging reports (e.g., angiogram, duplex ultrasound)",
+              "Documentation of previous treatments and their outcomes"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify state-specific Medicaid guidelines for PAD interventions.",
+              "Submit prior authorization request with all required documentation.",
+              "Await approval before scheduling the procedure.",
+              "Submit claims with the approved authorization number."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization",
+              "Incomplete or insufficient documentation",
+              "Failure to meet state-specific medical necessity criteria",
+              "Procedure considered elective or cosmetic"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always check the specific Medicaid policy for your state.",
+              "Submit prior authorization requests well in advance.",
+              "Ensure all supporting documentation is comprehensive and clearly linked to medical necessity."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (Example)",
+            "status": "Requires PA",
+            "notes": "Specific criteria for claudication and critical limb ischemia."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Requires Prior Authorization",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for endovascular PAD procedures. Requirements vary significantly by plan.",
+        "overview": "Private insurance coverage for PAD interventions is highly variable. Most plans require prior authorization and have specific medical policies that outline coverage criteria, which may include a trial of conservative therapy.",
+        "reimbursementNote": "Reimbursement rates are based on negotiated contracts between the provider and the private insurance company.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Medical Necessity",
+            "items": [
+              "Significant functional impairment due to PAD symptoms",
+              "Objective evidence of hemodynamically significant stenosis",
+              "Documented failure of at least 3-6 months of conservative therapy (e.g., exercise, medication)"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Exclusions",
+            "items": [
+              "Asymptomatic PAD (unless specific high-risk features)",
+              "Procedures for cosmetic purposes"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Records",
+            "items": [
+              "Physician office notes detailing symptoms, physical exam, and impact on quality of life",
+              "Results of non-invasive vascular studies (ABI, PVR, duplex ultrasound)",
+              "Angiographic images and reports"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization Form",
+            "items": [
+              "Completed and signed prior authorization request form",
+              "Letter of medical necessity from the treating physician"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Review the patient's specific insurance policy for PAD intervention coverage.",
+              "Submit a comprehensive prior authorization request, including all clinical documentation.",
+              "Follow up with the insurance company regularly for status updates.",
+              "Appeal any denials with additional clinical information if appropriate."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization",
+              "Failure to meet medical policy criteria (e.g., insufficient trial of conservative therapy)",
+              "Inadequate documentation of symptoms or objective findings",
+              "Procedure considered experimental or investigational by the plan"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify benefits and prior authorization requirements with the specific plan.",
+              "Provide detailed clinical notes emphasizing the severity of symptoms and functional impairment.",
+              "Highlight the failure of conservative treatments and the necessity of the intervention."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield (Example)",
+            "status": "Requires PA",
+            "notes": "Requires 3-month trial of conservative therapy for claudication."
+          },
+          {
+            "payer": "UnitedHealthcare (Example)",
+            "status": "Requires PA",
+            "notes": "Specific criteria for critical limb ischemia and claudication."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment",
+        "href": "/pad"
+      },
+      {
+        "heading": "Procedure Codes (note)",
+        "kind": "prose",
+        "text": "Each CPT code includes a list of bundled services under the label 'Included in this code (do NOT bill separately):'. These bundled items (catheterization, lesion traversal, radiological supervision and interpretation, embolic protection, arteriotomy closure, and completion imaging) must not be billed separately."
+      },
+      {
+        "heading": "ICD-10 Diagnosis Codes (note)",
+        "kind": "prose",
+        "text": "Codes marked as required are flagged as 'Primary' diagnosis codes (I70.211 right leg, I70.212 left leg). Non-required codes (I70.219 unspecified extremity, I73.9 peripheral vascular disease unspecified) are secondary/optional usage codes."
+      }
+    ],
+    "raw": {
+      "markdown": "# PAD Clinical Compass\n\n**Subtitle:** Peripheral Artery Disease Insurance Authorization Guide\n\n[Button: Back to Assessment] -> /pad\n\n---\n\n## Procedure Codes\n\n### CPT 37254 — RVU 15.00 (estimated)\nEndovascular revascularization, iliac artery, angioplasty, straightforward, initial vessel\nDevice/Access: Balloon catheter\nIncluded in this code (do NOT bill separately):\n- Catheterization of the selective or non-selective target vessel(s)\n- Lesion traversal\n- Radiological supervision and interpretation\n- Embolic protection (if used)\n- Arteriotomy closure (if applicable)\n- Imaging to document completion\n*Use for straightforward angioplasty of the initial iliac artery.*\n\n### CPT 37267 — RVU 20.50 (estimated)\nEndovascular revascularization, femoral/popliteal artery, stent placement, straightforward, initial vessel\nDevice/Access: Stent (bare metal or drug-eluting)\nIncluded in this code (do NOT bill separately):\n- Catheterization of the selective or non-selective target vessel(s)\n- Lesion traversal\n- Radiological supervision and interpretation\n- Embolic protection (if used)\n- Arteriotomy closure (if applicable)\n- Imaging to document completion\n*Use for straightforward stent placement in the initial femoral/popliteal artery.*\n\n### CPT 37271 — RVU 22.00 (estimated)\nEndovascular revascularization, femoral/popliteal artery, atherectomy, straightforward, initial vessel\nDevice/Access: Atherectomy device (directional, rotational, or laser)\nIncluded in this code (do NOT bill separately):\n- Catheterization of the selective or non-selective target vessel(s)\n- Lesion traversal\n- Radiological supervision and interpretation\n- Embolic protection (if used)\n- Arteriotomy closure (if applicable)\n- Imaging to document completion\n*Use for straightforward atherectomy of the initial femoral/popliteal artery.*\n\n### CPT 37280 — RVU 18.25 (estimated)\nEndovascular revascularization, tibial/peroneal artery, angioplasty, straightforward, initial vessel\nDevice/Access: Balloon catheter\nIncluded in this code (do NOT bill separately):\n- Catheterization of the selective or non-selective target vessel(s)\n- Lesion traversal\n- Radiological supervision and interpretation\n- Embolic protection (if used)\n- Arteriotomy closure (if applicable)\n- Imaging to document completion\n*Use for straightforward angioplasty of the initial tibial/peroneal artery.*\n\n### CPT 37288 — RVU 25.75 (estimated)\nEndovascular revascularization, tibial/peroneal artery, atherectomy, straightforward, initial vessel\nDevice/Access: Atherectomy device (directional, rotational, or laser)\nIncluded in this code (do NOT bill separately):\n- Catheterization of the selective or non-selective target vessel(s)\n- Lesion traversal\n- Radiological supervision and interpretation\n- Embolic protection (if used)\n- Arteriotomy closure (if applicable)\n- Imaging to document completion\n*Use for straightforward atherectomy of the initial tibial/peroneal artery.*\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **I70.211** (Primary): Atherosclerosis of native arteries of extremities with intermittent claudication, right leg — Primary diagnosis for PAD with claudication affecting the right leg.\n- **I70.212** (Primary): Atherosclerosis of native arteries of extremities with intermittent claudication, left leg — Primary diagnosis for PAD with claudication affecting the left leg.\n- **I70.219**: Atherosclerosis of native arteries of extremities with intermittent claudication, unspecified extremity — Use when laterality is not specified or bilateral involvement.\n- **I73.9**: Peripheral vascular disease, unspecified — Use when specific type of peripheral vascular disease is not documented.\n\n---\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\nBadges: No Prior Auth (FFS) | Covered with Medical Necessity\nPrior Auth Note: Medicare generally does not require prior authorization for medically necessary peripheral artery disease interventions, but documentation must support medical necessity.\nOverview: Medicare covers endovascular revascularization procedures for PAD when deemed medically necessary and performed in an appropriate setting. Coverage typically follows national and local coverage determinations (NCD/LCDs).\n\n**Coverage Criteria**\n\n*Clinical Indications*\n- Symptomatic PAD (e.g., claudication, rest pain, non-healing wounds)\n- Objective evidence of PAD (e.g., ABI < 0.9, significant stenosis on imaging)\n- Failure of conservative management (e.g., exercise, risk factor modification)\n- Procedure performed by a qualified physician in an appropriate facility\n\n*Vessel Specific Criteria*\n- Significant stenosis or occlusion (typically >50-70%) in target vessel\n- Lesion amenable to endovascular treatment\n\n**Required Documentation**\n\n*Patient History and Physical*\n- Detailed history of PAD symptoms and duration\n- Physical examination findings (e.g., diminished pulses, skin changes)\n- Assessment of functional limitations due to PAD\n\n*Diagnostic Test Results*\n- Ankle-Brachial Index (ABI) measurements\n- Duplex ultrasound, CTA, or MRA reports demonstrating vessel pathology\n- Angiography reports, if performed\n\n*Conservative Management*\n- Documentation of supervised exercise program, if applicable\n- Records of pharmacotherapy (e.g., antiplatelets, statins) and lifestyle modifications\n\n**Submission Process**\n1. Ensure all medical records support medical necessity as per NCD/LCDs.\n2. Submit claims with appropriate CPT and ICD-10 codes.\n3. Respond promptly to any Additional Documentation Requests (ADRs).\n\n**Common Denial Reasons**\n- Lack of documented medical necessity\n- Insufficient documentation of conservative therapy failure\n- Inappropriate coding or modifier usage\n- Services considered experimental or investigational\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS | Covered | Follows NCD 20.7 for Percutaneous Transluminal Angioplasty (PTA). |\n\n**Reimbursement Note:** Reimbursement is based on the Medicare Physician Fee Schedule (MPFS) and Outpatient Prospective Payment System (OPPS) rates. RVUs are assigned to each CPT code.\n\n**Authorization Tips**\n- Thoroughly document all symptoms, physical findings, and functional limitations.\n- Clearly state the failure of conservative management strategies.\n- Reference relevant NCD/LCDs in your documentation.\n\n### Medicaid\nBadges: Prior Auth Required | Requires Prior Authorization\nPrior Auth Note: Medicaid programs often require prior authorization for endovascular PAD procedures. Requirements vary by state.\nOverview: Medicaid coverage for PAD interventions varies by state. Most states require prior authorization and adherence to specific medical necessity criteria, often similar to Medicare but with additional administrative steps.\n\n**Coverage Criteria**\n\n*Clinical Indications*\n- Severe claudication limiting daily activities\n- Rest pain or tissue loss (ulcers, gangrene)\n- Objective evidence of significant arterial disease\n- Documented failure of medical management and lifestyle changes\n\n**Required Documentation**\n\n*Authorization Request Form*\n- Completed state-specific prior authorization form\n- Physician order for the procedure\n\n*Medical Records*\n- Recent history and physical examination notes\n- Relevant diagnostic imaging reports (e.g., angiogram, duplex ultrasound)\n- Documentation of previous treatments and their outcomes\n\n**Submission Process**\n1. Verify state-specific Medicaid guidelines for PAD interventions.\n2. Submit prior authorization request with all required documentation.\n3. Await approval before scheduling the procedure.\n4. Submit claims with the approved authorization number.\n\n**Common Denial Reasons**\n- Lack of prior authorization\n- Incomplete or insufficient documentation\n- Failure to meet state-specific medical necessity criteria\n- Procedure considered elective or cosmetic\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (Example) | Requires PA | Specific criteria for claudication and critical limb ischemia. |\n\n**Reimbursement Note:** Reimbursement rates are determined by individual state Medicaid programs and may differ from Medicare rates.\n\n**Authorization Tips**\n- Always check the specific Medicaid policy for your state.\n- Submit prior authorization requests well in advance.\n- Ensure all supporting documentation is comprehensive and clearly linked to medical necessity.\n\n### Private Insurance\nBadges: Prior Auth Required | Requires Prior Authorization\nPrior Auth Note: Most private insurance plans require prior authorization for endovascular PAD procedures. Requirements vary significantly by plan.\nOverview: Private insurance coverage for PAD interventions is highly variable. Most plans require prior authorization and have specific medical policies that outline coverage criteria, which may include a trial of conservative therapy.\n\n**Coverage Criteria**\n\n*Medical Necessity*\n- Significant functional impairment due to PAD symptoms\n- Objective evidence of hemodynamically significant stenosis\n- Documented failure of at least 3-6 months of conservative therapy (e.g., exercise, medication)\n\n*Exclusions*\n- Asymptomatic PAD (unless specific high-risk features)\n- Procedures for cosmetic purposes\n\n**Required Documentation**\n\n*Clinical Records*\n- Physician office notes detailing symptoms, physical exam, and impact on quality of life\n- Results of non-invasive vascular studies (ABI, PVR, duplex ultrasound)\n- Angiographic images and reports\n\n*Prior Authorization Form*\n- Completed and signed prior authorization request form\n- Letter of medical necessity from the treating physician\n\n**Submission Process**\n1. Review the patient's specific insurance policy for PAD intervention coverage.\n2. Submit a comprehensive prior authorization request, including all clinical documentation.\n3. Follow up with the insurance company regularly for status updates.\n4. Appeal any denials with additional clinical information if appropriate.\n\n**Common Denial Reasons**\n- Lack of prior authorization\n- Failure to meet medical policy criteria (e.g., insufficient trial of conservative therapy)\n- Inadequate documentation of symptoms or objective findings\n- Procedure considered experimental or investigational by the plan\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Blue Cross Blue Shield (Example) | Requires PA | Requires 3-month trial of conservative therapy for claudication. |\n| UnitedHealthcare (Example) | Requires PA | Specific criteria for critical limb ischemia and claudication. |\n\n**Reimbursement Note:** Reimbursement rates are based on negotiated contracts between the provider and the private insurance company.\n\n**Authorization Tips**\n- Always verify benefits and prior authorization requirements with the specific plan.\n- Provide detailed clinical notes emphasizing the severity of symptoms and functional impairment.\n- Highlight the failure of conservative treatments and the necessity of the intervention.\n",
+      "tables": [
+        {
+          "name": "CPT Procedure Codes",
+          "header": ["Code", "Description", "Device", "Access", "RVU", "Note"],
+          "rows": [
+            ["37254", "Endovascular revascularization, iliac artery, angioplasty, straightforward, initial vessel", "Balloon catheter", "Percutaneous", "15.00 (estimated)", "Use for straightforward angioplasty of the initial iliac artery."],
+            ["37267", "Endovascular revascularization, femoral/popliteal artery, stent placement, straightforward, initial vessel", "Stent (bare metal or drug-eluting)", "Percutaneous", "20.50 (estimated)", "Use for straightforward stent placement in the initial femoral/popliteal artery."],
+            ["37271", "Endovascular revascularization, femoral/popliteal artery, atherectomy, straightforward, initial vessel", "Atherectomy device (directional, rotational, or laser)", "Percutaneous", "22.00 (estimated)", "Use for straightforward atherectomy of the initial femoral/popliteal artery."],
+            ["37280", "Endovascular revascularization, tibial/peroneal artery, angioplasty, straightforward, initial vessel", "Balloon catheter", "Percutaneous", "18.25 (estimated)", "Use for straightforward angioplasty of the initial tibial/peroneal artery."],
+            ["37288", "Endovascular revascularization, tibial/peroneal artery, atherectomy, straightforward, initial vessel", "Atherectomy device (directional, rotational, or laser)", "Percutaneous", "25.75 (estimated)", "Use for straightforward atherectomy of the initial tibial/peroneal artery."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required (Primary)"],
+          "rows": [
+            ["I70.211", "Atherosclerosis of native arteries of extremities with intermittent claudication, right leg", "Primary diagnosis for PAD with claudication affecting the right leg.", "Yes"],
+            ["I70.212", "Atherosclerosis of native arteries of extremities with intermittent claudication, left leg", "Primary diagnosis for PAD with claudication affecting the left leg.", "Yes"],
+            ["I70.219", "Atherosclerosis of native arteries of extremities with intermittent claudication, unspecified extremity", "Use when laterality is not specified or bilateral involvement.", "No"],
+            ["I73.9", "Peripheral vascular disease, unspecified", "Use when specific type of peripheral vascular disease is not documented.", "No"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Medicare",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS", "Covered", "Follows NCD 20.7 for Percutaneous Transluminal Angioplasty (PTA)."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (Example)", "Requires PA", "Specific criteria for claudication and critical limb ischemia."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Private Insurance",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield (Example)", "Requires PA", "Requires 3-month trial of conservative therapy for claudication."],
+            ["UnitedHealthcare (Example)", "Requires PA", "Specific criteria for critical limb ischemia and claudication."]
+          ]
+        }
+      ]
+    }
+  }
+}

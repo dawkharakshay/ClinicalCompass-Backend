@@ -1,0 +1,30 @@
+{
+  "title": "TESE / Micro-TESE Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "54500, 54505, 54512, 54520, 89264, 89337, 89352, 58321",
+      "credentials": "[Credentials]",
+      "icd_codes": "N46.01, N46.021, N46.029, N46.11, Q98.0, Q98.4, Q96.9, Z31.41, Z31.81, C62.90",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "To Whom It May Concern,\n\nI am writing to formally appeal the denial of prior authorization for testicular sperm extraction (TESE/micro-TESE) for my patient. This procedure is medically necessary for the treatment of azoospermia and is supported by the American Urological Association (AUA), the American Society for Reproductive Medicine (ASRM), and the European Association of Urology (EAU).\n\nCLINICAL SUMMARY\n\nMy patient presents with confirmed azoospermia on ≥2 semen analyses. Hormonal evaluation and genetic testing have been completed. The etiology is [obstructive/non-obstructive] azoospermia. [For NOA: Klinefelter syndrome / Y-chromosome microdeletion / idiopathic NOA as applicable.]\n\nMEDICAL NECESSITY\n\nMicrodissection TESE (micro-TESE) is the standard of care for non-obstructive azoospermia (NOA) and is the only method by which spermatozoa can be retrieved for use in IVF/ICSI in these patients. The procedure was first described by Schlegel (Hum Reprod. 1999;14(1):131-135) and has been validated in thousands of patients worldwide.\n\nKey evidence supporting this procedure:\n1. Micro-TESE achieves sperm retrieval rates 1.5× higher than conventional TESE in NOA (Schlegel 1999; Bernie et al., J Urol. 2015).\n2. Micro-TESE removes 10× less testicular tissue than conventional TESE, preserving Leydig cell function and testosterone production.\n3. The AUA/ASRM Guideline on Male Infertility (Schlegel et al., J Urol. 2021) recommends micro-TESE as the preferred surgical approach for NOA.\n4. The EAU Guidelines on Male Infertility (2024) similarly endorse micro-TESE as standard of care.\n\nDENIAL REBUTTAL\n\nIf the denial was based on \"experimental\" status: Micro-TESE has been performed since 1999 and is explicitly endorsed by all major urology and reproductive medicine societies. It is not experimental.\n\nIf the denial was based on \"infertility exclusion\": Azoospermia (ICD-10 N46.01) is a diagnosable medical condition, not merely an infertility diagnosis. The procedure treats a specific anatomical and physiological disorder.\n\nCONCLUSION\n\nI respectfully request immediate reconsideration and approval of this medically necessary procedure.\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\n{{letter_date}}"
+  }
+}

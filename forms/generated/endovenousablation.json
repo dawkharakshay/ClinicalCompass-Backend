@@ -1,0 +1,237 @@
+{
+  "title": "Endovenous Ablation Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Run Assessment",
+    "logicKey": "endovenousablation",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "patient-vein-info",
+        "shortLabel": "Patient & Vein Info",
+        "title": "Patient & Vein Info",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Patient Age",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "symptom-duration-months",
+            "name": "symptomDurationMonths",
+            "label": "Symptom Duration (months)",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "ceap-class",
+            "name": "ceapClass",
+            "label": "CEAP Clinical Classification *",
+            "type": "select",
+            "required": true,
+            "defaultValue": "",
+            "options": [
+              { "label": "C0 — No visible or palpable signs of venous disease", "value": "C0" },
+              { "label": "C1 — Telangiectasias or reticular veins", "value": "C1" },
+              { "label": "C2 — Varicose veins", "value": "C2" },
+              { "label": "C3 — Edema", "value": "C3" },
+              { "label": "C4 — Skin changes (pigmentation, eczema, lipodermatosclerosis)", "value": "C4" },
+              { "label": "C5 — Healed venous ulcer", "value": "C5" },
+              { "label": "C6 — Active venous ulcer", "value": "C6" }
+            ]
+          },
+          {
+            "id": "gsv",
+            "name": "gsv",
+            "label": "Great Saphenous Vein (GSV)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "ssv",
+            "name": "ssv",
+            "label": "Small Saphenous Vein (SSV)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "vein-diameter",
+            "name": "veinDiameter",
+            "label": "Vein Diameter at SFJ/SPJ (mm)",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "unit": "mm",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "vcss-score",
+            "name": "vcssScore",
+            "label": "VCSS Score (0–30)",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "preferred-modality",
+            "name": "preferredModality",
+            "label": "Preferred Ablation Modality",
+            "type": "select",
+            "required": false,
+            "defaultValue": "",
+            "options": [
+              { "label": "No preference / physician discretion", "value": "" },
+              { "label": "Endovenous Laser Ablation (EVLA)", "value": "laser" },
+              { "label": "Radiofrequency Ablation (RFA / ClosureFast)", "value": "rfa" },
+              { "label": "Mechanochemical Ablation (MOCA / ClariVein)", "value": "mechanochemical" },
+              { "label": "Steam Vein Sclerosis", "value": "steam" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "symptoms-conservative-tx",
+        "shortLabel": "Symptoms & Conservative Tx",
+        "title": "Symptoms & Conservative Tx",
+        "fields": [
+          {
+            "id": "symptoms",
+            "name": "symptoms",
+            "label": "Presenting Symptoms * (select all that apply)",
+            "type": "multiselect",
+            "required": true,
+            "defaultValue": [],
+            "options": [
+              { "label": "Aching or pain in the leg", "value": "pain" },
+              { "label": "Heaviness or fatigue", "value": "heaviness" },
+              { "label": "Leg swelling (edema)", "value": "swelling" },
+              { "label": "Itching over varicosities", "value": "itching" },
+              { "label": "Skin changes (lipodermatosclerosis, hyperpigmentation)", "value": "skin-changes" },
+              { "label": "Venous ulcer (active or healed)", "value": "ulcer" },
+              { "label": "Bleeding from varicosity", "value": "bleeding" },
+              { "label": "Superficial thrombophlebitis", "value": "thrombophlebitis" }
+            ]
+          },
+          {
+            "id": "compression-stockings",
+            "name": "compressionStockings",
+            "label": "Graduated compression stockings prescribed (20–30 mmHg)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "compression-weeks",
+            "name": "compressionWeeks",
+            "label": "Duration of compression stocking use (weeks)",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "compressionStockings", "op": "truthy" }
+          },
+          {
+            "id": "conservative-therapy-weeks",
+            "name": "conservativeTherapyWeeks",
+            "label": "Total conservative therapy duration (weeks)",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "duplex-anatomy",
+        "shortLabel": "Duplex & Anatomy",
+        "title": "Duplex & Anatomy",
+        "fields": [
+          {
+            "id": "duplex-confirmed",
+            "name": "duplexConfirmed",
+            "label": "Duplex ultrasound confirms truncal vein reflux",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "standing-reflux",
+            "name": "standingReflux",
+            "label": "Reflux documented in standing position",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "reflux-duration",
+            "name": "refluxDuration",
+            "label": "Reflux Duration on Duplex (seconds)",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "unit": "seconds",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "pregnancy",
+            "name": "pregnancy",
+            "label": "Pregnancy",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "active-infection",
+            "name": "activeInfection",
+            "label": "Active skin/soft tissue infection",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "coagulopathy",
+            "name": "coagulopathy",
+            "label": "Uncorrected coagulopathy / on anticoagulation",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "non-ambulatory",
+            "name": "nonAmbulatory",
+            "label": "Non-ambulatory patient",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "prior-dvt",
+            "name": "priorDVT",
+            "label": "Prior deep vein thrombosis (DVT)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "active-ulcer",
+            "name": "activeUlcer",
+            "label": "Active venous ulcer (CEAP C6)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

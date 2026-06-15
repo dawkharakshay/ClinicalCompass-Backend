@@ -1,0 +1,454 @@
+{
+  "title": "Rectal Cancer Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "RectalCancerAuthGuide.tsx",
+    "title": "RectalCancer Clinical Compass",
+    "subtitle": "Rectal Cancer Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "45110",
+        "description": "Proctectomy, complete, combined abdominoperineal, with colostomy",
+        "device": "Surgical instruments",
+        "access": "Abdominoperineal approach",
+        "rvu": "30.76",
+        "includes": [
+          "Removal of entire rectum",
+          "Removal of portion of lower colon",
+          "Removal of anal sphincter",
+          "Colostomy creation"
+        ],
+        "note": "Used for complete removal of the rectum and associated structures, often for advanced rectal cancer."
+      },
+      {
+        "code": "45113",
+        "description": "Proctectomy, partial, with coloanal anastomosis, with or without ileostomy",
+        "device": "Surgical instruments",
+        "access": "Abdominal/Perineal approach",
+        "rvu": "32.39",
+        "includes": [
+          "Removal of part of the rectum",
+          "Resection of mucosa lining remaining rectum",
+          "Ileoanal anastomosis",
+          "Creation of ileal reservoir or pouch (optional)",
+          "Loop ileostomy (optional)"
+        ],
+        "note": "Often performed for rectal cancer when sphincter preservation is possible."
+      },
+      {
+        "code": "45395",
+        "description": "Laparoscopic proctectomy, complete, with coloanal anastomosis",
+        "device": "Laparoscopic instruments",
+        "access": "Laparoscopic approach",
+        "rvu": "33.00",
+        "includes": [
+          "Laparoscopic removal of entire rectum",
+          "Coloanal anastomosis",
+          "Total mesorectal excision (TME) when indicated"
+        ],
+        "note": "Minimally invasive approach for complete rectal removal, often for total mesorectal excision."
+      },
+      {
+        "code": "77407",
+        "description": "Radiation treatment delivery, 3D conformal or IMRT, single isocenter",
+        "device": "Linear accelerator",
+        "access": "External beam radiation",
+        "rvu": "Varies",
+        "includes": [
+          "Imaging guidance (when performed)",
+          "Complex beam arrangements",
+          "Conformal targeting"
+        ],
+        "note": "Used for neoadjuvant chemoradiation in rectal cancer, delivering precise radiation doses."
+      },
+      {
+        "code": "99213",
+        "description": "Office or other outpatient visit for the evaluation and management of an established patient",
+        "device": "N/A",
+        "access": "Clinic visit",
+        "rvu": "0.97",
+        "includes": [
+          "Expanded problem focused history",
+          "Expanded problem focused examination",
+          "Medical decision making of low complexity"
+        ],
+        "note": "Used for follow-up and surveillance visits, including 'watch and wait' protocols."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "C20",
+        "description": "Malignant neoplasm of rectum",
+        "notes": "Primary diagnosis for rectal cancer.",
+        "required": true
+      },
+      {
+        "code": "C78.5",
+        "description": "Secondary malignant neoplasm of large intestine",
+        "notes": "Used for metastatic rectal cancer to other parts of the large intestine.",
+        "required": false
+      },
+      {
+        "code": "Z12.11",
+        "description": "Encounter for screening for malignant neoplasm of colon",
+        "notes": "Used for screening colonoscopies in high-risk individuals or follow-up after treatment.",
+        "required": false
+      },
+      {
+        "code": "Z08",
+        "description": "Encounter for follow-up examination after completed treatment for malignant neoplasm",
+        "notes": "Used for surveillance after successful treatment of rectal cancer.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with Criteria",
+        "overview": "Medicare generally covers medically necessary treatments for rectal cancer, including surgery, chemotherapy, and radiation therapy, when established clinical guidelines are met. Coverage for novel therapies or off-label use may require extensive documentation.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is often required for complex surgical procedures and advanced radiation therapies. Documentation must clearly support medical necessity based on NCCN guidelines.",
+        "reimbursementNote": "Reimbursement rates are based on the Medicare Physician Fee Schedule (MPFS) and Outpatient Prospective Payment System (OPPS). Ensure correct use of CPT codes and modifiers to prevent claim rejections.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Surgical Procedures (e.g., Proctectomy)",
+            "items": [
+              "Pathologically confirmed diagnosis of rectal adenocarcinoma.",
+              "Tumor staging (e.g., MRI, CT, endoscopic ultrasound) supporting the need for surgical intervention.",
+              "Multidisciplinary team discussion (MDT) recommendation for surgery.",
+              "Patient is a suitable surgical candidate (e.g., performance status, comorbidities)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Radiation Therapy (e.g., IMRT)",
+            "items": [
+              "Pathologically confirmed diagnosis of rectal adenocarcinoma.",
+              "Clinical staging indicating locally advanced disease (e.g., T3/T4 or N+).",
+              "MDT recommendation for neoadjuvant or adjuvant radiation therapy.",
+              "Treatment plan outlining radiation fields, dosage, and fractionation."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Watch and Wait Protocols",
+            "items": [
+              "Complete clinical response (cCR) after neoadjuvant therapy, confirmed by endoscopy, MRI, and digital rectal exam.",
+              "Patient adherence to strict surveillance protocol (e.g., frequent imaging, endoscopy, CEA monitoring).",
+              "MDT consensus on suitability for watch and wait approach."
+            ]
+          },
+          {
+            "heading": "Required Documentation: General",
+            "items": [
+              "Detailed clinical notes, including history, physical examination, and performance status.",
+              "Pathology reports confirming rectal cancer diagnosis.",
+              "Operative reports for previous surgeries (if applicable)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Imaging",
+            "items": [
+              "Pre-treatment MRI of the pelvis (with diffusion-weighted imaging).",
+              "CT scan of chest, abdomen, and pelvis for staging.",
+              "Endoscopic ultrasound (EUS) reports."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Treatment Planning",
+            "items": [
+              "Multidisciplinary team (MDT) meeting notes and recommendations.",
+              "Radiation oncology treatment plan (for radiation therapy).",
+              "Chemotherapy regimen and cycles (for chemotherapy)."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request through the Medicare portal or designated fax/mail.",
+              "Include all supporting clinical documentation, including pathology, imaging reports, and MDT notes.",
+              "Await approval; appeals process available for denials.",
+              "Ensure CPT and ICD-10 codes are accurately linked to services."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity.",
+              "Incomplete or illegible clinical documentation.",
+              "Failure to meet specific coverage criteria (e.g., staging requirements).",
+              "Incorrect coding or missing modifiers."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify patient eligibility and benefits prior to services.",
+              "Maintain thorough and accurate medical records.",
+              "Familiarize yourself with Medicare Local Coverage Determinations (LCDs) and National Coverage Determinations (NCDs) for rectal cancer.",
+              "Utilize NCCN guidelines as supporting evidence for medical necessity."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS",
+            "status": "Covered",
+            "notes": "Follows NCCN guidelines for rectal cancer treatment."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered with State-Specific Criteria",
+        "overview": "Medicaid programs cover essential health benefits, including cancer treatment. Coverage criteria and administrative processes vary significantly by state. It is crucial to check the specific state Medicaid policy.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is mandatory for most oncology services, including surgical resections, radiation, and systemic therapies. State-specific guidelines apply.",
+        "reimbursementNote": "Reimbursement rates are determined by individual state Medicaid programs and can be lower than Medicare or private insurance. Timely and accurate submission is key.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Surgical Procedures",
+            "items": [
+              "Pathologically confirmed diagnosis of rectal cancer.",
+              "Documentation of disease extent and staging.",
+              "Recommendation from an oncologist or surgeon.",
+              "Patient eligibility for Medicaid in the specific state."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Radiation Therapy",
+            "items": [
+              "Diagnosis of rectal cancer requiring radiation as per clinical guidelines.",
+              "Detailed radiation treatment plan.",
+              "Approval from state Medicaid agency or managed care organization."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Surveillance (Watch and Wait)",
+            "items": [
+              "Documented complete clinical response post-neoadjuvant therapy.",
+              "Adherence to a defined surveillance protocol.",
+              "Approval for long-term follow-up from the payer."
+            ]
+          },
+          {
+            "heading": "Required Documentation: General",
+            "items": [
+              "Medical records supporting diagnosis and treatment plan.",
+              "State-specific prior authorization forms.",
+              "Referral from primary care provider (if required by state)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical",
+            "items": [
+              "Pathology and imaging reports.",
+              "Oncology consultation notes.",
+              "Multidisciplinary team recommendations."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request via the state Medicaid portal or specific MCO portal.",
+              "Attach all necessary clinical documentation and state-required forms.",
+              "Follow up regularly on authorization status.",
+              "Be prepared for potential requests for additional information."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to follow state-specific guidelines.",
+              "Lack of prior authorization.",
+              "Incomplete documentation.",
+              "Services deemed not medically necessary by state criteria."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Understand and adhere to your state's specific Medicaid policies for oncology.",
+              "Verify patient eligibility frequently, as it can change.",
+              "Document all communications with the payer.",
+              "Consider enrolling in state-specific provider training programs."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (e.g., California Medi-Cal)",
+            "status": "Covered with PA",
+            "notes": "Requires strict adherence to state-specific guidelines and medical necessity criteria."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Covered with Plan-Specific Criteria",
+        "overview": "Private insurance coverage for rectal cancer treatment is comprehensive but highly dependent on the specific plan's benefits, deductibles, and out-of-pocket maximums. Pre-certification is common.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is almost always required for major surgical procedures, radiation therapy, and systemic anti-cancer treatments. Policies vary widely by plan and insurer.",
+        "reimbursementNote": "Reimbursement varies significantly by insurance plan and negotiated provider contracts. Understand the patient's benefits, including deductibles, co-pays, and co-insurance.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Surgical Interventions",
+            "items": [
+              "Histological confirmation of rectal cancer.",
+              "Clinical indication for surgery based on tumor characteristics and patient health.",
+              "Compliance with NCCN or other recognized clinical guidelines.",
+              "Documentation of failed conservative management (if applicable)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Oncology Treatments (Chemo/Radiation)",
+            "items": [
+              "Diagnosis of rectal cancer requiring chemotherapy or radiation based on staging and pathology.",
+              "Detailed treatment plan from an oncology specialist.",
+              "Evidence of benefit outweighing risks for proposed therapy."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Surveillance and Follow-up",
+            "items": [
+              "Post-treatment surveillance plan in line with NCCN guidelines.",
+              "Regular monitoring for recurrence or new primary tumors.",
+              "Medical necessity for imaging and endoscopic procedures."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Records",
+            "items": [
+              "All relevant physician office notes, including consultations and progress notes.",
+              "Pathology reports, including immunohistochemistry (IHC) and molecular testing (if performed).",
+              "Radiology reports (MRI, CT, PET scans)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Authorization Forms",
+            "items": [
+              "Completed prior authorization forms specific to the insurance carrier.",
+              "Letter of medical necessity from the treating physician.",
+              "Supporting clinical literature for off-label uses (if applicable)."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Initiate prior authorization request through the insurer's provider portal or by phone.",
+              "Submit all required clinical documentation and forms.",
+              "Track authorization status and follow up as needed.",
+              "Be prepared to participate in peer-to-peer reviews if initial authorization is denied."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of pre-certification or prior authorization.",
+              "Services not covered under the patient's specific plan.",
+              "Insufficient medical necessity documentation.",
+              "Experimental or investigational treatment exclusions."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Thoroughly review patient's insurance policy benefits and limitations.",
+              "Obtain pre-certification for all major procedures and treatments.",
+              "Document all clinical rationale clearly and concisely.",
+              "Engage in peer-to-peer discussions for complex cases or denials."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Covered with PA",
+            "notes": "Generally follows NCCN guidelines; requires comprehensive documentation."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered with PA",
+            "notes": "Specific clinical policies apply; check policy for details."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment button navigating to /rectalcancer",
+        "href": "/rectalcancer"
+      },
+      {
+        "heading": "Procedure Codes - Note",
+        "kind": "prose",
+        "text": "Each CPT code card displays the note: 'Included in this code (do NOT bill separately):' above its list of included items."
+      },
+      {
+        "heading": "Reimbursement Note (Medicare)",
+        "kind": "prose",
+        "text": "Reimbursement rates are based on the Medicare Physician Fee Schedule (MPFS) and Outpatient Prospective Payment System (OPPS). Ensure correct use of CPT codes and modifiers to prevent claim rejections."
+      },
+      {
+        "heading": "Reimbursement Note (Medicaid)",
+        "kind": "prose",
+        "text": "Reimbursement rates are determined by individual state Medicaid programs and can be lower than Medicare or private insurance. Timely and accurate submission is key."
+      },
+      {
+        "heading": "Reimbursement Note (Private Insurance)",
+        "kind": "prose",
+        "text": "Reimbursement varies significantly by insurance plan and negotiated provider contracts. Understand the patient's benefits, including deductibles, co-pays, and co-insurance."
+      }
+    ],
+    "raw": {
+      "markdown": "# RectalCancer Clinical Compass\n## Rectal Cancer Insurance Authorization Guide\n\n[Back to Assessment] (navigates to /rectalcancer)\n\n---\n\n## Procedure Codes (CPT Codes)\n\n### CPT 45110 — RVU 30.76\nProctectomy, complete, combined abdominoperineal, with colostomy\n- Device/Access: Surgical instruments (Abdominoperineal approach)\n- Included in this code (do NOT bill separately):\n  - Removal of entire rectum\n  - Removal of portion of lower colon\n  - Removal of anal sphincter\n  - Colostomy creation\n- Note: Used for complete removal of the rectum and associated structures, often for advanced rectal cancer.\n\n### CPT 45113 — RVU 32.39\nProctectomy, partial, with coloanal anastomosis, with or without ileostomy\n- Device/Access: Surgical instruments (Abdominal/Perineal approach)\n- Included in this code (do NOT bill separately):\n  - Removal of part of the rectum\n  - Resection of mucosa lining remaining rectum\n  - Ileoanal anastomosis\n  - Creation of ileal reservoir or pouch (optional)\n  - Loop ileostomy (optional)\n- Note: Often performed for rectal cancer when sphincter preservation is possible.\n\n### CPT 45395 — RVU 33.00\nLaparoscopic proctectomy, complete, with coloanal anastomosis\n- Device/Access: Laparoscopic instruments (Laparoscopic approach)\n- Included in this code (do NOT bill separately):\n  - Laparoscopic removal of entire rectum\n  - Coloanal anastomosis\n  - Total mesorectal excision (TME) when indicated\n- Note: Minimally invasive approach for complete rectal removal, often for total mesorectal excision.\n\n### CPT 77407 — RVU Varies\nRadiation treatment delivery, 3D conformal or IMRT, single isocenter\n- Device/Access: Linear accelerator (External beam radiation)\n- Included in this code (do NOT bill separately):\n  - Imaging guidance (when performed)\n  - Complex beam arrangements\n  - Conformal targeting\n- Note: Used for neoadjuvant chemoradiation in rectal cancer, delivering precise radiation doses.\n\n### CPT 99213 — RVU 0.97\nOffice or other outpatient visit for the evaluation and management of an established patient\n- Device/Access: N/A (Clinic visit)\n- Included in this code (do NOT bill separately):\n  - Expanded problem focused history\n  - Expanded problem focused examination\n  - Medical decision making of low complexity\n- Note: Used for follow-up and surveillance visits, including 'watch and wait' protocols.\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **C20** (Primary) — Malignant neoplasm of rectum. Primary diagnosis for rectal cancer.\n- **C78.5** — Secondary malignant neoplasm of large intestine. Used for metastatic rectal cancer to other parts of the large intestine.\n- **Z12.11** — Encounter for screening for malignant neoplasm of colon. Used for screening colonoscopies in high-risk individuals or follow-up after treatment.\n- **Z08** — Encounter for follow-up examination after completed treatment for malignant neoplasm. Used for surveillance after successful treatment of rectal cancer.\n\n---\n\n## Payer-Specific Authorization Requirements\n\n(Tabs: Medicare | Medicaid | Private Insurance)\n\n### Medicare\n- Prior Auth Required\n- Coverage Status: Covered with Criteria\n- Prior Auth Note: Prior authorization is often required for complex surgical procedures and advanced radiation therapies. Documentation must clearly support medical necessity based on NCCN guidelines.\n- Overview: Medicare generally covers medically necessary treatments for rectal cancer, including surgery, chemotherapy, and radiation therapy, when established clinical guidelines are met. Coverage for novel therapies or off-label use may require extensive documentation.\n\n#### Coverage Criteria\n**Surgical Procedures (e.g., Proctectomy)**\n- Pathologically confirmed diagnosis of rectal adenocarcinoma.\n- Tumor staging (e.g., MRI, CT, endoscopic ultrasound) supporting the need for surgical intervention.\n- Multidisciplinary team discussion (MDT) recommendation for surgery.\n- Patient is a suitable surgical candidate (e.g., performance status, comorbidities).\n\n**Radiation Therapy (e.g., IMRT)**\n- Pathologically confirmed diagnosis of rectal adenocarcinoma.\n- Clinical staging indicating locally advanced disease (e.g., T3/T4 or N+).\n- MDT recommendation for neoadjuvant or adjuvant radiation therapy.\n- Treatment plan outlining radiation fields, dosage, and fractionation.\n\n**Watch and Wait Protocols**\n- Complete clinical response (cCR) after neoadjuvant therapy, confirmed by endoscopy, MRI, and digital rectal exam.\n- Patient adherence to strict surveillance protocol (e.g., frequent imaging, endoscopy, CEA monitoring).\n- MDT consensus on suitability for watch and wait approach.\n\n#### Required Documentation\n**General**\n- Detailed clinical notes, including history, physical examination, and performance status.\n- Pathology reports confirming rectal cancer diagnosis.\n- Operative reports for previous surgeries (if applicable).\n\n**Imaging**\n- Pre-treatment MRI of the pelvis (with diffusion-weighted imaging).\n- CT scan of chest, abdomen, and pelvis for staging.\n- Endoscopic ultrasound (EUS) reports.\n\n**Treatment Planning**\n- Multidisciplinary team (MDT) meeting notes and recommendations.\n- Radiation oncology treatment plan (for radiation therapy).\n- Chemotherapy regimen and cycles (for chemotherapy).\n\n#### Submission Process\n1. Submit prior authorization request through the Medicare portal or designated fax/mail.\n2. Include all supporting clinical documentation, including pathology, imaging reports, and MDT notes.\n3. Await approval; appeals process available for denials.\n4. Ensure CPT and ICD-10 codes are accurately linked to services.\n\n#### Common Denial Reasons\n- Lack of documented medical necessity.\n- Incomplete or illegible clinical documentation.\n- Failure to meet specific coverage criteria (e.g., staging requirements).\n- Incorrect coding or missing modifiers.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS | Covered | Follows NCCN guidelines for rectal cancer treatment. |\n\n#### Reimbursement Note\nReimbursement rates are based on the Medicare Physician Fee Schedule (MPFS) and Outpatient Prospective Payment System (OPPS). Ensure correct use of CPT codes and modifiers to prevent claim rejections.\n\n#### Authorization Tips\n- Always verify patient eligibility and benefits prior to services.\n- Maintain thorough and accurate medical records.\n- Familiarize yourself with Medicare Local Coverage Determinations (LCDs) and National Coverage Determinations (NCDs) for rectal cancer.\n- Utilize NCCN guidelines as supporting evidence for medical necessity.\n\n### Medicaid\n- Prior Auth Required\n- Coverage Status: Covered with State-Specific Criteria\n- Prior Auth Note: Prior authorization is mandatory for most oncology services, including surgical resections, radiation, and systemic therapies. State-specific guidelines apply.\n- Overview: Medicaid programs cover essential health benefits, including cancer treatment. Coverage criteria and administrative processes vary significantly by state. It is crucial to check the specific state Medicaid policy.\n\n#### Coverage Criteria\n**Surgical Procedures**\n- Pathologically confirmed diagnosis of rectal cancer.\n- Documentation of disease extent and staging.\n- Recommendation from an oncologist or surgeon.\n- Patient eligibility for Medicaid in the specific state.\n\n**Radiation Therapy**\n- Diagnosis of rectal cancer requiring radiation as per clinical guidelines.\n- Detailed radiation treatment plan.\n- Approval from state Medicaid agency or managed care organization.\n\n**Surveillance (Watch and Wait)**\n- Documented complete clinical response post-neoadjuvant therapy.\n- Adherence to a defined surveillance protocol.\n- Approval for long-term follow-up from the payer.\n\n#### Required Documentation\n**General**\n- Medical records supporting diagnosis and treatment plan.\n- State-specific prior authorization forms.\n- Referral from primary care provider (if required by state).\n\n**Clinical**\n- Pathology and imaging reports.\n- Oncology consultation notes.\n- Multidisciplinary team recommendations.\n\n#### Submission Process\n1. Submit prior authorization request via the state Medicaid portal or specific MCO portal.\n2. Attach all necessary clinical documentation and state-required forms.\n3. Follow up regularly on authorization status.\n4. Be prepared for potential requests for additional information.\n\n#### Common Denial Reasons\n- Failure to follow state-specific guidelines.\n- Lack of prior authorization.\n- Incomplete documentation.\n- Services deemed not medically necessary by state criteria.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (e.g., California Medi-Cal) | Covered with PA | Requires strict adherence to state-specific guidelines and medical necessity criteria. |\n\n#### Reimbursement Note\nReimbursement rates are determined by individual state Medicaid programs and can be lower than Medicare or private insurance. Timely and accurate submission is key.\n\n#### Authorization Tips\n- Understand and adhere to your state's specific Medicaid policies for oncology.\n- Verify patient eligibility frequently, as it can change.\n- Document all communications with the payer.\n- Consider enrolling in state-specific provider training programs.\n\n### Private Insurance\n- Prior Auth Required\n- Coverage Status: Covered with Plan-Specific Criteria\n- Prior Auth Note: Prior authorization is almost always required for major surgical procedures, radiation therapy, and systemic anti-cancer treatments. Policies vary widely by plan and insurer.\n- Overview: Private insurance coverage for rectal cancer treatment is comprehensive but highly dependent on the specific plan's benefits, deductibles, and out-of-pocket maximums. Pre-certification is common.\n\n#### Coverage Criteria\n**Surgical Interventions**\n- Histological confirmation of rectal cancer.\n- Clinical indication for surgery based on tumor characteristics and patient health.\n- Compliance with NCCN or other recognized clinical guidelines.\n- Documentation of failed conservative management (if applicable).\n\n**Oncology Treatments (Chemo/Radiation)**\n- Diagnosis of rectal cancer requiring chemotherapy or radiation based on staging and pathology.\n- Detailed treatment plan from an oncology specialist.\n- Evidence of benefit outweighing risks for proposed therapy.\n\n**Surveillance and Follow-up**\n- Post-treatment surveillance plan in line with NCCN guidelines.\n- Regular monitoring for recurrence or new primary tumors.\n- Medical necessity for imaging and endoscopic procedures.\n\n#### Required Documentation\n**Clinical Records**\n- All relevant physician office notes, including consultations and progress notes.\n- Pathology reports, including immunohistochemistry (IHC) and molecular testing (if performed).\n- Radiology reports (MRI, CT, PET scans).\n\n**Authorization Forms**\n- Completed prior authorization forms specific to the insurance carrier.\n- Letter of medical necessity from the treating physician.\n- Supporting clinical literature for off-label uses (if applicable).\n\n#### Submission Process\n1. Initiate prior authorization request through the insurer's provider portal or by phone.\n2. Submit all required clinical documentation and forms.\n3. Track authorization status and follow up as needed.\n4. Be prepared to participate in peer-to-peer reviews if initial authorization is denied.\n\n#### Common Denial Reasons\n- Lack of pre-certification or prior authorization.\n- Services not covered under the patient's specific plan.\n- Insufficient medical necessity documentation.\n- Experimental or investigational treatment exclusions.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Blue Cross Blue Shield | Covered with PA | Generally follows NCCN guidelines; requires comprehensive documentation. |\n| UnitedHealthcare | Covered with PA | Specific clinical policies apply; check policy for details. |\n\n#### Reimbursement Note\nReimbursement varies significantly by insurance plan and negotiated provider contracts. Understand the patient's benefits, including deductibles, co-pays, and co-insurance.\n\n#### Authorization Tips\n- Thoroughly review patient's insurance policy benefits and limitations.\n- Obtain pre-certification for all major procedures and treatments.\n- Document all clinical rationale clearly and concisely.\n- Engage in peer-to-peer discussions for complex cases or denials.\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "Description", "Device", "Access", "RVU", "Includes", "Note"],
+          "rows": [
+            ["45110", "Proctectomy, complete, combined abdominoperineal, with colostomy", "Surgical instruments", "Abdominoperineal approach", "30.76", "Removal of entire rectum; Removal of portion of lower colon; Removal of anal sphincter; Colostomy creation", "Used for complete removal of the rectum and associated structures, often for advanced rectal cancer."],
+            ["45113", "Proctectomy, partial, with coloanal anastomosis, with or without ileostomy", "Surgical instruments", "Abdominal/Perineal approach", "32.39", "Removal of part of the rectum; Resection of mucosa lining remaining rectum; Ileoanal anastomosis; Creation of ileal reservoir or pouch (optional); Loop ileostomy (optional)", "Often performed for rectal cancer when sphincter preservation is possible."],
+            ["45395", "Laparoscopic proctectomy, complete, with coloanal anastomosis", "Laparoscopic instruments", "Laparoscopic approach", "33.00", "Laparoscopic removal of entire rectum; Coloanal anastomosis; Total mesorectal excision (TME) when indicated", "Minimally invasive approach for complete rectal removal, often for total mesorectal excision."],
+            ["77407", "Radiation treatment delivery, 3D conformal or IMRT, single isocenter", "Linear accelerator", "External beam radiation", "Varies", "Imaging guidance (when performed); Complex beam arrangements; Conformal targeting", "Used for neoadjuvant chemoradiation in rectal cancer, delivering precise radiation doses."],
+            ["99213", "Office or other outpatient visit for the evaluation and management of an established patient", "N/A", "Clinic visit", "0.97", "Expanded problem focused history; Expanded problem focused examination; Medical decision making of low complexity", "Used for follow-up and surveillance visits, including 'watch and wait' protocols."]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["Code", "Description", "Notes", "Required (Primary)"],
+          "rows": [
+            ["C20", "Malignant neoplasm of rectum", "Primary diagnosis for rectal cancer.", "true"],
+            ["C78.5", "Secondary malignant neoplasm of large intestine", "Used for metastatic rectal cancer to other parts of the large intestine.", "false"],
+            ["Z12.11", "Encounter for screening for malignant neoplasm of colon", "Used for screening colonoscopies in high-risk individuals or follow-up after treatment.", "false"],
+            ["Z08", "Encounter for follow-up examination after completed treatment for malignant neoplasm", "Used for surveillance after successful treatment of rectal cancer.", "false"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Medicare",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS", "Covered", "Follows NCCN guidelines for rectal cancer treatment."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., California Medi-Cal)", "Covered with PA", "Requires strict adherence to state-specific guidelines and medical necessity criteria."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Private Insurance",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield", "Covered with PA", "Generally follows NCCN guidelines; requires comprehensive documentation."],
+            ["UnitedHealthcare", "Covered with PA", "Specific clinical policies apply; check policy for details."]
+          ]
+        }
+      ]
+    }
+  }
+}

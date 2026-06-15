@@ -1,0 +1,459 @@
+{
+  "title": "Bone Cancer Interventional Oncology Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "BoneCancerAuthGuide.tsx",
+    "title": "Bone Cancer Clinical Compass",
+    "subtitle": "Bone Tumor Ablation Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "20982",
+        "description": "Ablation therapy for reduction or eradication of 1 or more bone tumors (e.g., metastasis) including adjacent soft tissue when involved by tumor extension, percutaneous, including imaging guidance when performed; radiofrequency",
+        "device": "Radiofrequency ablation (RFA) — OsteoCool™ (Medtronic), StarBurst™ (AngioDynamics)",
+        "access": "Percutaneous needle placement under CT or fluoroscopic guidance",
+        "rvu": "8.0",
+        "includes": [
+          "All imaging guidance for the procedure (CT, fluoroscopy)",
+          "Radiologic supervision and interpretation",
+          "Electrode placement and ablation",
+          "Adjacent soft tissue ablation when involved by tumor"
+        ],
+        "note": "Category I CPT code. Bill once per session regardless of number of lesions treated. Medicare covers for palliation of bone metastases."
+      },
+      {
+        "code": "20983",
+        "description": "Ablation therapy for reduction or eradication of 1 or more bone tumors (e.g., metastasis) including adjacent soft tissue when involved by tumor extension, percutaneous, including imaging guidance when performed; cryoablation",
+        "device": "Cryoablation — IcePearl™ (Galil Medical/BTG), Visual-ICE™ (Boston Scientific)",
+        "access": "Percutaneous cryoprobe placement under CT or fluoroscopic guidance",
+        "rvu": "8.0",
+        "includes": [
+          "All imaging guidance for the procedure (CT, fluoroscopy)",
+          "Radiologic supervision and interpretation",
+          "Cryoprobe placement and freeze-thaw cycles",
+          "Adjacent soft tissue ablation when involved by tumor"
+        ],
+        "note": "Category I CPT code. Same RVU as RFA (20982). Preferred for lesions near critical structures due to visible ice ball on CT. Medicare covers for palliation of bone metastases."
+      },
+      {
+        "code": "22510",
+        "description": "Percutaneous vertebroplasty (bone biopsy included when performed), 1 vertebral body, unilateral or bilateral injection; cervicothoracic",
+        "device": "Bone cement (PMMA) — Confidence™ (DePuy Synthes), SpineJack® (Stryker)",
+        "access": "Percutaneous transpedicular or extrapedicular approach under fluoroscopy or CT",
+        "rvu": "5.0",
+        "includes": [
+          "Fluoroscopic guidance",
+          "Bone biopsy if performed at same session",
+          "Cement injection (unilateral or bilateral)"
+        ],
+        "note": "For cervicothoracic vertebral bodies. Use 22511 for lumbosacral. Add 22512 for each additional vertebral body."
+      },
+      {
+        "code": "77013",
+        "description": "Computed tomography guidance for, and monitoring of, parenchymal tissue ablation",
+        "device": "N/A — guidance code",
+        "access": "CT guidance during ablation procedure",
+        "rvu": "2.5",
+        "includes": [
+          "CT imaging guidance and monitoring during ablation"
+        ],
+        "note": "Add-on code for CT guidance during ablation. May be bundled with 20982/20983 by some payers — verify before billing separately."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "C79.51",
+        "description": "Secondary malignant neoplasm of bone",
+        "notes": "Primary diagnosis for bone metastases (most common indication). Requires known primary malignancy.",
+        "required": true,
+        "type": "Primary"
+      },
+      {
+        "code": "C79.52",
+        "description": "Secondary malignant neoplasm of bone marrow",
+        "notes": "Use when bone marrow involvement is documented.",
+        "required": false,
+        "type": "Secondary"
+      },
+      {
+        "code": "C41.9",
+        "description": "Malignant neoplasm of bone and articular cartilage, unspecified",
+        "notes": "Primary bone tumor (e.g., osteosarcoma, chondrosarcoma) when primary bone malignancy is the indication.",
+        "required": false,
+        "type": "Secondary"
+      },
+      {
+        "code": "G89.3",
+        "description": "Neoplasm related pain (chronic)",
+        "notes": "Secondary code for chronic pain from bone metastases — supports palliation indication.",
+        "required": false,
+        "type": "Secondary"
+      },
+      {
+        "code": "M84.50",
+        "description": "Pathological fracture, unspecified site",
+        "notes": "Secondary code when pathological fracture is present or at risk.",
+        "required": false,
+        "type": "Secondary"
+      },
+      {
+        "code": "M84.58",
+        "description": "Pathological fracture, other site",
+        "notes": "Secondary code for pathological fracture at a specific site.",
+        "required": false,
+        "type": "Secondary"
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare FFS (Traditional Medicare)",
+        "coverageStatus": "Covered",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Traditional Medicare FFS does NOT require prior authorization for CPT 20982 or 20983 (Category I codes). Medicare Advantage plans may require prior auth — verify with the specific plan.",
+        "overview": "Traditional Medicare covers bone tumor ablation (RFA and cryoablation) as medically necessary for palliation of pain from bone metastases. No specific NCD exists for non-liver tumor ablation; coverage is based on medical necessity. Some MAC jurisdictions have LCDs addressing tumor ablation (e.g., L36901). Vertebroplasty/cementoplasty is covered under NCD 150.13.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Diagnosis",
+            "items": [
+              "Confirmed bone metastasis on imaging (CT, MRI, PET/CT, or bone scan)",
+              "Known primary malignancy documented",
+              "Histologic confirmation available (or biopsy planned concurrently)"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Clinical Indications",
+            "items": [
+              "Pain from bone metastases not adequately controlled by conventional analgesics",
+              "ECOG performance status 0-3",
+              "Life expectancy ≥ 3 months (reasonable expectation of benefit)",
+              "Lesion accessible by percutaneous approach under imaging guidance"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Prior Treatment",
+            "items": [
+              "Trial of analgesic therapy (NSAIDs, opioids) with inadequate pain control",
+              "Radiation therapy considered or completed (ablation may be used for radiation-refractory lesions)",
+              "Multidisciplinary oncology team review recommended"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Exclusions",
+            "items": [
+              "Uncorrectable coagulopathy (INR > 1.5, platelets < 50,000)",
+              "Active infection at access site",
+              "Lesion not accessible without unacceptable risk to critical structures",
+              "Spinal cord compression requiring surgical decompression"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Clinical Records",
+            "items": [
+              "Oncology consult note documenting bone metastasis and pain",
+              "Pain score documentation (NRS/VAS) and analgesic history",
+              "ECOG performance status",
+              "Imaging report confirming bone metastasis (CT, MRI, or PET/CT)",
+              "Pathology report or biopsy plan"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Imaging",
+            "items": [
+              "CT or MRI of affected bone(s) with lesion measurements",
+              "PET/CT if available (documents metabolic activity)",
+              "Bone scan if CT/MRI not available"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify patient has Traditional Medicare (not Medicare Advantage)",
+              "No prior authorization required for Traditional Medicare FFS",
+              "Document medical necessity: pain score, analgesic failure, ECOG status, imaging confirmation",
+              "Bill CPT 20982 (RFA) or 20983 (cryoablation) as primary; add 77013 for CT guidance if applicable",
+              "Include ICD-10 C79.51 as primary diagnosis; add G89.3 for pain indication",
+              "Submit claim to Medicare Part B (professional) or Part A (facility)"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Insufficient documentation of pain refractory to conventional analgesics",
+              "Missing ECOG performance status in clinical notes",
+              "Imaging does not confirm bone metastasis (inadequate imaging)",
+              "Medicare Advantage plan denied — requires separate PA process",
+              "CT guidance (77013) bundled by payer — verify billing rules"
+            ]
+          },
+          {
+            "heading": "Billing & Authorization Tips",
+            "items": [
+              "Document pain score numerically (e.g., \"7/10 at rest\") — not just \"significant pain\"",
+              "Include ECOG performance status in the procedure indication",
+              "If concurrent biopsy is performed, bill separately (20225 for bone biopsy)",
+              "For vertebroplasty/cementoplasty, use 22510/22511 — covered under NCD 150.13",
+              "Multidisciplinary tumor board documentation strengthens medical necessity"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicare reimbursement for CPT 20982/20983 is approximately $800-$1,200 (professional component, 2026 rates). CT guidance (77013) adds approximately $200-$300. Facility fees are billed separately and are substantially higher."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Medicare FFS (Traditional)",
+            "status": "Covered",
+            "notes": "Category I CPT — no PA required. Medical necessity documentation required."
+          },
+          {
+            "payer": "Medicare Advantage (varies)",
+            "status": "Variable — PA often required",
+            "notes": "Each MA plan sets its own PA requirements."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered (with PA, most states)",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is required in most state Medicaid programs for bone tumor ablation. Coverage is generally available for palliation of bone metastases.",
+        "overview": "Most state Medicaid programs cover bone tumor ablation for palliation of bone metastases with prior authorization. Coverage criteria generally mirror Medicare requirements. Some states may have additional requirements or different documentation thresholds.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Standard Criteria",
+            "items": [
+              "Confirmed bone metastasis with documented pain",
+              "Failure of conventional analgesic therapy",
+              "ECOG performance status 0-3",
+              "Oncology consultation documented"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Required for PA Submission",
+            "items": [
+              "Completed state PA form",
+              "Oncology consult note",
+              "Imaging confirming bone metastasis",
+              "Pain documentation",
+              "Analgesic history"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Obtain state-specific PA form from Medicaid portal",
+              "Submit with complete clinical documentation",
+              "Allow 5-15 business days for PA determination",
+              "If denied, initiate peer-to-peer review with oncology support"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Incomplete PA form or missing documentation",
+              "Insufficient analgesic failure documentation",
+              "Missing oncology consultation",
+              "State-specific additional criteria not met"
+            ]
+          },
+          {
+            "heading": "Billing & Authorization Tips",
+            "items": [
+              "For dual-eligible patients, bill Medicare first — no PA needed for Medicare FFS",
+              "Include oncology tumor board documentation if available",
+              "Document life expectancy and goals of care (palliative intent)"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicaid reimbursement for CPT 20982/20983 is typically 40-60% of Medicare rates. Verify state-specific fee schedule."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Medicaid (most states)",
+            "status": "Covered with PA",
+            "notes": "Prior auth required. Criteria similar to Medicare."
+          },
+          {
+            "payer": "Dual-eligible patients",
+            "status": "Bill Medicare first",
+            "notes": "Medicare pays primary; Medicaid covers remaining cost-sharing."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private / Commercial Insurance",
+        "coverageStatus": "Covered (PA required)",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is required by virtually all commercial payers. Coverage is generally available for bone metastasis palliation with appropriate documentation.",
+        "overview": "Most major commercial payers cover bone tumor ablation for palliation of bone metastases with prior authorization. Aetna (CPB 0100 for cryoablation, CPB 0492 for RFA) covers both modalities. Humana covers with criteria per MCD policy HUM-IL-2653-000 (reviewed March 2026). BCBS and UHC generally cover with prior auth. Cementoplasty is covered by Aetna for pelvic bone metastases.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Typical PA Criteria",
+            "items": [
+              "Confirmed bone metastasis on imaging",
+              "Pain refractory to conventional analgesics (documented pain scores)",
+              "ECOG performance status 0-3",
+              "Life expectancy ≥ 3 months",
+              "Lesion accessible by percutaneous approach",
+              "Multidisciplinary tumor board review (recommended or required by some payers)"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Additional Requirements (Some Payers)",
+            "items": [
+              "Prior radiation therapy for the specific lesion (some payers require radiation failure)",
+              "Surgical consultation documenting non-surgical candidate",
+              "Specific lesion size criteria (varies by payer)"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Clinical Documentation",
+            "items": [
+              "Oncology consult note with bone metastasis diagnosis",
+              "Imaging report (CT/MRI/PET) with lesion measurements",
+              "Pain score documentation and analgesic history",
+              "ECOG performance status",
+              "Pathology report confirming malignancy",
+              "Prior radiation therapy records (if applicable)"
+            ]
+          },
+          {
+            "heading": "Required Documentation — PA Submission",
+            "items": [
+              "Completed payer-specific PA form",
+              "Letter of medical necessity citing NCCN guidelines and COMFORT trial data",
+              "CPT 20982 or 20983 and ICD-10 C79.51 on PA request"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify insurance benefits and PA requirements via payer portal",
+              "Submit PA with complete clinical documentation and letter of medical necessity",
+              "Cite NCCN Bone Cancer Guidelines v1.2026 and COMFORT trial (Callstrom et al.) in PA letter",
+              "Allow 5-10 business days for PA determination",
+              "If denied, request peer-to-peer review with medical director immediately",
+              "File formal appeal with NCCN guidelines, SIR Standards of Practice, and trial data"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Insufficient pain documentation (missing numeric pain scores)",
+              "Prior radiation therapy not attempted for the specific lesion (some payers)",
+              "Missing multidisciplinary tumor board documentation",
+              "Lesion size outside payer-specific criteria",
+              "Procedure performed at non-contracted facility"
+            ]
+          },
+          {
+            "heading": "Billing & Authorization Tips",
+            "items": [
+              "Document pain scores numerically at baseline and after analgesic failure",
+              "Include NCCN Bone Cancer Guidelines v1.2026 reference in PA letter",
+              "COMFORT trial (Callstrom et al.) demonstrated significant pain reduction — cite in appeals",
+              "For cementoplasty, cite Aetna CPB 0100 which explicitly covers pelvic bone metastases",
+              "Multidisciplinary tumor board documentation is highly persuasive for commercial payers"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Commercial reimbursement for CPT 20982/20983 varies by plan and contract. Negotiated rates typically range from $1,500-$4,000 for the professional component. Facility fees are billed separately."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Aetna (CPB 0100, CPB 0492)",
+            "status": "Covered with criteria",
+            "notes": "Cryoablation and RFA medically necessary for bone mets. Cementoplasty covered for pelvic bone mets."
+          },
+          {
+            "payer": "Humana (HUM-IL-2653-000)",
+            "status": "Covered with criteria",
+            "notes": "Ablation covered for cancer and noncancer indications. Reviewed March 2026."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered with PA",
+            "notes": "Prior auth required. Medical necessity criteria apply."
+          },
+          {
+            "payer": "BCBS (varies by region)",
+            "status": "Covered with PA",
+            "notes": "Generally covered for bone metastasis palliation with prior auth."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Header",
+        "kind": "prose",
+        "text": "Title: Bone Cancer Clinical Compass. Subtitle: Bone Tumor Ablation Insurance Authorization Guide. Navigation: \"Back to Assessment\" button linking to /bonecancer. Route: /bonecancer/auth-guide. Static reference page — no server calls, no cloud storage. Displays CPT codes, ICD-10 codes, and required documentation by payer type."
+      },
+      {
+        "heading": "Procedure Codes — Section Note",
+        "kind": "prose",
+        "text": "Each CPT entry shows: CPT code badge, RVU badge, description, Device/Access line, an \"Included in this code (do NOT bill separately)\" list, and an italic note."
+      },
+      {
+        "heading": "Disclaimer",
+        "kind": "prose",
+        "text": "Coverage policies change frequently. Always verify current payer policies directly with the insurance plan before scheduling procedures. This guide references Aetna CPB 0100 and CPB 0492, Humana MCD HUM-IL-2653-000 (reviewed March 2026), NCCN Bone Cancer Guidelines v1.2026, and COMFORT trial (Callstrom et al.). Last updated: April 2026."
+      }
+    ],
+    "raw": {
+      "markdown": "# Bone Cancer Clinical Compass\n## Bone Tumor Ablation Insurance Authorization Guide\n\n_Route: /bonecancer/auth-guide. Static reference page — no server calls, no cloud storage. Displays CPT codes, ICD-10 codes, and required documentation by payer type._\n\n[Button] Back to Assessment (links to /bonecancer)\n\n---\n\n## Procedure Codes\n\n### CPT 20982 (RVU 8.0)\nAblation therapy for reduction or eradication of 1 or more bone tumors (e.g., metastasis) including adjacent soft tissue when involved by tumor extension, percutaneous, including imaging guidance when performed; radiofrequency\n\n**Device/Access:** Radiofrequency ablation (RFA) — OsteoCool™ (Medtronic), StarBurst™ (AngioDynamics) | Percutaneous needle placement under CT or fluoroscopic guidance\n\nIncluded in this code (do NOT bill separately):\n- All imaging guidance for the procedure (CT, fluoroscopy)\n- Radiologic supervision and interpretation\n- Electrode placement and ablation\n- Adjacent soft tissue ablation when involved by tumor\n\n_Note: Category I CPT code. Bill once per session regardless of number of lesions treated. Medicare covers for palliation of bone metastases._\n\n### CPT 20983 (RVU 8.0)\nAblation therapy for reduction or eradication of 1 or more bone tumors (e.g., metastasis) including adjacent soft tissue when involved by tumor extension, percutaneous, including imaging guidance when performed; cryoablation\n\n**Device/Access:** Cryoablation — IcePearl™ (Galil Medical/BTG), Visual-ICE™ (Boston Scientific) | Percutaneous cryoprobe placement under CT or fluoroscopic guidance\n\nIncluded in this code (do NOT bill separately):\n- All imaging guidance for the procedure (CT, fluoroscopy)\n- Radiologic supervision and interpretation\n- Cryoprobe placement and freeze-thaw cycles\n- Adjacent soft tissue ablation when involved by tumor\n\n_Note: Category I CPT code. Same RVU as RFA (20982). Preferred for lesions near critical structures due to visible ice ball on CT. Medicare covers for palliation of bone metastases._\n\n### CPT 22510 (RVU 5.0)\nPercutaneous vertebroplasty (bone biopsy included when performed), 1 vertebral body, unilateral or bilateral injection; cervicothoracic\n\n**Device/Access:** Bone cement (PMMA) — Confidence™ (DePuy Synthes), SpineJack® (Stryker) | Percutaneous transpedicular or extrapedicular approach under fluoroscopy or CT\n\nIncluded in this code (do NOT bill separately):\n- Fluoroscopic guidance\n- Bone biopsy if performed at same session\n- Cement injection (unilateral or bilateral)\n\n_Note: For cervicothoracic vertebral bodies. Use 22511 for lumbosacral. Add 22512 for each additional vertebral body._\n\n### CPT 77013 (RVU 2.5)\nComputed tomography guidance for, and monitoring of, parenchymal tissue ablation\n\n**Device/Access:** N/A — guidance code | CT guidance during ablation procedure\n\nIncluded in this code (do NOT bill separately):\n- CT imaging guidance and monitoring during ablation\n\n_Note: Add-on code for CT guidance during ablation. May be bundled with 20982/20983 by some payers — verify before billing separately._\n\n---\n\n## ICD-10 Diagnosis Codes\n\n| Code | Description | Usage Notes | Type |\n| --- | --- | --- | --- |\n| C79.51 | Secondary malignant neoplasm of bone | Primary diagnosis for bone metastases (most common indication). Requires known primary malignancy. | Primary |\n| C79.52 | Secondary malignant neoplasm of bone marrow | Use when bone marrow involvement is documented. | Secondary |\n| C41.9 | Malignant neoplasm of bone and articular cartilage, unspecified | Primary bone tumor (e.g., osteosarcoma, chondrosarcoma) when primary bone malignancy is the indication. | Secondary |\n| G89.3 | Neoplasm related pain (chronic) | Secondary code for chronic pain from bone metastases — supports palliation indication. | Secondary |\n| M84.50 | Pathological fracture, unspecified site | Secondary code when pathological fracture is present or at risk. | Secondary |\n| M84.58 | Pathological fracture, other site | Secondary code for pathological fracture at a specific site. | Secondary |\n\n---\n\n## Prior Authorization by Payer Type\n\nTabs: Medicare FFS | Medicaid | Private / Commercial\n\n### Medicare FFS (Traditional Medicare)\n**Badges:** No Prior Auth (FFS) | Covered\n\n**Prior Auth Note:** Traditional Medicare FFS does NOT require prior authorization for CPT 20982 or 20983 (Category I codes). Medicare Advantage plans may require prior auth — verify with the specific plan.\n\n**Overview:** Traditional Medicare covers bone tumor ablation (RFA and cryoablation) as medically necessary for palliation of pain from bone metastases. No specific NCD exists for non-liver tumor ablation; coverage is based on medical necessity. Some MAC jurisdictions have LCDs addressing tumor ablation (e.g., L36901). Vertebroplasty/cementoplasty is covered under NCD 150.13.\n\n**Coverage Criteria**\n\n_Diagnosis_\n- Confirmed bone metastasis on imaging (CT, MRI, PET/CT, or bone scan)\n- Known primary malignancy documented\n- Histologic confirmation available (or biopsy planned concurrently)\n\n_Clinical Indications_\n- Pain from bone metastases not adequately controlled by conventional analgesics\n- ECOG performance status 0-3\n- Life expectancy ≥ 3 months (reasonable expectation of benefit)\n- Lesion accessible by percutaneous approach under imaging guidance\n\n_Prior Treatment_\n- Trial of analgesic therapy (NSAIDs, opioids) with inadequate pain control\n- Radiation therapy considered or completed (ablation may be used for radiation-refractory lesions)\n- Multidisciplinary oncology team review recommended\n\n_Exclusions_\n- Uncorrectable coagulopathy (INR > 1.5, platelets < 50,000)\n- Active infection at access site\n- Lesion not accessible without unacceptable risk to critical structures\n- Spinal cord compression requiring surgical decompression\n\n**Required Documentation**\n\n_Clinical Records_\n- Oncology consult note documenting bone metastasis and pain\n- Pain score documentation (NRS/VAS) and analgesic history\n- ECOG performance status\n- Imaging report confirming bone metastasis (CT, MRI, or PET/CT)\n- Pathology report or biopsy plan\n\n_Imaging_\n- CT or MRI of affected bone(s) with lesion measurements\n- PET/CT if available (documents metabolic activity)\n- Bone scan if CT/MRI not available\n\n**Submission Process**\n1. Verify patient has Traditional Medicare (not Medicare Advantage)\n2. No prior authorization required for Traditional Medicare FFS\n3. Document medical necessity: pain score, analgesic failure, ECOG status, imaging confirmation\n4. Bill CPT 20982 (RFA) or 20983 (cryoablation) as primary; add 77013 for CT guidance if applicable\n5. Include ICD-10 C79.51 as primary diagnosis; add G89.3 for pain indication\n6. Submit claim to Medicare Part B (professional) or Part A (facility)\n\n**Common Denial Reasons**\n- Insufficient documentation of pain refractory to conventional analgesics\n- Missing ECOG performance status in clinical notes\n- Imaging does not confirm bone metastasis (inadequate imaging)\n- Medicare Advantage plan denied — requires separate PA process\n- CT guidance (77013) bundled by payer — verify billing rules\n\n**Known Payer Policies**\n\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicare FFS (Traditional) | Covered | Category I CPT — no PA required. Medical necessity documentation required. |\n| Medicare Advantage (varies) | Variable — PA often required | Each MA plan sets its own PA requirements. |\n\n**Billing & Authorization Tips**\n- Document pain score numerically (e.g., \"7/10 at rest\") — not just \"significant pain\"\n- Include ECOG performance status in the procedure indication\n- If concurrent biopsy is performed, bill separately (20225 for bone biopsy)\n- For vertebroplasty/cementoplasty, use 22510/22511 — covered under NCD 150.13\n- Multidisciplinary tumor board documentation strengthens medical necessity\n\n**Reimbursement Note:** Medicare reimbursement for CPT 20982/20983 is approximately $800-$1,200 (professional component, 2026 rates). CT guidance (77013) adds approximately $200-$300. Facility fees are billed separately and are substantially higher.\n\n### Medicaid\n**Badges:** Prior Auth Required | Covered (with PA, most states)\n\n**Prior Auth Note:** Prior authorization is required in most state Medicaid programs for bone tumor ablation. Coverage is generally available for palliation of bone metastases.\n\n**Overview:** Most state Medicaid programs cover bone tumor ablation for palliation of bone metastases with prior authorization. Coverage criteria generally mirror Medicare requirements. Some states may have additional requirements or different documentation thresholds.\n\n**Coverage Criteria**\n\n_Standard Criteria_\n- Confirmed bone metastasis with documented pain\n- Failure of conventional analgesic therapy\n- ECOG performance status 0-3\n- Oncology consultation documented\n\n**Required Documentation**\n\n_Required for PA Submission_\n- Completed state PA form\n- Oncology consult note\n- Imaging confirming bone metastasis\n- Pain documentation\n- Analgesic history\n\n**Submission Process**\n1. Obtain state-specific PA form from Medicaid portal\n2. Submit with complete clinical documentation\n3. Allow 5-15 business days for PA determination\n4. If denied, initiate peer-to-peer review with oncology support\n\n**Common Denial Reasons**\n- Incomplete PA form or missing documentation\n- Insufficient analgesic failure documentation\n- Missing oncology consultation\n- State-specific additional criteria not met\n\n**Known Payer Policies**\n\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicaid (most states) | Covered with PA | Prior auth required. Criteria similar to Medicare. |\n| Dual-eligible patients | Bill Medicare first | Medicare pays primary; Medicaid covers remaining cost-sharing. |\n\n**Billing & Authorization Tips**\n- For dual-eligible patients, bill Medicare first — no PA needed for Medicare FFS\n- Include oncology tumor board documentation if available\n- Document life expectancy and goals of care (palliative intent)\n\n**Reimbursement Note:** Medicaid reimbursement for CPT 20982/20983 is typically 40-60% of Medicare rates. Verify state-specific fee schedule.\n\n### Private / Commercial Insurance\n**Badges:** Prior Auth Required | Covered (PA required)\n\n**Prior Auth Note:** Prior authorization is required by virtually all commercial payers. Coverage is generally available for bone metastasis palliation with appropriate documentation.\n\n**Overview:** Most major commercial payers cover bone tumor ablation for palliation of bone metastases with prior authorization. Aetna (CPB 0100 for cryoablation, CPB 0492 for RFA) covers both modalities. Humana covers with criteria per MCD policy HUM-IL-2653-000 (reviewed March 2026). BCBS and UHC generally cover with prior auth. Cementoplasty is covered by Aetna for pelvic bone metastases.\n\n**Coverage Criteria**\n\n_Typical PA Criteria_\n- Confirmed bone metastasis on imaging\n- Pain refractory to conventional analgesics (documented pain scores)\n- ECOG performance status 0-3\n- Life expectancy ≥ 3 months\n- Lesion accessible by percutaneous approach\n- Multidisciplinary tumor board review (recommended or required by some payers)\n\n_Additional Requirements (Some Payers)_\n- Prior radiation therapy for the specific lesion (some payers require radiation failure)\n- Surgical consultation documenting non-surgical candidate\n- Specific lesion size criteria (varies by payer)\n\n**Required Documentation**\n\n_Clinical Documentation_\n- Oncology consult note with bone metastasis diagnosis\n- Imaging report (CT/MRI/PET) with lesion measurements\n- Pain score documentation and analgesic history\n- ECOG performance status\n- Pathology report confirming malignancy\n- Prior radiation therapy records (if applicable)\n\n_PA Submission_\n- Completed payer-specific PA form\n- Letter of medical necessity citing NCCN guidelines and COMFORT trial data\n- CPT 20982 or 20983 and ICD-10 C79.51 on PA request\n\n**Submission Process**\n1. Verify insurance benefits and PA requirements via payer portal\n2. Submit PA with complete clinical documentation and letter of medical necessity\n3. Cite NCCN Bone Cancer Guidelines v1.2026 and COMFORT trial (Callstrom et al.) in PA letter\n4. Allow 5-10 business days for PA determination\n5. If denied, request peer-to-peer review with medical director immediately\n6. File formal appeal with NCCN guidelines, SIR Standards of Practice, and trial data\n\n**Common Denial Reasons**\n- Insufficient pain documentation (missing numeric pain scores)\n- Prior radiation therapy not attempted for the specific lesion (some payers)\n- Missing multidisciplinary tumor board documentation\n- Lesion size outside payer-specific criteria\n- Procedure performed at non-contracted facility\n\n**Known Payer Policies**\n\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Aetna (CPB 0100, CPB 0492) | Covered with criteria | Cryoablation and RFA medically necessary for bone mets. Cementoplasty covered for pelvic bone mets. |\n| Humana (HUM-IL-2653-000) | Covered with criteria | Ablation covered for cancer and noncancer indications. Reviewed March 2026. |\n| UnitedHealthcare | Covered with PA | Prior auth required. Medical necessity criteria apply. |\n| BCBS (varies by region) | Covered with PA | Generally covered for bone metastasis palliation with prior auth. |\n\n**Billing & Authorization Tips**\n- Document pain scores numerically at baseline and after analgesic failure\n- Include NCCN Bone Cancer Guidelines v1.2026 reference in PA letter\n- COMFORT trial (Callstrom et al.) demonstrated significant pain reduction — cite in appeals\n- For cementoplasty, cite Aetna CPB 0100 which explicitly covers pelvic bone metastases\n- Multidisciplinary tumor board documentation is highly persuasive for commercial payers\n\n**Reimbursement Note:** Commercial reimbursement for CPT 20982/20983 varies by plan and contract. Negotiated rates typically range from $1,500-$4,000 for the professional component. Facility fees are billed separately.\n\n---\n\n**Disclaimer:** Coverage policies change frequently. Always verify current payer policies directly with the insurance plan before scheduling procedures. This guide references Aetna CPB 0100 and CPB 0492, Humana MCD HUM-IL-2653-000 (reviewed March 2026), NCCN Bone Cancer Guidelines v1.2026, and COMFORT trial (Callstrom et al.). Last updated: April 2026.",
+      "tables": [
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Usage Notes", "Type"],
+          "rows": [
+            ["C79.51", "Secondary malignant neoplasm of bone", "Primary diagnosis for bone metastases (most common indication). Requires known primary malignancy.", "Primary"],
+            ["C79.52", "Secondary malignant neoplasm of bone marrow", "Use when bone marrow involvement is documented.", "Secondary"],
+            ["C41.9", "Malignant neoplasm of bone and articular cartilage, unspecified", "Primary bone tumor (e.g., osteosarcoma, chondrosarcoma) when primary bone malignancy is the indication.", "Secondary"],
+            ["G89.3", "Neoplasm related pain (chronic)", "Secondary code for chronic pain from bone metastases — supports palliation indication.", "Secondary"],
+            ["M84.50", "Pathological fracture, unspecified site", "Secondary code when pathological fracture is present or at risk.", "Secondary"],
+            ["M84.58", "Pathological fracture, other site", "Secondary code for pathological fracture at a specific site.", "Secondary"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicare FFS",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicare FFS (Traditional)", "Covered", "Category I CPT — no PA required. Medical necessity documentation required."],
+            ["Medicare Advantage (varies)", "Variable — PA often required", "Each MA plan sets its own PA requirements."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicaid (most states)", "Covered with PA", "Prior auth required. Criteria similar to Medicare."],
+            ["Dual-eligible patients", "Bill Medicare first", "Medicare pays primary; Medicaid covers remaining cost-sharing."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Private / Commercial",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Aetna (CPB 0100, CPB 0492)", "Covered with criteria", "Cryoablation and RFA medically necessary for bone mets. Cementoplasty covered for pelvic bone mets."],
+            ["Humana (HUM-IL-2653-000)", "Covered with criteria", "Ablation covered for cancer and noncancer indications. Reviewed March 2026."],
+            ["UnitedHealthcare", "Covered with PA", "Prior auth required. Medical necessity criteria apply."],
+            ["BCBS (varies by region)", "Covered with PA", "Generally covered for bone metastasis palliation with prior auth."]
+          ]
+        }
+      ]
+    }
+  }
+}

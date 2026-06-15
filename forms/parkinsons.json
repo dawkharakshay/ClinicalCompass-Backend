@@ -1,0 +1,327 @@
+{
+  "id": "parkinsons",
+  "title": "Parkinson's Disease Clinical Compass",
+  "description": "Pharmacotherapy vs DBS vs Device-Aided Therapy — Decision Support",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicRef": "parkinsons",
+    "hiddenDefaults": { "dbsContraindications": [], "isPregnantOrPlanning": false },
+    "steps": [
+      {
+        "id": "stage",
+        "shortLabel": "Stage",
+        "title": "Disease Stage & Severity",
+        "fields": [
+          {
+            "id": "stage",
+            "name": "stage",
+            "label": "Disease Stage",
+            "type": "select",
+            "required": true,
+            "defaultValue": "early",
+            "options": [
+              { "label": "Early (H&Y 1–2, minimal disability)", "value": "early" },
+              { "label": "Moderate (H&Y 2–3, motor fluctuations)", "value": "moderate" },
+              { "label": "Advanced (H&Y 4–5, device-aided therapy)", "value": "advanced" }
+            ]
+          },
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Patient Age (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "min": 0,
+            "max": 120,
+            "keyboardType": "decimal",
+            "prefillFrom": "demographics.age"
+          },
+          {
+            "id": "updrs",
+            "name": "updrsMotorScore",
+            "label": "MDS-UPDRS Part III Motor Score (0–132)",
+            "type": "number",
+            "defaultValue": 22,
+            "min": 0,
+            "max": 132,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "hy",
+            "name": "hoehnYahrScale",
+            "label": "Hoehn & Yahr Scale (1–5)",
+            "type": "number",
+            "defaultValue": 2,
+            "min": 1,
+            "max": 5,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "tremor",
+            "name": "tremorDominant",
+            "label": "Tremor-Dominant Phenotype",
+            "type": "switch",
+            "defaultValue": true
+          }
+        ]
+      },
+      {
+        "id": "fluct",
+        "shortLabel": "Therapy",
+        "title": "Motor Fluctuations & Therapy",
+        "fields": [
+          {
+            "id": "fluctuations",
+            "name": "motorFluctuations",
+            "label": "Motor Fluctuations",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "None", "value": "none" },
+              { "label": "Wearing-off (end-of-dose)", "value": "wearing_off" },
+              { "label": "Unpredictable on-off fluctuations", "value": "on_off" },
+              { "label": "Peak-dose dyskinesia", "value": "dyskinesia" },
+              { "label": "Freezing of gait", "value": "freezing" }
+            ]
+          },
+          {
+            "id": "therapy",
+            "name": "initialTherapyHistory",
+            "label": "Current / Prior Therapy",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "No therapy yet", "value": "none" },
+              { "label": "On levodopa/carbidopa", "value": "on_levodopa" },
+              { "label": "On dopamine agonist (pramipexole, ropinirole)", "value": "on_dopamine_agonist" },
+              { "label": "On MAO-B inhibitor (rasagiline, selegiline)", "value": "on_mao_b_inhibitor" },
+              { "label": "On combination therapy", "value": "on_combination" }
+            ]
+          },
+          {
+            "id": "ldopa",
+            "name": "levodopaDailyDose",
+            "label": "Total Daily Levodopa Dose (mg)",
+            "type": "number",
+            "defaultValue": 600,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "initialTherapyHistory", "op": "in", "value": ["on_levodopa", "on_combination"] }
+          },
+          {
+            "id": "off",
+            "name": "offTimeHoursPerDay",
+            "label": "Off-Time Hours per Day",
+            "type": "number",
+            "defaultValue": 2,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "initialTherapyHistory", "op": "in", "value": ["on_levodopa", "on_combination"] }
+          },
+          {
+            "id": "nonOral",
+            "name": "wantsNonOralTherapy",
+            "label": "Prefers Non-Oral Therapy (patch, pump, infusion)",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "dbs",
+        "shortLabel": "DBS",
+        "title": "DBS & Comorbidities",
+        "fields": [
+          { "id": "dbsCand", "name": "isDBSCandidate", "label": "Clinically Assessed as DBS Candidate", "type": "switch", "defaultValue": false },
+          { "id": "dementia", "name": "hasDementia", "label": "Dementia (MMSE <24 or MoCA <21)", "type": "switch", "defaultValue": false },
+          { "id": "hallucinations", "name": "hasHallucinations", "label": "Visual Hallucinations", "type": "switch", "defaultValue": false },
+          { "id": "orthostasis", "name": "hasOrthostasis", "label": "Orthostatic Hypotension", "type": "switch", "defaultValue": false },
+          { "id": "icd", "name": "hasImpulseControlDisorder", "label": "Impulse Control Disorder (gambling, hypersexuality)", "type": "switch", "defaultValue": false },
+          { "id": "cardiac", "name": "hasCardiacHistory", "label": "Cardiac History (amantadine/anticholinergic relevance)", "type": "switch", "defaultValue": false }
+        ]
+      }
+    ]
+  },
+
+  "logic": {
+    "set": {
+      "evidenceLevel": "A",
+      "references": ["fox2018", "fasano2020", "connolly2014", "deuschl2006", "mds2025"],
+      "primaryRecommendation": "{{stage|title}} PD — see pharmacotherapy and DBS assessment below.",
+      "nonMotorManagement": "Non-motor management: depression/anxiety → SSRIs/SNRIs; dementia → rivastigmine (AAN Level A); psychosis → pimavanserin 34mg or low-dose clozapine; RBD → clonazepam 0.5–1mg or melatonin 3–12mg; constipation → PEG/lubiprostone; orthostasis → midodrine/droxidopa/fludrocortisone; sialorrhea → botulinum toxin.",
+      "rationale": "Stage {{stage}}, age {{age}}, H&Y {{hoehnYahrScale}}, MDS-UPDRS III {{updrsMotorScore}}, fluctuations {{motorFluctuations}}, prior therapy {{initialTherapyHistory}}."
+    },
+
+    "gates": [
+      {
+        "when": { "field": "hasHallucinations", "op": "truthy" },
+        "stop": false,
+        "append": {
+          "urgentFlags": ["Hallucinations present: avoid dopamine agonists and MAO-B inhibitors if possible; consider clozapine 6.25–50mg or pimavanserin 34mg for psychosis"],
+          "agentsToAvoid": ["Dopamine agonists (worsen psychosis)", "MAO-B inhibitors (may worsen psychosis)", "Typical antipsychotics (haloperidol, risperidone — worsen parkinsonism)"]
+        }
+      },
+      {
+        "when": { "field": "hasImpulseControlDisorder", "op": "truthy" },
+        "stop": false,
+        "append": {
+          "urgentFlags": ["Impulse control disorder: reduce or discontinue dopamine agonist — ICD occurs in 10–15% of patients on agonists"],
+          "agentsToAvoid": ["Dopamine agonists (ICD risk — pramipexole, ropinirole, rotigotine)"]
+        }
+      },
+      {
+        "when": { "field": "hasDementia", "op": "truthy" },
+        "stop": false,
+        "append": {
+          "urgentFlags": ["Dementia present: avoid anticholinergics and amantadine; rivastigmine is evidence-based for PD dementia (AAN Level A)"],
+          "agentsToAvoid": ["Anticholinergics (worsen cognition)", "Amantadine (may worsen confusion)"],
+          "recommendedAgents": ["Rivastigmine for PD dementia (AAN Level A)"]
+        }
+      },
+      {
+        "when": { "field": "hasOrthostasis", "op": "truthy" },
+        "stop": false,
+        "append": {
+          "urgentFlags": ["Orthostatic hypotension: review all antihypertensives; consider midodrine or droxidopa"],
+          "agentsToAvoid": ["High-dose dopamine agonists (worsen orthostasis)"]
+        }
+      }
+    ],
+
+    "scores": [
+      {
+        "id": "dbsCriteriaMet",
+        "init": 0,
+        "components": [
+          { "when": { "field": "stage", "op": "in", "value": ["moderate", "advanced"] }, "points": 1 },
+          { "when": { "field": "motorFluctuations", "op": "ne", "value": "none" }, "points": 1 },
+          { "when": { "field": "hasDementia", "op": "falsy" }, "points": 1 },
+          { "when": { "field": "dbsContraindications", "op": "eq", "value": [] }, "points": 1 },
+          { "when": { "field": "updrsMotorScore", "op": "gte", "value": 20 }, "points": 1 }
+        ]
+      }
+    ],
+
+    "rules": [
+      {
+        "target": "dbs",
+        "when": { "all": [ { "field": "isDBSCandidate", "op": "truthy" }, { "field": "dbsCriteriaMet", "op": "gte", "value": 4 } ] },
+        "outcome": "dbs_candidate"
+      },
+      { "target": "dbs", "when": { "field": "dbsContraindications", "op": "ne", "value": [] }, "outcome": "dbs_contraindicated" },
+      { "target": "dbs", "default": true, "outcome": "dbs_not_indicated" },
+
+      {
+        "target": "pharm",
+        "when": { "all": [
+          { "field": "stage", "op": "eq", "value": "early" },
+          { "field": "motorFluctuations", "op": "eq", "value": "none" },
+          { "field": "initialTherapyHistory", "op": "eq", "value": "none" },
+          { "field": "age", "op": "lt", "value": 65 },
+          { "field": "tremorDominant", "op": "falsy" }
+        ] },
+        "outcome": "early_agonist"
+      },
+      {
+        "target": "pharm",
+        "when": { "all": [
+          { "field": "stage", "op": "eq", "value": "early" },
+          { "field": "motorFluctuations", "op": "eq", "value": "none" },
+          { "field": "initialTherapyHistory", "op": "eq", "value": "none" }
+        ] },
+        "outcome": "early_levodopa"
+      },
+      {
+        "target": "pharm",
+        "when": { "all": [
+          { "field": "stage", "op": "eq", "value": "early" },
+          { "field": "motorFluctuations", "op": "eq", "value": "none" }
+        ] },
+        "outcome": "early_established"
+      },
+      { "target": "pharm", "when": { "field": "motorFluctuations", "op": "eq", "value": "wearing_off" }, "outcome": "wearing_off" },
+      { "target": "pharm", "when": { "field": "motorFluctuations", "op": "eq", "value": "dyskinesia" }, "outcome": "dyskinesia" },
+      { "target": "pharm", "when": { "any": [ { "field": "motorFluctuations", "op": "eq", "value": "on_off" }, { "field": "stage", "op": "eq", "value": "advanced" } ] }, "outcome": "advanced_onoff" },
+      { "target": "pharm", "when": { "field": "motorFluctuations", "op": "eq", "value": "freezing" }, "outcome": "freezing" },
+      { "target": "pharm", "default": true, "outcome": "moderate_default" }
+    ],
+
+    "outcomes": {
+      "dbs_candidate": {
+        "set": { "dbsAssessment": "DBS CANDIDATE: meets criteria for DBS evaluation. Refer to multidisciplinary DBS team (neurology, neurosurgery, neuropsychology). STN-DBS preferred for fluctuations + dyskinesia; GPi-DBS if prominent dyskinesia or psychiatric comorbidity. Levodopa responsiveness (UPDRS improvement ≥30% on/off) is the strongest predictor of benefit." },
+        "append": {
+          "recommendedAgents": ["DBS evaluation referral (STN or GPi target)"],
+          "nextSteps": ["Refer to DBS multidisciplinary team", "Levodopa challenge test (UPDRS Part III on vs off)", "Neuropsychological evaluation", "Psychiatric clearance"]
+        }
+      },
+      "dbs_contraindicated": {
+        "set": { "dbsAssessment": "DBS contraindicated ({{dbsContraindications}}). Consider levodopa-carbidopa intestinal gel (LCIG/Duopa) or subcutaneous apomorphine infusion as device-aided alternatives." },
+        "appendWhen": {
+          "when": { "field": "wantsNonOralTherapy", "op": "truthy" },
+          "append": { "recommendedAgents": ["Levodopa-carbidopa intestinal gel (LCIG/Duopa)", "Subcutaneous apomorphine infusion"] }
+        }
+      },
+      "dbs_not_indicated": {
+        "set": { "dbsAssessment": "DBS not currently indicated. Optimize pharmacotherapy first; reassess if motor fluctuations worsen despite optimized medical therapy." }
+      },
+
+      "early_agonist": {
+        "set": { "pharmacotherapy": "Early PD, age <65: dopamine agonist (pramipexole, ropinirole, rotigotine) as initial therapy to delay levodopa and reduce dyskinesia risk. MAO-B inhibitors are an alternative for mild symptoms. Levodopa remains most effective — initiate when functional impairment warrants." },
+        "append": { "recommendedAgents": ["Pramipexole ER 0.375–4.5mg/day", "Ropinirole XL 2–24mg/day", "Rotigotine patch 2–8mg/24h", "Rasagiline 1mg/day (MAO-B inhibitor)", "Safinamide 50–100mg/day (add-on)"] }
+      },
+      "early_levodopa": {
+        "set": { "pharmacotherapy": "Early PD, age ≥65 or tremor-dominant: levodopa-carbidopa is preferred initial therapy — best symptomatic control with lowest neuropsychiatric risk in older patients. Start low (25/100mg TID) and titrate." },
+        "append": { "recommendedAgents": ["Levodopa-carbidopa 25/100mg TID (titrate to response)", "Rasagiline 1mg/day (adjunct for mild symptoms)"] }
+      },
+      "early_established": {
+        "set": { "pharmacotherapy": "Established early PD on therapy: optimize current regimen. If on MAO-B with inadequate control, add levodopa or dopamine agonist. If on agonist with adequate control, continue and monitor for ICD." },
+        "append": { "recommendedAgents": ["Optimize current therapy", "Add levodopa if functional impairment persists"] }
+      },
+      "wearing_off": {
+        "set": { "pharmacotherapy": "Wearing-off fluctuations (AAN Level A): 1) shorten levodopa dosing interval; 2) add MAO-B inhibitor; 3) add COMT inhibitor; 4) add dopamine agonist; 5) consider ER carbidopa-levodopa (Rytary)." },
+        "append": {
+          "recommendedAgents": ["Rasagiline 1mg/day or Safinamide 50–100mg/day (MAO-B add-on)", "Entacapone 200mg with each levodopa dose (COMT)", "Opicapone 50mg once daily (COMT)", "Carbidopa-levodopa ER (Rytary)", "Istradefylline 20–40mg/day (A2A antagonist)"],
+          "nextSteps": ["Wearing-off diary to quantify off-time", "Adjust levodopa dosing interval before adding adjunct"]
+        }
+      },
+      "dyskinesia": {
+        "set": { "pharmacotherapy": "Levodopa-induced dyskinesia: 1) reduce individual levodopa dose, increase frequency; 2) add amantadine (reduces dyskinesia 50–60%, AAN Level B); 3) ER amantadine (Gocovri 137mg nightly, FDA-approved); 4) if refractory: DBS (GPi) or LCIG." },
+        "append": { "recommendedAgents": ["DBS evaluation (GPi target preferred for dyskinesia)"] },
+        "appendWhen": {
+          "when": { "field": "hasDementia", "op": "falsy" },
+          "append": { "recommendedAgents": ["Amantadine 100mg BID–TID", "Amantadine ER (Gocovri) 137mg nightly (FDA-approved for LID)", "Reduce levodopa dose + increase frequency"] }
+        }
+      },
+      "advanced_onoff": {
+        "set": { "pharmacotherapy": "Advanced PD with on-off fluctuations — device-aided therapy: 1) DBS (STN or GPi); 2) LCIG/Duopa (continuous duodenal infusion, reduces off-time 4–6 h/day); 3) subcutaneous apomorphine infusion; 4) subcutaneous foslevodopa/foscarbidopa (Produodopa)." },
+        "append": {
+          "recommendedAgents": ["DBS evaluation (STN-DBS preferred for fluctuations)", "LCIG (Duopa) — continuous intestinal gel infusion", "Subcutaneous apomorphine infusion", "Apomorphine SC injection (Apokyn) for rescue during off episodes"],
+          "nextSteps": ["Refer to movement disorder specialist", "DBS multidisciplinary evaluation", "Off-time diary (hours/day)"]
+        }
+      },
+      "freezing": {
+        "set": { "pharmacotherapy": "Freezing of gait: optimize levodopa timing (often occurs during off-state). Physical therapy with cueing (auditory, visual). Avoid anticholinergics. DBS may improve FOG in some patients (less predictable)." },
+        "append": {
+          "recommendedAgents": ["Optimize levodopa timing", "Physical therapy with cueing", "DBS evaluation if refractory"],
+          "agentsToAvoid": ["Anticholinergics (may worsen FOG and cognition)"]
+        }
+      },
+      "moderate_default": {
+        "set": { "pharmacotherapy": "Moderate PD: optimize levodopa regimen; consider adjunct therapy if wearing-off develops. Reassess every 3–6 months." },
+        "append": { "recommendedAgents": ["Optimize levodopa-carbidopa regimen", "Consider MAO-B or COMT inhibitor adjunct"] }
+      }
+    },
+
+    "defaults": {
+      "nextSteps": ["Movement disorder specialist referral", "MDS-UPDRS motor assessment (on and off state)", "Neuropsychological screening (MoCA)", "PT/OT/speech therapy evaluation", "Fall risk assessment", "Driving safety evaluation"]
+    },
+
+    "references": {
+      "fox2018": { "citation": "Fox SH, et al. MDS Evidence-Based Medicine Review: motor symptoms of PD. Mov Disord. 2018;33(8):1248-1266.", "pmid": "29570866", "url": "https://pubmed.ncbi.nlm.nih.gov/29570866/" },
+      "fasano2020": { "citation": "Fasano A, et al. Management of advanced therapies in PD. NPJ Parkinsons Dis. 2020;6:20.", "pmid": "32665958", "url": "https://pubmed.ncbi.nlm.nih.gov/32665958/" },
+      "connolly2014": { "citation": "Connolly BS, Lang AE. Pharmacological treatment of Parkinson disease: a review. JAMA. 2014;311(16):1670-1683.", "pmid": "24756517", "url": "https://pubmed.ncbi.nlm.nih.gov/24756517/" },
+      "deuschl2006": { "citation": "Deuschl G, et al. A randomized trial of DBS for PD. N Engl J Med. 2006;355(9):896-908.", "pmid": "16943402", "url": "https://pubmed.ncbi.nlm.nih.gov/16943402/" },
+      "mds2025": { "citation": "MDS 2025 Evidence-Based Medicine Review: Parkinson's Disease.", "url": "https://www.movementdisorders.org/" }
+    }
+  }
+}

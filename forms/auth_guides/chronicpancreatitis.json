@@ -1,0 +1,360 @@
+{
+  "title": "Chronic Pancreatitis Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "ChronicPancreatitisAuthGuide.tsx",
+    "title": "Chronic Pancreatitis Clinical Compass",
+    "subtitle": "EUS, ERCP, and Celiac Plexus Block Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "43231",
+        "description": "Esophagoscopy, flexible, transoral; with endoscopic ultrasound examination, upper GI tract",
+        "device": "Flexible endoscope with ultrasound transducer",
+        "access": "Oral",
+        "rvu": 2.80,
+        "includes": [
+          "Visualization of the upper GI tract (esophagus, stomach, duodenum)",
+          "Ultrasound imaging of the luminal wall and adjacent structures (e.g., pancreas, bile duct)",
+          "Diagnostic assessment for pancreatic diseases"
+        ],
+        "note": "Often used for diagnosis, staging, and guided interventions in chronic pancreatitis."
+      },
+      {
+        "code": "43262",
+        "description": "Endoscopic retrograde cholangiopancreatography (ERCP); with sphincterotomy/papillotomy",
+        "device": "Endoscope, contrast material, fluoroscopy",
+        "access": "Oral",
+        "rvu": 6.50,
+        "includes": [
+          "Diagnostic imaging of biliary and pancreatic ducts",
+          "Therapeutic incision of the sphincter of Oddi or ampulla of Vater",
+          "Management of ductal obstructions or strictures"
+        ],
+        "note": "Key procedure for managing ductal complications and pain in chronic pancreatitis."
+      },
+      {
+        "code": "64530",
+        "description": "Injection, anesthetic agent; celiac plexus, with or without radiologic monitoring",
+        "device": "Needle, anesthetic/neurolytic agent, often EUS-guidance",
+        "access": "Percutaneous (often EUS-guided)",
+        "rvu": 1.58,
+        "includes": [
+          "Administration of anesthetic or neurolytic agents to the celiac plexus",
+          "Pain management for severe abdominal pain associated with chronic pancreatitis"
+        ],
+        "note": "Used for pain relief in patients with chronic pancreatitis refractory to conventional treatments."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "K86.1",
+        "description": "Other chronic pancreatitis",
+        "notes": "Chronic pancreatitis not specified as alcohol-induced or other specific types.",
+        "required": true
+      },
+      {
+        "code": "K86.0",
+        "description": "Alcohol-induced chronic pancreatitis",
+        "notes": "Chronic pancreatitis directly attributed to alcohol consumption.",
+        "required": false
+      },
+      {
+        "code": "K85.9",
+        "description": "Acute pancreatitis, unspecified",
+        "notes": "May be used for acute exacerbations of chronic pancreatitis.",
+        "required": false
+      },
+      {
+        "code": "K86.8",
+        "description": "Other specified diseases of pancreas",
+        "notes": "For other specific forms of chronic pancreatitis not classified elsewhere.",
+        "required": false
+      },
+      {
+        "code": "R10.84",
+        "description": "Chronic abdominal pain",
+        "notes": "Symptom code for persistent abdominal pain, often associated with chronic pancreatitis.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with medical necessity",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is generally required for advanced diagnostic and therapeutic procedures like EUS, ERCP, and celiac plexus blocks. Coverage depends on medical necessity and adherence to Medicare guidelines.",
+        "overview": "Medicare covers medically necessary diagnostic and therapeutic services for chronic pancreatitis, including EUS, ERCP, and celiac plexus blocks, when standard treatments have failed or specific criteria are met.",
+        "reimbursementNote": "Reimbursement for chronic pancreatitis procedures is subject to Medicare fee schedules and may vary based on geographic location and facility type. Co-pays and deductibles apply.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: EUS (CPT 43231)",
+            "items": [
+              "Diagnosis or staging of pancreatic or biliary disease when other imaging is inconclusive.",
+              "Guidance for fine needle aspiration (FNA) or biopsy of pancreatic lesions.",
+              "Assessment of chronic pancreatitis complications (e.g., pseudocysts, strictures)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: ERCP (CPT 43262)",
+            "items": [
+              "Management of biliary or pancreatic duct obstruction (e.g., stones, strictures).",
+              "Pain management refractory to medical therapy, when ductal pathology is identified.",
+              "Pancreatic sphincterotomy for sphincter of Oddi dysfunction related to chronic pancreatitis."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Celiac Plexus Block (CPT 64530)",
+            "items": [
+              "Severe, intractable abdominal pain due to chronic pancreatitis refractory to conventional pain management.",
+              "Documentation of pain severity and failure of oral analgesics or other conservative measures.",
+              "Performed under imaging guidance (e.g., EUS, CT) for accuracy and safety."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Notes",
+            "items": [
+              "Detailed history and physical examination.",
+              "Documentation of chronic pancreatitis diagnosis (e.g., imaging, lab results).",
+              "Severity of symptoms, especially pain, and impact on daily activities.",
+              "Prior treatment failures and rationale for current procedure."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Imaging Reports",
+            "items": [
+              "CT, MRI, or other imaging reports supporting the diagnosis and indicating the need for EUS/ERCP.",
+              "EUS findings for celiac plexus block if EUS-guided."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Procedure Reports",
+            "items": [
+              "Operative notes for EUS, ERCP, or celiac plexus block, detailing findings and interventions."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request with all supporting clinical documentation.",
+              "Ensure all CPT and ICD-10 codes are accurate and reflect medical necessity.",
+              "Follow up with Medicare to confirm authorization status before scheduling non-emergent procedures."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity (e.g., insufficient pain severity for celiac block).",
+              "Failure to try conservative treatments first.",
+              "Incomplete or missing clinical documentation.",
+              "Incorrect coding or modifier usage."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Clearly document the chronicity and severity of pancreatitis and associated pain.",
+              "Highlight the failure of conservative management and the specific indications for intervention.",
+              "Ensure all imaging and procedure reports are thorough and support the medical necessity."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS",
+            "status": "Covered",
+            "notes": "National Coverage Determinations (NCDs) and Local Coverage Determinations (LCDs) apply."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered with state-specific criteria",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid programs typically require prior authorization for specialized procedures. Eligibility and coverage criteria vary by state.",
+        "overview": "Medicaid covers medically necessary services for chronic pancreatitis, but coverage policies and prior authorization requirements can differ significantly between states.",
+        "reimbursementNote": "Medicaid reimbursement rates are typically lower than Medicare or private insurance and are set by individual state programs. Provider enrollment is required.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General",
+            "items": [
+              "Diagnosis of chronic pancreatitis confirmed by clinical and imaging findings.",
+              "Procedures must be deemed medically necessary and appropriate for the patient's condition.",
+              "Documentation of conservative treatment failures."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Records",
+            "items": [
+              "Comprehensive medical history and physical.",
+              "All relevant diagnostic test results (labs, imaging).",
+              "Documentation of pain management history and current pain levels."
+            ]
+          },
+          {
+            "heading": "Required Documentation: State-Specific Forms",
+            "items": [
+              "Completion of specific state Medicaid prior authorization forms."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify state-specific Medicaid guidelines and prior authorization requirements.",
+              "Submit authorization request with detailed clinical justification and supporting documents.",
+              "Be prepared for potential requests for additional information or peer-to-peer review."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of adherence to state-specific medical necessity criteria.",
+              "Incomplete or untimely submission of prior authorization requests.",
+              "Procedure considered experimental or investigational by state Medicaid policy."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state's specific Medicaid policies for chronic pancreatitis interventions.",
+              "Provide thorough documentation, emphasizing medical necessity and expected outcomes.",
+              "Consider contacting the state Medicaid program for clarification on complex cases."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (e.g., California Medi-Cal)",
+            "status": "Covered",
+            "notes": "Specific guidelines and fee schedules apply; check state provider manuals."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Varies by plan and policy",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for EUS, ERCP, and celiac plexus blocks. Coverage varies widely based on plan benefits and medical policy.",
+        "overview": "Private insurance coverage for chronic pancreatitis procedures is highly variable. It is crucial to verify benefits and obtain prior authorization for each patient and procedure.",
+        "reimbursementNote": "Reimbursement rates are negotiated between providers and private insurance companies. Patient out-of-pocket costs depend on their specific plan design (deductibles, co-insurance, out-of-pocket maximums).",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General",
+            "items": [
+              "Established diagnosis of chronic pancreatitis.",
+              "Medical necessity demonstrated through clinical evaluation and diagnostic findings.",
+              "Failure of less invasive or conservative management strategies."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Physician's orders and detailed progress notes.",
+              "Results of all diagnostic tests (e.g., blood work, imaging, pathology).",
+              "Consultation reports from specialists (e.g., gastroenterologist, pain management)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Payer-Specific Forms",
+            "items": [
+              "Completion of the insurance carrier's specific prior authorization forms."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Contact the patient's insurance carrier to verify benefits and obtain specific prior authorization requirements.",
+              "Submit a comprehensive prior authorization request with all required clinical documentation.",
+              "Be prepared for peer-to-peer discussions if the initial request is denied."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization or retroactively denied claims.",
+              "Procedure deemed not medically necessary or experimental/investigational.",
+              "Insufficient documentation to support the need for the procedure.",
+              "Out-of-network provider or facility."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify patient benefits and obtain prior authorization before any procedure.",
+              "Maintain meticulous records of all communications with the insurance company.",
+              "Appeal denials promptly with additional clinical information and physician letters of support."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Covered",
+            "notes": "Requires prior authorization; medical policy criteria apply."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered",
+            "notes": "Requires prior authorization; specific clinical guidelines must be met."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Navigation",
+        "kind": "link",
+        "text": "Back to Assessment (links to /chronicpancreatitis)",
+        "href": "/chronicpancreatitis"
+      }
+    ],
+    "raw": {
+      "markdown": "# Chronic Pancreatitis Clinical Compass\n\n## EUS, ERCP, and Celiac Plexus Block Insurance Authorization Guide\n\n[Back to Assessment] (button linking to /chronicpancreatitis)\n\n---\n\n## Procedure Codes\n\n### CPT 43231 (RVU 2.80)\nEsophagoscopy, flexible, transoral; with endoscopic ultrasound examination, upper GI tract\n\n**Device/Access:** Flexible endoscope with ultrasound transducer (Oral)\n\n**Included in this code (do NOT bill separately):**\n- Visualization of the upper GI tract (esophagus, stomach, duodenum)\n- Ultrasound imaging of the luminal wall and adjacent structures (e.g., pancreas, bile duct)\n- Diagnostic assessment for pancreatic diseases\n\n*Often used for diagnosis, staging, and guided interventions in chronic pancreatitis.*\n\n### CPT 43262 (RVU 6.50)\nEndoscopic retrograde cholangiopancreatography (ERCP); with sphincterotomy/papillotomy\n\n**Device/Access:** Endoscope, contrast material, fluoroscopy (Oral)\n\n**Included in this code (do NOT bill separately):**\n- Diagnostic imaging of biliary and pancreatic ducts\n- Therapeutic incision of the sphincter of Oddi or ampulla of Vater\n- Management of ductal obstructions or strictures\n\n*Key procedure for managing ductal complications and pain in chronic pancreatitis.*\n\n### CPT 64530 (RVU 1.58)\nInjection, anesthetic agent; celiac plexus, with or without radiologic monitoring\n\n**Device/Access:** Needle, anesthetic/neurolytic agent, often EUS-guidance (Percutaneous (often EUS-guided))\n\n**Included in this code (do NOT bill separately):**\n- Administration of anesthetic or neurolytic agents to the celiac plexus\n- Pain management for severe abdominal pain associated with chronic pancreatitis\n\n*Used for pain relief in patients with chronic pancreatitis refractory to conventional treatments.*\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **K86.1** [Primary/Required] — Other chronic pancreatitis. Chronic pancreatitis not specified as alcohol-induced or other specific types.\n- **K86.0** — Alcohol-induced chronic pancreatitis. Chronic pancreatitis directly attributed to alcohol consumption.\n- **K85.9** — Acute pancreatitis, unspecified. May be used for acute exacerbations of chronic pancreatitis.\n- **K86.8** — Other specified diseases of pancreas. For other specific forms of chronic pancreatitis not classified elsewhere.\n- **R10.84** — Chronic abdominal pain. Symptom code for persistent abdominal pain, often associated with chronic pancreatitis.\n\n---\n\n## Payer-Specific Authorization Requirements\n\n(Tabs: Medicare | Medicaid | Private Insurance)\n\n### Medicare\n\nBadges: Prior Auth Required | Covered with medical necessity\n\n**Prior Auth Note:** Prior authorization is generally required for advanced diagnostic and therapeutic procedures like EUS, ERCP, and celiac plexus blocks. Coverage depends on medical necessity and adherence to Medicare guidelines.\n\n**Overview:** Medicare covers medically necessary diagnostic and therapeutic services for chronic pancreatitis, including EUS, ERCP, and celiac plexus blocks, when standard treatments have failed or specific criteria are met.\n\n#### Coverage Criteria\n\n**EUS (CPT 43231)**\n- Diagnosis or staging of pancreatic or biliary disease when other imaging is inconclusive.\n- Guidance for fine needle aspiration (FNA) or biopsy of pancreatic lesions.\n- Assessment of chronic pancreatitis complications (e.g., pseudocysts, strictures).\n\n**ERCP (CPT 43262)**\n- Management of biliary or pancreatic duct obstruction (e.g., stones, strictures).\n- Pain management refractory to medical therapy, when ductal pathology is identified.\n- Pancreatic sphincterotomy for sphincter of Oddi dysfunction related to chronic pancreatitis.\n\n**Celiac Plexus Block (CPT 64530)**\n- Severe, intractable abdominal pain due to chronic pancreatitis refractory to conventional pain management.\n- Documentation of pain severity and failure of oral analgesics or other conservative measures.\n- Performed under imaging guidance (e.g., EUS, CT) for accuracy and safety.\n\n#### Required Documentation\n\n**Clinical Notes**\n- Detailed history and physical examination.\n- Documentation of chronic pancreatitis diagnosis (e.g., imaging, lab results).\n- Severity of symptoms, especially pain, and impact on daily activities.\n- Prior treatment failures and rationale for current procedure.\n\n**Imaging Reports**\n- CT, MRI, or other imaging reports supporting the diagnosis and indicating the need for EUS/ERCP.\n- EUS findings for celiac plexus block if EUS-guided.\n\n**Procedure Reports**\n- Operative notes for EUS, ERCP, or celiac plexus block, detailing findings and interventions.\n\n#### Submission Process\n1. Submit prior authorization request with all supporting clinical documentation.\n2. Ensure all CPT and ICD-10 codes are accurate and reflect medical necessity.\n3. Follow up with Medicare to confirm authorization status before scheduling non-emergent procedures.\n\n#### Common Denial Reasons\n- Lack of documented medical necessity (e.g., insufficient pain severity for celiac block).\n- Failure to try conservative treatments first.\n- Incomplete or missing clinical documentation.\n- Incorrect coding or modifier usage.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS | Covered | National Coverage Determinations (NCDs) and Local Coverage Determinations (LCDs) apply. |\n\n#### Reimbursement Note\nReimbursement for chronic pancreatitis procedures is subject to Medicare fee schedules and may vary based on geographic location and facility type. Co-pays and deductibles apply.\n\n#### Authorization Tips\n- Clearly document the chronicity and severity of pancreatitis and associated pain.\n- Highlight the failure of conservative management and the specific indications for intervention.\n- Ensure all imaging and procedure reports are thorough and support the medical necessity.\n\n### Medicaid\n\nBadges: Prior Auth Required | Covered with state-specific criteria\n\n**Prior Auth Note:** Medicaid programs typically require prior authorization for specialized procedures. Eligibility and coverage criteria vary by state.\n\n**Overview:** Medicaid covers medically necessary services for chronic pancreatitis, but coverage policies and prior authorization requirements can differ significantly between states.\n\n#### Coverage Criteria\n\n**General**\n- Diagnosis of chronic pancreatitis confirmed by clinical and imaging findings.\n- Procedures must be deemed medically necessary and appropriate for the patient's condition.\n- Documentation of conservative treatment failures.\n\n#### Required Documentation\n\n**Clinical Records**\n- Comprehensive medical history and physical.\n- All relevant diagnostic test results (labs, imaging).\n- Documentation of pain management history and current pain levels.\n\n**State-Specific Forms**\n- Completion of specific state Medicaid prior authorization forms.\n\n#### Submission Process\n1. Verify state-specific Medicaid guidelines and prior authorization requirements.\n2. Submit authorization request with detailed clinical justification and supporting documents.\n3. Be prepared for potential requests for additional information or peer-to-peer review.\n\n#### Common Denial Reasons\n- Lack of adherence to state-specific medical necessity criteria.\n- Incomplete or untimely submission of prior authorization requests.\n- Procedure considered experimental or investigational by state Medicaid policy.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (e.g., California Medi-Cal) | Covered | Specific guidelines and fee schedules apply; check state provider manuals. |\n\n#### Reimbursement Note\nMedicaid reimbursement rates are typically lower than Medicare or private insurance and are set by individual state programs. Provider enrollment is required.\n\n#### Authorization Tips\n- Familiarize yourself with your state's specific Medicaid policies for chronic pancreatitis interventions.\n- Provide thorough documentation, emphasizing medical necessity and expected outcomes.\n- Consider contacting the state Medicaid program for clarification on complex cases.\n\n### Private Insurance\n\nBadges: Prior Auth Required | Varies by plan and policy\n\n**Prior Auth Note:** Most private insurance plans require prior authorization for EUS, ERCP, and celiac plexus blocks. Coverage varies widely based on plan benefits and medical policy.\n\n**Overview:** Private insurance coverage for chronic pancreatitis procedures is highly variable. It is crucial to verify benefits and obtain prior authorization for each patient and procedure.\n\n#### Coverage Criteria\n\n**General**\n- Established diagnosis of chronic pancreatitis.\n- Medical necessity demonstrated through clinical evaluation and diagnostic findings.\n- Failure of less invasive or conservative management strategies.\n\n#### Required Documentation\n\n**Clinical Documentation**\n- Physician's orders and detailed progress notes.\n- Results of all diagnostic tests (e.g., blood work, imaging, pathology).\n- Consultation reports from specialists (e.g., gastroenterologist, pain management).\n\n**Payer-Specific Forms**\n- Completion of the insurance carrier's specific prior authorization forms.\n\n#### Submission Process\n1. Contact the patient's insurance carrier to verify benefits and obtain specific prior authorization requirements.\n2. Submit a comprehensive prior authorization request with all required clinical documentation.\n3. Be prepared for peer-to-peer discussions if the initial request is denied.\n\n#### Common Denial Reasons\n- Lack of prior authorization or retroactively denied claims.\n- Procedure deemed not medically necessary or experimental/investigational.\n- Insufficient documentation to support the need for the procedure.\n- Out-of-network provider or facility.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Blue Cross Blue Shield | Covered | Requires prior authorization; medical policy criteria apply. |\n| UnitedHealthcare | Covered | Requires prior authorization; specific clinical guidelines must be met. |\n\n#### Reimbursement Note\nReimbursement rates are negotiated between providers and private insurance companies. Patient out-of-pocket costs depend on their specific plan design (deductibles, co-insurance, out-of-pocket maximums).\n\n#### Authorization Tips\n- Always verify patient benefits and obtain prior authorization before any procedure.\n- Maintain meticulous records of all communications with the insurance company.\n- Appeal denials promptly with additional clinical information and physician letters of support.\n",
+      "tables": [
+        {
+          "name": "CPT Procedure Codes",
+          "header": ["CPT Code", "RVU", "Description", "Device/Access", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            ["43231", "2.80", "Esophagoscopy, flexible, transoral; with endoscopic ultrasound examination, upper GI tract", "Flexible endoscope with ultrasound transducer (Oral)", "Visualization of the upper GI tract (esophagus, stomach, duodenum); Ultrasound imaging of the luminal wall and adjacent structures (e.g., pancreas, bile duct); Diagnostic assessment for pancreatic diseases", "Often used for diagnosis, staging, and guided interventions in chronic pancreatitis."],
+            ["43262", "6.50", "Endoscopic retrograde cholangiopancreatography (ERCP); with sphincterotomy/papillotomy", "Endoscope, contrast material, fluoroscopy (Oral)", "Diagnostic imaging of biliary and pancreatic ducts; Therapeutic incision of the sphincter of Oddi or ampulla of Vater; Management of ductal obstructions or strictures", "Key procedure for managing ductal complications and pain in chronic pancreatitis."],
+            ["64530", "1.58", "Injection, anesthetic agent; celiac plexus, with or without radiologic monitoring", "Needle, anesthetic/neurolytic agent, often EUS-guidance (Percutaneous (often EUS-guided))", "Administration of anesthetic or neurolytic agents to the celiac plexus; Pain management for severe abdominal pain associated with chronic pancreatitis", "Used for pain relief in patients with chronic pancreatitis refractory to conventional treatments."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["ICD-10 Code", "Required/Primary", "Description", "Notes"],
+          "rows": [
+            ["K86.1", "Primary (required)", "Other chronic pancreatitis", "Chronic pancreatitis not specified as alcohol-induced or other specific types."],
+            ["K86.0", "No", "Alcohol-induced chronic pancreatitis", "Chronic pancreatitis directly attributed to alcohol consumption."],
+            ["K85.9", "No", "Acute pancreatitis, unspecified", "May be used for acute exacerbations of chronic pancreatitis."],
+            ["K86.8", "No", "Other specified diseases of pancreas", "For other specific forms of chronic pancreatitis not classified elsewhere."],
+            ["R10.84", "No", "Chronic abdominal pain", "Symptom code for persistent abdominal pain, often associated with chronic pancreatitis."]
+          ]
+        },
+        {
+          "name": "Medicare - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS", "Covered", "National Coverage Determinations (NCDs) and Local Coverage Determinations (LCDs) apply."]
+          ]
+        },
+        {
+          "name": "Medicaid - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., California Medi-Cal)", "Covered", "Specific guidelines and fee schedules apply; check state provider manuals."]
+          ]
+        },
+        {
+          "name": "Private Insurance - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield", "Covered", "Requires prior authorization; medical policy criteria apply."],
+            ["UnitedHealthcare", "Covered", "Requires prior authorization; specific clinical guidelines must be met."]
+          ]
+        }
+      ]
+    }
+  }
+}

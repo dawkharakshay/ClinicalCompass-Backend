@@ -1,0 +1,184 @@
+{
+  "title": "Blepharoplasty / Ptosis Repair Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "BlepharoplastyAuthGuide.tsx",
+    "title": "Blepharoplasty / Ptosis Repair Authorization Guide",
+    "subtitle": null,
+    "cptCodes": [
+      { "code": "15822", "description": "Blepharoplasty, upper eyelid", "notes": "Upper lid blepharoplasty — functional (not cosmetic)" },
+      { "code": "15823", "description": "Blepharoplasty, upper eyelid; with excessive skin weighting down lid", "notes": "Upper lid with significant skin excess" },
+      { "code": "15820", "description": "Blepharoplasty, lower eyelid", "notes": "Lower lid blepharoplasty — functional (ectropion, entropion)" },
+      { "code": "15821", "description": "Blepharoplasty, lower eyelid; with extensive herniated fat pad", "notes": "Lower lid with fat herniation" },
+      { "code": "67900", "description": "Repair of brow ptosis (supraciliary, mid-forehead or coronal approach)", "notes": "Brow ptosis repair" },
+      { "code": "67901", "description": "Repair of blepharoptosis; frontalis muscle technique with suture or other material (e.g., banked fascia)", "notes": "Ptosis repair — frontalis sling" },
+      { "code": "67902", "description": "Repair of blepharoptosis; frontalis muscle technique with autologous fascial sling (includes obtaining fascia)", "notes": "Ptosis repair — autologous fascia sling" },
+      { "code": "67903", "description": "Repair of blepharoptosis; (tarso) levator resection or advancement, internal approach", "notes": "Ptosis repair — levator resection/advancement (internal)" },
+      { "code": "67904", "description": "Repair of blepharoptosis; (tarso) levator resection or advancement, external approach", "notes": "Ptosis repair — levator resection/advancement (external)" },
+      { "code": "67906", "description": "Repair of blepharoptosis; superior rectus technique with fascial sling (includes obtaining fascia)", "notes": "Ptosis repair — superior rectus technique" },
+      { "code": "67908", "description": "Repair of blepharoptosis; conjunctivo-tarso-Muller's muscle-levator resection (e.g., Fasanella-Servat type)", "notes": "Ptosis repair — Fasanella-Servat / Muller's muscle resection" }
+    ],
+    "icd10Codes": [
+      { "code": "H02.401", "description": "Unspecified ptosis of right eyelid", "notes": "Ptosis — primary diagnosis for ptosis repair" },
+      { "code": "H02.402", "description": "Unspecified ptosis of left eyelid", "notes": "Ptosis — left eyelid" },
+      { "code": "H02.403", "description": "Unspecified ptosis of bilateral eyelids", "notes": "Bilateral ptosis" },
+      { "code": "H02.831", "description": "Dermatochalasis of right upper eyelid", "notes": "Dermatochalasis — primary diagnosis for blepharoplasty" },
+      { "code": "H02.832", "description": "Dermatochalasis of left upper eyelid", "notes": "Dermatochalasis — left upper eyelid" },
+      { "code": "H02.833", "description": "Dermatochalasis of right lower eyelid", "notes": "Dermatochalasis — lower eyelid" },
+      { "code": "H02.101", "description": "Unspecified ectropion of right upper eyelid", "notes": "Ectropion — functional lower lid repair" },
+      { "code": "H02.001", "description": "Unspecified entropion of right upper eyelid", "notes": "Entropion — functional repair" },
+      { "code": "H02.20A", "description": "Unspecified lagophthalmos right eye, upper and lower eyelids", "notes": "Lagophthalmos — functional repair" }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "Visual field testing (Humphrey or Goldmann perimetry) with and without eyelid tape/prop",
+              "Documentation of ≥12° superior visual field loss with eyelid in natural position",
+              "For ptosis: MRD1 measurement (≤2mm for functional ptosis)",
+              "Levator function measurement (mm of excursion)",
+              "Photographs documenting eyelid position and visual obstruction",
+              "Clinical documentation of functional impairment"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Upper blepharoplasty: ≥12° superior visual field defect on perimetry",
+              "Ptosis repair: MRD1 ≤2mm OR ≥12° superior visual field loss",
+              "Ectropion/entropion repair: documented corneal exposure or trichiasis",
+              "Lagophthalmos repair: incomplete eye closure with corneal exposure risk"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicare follows CMS LCD L34462 for blepharoplasty. Upper blepharoplasty is covered when visual field testing demonstrates ≥12° superior visual field defect. Ptosis repair is covered when MRD1 ≤2mm or visual field criteria met. Visual field testing with and without eyelid tape is required. Cosmetic blepharoplasty is not covered. Bilateral procedures require documentation for each eye."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicare (CMS LCD L34462)", "status": "Covered", "notes": "Covered for ≥12° superior VF loss OR MRD1 ≤2mm for ptosis; visual field testing required; cosmetic not covered" }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "Visual field testing documentation",
+              "Functional impairment documentation",
+              "Prior authorization required in most states"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Functional visual impairment documented by perimetry",
+              "Ptosis with MRD1 ≤2mm",
+              "Ectropion/entropion with corneal exposure"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicaid coverage for functional blepharoplasty varies by state. Most states follow CMS LCD L34462 criteria. Prior authorization is required. Cosmetic procedures are not covered."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicaid (state-specific)", "status": "Covered", "notes": "Generally follows CMS LCD L34462; prior auth required; cosmetic not covered" }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "Prior authorization required by most commercial payers",
+              "Visual field testing (Humphrey or Goldmann) with and without eyelid tape",
+              "Documentation of ≥12° superior visual field loss (most payers)",
+              "For ptosis: MRD1 measurement and levator function",
+              "Photographs documenting eyelid position",
+              "Clinical documentation of functional symptoms (difficulty reading, driving, daily activities)",
+              "Ophthalmology or oculoplastics consultation note"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Upper blepharoplasty: ≥12° superior visual field defect on perimetry",
+              "Ptosis repair: MRD1 ≤2mm OR ≥12° superior visual field loss",
+              "Functional symptoms: difficulty reading, driving, or performing activities",
+              "Ectropion/entropion with corneal exposure or trichiasis"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Commercial payers follow CMS LCD L34462 or similar criteria. Visual field testing is the primary objective criterion — obtain Humphrey or Goldmann perimetry with and without eyelid tape. Document functional symptoms in detail. Some payers require ophthalmology consultation. Cosmetic blepharoplasty is not covered."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "UnitedHealthcare", "status": "Covered", "notes": "Follows CMS LCD L34462; ≥12° VF loss required; visual field testing mandatory; prior auth required" },
+          { "payer": "Aetna", "status": "Covered", "notes": "Follows CMS LCD L34462; ≥12° VF loss or MRD1 ≤2mm; visual field testing required; prior auth required" },
+          { "payer": "Cigna", "status": "Covered", "notes": "Functional criteria required; visual field testing and photographs required; prior auth required" },
+          { "payer": "Anthem/BCBS", "status": "Covered", "notes": "Follows CMS LCD L34462 criteria; visual field testing required; prior auth required" },
+          { "payer": "Humana", "status": "Covered", "notes": "Functional criteria required; visual field testing and clinical documentation required" }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Key Authorization Requirement",
+        "kind": "prose",
+        "text": "Visual field testing (Humphrey or Goldmann perimetry) with and without eyelid tape is required by Medicare and most commercial payers. The test must demonstrate ≥12° superior visual field loss in the natural eyelid position. For ptosis, MRD1 ≤2mm is an alternative criterion."
+      }
+    ],
+    "raw": {
+      "markdown": "# Blepharoplasty / Ptosis Repair Authorization Guide\n\n## Key Authorization Requirement\n\nVisual field testing (Humphrey or Goldmann perimetry) with and without eyelid tape is required by Medicare and most commercial payers. The test must demonstrate ≥12° superior visual field loss in the natural eyelid position. For ptosis, MRD1 ≤2mm is an alternative criterion.\n\n## CPT Codes — Blepharoplasty & Ptosis Repair\n\n| CPT | Description | Notes |\n| --- | --- | --- |\n| 15822 | Blepharoplasty, upper eyelid | Upper lid blepharoplasty — functional (not cosmetic) |\n| 15823 | Blepharoplasty, upper eyelid; with excessive skin weighting down lid | Upper lid with significant skin excess |\n| 15820 | Blepharoplasty, lower eyelid | Lower lid blepharoplasty — functional (ectropion, entropion) |\n| 15821 | Blepharoplasty, lower eyelid; with extensive herniated fat pad | Lower lid with fat herniation |\n| 67900 | Repair of brow ptosis (supraciliary, mid-forehead or coronal approach) | Brow ptosis repair |\n| 67901 | Repair of blepharoptosis; frontalis muscle technique with suture or other material (e.g., banked fascia) | Ptosis repair — frontalis sling |\n| 67902 | Repair of blepharoptosis; frontalis muscle technique with autologous fascial sling (includes obtaining fascia) | Ptosis repair — autologous fascia sling |\n| 67903 | Repair of blepharoptosis; (tarso) levator resection or advancement, internal approach | Ptosis repair — levator resection/advancement (internal) |\n| 67904 | Repair of blepharoptosis; (tarso) levator resection or advancement, external approach | Ptosis repair — levator resection/advancement (external) |\n| 67906 | Repair of blepharoptosis; superior rectus technique with fascial sling (includes obtaining fascia) | Ptosis repair — superior rectus technique |\n| 67908 | Repair of blepharoptosis; conjunctivo-tarso-Muller's muscle-levator resection (e.g., Fasanella-Servat type) | Ptosis repair — Fasanella-Servat / Muller's muscle resection |\n\n## ICD-10 Codes\n\n| ICD-10 | Description | Notes |\n| --- | --- | --- |\n| H02.401 | Unspecified ptosis of right eyelid | Ptosis — primary diagnosis for ptosis repair |\n| H02.402 | Unspecified ptosis of left eyelid | Ptosis — left eyelid |\n| H02.403 | Unspecified ptosis of bilateral eyelids | Bilateral ptosis |\n| H02.831 | Dermatochalasis of right upper eyelid | Dermatochalasis — primary diagnosis for blepharoplasty |\n| H02.832 | Dermatochalasis of left upper eyelid | Dermatochalasis — left upper eyelid |\n| H02.833 | Dermatochalasis of right lower eyelid | Dermatochalasis — lower eyelid |\n| H02.101 | Unspecified ectropion of right upper eyelid | Ectropion — functional lower lid repair |\n| H02.001 | Unspecified entropion of right upper eyelid | Entropion — functional repair |\n| H02.20A | Unspecified lagophthalmos right eye, upper and lower eyelids | Lagophthalmos — functional repair |\n\n## Payer Requirements\n\nPayer tabs: Medicare, Medicaid, Private.\n\n### Medicare\n\n**Required Documentation**\n- Visual field testing (Humphrey or Goldmann perimetry) with and without eyelid tape/prop\n- Documentation of ≥12° superior visual field loss with eyelid in natural position\n- For ptosis: MRD1 measurement (≤2mm for functional ptosis)\n- Levator function measurement (mm of excursion)\n- Photographs documenting eyelid position and visual obstruction\n- Clinical documentation of functional impairment\n\n**Medical Necessity Criteria**\n- ✓ Upper blepharoplasty: ≥12° superior visual field defect on perimetry\n- ✓ Ptosis repair: MRD1 ≤2mm OR ≥12° superior visual field loss\n- ✓ Ectropion/entropion repair: documented corneal exposure or trichiasis\n- ✓ Lagophthalmos repair: incomplete eye closure with corneal exposure risk\n\n**Reimbursement Note:** Medicare follows CMS LCD L34462 for blepharoplasty. Upper blepharoplasty is covered when visual field testing demonstrates ≥12° superior visual field defect. Ptosis repair is covered when MRD1 ≤2mm or visual field criteria met. Visual field testing with and without eyelid tape is required. Cosmetic blepharoplasty is not covered. Bilateral procedures require documentation for each eye.\n\n**Known Payer Policies**\n- [Covered] Medicare (CMS LCD L34462): Covered for ≥12° superior VF loss OR MRD1 ≤2mm for ptosis; visual field testing required; cosmetic not covered\n\n### Medicaid\n\n**Required Documentation**\n- Visual field testing documentation\n- Functional impairment documentation\n- Prior authorization required in most states\n\n**Medical Necessity Criteria**\n- ✓ Functional visual impairment documented by perimetry\n- ✓ Ptosis with MRD1 ≤2mm\n- ✓ Ectropion/entropion with corneal exposure\n\n**Reimbursement Note:** Medicaid coverage for functional blepharoplasty varies by state. Most states follow CMS LCD L34462 criteria. Prior authorization is required. Cosmetic procedures are not covered.\n\n**Known Payer Policies**\n- [Covered] Medicaid (state-specific): Generally follows CMS LCD L34462; prior auth required; cosmetic not covered\n\n### Private\n\n**Required Documentation**\n- Prior authorization required by most commercial payers\n- Visual field testing (Humphrey or Goldmann) with and without eyelid tape\n- Documentation of ≥12° superior visual field loss (most payers)\n- For ptosis: MRD1 measurement and levator function\n- Photographs documenting eyelid position\n- Clinical documentation of functional symptoms (difficulty reading, driving, daily activities)\n- Ophthalmology or oculoplastics consultation note\n\n**Medical Necessity Criteria**\n- ✓ Upper blepharoplasty: ≥12° superior visual field defect on perimetry\n- ✓ Ptosis repair: MRD1 ≤2mm OR ≥12° superior visual field loss\n- ✓ Functional symptoms: difficulty reading, driving, or performing activities\n- ✓ Ectropion/entropion with corneal exposure or trichiasis\n\n**Reimbursement Note:** Commercial payers follow CMS LCD L34462 or similar criteria. Visual field testing is the primary objective criterion — obtain Humphrey or Goldmann perimetry with and without eyelid tape. Document functional symptoms in detail. Some payers require ophthalmology consultation. Cosmetic blepharoplasty is not covered.\n\n**Known Payer Policies**\n- [Covered] UnitedHealthcare: Follows CMS LCD L34462; ≥12° VF loss required; visual field testing mandatory; prior auth required\n- [Covered] Aetna: Follows CMS LCD L34462; ≥12° VF loss or MRD1 ≤2mm; visual field testing required; prior auth required\n- [Covered] Cigna: Functional criteria required; visual field testing and photographs required; prior auth required\n- [Covered] Anthem/BCBS: Follows CMS LCD L34462 criteria; visual field testing required; prior auth required\n- [Covered] Humana: Functional criteria required; visual field testing and clinical documentation required\n",
+      "tables": [
+        {
+          "name": "CPT Codes — Blepharoplasty & Ptosis Repair",
+          "header": ["CPT", "Description", "Notes"],
+          "rows": [
+            ["15822", "Blepharoplasty, upper eyelid", "Upper lid blepharoplasty — functional (not cosmetic)"],
+            ["15823", "Blepharoplasty, upper eyelid; with excessive skin weighting down lid", "Upper lid with significant skin excess"],
+            ["15820", "Blepharoplasty, lower eyelid", "Lower lid blepharoplasty — functional (ectropion, entropion)"],
+            ["15821", "Blepharoplasty, lower eyelid; with extensive herniated fat pad", "Lower lid with fat herniation"],
+            ["67900", "Repair of brow ptosis (supraciliary, mid-forehead or coronal approach)", "Brow ptosis repair"],
+            ["67901", "Repair of blepharoptosis; frontalis muscle technique with suture or other material (e.g., banked fascia)", "Ptosis repair — frontalis sling"],
+            ["67902", "Repair of blepharoptosis; frontalis muscle technique with autologous fascial sling (includes obtaining fascia)", "Ptosis repair — autologous fascia sling"],
+            ["67903", "Repair of blepharoptosis; (tarso) levator resection or advancement, internal approach", "Ptosis repair — levator resection/advancement (internal)"],
+            ["67904", "Repair of blepharoptosis; (tarso) levator resection or advancement, external approach", "Ptosis repair — levator resection/advancement (external)"],
+            ["67906", "Repair of blepharoptosis; superior rectus technique with fascial sling (includes obtaining fascia)", "Ptosis repair — superior rectus technique"],
+            ["67908", "Repair of blepharoptosis; conjunctivo-tarso-Muller's muscle-levator resection (e.g., Fasanella-Servat type)", "Ptosis repair — Fasanella-Servat / Muller's muscle resection"]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["ICD-10", "Description", "Notes"],
+          "rows": [
+            ["H02.401", "Unspecified ptosis of right eyelid", "Ptosis — primary diagnosis for ptosis repair"],
+            ["H02.402", "Unspecified ptosis of left eyelid", "Ptosis — left eyelid"],
+            ["H02.403", "Unspecified ptosis of bilateral eyelids", "Bilateral ptosis"],
+            ["H02.831", "Dermatochalasis of right upper eyelid", "Dermatochalasis — primary diagnosis for blepharoplasty"],
+            ["H02.832", "Dermatochalasis of left upper eyelid", "Dermatochalasis — left upper eyelid"],
+            ["H02.833", "Dermatochalasis of right lower eyelid", "Dermatochalasis — lower eyelid"],
+            ["H02.101", "Unspecified ectropion of right upper eyelid", "Ectropion — functional lower lid repair"],
+            ["H02.001", "Unspecified entropion of right upper eyelid", "Entropion — functional repair"],
+            ["H02.20A", "Unspecified lagophthalmos right eye, upper and lower eyelids", "Lagophthalmos — functional repair"]
+          ]
+        }
+      ]
+    }
+  }
+}

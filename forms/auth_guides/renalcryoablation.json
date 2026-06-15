@@ -1,0 +1,237 @@
+{
+  "title": "Renal Cryoablation Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "RenalCryoablationAuthGuide.tsx",
+    "title": "Renal Cryoablation — Authorization Guide",
+    "subtitle": "CPT Codes · ICD-10 · Payer Requirements",
+    "cptCodes": [
+      {
+        "code": "50593",
+        "description": "Ablation, renal tumor(s), unilateral, percutaneous, cryotherapy",
+        "guidance": "CT or US"
+      },
+      {
+        "code": "76940",
+        "description": "Ultrasound guidance for, and monitoring of, parenchymal tissue ablation (List separately in addition to code for primary procedure)",
+        "guidance": "US add-on"
+      },
+      {
+        "code": "77013",
+        "description": "Computed tomography guidance for, and monitoring of, parenchymal tissue ablation (List separately in addition to code for primary procedure)",
+        "guidance": "CT add-on"
+      },
+      {
+        "code": "77022",
+        "description": "Magnetic resonance imaging guidance for, and monitoring of, parenchymal tissue ablation (List separately in addition to code for primary procedure)",
+        "guidance": "MRI add-on"
+      },
+      {
+        "code": "50200",
+        "description": "Renal biopsy; percutaneous, by trocar or needle",
+        "guidance": "Pre-procedure biopsy"
+      },
+      {
+        "code": "74178",
+        "description": "CT abdomen and pelvis with contrast (pre-procedure planning)",
+        "guidance": "Diagnostic"
+      },
+      {
+        "code": "74183",
+        "description": "MRI abdomen with and without contrast (pre-procedure planning)",
+        "guidance": "Diagnostic"
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "C64.1",
+        "description": "Malignant neoplasm of right kidney, except renal pelvis",
+        "stage": "T1a–T2"
+      },
+      {
+        "code": "C64.2",
+        "description": "Malignant neoplasm of left kidney, except renal pelvis",
+        "stage": "T1a–T2"
+      },
+      {
+        "code": "C64.9",
+        "description": "Malignant neoplasm of unspecified kidney",
+        "stage": "T1a–T2"
+      },
+      {
+        "code": "D30.01",
+        "description": "Benign neoplasm of right kidney",
+        "stage": "Oncocytoma/AML"
+      },
+      {
+        "code": "D30.02",
+        "description": "Benign neoplasm of left kidney",
+        "stage": "Oncocytoma/AML"
+      },
+      {
+        "code": "D41.01",
+        "description": "Neoplasm of uncertain behavior of right kidney",
+        "stage": "Indeterminate"
+      },
+      {
+        "code": "D41.02",
+        "description": "Neoplasm of uncertain behavior of left kidney",
+        "stage": "Indeterminate"
+      },
+      {
+        "code": "Z85.528",
+        "description": "Personal history of other malignant neoplasm of kidney",
+        "stage": "Surveillance/re-ablation"
+      },
+      {
+        "code": "Q61.3",
+        "description": "Polycystic kidney, unspecified (VHL-related)",
+        "stage": "Hereditary syndrome"
+      },
+      {
+        "code": "D36.7",
+        "description": "Benign neoplasm of other specified sites (VHL/TSC)",
+        "stage": "Hereditary syndrome"
+      }
+    ],
+    "payers": [
+      {
+        "key": "cms",
+        "label": "CMS / Medicare (LCD L35041)",
+        "sections": [
+          {
+            "heading": "Covered Indications:",
+            "items": [
+              "T1a renal cell carcinoma (≤4 cm) confirmed by biopsy or strongly suspected on imaging in patients who are poor surgical candidates",
+              "T1b RCC (4–7 cm) in patients with high surgical risk, solitary kidney, or hereditary RCC syndromes",
+              "Benign renal tumors (oncocytoma, AML) when symptomatic, enlarging, or at risk for hemorrhage",
+              "Re-ablation for local recurrence or incomplete treatment after prior ablation"
+            ]
+          },
+          {
+            "heading": "Non-Covered:",
+            "items": [
+              "T2 or higher renal masses as primary treatment",
+              "Metastatic disease (ablation of primary in setting of known metastases requires individual review)",
+              "Simple renal cysts (Bosnak I/II) without malignant features"
+            ]
+          },
+          {
+            "heading": "Documentation Requirements:",
+            "items": [
+              "Cross-sectional imaging (CT or MRI) with tumor size, location, and R.E.N.A.L. score",
+              "Biopsy result or documentation of why biopsy was deferred",
+              "Surgical risk assessment (anesthesia consult or surgeon note for high-risk designation)",
+              "Renal function (eGFR) and contralateral kidney status"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bcbs",
+        "label": "BlueCross BlueShield",
+        "sections": [
+          {
+            "heading": "Requirements",
+            "items": [
+              "Covered for T1a RCC in patients who are poor surgical candidates or who decline surgery after informed consent",
+              "T1b: covered for high surgical risk patients, solitary kidney, hereditary syndromes, or bilateral tumors",
+              "Pre-ablation biopsy required or documented rationale for proceeding without biopsy",
+              "Prior authorization required; submit CT/MRI images, biopsy report, and surgical risk documentation",
+              "BCBS Medical Policy: Ablation of Renal Tumors (updated 2023)"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "aetna",
+        "label": "Aetna",
+        "sections": [
+          {
+            "heading": "Requirements",
+            "items": [
+              "Covered for T1a RCC (≤4 cm) in high surgical risk patients or those with solitary/poorly functioning contralateral kidney",
+              "T1b: covered when partial nephrectomy is not technically feasible or patient is high surgical risk",
+              "Hereditary RCC syndromes: covered regardless of tumor size when nephron-sparing approach is indicated",
+              "Aetna Clinical Policy Bulletin #0649: Ablation Therapies for Renal Cell Carcinoma (updated 2023)",
+              "Requires: CT or MRI with tumor size and location, biopsy or imaging-based diagnosis, eGFR, surgical risk assessment"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "cigna",
+        "label": "Cigna",
+        "sections": [
+          {
+            "heading": "Requirements",
+            "items": [
+              "Covered for T1a RCC in patients who are not surgical candidates or who prefer ablation after informed discussion of comparative outcomes",
+              "T1b: covered for high surgical risk, solitary kidney, hereditary syndromes, or bilateral synchronous tumors",
+              "Cigna Coverage Policy: Ablation of Renal Tumors (2024)",
+              "Pre-ablation biopsy strongly preferred; document rationale if not performed",
+              "R.E.N.A.L. nephrometry score should be documented in the procedure planning note"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "uhc",
+        "label": "UnitedHealthcare",
+        "sections": [
+          {
+            "heading": "Requirements",
+            "items": [
+              "Covered for T1a RCC (≤4 cm) confirmed by biopsy in patients who are poor surgical candidates",
+              "T1b: covered for high surgical risk patients with documented anesthesia or surgical consultation",
+              "UHC Medical Policy: Ablation of Renal Tumors (updated 2024)",
+              "Biopsy required prior to ablation unless documented contraindication to biopsy",
+              "Submit: imaging report with R.E.N.A.L. score, biopsy pathology, eGFR, surgical risk documentation",
+              "Peer-to-peer review available and recommended for T1b cases in surgically fit patients"
+            ]
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "CPT Codes Note",
+        "kind": "prose",
+        "text": "Note: CPT 50593 is the primary code for percutaneous renal cryoablation. Always append the appropriate imaging guidance add-on code (76940, 77013, or 77022) based on the modality used."
+      }
+    ],
+    "raw": {
+      "markdown": "# Renal Cryoablation — Authorization Guide\n\nSubtitle: CPT Codes · ICD-10 · Payer Requirements\n\nbackHref: /renal-cryoablation\n\n## CPT Codes\n\n| CPT Code | Description | Guidance |\n| --- | --- | --- |\n| 50593 | Ablation, renal tumor(s), unilateral, percutaneous, cryotherapy | CT or US |\n| 76940 | Ultrasound guidance for, and monitoring of, parenchymal tissue ablation (List separately in addition to code for primary procedure) | US add-on |\n| 77013 | Computed tomography guidance for, and monitoring of, parenchymal tissue ablation (List separately in addition to code for primary procedure) | CT add-on |\n| 77022 | Magnetic resonance imaging guidance for, and monitoring of, parenchymal tissue ablation (List separately in addition to code for primary procedure) | MRI add-on |\n| 50200 | Renal biopsy; percutaneous, by trocar or needle | Pre-procedure biopsy |\n| 74178 | CT abdomen and pelvis with contrast (pre-procedure planning) | Diagnostic |\n| 74183 | MRI abdomen with and without contrast (pre-procedure planning) | Diagnostic |\n\nNote: CPT 50593 is the primary code for percutaneous renal cryoablation. Always append the appropriate imaging guidance add-on code (76940, 77013, or 77022) based on the modality used.\n\n## Covered ICD-10 Diagnoses\n\n| ICD-10 | Description | Stage |\n| --- | --- | --- |\n| C64.1 | Malignant neoplasm of right kidney, except renal pelvis | T1a–T2 |\n| C64.2 | Malignant neoplasm of left kidney, except renal pelvis | T1a–T2 |\n| C64.9 | Malignant neoplasm of unspecified kidney | T1a–T2 |\n| D30.01 | Benign neoplasm of right kidney | Oncocytoma/AML |\n| D30.02 | Benign neoplasm of left kidney | Oncocytoma/AML |\n| D41.01 | Neoplasm of uncertain behavior of right kidney | Indeterminate |\n| D41.02 | Neoplasm of uncertain behavior of left kidney | Indeterminate |\n| Z85.528 | Personal history of other malignant neoplasm of kidney | Surveillance/re-ablation |\n| Q61.3 | Polycystic kidney, unspecified (VHL-related) | Hereditary syndrome |\n| D36.7 | Benign neoplasm of other specified sites (VHL/TSC) | Hereditary syndrome |\n\n## Payer-Specific Requirements\n\n### CMS / Medicare (LCD L35041)\n\n**Covered Indications:**\n- T1a renal cell carcinoma (≤4 cm) confirmed by biopsy or strongly suspected on imaging in patients who are poor surgical candidates\n- T1b RCC (4–7 cm) in patients with high surgical risk, solitary kidney, or hereditary RCC syndromes\n- Benign renal tumors (oncocytoma, AML) when symptomatic, enlarging, or at risk for hemorrhage\n- Re-ablation for local recurrence or incomplete treatment after prior ablation\n\n**Non-Covered:**\n- T2 or higher renal masses as primary treatment\n- Metastatic disease (ablation of primary in setting of known metastases requires individual review)\n- Simple renal cysts (Bosnak I/II) without malignant features\n\n**Documentation Requirements:**\n- Cross-sectional imaging (CT or MRI) with tumor size, location, and R.E.N.A.L. score\n- Biopsy result or documentation of why biopsy was deferred\n- Surgical risk assessment (anesthesia consult or surgeon note for high-risk designation)\n- Renal function (eGFR) and contralateral kidney status\n\n### BlueCross BlueShield\n\n- Covered for T1a RCC in patients who are poor surgical candidates or who decline surgery after informed consent\n- T1b: covered for high surgical risk patients, solitary kidney, hereditary syndromes, or bilateral tumors\n- Pre-ablation biopsy required or documented rationale for proceeding without biopsy\n- Prior authorization required; submit CT/MRI images, biopsy report, and surgical risk documentation\n- BCBS Medical Policy: Ablation of Renal Tumors (updated 2023)\n\n### Aetna\n\n- Covered for T1a RCC (≤4 cm) in high surgical risk patients or those with solitary/poorly functioning contralateral kidney\n- T1b: covered when partial nephrectomy is not technically feasible or patient is high surgical risk\n- Hereditary RCC syndromes: covered regardless of tumor size when nephron-sparing approach is indicated\n- Aetna Clinical Policy Bulletin #0649: Ablation Therapies for Renal Cell Carcinoma (updated 2023)\n- Requires: CT or MRI with tumor size and location, biopsy or imaging-based diagnosis, eGFR, surgical risk assessment\n\n### Cigna\n\n- Covered for T1a RCC in patients who are not surgical candidates or who prefer ablation after informed discussion of comparative outcomes\n- T1b: covered for high surgical risk, solitary kidney, hereditary syndromes, or bilateral synchronous tumors\n- Cigna Coverage Policy: Ablation of Renal Tumors (2024)\n- Pre-ablation biopsy strongly preferred; document rationale if not performed\n- R.E.N.A.L. nephrometry score should be documented in the procedure planning note\n\n### UnitedHealthcare\n\n- Covered for T1a RCC (≤4 cm) confirmed by biopsy in patients who are poor surgical candidates\n- T1b: covered for high surgical risk patients with documented anesthesia or surgical consultation\n- UHC Medical Policy: Ablation of Renal Tumors (updated 2024)\n- Biopsy required prior to ablation unless documented contraindication to biopsy\n- Submit: imaging report with R.E.N.A.L. score, biopsy pathology, eGFR, surgical risk documentation\n- Peer-to-peer review available and recommended for T1b cases in surgically fit patients\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["CPT Code", "Description", "Guidance"],
+          "rows": [
+            ["50593", "Ablation, renal tumor(s), unilateral, percutaneous, cryotherapy", "CT or US"],
+            ["76940", "Ultrasound guidance for, and monitoring of, parenchymal tissue ablation (List separately in addition to code for primary procedure)", "US add-on"],
+            ["77013", "Computed tomography guidance for, and monitoring of, parenchymal tissue ablation (List separately in addition to code for primary procedure)", "CT add-on"],
+            ["77022", "Magnetic resonance imaging guidance for, and monitoring of, parenchymal tissue ablation (List separately in addition to code for primary procedure)", "MRI add-on"],
+            ["50200", "Renal biopsy; percutaneous, by trocar or needle", "Pre-procedure biopsy"],
+            ["74178", "CT abdomen and pelvis with contrast (pre-procedure planning)", "Diagnostic"],
+            ["74183", "MRI abdomen with and without contrast (pre-procedure planning)", "Diagnostic"]
+          ]
+        },
+        {
+          "name": "Covered ICD-10 Diagnoses",
+          "header": ["ICD-10", "Description", "Stage"],
+          "rows": [
+            ["C64.1", "Malignant neoplasm of right kidney, except renal pelvis", "T1a–T2"],
+            ["C64.2", "Malignant neoplasm of left kidney, except renal pelvis", "T1a–T2"],
+            ["C64.9", "Malignant neoplasm of unspecified kidney", "T1a–T2"],
+            ["D30.01", "Benign neoplasm of right kidney", "Oncocytoma/AML"],
+            ["D30.02", "Benign neoplasm of left kidney", "Oncocytoma/AML"],
+            ["D41.01", "Neoplasm of uncertain behavior of right kidney", "Indeterminate"],
+            ["D41.02", "Neoplasm of uncertain behavior of left kidney", "Indeterminate"],
+            ["Z85.528", "Personal history of other malignant neoplasm of kidney", "Surveillance/re-ablation"],
+            ["Q61.3", "Polycystic kidney, unspecified (VHL-related)", "Hereditary syndrome"],
+            ["D36.7", "Benign neoplasm of other specified sites (VHL/TSC)", "Hereditary syndrome"]
+          ]
+        }
+      ]
+    }
+  }
+}

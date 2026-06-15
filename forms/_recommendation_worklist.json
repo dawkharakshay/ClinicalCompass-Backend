@@ -1,0 +1,604 @@
+{
+  "items": [
+    {
+      "logicKey": "acne",
+      "title": "Acne Vulgaris Clinical Compass",
+      "sourceFile": "client/src/lib/acneLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "acs",
+      "title": "Acute Coronary Syndrome Clinical Compass",
+      "sourceFile": "client/src/lib/acsLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "afablation",
+      "title": "AF Ablation Clinical Compass",
+      "sourceFile": "client/src/lib/afAblationLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "all",
+      "title": "Acute Lymphoblastic Leukemia & CAR-T Clinical Compass",
+      "sourceFile": "client/src/lib/allLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "amd",
+      "title": "Age-Related Macular Degeneration",
+      "sourceFile": "client/src/lib/amdLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "aml",
+      "title": "Acute Myeloid Leukemia Clinical Compass",
+      "sourceFile": "client/src/lib/amlLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "amyloidosis",
+      "title": "Amyloidosis Diagnostic Clinical Compass",
+      "sourceFile": "client/src/lib/amyloidosisLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "aplasticanemia",
+      "title": "Aplastic Anemia Clinical Compass",
+      "sourceFile": "client/src/lib/aplasticAnemiaLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "artificialdisc",
+      "title": "Artificial Disc Replacement Clinical Compass",
+      "sourceFile": "client/src/lib/artificialDiscLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "atherecтomy",
+      "title": "Peripheral Atherectomy Clinical Compass",
+      "sourceFile": "client/src/lib/atherectomyLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "atopicdermatitis",
+      "title": "Atopic Dermatitis Clinical Compass",
+      "sourceFile": "client/src/lib/atopicDermatitisLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "bariatric",
+      "title": "Bariatric Surgery Clinical Compass",
+      "sourceFile": "client/src/lib/bariatricLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "biliarystrictures",
+      "title": "Biliary Strictures Clinical Compass",
+      "sourceFile": "client/src/lib/biliaryStricturesLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "blepharoplasty",
+      "title": "Blepharoplasty / Ptosis Repair Clinical Compass",
+      "sourceFile": "client/src/lib/blepharoplastyLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "bonecancer",
+      "title": "Bone Cancer Interventional Oncology Clinical Compass",
+      "sourceFile": "client/src/lib/boneCancerLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "brainmetastases",
+      "title": "Brain Metastases Clinical Compass",
+      "sourceFile": "client/src/lib/brainMetastasesLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "breastreduction",
+      "title": "Breast Reduction Clinical Compass",
+      "sourceFile": "client/src/lib/breastReductionLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "brightfutures",
+      "title": "Bright Futures Well-Child Clinical Compass",
+      "sourceFile": "client/src/lib/brightFuturesLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "ccm",
+      "title": "Cerebral Cavernous Malformation Compass",
+      "sourceFile": "client/src/lib/ccmLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "centralsleepapnea",
+      "title": "Central Sleep Apnea Clinical Compass",
+      "sourceFile": null,
+      "hint": "likely stub (no separate engine) — confirm; if no real logic, skip"
+    },
+    {
+      "logicKey": "cholecystectomy",
+      "title": "Cholecystectomy Clinical Compass",
+      "sourceFile": "client/src/lib/cholecystectomyLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "chronicinsomnia",
+      "title": "Chronic Insomnia Clinical Compass",
+      "sourceFile": null,
+      "hint": "likely stub (no separate engine) — confirm; if no real logic, skip"
+    },
+    {
+      "logicKey": "chronicpancreatitis",
+      "title": "Chronic Pancreatitis Clinical Compass",
+      "sourceFile": "client/src/lib/chronicPancreatitisLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "crcscreening",
+      "title": "CRC Screening Clinical Compass",
+      "sourceFile": "client/src/lib/crcScreeningLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "crohnsdisease",
+      "title": "Crohn's Disease Clinical Compass",
+      "sourceFile": "client/src/lib/crohnsDiseaseLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "dyslipidemiads",
+      "title": "Dyslipidemia Clinical Compass",
+      "sourceFile": null,
+      "hint": null
+    },
+    {
+      "logicKey": "embryocryo",
+      "title": "Embryo Cryopreservation Clinical Compass",
+      "sourceFile": null,
+      "hint": null
+    },
+    {
+      "logicKey": "endovenousablation",
+      "title": "Endovenous Ablation Clinical Compass",
+      "sourceFile": "client/src/lib/endovenousAblationLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "epiduralsteroid",
+      "title": "Epidural Steroid Injection Clinical Compass",
+      "sourceFile": "client/src/lib/epiduralSteroidLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "facetjoint",
+      "title": "Facet Joint Injection Clinical Compass",
+      "sourceFile": "client/src/lib/facetJointLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "febrilinfant",
+      "title": "Febrile Infant Clinical Compass",
+      "sourceFile": "client/src/lib/febrilInfantLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "functionalseizures",
+      "title": "Functional Seizures (PNES)",
+      "sourceFile": "client/src/lib/functionalSeizuresLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "gastroparesis",
+      "title": "Gastroparesis Clinical Compass",
+      "sourceFile": "client/src/lib/gastroparesisLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "genderaffirminguro",
+      "title": "Gender-Affirming Urologic Procedures Clinical Compass",
+      "sourceFile": null,
+      "hint": null
+    },
+    {
+      "logicKey": "gestationalcarrier",
+      "title": "Gestational Carrier Clinical Compass",
+      "sourceFile": null,
+      "hint": null
+    },
+    {
+      "logicKey": "glaucoma",
+      "title": "Glaucoma",
+      "sourceFile": "client/src/lib/glaucomaLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "hernia",
+      "title": "Hernia Repair Clinical Compass",
+      "sourceFile": "client/src/lib/herniaLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "highmyopia",
+      "title": "High Myopia / Pathologic Myopia",
+      "sourceFile": "client/src/lib/highMyopiaLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "ibdpreventivecare",
+      "title": "IBD Preventive Care Clinical Compass",
+      "sourceFile": "client/src/lib/ibdPreventiveCareLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "icsi",
+      "title": "Intracytoplasmic Sperm Injection Clinical Compass",
+      "sourceFile": null,
+      "hint": null
+    },
+    {
+      "logicKey": "influenzaprevention",
+      "title": "Influenza Prevention Clinical Compass",
+      "sourceFile": "client/src/lib/influenzaPreventionLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "ivf",
+      "title": "In Vitro Fertilization Clinical Compass",
+      "sourceFile": null,
+      "hint": null
+    },
+    {
+      "logicKey": "laac",
+      "title": "LAAC / Watchman Clinical Compass",
+      "sourceFile": "client/src/lib/laacLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "livertumor",
+      "title": "Liver Tumor Clinical Compass",
+      "sourceFile": "client/src/lib/liverTumorLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "lowgradeglioma",
+      "title": "Low-Grade Glioma Clinical Compass",
+      "sourceFile": "client/src/lib/lowGradeGliomaLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "masld",
+      "title": "MASLD / MASH Clinical Compass",
+      "sourceFile": "client/src/lib/masldLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "meniscusrepair",
+      "title": "Meniscus Repair Clinical Compass",
+      "sourceFile": "client/src/lib/meniscusRepairLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "menshealth",
+      "title": "Prostatic Artery Embolization Clinical Compass",
+      "sourceFile": "client/src/lib/mensHealthLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "migraine",
+      "title": "Migraine",
+      "sourceFile": "client/src/lib/migraineLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "multiplesclerosis",
+      "title": "Multiple Sclerosis",
+      "sourceFile": "client/src/lib/multipleSclerosisLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "narcolepsy",
+      "title": "Narcolepsy Clinical Compass",
+      "sourceFile": null,
+      "hint": "likely stub (no separate engine) — confirm; if no real logic, skip"
+    },
+    {
+      "logicKey": "neonatalhyperbilirubinemia",
+      "title": "Neonatal Hyperbilirubinemia Clinical Compass",
+      "sourceFile": "client/src/lib/neonatalHyperbilirubinemiaLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "obesity",
+      "title": "Obesity Treatment Clinical Compass",
+      "sourceFile": "client/src/lib/obesityLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "oocytefreeze",
+      "title": "Oocyte Cryopreservation Clinical Compass",
+      "sourceFile": null,
+      "hint": null
+    },
+    {
+      "logicKey": "osa",
+      "title": "OSA Clinical Compass",
+      "sourceFile": "client/src/lib/osaLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "osaobesity",
+      "title": "OSA + Obesity Clinical Compass",
+      "sourceFile": null,
+      "hint": "likely stub (no separate engine) — confirm; if no real logic, skip"
+    },
+    {
+      "logicKey": "ovulationinduction",
+      "title": "Ovulation Induction Clinical Compass",
+      "sourceFile": null,
+      "hint": null
+    },
+    {
+      "logicKey": "pad",
+      "title": "PAD Revascularization Clinical Compass",
+      "sourceFile": "client/src/lib/padLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "padqualitymeasures",
+      "title": "PAD Clinical Performance & Quality Measures Clinical Compass",
+      "sourceFile": "client/src/lib/padQMLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "pancreaticmass",
+      "title": "Pancreatic Mass Evaluation Clinical Compass",
+      "sourceFile": "client/src/lib/pancreaticMassLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "parkinsons",
+      "title": "Parkinson's Disease",
+      "sourceFile": "client/src/lib/parkinsonsLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "pavf",
+      "title": "Percutaneous AV Fistula Clinical Compass",
+      "sourceFile": "client/src/lib/pavfLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "pci",
+      "title": "Elective PCI Clinical Compass",
+      "sourceFile": "client/src/lib/pciLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "pe",
+      "title": "Pulmonary Embolism Clinical Compass",
+      "sourceFile": "client/src/lib/peLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "pediatricimmunization",
+      "title": "Pediatric Immunization Clinical Compass",
+      "sourceFile": "client/src/lib/pediatricImmunizationLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "pediatricmentalhealth",
+      "title": "Pediatric Mental Health Clinical Compass",
+      "sourceFile": "client/src/lib/pediatricMentalHealthLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "pediatricobesity",
+      "title": "Pediatric Obesity Clinical Compass",
+      "sourceFile": "client/src/lib/pediatricObesityLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "peyronies",
+      "title": "Peyronie's Disease Surgery Clinical Compass",
+      "sourceFile": null,
+      "hint": null
+    },
+    {
+      "logicKey": "pgt",
+      "title": "Preimplantation Genetic Testing Clinical Compass",
+      "sourceFile": null,
+      "hint": null
+    },
+    {
+      "logicKey": "pituitaryadenoma",
+      "title": "Pituitary Adenoma Clinical Compass",
+      "sourceFile": "client/src/lib/pituitaryAdenomaLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "portalhypertension",
+      "title": "Portal Hypertension Clinical Compass",
+      "sourceFile": "client/src/lib/portalHypertensionLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "psoriasis",
+      "title": "Psoriasis Clinical Compass",
+      "sourceFile": "client/src/lib/psoriasisLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "psychiatry",
+      "title": "Psychiatry Clinical Compass",
+      "sourceFile": "client/src/lib/psychiatryLogic.ts",
+      "hint": "likely stub (no separate engine) — confirm; if no real logic, skip"
+    },
+    {
+      "logicKey": "radonc",
+      "title": "Radiation Oncology Clinical Compass",
+      "sourceFile": "client/src/lib/radOncLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "rectalcancer",
+      "title": "Rectal Cancer Clinical Compass",
+      "sourceFile": "client/src/lib/rectalCancerLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "renalcryoablation",
+      "title": "Renal Cryoablation Clinical Compass",
+      "sourceFile": "client/src/lib/renalCryoablationLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "rfa",
+      "title": "Radiofrequency Ablation Clinical Compass",
+      "sourceFile": "client/src/lib/rfaLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "rlsplmd",
+      "title": "RLS / PLMD Clinical Compass",
+      "sourceFile": null,
+      "hint": "likely stub (no separate engine) — confirm; if no real logic, skip"
+    },
+    {
+      "logicKey": "rotatorcuff",
+      "title": "Rotator Cuff Repair Clinical Compass",
+      "sourceFile": "client/src/lib/rotatorCuffLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "rsvprevention",
+      "title": "RSV Prevention Clinical Compass",
+      "sourceFile": "client/src/lib/rsvPreventionLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "sacroplasty",
+      "title": "Sacroplasty Clinical Compass",
+      "sourceFile": "client/src/lib/sacroplastyLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "sclerotherapy",
+      "title": "Sclerotherapy Clinical Compass",
+      "sourceFile": "client/src/lib/sclerotherapyLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "scs",
+      "title": "Spinal Cord Stimulator Clinical Compass",
+      "sourceFile": "client/src/lib/scsLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "spinalfusion",
+      "title": "Spinal Fusion Clinical Compass",
+      "sourceFile": "client/src/lib/spinalFusionLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "spine",
+      "title": "Spine Surgery Clinical Compass",
+      "sourceFile": "client/src/lib/spineLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "spineantithrombotic",
+      "title": "Spine Antithrombotic Compass",
+      "sourceFile": "client/src/lib/spineAntithromboticLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "stroke",
+      "title": "Acute Ischemic Stroke",
+      "sourceFile": "client/src/lib/strokeLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "tese",
+      "title": "TESE / Micro-TESE Clinical Compass",
+      "sourceFile": null,
+      "hint": null
+    },
+    {
+      "logicKey": "therapeuticeus",
+      "title": "Therapeutic EUS Clinical Compass",
+      "sourceFile": "client/src/lib/therapeuticEUSLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "thyroidnodule",
+      "title": "Thyroid Nodule Clinical Compass",
+      "sourceFile": "client/src/lib/thyroidNoduleLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "tka",
+      "title": "Total Knee Arthroplasty Clinical Compass",
+      "sourceFile": "client/src/lib/tkaLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "ulcerativecolitis",
+      "title": "Ulcerative Colitis Clinical Compass",
+      "sourceFile": "client/src/lib/ulcerativeColitisLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "varicocele",
+      "title": "Varicocele Embolization Clinical Compass",
+      "sourceFile": "client/src/lib/varicoceleLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "varicocelectomy",
+      "title": "Varicocelectomy Clinical Compass",
+      "sourceFile": null,
+      "hint": null
+    },
+    {
+      "logicKey": "vasectomyreversal",
+      "title": "Vasectomy Reversal Clinical Compass",
+      "sourceFile": null,
+      "hint": null
+    },
+    {
+      "logicKey": "vertebroplasty",
+      "title": "Vertebroplasty / Kyphoplasty Clinical Compass",
+      "sourceFile": "client/src/lib/vertebroplastyLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "vestibularschwaноma",
+      "title": "Vestibular Schwannoma Clinical Compass",
+      "sourceFile": null,
+      "hint": null
+    },
+    {
+      "logicKey": "vte",
+      "title": "Venous Thromboembolism Clinical Compass",
+      "sourceFile": "client/src/lib/vteLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "womenshealth",
+      "title": "Women's Health Clinical Compass",
+      "sourceFile": "client/src/lib/womensHealthLogic.ts",
+      "hint": null
+    },
+    {
+      "logicKey": "y90",
+      "title": "Y-90 Radioembolization Clinical Compass",
+      "sourceFile": "client/src/lib/y90Logic.ts",
+      "hint": null
+    }
+  ]
+}

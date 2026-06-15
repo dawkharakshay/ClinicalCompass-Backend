@@ -1,0 +1,330 @@
+{
+  "title": "Cerebral Cavernous Malformation Compass",
+  "auth_guide": {
+    "sourceFile": "CCMAuthGuide.tsx",
+    "title": "CCM Clinical Compass",
+    "subtitle": "Cerebral Cavernous Malformation Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "61510",
+        "description": "Craniotomy for excision of brain tumor, supratentorial; except meningioma, glioma, astrocytoma, or oligodendroglioma; with or without lobectomy",
+        "device": "Surgical instruments",
+        "access": "Open surgical approach",
+        "rvu": "50.00",
+        "includes": [
+          "Pre-operative planning and imaging review",
+          "Intraoperative neurophysiological monitoring",
+          "Post-operative care (initial hospital stay)"
+        ],
+        "note": "CPT 61510 is typically used for surgical resection of intracranial lesions, including cavernous malformations."
+      },
+      {
+        "code": "77371",
+        "description": "Radiation therapy planning; stereotactic radiosurgery (SRS) plan, intracranial, extracranial, or spinal (e.g., CyberKnife, Gamma Knife)",
+        "device": "Stereotactic radiosurgery system (e.g., Gamma Knife, CyberKnife)",
+        "access": "Non-invasive external beam radiation",
+        "rvu": "35.00",
+        "includes": [
+          "Target localization and treatment planning",
+          "Dosimetry calculations",
+          "Image guidance during treatment"
+        ],
+        "note": "CPT 77371 is used for stereotactic radiosurgery, a non-invasive treatment option for CCM."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "Q28.3",
+        "description": "Other malformations of cerebral vessels",
+        "notes": "This code specifically covers cerebral cavernous malformations.",
+        "required": true
+      },
+      {
+        "code": "I67.89",
+        "description": "Other specified cerebrovascular disease",
+        "notes": "May be used for associated cerebrovascular conditions.",
+        "required": false
+      },
+      {
+        "code": "G40.909",
+        "description": "Epilepsy, unspecified, not intractable, without status epilepticus",
+        "notes": "For patients presenting with seizures secondary to CCM.",
+        "required": false
+      },
+      {
+        "code": "R29.898",
+        "description": "Other symptoms and signs involving the nervous system",
+        "notes": "For non-specific neurological symptoms related to CCM.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with Prior Authorization",
+        "overview": "Medicare covers medically necessary diagnostic and treatment services for Cerebral Cavernous Malformation, including surgical resection and stereotactic radiosurgery, when criteria are met.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required",
+              "Prior authorization is generally required for surgical procedures (CPT 61510) and stereotactic radiosurgery (CPT 77371) for Cerebral Cavernous Malformation. Documentation must support medical necessity."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - Surgical Resection (CPT 61510)",
+            "items": [
+              "Symptomatic CCM (e.g., recurrent hemorrhage, intractable seizures, progressive neurological deficit).",
+              "Lesion accessible with acceptable surgical risk."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - Stereotactic Radiosurgery (CPT 77371)",
+            "items": [
+              "Symptomatic CCM not amenable to surgical resection or high surgical risk.",
+              "Lesion size and location suitable for SRS."
+            ]
+          },
+          {
+            "heading": "Required Documentation - Clinical Documentation",
+            "items": [
+              "Detailed clinical history and physical examination findings.",
+              "Neurological examination reports.",
+              "Imaging studies (MRI, CT) demonstrating the CCM and its characteristics.",
+              "Consultation notes from neurosurgeon or radiation oncologist.",
+              "Documentation of failed conservative management, if applicable."
+            ]
+          },
+          {
+            "heading": "Required Documentation - Procedural Documentation",
+            "items": [
+              "Operative report for surgical procedures.",
+              "Radiation treatment plan and dosimetry for SRS."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request through the Medicare portal or designated fax/mail.",
+              "Include all supporting clinical documentation and imaging reports.",
+              "Await approval before scheduling elective procedures."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity.",
+              "Incomplete clinical documentation.",
+              "Alternative, less invasive treatments not considered or documented."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Reimbursement for CCM treatments is generally good when prior authorization is obtained and medical necessity is clearly established."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Ensure all symptoms and neurological deficits are thoroughly documented.",
+              "Clearly articulate why the chosen treatment is medically necessary and appropriate.",
+              "Provide comprehensive imaging reports and interpretations."
+            ]
+          }
+        ],
+        "knownPolicies": []
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered with Prior Authorization (State-Specific)",
+        "overview": "Medicaid programs cover medically necessary services for CCM, but specific criteria and authorization processes can differ significantly between states.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required",
+              "Medicaid requires prior authorization for most advanced imaging, surgical interventions, and specialized radiation therapies for CCM. Coverage varies by state."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - General Coverage Criteria",
+            "items": [
+              "Diagnosis of symptomatic CCM confirmed by imaging.",
+              "Treatment plan aligned with evidence-based guidelines.",
+              "Consideration of patient-specific factors and comorbidities."
+            ]
+          },
+          {
+            "heading": "Required Documentation - Clinical Documentation",
+            "items": [
+              "Medical records supporting CCM diagnosis and symptoms.",
+              "Neurological assessments.",
+              "Radiological reports (MRI, CT).",
+              "Referral from specialist (e.g., neurologist, neurosurgeon)."
+            ]
+          },
+          {
+            "heading": "Required Documentation - State-Specific Forms",
+            "items": [
+              "Completion of state-specific prior authorization forms.",
+              "Any additional documentation requested by the state Medicaid agency."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify state-specific Medicaid guidelines for CCM.",
+              "Submit authorization request with all required forms and documentation.",
+              "Follow up regularly on the status of the authorization."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet state-specific medical necessity criteria.",
+              "Incomplete or incorrect submission forms.",
+              "Lack of clear documentation of symptom severity or progression."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicaid reimbursement rates can be lower than other payers, and administrative burden for prior authorization can be high."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state's specific Medicaid policies for neurological conditions.",
+              "Ensure all documentation is precise and addresses Medicaid's criteria.",
+              "Consider peer-to-peer review if initial authorization is denied."
+            ]
+          }
+        ],
+        "knownPolicies": []
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Varies by Plan (Typically Covered with PA)",
+        "overview": "Private insurance coverage for CCM treatments is generally available, but it is crucial to verify specific plan benefits, deductibles, and out-of-pocket maximums.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required",
+              "Most private insurance plans require prior authorization for surgical and radiosurgical treatments of CCM. Benefit coverage varies widely by plan."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - Medical Necessity",
+            "items": [
+              "Diagnosis of symptomatic CCM with documented clinical impact.",
+              "Treatment recommended by a qualified specialist.",
+              "Adherence to plan's clinical policies for neurological interventions."
+            ]
+          },
+          {
+            "heading": "Required Documentation - Clinical Records",
+            "items": [
+              "Physician's orders and progress notes.",
+              "Diagnostic test results (e.g., MRI, MRA, CT).",
+              "Specialist consultation reports."
+            ]
+          },
+          {
+            "heading": "Required Documentation - Authorization Forms",
+            "items": [
+              "Completion of the insurer's specific prior authorization request form.",
+              "Letter of medical necessity from the treating physician."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request via the insurer's online portal, fax, or phone.",
+              "Provide all requested clinical information and supporting documents.",
+              "Monitor authorization status and be prepared for potential peer-to-peer review."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Experimental/investigational clause.",
+              "Lack of sufficient clinical evidence for medical necessity.",
+              "Out-of-network provider or facility."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Reimbursement depends heavily on the specific plan and network status. High deductibles or co-insurance may apply."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify benefits and prior authorization requirements with the specific insurance plan.",
+              "Maintain meticulous records of all communications with the insurer.",
+              "Be prepared to appeal denials with additional clinical information and peer-reviewed literature."
+            ]
+          }
+        ],
+        "knownPolicies": []
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment",
+        "href": "/ccm"
+      },
+      {
+        "heading": "Procedure Codes (CPT) - Card Note",
+        "kind": "prose",
+        "text": "Each CPT entry displays: CPT code badge, RVU badge, description, Device/Access line, an 'Included in this code (do NOT bill separately):' list, and an italic note."
+      }
+    ],
+    "raw": {
+      "markdown": "# CCM Clinical Compass\n\n## Cerebral Cavernous Malformation Insurance Authorization Guide\n\n[Back to Assessment](/ccm)\n\n---\n\n## Procedure Codes (CPT)\n\n### CPT 61510 — RVU 50.00\nCraniotomy for excision of brain tumor, supratentorial; except meningioma, glioma, astrocytoma, or oligodendroglioma; with or without lobectomy\n\n**Device/Access:** Surgical instruments\n\n**Included in this code (do NOT bill separately):**\n- Pre-operative planning and imaging review\n- Intraoperative neurophysiological monitoring\n- Post-operative care (initial hospital stay)\n\n_CPT 61510 is typically used for surgical resection of intracranial lesions, including cavernous malformations._\n\n### CPT 77371 — RVU 35.00\nRadiation therapy planning; stereotactic radiosurgery (SRS) plan, intracranial, extracranial, or spinal (e.g., CyberKnife, Gamma Knife)\n\n**Device/Access:** Stereotactic radiosurgery system (e.g., Gamma Knife, CyberKnife)\n\n**Included in this code (do NOT bill separately):**\n- Target localization and treatment planning\n- Dosimetry calculations\n- Image guidance during treatment\n\n_CPT 77371 is used for stereotactic radiosurgery, a non-invasive treatment option for CCM._\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **Q28.3** (Primary) — Other malformations of cerebral vessels\n  - This code specifically covers cerebral cavernous malformations.\n- **I67.89** — Other specified cerebrovascular disease\n  - May be used for associated cerebrovascular conditions.\n- **G40.909** — Epilepsy, unspecified, not intractable, without status epilepticus\n  - For patients presenting with seizures secondary to CCM.\n- **R29.898** — Other symptoms and signs involving the nervous system\n  - For non-specific neurological symptoms related to CCM.\n\n---\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\n\n**Badges:** Prior Auth Required | Covered with Prior Authorization\n\n**Prior Auth Note:** Prior authorization is generally required for surgical procedures (CPT 61510) and stereotactic radiosurgery (CPT 77371) for Cerebral Cavernous Malformation. Documentation must support medical necessity.\n\n**Overview:** Medicare covers medically necessary diagnostic and treatment services for Cerebral Cavernous Malformation, including surgical resection and stereotactic radiosurgery, when criteria are met.\n\n**Coverage Criteria**\n\n_Surgical Resection (CPT 61510)_\n- Symptomatic CCM (e.g., recurrent hemorrhage, intractable seizures, progressive neurological deficit).\n- Lesion accessible with acceptable surgical risk.\n\n_Stereotactic Radiosurgery (CPT 77371)_\n- Symptomatic CCM not amenable to surgical resection or high surgical risk.\n- Lesion size and location suitable for SRS.\n\n**Required Documentation**\n\n_Clinical Documentation_\n- Detailed clinical history and physical examination findings.\n- Neurological examination reports.\n- Imaging studies (MRI, CT) demonstrating the CCM and its characteristics.\n- Consultation notes from neurosurgeon or radiation oncologist.\n- Documentation of failed conservative management, if applicable.\n\n_Procedural Documentation_\n- Operative report for surgical procedures.\n- Radiation treatment plan and dosimetry for SRS.\n\n**Submission Process**\n1. Submit prior authorization request through the Medicare portal or designated fax/mail.\n2. Include all supporting clinical documentation and imaging reports.\n3. Await approval before scheduling elective procedures.\n\n**Common Denial Reasons**\n- Lack of documented medical necessity.\n- Incomplete clinical documentation.\n- Alternative, less invasive treatments not considered or documented.\n\n**Reimbursement Note:** Reimbursement for CCM treatments is generally good when prior authorization is obtained and medical necessity is clearly established.\n\n**Authorization Tips**\n- Ensure all symptoms and neurological deficits are thoroughly documented.\n- Clearly articulate why the chosen treatment is medically necessary and appropriate.\n- Provide comprehensive imaging reports and interpretations.\n\n### Medicaid\n\n**Badges:** Prior Auth Required | Covered with Prior Authorization (State-Specific)\n\n**Prior Auth Note:** Medicaid requires prior authorization for most advanced imaging, surgical interventions, and specialized radiation therapies for CCM. Coverage varies by state.\n\n**Overview:** Medicaid programs cover medically necessary services for CCM, but specific criteria and authorization processes can differ significantly between states.\n\n**Coverage Criteria**\n\n_General Coverage Criteria_\n- Diagnosis of symptomatic CCM confirmed by imaging.\n- Treatment plan aligned with evidence-based guidelines.\n- Consideration of patient-specific factors and comorbidities.\n\n**Required Documentation**\n\n_Clinical Documentation_\n- Medical records supporting CCM diagnosis and symptoms.\n- Neurological assessments.\n- Radiological reports (MRI, CT).\n- Referral from specialist (e.g., neurologist, neurosurgeon).\n\n_State-Specific Forms_\n- Completion of state-specific prior authorization forms.\n- Any additional documentation requested by the state Medicaid agency.\n\n**Submission Process**\n1. Verify state-specific Medicaid guidelines for CCM.\n2. Submit authorization request with all required forms and documentation.\n3. Follow up regularly on the status of the authorization.\n\n**Common Denial Reasons**\n- Failure to meet state-specific medical necessity criteria.\n- Incomplete or incorrect submission forms.\n- Lack of clear documentation of symptom severity or progression.\n\n**Reimbursement Note:** Medicaid reimbursement rates can be lower than other payers, and administrative burden for prior authorization can be high.\n\n**Authorization Tips**\n- Familiarize yourself with your state's specific Medicaid policies for neurological conditions.\n- Ensure all documentation is precise and addresses Medicaid's criteria.\n- Consider peer-to-peer review if initial authorization is denied.\n\n### Private Insurance\n\n**Badges:** Prior Auth Required | Varies by Plan (Typically Covered with PA)\n\n**Prior Auth Note:** Most private insurance plans require prior authorization for surgical and radiosurgical treatments of CCM. Benefit coverage varies widely by plan.\n\n**Overview:** Private insurance coverage for CCM treatments is generally available, but it is crucial to verify specific plan benefits, deductibles, and out-of-pocket maximums.\n\n**Coverage Criteria**\n\n_Medical Necessity_\n- Diagnosis of symptomatic CCM with documented clinical impact.\n- Treatment recommended by a qualified specialist.\n- Adherence to plan's clinical policies for neurological interventions.\n\n**Required Documentation**\n\n_Clinical Records_\n- Physician's orders and progress notes.\n- Diagnostic test results (e.g., MRI, MRA, CT).\n- Specialist consultation reports.\n\n_Authorization Forms_\n- Completion of the insurer's specific prior authorization request form.\n- Letter of medical necessity from the treating physician.\n\n**Submission Process**\n1. Submit prior authorization request via the insurer's online portal, fax, or phone.\n2. Provide all requested clinical information and supporting documents.\n3. Monitor authorization status and be prepared for potential peer-to-peer review.\n\n**Common Denial Reasons**\n- Experimental/investigational clause.\n- Lack of sufficient clinical evidence for medical necessity.\n- Out-of-network provider or facility.\n\n**Reimbursement Note:** Reimbursement depends heavily on the specific plan and network status. High deductibles or co-insurance may apply.\n\n**Authorization Tips**\n- Always verify benefits and prior authorization requirements with the specific insurance plan.\n- Maintain meticulous records of all communications with the insurer.\n- Be prepared to appeal denials with additional clinical information and peer-reviewed literature.\n\nNote: For all three payers, knownPolicies is empty, so the 'Known Payer Policies' table is not rendered.",
+      "tables": [
+        {
+          "name": "CPT Procedure Codes",
+          "header": ["Code", "RVU", "Description", "Device/Access", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            [
+              "61510",
+              "50.00",
+              "Craniotomy for excision of brain tumor, supratentorial; except meningioma, glioma, astrocytoma, or oligodendroglioma; with or without lobectomy",
+              "Surgical instruments / Open surgical approach",
+              "Pre-operative planning and imaging review; Intraoperative neurophysiological monitoring; Post-operative care (initial hospital stay)",
+              "CPT 61510 is typically used for surgical resection of intracranial lesions, including cavernous malformations."
+            ],
+            [
+              "77371",
+              "35.00",
+              "Radiation therapy planning; stereotactic radiosurgery (SRS) plan, intracranial, extracranial, or spinal (e.g., CyberKnife, Gamma Knife)",
+              "Stereotactic radiosurgery system (e.g., Gamma Knife, CyberKnife) / Non-invasive external beam radiation",
+              "Target localization and treatment planning; Dosimetry calculations; Image guidance during treatment",
+              "CPT 77371 is used for stereotactic radiosurgery, a non-invasive treatment option for CCM."
+            ]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Primary/Required"],
+          "rows": [
+            ["Q28.3", "Other malformations of cerebral vessels", "This code specifically covers cerebral cavernous malformations.", "Yes (Primary)"],
+            ["I67.89", "Other specified cerebrovascular disease", "May be used for associated cerebrovascular conditions.", "No"],
+            ["G40.909", "Epilepsy, unspecified, not intractable, without status epilepticus", "For patients presenting with seizures secondary to CCM.", "No"],
+            ["R29.898", "Other symptoms and signs involving the nervous system", "For non-specific neurological symptoms related to CCM.", "No"]
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "title": "Atopic Dermatitis Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "atopicdermatitis",
+    "hiddenDefaults": {
+      "hasSignificantPruritus": false
+    },
+    "steps": [
+      {
+        "id": "severity",
+        "shortLabel": "Severity",
+        "title": "Disease Severity Assessment",
+        "fields": [
+          {
+            "id": "iga-score",
+            "name": "igaScore",
+            "label": "IGA Score (Investigator Global Assessment)",
+            "type": "select",
+            "defaultValue": 2,
+            "options": [
+              { "label": "0 — Clear", "value": 0 },
+              { "label": "1 — Almost Clear", "value": 1 },
+              { "label": "2 — Mild", "value": 2 },
+              { "label": "3 — Moderate", "value": 3 },
+              { "label": "4 — Severe", "value": 4 }
+            ]
+          },
+          {
+            "id": "age-group",
+            "name": "ageGroup",
+            "label": "Age Group",
+            "type": "select",
+            "defaultValue": "adult",
+            "options": [
+              { "label": "Adult (≥18 years)", "value": "adult" },
+              { "label": "Adolescent (12–17 years)", "value": "adolescent_12_17" },
+              { "label": "Child (6–11 years)", "value": "child_6_11" },
+              { "label": "Young Child (6 months–5 years)", "value": "child_6mo_5yr" }
+            ]
+          },
+          {
+            "id": "easi-score",
+            "name": "easiScore",
+            "label": "EASI Score (/ 72)",
+            "type": "slider",
+            "defaultValue": 10,
+            "min": 0,
+            "max": 72,
+            "step": 1
+          },
+          {
+            "id": "bsa-percent",
+            "name": "bsaPercent",
+            "label": "BSA Affected (%)",
+            "type": "slider",
+            "defaultValue": 10,
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "pruritus-nrs",
+            "name": "pruritusNrs",
+            "label": "Pruritus NRS (0–10)",
+            "type": "slider",
+            "defaultValue": 5,
+            "min": 0,
+            "max": 10,
+            "step": 1
+          }
+        ]
+      },
+      {
+        "id": "history",
+        "shortLabel": "History",
+        "title": "Prior Treatment History",
+        "fields": [
+          {
+            "id": "failed-therapy",
+            "name": "failedTherapy",
+            "label": "Prior Treatment History",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "No prior treatment", "value": "none" },
+              { "label": "Failed topicals only (TCS, TCIs)", "value": "topicals_only" },
+              { "label": "Failed topicals + phototherapy", "value": "topicals_and_phototherapy" },
+              { "label": "Failed prior biologic (dupilumab, tralokinumab, etc.)", "value": "prior_biologic" },
+              { "label": "Failed prior JAK inhibitor (abrocitinib, upadacitinib)", "value": "prior_jak" }
+            ]
+          },
+          {
+            "id": "has-ocular-disease",
+            "name": "hasOcularDisease",
+            "label": "Ocular disease (conjunctivitis, keratitis) — affects biologic choice",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "is-pregnant-or-planning",
+            "name": "isPregnantOrPlanning",
+            "label": "Pregnant or planning pregnancy",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "is-immunocompromised",
+            "name": "isImmunocompromised",
+            "label": "Immunocompromised (HIV, transplant, active malignancy)",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "comorbidities",
+        "shortLabel": "Comorbidities",
+        "title": "Cardiovascular & Safety Profile",
+        "fields": [
+          {
+            "id": "jak-warning",
+            "type": "alert",
+            "severity": "warning",
+            "text": "JAK inhibitors carry an FDA boxed warning for MACE, thromboembolism, and malignancy in patients ≥50 with CV risk factors."
+          },
+          {
+            "id": "has-cardiovascular-risk",
+            "name": "hasCardiovascularRisk",
+            "label": "Cardiovascular risk factors (HTN, DM, dyslipidemia, smoking, age ≥50)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-thromboembolism-history",
+            "name": "hasThromboembolismHistory",
+            "label": "History of DVT or pulmonary embolism",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-malignancy-history",
+            "name": "hasMalignancyHistory",
+            "label": "History of malignancy (current or prior)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-contact-allergy-confirmed",
+            "name": "hasContactAllergyConfirmed",
+            "label": "Confirmed contact allergy (patch testing performed)",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "flags",
+        "shortLabel": "Flags",
+        "title": "Urgent Clinical Flags",
+        "fields": [
+          {
+            "id": "urgent-flags-note",
+            "type": "alert",
+            "severity": "warning",
+            "text": "These conditions require immediate management before advancing AD therapy."
+          },
+          {
+            "id": "has-eczema-herpeticum",
+            "name": "hasEczemaHerpeticum",
+            "label": "Eczema herpeticum suspected (punched-out erosions, fever, rapid spread)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-bacterial-superinfection",
+            "name": "hasBacterialSuperinfection",
+            "label": "Bacterial superinfection (S. aureus — crusting, weeping, honey-colored exudate)",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

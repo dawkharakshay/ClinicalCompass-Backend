@@ -1,0 +1,938 @@
+{
+  "specialities": [
+    {
+      "key": "surgery",
+      "title": "Surgery & Surgical Oncology",
+      "description": "Colorectal, hepatobiliary, bariatric, and spine surgery decision support"
+    },
+    {
+      "key": "ent-endocrine",
+      "title": "ENT, Endocrine & Sleep Medicine",
+      "description": "Thyroid nodule evaluation, OSA management, and head & neck surgery"
+    },
+    {
+      "key": "interventional-radiology",
+      "title": "Interventional Radiology",
+      "description": "Image-guided minimally invasive procedures and vascular interventions"
+    },
+    {
+      "key": "cardiology",
+      "title": "Cardiology & Interventional Cardiology",
+      "description": "Cardiovascular disease management, interventional cardiology, electrophysiology, and structural heart procedures"
+    },
+    {
+      "key": "vascular",
+      "title": "Vascular Medicine & Surgery",
+      "description": "Peripheral artery disease, venous disorders, and vascular quality improvement"
+    },
+    {
+      "key": "hematology",
+      "title": "Hematology",
+      "description": "Hematologic disorders, anticoagulation, and thrombosis management"
+    },
+    {
+      "key": "neurosurgery",
+      "title": "Neurosurgery & Neuro-Oncology",
+      "description": "Brain tumor management, cerebrovascular malformations, and perioperative neurosurgical care"
+    },
+    {
+      "key": "dermatology",
+      "title": "Dermatology",
+      "description": "Inflammatory skin disease management, biologic selection, and antibiotic stewardship"
+    },
+    {
+      "key": "neurology",
+      "title": "Neurology",
+      "description": "Stroke, epilepsy, migraine, MS, and Parkinson's disease decision support"
+    },
+    {
+      "key": "ophthalmology",
+      "title": "Ophthalmology",
+      "description": "Retinal disease, glaucoma, and myopia management decision support"
+    },
+    {
+      "key": "gastroenterology",
+      "title": "Gastroenterology & Interventional GI",
+      "description": "IBD, MASLD, gastroparesis, CRC screening, EUS, and biliary disease decision support"
+    },
+    {
+      "key": "pediatrics",
+      "title": "Pediatrics",
+      "description": "Immunization schedules, well-child care, neonatal, febrile infant, obesity, and mental health decision support"
+    },
+    {
+      "key": "radiation-oncology",
+      "title": "Radiation Oncology",
+      "description": "NCCN 2025-2026 and ASTRO guideline-based RT decision support across CNS, H&N, lung, prostate, GI, lymphoma, breast, skin, and palliative disease sites"
+    },
+    {
+      "key": "psychiatry",
+      "title": "Psychiatry",
+      "description": "APA 2025-2026 and VA/DoD guideline-based decision support for delirium, depression, BPD, schizophrenia, PTSD, eating disorders, benzodiazepine tapering, and suicide risk assessment"
+    },
+    {
+      "key": "orthopedics",
+      "title": "Orthopedics & Spine Surgery",
+      "description": "AAOS and NASS guideline-based decision support for joint replacement, spinal fusion, disc replacement, and arthroscopic procedures"
+    },
+    {
+      "key": "pain-interventional",
+      "title": "Pain Medicine & Interventional Procedures",
+      "description": "ASIPP, ISIS, and NASS guideline-based decision support for epidural steroid injections, facet interventions, RFA, and spinal cord stimulation"
+    },
+    {
+      "key": "general-surgery",
+      "title": "General Surgery & GI Surgery",
+      "description": "ASMBS, SAGES, and ACS guideline-based decision support for bariatric surgery, cholecystectomy, and hernia repair"
+    },
+    {
+      "key": "plastics",
+      "title": "Plastic & Reconstructive Surgery",
+      "description": "ASPS and CMS guideline-based decision support for breast reduction and functional blepharoplasty/ptosis repair"
+    },
+    {
+      "key": "urology",
+      "title": "Urology & Male Reproductive Medicine",
+      "description": "AUA and WPATH guideline-based decision support for vasectomy reversal, varicocelectomy, TESE/micro-TESE, Peyronie's disease surgery, and gender-affirming urologic procedures"
+    },
+    {
+      "key": "rei",
+      "title": "Reproductive Endocrinology & Infertility",
+      "description": "ASRM and ASCO guideline-based decision support for IVF, ICSI, PGT, oocyte cryopreservation, embryo cryopreservation, ovulation induction, and gestational carrier procedures"
+    }
+  ],
+  "modules": [
+    {
+      "key": "pe-compass",
+      "speciality_key": "interventional-radiology",
+      "title": "Pulmonary Embolism Clinical Compass",
+      "description": "Pulmonary Embolism Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-pe-compass-DwL5iGXzDt8GYDLXkGAQRv.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "womens-health",
+      "speciality_key": "interventional-radiology",
+      "title": "Women's Health Clinical Compass",
+      "description": "Women's Health Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-womens-health-compass-T7Nt2Pht3JAFauJ36WBFq9.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "mens-health",
+      "speciality_key": "interventional-radiology",
+      "title": "Prostatic Artery Embolization Clinical Compass",
+      "description": "Prostatic Artery Embolization Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-mens-health-compass-L66VmZjVaSnQ69JKBKB2Xv.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "varicocele-compass",
+      "speciality_key": "interventional-radiology",
+      "title": "Varicocele Embolization Clinical Compass",
+      "description": "Varicocele Embolization Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-varicocele-embolization-compass-iKCRh6HU5vp8JFzANjLYDU.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "portal-hypertension-compass",
+      "speciality_key": "interventional-radiology",
+      "title": "Portal Hypertension Clinical Compass",
+      "description": "Portal Hypertension Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-portal-hypertension-compass-ApEypFz365ihLiQKyY4V7m.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "gae-compass",
+      "speciality_key": "interventional-radiology",
+      "title": "Geniculate Artery Embolization Clinical Compass",
+      "description": "Geniculate Artery Embolization Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-geniculate-compass-KJucdnpFUznNQ5FewwJ4Hs.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "pavf-compass",
+      "speciality_key": "interventional-radiology",
+      "title": "Percutaneous AV Fistula Clinical Compass",
+      "description": "Percutaneous AV Fistula Creation Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-pavf-compass-Nf5MeFqYtHfhuzJA7RueDM.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "bone-cancer",
+      "speciality_key": "interventional-radiology",
+      "title": "Bone Cancer Interventional Oncology Clinical Compass",
+      "description": "Bone Cancer Interventional Oncology Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-bone-cancer-compass-nUGamKD8HbhfqsHRxrVUge.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "y90-compass",
+      "speciality_key": "interventional-radiology",
+      "title": "Y-90 Radioembolization Clinical Compass",
+      "description": "Y-90 Radioembolization Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-y90-compass-H5zjmxEmFGJsfjNLxpMFnt.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "endovenous-ablation-compass",
+      "speciality_key": "interventional-radiology",
+      "title": "Endovenous Ablation Clinical Compass",
+      "description": "Endovenous Laser & Radiofrequency Ablation Decision Support",
+      "logo_url": "/manus-storage/endovenous-ablation-compass-logo_fed2af56.png",
+      "coming_soon": false
+    },
+    {
+      "key": "sclerotherapy-compass",
+      "speciality_key": "interventional-radiology",
+      "title": "Sclerotherapy Clinical Compass",
+      "description": "Foam & Liquid Sclerotherapy Decision Support",
+      "logo_url": "/manus-storage/sclerotherapy-compass-logo_b30a6b33.png",
+      "coming_soon": false
+    },
+    {
+      "key": "vertebroplasty-compass",
+      "speciality_key": "interventional-radiology",
+      "title": "Vertebroplasty / Kyphoplasty Clinical Compass",
+      "description": "Vertebral Augmentation Decision Support",
+      "logo_url": "/manus-storage/vertebroplasty-compass-logo_e53bb49e.png",
+      "coming_soon": false
+    },
+    {
+      "key": "sacroplasty-compass",
+      "speciality_key": "interventional-radiology",
+      "title": "Sacroplasty Clinical Compass",
+      "description": "Sacral Insufficiency Fracture Decision Support",
+      "logo_url": "/manus-storage/sacroplasty-compass-logo_d9990ce3.png",
+      "coming_soon": false
+    },
+    {
+      "key": "atherectomy-compass",
+      "speciality_key": "interventional-radiology",
+      "title": "Peripheral Atherectomy Clinical Compass",
+      "description": "Peripheral Atherectomy Patient Selection & Authorization",
+      "logo_url": "/manus-storage/atherectomy-compass-logo_e7977bbe.png",
+      "coming_soon": false
+    },
+    {
+      "key": "renal-cryoablation-compass",
+      "speciality_key": "interventional-radiology",
+      "title": "Renal Cryoablation Clinical Compass",
+      "description": "Percutaneous Renal Cryoablation Patient Selection & Authorization",
+      "logo_url": "/manus-storage/renal-cryoablation-compass-logo_e9d97a86.png",
+      "coming_soon": false
+    },
+    {
+      "key": "vasectomy-reversal-compass",
+      "speciality_key": "urology",
+      "title": "Vasectomy Reversal Clinical Compass",
+      "description": "Vasectomy Reversal Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/vasectomy-reversal-compass-logo-4aZyGwbLybDkM299Wjiqyg.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "varicocelectomy-compass",
+      "speciality_key": "urology",
+      "title": "Varicocelectomy Clinical Compass",
+      "description": "Varicocelectomy for Infertility Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/varicocelectomy-compass-logo-8grpA8nYi6LNqsHqEbHeRz.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "tese-compass",
+      "speciality_key": "urology",
+      "title": "TESE / Micro-TESE Clinical Compass",
+      "description": "TESE / Micro-TESE for Male Infertility Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/tese-compass-logo-mJPUyXpgeQwBWFftwUDquX.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "peyronies-compass",
+      "speciality_key": "urology",
+      "title": "Peyronie's Disease Surgery Clinical Compass",
+      "description": "Peyronie's Disease Surgical Management Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/peyronies-compass-logo-j5CgiNmwFVzw5r7joaViGP.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "gender-affirming-uro-compass",
+      "speciality_key": "urology",
+      "title": "Gender-Affirming Urologic Procedures Clinical Compass",
+      "description": "Gender-Affirming Urologic Procedures Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/gender-affirming-uro-compass-logo-STAf9eh6hoHYKXmBgYJH2x.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "ivf-compass",
+      "speciality_key": "rei",
+      "title": "In Vitro Fertilization Clinical Compass",
+      "description": "IVF Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/ivf-compass-logo-73dLkTihZ3YidsrxNDQNtw.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "icsi-compass",
+      "speciality_key": "rei",
+      "title": "Intracytoplasmic Sperm Injection Clinical Compass",
+      "description": "ICSI Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/icsi-compass-logo-aUTXgXEg3e3q97MKNfPBAA.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "pgt-compass",
+      "speciality_key": "rei",
+      "title": "Preimplantation Genetic Testing Clinical Compass",
+      "description": "PGT-A / PGT-M Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/pgt-compass-logo-C7dhzpCWB2Kv76immtcUWX.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "oocyte-freeze-compass",
+      "speciality_key": "rei",
+      "title": "Oocyte Cryopreservation Clinical Compass",
+      "description": "Oocyte Cryopreservation Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/oocyte-freeze-compass-logo-5j6hDxwSWzWrhmWrXXK827.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "embryo-cryo-compass",
+      "speciality_key": "rei",
+      "title": "Embryo Cryopreservation Clinical Compass",
+      "description": "Embryo Cryopreservation & FET Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/embryo-cryo-compass-logo-8iAqzHTwa5jdFa89fJBCLU.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "ovulation-induction-compass",
+      "speciality_key": "rei",
+      "title": "Ovulation Induction Clinical Compass",
+      "description": "Ovulation Induction & Monitoring Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/ovulation-induction-compass-logo-JWbK6JzXLumvHJWXunbdCa.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "gestational-carrier-compass",
+      "speciality_key": "rei",
+      "title": "Gestational Carrier Clinical Compass",
+      "description": "Gestational Carrier (Surrogacy) Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/gestational-carrier-compass-logo-hWNdgkyWUJUU48PpJYiqHB.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "acs-compass",
+      "speciality_key": "cardiology",
+      "title": "Acute Coronary Syndrome Clinical Compass",
+      "description": "Acute Coronary Syndrome Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-acs-compass-Uqh9UcbVPK8YGeYJsbBnYV.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "dyslipidemia-ds",
+      "speciality_key": "cardiology",
+      "title": "Dyslipidemia Clinical Compass",
+      "description": "Dyslipidemia Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-dyslipidemia-compass-SwoSxbNmMwSBJdiZ42zbYz.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "pad-revascularization",
+      "speciality_key": "vascular",
+      "title": "PAD Revascularization Clinical Compass",
+      "description": "Lower Extremity PAD Revascularization Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-pad-compass-cxMhJMcsaLhWvDoCtzhmg8.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "pad-quality-measures",
+      "speciality_key": "vascular",
+      "title": "PAD Clinical Performance & Quality Measures Clinical Compass",
+      "description": "PAD Clinical Performance & Quality Measures Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-pad-compass-cxMhJMcsaLhWvDoCtzhmg8.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "vte-compass",
+      "speciality_key": "hematology",
+      "title": "Venous Thromboembolism Clinical Compass",
+      "description": "Venous Thromboembolism Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-aplastic-anemia-white-M6pWXchLXZ6NUNWAg3xiix.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "aml-compass",
+      "speciality_key": "hematology",
+      "title": "Acute Myeloid Leukemia Clinical Compass",
+      "description": "Acute Myeloid Leukemia Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-aml-white-VwBLYye9kRhwuiaJmSWKc9.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "all-compass",
+      "speciality_key": "hematology",
+      "title": "Acute Lymphoblastic Leukemia & CAR-T Clinical Compass",
+      "description": "Acute Lymphoblastic Leukemia & CAR-T Therapy Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-all-white-7MqcJYJa7bbfcTzHYRw2ki.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "aplastic-anemia-compass",
+      "speciality_key": "hematology",
+      "title": "Aplastic Anemia Clinical Compass",
+      "description": "Aplastic Anemia Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-aplastic-anemia-white-M6pWXchLXZ6NUNWAg3xiix.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "rectal-cancer-compass",
+      "speciality_key": "surgery",
+      "title": "Rectal Cancer Clinical Compass",
+      "description": "Rectal Cancer: TNT vs Surgery vs Watch-and-Wait Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-rectal-cancer-compass-jkJNsVbgFeyrpTZCvCmADd.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "liver-tumor-compass",
+      "speciality_key": "surgery",
+      "title": "Liver Tumor Clinical Compass",
+      "description": "Liver Tumor: Resection vs Ablation vs Embolization Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-liver-tumor-compass-Q8kpmvjNq9ubH5nE9AvpVk.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "obesity-compass",
+      "speciality_key": "surgery",
+      "title": "Obesity Treatment Clinical Compass",
+      "description": "Obesity: ESG vs GLP-1 vs Bariatric Surgery Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-obesity-compass-Lv7u2bkfMDTioycazv23tY.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "spine-compass",
+      "speciality_key": "surgery",
+      "title": "Spine Surgery Clinical Compass",
+      "description": "Spine: When NOT to Operate — Conservative vs Surgical Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-spine-compass-3UsbjsRBowXkM6ikk39hDp.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "thyroid-nodule-compass",
+      "speciality_key": "ent-endocrine",
+      "title": "Thyroid Nodule Clinical Compass",
+      "description": "Thyroid Nodule: Biopsy vs Observe vs Operate Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-thyroid-nodule-compass-PJZFbRbHzPzEqx9A5Sz6c9.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "osa-compass",
+      "speciality_key": "ent-endocrine",
+      "title": "OSA Clinical Compass",
+      "description": "OSA: CPAP vs Surgery vs Device (Inspire HNS) Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-osa-compass-RUWSdbPSrB8YNLnUQBgLKb.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "narcolepsy-compass",
+      "speciality_key": "ent-endocrine",
+      "title": "Narcolepsy Clinical Compass",
+      "description": "Narcolepsy: Diagnosis & Treatment Decision Support",
+      "logo_url": "/manus-storage/narcolepsy-compass-logo_980d50d6.png",
+      "coming_soon": false
+    },
+    {
+      "key": "chronic-insomnia-compass",
+      "speciality_key": "ent-endocrine",
+      "title": "Chronic Insomnia Clinical Compass",
+      "description": "Chronic Insomnia: CBT-I vs Pharmacotherapy Decision Support",
+      "logo_url": "/manus-storage/chronic-insomnia-compass-logo_416500fd.png",
+      "coming_soon": false
+    },
+    {
+      "key": "central-sleep-apnea-compass",
+      "speciality_key": "ent-endocrine",
+      "title": "Central Sleep Apnea Clinical Compass",
+      "description": "Central Sleep Apnea: ASV vs CPAP vs BPAP Decision Support",
+      "logo_url": "/manus-storage/central-sleep-apnea-compass-logo_6530202d.png",
+      "coming_soon": false
+    },
+    {
+      "key": "rls-plmd-compass",
+      "speciality_key": "ent-endocrine",
+      "title": "RLS / PLMD Clinical Compass",
+      "description": "Restless Legs Syndrome & PLMD: Iron vs Alpha-2-Delta vs Dopamine Decision Support",
+      "logo_url": "/manus-storage/rls-plmd-compass-logo_e9d989e8.png",
+      "coming_soon": false
+    },
+    {
+      "key": "osa-obesity-compass",
+      "speciality_key": "ent-endocrine",
+      "title": "OSA + Obesity Clinical Compass",
+      "description": "OSA + Obesity: Zepbound (Tirzepatide) & Semaglutide Adjunct Therapy Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/osa-obesity-compass-logo-N55A2VT3VcNAsLtxrMFMqY.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "pituitary-adenoma-compass",
+      "speciality_key": "neurosurgery",
+      "title": "Pituitary Adenoma Clinical Compass",
+      "description": "Pituitary Adenoma: Surgery vs Medical Therapy vs Radiosurgery Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-pituitary-v2-EfjAkNLdXKzLHyuZoVik6u.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "vestibular-schwannoma-compass",
+      "speciality_key": "neurosurgery",
+      "title": "Vestibular Schwannoma Clinical Compass",
+      "description": "Vestibular Schwannoma: Observation vs SRS vs Microsurgery Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-vestibular-schwannoma-v2-gfryNFTNnSH6Euion8VD3X.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "brain-metastases-compass",
+      "speciality_key": "neurosurgery",
+      "title": "Brain Metastases Clinical Compass",
+      "description": "Brain Metastases: Surgery vs SRS vs Systemic Therapy Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-brain-metastases-v2-Gmb3ro9qk3wqyimTJaUrdg.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "low-grade-glioma-compass",
+      "speciality_key": "neurosurgery",
+      "title": "Low-Grade Glioma Clinical Compass",
+      "description": "Diffuse Low-Grade Glioma: Surgery vs Observation vs RT/Chemo Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-low-grade-glioma-v2-ACgMJNaRBBVHYHg7zTLAcC.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "ccm-compass",
+      "speciality_key": "neurosurgery",
+      "title": "Cerebral Cavernous Malformation Compass",
+      "description": "Cerebral Cavernous Malformation: Surgery vs Observation vs Radiosurgery Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-ccm-v2-MYeph5xxHgksvyX9m5swEL.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "spine-antithrombotic-compass",
+      "speciality_key": "neurosurgery",
+      "title": "Spine Antithrombotic Compass",
+      "description": "Spine Surgery: Perioperative Antithrombotic Management Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-spine-antithrombotic-v2-HYzBGuFwzqpCggYSuGKfSn.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "atopic-dermatitis-compass",
+      "speciality_key": "dermatology",
+      "title": "Atopic Dermatitis Clinical Compass",
+      "description": "Atopic Dermatitis: Topical vs Biologic vs JAK Inhibitor Decision Support",
+      "logo_url": "/manus-storage/atopic-dermatitis-compass-logo_1490fc98.png",
+      "coming_soon": false
+    },
+    {
+      "key": "acne-compass",
+      "speciality_key": "dermatology",
+      "title": "Acne Vulgaris Clinical Compass",
+      "description": "Acne Vulgaris: Topical vs Systemic vs Isotretinoin Decision Support",
+      "logo_url": "/manus-storage/acne-compass-logo_10b00f00.png",
+      "coming_soon": false
+    },
+    {
+      "key": "psoriasis-compass",
+      "speciality_key": "dermatology",
+      "title": "Psoriasis Clinical Compass",
+      "description": "Psoriasis: Topical vs Biologic vs TYK2 Inhibitor Decision Support",
+      "logo_url": "/manus-storage/psoriasis-compass-logo_d14a1f8f.png",
+      "coming_soon": false
+    },
+    {
+      "key": "melanoma-compass",
+      "speciality_key": "dermatology",
+      "title": "Melanoma Clinical Compass",
+      "description": "Melanoma: Staging vs Biopsy vs Adjuvant Therapy Decision Support",
+      "logo_url": "/manus-storage/logo-melanoma-compass_96ef9796.png",
+      "coming_soon": true
+    },
+    {
+      "key": "hs-compass",
+      "speciality_key": "dermatology",
+      "title": "Hidradenitis Suppurativa Clinical Compass",
+      "description": "Hidradenitis Suppurativa: Medical vs Surgical vs Biologic Decision Support",
+      "logo_url": "/manus-storage/logo-hs-compass_da0c9d25.png",
+      "coming_soon": true
+    },
+    {
+      "key": "amyloidosis-compass",
+      "speciality_key": "hematology",
+      "title": "Amyloidosis Diagnostic Clinical Compass",
+      "description": "Amyloidosis Diagnostic Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-amyloidosis-white-HAbBZuYpap7REVtBrJSyWg.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "functional-seizures",
+      "speciality_key": "neurology",
+      "title": "Functional Seizures (PNES)",
+      "description": "Diagnosis, Differentiation from Epilepsy, and Treatment — Decision Support",
+      "logo_url": "/manus-storage/logo-functional-seizures-compass_bf13f7ee.png",
+      "coming_soon": false
+    },
+    {
+      "key": "stroke",
+      "speciality_key": "neurology",
+      "title": "Acute Ischemic Stroke",
+      "description": "tPA, Thrombectomy, Anticoagulation, and Secondary Prevention — Decision Support",
+      "logo_url": "/manus-storage/logo-stroke-compass_e0f61811.png",
+      "coming_soon": false
+    },
+    {
+      "key": "migraine",
+      "speciality_key": "neurology",
+      "title": "Migraine",
+      "description": "Acute and Preventive Therapy, CGRP Pathway, Biologic Selection — Decision Support",
+      "logo_url": "/manus-storage/logo-migraine-compass_733be9fe.png",
+      "coming_soon": false
+    },
+    {
+      "key": "multiple-sclerosis",
+      "speciality_key": "neurology",
+      "title": "Multiple Sclerosis",
+      "description": "DMT Selection, Escalation, JC Virus Risk, and BTK Inhibitor Pathway — Decision Support",
+      "logo_url": "/manus-storage/logo-multiple-sclerosis-compass_71c77c43.png",
+      "coming_soon": false
+    },
+    {
+      "key": "parkinsons",
+      "speciality_key": "neurology",
+      "title": "Parkinson's Disease",
+      "description": "Levodopa Timing, DBS Candidacy, Neuroprotection, and Non-Motor Management — Decision Support",
+      "logo_url": "/manus-storage/logo-parkinsons-compass_8e56bbc9.png",
+      "coming_soon": false
+    },
+    {
+      "key": "amd",
+      "speciality_key": "ophthalmology",
+      "title": "Age-Related Macular Degeneration",
+      "description": "Anti-VEGF Selection, Dry AMD Monitoring, and Supplement Therapy — Decision Support",
+      "logo_url": "/manus-storage/logo-amd-compass_8e2b7da9.png",
+      "coming_soon": false
+    },
+    {
+      "key": "high-myopia",
+      "speciality_key": "ophthalmology",
+      "title": "High Myopia / Pathologic Myopia",
+      "description": "Progression Control, Complication Screening, and Surgical Candidacy — Decision Support",
+      "logo_url": "/manus-storage/logo-high-myopia-compass_3735acaf.png",
+      "coming_soon": false
+    },
+    {
+      "key": "glaucoma",
+      "speciality_key": "ophthalmology",
+      "title": "Glaucoma",
+      "description": "Medication vs SLT vs Surgery, Target IOP, and Monitoring — Decision Support",
+      "logo_url": "/manus-storage/logo-glaucoma-compass_5454c94a.png",
+      "coming_soon": false
+    },
+    {
+      "key": "crohns-disease",
+      "speciality_key": "gastroenterology",
+      "title": "Crohn's Disease Clinical Compass",
+      "description": "Biologic & Small Molecule Sequencing, Top-Down Strategy, Treat-to-Target — Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-gi-colon-compass-YARidMn6298LJ3uXyUHUMc.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "ulcerative-colitis",
+      "speciality_key": "gastroenterology",
+      "title": "Ulcerative Colitis Clinical Compass",
+      "description": "Mechanism-Based Biologic Selection, IL-23 / JAK / S1P Sequencing, Colectomy Timing — Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-gi-colon-compass-YARidMn6298LJ3uXyUHUMc.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "masld",
+      "speciality_key": "gastroenterology",
+      "title": "MASLD / MASH Clinical Compass",
+      "description": "Fibrosis Risk Stratification, Resmetirom / GLP-1 Selection, Cardiometabolic Integration — Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-gi-colon-compass-YARidMn6298LJ3uXyUHUMc.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "gastroparesis",
+      "speciality_key": "gastroenterology",
+      "title": "Gastroparesis Clinical Compass",
+      "description": "Diagnostic Testing, Medication Hierarchy, Dietary Management, Shared Decision-Making — Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-gi-colon-compass-YARidMn6298LJ3uXyUHUMc.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "crc-screening",
+      "speciality_key": "gastroenterology",
+      "title": "CRC Screening Clinical Compass",
+      "description": "Age 45 Initiation, Stool-Based vs Colonoscopy Hybrid Strategies, High-Risk Surveillance — Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-gi-colon-compass-YARidMn6298LJ3uXyUHUMc.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "ibd-preventive-care",
+      "speciality_key": "gastroenterology",
+      "title": "IBD Preventive Care Clinical Compass",
+      "description": "Vaccination, Infection Risk Stratification, Cancer Prevention, Portal Vein Thrombosis — Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-gi-colon-compass-YARidMn6298LJ3uXyUHUMc.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "pancreatic-mass",
+      "speciality_key": "gastroenterology",
+      "title": "Pancreatic Mass Evaluation Clinical Compass",
+      "description": "EUS-FNB vs FNA, IPMN Surveillance, Molecular Diagnostics, Resectability — Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-gi-colon-compass-YARidMn6298LJ3uXyUHUMc.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "therapeutic-eus",
+      "speciality_key": "gastroenterology",
+      "title": "Therapeutic EUS Clinical Compass",
+      "description": "EUS-Guided Biliary Drainage, LAMS, EUS-BD vs ERCP vs IR — Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-gi-colon-compass-YARidMn6298LJ3uXyUHUMc.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "chronic-pancreatitis",
+      "speciality_key": "gastroenterology",
+      "title": "Chronic Pancreatitis Clinical Compass",
+      "description": "Endoscopic vs Surgical Drainage, ESWL, PERT, Pain Management — Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-gi-colon-compass-YARidMn6298LJ3uXyUHUMc.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "biliary-strictures",
+      "speciality_key": "gastroenterology",
+      "title": "Biliary Strictures Clinical Compass",
+      "description": "Malignancy Workup, Tissue Acquisition, ERCP vs EUS Sequencing, PSC — Decision Support",
+      "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/logo-gi-colon-compass-YARidMn6298LJ3uXyUHUMc.webp",
+      "coming_soon": false
+    },
+    {
+      "key": "pediatric-immunization",
+      "speciality_key": "pediatrics",
+      "title": "Pediatric Immunization Clinical Compass",
+      "description": "AAP 2026 Catch-Up Schedule, Special Populations, Contraindications — Decision Support",
+      "logo_url": "/manus-storage/logo-pediatrics-compass_cfc8aa75.png",
+      "coming_soon": false
+    },
+    {
+      "key": "bright-futures",
+      "speciality_key": "pediatrics",
+      "title": "Bright Futures Well-Child Clinical Compass",
+      "description": "AAP Bright Futures 2025, Developmental Surveillance, Anticipatory Guidance — Decision Support",
+      "logo_url": "/manus-storage/logo-pediatrics-compass_cfc8aa75.png",
+      "coming_soon": false
+    },
+    {
+      "key": "pediatric-obesity",
+      "speciality_key": "pediatrics",
+      "title": "Pediatric Obesity Clinical Compass",
+      "description": "AAP CPG 2023/2026 Intensive Behavioral Therapy, GLP-1 RA, Bariatric Surgery — Decision Support",
+      "logo_url": "/manus-storage/logo-pediatrics-compass_cfc8aa75.png",
+      "coming_soon": false
+    },
+    {
+      "key": "febrile-infant",
+      "speciality_key": "pediatrics",
+      "title": "Febrile Infant Clinical Compass",
+      "description": "AAP 2021/2025 PECARN Criteria, SBI Risk Stratification, HSV — Decision Support",
+      "logo_url": "/manus-storage/logo-pediatrics-compass_cfc8aa75.png",
+      "coming_soon": false
+    },
+    {
+      "key": "neonatal-hyperbilirubinemia",
+      "speciality_key": "pediatrics",
+      "title": "Neonatal Hyperbilirubinemia Clinical Compass",
+      "description": "AAP 2022 Phototherapy Thresholds, Exchange Transfusion, Neurotoxicity Risk — Decision Support",
+      "logo_url": "/manus-storage/logo-pediatrics-compass_cfc8aa75.png",
+      "coming_soon": false
+    },
+    {
+      "key": "influenza-prevention",
+      "speciality_key": "pediatrics",
+      "title": "Influenza Prevention Clinical Compass",
+      "description": "AAP 2025–2026 Season, Vaccine Selection, Oseltamivir, Baloxavir — Decision Support",
+      "logo_url": "/manus-storage/logo-pediatrics-compass_cfc8aa75.png",
+      "coming_soon": false
+    },
+    {
+      "key": "rsv-prevention",
+      "speciality_key": "pediatrics",
+      "title": "RSV Prevention Clinical Compass",
+      "description": "AAP 2024 Nirsevimab, Palivizumab, Maternal Abrysvo — Decision Support",
+      "logo_url": "/manus-storage/logo-pediatrics-compass_cfc8aa75.png",
+      "coming_soon": false
+    },
+    {
+      "key": "pediatric-mental-health",
+      "speciality_key": "pediatrics",
+      "title": "Pediatric Mental Health Clinical Compass",
+      "description": "AAP 2023/2025 PHQ-9, SCARED, CRAFFT, Suicide Safety Planning — Decision Support",
+      "logo_url": "/manus-storage/logo-pediatrics-compass_cfc8aa75.png",
+      "coming_soon": false
+    },
+    {
+      "key": "rad-onc",
+      "speciality_key": "radiation-oncology",
+      "title": "Radiation Oncology Clinical Compass",
+      "description": "NCCN 2025–2026 & ASTRO guideline-based RT recommendations across 13 disease sites — Decision Support",
+      "logo_url": "/manus-storage/logo-rad-onc-compass_cf65781a.png",
+      "coming_soon": false
+    },
+    {
+      "key": "psychiatry",
+      "speciality_key": "psychiatry",
+      "title": "Psychiatry Clinical Compass",
+      "description": "APA 2025-2026 & VA/DoD guideline-based psychiatric decision support - Decision Support",
+      "logo_url": "/manus-storage/logo-psychiatry-compass_c5af1a48.png",
+      "coming_soon": false
+    },
+    {
+      "key": "tka-compass",
+      "speciality_key": "orthopedics",
+      "title": "Total Knee Arthroplasty Clinical Compass",
+      "description": "Total Knee Arthroplasty Decision Support",
+      "logo_url": "/manus-storage/logo-tka-compass_f220cd75.png",
+      "coming_soon": false
+    },
+    {
+      "key": "tha-compass",
+      "speciality_key": "orthopedics",
+      "title": "Total Hip Arthroplasty Clinical Compass",
+      "description": "Total Hip Arthroplasty Decision Support",
+      "logo_url": "/manus-storage/logo-tha-compass_c5055b2f.png",
+      "coming_soon": false
+    },
+    {
+      "key": "spinal-fusion-compass",
+      "speciality_key": "orthopedics",
+      "title": "Spinal Fusion Clinical Compass",
+      "description": "Spinal Fusion Decision Support",
+      "logo_url": "/manus-storage/logo-spinalfusion-compass_28a30e01.png",
+      "coming_soon": false
+    },
+    {
+      "key": "artificial-disc-compass",
+      "speciality_key": "orthopedics",
+      "title": "Artificial Disc Replacement Clinical Compass",
+      "description": "Artificial Disc Replacement Decision Support",
+      "logo_url": "/manus-storage/logo-artificialdisc-compass_2149a176.png",
+      "coming_soon": false
+    },
+    {
+      "key": "rotator-cuff-compass",
+      "speciality_key": "orthopedics",
+      "title": "Rotator Cuff Repair Clinical Compass",
+      "description": "Rotator Cuff Repair Decision Support",
+      "logo_url": "/manus-storage/logo-rotatorcuff-compass_1f24b3e7.png",
+      "coming_soon": false
+    },
+    {
+      "key": "meniscus-repair-compass",
+      "speciality_key": "orthopedics",
+      "title": "Meniscus Repair Clinical Compass",
+      "description": "Meniscus Repair / Knee Arthroscopy Decision Support",
+      "logo_url": "/manus-storage/logo-meniscusrepair-compass_d60d9a18.png",
+      "coming_soon": false
+    },
+    {
+      "key": "epidural-steroid-compass",
+      "speciality_key": "pain-interventional",
+      "title": "Epidural Steroid Injection Clinical Compass",
+      "description": "Epidural Steroid Injection Decision Support",
+      "logo_url": "/manus-storage/logo-epidural-compass_56348de2.png",
+      "coming_soon": false
+    },
+    {
+      "key": "facet-joint-compass",
+      "speciality_key": "pain-interventional",
+      "title": "Facet Joint Injection Clinical Compass",
+      "description": "Facet Joint Injection / Medial Branch Block Decision Support",
+      "logo_url": "/manus-storage/logo-facetjoint-compass_8b5753e3.png",
+      "coming_soon": false
+    },
+    {
+      "key": "rfa-compass",
+      "speciality_key": "pain-interventional",
+      "title": "Radiofrequency Ablation Clinical Compass",
+      "description": "Radiofrequency Ablation Decision Support",
+      "logo_url": "/manus-storage/logo-rfa-compass_37d5f5fd.png",
+      "coming_soon": false
+    },
+    {
+      "key": "scs-compass",
+      "speciality_key": "pain-interventional",
+      "title": "Spinal Cord Stimulator Clinical Compass",
+      "description": "Spinal Cord Stimulator Trial/Implant Decision Support",
+      "logo_url": "/manus-storage/logo-scs-compass_23bd446b.png",
+      "coming_soon": false
+    },
+    {
+      "key": "pci-compass",
+      "speciality_key": "cardiology",
+      "title": "Elective PCI Clinical Compass",
+      "description": "Elective PCI (Non-ACS) Decision Support",
+      "logo_url": "/manus-storage/pci-compass-logo_de897dba.png",
+      "coming_soon": false
+    },
+    {
+      "key": "af-ablation-compass",
+      "speciality_key": "cardiology",
+      "title": "AF Ablation Clinical Compass",
+      "description": "Atrial Fibrillation Ablation Decision Support",
+      "logo_url": "/manus-storage/afablation-compass-logo_5c8c34de.png",
+      "coming_soon": false
+    },
+    {
+      "key": "laac-compass",
+      "speciality_key": "cardiology",
+      "title": "LAAC / Watchman Clinical Compass",
+      "description": "Left Atrial Appendage Closure Decision Support",
+      "logo_url": "/manus-storage/laac-compass-logo_397e57d7.png",
+      "coming_soon": false
+    },
+    {
+      "key": "bariatric-compass",
+      "speciality_key": "general-surgery",
+      "title": "Bariatric Surgery Clinical Compass",
+      "description": "Bariatric Surgery (Sleeve / Bypass) Decision Support",
+      "logo_url": "/manus-storage/bariatric-compass-logo_470e598b.png",
+      "coming_soon": false
+    },
+    {
+      "key": "cholecystectomy-compass",
+      "speciality_key": "general-surgery",
+      "title": "Cholecystectomy Clinical Compass",
+      "description": "Elective Cholecystectomy Decision Support",
+      "logo_url": "/manus-storage/cholecystectomy-compass-logo_02917c7d.png",
+      "coming_soon": false
+    },
+    {
+      "key": "hernia-compass",
+      "speciality_key": "general-surgery",
+      "title": "Hernia Repair Clinical Compass",
+      "description": "Non-Emergent Hernia Repair Decision Support",
+      "logo_url": "/manus-storage/hernia-compass-logo_c93219c0.png",
+      "coming_soon": false
+    },
+    {
+      "key": "breast-reduction-compass",
+      "speciality_key": "plastics",
+      "title": "Breast Reduction Clinical Compass",
+      "description": "Reduction Mammoplasty Decision Support",
+      "logo_url": "/manus-storage/breast-reduction-compass-logo_b0f3c3a8.png",
+      "coming_soon": false
+    },
+    {
+      "key": "blepharoplasty-compass",
+      "speciality_key": "plastics",
+      "title": "Blepharoplasty / Ptosis Repair Clinical Compass",
+      "description": "Functional Blepharoplasty & Ptosis Repair Decision Support",
+      "logo_url": "/manus-storage/blepharoplasty-compass-logo_48281f64.png",
+      "coming_soon": false
+    }
+  ]
+}

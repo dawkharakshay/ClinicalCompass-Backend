@@ -1,0 +1,30 @@
+{
+  "title": "OSA + Obesity Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "95810, 95811, 95800, 94660, 99213, 99214, 99215, J3490, J3590, 99401",
+      "credentials": "[Credentials]",
+      "icd_codes": "G47.33, E66.01, E66.09, E66.9, Z68.35, Z68.36, Z68.37, Z68.38, Z68.39, Z68.41, I10, I25.10, G47.30",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\nAppeals Department\n{{insurance_name}}\n\nRE: Prior Authorization Appeal — Zepbound (tirzepatide) for Obstructive Sleep Apnea\nPatient: {{patient_name}}\nDate of Birth: {{patient_dob}}\nMember ID: {{member_id}}\nDenial Date: [DENIAL DATE]\nDenial Reason: [DENIAL REASON]\n\nTo Whom It May Concern:\n\n\n\nCLINICAL SUMMARY:\n\nPatient {{patient_name}} presents with the following documented clinical findings supporting medical necessity for Zepbound (tirzepatide) under the FDA-approved OSA indication:\n\n• OSA Severity: [SEVERITY] obstructive sleep apnea, AHI [AHI] events/hr (PSG dated [PSG DATE])\n• Obesity: BMI [BMI] kg/m² (meets FDA threshold of ≥30 kg/m²)\n• No type 2 diabetes mellitus (Zepbound OSA indication requires absence of T2DM)\n• PAP Therapy Status: [PAP STATUS]\n• Prior Weight Loss Attempts: [PRIOR ATTEMPTS]\n\n\nEVIDENCE BASE:\n\nThe clinical evidence supporting Zepbound for this patient includes:\n\n1. SURMOUNT-OSA Phase 3 Trials (Malhotra A, et al. N Engl J Med. 2024;391:1193-205): Two randomized, double-blind, placebo-controlled trials (N=469) demonstrating:\n   - AHI reduction: 47.7–56.2% vs placebo (p<0.001)\n   - OSA-specific hypoxia burden reduction: 61–70% vs placebo (p<0.001)\n   - Body weight reduction: 16–17% vs placebo (p<0.001)\n   - Systolic blood pressure reduction: 3.7–7.6 mmHg vs placebo (p<0.05)\n\n2. FDA Approval (December 20, 2024): Zepbound is the first and only FDA-approved pharmacologic treatment for moderate-to-severe OSA in adults with obesity. The FDA granted Breakthrough Therapy, Priority Review, and Fast Track designations.\n\n3. AASM Position (2024–2025): The American Academy of Sleep Medicine recognizes weight loss as a cornerstone of OSA management and acknowledges GLP-1 receptor agonists as evidence-based adjunct therapy for obesity-related OSA.\n\nCONCLUSION:\n\nBased on the above clinical evidence and FDA approval status, we respectfully request reversal of the denial and approval of Zepbound (tirzepatide) for {{patient_name}}. This patient meets all FDA-approved indication criteria. Continued denial of an FDA-approved, Phase 3 RCT-supported therapy is not consistent with evidence-based coverage standards.\n\nPlease contact our office at your earliest convenience if additional documentation is required.\n\nSincerely,\n\n{{physician_name}}\n{{specialty}}\nNPI: {{npi}}\n\n---\nReferences:\n1. Malhotra A, et al. (SURMOUNT-OSA Investigators). Tirzepatide for the Treatment of Obstructive Sleep Apnea and Obesity. N Engl J Med. 2024;391:1193-205.\n2. Patel SR. Entering a New Era in Sleep-Apnea Treatment (Editorial). N Engl J Med. 2024;391:1248-9.\n3. FDA Press Release. FDA Approves First Medication for Obstructive Sleep Apnea. December 20, 2024. fda.gov.\n4. Eli Lilly. Zepbound (tirzepatide) Prescribing Information. December 2024. pi.lilly.com.\n5. AASM. Obesity Management Resources for Sleep Medicine. Updated March 2026. aasm.org.\n6. Lincoff AM, et al. (SELECT Trial). Semaglutide and Cardiovascular Outcomes in Obesity without Diabetes. N Engl J Med. 2023;389:2221-32."
+  }
+}

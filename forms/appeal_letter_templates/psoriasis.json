@@ -1,0 +1,30 @@
+{
+  "title": "Psoriasis Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "96372",
+      "credentials": "[Credentials]",
+      "icd_codes": "L40.0, L40.5, L40.8, L40.9",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — Biologic Therapy / Small Molecule Therapy for Moderate-to-Severe Psoriasis\nCPT Code(s): 99213, 99214, 96372\nICD-10 Code(s): L40.0, L40.1, L40.4, L40.50, L40.59\nDear Medical Director / Utilization Review Committee,\n\nThis letter serves as an urgent appeal for reconsideration of your denial for Biologic Therapy / Small Molecule Therapy for our patient, {{patient_name}}, born {{patient_dob}}, member ID {{member_id}}.\n\nClinical Summary:\n{{patient_name}} presents with moderate-to-severe psoriasis, characterized by [BRIEF_CLINICAL_DESCRIPTION_OF_PSORIASIS]. Previous treatments, including [PREVIOUS_TREATMENTS_FAILED], have been ineffective or poorly tolerated, leading to persistent disease activity and significant impact on quality of life. The patient's current condition warrants systemic therapy .\n\nGuideline Support:\n1. Psoriasis is a chronic, immune-mediated inflammatory disease requiring systemic therapy for moderate-to-severe cases. (AAD Clinical Practice Guidelines for Psoriasis 2019-2020)\n2. Current guidelines recommend biologic or small molecule therapies for patients failing topical or phototherapy. (EADV Guidelines on Psoriasis 2023)\n3. Patient's condition meets criteria for moderate-to-severe psoriasis, as evidenced by clinical presentation and disease severity scores. (AAD/NPF Guidelines for the Management of Psoriasis with Biologics 2019)\n4. Biologic/small molecule therapy is medically necessary to achieve disease control, improve quality of life, and prevent long-term complications such as psoriatic arthritis. (AAD Clinical Practice Guidelines for Psoriasis 2019-2020)\n5. Delay or denial of appropriate therapy increases risk of disease progression, significant impact on quality of life, and potential for irreversible joint damage if psoriatic arthritis develops. (EADV Guidelines on Psoriasis 2023)\n6. Specific agents such as IL-17, IL-23, or TNF inhibitors are indicated based on the patient's clinical profile, disease characteristics, and previous treatment responses, aligning with current treatment algorithms. (AAD/NPF Guidelines for the Management of Psoriasis with Biologics 2019)\n\nMedical Necessity:\nThe requested Biologic Therapy / Small Molecule Therapy is medically necessary for {{patient_name}} to achieve significant disease clearance and improve quality of life. This treatment aligns with leading dermatological guidelines and is supported by strong evidence for its efficacy in managing moderate-to-severe psoriasis.\n\nRisk Without Treatment:\nWithout appropriate treatment, {{patient_name}} is at high risk for continued disease progression, exacerbation of symptoms, increased risk of comorbidities, and severe impairment of daily activities and overall quality of life. The long-term consequences of untreated or undertreated psoriasis can be debilitating.\n\nRequested Action:\nWe respectfully request that you reconsider your denial and approve coverage for the prescribed Biologic Therapy / Small Molecule Therapy. Prompt approval will allow {{patient_name}} to receive the medically necessary care required to manage their condition and prevent further complications. Please refer to the attached clinical documentation for further details. We are available to discuss this case further at your convenience.\n\n{{additional_clinical_notes}}\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

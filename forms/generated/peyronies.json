@@ -1,0 +1,182 @@
+{
+  "title": "Peyronie's Disease Surgery Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assessment",
+    "logicKey": "peyronies",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "disease-phase",
+        "shortLabel": "Disease Phase",
+        "title": "Disease Phase",
+        "fields": [
+          {
+            "id": "disease-phase",
+            "name": "diseasePhase",
+            "label": "Disease Phase",
+            "type": "select",
+            "required": false,
+            "defaultValue": "chronic",
+            "options": [
+              { "label": "Acute — active pain, changing curvature (<12 months)", "value": "acute" },
+              { "label": "Chronic — stable, pain-free ≥3 months", "value": "chronic" }
+            ]
+          },
+          {
+            "id": "stable-months",
+            "name": "stableMonths",
+            "label": "Months of Stability (no change in curvature)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "sexually-active",
+            "name": "sexuallyActive",
+            "label": "Patient is sexually active (or desires to be)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": true
+          },
+          {
+            "id": "partner-consent",
+            "name": "partnerConsent",
+            "label": "Partner has been counseled and is involved in decision-making",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "deformity-assessment",
+        "shortLabel": "Deformity Assessment",
+        "title": "Deformity Assessment",
+        "fields": [
+          {
+            "id": "curvature-degrees",
+            "name": "curvatureDegrees",
+            "label": "Curvature Angle (degrees)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "unit": "degrees",
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "curvature-direction",
+            "name": "curvatureDirection",
+            "label": "Curvature Direction",
+            "type": "select",
+            "required": false,
+            "defaultValue": "dorsal",
+            "options": [
+              { "label": "Dorsal (upward)", "value": "dorsal" },
+              { "label": "Ventral (downward)", "value": "ventral" },
+              { "label": "Lateral (left or right)", "value": "lateral" },
+              { "label": "Complex / multiplanar", "value": "complex" }
+            ]
+          },
+          {
+            "id": "penis-shortening-cm",
+            "name": "penisShorteningCm",
+            "label": "Penile Shortening (cm from baseline)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "unit": "cm",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "hinge",
+            "name": "hinge",
+            "label": "Hinge deformity (buckling/instability at plaque)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "hourglass",
+            "name": "hourglass",
+            "label": "Hourglass deformity (narrowing/indentation)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "erectile-function",
+        "shortLabel": "Erectile Function",
+        "title": "Erectile Function",
+        "fields": [
+          {
+            "id": "er-dysfunction",
+            "name": "erDysfunction",
+            "label": "Erectile Dysfunction Severity",
+            "type": "select",
+            "required": false,
+            "defaultValue": "none",
+            "options": [
+              { "label": "None — normal erections", "value": "none" },
+              { "label": "Mild — adequate for intercourse with/without PDE5i", "value": "mild" },
+              { "label": "Moderate — inconsistent, PDE5i partially effective", "value": "moderate" },
+              { "label": "Severe — unable to achieve penetration even with PDE5i", "value": "severe" }
+            ]
+          },
+          {
+            "id": "iief5-score",
+            "name": "iief5Score",
+            "label": "IIEF-5 Score (0–25)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "min": 0,
+            "max": 25,
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "pde-inhibitor-response",
+            "name": "pdeInhibitorResponse",
+            "label": "Adequate response to PDE5 inhibitor (sildenafil/tadalafil)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": true
+          }
+        ]
+      },
+      {
+        "id": "prior-treatment",
+        "shortLabel": "Prior Treatment",
+        "title": "Prior Treatment",
+        "fields": [
+          {
+            "id": "prior-collagenase-injections",
+            "name": "priorCollagenaseInjections",
+            "label": "Prior collagenase clostridium histolyticum (Xiaflex) injections",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "prior-surgery",
+            "name": "priorSurgery",
+            "label": "Prior Peyronie's surgery (recurrence)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "aua-algorithm-summary",
+            "type": "alert",
+            "severity": "info",
+            "text": "AUA Surgical Algorithm Summary: • Severe ED + PD → Penile Prosthesis (IPP) • Curvature ≤60°, no hinge, adequate erections → Plication (Nesbit) • Curvature >60°, hinge/hourglass, or shortening → Grafting (Lue procedure) • Acute phase or <12 months stable → No surgery"
+          }
+        ]
+      }
+    ]
+  }
+}

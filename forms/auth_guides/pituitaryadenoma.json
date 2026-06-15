@@ -1,0 +1,374 @@
+{
+  "title": "Pituitary Adenoma Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "PituitaryAdenomaAuthGuide.tsx",
+    "title": "Pituitary Adenoma Clinical Compass",
+    "subtitle": "Transsphenoidal Surgery, SRS, Octreotide Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "61548",
+        "description": "Hypophysectomy or excision of pituitary tumor, transnasal or transsphenoidal approach",
+        "device": "Surgical instruments, endoscope",
+        "access": "Transnasal/Transsphenoidal",
+        "rvu": "35.00",
+        "includes": [
+          "Surgical approach and closure",
+          "Intraoperative imaging guidance (if not separately billable)"
+        ],
+        "note": "This code is for the surgical removal of a pituitary tumor via a transnasal or transsphenoidal approach. It does not include stereotactic guidance, which may be separately coded if applicable."
+      },
+      {
+        "code": "62165",
+        "description": "Neuroendoscopy, intracranial; with excision of pituitary tumor, transnasal or transsphenoidal approach",
+        "device": "Neuroendoscope, surgical instruments",
+        "access": "Transnasal/Transsphenoidal",
+        "rvu": "38.50",
+        "includes": [
+          "Endoscopic visualization and tumor excision",
+          "Approach and closure"
+        ],
+        "note": "This code specifically describes neuroendoscopic excision of a pituitary tumor via a transnasal or transsphenoidal approach. Often co-billed with ENT for approach."
+      },
+      {
+        "code": "77371",
+        "description": "Radiation treatment delivery, stereotactic radiosurgery, cranial, linear accelerator based; single session",
+        "device": "Linear accelerator, stereotactic frame/mask",
+        "access": "External beam radiation",
+        "rvu": "25.00",
+        "includes": [
+          "Treatment planning",
+          "Dosimetry",
+          "Image guidance and setup verification"
+        ],
+        "note": "This code is for the technical component of stereotactic radiosurgery (SRS) for cranial lesions, typically performed in a single session. Physician services are coded separately."
+      },
+      {
+        "code": "J2353",
+        "description": "Injection, octreotide, depot form for intramuscular injection, 1 mg",
+        "device": "N/A",
+        "access": "Intramuscular injection",
+        "rvu": "0.00",
+        "includes": [
+          "Drug supply (1mg)"
+        ],
+        "note": "HCPCS code for depot form of octreotide for intramuscular injection. Administration code (e.g., 96372) should be billed separately."
+      },
+      {
+        "code": "J2354",
+        "description": "Injection, octreotide, non-depot form for subcutaneous or intravenous injection, 25 mcg",
+        "device": "N/A",
+        "access": "Subcutaneous or intravenous injection",
+        "rvu": "0.00",
+        "includes": [
+          "Drug supply (25mcg)"
+        ],
+        "note": "HCPCS code for non-depot form of octreotide for subcutaneous or intravenous injection. Administration code (e.g., 96372) should be billed separately."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "D35.2",
+        "description": "Benign neoplasm of pituitary gland",
+        "notes": "Primary diagnosis for pituitary adenoma. Specificity may be required based on tumor type (e.g., secreting vs. non-secreting).",
+        "required": true
+      },
+      {
+        "code": "E22.0",
+        "description": "Acromegaly and pituitary gigantism",
+        "notes": "Use if the pituitary adenoma causes excessive growth hormone secretion.",
+        "required": false
+      },
+      {
+        "code": "E24.0",
+        "description": "Cushing's disease, pituitary-dependent ACTH hypersecretion",
+        "notes": "Use if the pituitary adenoma causes excessive ACTH secretion leading to Cushing's disease.",
+        "required": false
+      },
+      {
+        "code": "E23.0",
+        "description": "Hypopituitarism",
+        "notes": "Use if the pituitary adenoma causes deficiency of pituitary hormones.",
+        "required": false
+      },
+      {
+        "code": "G23.0",
+        "description": "Hallervorden-Spatz disease",
+        "notes": "Consider for specific neurological manifestations, if applicable.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with Medical Necessity",
+        "overview": "Medicare covers medically necessary treatments for pituitary adenomas, including transsphenoidal surgery, stereotactic radiosurgery (SRS), and certain pharmacotherapies like octreotide. Coverage is subject to established medical necessity criteria and may vary by specific plan (e.g., Medicare Advantage).",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required: No Prior Auth (FFS)",
+              "Generally, surgical and radiation treatments for pituitary adenomas are covered as medically necessary. However, specific drug therapies like octreotide may require prior authorization based on local coverage determinations (LCDs) or national coverage determinations (NCDs)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Surgical Excision (CPT 61548, 62165)",
+            "items": [
+              "Symptomatic pituitary adenoma (e.g., visual field defects, hormonal hypersecretion, mass effect).",
+              "Failure of conservative management (if applicable).",
+              "Tumor size and location amenable to surgical resection."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Stereotactic Radiosurgery (SRS) (CPT 77371)",
+            "items": [
+              "Pituitary adenoma (benign brain tumor) [7].",
+              "Lesion size < 5 cm (generally).",
+              "Used as primary treatment, boost, or salvage therapy."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Octreotide Therapy (HCPCS J2353, J2354)",
+            "items": [
+              "Diagnosis of acromegaly or neuroendocrine tumors (e.g., carcinoid tumors, VIPomas) associated with pituitary adenoma. [8, 9, 10]",
+              "Documented evidence of hormonal hypersecretion (e.g., elevated IGF-1 for acromegaly).",
+              "Prior authorization may be required based on specific Medicare Administrative Contractor (MAC) policies."
+            ]
+          },
+          {
+            "heading": "Required Documentation — General",
+            "items": [
+              "Detailed clinical notes supporting diagnosis and medical necessity."
+            ]
+          },
+          {
+            "heading": "Required Documentation — Surgical/SRS",
+            "items": [
+              "Pathology reports (for tumor confirmation).",
+              "Pre- and post-treatment imaging (MRI, CT).",
+              "Ophthalmology reports (for visual field defects)."
+            ]
+          },
+          {
+            "heading": "Required Documentation — Pharmacotherapy",
+            "items": [
+              "Endocrinology consultation notes."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims with appropriate CPT/HCPCS and ICD-10 codes.",
+              "For octreotide, verify specific MAC requirements for prior authorization and documentation."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity.",
+              "Incomplete or missing clinical documentation.",
+              "Incorrect coding or billing.",
+              "Failure to obtain prior authorization for specific drug therapies."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Reimbursement for pituitary adenoma treatments is generally favorable when medical necessity is clearly established and documented. However, reimbursement rates can vary, and appeals may be necessary for denials related to documentation or coding."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Ensure all documentation clearly supports the medical necessity of the chosen treatment.",
+              "Verify specific Medicare Advantage plan requirements, as they may differ from traditional Medicare.",
+              "For octreotide, check the relevant Local Coverage Determinations (LCDs) for specific indications and prior authorization rules."
+            ]
+          }
+        ],
+        "knownPolicies": []
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Requires Prior Authorization",
+        "overview": "Medicaid provides coverage for medically necessary treatments of pituitary adenomas, but prior authorization is a critical step for most services. Coverage criteria are often similar to Medicare but can have additional state-specific requirements and limitations.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required: Prior Auth Required",
+              "Medicaid coverage for pituitary adenoma treatments, including surgery, radiation, and medication, almost always requires prior authorization. Policies vary significantly by state."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — General",
+            "items": [
+              "Diagnosis of pituitary adenoma with documented symptoms or hormonal imbalance.",
+              "Treatment plan must be deemed medically necessary by a qualified healthcare provider."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Pharmacotherapy (e.g., Octreotide)",
+            "items": [
+              "Specific indications for use (e.g., acromegaly, neuroendocrine tumors).",
+              "Failure of alternative, less costly treatments (if applicable).",
+              "Adherence to state-specific formulary and prior authorization guidelines."
+            ]
+          },
+          {
+            "heading": "Required Documentation — All Services",
+            "items": [
+              "Comprehensive medical history and physical examination.",
+              "Relevant laboratory results (e.g., hormone levels).",
+              "Imaging studies (MRI, CT).",
+              "Consultation notes from specialists (endocrinologist, neurosurgeon, radiation oncologist)."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Obtain prior authorization before rendering services.",
+              "Submit claims with all required documentation and authorization numbers."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization.",
+              "Failure to meet state-specific medical necessity criteria.",
+              "Incomplete or insufficient documentation.",
+              "Off-label use of medications without strong clinical justification."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicaid reimbursement rates are generally lower than Medicare or private insurance. Timely and accurate submission of prior authorizations and claims is crucial for successful reimbursement."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Thoroughly understand and adhere to your state's Medicaid policies for pituitary adenoma.",
+              "Initiate prior authorization requests well in advance of scheduled procedures or medication starts.",
+              "Maintain meticulous documentation to support medical necessity."
+            ]
+          }
+        ],
+        "knownPolicies": []
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Requires Prior Authorization",
+        "overview": "Private insurance coverage for pituitary adenoma treatments is typically comprehensive but is highly dependent on the specific plan benefits and medical policy. Prior authorization is almost always required for major interventions and specialized medications.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required: Prior Auth Required",
+              "Most private insurance plans require prior authorization for surgical procedures, radiation therapy, and high-cost medications like octreotide for pituitary adenomas. Coverage policies vary widely by plan and insurer."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — General",
+            "items": [
+              "Diagnosis of pituitary adenoma confirmed by imaging and/or pathology.",
+              "Symptoms or complications necessitating intervention.",
+              "Treatment aligns with evidence-based medical guidelines."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Pharmacotherapy (e.g., Octreotide)",
+            "items": [
+              "Documented hormonal hypersecretion or tumor growth.",
+              "Trial and failure of less aggressive treatments (if applicable).",
+              "Adherence to specific insurer's clinical policy bulletins."
+            ]
+          },
+          {
+            "heading": "Required Documentation — All Services",
+            "items": [
+              "Physician's orders and progress notes.",
+              "Consultation reports from relevant specialists.",
+              "Diagnostic test results (imaging, lab work)."
+            ]
+          },
+          {
+            "heading": "Required Documentation — Prior Authorization",
+            "items": [
+              "Completed prior authorization forms with all requested clinical information."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization requests as per insurer's guidelines.",
+              "Ensure all CPT/HCPCS and ICD-10 codes are accurate and supported by documentation."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization or denial of authorization.",
+              "Treatment deemed experimental or investigational.",
+              "Not meeting specific medical necessity criteria outlined in the policy.",
+              "Inadequate or missing clinical documentation."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Private insurance typically offers better reimbursement rates than Medicare or Medicaid, but administrative burden for prior authorizations can be significant. Appeals processes are available for denied claims."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Review the specific private insurance plan's clinical policy bulletins for pituitary adenoma.",
+              "Pre-verify benefits and eligibility before providing services.",
+              "Document all clinical findings and rationale for treatment thoroughly."
+            ]
+          }
+        ],
+        "knownPolicies": []
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment (navigation button to /pituitaryadenoma)",
+        "href": "/pituitaryadenoma"
+      }
+    ],
+    "raw": {
+      "markdown": "# Pituitary Adenoma Clinical Compass\n\n_Subtitle: Transsphenoidal Surgery, SRS, Octreotide Insurance Authorization Guide_\n\n[Button] Back to Assessment (navigates to /pituitaryadenoma)\n\n## Procedure Codes (CPT)\n\n### CPT 61548 — RVU 35.00\nHypophysectomy or excision of pituitary tumor, transnasal or transsphenoidal approach\nDevice/Access: Surgical instruments, endoscope\nIncluded in this code (do NOT bill separately):\n- Surgical approach and closure\n- Intraoperative imaging guidance (if not separately billable)\nNote: This code is for the surgical removal of a pituitary tumor via a transnasal or transsphenoidal approach. It does not include stereotactic guidance, which may be separately coded if applicable.\n\n### CPT 62165 — RVU 38.50\nNeuroendoscopy, intracranial; with excision of pituitary tumor, transnasal or transsphenoidal approach\nDevice/Access: Neuroendoscope, surgical instruments\nIncluded in this code (do NOT bill separately):\n- Endoscopic visualization and tumor excision\n- Approach and closure\nNote: This code specifically describes neuroendoscopic excision of a pituitary tumor via a transnasal or transsphenoidal approach. Often co-billed with ENT for approach.\n\n### CPT 77371 — RVU 25.00\nRadiation treatment delivery, stereotactic radiosurgery, cranial, linear accelerator based; single session\nDevice/Access: Linear accelerator, stereotactic frame/mask\nIncluded in this code (do NOT bill separately):\n- Treatment planning\n- Dosimetry\n- Image guidance and setup verification\nNote: This code is for the technical component of stereotactic radiosurgery (SRS) for cranial lesions, typically performed in a single session. Physician services are coded separately.\n\n### CPT J2353 — RVU 0.00\nInjection, octreotide, depot form for intramuscular injection, 1 mg\nDevice/Access: Intramuscular injection (Device N/A)\nIncluded in this code (do NOT bill separately):\n- Drug supply (1mg)\nNote: HCPCS code for depot form of octreotide for intramuscular injection. Administration code (e.g., 96372) should be billed separately.\n\n### CPT J2354 — RVU 0.00\nInjection, octreotide, non-depot form for subcutaneous or intravenous injection, 25 mcg\nDevice/Access: Subcutaneous or intravenous injection (Device N/A)\nIncluded in this code (do NOT bill separately):\n- Drug supply (25mcg)\nNote: HCPCS code for non-depot form of octreotide for subcutaneous or intravenous injection. Administration code (e.g., 96372) should be billed separately.\n\n## ICD-10 Diagnosis Codes\n\n- D35.2 (Primary) — Benign neoplasm of pituitary gland. Primary diagnosis for pituitary adenoma. Specificity may be required based on tumor type (e.g., secreting vs. non-secreting).\n- E22.0 — Acromegaly and pituitary gigantism. Use if the pituitary adenoma causes excessive growth hormone secretion.\n- E24.0 — Cushing's disease, pituitary-dependent ACTH hypersecretion. Use if the pituitary adenoma causes excessive ACTH secretion leading to Cushing's disease.\n- E23.0 — Hypopituitarism. Use if the pituitary adenoma causes deficiency of pituitary hormones.\n- G23.0 — Hallervorden-Spatz disease. Consider for specific neurological manifestations, if applicable.\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\nStatus badges: No Prior Auth (FFS); Covered with Medical Necessity\nPrior Auth Note: Generally, surgical and radiation treatments for pituitary adenomas are covered as medically necessary. However, specific drug therapies like octreotide may require prior authorization based on local coverage determinations (LCDs) or national coverage determinations (NCDs).\nOverview: Medicare covers medically necessary treatments for pituitary adenomas, including transsphenoidal surgery, stereotactic radiosurgery (SRS), and certain pharmacotherapies like octreotide. Coverage is subject to established medical necessity criteria and may vary by specific plan (e.g., Medicare Advantage).\n\nCoverage Criteria:\n- Surgical Excision (CPT 61548, 62165):\n  - Symptomatic pituitary adenoma (e.g., visual field defects, hormonal hypersecretion, mass effect).\n  - Failure of conservative management (if applicable).\n  - Tumor size and location amenable to surgical resection.\n- Stereotactic Radiosurgery (SRS) (CPT 77371):\n  - Pituitary adenoma (benign brain tumor) [7].\n  - Lesion size < 5 cm (generally).\n  - Used as primary treatment, boost, or salvage therapy.\n- Octreotide Therapy (HCPCS J2353, J2354):\n  - Diagnosis of acromegaly or neuroendocrine tumors (e.g., carcinoid tumors, VIPomas) associated with pituitary adenoma. [8, 9, 10]\n  - Documented evidence of hormonal hypersecretion (e.g., elevated IGF-1 for acromegaly).\n  - Prior authorization may be required based on specific Medicare Administrative Contractor (MAC) policies.\n\nRequired Documentation:\n- General:\n  - Detailed clinical notes supporting diagnosis and medical necessity.\n- Surgical/SRS:\n  - Pathology reports (for tumor confirmation).\n  - Pre- and post-treatment imaging (MRI, CT).\n  - Ophthalmology reports (for visual field defects).\n- Pharmacotherapy:\n  - Endocrinology consultation notes.\n\nSubmission Process:\n1. Submit claims with appropriate CPT/HCPCS and ICD-10 codes.\n2. For octreotide, verify specific MAC requirements for prior authorization and documentation.\n\nCommon Denial Reasons:\n- Lack of documented medical necessity.\n- Incomplete or missing clinical documentation.\n- Incorrect coding or billing.\n- Failure to obtain prior authorization for specific drug therapies.\n\nReimbursement Note: Reimbursement for pituitary adenoma treatments is generally favorable when medical necessity is clearly established and documented. However, reimbursement rates can vary, and appeals may be necessary for denials related to documentation or coding.\n\nAuthorization Tips:\n- Ensure all documentation clearly supports the medical necessity of the chosen treatment.\n- Verify specific Medicare Advantage plan requirements, as they may differ from traditional Medicare.\n- For octreotide, check the relevant Local Coverage Determinations (LCDs) for specific indications and prior authorization rules.\n\n### Medicaid\nStatus badges: Prior Auth Required; Requires Prior Authorization\nPrior Auth Note: Medicaid coverage for pituitary adenoma treatments, including surgery, radiation, and medication, almost always requires prior authorization. Policies vary significantly by state.\nOverview: Medicaid provides coverage for medically necessary treatments of pituitary adenomas, but prior authorization is a critical step for most services. Coverage criteria are often similar to Medicare but can have additional state-specific requirements and limitations.\n\nCoverage Criteria:\n- General:\n  - Diagnosis of pituitary adenoma with documented symptoms or hormonal imbalance.\n  - Treatment plan must be deemed medically necessary by a qualified healthcare provider.\n- Pharmacotherapy (e.g., Octreotide):\n  - Specific indications for use (e.g., acromegaly, neuroendocrine tumors).\n  - Failure of alternative, less costly treatments (if applicable).\n  - Adherence to state-specific formulary and prior authorization guidelines.\n\nRequired Documentation:\n- All Services:\n  - Comprehensive medical history and physical examination.\n  - Relevant laboratory results (e.g., hormone levels).\n  - Imaging studies (MRI, CT).\n  - Consultation notes from specialists (endocrinologist, neurosurgeon, radiation oncologist).\n\nSubmission Process:\n1. Obtain prior authorization before rendering services.\n2. Submit claims with all required documentation and authorization numbers.\n\nCommon Denial Reasons:\n- Lack of prior authorization.\n- Failure to meet state-specific medical necessity criteria.\n- Incomplete or insufficient documentation.\n- Off-label use of medications without strong clinical justification.\n\nReimbursement Note: Medicaid reimbursement rates are generally lower than Medicare or private insurance. Timely and accurate submission of prior authorizations and claims is crucial for successful reimbursement.\n\nAuthorization Tips:\n- Thoroughly understand and adhere to your state's Medicaid policies for pituitary adenoma.\n- Initiate prior authorization requests well in advance of scheduled procedures or medication starts.\n- Maintain meticulous documentation to support medical necessity.\n\n### Private Insurance\nStatus badges: Prior Auth Required; Requires Prior Authorization\nPrior Auth Note: Most private insurance plans require prior authorization for surgical procedures, radiation therapy, and high-cost medications like octreotide for pituitary adenomas. Coverage policies vary widely by plan and insurer.\nOverview: Private insurance coverage for pituitary adenoma treatments is typically comprehensive but is highly dependent on the specific plan benefits and medical policy. Prior authorization is almost always required for major interventions and specialized medications.\n\nCoverage Criteria:\n- General:\n  - Diagnosis of pituitary adenoma confirmed by imaging and/or pathology.\n  - Symptoms or complications necessitating intervention.\n  - Treatment aligns with evidence-based medical guidelines.\n- Pharmacotherapy (e.g., Octreotide):\n  - Documented hormonal hypersecretion or tumor growth.\n  - Trial and failure of less aggressive treatments (if applicable).\n  - Adherence to specific insurer's clinical policy bulletins.\n\nRequired Documentation:\n- All Services:\n  - Physician's orders and progress notes.\n  - Consultation reports from relevant specialists.\n  - Diagnostic test results (imaging, lab work).\n- Prior Authorization:\n  - Completed prior authorization forms with all requested clinical information.\n\nSubmission Process:\n1. Submit prior authorization requests as per insurer's guidelines.\n2. Ensure all CPT/HCPCS and ICD-10 codes are accurate and supported by documentation.\n\nCommon Denial Reasons:\n- Lack of prior authorization or denial of authorization.\n- Treatment deemed experimental or investigational.\n- Not meeting specific medical necessity criteria outlined in the policy.\n- Inadequate or missing clinical documentation.\n\nReimbursement Note: Private insurance typically offers better reimbursement rates than Medicare or Medicaid, but administrative burden for prior authorizations can be significant. Appeals processes are available for denied claims.\n\nAuthorization Tips:\n- Review the specific private insurance plan's clinical policy bulletins for pituitary adenoma.\n- Pre-verify benefits and eligibility before providing services.\n- Document all clinical findings and rationale for treatment thoroughly.\n\n_Note: Known Payer Policies table is rendered only when knownPolicies has entries; all three payers have empty knownPolicies arrays in this source, so no policy rows are present._\n",
+      "tables": [
+        {
+          "name": "Procedure Codes (CPT)",
+          "header": ["CPT Code", "RVU", "Description", "Device/Access", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            ["61548", "35.00", "Hypophysectomy or excision of pituitary tumor, transnasal or transsphenoidal approach", "Surgical instruments, endoscope; Transnasal/Transsphenoidal", "Surgical approach and closure; Intraoperative imaging guidance (if not separately billable)", "This code is for the surgical removal of a pituitary tumor via a transnasal or transsphenoidal approach. It does not include stereotactic guidance, which may be separately coded if applicable."],
+            ["62165", "38.50", "Neuroendoscopy, intracranial; with excision of pituitary tumor, transnasal or transsphenoidal approach", "Neuroendoscope, surgical instruments; Transnasal/Transsphenoidal", "Endoscopic visualization and tumor excision; Approach and closure", "This code specifically describes neuroendoscopic excision of a pituitary tumor via a transnasal or transsphenoidal approach. Often co-billed with ENT for approach."],
+            ["77371", "25.00", "Radiation treatment delivery, stereotactic radiosurgery, cranial, linear accelerator based; single session", "Linear accelerator, stereotactic frame/mask; External beam radiation", "Treatment planning; Dosimetry; Image guidance and setup verification", "This code is for the technical component of stereotactic radiosurgery (SRS) for cranial lesions, typically performed in a single session. Physician services are coded separately."],
+            ["J2353", "0.00", "Injection, octreotide, depot form for intramuscular injection, 1 mg", "N/A; Intramuscular injection", "Drug supply (1mg)", "HCPCS code for depot form of octreotide for intramuscular injection. Administration code (e.g., 96372) should be billed separately."],
+            ["J2354", "0.00", "Injection, octreotide, non-depot form for subcutaneous or intravenous injection, 25 mcg", "N/A; Subcutaneous or intravenous injection", "Drug supply (25mcg)", "HCPCS code for non-depot form of octreotide for subcutaneous or intravenous injection. Administration code (e.g., 96372) should be billed separately."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required (Primary)"],
+          "rows": [
+            ["D35.2", "Benign neoplasm of pituitary gland", "Primary diagnosis for pituitary adenoma. Specificity may be required based on tumor type (e.g., secreting vs. non-secreting).", "true"],
+            ["E22.0", "Acromegaly and pituitary gigantism", "Use if the pituitary adenoma causes excessive growth hormone secretion.", "false"],
+            ["E24.0", "Cushing's disease, pituitary-dependent ACTH hypersecretion", "Use if the pituitary adenoma causes excessive ACTH secretion leading to Cushing's disease.", "false"],
+            ["E23.0", "Hypopituitarism", "Use if the pituitary adenoma causes deficiency of pituitary hormones.", "false"],
+            ["G23.0", "Hallervorden-Spatz disease", "Consider for specific neurological manifestations, if applicable.", "false"]
+          ]
+        }
+      ]
+    }
+  }
+}

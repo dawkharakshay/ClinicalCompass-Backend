@@ -1,0 +1,308 @@
+{
+  "title": "Spine Antithrombotic Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "spineantithrombotic",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "procedure-profile",
+        "shortLabel": "Procedure & Antithrombotic Profile",
+        "title": "Procedure & Antithrombotic Profile",
+        "fields": [
+          {
+            "id": "procedure-type",
+            "name": "procedureType",
+            "label": "Spine Procedure Type",
+            "type": "select",
+            "required": false,
+            "defaultValue": "lumbar_fusion",
+            "options": [
+              { "label": "Lumbar Decompression (Microdiscectomy, Laminectomy)", "value": "lumbar_decompression" },
+              { "label": "Lumbar Fusion (TLIF, PLIF, XLIF, ALIF)", "value": "lumbar_fusion" },
+              { "label": "Cervical Anterior (ACDF, Corpectomy)", "value": "cervical_anterior" },
+              { "label": "Cervical Posterior (Laminectomy, Fusion)", "value": "cervical_posterior" },
+              { "label": "Thoracic Spine", "value": "thoracic" },
+              { "label": "Complex Multilevel (≥3 levels, Revision, Deformity)", "value": "complex_multilevel" },
+              { "label": "Minimally Invasive (MIS TLIF, Endoscopic)", "value": "minimally_invasive" }
+            ]
+          },
+          {
+            "id": "emergency-procedure",
+            "name": "emergencyProcedure",
+            "label": "Emergency / Urgent Procedure",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "estimated-blood-loss-high",
+            "name": "estimatedBloodLossHigh",
+            "label": "Expected High Blood Loss (> 500 mL)",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "current-anticoagulant",
+            "name": "currentAnticoagulant",
+            "label": "Current Antithrombotic Agent",
+            "type": "select",
+            "required": false,
+            "defaultValue": "apixaban",
+            "options": [
+              { "label": "None (No antithrombotic therapy)", "value": "none" },
+              { "label": "Aspirin 81 mg", "value": "aspirin_81" },
+              { "label": "Aspirin 325 mg", "value": "aspirin_325" },
+              { "label": "Clopidogrel (Plavix)", "value": "clopidogrel" },
+              { "label": "Ticagrelor (Brilinta)", "value": "ticagrelor" },
+              { "label": "Prasugrel (Effient)", "value": "prasugrel" },
+              { "label": "DAPT (Aspirin + P2Y12 inhibitor)", "value": "aspirin_plus_p2y12" },
+              { "label": "Apixaban (Eliquis)", "value": "apixaban" },
+              { "label": "Rivaroxaban (Xarelto)", "value": "rivaroxaban" },
+              { "label": "Dabigatran (Pradaxa)", "value": "dabigatran" },
+              { "label": "Edoxaban (Savaysa)", "value": "edoxaban" },
+              { "label": "Warfarin (Coumadin)", "value": "warfarin" },
+              { "label": "LMWH (Enoxaparin, Dalteparin)", "value": "lmwh" },
+              { "label": "Unfractionated Heparin (IV)", "value": "heparin_iv" }
+            ]
+          },
+          {
+            "id": "indication-for-anticoagulation",
+            "name": "indicationForAnticoagulation",
+            "label": "Indication for Anticoagulation",
+            "type": "select",
+            "required": false,
+            "defaultValue": "af_moderate_risk",
+            "visibleWhen": { "field": "currentAnticoagulant", "op": "ne", "value": "none" },
+            "options": [
+              { "label": "Atrial Fibrillation — Low risk (CHA₂DS₂-VASc 0–1)", "value": "af_low_risk" },
+              { "label": "Atrial Fibrillation — Moderate risk (CHA₂DS₂-VASc 2–3)", "value": "af_moderate_risk" },
+              { "label": "Atrial Fibrillation — High risk (CHA₂DS₂-VASc ≥4)", "value": "af_high_risk" },
+              { "label": "Mechanical Heart Valve — Low risk (Aortic bileaflet)", "value": "mechanical_heart_valve_low" },
+              { "label": "Mechanical Heart Valve — High risk (Mitral, caged-ball)", "value": "mechanical_heart_valve_high" },
+              { "label": "VTE — Acute (within 3 months)", "value": "vte_acute" },
+              { "label": "VTE — Chronic (more than 3 months ago)", "value": "vte_chronic" },
+              { "label": "Hypercoagulable State (APS, Factor V Leiden)", "value": "hypercoagulable" },
+              { "label": "Stable CAD on Antiplatelet", "value": "cad_stable" },
+              { "label": "Recent ACS (within 12 months)", "value": "recent_acs" },
+              { "label": "Recent PCI — Bare Metal Stent (within 1 month)", "value": "recent_pci_bare_metal" },
+              { "label": "Recent PCI — Drug-Eluting Stent (within 6 months)", "value": "recent_pci_des" },
+              { "label": "Prior Stroke / TIA", "value": "prior_stroke_tia" },
+              { "label": "Peripheral Arterial Disease", "value": "pad_peripheral" },
+              { "label": "None / Prophylactic only", "value": "none" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "risk-factors",
+        "shortLabel": "Risk Factors",
+        "title": "VTE & Bleeding Risk Factors",
+        "fields": [
+          {
+            "id": "vte-risk-level",
+            "name": "vteRiskLevel",
+            "label": "VTE Risk Level",
+            "type": "select",
+            "required": false,
+            "defaultValue": "moderate",
+            "options": [
+              { "label": "Low — Minor spine surgery, ambulatory, no VTE risk factors", "value": "low" },
+              { "label": "Moderate — Lumbar fusion, ≥1 VTE risk factor", "value": "moderate" },
+              { "label": "High — Complex multilevel, cancer, prior VTE, immobility", "value": "high" },
+              { "label": "Very High — Multiple high-risk factors combined", "value": "very_high" }
+            ]
+          },
+          {
+            "id": "prior-vte",
+            "name": "priorVTE",
+            "label": "Prior VTE (DVT or PE)",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "active-cancer",
+            "name": "activeCancer",
+            "label": "Active Cancer",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "immobility",
+            "name": "immobility",
+            "label": "Preoperative Immobility (> 3 days)",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "obesity",
+            "name": "obesity",
+            "label": "Obesity (BMI > 30)",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "age65plus",
+            "name": "age65plus",
+            "label": "Age ≥ 65 years",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "bleeding-risk-level",
+            "name": "bleedingRiskLevel",
+            "label": "Bleeding Risk Level",
+            "type": "select",
+            "required": false,
+            "defaultValue": "moderate",
+            "options": [
+              { "label": "Low — No anticoagulation, no coagulopathy", "value": "low" },
+              { "label": "Moderate — Anticoagulation, minor coagulopathy", "value": "moderate" },
+              { "label": "High — Epidural hematoma risk, significant coagulopathy", "value": "high" }
+            ]
+          },
+          {
+            "id": "prior-spinal-epidural-hematoma",
+            "name": "priorSpinalEpiduralHematoma",
+            "label": "Prior Spinal Epidural Hematoma",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "coagulopathy",
+            "name": "coagulopathy",
+            "label": "Coagulopathy (Platelet < 100K or INR > 1.5)",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "patient-factors",
+        "shortLabel": "Patient Factors",
+        "title": "Patient Factors",
+        "fields": [
+          {
+            "id": "age-years",
+            "name": "ageYears",
+            "label": "Age (years)",
+            "type": "slider",
+            "required": false,
+            "defaultValue": 0,
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "years"
+          },
+          {
+            "id": "weight-kg",
+            "name": "weightKg",
+            "label": "Weight (kg)",
+            "type": "slider",
+            "required": false,
+            "defaultValue": 0,
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "kg"
+          },
+          {
+            "id": "renal-impairment",
+            "name": "renalImpairment",
+            "label": "Renal Impairment (CrCl < 30 mL/min)",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "hepatic-impairment",
+            "name": "hepaticImpairment",
+            "label": "Hepatic Impairment (Child-Pugh B/C)",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "bridging-required",
+            "name": "bridgingRequired",
+            "label": "Bridging Therapy Being Considered",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "last-dose-anticoagulant",
+            "name": "lastDoseAnticoagulant",
+            "label": "Last Dose of Anticoagulant (days before surgery)",
+            "type": "slider",
+            "required": false,
+            "defaultValue": 0,
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "days",
+            "visibleWhen": { "field": "bridgingRequired", "op": "truthy" }
+          }
+        ]
+      }
+    ]
+  }
+}

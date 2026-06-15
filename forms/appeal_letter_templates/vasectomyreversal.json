@@ -1,0 +1,30 @@
+{
+  "title": "Vasectomy Reversal Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "55400, 54900, 54901, 55250, 76872, 89300",
+      "credentials": "[Credentials]",
+      "icd_codes": "N46.01, N46.021, N46.029, N46.11, Z30.2, Z31.0, N50.89",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "To Whom It May Concern,\n\nI am writing to formally appeal the denial of prior authorization for vasectomy reversal (vasovasostomy/vasoepididymostomy) for my patient. This procedure is medically necessary for the treatment of obstructive azoospermia and is supported by the American Urological Association (AUA) and the American Society for Reproductive Medicine (ASRM).\n\nCLINICAL SUMMARY\n\nMy patient presents with obstructive azoospermia secondary to prior vasectomy. Semen analysis confirms azoospermia. Hormonal evaluation (FSH, LH, testosterone) and testicular examination are consistent with an obstructive etiology. The obstructive interval is documented. Female partner fertility evaluation has been completed.\n\nMEDICAL NECESSITY\n\nVasectomy reversal (CPT 55400 — vasovasostomy; CPT 54900/54901 — vasoepididymostomy) is the standard of care for obstructive azoospermia in appropriately selected patients. The AUA and ASRM Practice Committee on Vasectomy Reversal (Fertil Steril. 2015;104(3):e1-e8) explicitly recommend microsurgical reversal as first-line treatment when:\n1. The etiology of azoospermia is obstructive (confirmed by normal FSH and testicular volume)\n2. The female partner's age and fertility status are favorable\n3. Microsurgical expertise is available\n\nEVIDENCE BASE\n\nThe Vasovasostomy Study Group (Belker et al., J Urol. 1991;145:505-511) — the largest prospective multicenter study of vasectomy reversal — demonstrated patency rates of 97% and pregnancy rates of 76% when the obstructive interval is ≤3 years, with meaningful success rates up to 15 years post-vasectomy.\n\nCOST-EFFECTIVENESS\n\nVasectomy reversal is significantly more cost-effective than IVF/ICSI. A single reversal procedure ($5,000–$15,000) avoids the need for multiple IVF cycles ($12,000–$20,000 each). ASRM guidelines explicitly recommend reversal as the preferred first-line approach in eligible patients, precisely because of this cost-effectiveness advantage.\n\nCONCLUSION\n\nDenial of this procedure forces my patient toward more expensive, more invasive, and less physiologically natural alternatives (IVF/ICSI). I respectfully request reconsideration of this denial and approval of the requested procedure.\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\n{{letter_date}}"
+  }
+}

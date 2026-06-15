@@ -1,0 +1,30 @@
+{
+  "title": "Gastroparesis Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "78264, 78265, 43647, 43881",
+      "credentials": "[Credentials]",
+      "icd_codes": "K31.84, R11.2, R14.0, E08.40",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — Gastric Electrical Stimulation / Pyloric Intervention for Gastroparesis\nCPT Code(s): 43647, 43648, 43999, 43760\nICD-10 Code(s): K31.84, K31.89\nDear Medical Director / Utilization Review Committee,\n\nThe patient, {{patient_name}}, has been diagnosed with severe gastroparesis. Despite comprehensive conservative management, the patient continues to experience debilitating symptoms including [SYMPTOMS]. Gastric emptying studies confirm delayed gastric emptying.\n\nBased on the patient's clinical presentation and diagnostic findings, advanced therapy is medically indicated.\n\nOur recommendation is strongly supported by the following evidence and guidelines:\n1. Gastric electrical stimulation (GES) is an FDA-approved treatment for refractory gastroparesis, demonstrating efficacy in reducing symptoms and improving quality of life in carefully selected patients.\n2. Pyloric interventions, including pyloromyotomy and botulinum toxin injection, are recognized therapeutic options for gastroparesis, particularly in cases with evidence of pyloric dysfunction.\n3. Current clinical guidelines, including those from the ACG and AGA, recommend considering advanced therapies like GES and pyloric interventions for patients with severe, refractory gastroparesis unresponsive to conventional medical management.\n4. The severity of gastroparesis, often categorized by symptom burden and gastric emptying studies, directly correlates with the need for more aggressive and specialized treatment strategies.\n5. For patients with diabetic gastroparesis, optimizing glycemic control alongside targeted interventions such as GES or pyloric modulation is crucial for symptom management and preventing complications.\n6. The medical necessity of these procedures is supported by a robust body of evidence, as outlined in major gastroenterology society guidelines, for improving gastric emptying and alleviating debilitating symptoms.\n7. Delaying appropriate intervention in severe gastroparesis can lead to significant morbidity, including malnutrition, dehydration, recurrent hospitalizations, and a substantial decrease in patient quality of life.\n\nThis request for Gastric Electrical Stimulation / Pyloric Intervention for Gastroparesis is medically necessary to alleviate the patient's severe symptoms, improve gastric emptying, enhance nutritional status, and prevent further complications associated with refractory gastroparesis. The patient's condition significantly impairs their quality of life and daily functioning.\n\nWithout this intervention, the patient is at high risk for continued severe symptoms, recurrent hospitalizations for dehydration and malnutrition, and progressive deterioration of their overall health.\n\nWe respectfully request authorization for Gastric Electrical Stimulation / Pyloric Intervention for Gastroparesis to provide the patient with appropriate and effective treatment based on current medical evidence and guidelines.\n\n{{additional_clinical_notes}}\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

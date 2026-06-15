@@ -1,0 +1,98 @@
+{
+  "title": "Preimplantation Genetic Testing Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "PGTAuthGuide.tsx",
+    "title": "PGT-A / PGT-M / PGT-SR — Authorization Guide",
+    "subtitle": "CPT Codes · ICD-10 · Payer Requirements",
+    "cptCodes": [
+      { "code": "89290", "description": "Biopsy, oocyte polar body or embryo blastomere, microtechnique (for PGT); ≤5 embryos", "type": "Biopsy ≤5" },
+      { "code": "89291", "description": "Biopsy, oocyte polar body or embryo blastomere, microtechnique; >5 embryos", "type": "Biopsy >5" },
+      { "code": "88271", "description": "Molecular cytogenetics; DNA probe, each (FISH)", "type": "FISH analysis" },
+      { "code": "88272", "description": "Molecular cytogenetics; chromosomal in situ hybridization, analyze 5 cells", "type": "FISH 5 cells" },
+      { "code": "88273", "description": "Molecular cytogenetics; chromosomal in situ hybridization, analyze 10 cells", "type": "FISH 10 cells" },
+      { "code": "88374", "description": "Morphometric analysis, in situ hybridization (quantitative or semi-quantitative)", "type": "Morphometric" },
+      { "code": "81228", "description": "Cytogenomic constitutional (genome-wide) microarray analysis", "type": "Array CGH/SNP" },
+      { "code": "81229", "description": "Cytogenomic constitutional microarray analysis; interrogation of genomic regions", "type": "Comprehensive array" }
+    ],
+    "icd10Codes": [
+      { "code": "N96", "description": "Recurrent pregnancy loss" },
+      { "code": "O09.291", "description": "Supervision of pregnancy with other poor reproductive or obstetric history" },
+      { "code": "Z84.81", "description": "Family history of carrier of genetic disease" },
+      { "code": "Z13.88", "description": "Encounter for screening for disorder due to exposure to contaminants" },
+      { "code": "Z31.430", "description": "Encounter of female for testing for genetic disease carrier status for procreative management" },
+      { "code": "Z31.438", "description": "Encounter for other genetic testing of female for procreative management" },
+      { "code": "Q95.0", "description": "Balanced autosomal translocation in normal individual" },
+      { "code": "Q95.2", "description": "Balanced autosomal inversion in normal individual" },
+      { "code": "Z31.83", "description": "Encounter for assisted reproductive fertility procedure cycle" }
+    ],
+    "payers": [],
+    "customSections": [
+      {
+        "heading": "Coverage Landscape — Common Denial Reasons",
+        "kind": "list",
+        "items": [
+          "\"Screening\" — not covered under diagnostic benefit",
+          "\"Experimental\" for PGT-A (incorrect — well-established since 1990s)",
+          "Bundled with IVF — denied as \"part of IVF cycle\"",
+          "No covered genetic disorder indication (for PGT-M)"
+        ]
+      },
+      {
+        "heading": "Coverage Landscape — Strongest Coverage Arguments",
+        "kind": "list",
+        "items": [
+          "PGT-M for known genetic disorder: diagnostic, not screening — prevents birth of child with serious disease",
+          "PGT-SR for translocation: prevents recurrent pregnancy loss from unbalanced translocations",
+          "RPL indication: PGT-A identifies aneuploid embryos causing recurrent losses",
+          "CPT 89290/89291 (biopsy) are distinct from IVF CPT codes — not bundled"
+        ]
+      },
+      {
+        "heading": "Prior Authorization Requirements — Required Documentation",
+        "kind": "list",
+        "items": [
+          "Specific PGT indication documented (RPL, known genetic disorder, translocation, repeated IVF failure)",
+          "For PGT-M: genetic counseling report, molecular diagnosis of specific disorder",
+          "For PGT-SR: karyotype report confirming translocation",
+          "For RPL: documentation of 2+ pregnancy losses with pathology/karyotype if available",
+          "Letter of medical necessity from REI specialist and/or genetic counselor",
+          "IVF authorization (PGT requires concurrent IVF cycle)"
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# PGT-A / PGT-M / PGT-SR — Authorization Guide\n\n_CPT Codes · ICD-10 · Payer Requirements_\n\nBack link: /pgt\n\n## CPT Codes\n\n| CPT | Description | Type |\n| --- | --- | --- |\n| 89290 | Biopsy, oocyte polar body or embryo blastomere, microtechnique (for PGT); ≤5 embryos | Biopsy ≤5 |\n| 89291 | Biopsy, oocyte polar body or embryo blastomere, microtechnique; >5 embryos | Biopsy >5 |\n| 88271 | Molecular cytogenetics; DNA probe, each (FISH) | FISH analysis |\n| 88272 | Molecular cytogenetics; chromosomal in situ hybridization, analyze 5 cells | FISH 5 cells |\n| 88273 | Molecular cytogenetics; chromosomal in situ hybridization, analyze 10 cells | FISH 10 cells |\n| 88374 | Morphometric analysis, in situ hybridization (quantitative or semi-quantitative) | Morphometric |\n| 81228 | Cytogenomic constitutional (genome-wide) microarray analysis | Array CGH/SNP |\n| 81229 | Cytogenomic constitutional microarray analysis; interrogation of genomic regions | Comprehensive array |\n\n## ICD-10 Diagnoses\n\n| ICD-10 | Description |\n| --- | --- |\n| N96 | Recurrent pregnancy loss |\n| O09.291 | Supervision of pregnancy with other poor reproductive or obstetric history |\n| Z84.81 | Family history of carrier of genetic disease |\n| Z13.88 | Encounter for screening for disorder due to exposure to contaminants |\n| Z31.430 | Encounter of female for testing for genetic disease carrier status for procreative management |\n| Z31.438 | Encounter for other genetic testing of female for procreative management |\n| Q95.0 | Balanced autosomal translocation in normal individual |\n| Q95.2 | Balanced autosomal inversion in normal individual |\n| Z31.83 | Encounter for assisted reproductive fertility procedure cycle |\n\n## Coverage Landscape\n\n### Common Denial Reasons\n\n- \"Screening\" — not covered under diagnostic benefit\n- \"Experimental\" for PGT-A (incorrect — well-established since 1990s)\n- Bundled with IVF — denied as \"part of IVF cycle\"\n- No covered genetic disorder indication (for PGT-M)\n\n### Strongest Coverage Arguments\n\n- PGT-M for known genetic disorder: diagnostic, not screening — prevents birth of child with serious disease\n- PGT-SR for translocation: prevents recurrent pregnancy loss from unbalanced translocations\n- RPL indication: PGT-A identifies aneuploid embryos causing recurrent losses\n- CPT 89290/89291 (biopsy) are distinct from IVF CPT codes — not bundled\n\n## Prior Authorization Requirements\n\n### Required Documentation\n\n- Specific PGT indication documented (RPL, known genetic disorder, translocation, repeated IVF failure)\n- For PGT-M: genetic counseling report, molecular diagnosis of specific disorder\n- For PGT-SR: karyotype report confirming translocation\n- For RPL: documentation of 2+ pregnancy losses with pathology/karyotype if available\n- Letter of medical necessity from REI specialist and/or genetic counselor\n- IVF authorization (PGT requires concurrent IVF cycle)\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["CPT", "Description", "Type"],
+          "rows": [
+            ["89290", "Biopsy, oocyte polar body or embryo blastomere, microtechnique (for PGT); ≤5 embryos", "Biopsy ≤5"],
+            ["89291", "Biopsy, oocyte polar body or embryo blastomere, microtechnique; >5 embryos", "Biopsy >5"],
+            ["88271", "Molecular cytogenetics; DNA probe, each (FISH)", "FISH analysis"],
+            ["88272", "Molecular cytogenetics; chromosomal in situ hybridization, analyze 5 cells", "FISH 5 cells"],
+            ["88273", "Molecular cytogenetics; chromosomal in situ hybridization, analyze 10 cells", "FISH 10 cells"],
+            ["88374", "Morphometric analysis, in situ hybridization (quantitative or semi-quantitative)", "Morphometric"],
+            ["81228", "Cytogenomic constitutional (genome-wide) microarray analysis", "Array CGH/SNP"],
+            ["81229", "Cytogenomic constitutional microarray analysis; interrogation of genomic regions", "Comprehensive array"]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnoses",
+          "header": ["ICD-10", "Description"],
+          "rows": [
+            ["N96", "Recurrent pregnancy loss"],
+            ["O09.291", "Supervision of pregnancy with other poor reproductive or obstetric history"],
+            ["Z84.81", "Family history of carrier of genetic disease"],
+            ["Z13.88", "Encounter for screening for disorder due to exposure to contaminants"],
+            ["Z31.430", "Encounter of female for testing for genetic disease carrier status for procreative management"],
+            ["Z31.438", "Encounter for other genetic testing of female for procreative management"],
+            ["Q95.0", "Balanced autosomal translocation in normal individual"],
+            ["Q95.2", "Balanced autosomal inversion in normal individual"],
+            ["Z31.83", "Encounter for assisted reproductive fertility procedure cycle"]
+          ]
+        }
+      ]
+    }
+  }
+}

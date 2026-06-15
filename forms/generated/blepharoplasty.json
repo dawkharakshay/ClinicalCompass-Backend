@@ -1,0 +1,279 @@
+{
+  "title": "Blepharoplasty / Ptosis Repair Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assess Candidacy",
+    "logicKey": "blepharoplasty",
+    "hiddenDefaults": {
+      "marginalReflexToLidFold": 0
+    },
+    "steps": [
+      {
+        "id": "procedure-objective-findings",
+        "shortLabel": "Procedure & Objective Findings",
+        "title": "Procedure Type & Objective Findings",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "sex",
+            "name": "sex",
+            "label": "Sex",
+            "type": "select",
+            "defaultValue": "female",
+            "options": [
+              { "label": "Female", "value": "female" },
+              { "label": "Male", "value": "male" }
+            ]
+          },
+          {
+            "id": "procedure-type",
+            "name": "procedureType",
+            "label": "Procedure Type",
+            "type": "select",
+            "defaultValue": "upper-blepharoplasty",
+            "options": [
+              { "label": "Upper blepharoplasty", "value": "upper-blepharoplasty" },
+              { "label": "Lower blepharoplasty", "value": "lower-blepharoplasty" },
+              { "label": "Ptosis repair", "value": "ptosis-repair" },
+              { "label": "Combined (upper + ptosis)", "value": "combined" }
+            ]
+          },
+          {
+            "id": "dermatochalasis",
+            "name": "dermatochalasis",
+            "label": "Dermatochalasis (excess upper eyelid skin)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "excess-skin-overhang",
+            "name": "excessSkinOverhang",
+            "label": "Skin touching or overhanging eyelashes",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "visual-obstruction",
+            "name": "visualObstruction",
+            "label": "Skin/fat visually obstructing superior visual field",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "ptosis-present",
+            "name": "ptosisPresent",
+            "label": "Ptosis present (drooping upper eyelid)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "ptosis-unilateral",
+            "name": "ptosisUnilateral",
+            "label": "Ptosis is unilateral",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "brow-ptosis",
+            "name": "browPtosis",
+            "label": "Brow ptosis contributing to visual obstruction",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "fat-prolapse",
+            "name": "fatProlapse",
+            "label": "Fat prolapse / herniation",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "ectropion",
+            "name": "ectropion",
+            "label": "Ectropion (lower lid turning outward)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "entropion",
+            "name": "entropion",
+            "label": "Entropion (lower lid turning inward)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "lagophthalmos",
+            "name": "lagophthalmos",
+            "label": "Lagophthalmos (incomplete eye closure)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "marginal-reflex-distance",
+            "name": "marginalReflexDistance",
+            "label": "MRD1 — Marginal Reflex Distance (mm)",
+            "type": "number",
+            "defaultValue": 4,
+            "keyboardType": "decimal",
+            "visibleWhen": {
+              "any": [
+                { "field": "ptosisPresent", "op": "truthy" },
+                { "field": "procedureType", "op": "in", "value": ["ptosis-repair", "combined"] }
+              ]
+            }
+          },
+          {
+            "id": "levator-function",
+            "name": "levatorFunction",
+            "label": "Levator Function (mm excursion)",
+            "type": "number",
+            "defaultValue": 10,
+            "keyboardType": "decimal",
+            "visibleWhen": {
+              "any": [
+                { "field": "ptosisPresent", "op": "truthy" },
+                { "field": "procedureType", "op": "in", "value": ["ptosis-repair", "combined"] }
+              ]
+            }
+          },
+          {
+            "id": "visual-field-defect",
+            "name": "visualFieldDefect",
+            "label": "Visual field defect documented (Humphrey or Goldmann perimetry)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "superior-visual-field-loss",
+            "name": "superiorVisualFieldLoss",
+            "label": "Superior Visual Field Loss (degrees)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "visualFieldDefect", "op": "truthy" }
+          }
+        ]
+      },
+      {
+        "id": "functional-symptoms",
+        "shortLabel": "Functional Symptoms",
+        "title": "Functional Symptoms",
+        "fields": [
+          {
+            "id": "difficulty-reading",
+            "name": "difficultyReading",
+            "label": "Difficulty reading due to visual obstruction",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "difficulty-driving",
+            "name": "difficultyDriving",
+            "label": "Difficulty driving due to visual obstruction",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "difficulty-with-activities",
+            "name": "difficultyWithActivities",
+            "label": "Limitation of daily activities due to visual obstruction",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "headache-from-brow-compensation",
+            "name": "headacheFromBrowCompensation",
+            "label": "Frontalis overuse headaches (brow compensation for ptosis)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "eye-strain",
+            "name": "eyeStrain",
+            "label": "Eye strain from compensatory brow elevation",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "symptom-duration-months",
+            "name": "symptomDurationMonths",
+            "label": "Symptom Duration (months)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "risk-factors",
+        "shortLabel": "Risk Factors",
+        "title": "Risk Factors & Surgical History",
+        "fields": [
+          {
+            "id": "asa",
+            "name": "asa",
+            "label": "ASA Classification",
+            "type": "select",
+            "defaultValue": 1,
+            "options": [
+              { "label": "ASA I — Healthy", "value": 1 },
+              { "label": "ASA II — Mild systemic disease", "value": 2 },
+              { "label": "ASA III — Severe systemic disease", "value": 3 },
+              { "label": "ASA IV — Life-threatening disease", "value": 4 }
+            ]
+          },
+          {
+            "id": "dry-eye",
+            "name": "dryEye",
+            "label": "Dry eye syndrome",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "thyroid-eye-disease",
+            "name": "thyroidEyeDisease",
+            "label": "Thyroid eye disease (Graves)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "anticoagulation",
+            "name": "anticoagulation",
+            "label": "Anticoagulation / antiplatelet therapy",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-eyelid-surgery",
+            "name": "priorEyelidSurgery",
+            "label": "Prior eyelid surgery",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "tried-eyelid-taping",
+            "name": "triedEyelidTaping",
+            "label": "Eyelid taping tried (for ptosis)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "tried-ptosis-props",
+            "name": "triedPtosisProps",
+            "label": "Ptosis props tried",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

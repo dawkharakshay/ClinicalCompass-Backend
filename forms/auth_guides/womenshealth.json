@@ -1,0 +1,456 @@
+{
+  "title": "Women's Health Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "WomensHealthAuthGuide.tsx",
+    "title": "Women's Health Clinical Compass",
+    "subtitle": "PeVD Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "37241",
+        "description": "Vascular embolization or occlusion, inclusive of all radiological supervision and interpretation, intraprocedural roadmapping, and imaging guidance necessary to complete the intervention; venous, other than hemorrhage or tumor",
+        "device": "Coils, foam sclerosant, or vascular plugs (various manufacturers)",
+        "access": "Jugular or femoral venous approach; selective catheterization of ovarian/gonadal and internal iliac veins",
+        "rvu": "8.53",
+        "includes": [
+          "All vascular access for the procedure",
+          "Fluoroscopic guidance and roadmapping",
+          "Radiologic supervision and interpretation",
+          "Venography performed during the procedure",
+          "Embolization of bilateral ovarian veins and/or internal iliac veins in single session"
+        ],
+        "note": "Category I CPT code. Work RVU 8.53; Medicare payment approximately $4,393 (2026). Bill once per session. Do NOT use for treatment of incompetent extremity veins (use 36470/36471 for those)."
+      },
+      {
+        "code": "36011",
+        "description": "Selective catheter placement, venous system; first order branch (e.g., renal vein, jugular vein)",
+        "device": "N/A — catheter placement code",
+        "access": "First-order selective venous catheterization",
+        "rvu": "1.5",
+        "includes": [
+          "Catheter placement into first-order venous branch"
+        ],
+        "note": "May be billed in addition to 37241 for catheterization work. Verify NCCI bundling rules with payer."
+      },
+      {
+        "code": "36012",
+        "description": "Selective catheter placement, venous system; second order, or more selective, branch (e.g., left adrenal vein, petrosal sinus)",
+        "device": "N/A — catheter placement code",
+        "access": "Second-order or more selective venous catheterization (e.g., gonadal vein)",
+        "rvu": "1.0",
+        "includes": [
+          "Catheter placement into second-order or more selective venous branch"
+        ],
+        "note": "Bill for each additional second-order vessel catheterized. Subject to NCCI edits."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "N94.89",
+        "description": "Other specified conditions associated with female genital organs and menstrual cycle",
+        "notes": "Primary code for pelvic congestion syndrome / pelvic venous disorder. Most commonly used primary diagnosis.",
+        "required": true,
+        "type": "Primary"
+      },
+      {
+        "code": "I86.2",
+        "description": "Pelvic varices",
+        "notes": "Primary code when pelvic varices are the primary documented diagnosis.",
+        "required": true,
+        "type": "Primary"
+      },
+      {
+        "code": "R10.2",
+        "description": "Pelvic and perineal pain",
+        "notes": "Secondary code for chronic pelvic pain as a symptom.",
+        "required": false,
+        "type": "Secondary"
+      },
+      {
+        "code": "N94.1",
+        "description": "Dysmenorrhea, unspecified",
+        "notes": "Secondary code when dysmenorrhea is a presenting symptom.",
+        "required": false,
+        "type": "Secondary"
+      },
+      {
+        "code": "N94.0",
+        "description": "Mittelschmerz",
+        "notes": "Secondary code for mid-cycle pelvic pain.",
+        "required": false,
+        "type": "Secondary"
+      },
+      {
+        "code": "I87.1",
+        "description": "Compression of vein",
+        "notes": "Secondary code when nutcracker syndrome or May-Thurner is a contributing factor.",
+        "required": false,
+        "type": "Secondary"
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare FFS (Traditional Medicare)",
+        "coverageStatus": "Covered",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Traditional Medicare FFS does NOT require prior authorization for CPT 37241 (Category I). However, Medicare Advantage plans may require prior auth. BCBSRI Medicare Advantage requires PA for ovarian vein embolization.",
+        "overview": "Traditional Medicare covers pelvic vein embolization as medically necessary for pelvic venous disorder when clinical criteria are met. No specific NCD exists; coverage is based on medical necessity. Some MAC jurisdictions have LCDs addressing venous embolization.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Diagnosis",
+            "items": [
+              "Confirmed pelvic venous disorder (PeVD) or pelvic congestion syndrome",
+              "Chronic pelvic pain ≥ 6 months duration",
+              "Pelvic varices ≥ 4mm confirmed on imaging (pelvic US, MRI, or venography)",
+              "VEIN-TERM classification documented (if available)"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Prior Treatment",
+            "items": [
+              "Trial of conservative management (NSAIDs, hormonal therapy, pelvic floor PT)",
+              "Gynecologic evaluation to exclude other causes of pelvic pain",
+              "Documented failure of conservative therapy"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Clinical Indications",
+            "items": [
+              "Chronic pelvic pain with positional component (worse with standing/prolonged activity)",
+              "Dyspareunia or post-coital pain",
+              "Vulvar or lower extremity varicosities associated with pelvic origin",
+              "Pelvic heaviness or pressure"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Exclusions",
+            "items": [
+              "Active pelvic infection",
+              "Uncorrectable coagulopathy",
+              "Pregnancy",
+              "Pelvic malignancy not excluded"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Clinical Records",
+            "items": [
+              "Gynecology or IR consult note documenting PeVD diagnosis",
+              "Pain duration and VAS/NRS pain score documentation",
+              "Pelvic ultrasound or MRI report confirming varices ≥ 4mm",
+              "Documentation of prior conservative treatment and failure"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Imaging",
+            "items": [
+              "Pelvic duplex ultrasound (transvaginal preferred) or pelvic MRI/MRV report",
+              "CT or MR venography if available",
+              "Venography findings if diagnostic venogram performed"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify patient has Traditional Medicare (not Medicare Advantage)",
+              "No prior authorization required for Traditional Medicare FFS",
+              "Document medical necessity in procedure note with pain duration, imaging findings, and prior treatment",
+              "Bill CPT 37241 as primary code; add 36011/36012 if applicable",
+              "Include ICD-10 N94.89 or I86.2 as primary diagnosis code",
+              "Submit claim to Medicare Part B (professional) or Part A (facility)"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Insufficient documentation of pain duration (< 6 months)",
+              "Missing imaging confirmation of pelvic varices",
+              "Conservative treatment not documented or inadequate trial",
+              "Medicare Advantage plan denied — requires separate PA process",
+              "Incorrect ICD-10 code (using extremity varicose vein codes instead of pelvic codes)"
+            ]
+          },
+          {
+            "heading": "Billing & Authorization Tips",
+            "items": [
+              "Document pain as \"chronic pelvic pain ≥ 6 months\" explicitly in the procedure indication",
+              "Include varix diameter measurements in mm from imaging report",
+              "Note positional component of pain (worse with standing) — this is a key diagnostic feature of PeVD",
+              "If nutcracker or May-Thurner syndrome is present, document as contributing etiology"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicare payment for CPT 37241 is approximately $4,393 (2026 rates) for the professional component. This is one of the highest-RVU embolization codes. Facility fees are billed separately."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Medicare FFS (Traditional)",
+            "status": "Covered",
+            "notes": "Category I CPT — no PA required. Medical necessity documentation required."
+          },
+          {
+            "payer": "BCBSRI Medicare Advantage",
+            "status": "PA Required",
+            "notes": "Prior auth required for MA plans. Ovarian vein embolization criteria apply."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Variable (PA required, most states)",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is required in most state Medicaid programs. Coverage varies significantly by state — some states classify pelvic vein embolization as investigational.",
+        "overview": "Medicaid coverage for pelvic vein embolization varies considerably by state. Most states that cover the procedure require prior authorization with documentation of chronic pelvic pain, imaging confirmation, and conservative treatment failure. Some states may classify the procedure as investigational — verify with the specific state Medicaid program before scheduling.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Standard Criteria",
+            "items": [
+              "Confirmed pelvic venous disorder with chronic pelvic pain ≥ 6 months",
+              "Imaging confirmation of pelvic varices",
+              "Failure of conservative management",
+              "Gynecology consultation documented"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Required for PA Submission",
+            "items": [
+              "Completed state PA form",
+              "Gynecology or IR consult note",
+              "Pelvic imaging report (US or MRI)",
+              "Pain documentation with duration",
+              "Prior treatment records"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify state Medicaid coverage for pelvic vein embolization before scheduling",
+              "Obtain state-specific PA form from Medicaid portal",
+              "Submit with complete clinical documentation",
+              "Allow 5-15 business days for PA determination",
+              "If denied as investigational, initiate appeal with peer-reviewed literature"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "State classifies procedure as investigational",
+              "Incomplete PA form or missing documentation",
+              "Insufficient conservative treatment trial",
+              "Missing gynecology specialist consultation"
+            ]
+          },
+          {
+            "heading": "Billing & Authorization Tips",
+            "items": [
+              "Check your state Medicaid policy specifically for \"pelvic congestion syndrome\" or \"ovarian vein embolization\"",
+              "For dual-eligible patients, bill Medicare first — no PA needed for Medicare FFS",
+              "Some states have Medicaid managed care plans with their own PA processes"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicaid reimbursement for CPT 37241 is typically 40-60% of Medicare rates. Verify state-specific fee schedule before scheduling."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Medicaid (most states)",
+            "status": "Variable — verify state policy",
+            "notes": "Coverage varies. PA required where covered."
+          },
+          {
+            "payer": "Dual-eligible patients",
+            "status": "Bill Medicare first",
+            "notes": "Medicare pays primary; Medicaid covers remaining cost-sharing."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private / Commercial Insurance",
+        "coverageStatus": "Variable — PA required",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is required by virtually all commercial payers. Coverage is highly variable — several major payers classify pelvic vein embolization as investigational.",
+        "overview": "Commercial payer coverage for pelvic vein embolization is highly variable and challenging. Aetna (CPB 0441) and UHC cover with prior auth and criteria. Multiple payers — including Medica, Dean Care, Blue Shield CA, and BCBS RI — classify the procedure as investigational and non-covered. Always verify the specific plan policy before scheduling.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Typical PA Criteria (Covered Payers)",
+            "items": [
+              "Chronic pelvic pain ≥ 6 months refractory to conservative management",
+              "Pelvic varices ≥ 4mm confirmed on imaging",
+              "Gynecologic evaluation excluding other causes",
+              "Failed hormonal therapy or NSAIDs",
+              "No active pelvic infection or malignancy"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Clinical Documentation",
+            "items": [
+              "Gynecology consult note with PeVD diagnosis",
+              "Pelvic ultrasound or MRI report with varix measurements",
+              "Pain duration and severity documentation (VAS/NRS score)",
+              "Prior treatment records (hormonal therapy, NSAIDs, PT)",
+              "Letter of medical necessity"
+            ]
+          },
+          {
+            "heading": "Required Documentation — PA Submission",
+            "items": [
+              "Completed payer-specific PA form",
+              "Supporting literature (AIUM/SIR/AVF 2021 consensus, Meissner et al. 2021)",
+              "CPT 37241 and ICD-10 N94.89 or I86.2 on PA request"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify insurance benefits and PA requirements — confirm procedure is not classified as investigational",
+              "If covered, submit PA with complete clinical documentation",
+              "Include letter of medical necessity citing AIUM/SIR/AVF 2021 consensus guidelines",
+              "Allow 5-10 business days for PA determination",
+              "If denied as investigational, request peer-to-peer review immediately",
+              "File formal appeal with AIUM/SIR/AVF consensus statement and Meissner et al. 2021 data"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Payer classifies procedure as investigational (Medica, Dean Care, Blue Shield CA, BCBS RI)",
+              "Insufficient pain duration documentation",
+              "Missing gynecology specialist evaluation",
+              "Conservative treatment not adequately documented",
+              "Imaging does not confirm varices ≥ 4mm"
+            ]
+          },
+          {
+            "heading": "Billing & Authorization Tips",
+            "items": [
+              "Always call provider services before scheduling — several major payers have non-coverage policies",
+              "For covered payers, cite the AIUM/SIR/AVF 2021 Consensus Statement in PA letters",
+              "Reference Meissner et al. J Vasc Surg 2021 and the VEIN-TERM classification in appeals",
+              "Document VEIN-TERM classification if your practice uses it — strengthens medical necessity",
+              "For non-covered payers, counsel patient on self-pay options before scheduling"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Commercial reimbursement for CPT 37241 varies by plan and contract. Negotiated rates typically range from $3,000-$8,000 for the professional component given the high work RVU (8.53). Facility fees are billed separately."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Aetna (CPB 0441)",
+            "status": "Covered with criteria",
+            "notes": "Medically necessary for pelvic congestion syndrome with criteria."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered with PA",
+            "notes": "Prior auth required. Medical necessity criteria apply."
+          },
+          {
+            "payer": "BCBS RI",
+            "status": "Investigational — Non-covered",
+            "notes": "Policy updated Oct 2025. PA not applicable — claims denied."
+          },
+          {
+            "payer": "Blue Shield CA",
+            "status": "Investigational — Non-covered",
+            "notes": "Considers endovascular occlusion investigational for PCS."
+          },
+          {
+            "payer": "Medica",
+            "status": "Investigational — Non-covered",
+            "notes": "Updated Feb 2026 — not covered."
+          },
+          {
+            "payer": "Dean Care",
+            "status": "Investigational — Non-covered",
+            "notes": "Updated Feb 2026 — not covered."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Actions",
+        "kind": "list",
+        "items": [
+          "Back to Assessment button — navigates to /womenshealth",
+          "Generate Appeal Letter button — navigates to /womenshealth/appeal"
+        ]
+      },
+      {
+        "heading": "Generate Appeal Letter",
+        "kind": "link",
+        "text": "Generate Appeal Letter (navigates to /womenshealth/appeal)",
+        "href": "/womenshealth/appeal"
+      },
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment (navigates to /womenshealth)",
+        "href": "/womenshealth"
+      },
+      {
+        "heading": "Disclaimer",
+        "kind": "prose",
+        "text": "Coverage policies change frequently. Always verify current payer policies directly with the insurance plan before scheduling procedures. This guide references Aetna CPB 0441, AIUM/SIR/AVF 2021 Consensus Statement on PeVD, and Meissner et al. J Vasc Surg 2021. Last updated: April 2026."
+      }
+    ],
+    "raw": {
+      "markdown": "# Women's Health Clinical Compass\n## PeVD Insurance Authorization Guide\n\n_Route: /womenshealth/auth-guide. Static reference page — no server calls, no cloud storage. Displays CPT codes, ICD-10 codes, and required documentation by payer type._\n\n**Page actions:**\n- [Back to Assessment] → /womenshealth\n- [Generate Appeal Letter] → /womenshealth/appeal\n\n---\n\n## Procedure Codes (CPT)\n\n### CPT 37241 (RVU 8.53)\nVascular embolization or occlusion, inclusive of all radiological supervision and interpretation, intraprocedural roadmapping, and imaging guidance necessary to complete the intervention; venous, other than hemorrhage or tumor\n\n- **Device:** Coils, foam sclerosant, or vascular plugs (various manufacturers)\n- **Access:** Jugular or femoral venous approach; selective catheterization of ovarian/gonadal and internal iliac veins\n\n**Included in this code (do NOT bill separately):**\n- All vascular access for the procedure\n- Fluoroscopic guidance and roadmapping\n- Radiologic supervision and interpretation\n- Venography performed during the procedure\n- Embolization of bilateral ovarian veins and/or internal iliac veins in single session\n\n_Note: Category I CPT code. Work RVU 8.53; Medicare payment approximately $4,393 (2026). Bill once per session. Do NOT use for treatment of incompetent extremity veins (use 36470/36471 for those)._\n\n### CPT 36011 (RVU 1.5)\nSelective catheter placement, venous system; first order branch (e.g., renal vein, jugular vein)\n\n- **Device:** N/A — catheter placement code\n- **Access:** First-order selective venous catheterization\n\n**Included in this code (do NOT bill separately):**\n- Catheter placement into first-order venous branch\n\n_Note: May be billed in addition to 37241 for catheterization work. Verify NCCI bundling rules with payer._\n\n### CPT 36012 (RVU 1.0)\nSelective catheter placement, venous system; second order, or more selective, branch (e.g., left adrenal vein, petrosal sinus)\n\n- **Device:** N/A — catheter placement code\n- **Access:** Second-order or more selective venous catheterization (e.g., gonadal vein)\n\n**Included in this code (do NOT bill separately):**\n- Catheter placement into second-order or more selective venous branch\n\n_Note: Bill for each additional second-order vessel catheterized. Subject to NCCI edits._\n\n---\n\n## ICD-10 Diagnosis Codes\n\n| Code | Description | Usage Notes | Type |\n| --- | --- | --- | --- |\n| N94.89 | Other specified conditions associated with female genital organs and menstrual cycle | Primary code for pelvic congestion syndrome / pelvic venous disorder. Most commonly used primary diagnosis. | Primary |\n| I86.2 | Pelvic varices | Primary code when pelvic varices are the primary documented diagnosis. | Primary |\n| R10.2 | Pelvic and perineal pain | Secondary code for chronic pelvic pain as a symptom. | Secondary |\n| N94.1 | Dysmenorrhea, unspecified | Secondary code when dysmenorrhea is a presenting symptom. | Secondary |\n| N94.0 | Mittelschmerz | Secondary code for mid-cycle pelvic pain. | Secondary |\n| I87.1 | Compression of vein | Secondary code when nutcracker syndrome or May-Thurner is a contributing factor. | Secondary |\n\n---\n\n## Prior Authorization by Payer Type\n\n_Payer tabs: Medicare FFS | Medicaid | Private / Commercial_\n\n### Medicare FFS (Traditional Medicare)\n- **Prior Auth:** No Prior Auth (FFS)\n- **Coverage Status:** Covered\n- **Alert:** Traditional Medicare FFS does NOT require prior authorization for CPT 37241 (Category I). However, Medicare Advantage plans may require prior auth. BCBSRI Medicare Advantage requires PA for ovarian vein embolization.\n- **Overview:** Traditional Medicare covers pelvic vein embolization as medically necessary for pelvic venous disorder when clinical criteria are met. No specific NCD exists; coverage is based on medical necessity. Some MAC jurisdictions have LCDs addressing venous embolization.\n\n**Coverage Criteria — Diagnosis:**\n- Confirmed pelvic venous disorder (PeVD) or pelvic congestion syndrome\n- Chronic pelvic pain ≥ 6 months duration\n- Pelvic varices ≥ 4mm confirmed on imaging (pelvic US, MRI, or venography)\n- VEIN-TERM classification documented (if available)\n\n**Coverage Criteria — Prior Treatment:**\n- Trial of conservative management (NSAIDs, hormonal therapy, pelvic floor PT)\n- Gynecologic evaluation to exclude other causes of pelvic pain\n- Documented failure of conservative therapy\n\n**Coverage Criteria — Clinical Indications:**\n- Chronic pelvic pain with positional component (worse with standing/prolonged activity)\n- Dyspareunia or post-coital pain\n- Vulvar or lower extremity varicosities associated with pelvic origin\n- Pelvic heaviness or pressure\n\n**Coverage Criteria — Exclusions:**\n- Active pelvic infection\n- Uncorrectable coagulopathy\n- Pregnancy\n- Pelvic malignancy not excluded\n\n**Required Documentation — Clinical Records:**\n- Gynecology or IR consult note documenting PeVD diagnosis\n- Pain duration and VAS/NRS pain score documentation\n- Pelvic ultrasound or MRI report confirming varices ≥ 4mm\n- Documentation of prior conservative treatment and failure\n\n**Required Documentation — Imaging:**\n- Pelvic duplex ultrasound (transvaginal preferred) or pelvic MRI/MRV report\n- CT or MR venography if available\n- Venography findings if diagnostic venogram performed\n\n**Submission Process:**\n1. Verify patient has Traditional Medicare (not Medicare Advantage)\n2. No prior authorization required for Traditional Medicare FFS\n3. Document medical necessity in procedure note with pain duration, imaging findings, and prior treatment\n4. Bill CPT 37241 as primary code; add 36011/36012 if applicable\n5. Include ICD-10 N94.89 or I86.2 as primary diagnosis code\n6. Submit claim to Medicare Part B (professional) or Part A (facility)\n\n**Common Denial Reasons:**\n- Insufficient documentation of pain duration (< 6 months)\n- Missing imaging confirmation of pelvic varices\n- Conservative treatment not documented or inadequate trial\n- Medicare Advantage plan denied — requires separate PA process\n- Incorrect ICD-10 code (using extremity varicose vein codes instead of pelvic codes)\n\n**Known Payer Policies:**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicare FFS (Traditional) | Covered | Category I CPT — no PA required. Medical necessity documentation required. |\n| BCBSRI Medicare Advantage | PA Required | Prior auth required for MA plans. Ovarian vein embolization criteria apply. |\n\n**Billing & Authorization Tips:**\n- Document pain as \"chronic pelvic pain ≥ 6 months\" explicitly in the procedure indication\n- Include varix diameter measurements in mm from imaging report\n- Note positional component of pain (worse with standing) — this is a key diagnostic feature of PeVD\n- If nutcracker or May-Thurner syndrome is present, document as contributing etiology\n\n**Reimbursement Note:** Medicare payment for CPT 37241 is approximately $4,393 (2026 rates) for the professional component. This is one of the highest-RVU embolization codes. Facility fees are billed separately.\n\n### Medicaid\n- **Prior Auth:** Prior Auth Required\n- **Coverage Status:** Variable (PA required, most states)\n- **Alert:** Prior authorization is required in most state Medicaid programs. Coverage varies significantly by state — some states classify pelvic vein embolization as investigational.\n- **Overview:** Medicaid coverage for pelvic vein embolization varies considerably by state. Most states that cover the procedure require prior authorization with documentation of chronic pelvic pain, imaging confirmation, and conservative treatment failure. Some states may classify the procedure as investigational — verify with the specific state Medicaid program before scheduling.\n\n**Coverage Criteria — Standard Criteria:**\n- Confirmed pelvic venous disorder with chronic pelvic pain ≥ 6 months\n- Imaging confirmation of pelvic varices\n- Failure of conservative management\n- Gynecology consultation documented\n\n**Required Documentation — Required for PA Submission:**\n- Completed state PA form\n- Gynecology or IR consult note\n- Pelvic imaging report (US or MRI)\n- Pain documentation with duration\n- Prior treatment records\n\n**Submission Process:**\n1. Verify state Medicaid coverage for pelvic vein embolization before scheduling\n2. Obtain state-specific PA form from Medicaid portal\n3. Submit with complete clinical documentation\n4. Allow 5-15 business days for PA determination\n5. If denied as investigational, initiate appeal with peer-reviewed literature\n\n**Common Denial Reasons:**\n- State classifies procedure as investigational\n- Incomplete PA form or missing documentation\n- Insufficient conservative treatment trial\n- Missing gynecology specialist consultation\n\n**Known Payer Policies:**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicaid (most states) | Variable — verify state policy | Coverage varies. PA required where covered. |\n| Dual-eligible patients | Bill Medicare first | Medicare pays primary; Medicaid covers remaining cost-sharing. |\n\n**Billing & Authorization Tips:**\n- Check your state Medicaid policy specifically for \"pelvic congestion syndrome\" or \"ovarian vein embolization\"\n- For dual-eligible patients, bill Medicare first — no PA needed for Medicare FFS\n- Some states have Medicaid managed care plans with their own PA processes\n\n**Reimbursement Note:** Medicaid reimbursement for CPT 37241 is typically 40-60% of Medicare rates. Verify state-specific fee schedule before scheduling.\n\n### Private / Commercial Insurance\n- **Prior Auth:** Prior Auth Required\n- **Coverage Status:** Variable — PA required\n- **Alert:** Prior authorization is required by virtually all commercial payers. Coverage is highly variable — several major payers classify pelvic vein embolization as investigational.\n- **Overview:** Commercial payer coverage for pelvic vein embolization is highly variable and challenging. Aetna (CPB 0441) and UHC cover with prior auth and criteria. Multiple payers — including Medica, Dean Care, Blue Shield CA, and BCBS RI — classify the procedure as investigational and non-covered. Always verify the specific plan policy before scheduling.\n\n**Coverage Criteria — Typical PA Criteria (Covered Payers):**\n- Chronic pelvic pain ≥ 6 months refractory to conservative management\n- Pelvic varices ≥ 4mm confirmed on imaging\n- Gynecologic evaluation excluding other causes\n- Failed hormonal therapy or NSAIDs\n- No active pelvic infection or malignancy\n\n**Required Documentation — Clinical Documentation:**\n- Gynecology consult note with PeVD diagnosis\n- Pelvic ultrasound or MRI report with varix measurements\n- Pain duration and severity documentation (VAS/NRS score)\n- Prior treatment records (hormonal therapy, NSAIDs, PT)\n- Letter of medical necessity\n\n**Required Documentation — PA Submission:**\n- Completed payer-specific PA form\n- Supporting literature (AIUM/SIR/AVF 2021 consensus, Meissner et al. 2021)\n- CPT 37241 and ICD-10 N94.89 or I86.2 on PA request\n\n**Submission Process:**\n1. Verify insurance benefits and PA requirements — confirm procedure is not classified as investigational\n2. If covered, submit PA with complete clinical documentation\n3. Include letter of medical necessity citing AIUM/SIR/AVF 2021 consensus guidelines\n4. Allow 5-10 business days for PA determination\n5. If denied as investigational, request peer-to-peer review immediately\n6. File formal appeal with AIUM/SIR/AVF consensus statement and Meissner et al. 2021 data\n\n**Common Denial Reasons:**\n- Payer classifies procedure as investigational (Medica, Dean Care, Blue Shield CA, BCBS RI)\n- Insufficient pain duration documentation\n- Missing gynecology specialist evaluation\n- Conservative treatment not adequately documented\n- Imaging does not confirm varices ≥ 4mm\n\n**Known Payer Policies:**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Aetna (CPB 0441) | Covered with criteria | Medically necessary for pelvic congestion syndrome with criteria. |\n| UnitedHealthcare | Covered with PA | Prior auth required. Medical necessity criteria apply. |\n| BCBS RI | Investigational — Non-covered | Policy updated Oct 2025. PA not applicable — claims denied. |\n| Blue Shield CA | Investigational — Non-covered | Considers endovascular occlusion investigational for PCS. |\n| Medica | Investigational — Non-covered | Updated Feb 2026 — not covered. |\n| Dean Care | Investigational — Non-covered | Updated Feb 2026 — not covered. |\n\n**Billing & Authorization Tips:**\n- Always call provider services before scheduling — several major payers have non-coverage policies\n- For covered payers, cite the AIUM/SIR/AVF 2021 Consensus Statement in PA letters\n- Reference Meissner et al. J Vasc Surg 2021 and the VEIN-TERM classification in appeals\n- Document VEIN-TERM classification if your practice uses it — strengthens medical necessity\n- For non-covered payers, counsel patient on self-pay options before scheduling\n\n**Reimbursement Note:** Commercial reimbursement for CPT 37241 varies by plan and contract. Negotiated rates typically range from $3,000-$8,000 for the professional component given the high work RVU (8.53). Facility fees are billed separately.\n\n---\n\n## Disclaimer\nCoverage policies change frequently. Always verify current payer policies directly with the insurance plan before scheduling procedures. This guide references Aetna CPB 0441, AIUM/SIR/AVF 2021 Consensus Statement on PeVD, and Meissner et al. J Vasc Surg 2021. Last updated: April 2026.",
+      "tables": [
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Usage Notes", "Type"],
+          "rows": [
+            ["N94.89", "Other specified conditions associated with female genital organs and menstrual cycle", "Primary code for pelvic congestion syndrome / pelvic venous disorder. Most commonly used primary diagnosis.", "Primary"],
+            ["I86.2", "Pelvic varices", "Primary code when pelvic varices are the primary documented diagnosis.", "Primary"],
+            ["R10.2", "Pelvic and perineal pain", "Secondary code for chronic pelvic pain as a symptom.", "Secondary"],
+            ["N94.1", "Dysmenorrhea, unspecified", "Secondary code when dysmenorrhea is a presenting symptom.", "Secondary"],
+            ["N94.0", "Mittelschmerz", "Secondary code for mid-cycle pelvic pain.", "Secondary"],
+            ["I87.1", "Compression of vein", "Secondary code when nutcracker syndrome or May-Thurner is a contributing factor.", "Secondary"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicare FFS",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicare FFS (Traditional)", "Covered", "Category I CPT — no PA required. Medical necessity documentation required."],
+            ["BCBSRI Medicare Advantage", "PA Required", "Prior auth required for MA plans. Ovarian vein embolization criteria apply."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicaid (most states)", "Variable — verify state policy", "Coverage varies. PA required where covered."],
+            ["Dual-eligible patients", "Bill Medicare first", "Medicare pays primary; Medicaid covers remaining cost-sharing."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Private / Commercial",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Aetna (CPB 0441)", "Covered with criteria", "Medically necessary for pelvic congestion syndrome with criteria."],
+            ["UnitedHealthcare", "Covered with PA", "Prior auth required. Medical necessity criteria apply."],
+            ["BCBS RI", "Investigational — Non-covered", "Policy updated Oct 2025. PA not applicable — claims denied."],
+            ["Blue Shield CA", "Investigational — Non-covered", "Considers endovascular occlusion investigational for PCS."],
+            ["Medica", "Investigational — Non-covered", "Updated Feb 2026 — not covered."],
+            ["Dean Care", "Investigational — Non-covered", "Updated Feb 2026 — not covered."]
+          ]
+        }
+      ]
+    }
+  }
+}

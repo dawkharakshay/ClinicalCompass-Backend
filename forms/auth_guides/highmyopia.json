@@ -1,0 +1,275 @@
+{
+  "title": "High Myopia / Pathologic Myopia",
+  "auth_guide": {
+    "sourceFile": "HighMyopiaAuthGuide.tsx",
+    "title": "HighMyopia Clinical Compass",
+    "subtitle": "High Myopia Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "S0800",
+        "codeType": "HCPCS",
+        "description": "Laser in situ keratomileusis (LASIK)",
+        "device": "Excimer Laser",
+        "access": "Corneal surface",
+        "rvu": "N/A (HCPCS)",
+        "includes": [
+          "Pre-operative evaluation (if not separately billable)",
+          "Post-operative care (global period may vary)"
+        ],
+        "note": "HCPCS code. Generally considered elective/cosmetic and not covered by most insurance plans. Some payers may require CPT 66999 (unlisted procedure) or 65760 (keratomileusis) if covered as an occupational benefit."
+      },
+      {
+        "code": "66999",
+        "codeType": "CPT",
+        "description": "Unlisted procedure, anterior segment of eye (for ICL implantation)",
+        "device": "Implantable Collamer Lens (ICL)",
+        "access": "Anterior chamber",
+        "rvu": "Varies",
+        "includes": [
+          "Lens insertion",
+          "Post-operative care (global period may vary)"
+        ],
+        "note": "Used for ICL implantation as there is no specific CPT code. Generally considered elective/cosmetic and not covered by most insurance plans."
+      },
+      {
+        "code": "V2599",
+        "codeType": "HCPCS",
+        "description": "Contact lens, other type (for Orthokeratology lenses)",
+        "device": "Custom rigid gas permeable contact lenses",
+        "access": "Corneal surface",
+        "rvu": "N/A (HCPCS)",
+        "includes": [
+          "Lens fitting",
+          "Follow-up adjustments"
+        ],
+        "note": "HCPCS code. Orthokeratology is generally considered elective and not covered by most insurance plans. Related services like fitting and follow-up may be billed separately with appropriate E/M codes if medically necessary."
+      }
+    ],
+    "icd10Codes": [
+      { "code": "H52.10", "description": "Myopia, unspecified eye", "notes": "Used when laterality is not specified.", "required": true },
+      { "code": "H52.11", "description": "Myopia, right eye", "notes": "Used for myopia affecting the right eye.", "required": false },
+      { "code": "H52.12", "description": "Myopia, left eye", "notes": "Used for myopia affecting the left eye.", "required": false },
+      { "code": "H52.13", "description": "Myopia, bilateral", "notes": "Used for myopia affecting both eyes.", "required": false },
+      { "code": "H44.20", "description": "Degenerative myopia, unspecified eye", "notes": "Used for degenerative forms of myopia.", "required": false },
+      { "code": "H44.21", "description": "Degenerative myopia, right eye", "notes": "Used for degenerative myopia affecting the right eye.", "required": false },
+      { "code": "H44.22", "description": "Degenerative myopia, left eye", "notes": "Used for degenerative myopia affecting the left eye.", "required": false },
+      { "code": "H44.23", "description": "Degenerative myopia, bilateral", "notes": "Used for degenerative myopia affecting both eyes.", "required": false }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Refractive surgeries (LASIK, ICL) and orthokeratology are generally considered elective procedures for the correction of refractive error and are not covered by Medicare. Coverage may be considered only in rare cases of medically necessary procedures, such as correction of surgically induced astigmatism following cataract surgery, but not for primary refractive error correction.",
+        "coverageStatus": "Not Covered (Elective)",
+        "overview": "Medicare typically does not cover procedures aimed at correcting refractive errors like myopia, as they are not deemed medically necessary. This includes LASIK, Implantable Collamer Lenses (ICL), and orthokeratology. Patients are generally responsible for the full cost of these procedures.",
+        "reimbursementNote": "Reimbursement is typically zero as these procedures are not covered. Patients are responsible for 100% of costs.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Exclusion",
+            "items": ["Procedures for correction of refractive error (e.g., myopia, hyperopia, astigmatism) are considered cosmetic/elective."]
+          },
+          {
+            "heading": "Coverage Criteria: Potential Exceptions (Rare)",
+            "items": ["Correction of surgically induced astigmatism following medically necessary procedures (e.g., cataract surgery) may be considered on a case-by-case basis."]
+          },
+          {
+            "heading": "Required Documentation: General",
+            "items": ["N/A - generally not covered."]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "N/A - generally not applicable for elective refractive procedures.",
+              "For rare exceptions, submit detailed medical records demonstrating medical necessity and prior authorization request (if applicable)."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of medical necessity (elective procedure)",
+              "Cosmetic procedure exclusion",
+              "No specific CPT code for refractive correction"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Inform patients upfront about non-coverage and financial responsibility.",
+              "Document thoroughly if a procedure is performed for a medically necessary reason (e.g., post-surgical astigmatism)."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicare National Coverage Determination (NCD)", "status": "Non-covered", "notes": "Refractive surgery is generally not covered." }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Medicaid programs generally do not cover elective refractive surgeries or orthokeratology for myopia correction. Coverage is typically limited to medically necessary eye care.",
+        "coverageStatus": "Not Covered (Elective)",
+        "overview": "Medicaid policies vary by state, but most programs follow similar guidelines to Medicare regarding refractive surgeries. Procedures like LASIK, ICL, and orthokeratology are almost universally excluded as they are considered elective and not essential health benefits.",
+        "reimbursementNote": "No reimbursement expected. Patients are responsible for all costs.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Exclusion",
+            "items": ["Procedures for correction of refractive error are considered cosmetic/elective."]
+          },
+          {
+            "heading": "Coverage Criteria: Medically Necessary Eye Care",
+            "items": ["Coverage is limited to treatment of eye diseases or conditions that impair vision and are not correctable by standard eyeglasses or contact lenses."]
+          },
+          {
+            "heading": "Required Documentation: General",
+            "items": ["N/A - generally not covered."]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "N/A - generally not applicable for elective refractive procedures.",
+              "Consult state-specific Medicaid guidelines for any potential exceptions or appeal processes."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of medical necessity",
+              "Elective/cosmetic procedure exclusion",
+              "Not a covered benefit under state plan"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify state-specific Medicaid policies, as some variations may exist.",
+              "Clearly communicate non-coverage to patients prior to any procedure."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "State Medicaid Programs", "status": "Non-covered", "notes": "Policies generally exclude refractive surgeries for myopia." }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Most private insurance plans consider LASIK, ICL, and orthokeratology elective procedures for refractive error correction and do not provide coverage. Some plans may offer discounts through vision care riders or employer-sponsored benefits.",
+        "coverageStatus": "Generally Not Covered (Elective)",
+        "overview": "Private insurance coverage for high myopia treatments like LASIK, ICL, and orthokeratology is rare. These are typically categorized as elective or cosmetic procedures. However, some employer-sponsored plans or vision benefits packages may offer partial coverage or discounts. Patients should always verify their specific plan benefits.",
+        "reimbursementNote": "Reimbursement is highly variable; typically zero or discounted rates. Patients often pay out-of-pocket.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Exclusion",
+            "items": ["Procedures for correction of refractive error are typically excluded."]
+          },
+          {
+            "heading": "Coverage Criteria: Vision Plan Riders",
+            "items": ["Some vision plans may offer discounts or limited benefits for refractive surgery."]
+          },
+          {
+            "heading": "Coverage Criteria: Employer-Sponsored Benefits",
+            "items": ["Certain employers (e.g., union plans, specific corporations) may offer coverage as an occupational benefit."]
+          },
+          {
+            "heading": "Required Documentation: Pre-determination/Pre-authorization (if applicable)",
+            "items": ["Detailed clinical notes, ophthalmological examination results, visual acuity measurements, and justification of medical necessity (if any exception applies)."]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Patient to contact their insurance provider directly to inquire about benefits and any potential discounts.",
+              "If a plan offers coverage, follow their specific pre-authorization and claims submission guidelines.",
+              "For procedures billed with unlisted CPT codes (e.g., 66999), provide a detailed operative report and letter of medical necessity."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Elective/cosmetic exclusion",
+              "Not a covered benefit",
+              "Failure to obtain pre-authorization (if required for rare exceptions)"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Advise patients to check with their specific insurance provider for any refractive surgery benefits or discounts.",
+              "Explore financing options or health savings accounts (HSAs)/flexible spending accounts (FSAs) for payment.",
+              "Document all patient communications regarding coverage and financial responsibility."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Various Private Insurers", "status": "Generally Non-covered", "notes": "Policies vary; most consider refractive surgery elective. Some offer discounts." },
+          { "payer": "Employer-Specific Plans (e.g., Union, Tech Companies)", "status": "May be Covered", "notes": "Coverage may be offered as an occupational benefit; requires verification." }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back Navigation",
+        "kind": "link",
+        "text": "Back to Assessment",
+        "href": "/highmyopia"
+      },
+      {
+        "heading": "CPT Codes - Included note",
+        "kind": "prose",
+        "text": "For each procedure code, the items listed under 'Included in this code' should NOT be billed separately."
+      }
+    ],
+    "raw": {
+      "markdown": "# HighMyopia Clinical Compass\n## High Myopia Insurance Authorization Guide\n\n[Button] < Back to Assessment (links to /highmyopia)\n\n---\n\n## Procedure Codes\n\n### HCPCS S0800 — Laser in situ keratomileusis (LASIK)\n- RVU: N/A (HCPCS)\n- Device/Access: Excimer Laser\n- Access: Corneal surface\n- Included in this code (do NOT bill separately):\n  - Pre-operative evaluation (if not separately billable)\n  - Post-operative care (global period may vary)\n- Note: HCPCS code. Generally considered elective/cosmetic and not covered by most insurance plans. Some payers may require CPT 66999 (unlisted procedure) or 65760 (keratomileusis) if covered as an occupational benefit.\n\n### CPT 66999 — Unlisted procedure, anterior segment of eye (for ICL implantation)\n- RVU: Varies\n- Device/Access: Implantable Collamer Lens (ICL)\n- Access: Anterior chamber\n- Included in this code (do NOT bill separately):\n  - Lens insertion\n  - Post-operative care (global period may vary)\n- Note: Used for ICL implantation as there is no specific CPT code. Generally considered elective/cosmetic and not covered by most insurance plans.\n\n### HCPCS V2599 — Contact lens, other type (for Orthokeratology lenses)\n- RVU: N/A (HCPCS)\n- Device/Access: Custom rigid gas permeable contact lenses\n- Access: Corneal surface\n- Included in this code (do NOT bill separately):\n  - Lens fitting\n  - Follow-up adjustments\n- Note: HCPCS code. Orthokeratology is generally considered elective and not covered by most insurance plans. Related services like fitting and follow-up may be billed separately with appropriate E/M codes if medically necessary.\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- H52.10 (Primary) — Myopia, unspecified eye. Used when laterality is not specified.\n- H52.11 — Myopia, right eye. Used for myopia affecting the right eye.\n- H52.12 — Myopia, left eye. Used for myopia affecting the left eye.\n- H52.13 — Myopia, bilateral. Used for myopia affecting both eyes.\n- H44.20 — Degenerative myopia, unspecified eye. Used for degenerative forms of myopia.\n- H44.21 — Degenerative myopia, right eye. Used for degenerative myopia affecting the right eye.\n- H44.22 — Degenerative myopia, left eye. Used for degenerative myopia affecting the left eye.\n- H44.23 — Degenerative myopia, bilateral. Used for degenerative myopia affecting both eyes.\n\n(Only H52.10 is marked as required/Primary.)\n\n---\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\n- Status badges: No Prior Auth (FFS); Not Covered (Elective)\n- Prior Auth Note: Refractive surgeries (LASIK, ICL) and orthokeratology are generally considered elective procedures for the correction of refractive error and are not covered by Medicare. Coverage may be considered only in rare cases of medically necessary procedures, such as correction of surgically induced astigmatism following cataract surgery, but not for primary refractive error correction.\n- Overview: Medicare typically does not cover procedures aimed at correcting refractive errors like myopia, as they are not deemed medically necessary. This includes LASIK, Implantable Collamer Lenses (ICL), and orthokeratology. Patients are generally responsible for the full cost of these procedures.\n\n**Coverage Criteria**\n- General Exclusion:\n  - Procedures for correction of refractive error (e.g., myopia, hyperopia, astigmatism) are considered cosmetic/elective.\n- Potential Exceptions (Rare):\n  - Correction of surgically induced astigmatism following medically necessary procedures (e.g., cataract surgery) may be considered on a case-by-case basis.\n\n**Required Documentation**\n- General:\n  - N/A - generally not covered.\n\n**Submission Process**\n1. N/A - generally not applicable for elective refractive procedures.\n2. For rare exceptions, submit detailed medical records demonstrating medical necessity and prior authorization request (if applicable).\n\n**Common Denial Reasons**\n- Lack of medical necessity (elective procedure)\n- Cosmetic procedure exclusion\n- No specific CPT code for refractive correction\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| Medicare National Coverage Determination (NCD) | Non-covered | Refractive surgery is generally not covered. |\n\n**Reimbursement Note:** Reimbursement is typically zero as these procedures are not covered. Patients are responsible for 100% of costs.\n\n**Authorization Tips**\n- Inform patients upfront about non-coverage and financial responsibility.\n- Document thoroughly if a procedure is performed for a medically necessary reason (e.g., post-surgical astigmatism).\n\n### Medicaid\n- Status badges: No Prior Auth (FFS); Not Covered (Elective)\n- Prior Auth Note: Medicaid programs generally do not cover elective refractive surgeries or orthokeratology for myopia correction. Coverage is typically limited to medically necessary eye care.\n- Overview: Medicaid policies vary by state, but most programs follow similar guidelines to Medicare regarding refractive surgeries. Procedures like LASIK, ICL, and orthokeratology are almost universally excluded as they are considered elective and not essential health benefits.\n\n**Coverage Criteria**\n- General Exclusion:\n  - Procedures for correction of refractive error are considered cosmetic/elective.\n- Medically Necessary Eye Care:\n  - Coverage is limited to treatment of eye diseases or conditions that impair vision and are not correctable by standard eyeglasses or contact lenses.\n\n**Required Documentation**\n- General:\n  - N/A - generally not covered.\n\n**Submission Process**\n1. N/A - generally not applicable for elective refractive procedures.\n2. Consult state-specific Medicaid guidelines for any potential exceptions or appeal processes.\n\n**Common Denial Reasons**\n- Lack of medical necessity\n- Elective/cosmetic procedure exclusion\n- Not a covered benefit under state plan\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| State Medicaid Programs | Non-covered | Policies generally exclude refractive surgeries for myopia. |\n\n**Reimbursement Note:** No reimbursement expected. Patients are responsible for all costs.\n\n**Authorization Tips**\n- Verify state-specific Medicaid policies, as some variations may exist.\n- Clearly communicate non-coverage to patients prior to any procedure.\n\n### Private Insurance\n- Status badges: No Prior Auth (FFS); Generally Not Covered (Elective)\n- Prior Auth Note: Most private insurance plans consider LASIK, ICL, and orthokeratology elective procedures for refractive error correction and do not provide coverage. Some plans may offer discounts through vision care riders or employer-sponsored benefits.\n- Overview: Private insurance coverage for high myopia treatments like LASIK, ICL, and orthokeratology is rare. These are typically categorized as elective or cosmetic procedures. However, some employer-sponsored plans or vision benefits packages may offer partial coverage or discounts. Patients should always verify their specific plan benefits.\n\n**Coverage Criteria**\n- General Exclusion:\n  - Procedures for correction of refractive error are typically excluded.\n- Vision Plan Riders:\n  - Some vision plans may offer discounts or limited benefits for refractive surgery.\n- Employer-Sponsored Benefits:\n  - Certain employers (e.g., union plans, specific corporations) may offer coverage as an occupational benefit.\n\n**Required Documentation**\n- Pre-determination/Pre-authorization (if applicable):\n  - Detailed clinical notes, ophthalmological examination results, visual acuity measurements, and justification of medical necessity (if any exception applies).\n\n**Submission Process**\n1. Patient to contact their insurance provider directly to inquire about benefits and any potential discounts.\n2. If a plan offers coverage, follow their specific pre-authorization and claims submission guidelines.\n3. For procedures billed with unlisted CPT codes (e.g., 66999), provide a detailed operative report and letter of medical necessity.\n\n**Common Denial Reasons**\n- Elective/cosmetic exclusion\n- Not a covered benefit\n- Failure to obtain pre-authorization (if required for rare exceptions)\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| Various Private Insurers | Generally Non-covered | Policies vary; most consider refractive surgery elective. Some offer discounts. |\n| Employer-Specific Plans (e.g., Union, Tech Companies) | May be Covered | Coverage may be offered as an occupational benefit; requires verification. |\n\n**Reimbursement Note:** Reimbursement is highly variable; typically zero or discounted rates. Patients often pay out-of-pocket.\n\n**Authorization Tips**\n- Advise patients to check with their specific insurance provider for any refractive surgery benefits or discounts.\n- Explore financing options or health savings accounts (HSAs)/flexible spending accounts (FSAs) for payment.\n- Document all patient communications regarding coverage and financial responsibility.\n",
+      "tables": [
+        {
+          "name": "Procedure Codes (CPT/HCPCS)",
+          "header": ["Code", "Type", "Description", "Device", "Access", "RVU", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            ["S0800", "HCPCS", "Laser in situ keratomileusis (LASIK)", "Excimer Laser", "Corneal surface", "N/A (HCPCS)", "Pre-operative evaluation (if not separately billable); Post-operative care (global period may vary)", "HCPCS code. Generally considered elective/cosmetic and not covered by most insurance plans. Some payers may require CPT 66999 (unlisted procedure) or 65760 (keratomileusis) if covered as an occupational benefit."],
+            ["66999", "CPT", "Unlisted procedure, anterior segment of eye (for ICL implantation)", "Implantable Collamer Lens (ICL)", "Anterior chamber", "Varies", "Lens insertion; Post-operative care (global period may vary)", "Used for ICL implantation as there is no specific CPT code. Generally considered elective/cosmetic and not covered by most insurance plans."],
+            ["V2599", "HCPCS", "Contact lens, other type (for Orthokeratology lenses)", "Custom rigid gas permeable contact lenses", "Corneal surface", "N/A (HCPCS)", "Lens fitting; Follow-up adjustments", "HCPCS code. Orthokeratology is generally considered elective and not covered by most insurance plans. Related services like fitting and follow-up may be billed separately with appropriate E/M codes if medically necessary."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Primary/Required"],
+          "rows": [
+            ["H52.10", "Myopia, unspecified eye", "Used when laterality is not specified.", "Yes"],
+            ["H52.11", "Myopia, right eye", "Used for myopia affecting the right eye.", "No"],
+            ["H52.12", "Myopia, left eye", "Used for myopia affecting the left eye.", "No"],
+            ["H52.13", "Myopia, bilateral", "Used for myopia affecting both eyes.", "No"],
+            ["H44.20", "Degenerative myopia, unspecified eye", "Used for degenerative forms of myopia.", "No"],
+            ["H44.21", "Degenerative myopia, right eye", "Used for degenerative myopia affecting the right eye.", "No"],
+            ["H44.22", "Degenerative myopia, left eye", "Used for degenerative myopia affecting the left eye.", "No"],
+            ["H44.23", "Degenerative myopia, bilateral", "Used for degenerative myopia affecting both eyes.", "No"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Medicare",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicare National Coverage Determination (NCD)", "Non-covered", "Refractive surgery is generally not covered."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid Programs", "Non-covered", "Policies generally exclude refractive surgeries for myopia."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Private Insurance",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Various Private Insurers", "Generally Non-covered", "Policies vary; most consider refractive surgery elective. Some offer discounts."],
+            ["Employer-Specific Plans (e.g., Union, Tech Companies)", "May be Covered", "Coverage may be offered as an occupational benefit; requires verification."]
+          ]
+        }
+      ]
+    }
+  }
+}

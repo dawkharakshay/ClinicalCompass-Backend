@@ -1,0 +1,241 @@
+{
+  "title": "MASLD / MASH Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "masld",
+    "hiddenDefaults": {
+      "hasLiverSteatosis": true,
+      "hasHepaticEncephalopathy": false,
+      "hasSobietyFromAlcohol": true
+    },
+    "steps": [
+      {
+        "id": "liver-assessment",
+        "shortLabel": "Liver Assessment",
+        "title": "Liver Assessment",
+        "fields": [
+          {
+            "id": "mash-status",
+            "name": "mashStatus",
+            "label": "MASH Status",
+            "type": "select",
+            "defaultValue": "suspected_mash",
+            "options": [
+              { "label": "No MASH (steatosis only)", "value": "no_mash" },
+              { "label": "Suspected MASH (clinical/imaging)", "value": "suspected_mash" },
+              { "label": "Biopsy-Confirmed MASH", "value": "biopsy_confirmed_mash" }
+            ]
+          },
+          {
+            "id": "estimated-fibrosis-stage",
+            "name": "estimatedFibrosisStage",
+            "label": "Estimated Fibrosis Stage",
+            "type": "select",
+            "defaultValue": "F2",
+            "options": [
+              { "label": "F0 — No Fibrosis", "value": "F0" },
+              { "label": "F1 — Mild Fibrosis", "value": "F1" },
+              { "label": "F2 — Moderate Fibrosis", "value": "F2" },
+              { "label": "F3 — Advanced Fibrosis (bridging)", "value": "F3" },
+              { "label": "F4 — Cirrhosis", "value": "F4_cirrhosis" }
+            ]
+          },
+          {
+            "id": "steatosis-method",
+            "name": "steatosisMethod",
+            "label": "Steatosis Diagnosis Method",
+            "type": "select",
+            "defaultValue": "ultrasound",
+            "options": [
+              { "label": "Ultrasound", "value": "ultrasound" },
+              { "label": "CT", "value": "ct" },
+              { "label": "MRI-PDFF", "value": "mri_pdff" },
+              { "label": "Liver Biopsy", "value": "biopsy" },
+              { "label": "CAP Score (FibroScan)", "value": "cap_score" }
+            ]
+          },
+          {
+            "id": "fib4-score",
+            "name": "fib4Score",
+            "label": "FIB-4 Score (optional)",
+            "type": "number",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "lsm-kpa",
+            "name": "lsm_kPa",
+            "label": "Liver Stiffness (kPa, FibroScan)",
+            "type": "number",
+            "unit": "kPa",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "has-cirrhosis",
+            "name": "hasCirchosis",
+            "label": "Cirrhosis",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-portal-hypertension",
+            "name": "hasPortalHypertension",
+            "label": "Portal Hypertension",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-esophageal-varices",
+            "name": "hasEsophagealVarices",
+            "label": "Esophageal Varices",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-ascites",
+            "name": "hasAscites",
+            "label": "Ascites",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-hcc",
+            "name": "hasHCC",
+            "label": "Hepatocellular Carcinoma (HCC)",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "cardiometabolic-risk",
+        "shortLabel": "Cardiometabolic Risk",
+        "title": "Cardiometabolic Risk",
+        "fields": [
+          {
+            "id": "bmi",
+            "name": "bmi",
+            "label": "BMI (kg/m²)",
+            "type": "number",
+            "unit": "kg/m²",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "diabetes-status",
+            "name": "diabetesStatus",
+            "label": "Diabetes Status",
+            "type": "select",
+            "defaultValue": "type2_diabetes",
+            "options": [
+              { "label": "No Diabetes", "value": "none" },
+              { "label": "Prediabetes", "value": "prediabetes" },
+              { "label": "Type 2 Diabetes", "value": "type2_diabetes" }
+            ]
+          },
+          {
+            "id": "has-hypertension",
+            "name": "hasHypertension",
+            "label": "Hypertension",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "has-dyslipidemia",
+            "name": "hasDyslipidemia",
+            "label": "Dyslipidemia",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "has-metabolic-syndrome",
+            "name": "hasMetabolicSyndrome",
+            "label": "Metabolic Syndrome",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "has-cardiovascular-disease",
+            "name": "hasCardiovascularDisease",
+            "label": "Established Cardiovascular Disease",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-obesity",
+            "name": "hasObesity",
+            "label": "Obesity (BMI ≥30)",
+            "type": "switch",
+            "defaultValue": true
+          }
+        ]
+      },
+      {
+        "id": "current-therapy-lifestyle",
+        "shortLabel": "Current Therapy & Lifestyle",
+        "title": "Current Therapy & Lifestyle",
+        "fields": [
+          {
+            "id": "is-on-glp1-agonist",
+            "name": "isOnGLP1Agonist",
+            "label": "On GLP-1 Agonist (semaglutide/tirzepatide)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "is-on-pioglitazone",
+            "name": "isOnPioglitazone",
+            "label": "On Pioglitazone",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "is-on-metformin",
+            "name": "isOnMetformin",
+            "label": "On Metformin",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "is-on-statin",
+            "name": "isOnStatin",
+            "label": "On Statin",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "is-on-vitamin-e",
+            "name": "isOnVitaminE",
+            "label": "On Vitamin E (800 IU/day)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "alcohol-use-grams-per-day",
+            "name": "alcoholUseGramsPerDay",
+            "label": "Alcohol Use (grams/day)",
+            "type": "number",
+            "unit": "g/day",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "weight-loss-percent-recent",
+            "name": "weightLossPercentRecent",
+            "label": "Recent Weight Loss (%)",
+            "type": "number",
+            "unit": "%",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "is-evaluated-for-transplant",
+            "name": "isEvaluatedForTransplant",
+            "label": "Evaluated for Liver Transplant",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

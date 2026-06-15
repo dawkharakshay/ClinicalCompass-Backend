@@ -1,0 +1,236 @@
+{
+  "title": "Renal Cryoablation Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assess",
+    "logicKey": "renalcryoablation",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "tumor-characteristics",
+        "shortLabel": "Tumor Characteristics",
+        "title": "Tumor Characteristics",
+        "fields": [
+          {
+            "id": "tumor-size-cm",
+            "name": "tumorSizeCm",
+            "label": "Tumor Size (cm)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "tumor-location",
+            "name": "tumorLocation",
+            "label": "Tumor Location",
+            "type": "select",
+            "required": false,
+            "defaultValue": "exophytic",
+            "options": [
+              { "label": "Exophytic (>50% outside renal parenchyma)", "value": "exophytic" },
+              { "label": "Mixed (25–50% exophytic)", "value": "mixed" },
+              { "label": "Endophytic (<25% exophytic / entirely intrarenal)", "value": "endophytic" },
+              { "label": "Hilar (adjacent to renal pelvis/collecting system)", "value": "hilar" }
+            ]
+          },
+          {
+            "id": "bosnak-category",
+            "name": "bosnakCategory",
+            "label": "Bosnak Category / Lesion Type",
+            "type": "select",
+            "required": false,
+            "defaultValue": "solid",
+            "options": [
+              { "label": "Solid enhancing renal mass", "value": "solid" },
+              { "label": "Bosnak IV — complex cystic with enhancing components", "value": "IV" },
+              { "label": "Bosnak III — complex cystic, indeterminate", "value": "III" },
+              { "label": "Bosnak IIF — minimally complex cystic", "value": "IIF" },
+              { "label": "Bosnak II — benign-appearing cystic", "value": "II" },
+              { "label": "Bosnak I — simple cyst", "value": "I" }
+            ]
+          },
+          {
+            "id": "multiple-ipsilateral-tumors",
+            "name": "multipleIpsilateralTumors",
+            "label": "Multiple ipsilateral renal tumors",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "anatomy-imaging",
+        "shortLabel": "Anatomy & Imaging",
+        "title": "Anatomy & Imaging",
+        "fields": [
+          {
+            "id": "renal-nephrometry-score",
+            "name": "renalNephrometryScore",
+            "label": "R.E.N.A.L. Nephrometry Score",
+            "type": "number",
+            "required": false,
+            "defaultValue": 4,
+            "min": 4,
+            "max": 12,
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "imaging-modality",
+            "name": "imagingModality",
+            "label": "Planned Imaging Guidance",
+            "type": "select",
+            "required": false,
+            "defaultValue": "ct",
+            "options": [
+              { "label": "CT-guided", "value": "ct" },
+              { "label": "MRI-guided", "value": "mri" },
+              { "label": "Ultrasound-guided", "value": "ultrasound" }
+            ]
+          },
+          {
+            "id": "contralateral-kidney-function",
+            "name": "contralateralKidneyFunction",
+            "label": "Contralateral Kidney Function",
+            "type": "select",
+            "required": false,
+            "defaultValue": "normal",
+            "options": [
+              { "label": "Normal (eGFR >60)", "value": "normal" },
+              { "label": "Reduced (eGFR 30–60)", "value": "reduced" },
+              { "label": "Solitary kidney / absent contralateral", "value": "solitary" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "patient-factors",
+        "shortLabel": "Patient Factors",
+        "title": "Patient Factors",
+        "fields": [
+          {
+            "id": "patient-age",
+            "name": "patientAge",
+            "label": "Patient Age",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "performance-status",
+            "name": "performanceStatus",
+            "label": "ECOG Performance Status",
+            "type": "select",
+            "required": false,
+            "defaultValue": "0",
+            "options": [
+              { "label": "0 — Fully active", "value": "0" },
+              { "label": "1 — Restricted strenuous activity", "value": "1" },
+              { "label": "2 — Ambulatory, self-care only", "value": "2" },
+              { "label": "3 — Limited self-care", "value": "3" }
+            ]
+          },
+          {
+            "id": "comorbidities-ckd",
+            "name": "comorbidities.ckd",
+            "label": "Chronic Kidney Disease (Stage 3+, eGFR <60)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "comorbidities-diabetes",
+            "name": "comorbidities.diabetes",
+            "label": "Diabetes mellitus",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "comorbidities-hypertension",
+            "name": "comorbidities.hypertension",
+            "label": "Hypertension",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "comorbidities-cardiopulmonary-disease",
+            "name": "comorbidities.cardiopulmonaryDisease",
+            "label": "Significant cardiopulmonary disease (high surgical risk)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "comorbidities-anticoagulation",
+            "name": "comorbidities.anticoagulation",
+            "label": "On anticoagulation therapy",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "hereditary-syndrome",
+            "name": "hereditarySyndrome",
+            "label": "Hereditary renal cancer syndrome (VHL, HLRCC, BHD, TSC)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "biopsy-history",
+        "shortLabel": "Biopsy & History",
+        "title": "Biopsy & History",
+        "fields": [
+          {
+            "id": "biopsy-performed",
+            "name": "biopsyPerformed",
+            "label": "Pre-ablation percutaneous biopsy performed",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "biopsy-result",
+            "name": "biopsyResult",
+            "label": "Biopsy Result",
+            "type": "select",
+            "required": false,
+            "defaultValue": "not_performed",
+            "options": [
+              { "label": "RCC — Clear cell", "value": "rcc_clear_cell" },
+              { "label": "RCC — Papillary", "value": "rcc_papillary" },
+              { "label": "RCC — Chromophobe", "value": "rcc_chromophobe" },
+              { "label": "Oncocytoma (benign)", "value": "oncocytoma" },
+              { "label": "Angiomyolipoma (benign)", "value": "angiomyolipoma" },
+              { "label": "Indeterminate", "value": "indeterminate" }
+            ],
+            "visibleWhen": { "field": "biopsyPerformed", "op": "truthy" }
+          },
+          {
+            "id": "prior-nephrectomy",
+            "name": "priorNephrectomy",
+            "label": "Prior nephrectomy (ipsilateral or contralateral)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "prior-ablation",
+            "name": "priorAblation",
+            "label": "Prior ablation of this lesion (re-ablation for residual/recurrence)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

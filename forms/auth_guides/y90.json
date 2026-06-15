@@ -1,0 +1,468 @@
+{
+  "title": "Y-90 Radioembolization Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "Y90AuthGuide.tsx",
+    "title": "Y90 Clinical Compass",
+    "subtitle": "Y90 Radioembolization Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "79445",
+        "description": "Radiopharmaceutical therapy, by intra-arterial particulate administration",
+        "device": "SIR-Spheres® (Sirtex Medical), TheraSphere® (Boston Scientific)",
+        "access": "Hepatic artery catheterization; microsphere infusion into hepatic artery branches",
+        "rvu": "Technical component only (facility); professional component billed separately",
+        "includes": [
+          "Administration of Y90 microspheres via intra-arterial infusion",
+          "Radiation safety monitoring during procedure"
+        ],
+        "note": "This is the radiopharmaceutical therapy administration code. The hepatic artery catheterization is billed separately with 37243 or 36245/36246. The microsphere cost is billed by the facility as a drug/supply."
+      },
+      {
+        "code": "37243",
+        "description": "Vascular embolization or occlusion, inclusive of all radiological supervision and interpretation; for tumors, organ ischemia, or infarction",
+        "device": "Catheter-based hepatic artery access for Y90 delivery",
+        "access": "Transfemoral or transradial hepatic artery catheterization",
+        "rvu": "7.0",
+        "includes": [
+          "Hepatic artery catheterization and selective positioning",
+          "Fluoroscopic guidance and roadmapping",
+          "Radiologic supervision and interpretation",
+          "Angiography performed during the procedure"
+        ],
+        "note": "Bill 37243 for the hepatic artery catheterization component of Y90 delivery. This is the primary interventional code billed alongside 79445."
+      },
+      {
+        "code": "78816",
+        "description": "Positron emission tomography (PET) imaging; whole body",
+        "device": "N/A — nuclear medicine imaging code",
+        "access": "PET/CT for pre-procedure staging and dosimetry planning",
+        "rvu": "1.5",
+        "includes": [
+          "PET imaging acquisition and interpretation"
+        ],
+        "note": "Used for pre-procedure staging when PET/CT is performed for treatment planning. Bill separately from the Y90 procedure."
+      },
+      {
+        "code": "78816",
+        "description": "Tc-99m MAA hepatic arterial perfusion scintigraphy (mapping procedure)",
+        "device": "Tc-99m MAA (macroaggregated albumin) — mapping/simulation procedure",
+        "access": "Hepatic artery catheterization with MAA injection; SPECT/CT imaging",
+        "rvu": "Billed as nuclear medicine study — varies",
+        "includes": [
+          "MAA injection",
+          "SPECT/CT imaging",
+          "Lung shunt fraction calculation"
+        ],
+        "note": "The mapping/simulation procedure (MAA angiogram) is typically performed 1-2 weeks before Y90 delivery. Bill the catheterization (36245/36246) and nuclear medicine study (78803 SPECT or 78816 PET) separately."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "C22.0",
+        "description": "Hepatocellular carcinoma (HCC)",
+        "notes": "Primary diagnosis for HCC. Most common Y90 indication. Requires imaging or biopsy confirmation.",
+        "required": true,
+        "type": "Primary"
+      },
+      {
+        "code": "C78.7",
+        "description": "Secondary malignant neoplasm of liver and intrahepatic bile duct",
+        "notes": "Primary diagnosis for liver metastases (mCRC, NET, breast, etc.). Most common for non-HCC Y90.",
+        "required": true,
+        "type": "Primary"
+      },
+      {
+        "code": "C22.1",
+        "description": "Intrahepatic bile duct carcinoma (cholangiocarcinoma)",
+        "notes": "Primary diagnosis for intrahepatic cholangiocarcinoma treated with Y90.",
+        "required": false,
+        "type": "Secondary"
+      },
+      {
+        "code": "C18.9",
+        "description": "Malignant neoplasm of colon, unspecified",
+        "notes": "Secondary code for colorectal cancer as primary malignancy when treating liver mets.",
+        "required": false,
+        "type": "Secondary"
+      },
+      {
+        "code": "C25.9",
+        "description": "Malignant neoplasm of pancreas, unspecified",
+        "notes": "Secondary code for pancreatic NET as primary malignancy.",
+        "required": false,
+        "type": "Secondary"
+      },
+      {
+        "code": "K76.89",
+        "description": "Other specified diseases of liver",
+        "notes": "Secondary code for underlying liver disease (cirrhosis, portal hypertension) when relevant.",
+        "required": false,
+        "type": "Secondary"
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare FFS (Traditional Medicare)",
+        "coverageStatus": "Covered",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Traditional Medicare FFS does NOT require prior authorization for Y90 radioembolization (CPT 79445 + 37243). Medicare Advantage plans may require prior auth — verify with the specific plan.",
+        "overview": "Traditional Medicare covers Y90 radioembolization (TARE/SIRT) as medically necessary for unresectable HCC and liver-dominant metastatic disease. Coverage is supported under NCD 260.1 (brachytherapy/radiopharmaceutical therapy) and established through MAC LCDs. No prior authorization required for Traditional Medicare FFS.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — HCC Indications",
+            "items": [
+              "Unresectable HCC (BCLC stage B or C)",
+              "Child-Pugh A or B7 hepatic function",
+              "ECOG performance status 0-2",
+              "No complete portal vein thrombosis (segmental/lobar thrombosis acceptable)",
+              "Tumor burden ≤ 70% liver volume",
+              "Lung shunt fraction < 20% on MAA mapping scan"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Liver Metastases Indications",
+            "items": [
+              "Liver-dominant metastatic disease (mCRC, NET, breast, other)",
+              "Failure of or ineligibility for systemic therapy (for mCRC)",
+              "Adequate hepatic function (bilirubin ≤ 2.0 mg/dL)",
+              "ECOG performance status 0-2",
+              "No extrahepatic disease progression (for curative/bridge intent)"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Exclusions",
+            "items": [
+              "Uncorrectable hepatopulmonary shunting (lung shunt fraction ≥ 20%)",
+              "Child-Pugh C hepatic function",
+              "Biliary obstruction not amenable to drainage",
+              "Contraindication to hepatic artery catheterization",
+              "Pregnancy"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Clinical Records",
+            "items": [
+              "Oncology or IR/hepatology consult note documenting diagnosis and treatment plan",
+              "Multidisciplinary tumor board (MDT/tumor board) documentation",
+              "ECOG performance status",
+              "Child-Pugh score (for HCC)",
+              "BCLC staging (for HCC)",
+              "Prior systemic therapy records (for mCRC/NET)"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Laboratory Values",
+            "items": [
+              "LFTs (AST, ALT, bilirubin, albumin)",
+              "CBC with platelets",
+              "INR/PT",
+              "AFP (for HCC)",
+              "CEA/CA19-9 (for mCRC/cholangiocarcinoma)"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Imaging",
+            "items": [
+              "Liver MRI or CT with contrast (multiphasic) — lesion characterization",
+              "PET/CT if available (for metastatic disease staging)",
+              "MAA mapping scan results — lung shunt fraction calculation",
+              "Angiography findings from mapping procedure"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify patient has Traditional Medicare (not Medicare Advantage)",
+              "No prior authorization required for Traditional Medicare FFS",
+              "Perform MAA mapping procedure (1-2 weeks before Y90 delivery) — bill separately",
+              "Document medical necessity: MDT review, Child-Pugh, ECOG, lung shunt fraction",
+              "Bill CPT 79445 (Y90 administration) + 37243 (hepatic artery catheterization) on day of treatment",
+              "Include ICD-10 C22.0 (HCC) or C78.7 (liver mets) as primary diagnosis",
+              "Submit claim to Medicare Part B (professional) or Part A (facility)"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Missing MAA mapping scan documentation (lung shunt fraction not calculated)",
+              "Child-Pugh score not documented or Child-Pugh C",
+              "Tumor burden > 70% liver volume not addressed",
+              "Missing multidisciplinary tumor board documentation",
+              "Medicare Advantage plan denied — requires separate PA process",
+              "Incorrect billing: 79445 billed without 37243 for catheterization"
+            ]
+          },
+          {
+            "heading": "Billing & Authorization Tips",
+            "items": [
+              "Always perform and document the MAA mapping procedure — it is required for safety and reimbursement",
+              "Document lung shunt fraction numerically (e.g., \"LSF = 8.2%\") in the procedure note",
+              "Include Child-Pugh score and BCLC stage for HCC cases",
+              "Multidisciplinary tumor board documentation is strongly recommended and required by some MACs",
+              "The microsphere cost (SIR-Spheres or TheraSphere) is a facility drug/supply cost — not billed by the physician"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicare professional reimbursement for Y90 includes 79445 (technical/facility) + 37243 (professional ~$800-$1,200). The microsphere drug cost ($10,000-$20,000) is billed by the facility as a drug/supply and is separate from the professional fee."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Medicare FFS (Traditional)",
+            "status": "Covered",
+            "notes": "NCD 260.1 + MAC LCDs. No PA required. Medical necessity documentation required."
+          },
+          {
+            "payer": "Medicare Advantage (varies)",
+            "status": "Variable — PA often required",
+            "notes": "Each MA plan sets its own PA requirements."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered (with PA, most states)",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is required in most state Medicaid programs for Y90 radioembolization. Coverage is generally available for HCC and liver-dominant metastases.",
+        "overview": "Most state Medicaid programs cover Y90 radioembolization for HCC and liver-dominant metastases with prior authorization. Coverage criteria generally mirror Medicare requirements. The high cost of microspheres ($10,000-$20,000) may require additional justification in some states.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Standard Criteria",
+            "items": [
+              "Confirmed HCC or liver-dominant metastases",
+              "Adequate hepatic function (Child-Pugh A or B7)",
+              "ECOG performance status 0-2",
+              "Lung shunt fraction < 20%",
+              "Oncology/MDT consultation documented"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Required for PA Submission",
+            "items": [
+              "Completed state PA form",
+              "Oncology/MDT consult note",
+              "Liver MRI or CT report",
+              "MAA mapping scan results",
+              "Laboratory values (LFTs, CBC, INR)",
+              "Child-Pugh score and ECOG status"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Obtain state-specific PA form from Medicaid portal",
+              "Submit with complete clinical documentation including MAA mapping results",
+              "Allow 5-15 business days for PA determination",
+              "If denied, initiate peer-to-peer review with oncology support"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Missing MAA mapping scan documentation",
+              "Incomplete PA form or missing laboratory values",
+              "Child-Pugh C hepatic function",
+              "Missing MDT documentation"
+            ]
+          },
+          {
+            "heading": "Billing & Authorization Tips",
+            "items": [
+              "For dual-eligible patients, bill Medicare first — no PA needed for Medicare FFS",
+              "The high drug cost of microspheres may trigger additional review in some states",
+              "Include MDT tumor board documentation to support medical necessity"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicaid reimbursement for Y90 professional fees is typically 40-60% of Medicare rates. The facility drug cost for microspheres may be covered separately under pharmacy or device benefits."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Medicaid (most states)",
+            "status": "Covered with PA",
+            "notes": "Prior auth required. Criteria similar to Medicare."
+          },
+          {
+            "payer": "Dual-eligible patients",
+            "status": "Bill Medicare first",
+            "notes": "Medicare pays primary; Medicaid covers remaining cost-sharing."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private / Commercial Insurance",
+        "coverageStatus": "Covered (PA required)",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is required by virtually all commercial payers. Coverage is generally available for HCC and liver-dominant metastases with appropriate documentation.",
+        "overview": "Most major commercial payers cover Y90 radioembolization for unresectable HCC and liver-dominant metastases with prior authorization. UHC, BCBS NC, Aetna, and Humana generally cover with criteria. The SORAMIC trial (Lancet Oncol 2019) and EPOCH trial (J Clin Oncol 2021) provide strong evidence for commercial payer appeals.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Typical PA Criteria",
+            "items": [
+              "Unresectable HCC (BCLC B/C) or liver-dominant metastatic disease",
+              "Child-Pugh A or B7 hepatic function",
+              "ECOG performance status 0-2",
+              "Lung shunt fraction < 20% on MAA mapping",
+              "Tumor burden ≤ 70% liver volume",
+              "Multidisciplinary tumor board review documented",
+              "Failure of or ineligibility for systemic therapy (for mCRC/NET)"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Additional Requirements (Some Payers)",
+            "items": [
+              "Prior TACE failure for HCC (some payers require TACE before Y90)",
+              "Sorafenib trial for HCC (some payers require prior systemic therapy)",
+              "Specific BCLC staging documentation"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Clinical Documentation",
+            "items": [
+              "Oncology/MDT consult note with diagnosis and treatment rationale",
+              "Liver MRI or CT with multiphasic contrast (lesion characterization)",
+              "MAA mapping scan results with lung shunt fraction",
+              "Laboratory values (LFTs, AFP, CBC, INR)",
+              "Child-Pugh score and ECOG status",
+              "Prior systemic therapy records"
+            ]
+          },
+          {
+            "heading": "Required Documentation — PA Submission",
+            "items": [
+              "Completed payer-specific PA form",
+              "Letter of medical necessity citing NCCN HCC Guidelines and trial data",
+              "CPT 79445 + 37243 and ICD-10 C22.0 or C78.7 on PA request"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify insurance benefits and PA requirements via payer portal",
+              "Submit PA with complete clinical documentation and letter of medical necessity",
+              "Cite NCCN HCC Guidelines v3.2025, SORAMIC trial, and EPOCH trial in PA letter",
+              "Allow 5-10 business days for PA determination",
+              "If denied, request peer-to-peer review with medical director immediately",
+              "File formal appeal with NCCN guidelines, SIR/CIRSE/ASTRO Y90 standards, and trial data"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Missing MAA mapping scan results in PA submission",
+              "Prior systemic therapy not documented (for mCRC/NET)",
+              "Child-Pugh score not documented or Child-Pugh C",
+              "Missing multidisciplinary tumor board documentation",
+              "Payer requires prior TACE failure for HCC (verify plan-specific policy)"
+            ]
+          },
+          {
+            "heading": "Billing & Authorization Tips",
+            "items": [
+              "Always include MAA mapping scan results in the PA submission — this is the most common missing document",
+              "Cite SORAMIC trial (Ricke et al., Lancet Oncol 2019) and EPOCH trial (Salem et al., J Clin Oncol 2021)",
+              "NCCN HCC Guidelines v3.2025 include Y90 as a Category 1 recommendation for BCLC B/C",
+              "SIR/CIRSE/ASTRO/SRS Y90 Radioembolization Standards (2017) provide authoritative practice guidelines",
+              "For mCRC liver mets, cite SIRFLOX and FOXFIRE trial data in appeals",
+              "Document that Y90 is being used as a bridge to transplant, downstaging, or palliative intent — this affects coverage criteria"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Commercial reimbursement for Y90 professional fees varies by plan and contract. The microsphere drug cost ($10,000-$20,000 per treatment) is typically covered as a facility drug/supply benefit and requires separate authorization in many plans."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered with PA",
+            "notes": "Prior auth required for HCC and liver mets. Medical necessity criteria apply."
+          },
+          {
+            "payer": "BCBS NC",
+            "status": "Covered with PA",
+            "notes": "Covered for HCC and metastatic liver tumors with criteria."
+          },
+          {
+            "payer": "Aetna",
+            "status": "Covered with criteria",
+            "notes": "Generally covered for HCC and liver mets with prior auth."
+          },
+          {
+            "payer": "Humana",
+            "status": "Covered with PA",
+            "notes": "Generally covered with prior auth and medical necessity criteria."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment (navigates to /y90)",
+        "href": "/y90"
+      },
+      {
+        "heading": "Disclaimer",
+        "kind": "prose",
+        "text": "Disclaimer: Coverage policies change frequently. Always verify current payer policies directly with the insurance plan before scheduling procedures. This guide references NCCN HCC Guidelines v3.2025, SORAMIC trial (Ricke et al., Lancet Oncol 2019), EPOCH trial (Salem et al., J Clin Oncol 2021), and SIR/CIRSE/ASTRO/SRS Y90 Radioembolization Standards (2017). Last updated: April 2026."
+      }
+    ],
+    "raw": {
+      "markdown": "# Y90 Clinical Compass\n## Y90 Radioembolization Insurance Authorization Guide\n\n[Button] Back to Assessment (navigates to /y90)\n\n---\n\n## Procedure Codes (CPT)\n\n### CPT 79445 — RVU: Technical component only (facility); professional component billed separately\nRadiopharmaceutical therapy, by intra-arterial particulate administration\n- Device/Access: SIR-Spheres® (Sirtex Medical), TheraSphere® (Boston Scientific)\nIncluded in this code:\n- Administration of Y90 microspheres via intra-arterial infusion\n- Radiation safety monitoring during procedure\nNote: This is the radiopharmaceutical therapy administration code. The hepatic artery catheterization is billed separately with 37243 or 36245/36246. The microsphere cost is billed by the facility as a drug/supply.\n\n### CPT 37243 — RVU: 7.0\nVascular embolization or occlusion, inclusive of all radiological supervision and interpretation; for tumors, organ ischemia, or infarction\n- Device/Access: Catheter-based hepatic artery access for Y90 delivery\nIncluded in this code:\n- Hepatic artery catheterization and selective positioning\n- Fluoroscopic guidance and roadmapping\n- Radiologic supervision and interpretation\n- Angiography performed during the procedure\nNote: Bill 37243 for the hepatic artery catheterization component of Y90 delivery. This is the primary interventional code billed alongside 79445.\n\n### CPT 78816 — RVU: 1.5\nPositron emission tomography (PET) imaging; whole body\n- Device/Access: N/A — nuclear medicine imaging code\nIncluded in this code:\n- PET imaging acquisition and interpretation\nNote: Used for pre-procedure staging when PET/CT is performed for treatment planning. Bill separately from the Y90 procedure.\n\n### CPT 78816 — RVU: Billed as nuclear medicine study — varies\nTc-99m MAA hepatic arterial perfusion scintigraphy (mapping procedure)\n- Device/Access: Tc-99m MAA (macroaggregated albumin) — mapping/simulation procedure\nIncluded in this code:\n- MAA injection\n- SPECT/CT imaging\n- Lung shunt fraction calculation\nNote: The mapping/simulation procedure (MAA angiogram) is typically performed 1-2 weeks before Y90 delivery. Bill the catheterization (36245/36246) and nuclear medicine study (78803 SPECT or 78816 PET) separately.\n\n---\n\n## ICD-10 Diagnosis Codes\n\n| Code | Description | Usage Notes | Type |\n| --- | --- | --- | --- |\n| C22.0 | Hepatocellular carcinoma (HCC) | Primary diagnosis for HCC. Most common Y90 indication. Requires imaging or biopsy confirmation. | Primary |\n| C78.7 | Secondary malignant neoplasm of liver and intrahepatic bile duct | Primary diagnosis for liver metastases (mCRC, NET, breast, etc.). Most common for non-HCC Y90. | Primary |\n| C22.1 | Intrahepatic bile duct carcinoma (cholangiocarcinoma) | Primary diagnosis for intrahepatic cholangiocarcinoma treated with Y90. | Secondary |\n| C18.9 | Malignant neoplasm of colon, unspecified | Secondary code for colorectal cancer as primary malignancy when treating liver mets. | Secondary |\n| C25.9 | Malignant neoplasm of pancreas, unspecified | Secondary code for pancreatic NET as primary malignancy. | Secondary |\n| K76.89 | Other specified diseases of liver | Secondary code for underlying liver disease (cirrhosis, portal hypertension) when relevant. | Secondary |\n\n---\n\n## Prior Authorization by Payer Type\n\nPayer tabs: Medicare FFS | Medicaid | Private / Commercial\n\n### Medicare FFS (Traditional Medicare)\nStatus badges: No Prior Auth (FFS); Covered\nPrior Auth Note: Traditional Medicare FFS does NOT require prior authorization for Y90 radioembolization (CPT 79445 + 37243). Medicare Advantage plans may require prior auth — verify with the specific plan.\nOverview: Traditional Medicare covers Y90 radioembolization (TARE/SIRT) as medically necessary for unresectable HCC and liver-dominant metastatic disease. Coverage is supported under NCD 260.1 (brachytherapy/radiopharmaceutical therapy) and established through MAC LCDs. No prior authorization required for Traditional Medicare FFS.\n\n#### Coverage Criteria\n**HCC Indications**\n- Unresectable HCC (BCLC stage B or C)\n- Child-Pugh A or B7 hepatic function\n- ECOG performance status 0-2\n- No complete portal vein thrombosis (segmental/lobar thrombosis acceptable)\n- Tumor burden ≤ 70% liver volume\n- Lung shunt fraction < 20% on MAA mapping scan\n**Liver Metastases Indications**\n- Liver-dominant metastatic disease (mCRC, NET, breast, other)\n- Failure of or ineligibility for systemic therapy (for mCRC)\n- Adequate hepatic function (bilirubin ≤ 2.0 mg/dL)\n- ECOG performance status 0-2\n- No extrahepatic disease progression (for curative/bridge intent)\n**Exclusions**\n- Uncorrectable hepatopulmonary shunting (lung shunt fraction ≥ 20%)\n- Child-Pugh C hepatic function\n- Biliary obstruction not amenable to drainage\n- Contraindication to hepatic artery catheterization\n- Pregnancy\n\n#### Required Documentation\n**Clinical Records**\n- Oncology or IR/hepatology consult note documenting diagnosis and treatment plan\n- Multidisciplinary tumor board (MDT/tumor board) documentation\n- ECOG performance status\n- Child-Pugh score (for HCC)\n- BCLC staging (for HCC)\n- Prior systemic therapy records (for mCRC/NET)\n**Laboratory Values**\n- LFTs (AST, ALT, bilirubin, albumin)\n- CBC with platelets\n- INR/PT\n- AFP (for HCC)\n- CEA/CA19-9 (for mCRC/cholangiocarcinoma)\n**Imaging**\n- Liver MRI or CT with contrast (multiphasic) — lesion characterization\n- PET/CT if available (for metastatic disease staging)\n- MAA mapping scan results — lung shunt fraction calculation\n- Angiography findings from mapping procedure\n\n#### Submission Process\n1. Verify patient has Traditional Medicare (not Medicare Advantage)\n2. No prior authorization required for Traditional Medicare FFS\n3. Perform MAA mapping procedure (1-2 weeks before Y90 delivery) — bill separately\n4. Document medical necessity: MDT review, Child-Pugh, ECOG, lung shunt fraction\n5. Bill CPT 79445 (Y90 administration) + 37243 (hepatic artery catheterization) on day of treatment\n6. Include ICD-10 C22.0 (HCC) or C78.7 (liver mets) as primary diagnosis\n7. Submit claim to Medicare Part B (professional) or Part A (facility)\n\n#### Common Denial Reasons\n- Missing MAA mapping scan documentation (lung shunt fraction not calculated)\n- Child-Pugh score not documented or Child-Pugh C\n- Tumor burden > 70% liver volume not addressed\n- Missing multidisciplinary tumor board documentation\n- Medicare Advantage plan denied — requires separate PA process\n- Incorrect billing: 79445 billed without 37243 for catheterization\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicare FFS (Traditional) | Covered | NCD 260.1 + MAC LCDs. No PA required. Medical necessity documentation required. |\n| Medicare Advantage (varies) | Variable — PA often required | Each MA plan sets its own PA requirements. |\n\n#### Billing & Authorization Tips\n- Always perform and document the MAA mapping procedure — it is required for safety and reimbursement\n- Document lung shunt fraction numerically (e.g., \"LSF = 8.2%\") in the procedure note\n- Include Child-Pugh score and BCLC stage for HCC cases\n- Multidisciplinary tumor board documentation is strongly recommended and required by some MACs\n- The microsphere cost (SIR-Spheres or TheraSphere) is a facility drug/supply cost — not billed by the physician\n\n#### Reimbursement Note\nMedicare professional reimbursement for Y90 includes 79445 (technical/facility) + 37243 (professional ~$800-$1,200). The microsphere drug cost ($10,000-$20,000) is billed by the facility as a drug/supply and is separate from the professional fee.\n\n### Medicaid\nStatus badges: Prior Auth Required; Covered (with PA, most states)\nPrior Auth Note: Prior authorization is required in most state Medicaid programs for Y90 radioembolization. Coverage is generally available for HCC and liver-dominant metastases.\nOverview: Most state Medicaid programs cover Y90 radioembolization for HCC and liver-dominant metastases with prior authorization. Coverage criteria generally mirror Medicare requirements. The high cost of microspheres ($10,000-$20,000) may require additional justification in some states.\n\n#### Coverage Criteria\n**Standard Criteria**\n- Confirmed HCC or liver-dominant metastases\n- Adequate hepatic function (Child-Pugh A or B7)\n- ECOG performance status 0-2\n- Lung shunt fraction < 20%\n- Oncology/MDT consultation documented\n\n#### Required Documentation\n**Required for PA Submission**\n- Completed state PA form\n- Oncology/MDT consult note\n- Liver MRI or CT report\n- MAA mapping scan results\n- Laboratory values (LFTs, CBC, INR)\n- Child-Pugh score and ECOG status\n\n#### Submission Process\n1. Obtain state-specific PA form from Medicaid portal\n2. Submit with complete clinical documentation including MAA mapping results\n3. Allow 5-15 business days for PA determination\n4. If denied, initiate peer-to-peer review with oncology support\n\n#### Common Denial Reasons\n- Missing MAA mapping scan documentation\n- Incomplete PA form or missing laboratory values\n- Child-Pugh C hepatic function\n- Missing MDT documentation\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicaid (most states) | Covered with PA | Prior auth required. Criteria similar to Medicare. |\n| Dual-eligible patients | Bill Medicare first | Medicare pays primary; Medicaid covers remaining cost-sharing. |\n\n#### Billing & Authorization Tips\n- For dual-eligible patients, bill Medicare first — no PA needed for Medicare FFS\n- The high drug cost of microspheres may trigger additional review in some states\n- Include MDT tumor board documentation to support medical necessity\n\n#### Reimbursement Note\nMedicaid reimbursement for Y90 professional fees is typically 40-60% of Medicare rates. The facility drug cost for microspheres may be covered separately under pharmacy or device benefits.\n\n### Private / Commercial Insurance\nStatus badges: Prior Auth Required; Covered (PA required)\nPrior Auth Note: Prior authorization is required by virtually all commercial payers. Coverage is generally available for HCC and liver-dominant metastases with appropriate documentation.\nOverview: Most major commercial payers cover Y90 radioembolization for unresectable HCC and liver-dominant metastases with prior authorization. UHC, BCBS NC, Aetna, and Humana generally cover with criteria. The SORAMIC trial (Lancet Oncol 2019) and EPOCH trial (J Clin Oncol 2021) provide strong evidence for commercial payer appeals.\n\n#### Coverage Criteria\n**Typical PA Criteria**\n- Unresectable HCC (BCLC B/C) or liver-dominant metastatic disease\n- Child-Pugh A or B7 hepatic function\n- ECOG performance status 0-2\n- Lung shunt fraction < 20% on MAA mapping\n- Tumor burden ≤ 70% liver volume\n- Multidisciplinary tumor board review documented\n- Failure of or ineligibility for systemic therapy (for mCRC/NET)\n**Additional Requirements (Some Payers)**\n- Prior TACE failure for HCC (some payers require TACE before Y90)\n- Sorafenib trial for HCC (some payers require prior systemic therapy)\n- Specific BCLC staging documentation\n\n#### Required Documentation\n**Clinical Documentation**\n- Oncology/MDT consult note with diagnosis and treatment rationale\n- Liver MRI or CT with multiphasic contrast (lesion characterization)\n- MAA mapping scan results with lung shunt fraction\n- Laboratory values (LFTs, AFP, CBC, INR)\n- Child-Pugh score and ECOG status\n- Prior systemic therapy records\n**PA Submission**\n- Completed payer-specific PA form\n- Letter of medical necessity citing NCCN HCC Guidelines and trial data\n- CPT 79445 + 37243 and ICD-10 C22.0 or C78.7 on PA request\n\n#### Submission Process\n1. Verify insurance benefits and PA requirements via payer portal\n2. Submit PA with complete clinical documentation and letter of medical necessity\n3. Cite NCCN HCC Guidelines v3.2025, SORAMIC trial, and EPOCH trial in PA letter\n4. Allow 5-10 business days for PA determination\n5. If denied, request peer-to-peer review with medical director immediately\n6. File formal appeal with NCCN guidelines, SIR/CIRSE/ASTRO Y90 standards, and trial data\n\n#### Common Denial Reasons\n- Missing MAA mapping scan results in PA submission\n- Prior systemic therapy not documented (for mCRC/NET)\n- Child-Pugh score not documented or Child-Pugh C\n- Missing multidisciplinary tumor board documentation\n- Payer requires prior TACE failure for HCC (verify plan-specific policy)\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| UnitedHealthcare | Covered with PA | Prior auth required for HCC and liver mets. Medical necessity criteria apply. |\n| BCBS NC | Covered with PA | Covered for HCC and metastatic liver tumors with criteria. |\n| Aetna | Covered with criteria | Generally covered for HCC and liver mets with prior auth. |\n| Humana | Covered with PA | Generally covered with prior auth and medical necessity criteria. |\n\n#### Billing & Authorization Tips\n- Always include MAA mapping scan results in the PA submission — this is the most common missing document\n- Cite SORAMIC trial (Ricke et al., Lancet Oncol 2019) and EPOCH trial (Salem et al., J Clin Oncol 2021)\n- NCCN HCC Guidelines v3.2025 include Y90 as a Category 1 recommendation for BCLC B/C\n- SIR/CIRSE/ASTRO/SRS Y90 Radioembolization Standards (2017) provide authoritative practice guidelines\n- For mCRC liver mets, cite SIRFLOX and FOXFIRE trial data in appeals\n- Document that Y90 is being used as a bridge to transplant, downstaging, or palliative intent — this affects coverage criteria\n\n#### Reimbursement Note\nCommercial reimbursement for Y90 professional fees varies by plan and contract. The microsphere drug cost ($10,000-$20,000 per treatment) is typically covered as a facility drug/supply benefit and requires separate authorization in many plans.\n\n---\n\n## Disclaimer\nDisclaimer: Coverage policies change frequently. Always verify current payer policies directly with the insurance plan before scheduling procedures. This guide references NCCN HCC Guidelines v3.2025, SORAMIC trial (Ricke et al., Lancet Oncol 2019), EPOCH trial (Salem et al., J Clin Oncol 2021), and SIR/CIRSE/ASTRO/SRS Y90 Radioembolization Standards (2017). Last updated: April 2026.\n",
+      "tables": [
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Usage Notes", "Type"],
+          "rows": [
+            ["C22.0", "Hepatocellular carcinoma (HCC)", "Primary diagnosis for HCC. Most common Y90 indication. Requires imaging or biopsy confirmation.", "Primary"],
+            ["C78.7", "Secondary malignant neoplasm of liver and intrahepatic bile duct", "Primary diagnosis for liver metastases (mCRC, NET, breast, etc.). Most common for non-HCC Y90.", "Primary"],
+            ["C22.1", "Intrahepatic bile duct carcinoma (cholangiocarcinoma)", "Primary diagnosis for intrahepatic cholangiocarcinoma treated with Y90.", "Secondary"],
+            ["C18.9", "Malignant neoplasm of colon, unspecified", "Secondary code for colorectal cancer as primary malignancy when treating liver mets.", "Secondary"],
+            ["C25.9", "Malignant neoplasm of pancreas, unspecified", "Secondary code for pancreatic NET as primary malignancy.", "Secondary"],
+            ["K76.89", "Other specified diseases of liver", "Secondary code for underlying liver disease (cirrhosis, portal hypertension) when relevant.", "Secondary"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicare FFS",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicare FFS (Traditional)", "Covered", "NCD 260.1 + MAC LCDs. No PA required. Medical necessity documentation required."],
+            ["Medicare Advantage (varies)", "Variable — PA often required", "Each MA plan sets its own PA requirements."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicaid (most states)", "Covered with PA", "Prior auth required. Criteria similar to Medicare."],
+            ["Dual-eligible patients", "Bill Medicare first", "Medicare pays primary; Medicaid covers remaining cost-sharing."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Private / Commercial",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["UnitedHealthcare", "Covered with PA", "Prior auth required for HCC and liver mets. Medical necessity criteria apply."],
+            ["BCBS NC", "Covered with PA", "Covered for HCC and metastatic liver tumors with criteria."],
+            ["Aetna", "Covered with criteria", "Generally covered for HCC and liver mets with prior auth."],
+            ["Humana", "Covered with PA", "Generally covered with prior auth and medical necessity criteria."]
+          ]
+        }
+      ]
+    }
+  }
+}

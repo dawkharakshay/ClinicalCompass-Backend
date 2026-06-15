@@ -1,0 +1,307 @@
+{
+  "title": "Percutaneous AV Fistula Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Run Assessment",
+    "logicKey": "pavf",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "patient-info",
+        "shortLabel": "Patient Info",
+        "title": "Patient Information",
+        "fields": [
+          {
+            "id": "patient-name",
+            "name": "patientName",
+            "label": "Patient Name",
+            "type": "text",
+            "defaultValue": ""
+          },
+          {
+            "id": "patient-id",
+            "name": "patientId",
+            "label": "Patient ID (optional)",
+            "type": "text",
+            "defaultValue": ""
+          },
+          {
+            "id": "patient-age",
+            "name": "patientAge",
+            "label": "Patient Age",
+            "type": "number",
+            "defaultValue": 0,
+            "unit": "years",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "arm-thickness",
+            "name": "armThickness",
+            "label": "Arm Thickness",
+            "type": "buttongroup",
+            "defaultValue": "normal",
+            "options": [
+              { "label": "Thin", "value": "thin" },
+              { "label": "Normal", "value": "normal" },
+              { "label": "Obese", "value": "obese" }
+            ]
+          },
+          {
+            "id": "about-tool",
+            "label": "About this tool",
+            "type": "alert",
+            "severity": "info",
+            "text": "This tool implements the 2025 SIR Practice Guidance Document on Percutaneous Arteriovenous Fistulae for Dialysis Access (Dolmatch et al., JVIR 2025). It is intended as a clinical decision support aid and does not replace physician judgment."
+          }
+        ]
+      },
+      {
+        "id": "vascular-history",
+        "shortLabel": "Vascular History",
+        "title": "Vascular Access History",
+        "fields": [
+          {
+            "id": "prior-central-venous-devices",
+            "name": "priorCentralVenousDevices",
+            "label": "Prior or current thoracic central venous devices",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-av-access-surgeries",
+            "name": "priorAVAccessSurgeries",
+            "label": "Prior AV access surgeries",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "superficial-chest-collaterals",
+            "name": "superficialChestCollaterals",
+            "label": "Superficial chest or shoulder collateral veins visible",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "superficial-chest-collaterals-alert",
+            "label": "Superficial chest collaterals warning",
+            "type": "alert",
+            "severity": "error",
+            "text": "Superficial chest collaterals indicate possible central venous obstruction. Venography is required before pAVF creation. Treat obstruction prior to proceeding.",
+            "visibleWhen": { "field": "superficialChestCollaterals", "op": "truthy" }
+          },
+          {
+            "id": "central-veins-patent",
+            "name": "centralVeinsPatent",
+            "label": "Central veins patent (confirmed or no risk factors)",
+            "type": "switch",
+            "defaultValue": true
+          }
+        ]
+      },
+      {
+        "id": "arterial-assessment",
+        "shortLabel": "Arterial Assessment",
+        "title": "Arterial Assessment",
+        "fields": [
+          {
+            "id": "barbeau-test",
+            "name": "barbeauTest",
+            "label": "Barbeau Test Result (palmar arch collateral assessment)",
+            "type": "buttongroup",
+            "defaultValue": "A",
+            "options": [
+              { "label": "Type A", "value": "A" },
+              { "label": "Type B", "value": "B" },
+              { "label": "Type C", "value": "C" },
+              { "label": "Type D ⚠️", "value": "D" }
+            ]
+          },
+          {
+            "id": "radial-pulse-present",
+            "name": "radialPulsePresent",
+            "label": "Radial pulse present",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "ulnar-pulse-present",
+            "name": "ulnarPulsePresent",
+            "label": "Ulnar pulse present",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "brachial-pulse-present",
+            "name": "brachialPulsePresent",
+            "label": "Brachial pulse present",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "arterial-calcification",
+            "name": "arterialCalcification",
+            "label": "Arterial Calcification (on US or fluoroscopy)",
+            "type": "buttongroup",
+            "defaultValue": "none",
+            "options": [
+              { "label": "None", "value": "none" },
+              { "label": "Mild", "value": "mild" },
+              { "label": "Moderate", "value": "moderate" },
+              { "label": "Severe ⚠️", "value": "severe" }
+            ]
+          },
+          {
+            "id": "arterial-calcification-severe-alert",
+            "label": "Severe calcification warning",
+            "type": "alert",
+            "severity": "error",
+            "text": "Severe mural calcification prevents WavelinQ radiofrequency activation. pAVF is contraindicated. Consider surgical AVF or AV graft.",
+            "visibleWhen": { "field": "arterialCalcification", "op": "eq", "value": "severe" }
+          },
+          {
+            "id": "arterial-calcification-moderate-alert",
+            "label": "Moderate calcification warning",
+            "type": "alert",
+            "severity": "warning",
+            "text": "Moderate calcification may impede RF activation. Have rescue PTA balloon (1 mm larger than artery diameter) available intraoperatively.",
+            "visibleWhen": { "field": "arterialCalcification", "op": "eq", "value": "moderate" }
+          },
+          {
+            "id": "arterial-doppler-normal",
+            "name": "arterialDopplerNormal",
+            "label": "Arterial Doppler waveforms and velocities normal",
+            "type": "switch",
+            "defaultValue": true
+          }
+        ]
+      },
+      {
+        "id": "vessel-mapping",
+        "shortLabel": "Vessel Mapping",
+        "title": "Vessel Mapping",
+        "fields": [
+          {
+            "id": "perforator-vein-patent",
+            "name": "perforatorVeinPatent",
+            "label": "Perforator vein patent",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "perforator-vein-diameter",
+            "name": "perforatorVeinDiameter",
+            "label": "Perforator vein diameter",
+            "type": "number",
+            "defaultValue": 2.5,
+            "unit": "mm",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "perforator-vein-diameter-alert",
+            "label": "Perforator vein small warning",
+            "type": "alert",
+            "severity": "warning",
+            "text": "Perforator vein <2 mm: pAVF creation not recommended as standard practice.",
+            "visibleWhen": {
+              "all": [
+                { "field": "perforatorVeinDiameter", "op": "lt", "value": 2 },
+                { "field": "perforatorVeinPatent", "op": "truthy" }
+              ]
+            }
+          },
+          {
+            "id": "superficial-vein-patent",
+            "name": "superficialVeinPatent",
+            "label": "Superficial outflow vein patent",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "superficial-vein-depth",
+            "name": "superficialVeinDepth",
+            "label": "Superficial vein depth from skin",
+            "type": "number",
+            "defaultValue": 4,
+            "unit": "mm",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "superficial-vein-depth-alert",
+            "label": "Superficial vein depth warning",
+            "type": "alert",
+            "severity": "warning",
+            "text": "Vein depth >6 mm: Cannulation will be difficult. Surgical elevation or liposuction may be required after maturation.",
+            "visibleWhen": { "field": "superficialVeinDepth", "op": "gt", "value": 6 }
+          },
+          {
+            "id": "deep-vein-diameter",
+            "name": "deepVeinDiameter",
+            "label": "Deep brachial vein diameter",
+            "type": "number",
+            "defaultValue": 2,
+            "unit": "mm",
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "clinical-context",
+        "shortLabel": "Clinical Context",
+        "title": "Clinical Context",
+        "fields": [
+          {
+            "id": "surgical-avf-feasible",
+            "name": "surgicalAVFFeasible",
+            "label": "Surgical AVF technically feasible",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "surgical-availability",
+            "name": "surgicalAvailability",
+            "label": "Surgical expertise available locally",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "patient-prefers-pavf",
+            "name": "patientPrefersPAVF",
+            "label": "Patient prefers percutaneous approach",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "urgent-dialysis-needed",
+            "name": "urgentDialysisNeeded",
+            "label": "Urgent dialysis need",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "active-infection",
+            "name": "activeInfection",
+            "label": "Active infection at planned nerve block site",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "anticoagulated",
+            "name": "anticoagulated",
+            "label": "Patient on anticoagulation",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "anticoagulated-alert",
+            "label": "Anticoagulation guidance",
+            "type": "alert",
+            "severity": "info",
+            "text": "Administer anticoagulation after brachial plexus block is performed. Heparin is given via arterial sheath during the procedure.",
+            "visibleWhen": { "field": "anticoagulated", "op": "truthy" }
+          }
+        ]
+      }
+    ]
+  }
+}

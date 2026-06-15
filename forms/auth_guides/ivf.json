@@ -1,0 +1,290 @@
+{
+  "title": "In Vitro Fertilization Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "IVFAuthGuide.tsx",
+    "title": "In Vitro Fertilization (IVF) — Authorization Guide",
+    "subtitle": "CPT Codes · ICD-10 · Payer Requirements · State Mandates",
+    "cptCodes": [
+      { "code": "58970", "description": "Follicle puncture for oocyte retrieval, any method", "serviceType": "Egg retrieval" },
+      { "code": "58974", "description": "Embryo transfer, intrauterine", "serviceType": "Embryo transfer" },
+      { "code": "58976", "description": "Gamete, zygote, or embryo intrafallopian transfer, any method", "serviceType": "GIFT/ZIFT" },
+      { "code": "89250", "description": "Culture of oocyte(s)/embryo(s), less than 4 days", "serviceType": "Lab — embryo culture" },
+      { "code": "89251", "description": "Culture of oocyte(s)/embryo(s), less than 4 days; with co-culture", "serviceType": "Lab — co-culture" },
+      { "code": "89253", "description": "Assisted embryo hatching, microtechniques (any method)", "serviceType": "Assisted hatching" },
+      { "code": "89254", "description": "Oocyte identification from follicular fluid", "serviceType": "Lab — oocyte ID" },
+      { "code": "89255", "description": "Preparation of embryo for transfer (any method)", "serviceType": "Lab — embryo prep" },
+      { "code": "89257", "description": "Sperm identification from aspiration (other than seminal fluid)", "serviceType": "Lab — sperm ID" },
+      { "code": "89258", "description": "Cryopreservation; embryo(s)", "serviceType": "Embryo cryopreservation" },
+      { "code": "89259", "description": "Cryopreservation; sperm", "serviceType": "Sperm cryopreservation" },
+      { "code": "89260", "description": "Sperm isolation; simple prep (e.g., sperm wash and swim-up)", "serviceType": "Lab — sperm prep" },
+      { "code": "89261", "description": "Sperm isolation; complex prep (e.g., Percoll gradient, albumin gradient)", "serviceType": "Lab — complex sperm prep" },
+      { "code": "89268", "description": "Insemination of oocytes", "serviceType": "IVF insemination" },
+      { "code": "89272", "description": "Extended culture of oocyte(s)/embryo(s), 4–7 days", "serviceType": "Blastocyst culture" },
+      { "code": "89280", "description": "Assisted oocyte fertilization, microtechnique; ≤10 oocytes", "serviceType": "ICSI ≤10" },
+      { "code": "89281", "description": "Assisted oocyte fertilization, microtechnique; >10 oocytes", "serviceType": "ICSI >10" },
+      { "code": "89290", "description": "Biopsy, oocyte polar body or embryo blastomere, microtechnique (for PGT)", "serviceType": "PGT biopsy" },
+      { "code": "89291", "description": "Biopsy, oocyte polar body or embryo blastomere, microtechnique; >5 embryos", "serviceType": "PGT biopsy >5" },
+      { "code": "89337", "description": "Cryopreservation, mature oocyte(s)", "serviceType": "Egg freezing" }
+    ],
+    "icd10Codes": [
+      { "code": "N97.0", "description": "Female infertility associated with anovulation" },
+      { "code": "N97.1", "description": "Female infertility of tubal origin" },
+      { "code": "N97.2", "description": "Female infertility of uterine origin" },
+      { "code": "N97.8", "description": "Female infertility of other origin" },
+      { "code": "N97.9", "description": "Female infertility, unspecified" },
+      { "code": "N46.01", "description": "Organic azoospermia" },
+      { "code": "N46.11", "description": "Organic oligospermia" },
+      { "code": "E28.2", "description": "Polycystic ovarian syndrome" },
+      { "code": "E28.31", "description": "Premature menopause" },
+      { "code": "E28.39", "description": "Other primary ovarian failure" },
+      { "code": "N80.1", "description": "Endometriosis of ovary" },
+      { "code": "N80.3", "description": "Endometriosis of pelvic peritoneum" },
+      { "code": "Z31.41", "description": "Encounter for fertility testing" },
+      { "code": "Z31.81", "description": "Encounter for male factor infertility in female patient" },
+      { "code": "Z31.83", "description": "Encounter for assisted reproductive fertility procedure cycle" }
+    ],
+    "payers": [],
+    "customSections": [
+      {
+        "heading": "Fertility Insurance Mandate by State (intro)",
+        "kind": "prose",
+        "text": "Sources: RESOLVE (2025) · OneDigital (2025) · NCSL State Fertility Laws (2025). Self-funded ERISA plans are exempt from all state mandates regardless of state law.\n\nLast reviewed: May 2025\n\n⚠ Fertility mandate laws change frequently. Always verify current state law and plan type before citing a mandate in an appeal.\n\nSummary counts: All States (52) · IVF Mandate (17) · Infertility Only (4) · Preservation Only (3) · Offer Only (1) · No Mandate (27).\n\nCritical caveat: State mandates apply only to fully insured plans. Self-funded (ERISA) plans — which cover the majority of large employer employees — are exempt from all state laws. Always verify plan type before citing a state mandate in an appeal."
+      },
+      {
+        "heading": "Fertility Mandate by State Legend",
+        "kind": "list",
+        "items": [
+          "IVF Mandate: State law requires IVF coverage",
+          "Infertility Only: Covers infertility diagnosis/treatment but not IVF",
+          "Preservation Only: Covers fertility preservation for iatrogenic infertility",
+          "Offer Only: Insurers must offer IVF coverage; employers may decline",
+          "No Mandate: No state infertility insurance law"
+        ]
+      },
+      {
+        "heading": "Coverage Landscape — Common Denial Reasons",
+        "kind": "list",
+        "items": [
+          "Blanket plan exclusion for \"infertility treatment\"",
+          "Cycle limit exceeded (most mandates cover 3–6 cycles)",
+          "\"Not medically necessary\" (infertility treated as elective)",
+          "Age limit exceeded (many plans cap at age 40–43)",
+          "Lab codes (89250–89291) denied separately as \"bundled\""
+        ]
+      },
+      {
+        "heading": "Coverage Landscape — Strongest Coverage Arguments",
+        "kind": "list",
+        "items": [
+          "ASRM defines infertility as a disease — not an elective condition",
+          "WHO classifies infertility as a disease of the reproductive system",
+          "State mandate applies (if applicable — verify plan is fully insured)",
+          "Oncofertility: ASCO guidelines mandate fertility preservation counseling",
+          "Tubal factor, severe male factor, POI: absolute IVF indications"
+        ]
+      },
+      {
+        "heading": "Prior Authorization Requirements — Required Documentation",
+        "kind": "list",
+        "items": [
+          "Documentation of ≥12 months of infertility (or ≥6 months if age ≥35)",
+          "Complete infertility workup: HSG/SHG, ovarian reserve testing (AMH, AFC, Day 3 FSH), semen analysis",
+          "Documentation of prior treatment failures (IUI cycles, ovulation induction)",
+          "Specific IVF indication (tubal factor, male factor, DOR, unexplained)",
+          "Letter of medical necessity from REI specialist",
+          "For oncofertility: oncology treatment plan documenting gonadotoxic therapy timeline",
+          "Cycle number (if cycle limit applies per plan)"
+        ]
+      },
+      {
+        "heading": "Prior Authorization Requirements — ASRM Medical Necessity Criteria",
+        "kind": "list",
+        "items": [
+          "≥12 months infertility (≥6 months if age ≥35, or immediate if absolute indication)",
+          "Complete infertility evaluation performed",
+          "At least one absolute IVF indication OR 3+ failed IUI cycles",
+          "No contraindication to IVF (e.g., active malignancy without oncofertility plan)",
+          "Uterus capable of supporting pregnancy (or gestational carrier plan documented)"
+        ]
+      },
+      {
+        "heading": "References",
+        "kind": "list",
+        "items": [
+          "[1] RESOLVE: The National Infertility Association. Insurance Coverage by State. 2025. resolve.org/learn/financial-resources/insurance-coverage/insurance-coverage-by-state/",
+          "[2] OneDigital. IVF Treatment Coverage Mandates: A State-by-State Breakdown. Updated 2025. onedigital.com/en-US/articles/ivf-coverage-by-state/",
+          "[3] ASRM Practice Committee. Definitions of Infertility and Recurrent Pregnancy Loss. Fertil Steril. 2020;113(3):533–535.",
+          "[4] WHO. Infertility Prevalence Estimates, 1990–2021. Geneva: World Health Organization; 2023.",
+          "[5] ASCO. Fertility Preservation for Patients with Cancer: ASCO Clinical Practice Guideline Update. J Clin Oncol. 2018;36(19):1994–2001.",
+          "[6] Multistate.us. Fertility Care and IVF Access in 2025: State Legislation and Federal Policy Highlights. November 2025."
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# In Vitro Fertilization (IVF) — Authorization Guide\n_CPT Codes · ICD-10 · Payer Requirements · State Mandates_\n\nbackHref: /ivf\n\n## CPT Codes\n\n| CPT | Description | Service Type |\n| --- | --- | --- |\n| 58970 | Follicle puncture for oocyte retrieval, any method | Egg retrieval |\n| 58974 | Embryo transfer, intrauterine | Embryo transfer |\n| 58976 | Gamete, zygote, or embryo intrafallopian transfer, any method | GIFT/ZIFT |\n| 89250 | Culture of oocyte(s)/embryo(s), less than 4 days | Lab — embryo culture |\n| 89251 | Culture of oocyte(s)/embryo(s), less than 4 days; with co-culture | Lab — co-culture |\n| 89253 | Assisted embryo hatching, microtechniques (any method) | Assisted hatching |\n| 89254 | Oocyte identification from follicular fluid | Lab — oocyte ID |\n| 89255 | Preparation of embryo for transfer (any method) | Lab — embryo prep |\n| 89257 | Sperm identification from aspiration (other than seminal fluid) | Lab — sperm ID |\n| 89258 | Cryopreservation; embryo(s) | Embryo cryopreservation |\n| 89259 | Cryopreservation; sperm | Sperm cryopreservation |\n| 89260 | Sperm isolation; simple prep (e.g., sperm wash and swim-up) | Lab — sperm prep |\n| 89261 | Sperm isolation; complex prep (e.g., Percoll gradient, albumin gradient) | Lab — complex sperm prep |\n| 89268 | Insemination of oocytes | IVF insemination |\n| 89272 | Extended culture of oocyte(s)/embryo(s), 4–7 days | Blastocyst culture |\n| 89280 | Assisted oocyte fertilization, microtechnique; ≤10 oocytes | ICSI ≤10 |\n| 89281 | Assisted oocyte fertilization, microtechnique; >10 oocytes | ICSI >10 |\n| 89290 | Biopsy, oocyte polar body or embryo blastomere, microtechnique (for PGT) | PGT biopsy |\n| 89291 | Biopsy, oocyte polar body or embryo blastomere, microtechnique; >5 embryos | PGT biopsy >5 |\n| 89337 | Cryopreservation, mature oocyte(s) | Egg freezing |\n\n## ICD-10 Diagnoses\n\n| ICD-10 | Description |\n| --- | --- |\n| N97.0 | Female infertility associated with anovulation |\n| N97.1 | Female infertility of tubal origin |\n| N97.2 | Female infertility of uterine origin |\n| N97.8 | Female infertility of other origin |\n| N97.9 | Female infertility, unspecified |\n| N46.01 | Organic azoospermia |\n| N46.11 | Organic oligospermia |\n| E28.2 | Polycystic ovarian syndrome |\n| E28.31 | Premature menopause |\n| E28.39 | Other primary ovarian failure |\n| N80.1 | Endometriosis of ovary |\n| N80.3 | Endometriosis of pelvic peritoneum |\n| Z31.41 | Encounter for fertility testing |\n| Z31.81 | Encounter for male factor infertility in female patient |\n| Z31.83 | Encounter for assisted reproductive fertility procedure cycle |\n\n## Fertility Insurance Mandate by State\n\nSources: RESOLVE (2025) · OneDigital (2025) · NCSL State Fertility Laws (2025). Self-funded ERISA plans are exempt from all state mandates regardless of state law.\n\nLast reviewed: May 2025\n\n⚠ Fertility mandate laws change frequently. Always verify current state law and plan type before citing a mandate in an appeal.\n\nData source notes (from source comments): Sources: RESOLVE Insurance Coverage by State (2025); OneDigital IVF Coverage by State (Oct 2024, updated 2025); NCSL Fertility Insurance Coverage (2025). Self-funded ERISA plans are exempt from all state mandates.\n\nSummary badges/counts: All States (52) · IVF Mandate (17) · Infertility Only (4) · Preservation Only (3) · Offer Only (1) · No Mandate (27).\n\nSearch control: \"Search by state name or abbreviation...\"\n\nCritical caveat: State mandates apply only to **fully insured** plans. Self-funded (ERISA) plans — which cover the majority of large employer employees — are exempt from all state laws. Always verify plan type before citing a state mandate in an appeal.\n\n### Full State Mandate Detail (all columns)\n\n**Arkansas (AR)** — Status: IVF Mandate · IVF Cycles: Unlimited (lifetime max $15,000) · Diagnosis Requirement: Endometriosis, DES exposure, blocked tubes, male factor, or 2-yr unexplained · Employer Threshold: All fully insured · Key Notes: Must fail less costly covered treatments first. Married couples only.\n\n**California (CA)** — Status: IVF Mandate · IVF Cycles: 3 oocyte retrievals + unlimited transfers · Diagnosis Requirement: Physician-diagnosed infertility; includes LGBTQ+ individuals · Employer Threshold: ≥100 employees (large group) · Key Notes: SB 729 effective July 1, 2025. Religious employer exemption. No small group mandate.\n\n**Colorado (CO)** — Status: IVF Mandate · IVF Cycles: 3 oocyte retrievals + unlimited transfers · Diagnosis Requirement: Physician-diagnosed failure to conceive or reproduce · Employer Threshold: ≥100 employees (large group) · Key Notes: Includes fertility preservation. No different cost-sharing than other Rx. Religious + small group exempt.\n\n**Connecticut (CT)** — Status: IVF Mandate · IVF Cycles: 2 IVF/GIFT/ZIFT cycles (≤2 embryos/cycle) · Diagnosis Requirement: Unable to conceive after 1 year; or medically necessary · Employer Threshold: All fully insured (≥12 months coverage) · Key Notes: Also covers 4 ovulation induction + 3 IUI cycles. Must fail less costly treatments first.\n\n**Delaware (DE)** — Status: IVF Mandate · IVF Cycles: Not specified (parity with pregnancy benefits) · Diagnosis Requirement: Impaired reproductive function; retrieval before age 45, transfer before 50 · Employer Threshold: ≥50 employees · Key Notes: Includes fertility preservation for iatrogenic infertility. Parity with pregnancy benefits required.\n\n**Hawaii (HI)** — Status: IVF Mandate · IVF Cycles: 1 IVF cycle · Diagnosis Requirement: 5-yr infertility OR endometriosis, DES, blocked tubes, male factor · Employer Threshold: All fully insured · Key Notes: Must fail other covered infertility treatments first. Facility must meet ACOG/ASRM standards.\n\n**Illinois (IL)** — Status: IVF Mandate · IVF Cycles: 6 oocyte retrievals (lifetime) · Diagnosis Requirement: 12 months (≤35 yrs) or 6 months (>35 yrs) infertility; or inability to reproduce without intervention · Employer Threshold: ≥25 employees · Key Notes: Broadest mandate — covers IVF, GIFT, ZIFT, AI, embryo transfer. No different cost-sharing than other Rx.\n\n**Maine (ME)** — Status: IVF Mandate · IVF Cycles: Not specified · Diagnosis Requirement: Demonstrated condition causing infertility or 12 months unprotected intercourse · Employer Threshold: All fully insured · Key Notes: Covers fertility diagnostics, treatment, and preservation. No ERISA exemption workaround.\n\n**Maryland (MD)** — Status: IVF Mandate · IVF Cycles: 3 IVFs per live birth (lifetime max $100,000) · Diagnosis Requirement: 1-yr heterosexual infertility; 3 IUI attempts same-sex/unmarried; or endometriosis/DES/blocked tubes/male factor · Employer Threshold: ≥50 employees · Key Notes: Resets after each live birth. Does not cover sperm/oocyte storage.\n\n**Massachusetts (MA)** — Status: IVF Mandate · IVF Cycles: Not specified (parity with other benefits) · Diagnosis Requirement: Unable to conceive after 1 year (≤35 yrs) or 6 months (>35 yrs) · Employer Threshold: All fully insured · Key Notes: Covers IVF, GIFT, ICSI, ZIFT, assisted hatching, cryopreservation. No different cost-sharing than other Rx.\n\n**Montana (MT)** — Status: IVF Mandate · IVF Cycles: Not specified · Diagnosis Requirement: Physician-diagnosed infertility · Employer Threshold: All fully insured · Key Notes: Covers diagnosis and treatment of infertility. Excludes disability income, hospital indemnity, accident-only policies.\n\n**New Hampshire (NH)** — Status: IVF Mandate · IVF Cycles: Not specified · Diagnosis Requirement: Disease impairing ability to become pregnant or carry to live birth · Employer Threshold: All fully insured (excludes SHOP) · Key Notes: Covers diagnosis, medically necessary treatment, and fertility preservation for gonadotoxic therapy. No different cost-sharing.\n\n**New Jersey (NJ)** — Status: IVF Mandate · IVF Cycles: Not specified · Diagnosis Requirement: Inability to achieve pregnancy based on history, age, physical findings, or diagnostic testing; or need for donor gametes · Employer Threshold: ≥50 employees · Key Notes: May limit to exhaustion of less expensive treatments. Does not cover sperm/oocyte storage.\n\n**New York (NY)** — Status: IVF Mandate · IVF Cycles: 3 IVF cycles · Diagnosis Requirement: Failure to establish pregnancy after 12 months (or 6 months if ≥35 yrs) · Employer Threshold: ≥100 employees (large group) · Key Notes: Small employers (<100 employees) exempt. Effective January 1, 2020.\n\n**Rhode Island (RI)** — Status: IVF Mandate · IVF Cycles: Not specified (lifetime max $100,000) · Diagnosis Requirement: Unable to conceive after 1 year; ages 25–42 for treatment coverage · Employer Threshold: All fully insured · Key Notes: Up to 20% co-payment allowed. Covers iatrogenic infertility preservation.\n\n**Washington, D.C. (DC)** — Status: IVF Mandate · IVF Cycles: 3 IVF rounds + ≥3 oocyte retrievals + unlimited transfers · Diagnosis Requirement: ASRM-guideline-based failure to conceive; or inability to reproduce without intervention · Employer Threshold: All fully insured · Key Notes: Effective January 1, 2025. Anti-discrimination provision — no exclusions based on sexual orientation, gender identity, marital status.\n\n**West Virginia (WV)** — Status: IVF Mandate · IVF Cycles: Not specified · Diagnosis Requirement: No specific definition · Employer Threshold: All fully insured · Key Notes: Covers infertility services as part of 'basic health services.' Broad but vague mandate.\n\n**Florida (FL)** — Status: Infertility Only · IVF Cycles: N/A · Diagnosis Requirement: Physician-diagnosed infertility · Employer Threshold: All fully insured · Key Notes: Requires insurers to offer infertility coverage as a rider; does not mandate IVF specifically.\n\n**Georgia (GA)** — Status: Infertility Only · IVF Cycles: N/A · Diagnosis Requirement: Physician-diagnosed infertility · Employer Threshold: All fully insured · Key Notes: Requires offer of infertility coverage; IVF not mandated. Employer may decline to include.\n\n**Ohio (OH)** — Status: Infertility Only · IVF Cycles: N/A — IVF/GIFT/ZIFT explicitly excluded · Diagnosis Requirement: Medically necessary infertility services · Employer Threshold: All fully insured (HMOs) · Key Notes: IVF, GIFT, and ZIFT are explicitly NOT required. Covers basic infertility services only.\n\n**Kentucky (KY)** — Status: Preservation Only · IVF Cycles: N/A · Diagnosis Requirement: Iatrogenic infertility from surgery, radiation, chemotherapy · Employer Threshold: All fully insured · Key Notes: Covers oocyte and sperm preservation for medically necessary treatment causing infertility. No IVF mandate.\n\n**Louisiana (LA)** — Status: Preservation Only · IVF Cycles: N/A · Diagnosis Requirement: Cancer diagnosis requiring gonadotoxic treatment · Employer Threshold: All fully insured · Key Notes: Covers fertility preservation for cancer patients only. Storage excluded after 3 years. No IVF mandate.\n\n**Oklahoma (OK)** — Status: Preservation Only · IVF Cycles: N/A · Diagnosis Requirement: Cancer diagnosis within reproductive age requiring gonadotoxic treatment · Employer Threshold: All fully insured · Key Notes: Effective January 1, 2025. ASCO/ASRM guidelines define standard preservation services. No IVF mandate.\n\n**Texas (TX)** — Status: Offer Only · IVF Cycles: N/A (if offered) · Diagnosis Requirement: 5-yr infertility or endometriosis/DES/blocked tubes/oligospermia; must fail less costly treatments · Employer Threshold: All fully insured · Key Notes: Insurers must OFFER IVF coverage but employers may decline. Not a true mandate. Religious employer exemption.\n\n**Utah (UT)** — Status: Infertility Only · IVF Cycles: Limited (pilot program ended Dec 31, 2024) · Diagnosis Requirement: Physician-verified infertility or specific genetic conditions (CF, SMA, sickle cell, etc.) · Employer Threshold: Public Health Employees' Plan only · Key Notes: 3-year pilot program for state employees ended December 31, 2024. Status of renewal unclear.\n\n**Alabama (AL)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate. Appeal must rely on plan language and medical necessity.\n\n**Alaska (AK)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate.\n\n**Arizona (AZ)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate.\n\n**Idaho (ID)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate.\n\n**Indiana (IN)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate.\n\n**Iowa (IA)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate.\n\n**Kansas (KS)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate.\n\n**Michigan (MI)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate.\n\n**Minnesota (MN)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate. Legislation pending as of 2025.\n\n**Mississippi (MS)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate.\n\n**Missouri (MO)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate.\n\n**Nebraska (NE)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate.\n\n**Nevada (NV)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate. Legislation introduced 2023 session.\n\n**New Mexico (NM)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate.\n\n**North Carolina (NC)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate.\n\n**North Dakota (ND)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate.\n\n**Oregon (OR)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate. Legislation pending.\n\n**Pennsylvania (PA)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate.\n\n**South Carolina (SC)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate.\n\n**South Dakota (SD)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate.\n\n**Tennessee (TN)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate.\n\n**Vermont (VT)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate.\n\n**Virginia (VA)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate.\n\n**Washington (WA)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate.\n\n**Wisconsin (WI)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate.\n\n**Wyoming (WY)** — Status: No Mandate · IVF Cycles: N/A · Diagnosis Requirement: N/A · Employer Threshold: N/A · Key Notes: No state infertility insurance mandate.\n\n### Legend\n- IVF Mandate: State law requires IVF coverage\n- Infertility Only: Covers infertility diagnosis/treatment but not IVF\n- Preservation Only: Covers fertility preservation for iatrogenic infertility\n- Offer Only: Insurers must offer IVF coverage; employers may decline\n- No Mandate: No state infertility insurance law\n\n## Coverage Landscape\n\n### Common Denial Reasons\n- Blanket plan exclusion for \"infertility treatment\"\n- Cycle limit exceeded (most mandates cover 3–6 cycles)\n- \"Not medically necessary\" (infertility treated as elective)\n- Age limit exceeded (many plans cap at age 40–43)\n- Lab codes (89250–89291) denied separately as \"bundled\"\n\n### Strongest Coverage Arguments\n- ASRM defines infertility as a disease — not an elective condition\n- WHO classifies infertility as a disease of the reproductive system\n- State mandate applies (if applicable — verify plan is fully insured)\n- Oncofertility: ASCO guidelines mandate fertility preservation counseling\n- Tubal factor, severe male factor, POI: absolute IVF indications\n\n## Prior Authorization Requirements\n\n### Required Documentation\n- Documentation of ≥12 months of infertility (or ≥6 months if age ≥35)\n- Complete infertility workup: HSG/SHG, ovarian reserve testing (AMH, AFC, Day 3 FSH), semen analysis\n- Documentation of prior treatment failures (IUI cycles, ovulation induction)\n- Specific IVF indication (tubal factor, male factor, DOR, unexplained)\n- Letter of medical necessity from REI specialist\n- For oncofertility: oncology treatment plan documenting gonadotoxic therapy timeline\n- Cycle number (if cycle limit applies per plan)\n\n### ASRM Medical Necessity Criteria\n- ≥12 months infertility (≥6 months if age ≥35, or immediate if absolute indication)\n- Complete infertility evaluation performed\n- At least one absolute IVF indication OR 3+ failed IUI cycles\n- No contraindication to IVF (e.g., active malignancy without oncofertility plan)\n- Uterus capable of supporting pregnancy (or gestational carrier plan documented)\n\n## References\n[1] RESOLVE: The National Infertility Association. Insurance Coverage by State. 2025. resolve.org/learn/financial-resources/insurance-coverage/insurance-coverage-by-state/\n[2] OneDigital. IVF Treatment Coverage Mandates: A State-by-State Breakdown. Updated 2025. onedigital.com/en-US/articles/ivf-coverage-by-state/\n[3] ASRM Practice Committee. Definitions of Infertility and Recurrent Pregnancy Loss. Fertil Steril. 2020;113(3):533–535.\n[4] WHO. Infertility Prevalence Estimates, 1990–2021. Geneva: World Health Organization; 2023.\n[5] ASCO. Fertility Preservation for Patients with Cancer: ASCO Clinical Practice Guideline Update. J Clin Oncol. 2018;36(19):1994–2001.\n[6] Multistate.us. Fertility Care and IVF Access in 2025: State Legislation and Federal Policy Highlights. November 2025.",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["CPT", "Description", "Service Type"],
+          "rows": [
+            ["58970", "Follicle puncture for oocyte retrieval, any method", "Egg retrieval"],
+            ["58974", "Embryo transfer, intrauterine", "Embryo transfer"],
+            ["58976", "Gamete, zygote, or embryo intrafallopian transfer, any method", "GIFT/ZIFT"],
+            ["89250", "Culture of oocyte(s)/embryo(s), less than 4 days", "Lab — embryo culture"],
+            ["89251", "Culture of oocyte(s)/embryo(s), less than 4 days; with co-culture", "Lab — co-culture"],
+            ["89253", "Assisted embryo hatching, microtechniques (any method)", "Assisted hatching"],
+            ["89254", "Oocyte identification from follicular fluid", "Lab — oocyte ID"],
+            ["89255", "Preparation of embryo for transfer (any method)", "Lab — embryo prep"],
+            ["89257", "Sperm identification from aspiration (other than seminal fluid)", "Lab — sperm ID"],
+            ["89258", "Cryopreservation; embryo(s)", "Embryo cryopreservation"],
+            ["89259", "Cryopreservation; sperm", "Sperm cryopreservation"],
+            ["89260", "Sperm isolation; simple prep (e.g., sperm wash and swim-up)", "Lab — sperm prep"],
+            ["89261", "Sperm isolation; complex prep (e.g., Percoll gradient, albumin gradient)", "Lab — complex sperm prep"],
+            ["89268", "Insemination of oocytes", "IVF insemination"],
+            ["89272", "Extended culture of oocyte(s)/embryo(s), 4–7 days", "Blastocyst culture"],
+            ["89280", "Assisted oocyte fertilization, microtechnique; ≤10 oocytes", "ICSI ≤10"],
+            ["89281", "Assisted oocyte fertilization, microtechnique; >10 oocytes", "ICSI >10"],
+            ["89290", "Biopsy, oocyte polar body or embryo blastomere, microtechnique (for PGT)", "PGT biopsy"],
+            ["89291", "Biopsy, oocyte polar body or embryo blastomere, microtechnique; >5 embryos", "PGT biopsy >5"],
+            ["89337", "Cryopreservation, mature oocyte(s)", "Egg freezing"]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnoses",
+          "header": ["ICD-10", "Description"],
+          "rows": [
+            ["N97.0", "Female infertility associated with anovulation"],
+            ["N97.1", "Female infertility of tubal origin"],
+            ["N97.2", "Female infertility of uterine origin"],
+            ["N97.8", "Female infertility of other origin"],
+            ["N97.9", "Female infertility, unspecified"],
+            ["N46.01", "Organic azoospermia"],
+            ["N46.11", "Organic oligospermia"],
+            ["E28.2", "Polycystic ovarian syndrome"],
+            ["E28.31", "Premature menopause"],
+            ["E28.39", "Other primary ovarian failure"],
+            ["N80.1", "Endometriosis of ovary"],
+            ["N80.3", "Endometriosis of pelvic peritoneum"],
+            ["Z31.41", "Encounter for fertility testing"],
+            ["Z31.81", "Encounter for male factor infertility in female patient"],
+            ["Z31.83", "Encounter for assisted reproductive fertility procedure cycle"]
+          ]
+        },
+        {
+          "name": "Fertility Insurance Mandate by State (displayed columns)",
+          "header": ["State", "Mandate Status", "IVF Cycles Covered", "Employer Threshold", "Key Notes / Appeal Tips"],
+          "rows": [
+            ["Arkansas (AR)", "IVF Mandate", "Unlimited (lifetime max $15,000)", "All fully insured", "Must fail less costly covered treatments first. Married couples only."],
+            ["California (CA)", "IVF Mandate", "3 oocyte retrievals + unlimited transfers", "≥100 employees (large group)", "SB 729 effective July 1, 2025. Religious employer exemption. No small group mandate."],
+            ["Colorado (CO)", "IVF Mandate", "3 oocyte retrievals + unlimited transfers", "≥100 employees (large group)", "Includes fertility preservation. No different cost-sharing than other Rx. Religious + small group exempt."],
+            ["Connecticut (CT)", "IVF Mandate", "2 IVF/GIFT/ZIFT cycles (≤2 embryos/cycle)", "All fully insured (≥12 months coverage)", "Also covers 4 ovulation induction + 3 IUI cycles. Must fail less costly treatments first."],
+            ["Delaware (DE)", "IVF Mandate", "Not specified (parity with pregnancy benefits)", "≥50 employees", "Includes fertility preservation for iatrogenic infertility. Parity with pregnancy benefits required."],
+            ["Hawaii (HI)", "IVF Mandate", "1 IVF cycle", "All fully insured", "Must fail other covered infertility treatments first. Facility must meet ACOG/ASRM standards."],
+            ["Illinois (IL)", "IVF Mandate", "6 oocyte retrievals (lifetime)", "≥25 employees", "Broadest mandate — covers IVF, GIFT, ZIFT, AI, embryo transfer. No different cost-sharing than other Rx."],
+            ["Maine (ME)", "IVF Mandate", "Not specified", "All fully insured", "Covers fertility diagnostics, treatment, and preservation. No ERISA exemption workaround."],
+            ["Maryland (MD)", "IVF Mandate", "3 IVFs per live birth (lifetime max $100,000)", "≥50 employees", "Resets after each live birth. Does not cover sperm/oocyte storage."],
+            ["Massachusetts (MA)", "IVF Mandate", "Not specified (parity with other benefits)", "All fully insured", "Covers IVF, GIFT, ICSI, ZIFT, assisted hatching, cryopreservation. No different cost-sharing than other Rx."],
+            ["Montana (MT)", "IVF Mandate", "Not specified", "All fully insured", "Covers diagnosis and treatment of infertility. Excludes disability income, hospital indemnity, accident-only policies."],
+            ["New Hampshire (NH)", "IVF Mandate", "Not specified", "All fully insured (excludes SHOP)", "Covers diagnosis, medically necessary treatment, and fertility preservation for gonadotoxic therapy. No different cost-sharing."],
+            ["New Jersey (NJ)", "IVF Mandate", "Not specified", "≥50 employees", "May limit to exhaustion of less expensive treatments. Does not cover sperm/oocyte storage."],
+            ["New York (NY)", "IVF Mandate", "3 IVF cycles", "≥100 employees (large group)", "Small employers (<100 employees) exempt. Effective January 1, 2020."],
+            ["Rhode Island (RI)", "IVF Mandate", "Not specified (lifetime max $100,000)", "All fully insured", "Up to 20% co-payment allowed. Covers iatrogenic infertility preservation."],
+            ["Washington, D.C. (DC)", "IVF Mandate", "3 IVF rounds + ≥3 oocyte retrievals + unlimited transfers", "All fully insured", "Effective January 1, 2025. Anti-discrimination provision — no exclusions based on sexual orientation, gender identity, marital status."],
+            ["West Virginia (WV)", "IVF Mandate", "Not specified", "All fully insured", "Covers infertility services as part of 'basic health services.' Broad but vague mandate."],
+            ["Florida (FL)", "Infertility (No IVF)", "N/A", "All fully insured", "Requires insurers to offer infertility coverage as a rider; does not mandate IVF specifically."],
+            ["Georgia (GA)", "Infertility (No IVF)", "N/A", "All fully insured", "Requires offer of infertility coverage; IVF not mandated. Employer may decline to include."],
+            ["Ohio (OH)", "Infertility (No IVF)", "N/A — IVF/GIFT/ZIFT explicitly excluded", "All fully insured (HMOs)", "IVF, GIFT, and ZIFT are explicitly NOT required. Covers basic infertility services only."],
+            ["Kentucky (KY)", "Preservation Only", "N/A", "All fully insured", "Covers oocyte and sperm preservation for medically necessary treatment causing infertility. No IVF mandate."],
+            ["Louisiana (LA)", "Preservation Only", "N/A", "All fully insured", "Covers fertility preservation for cancer patients only. Storage excluded after 3 years. No IVF mandate."],
+            ["Oklahoma (OK)", "Preservation Only", "N/A", "All fully insured", "Effective January 1, 2025. ASCO/ASRM guidelines define standard preservation services. No IVF mandate."],
+            ["Texas (TX)", "Offer Only", "N/A (if offered)", "All fully insured", "Insurers must OFFER IVF coverage but employers may decline. Not a true mandate. Religious employer exemption."],
+            ["Utah (UT)", "Infertility (No IVF)", "Limited (pilot program ended Dec 31, 2024)", "Public Health Employees' Plan only", "3-year pilot program for state employees ended December 31, 2024. Status of renewal unclear."],
+            ["Alabama (AL)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate. Appeal must rely on plan language and medical necessity."],
+            ["Alaska (AK)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Arizona (AZ)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Idaho (ID)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Indiana (IN)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Iowa (IA)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Kansas (KS)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Michigan (MI)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Minnesota (MN)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate. Legislation pending as of 2025."],
+            ["Mississippi (MS)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Missouri (MO)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Nebraska (NE)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Nevada (NV)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate. Legislation introduced 2023 session."],
+            ["New Mexico (NM)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["North Carolina (NC)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["North Dakota (ND)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Oregon (OR)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate. Legislation pending."],
+            ["Pennsylvania (PA)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["South Carolina (SC)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["South Dakota (SD)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Tennessee (TN)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Vermont (VT)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Virginia (VA)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Washington (WA)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Wisconsin (WI)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Wyoming (WY)", "No Mandate", "N/A", "N/A", "No state infertility insurance mandate."]
+          ]
+        },
+        {
+          "name": "Fertility Insurance Mandate by State (full data — all source columns)",
+          "header": ["State", "Abbr", "Status", "IVF Cycles", "Diagnosis Requirement", "Employer Threshold", "Key Notes"],
+          "rows": [
+            ["Arkansas", "AR", "IVF Mandate", "Unlimited (lifetime max $15,000)", "Endometriosis, DES exposure, blocked tubes, male factor, or 2-yr unexplained", "All fully insured", "Must fail less costly covered treatments first. Married couples only."],
+            ["California", "CA", "IVF Mandate", "3 oocyte retrievals + unlimited transfers", "Physician-diagnosed infertility; includes LGBTQ+ individuals", "≥100 employees (large group)", "SB 729 effective July 1, 2025. Religious employer exemption. No small group mandate."],
+            ["Colorado", "CO", "IVF Mandate", "3 oocyte retrievals + unlimited transfers", "Physician-diagnosed failure to conceive or reproduce", "≥100 employees (large group)", "Includes fertility preservation. No different cost-sharing than other Rx. Religious + small group exempt."],
+            ["Connecticut", "CT", "IVF Mandate", "2 IVF/GIFT/ZIFT cycles (≤2 embryos/cycle)", "Unable to conceive after 1 year; or medically necessary", "All fully insured (≥12 months coverage)", "Also covers 4 ovulation induction + 3 IUI cycles. Must fail less costly treatments first."],
+            ["Delaware", "DE", "IVF Mandate", "Not specified (parity with pregnancy benefits)", "Impaired reproductive function; retrieval before age 45, transfer before 50", "≥50 employees", "Includes fertility preservation for iatrogenic infertility. Parity with pregnancy benefits required."],
+            ["Hawaii", "HI", "IVF Mandate", "1 IVF cycle", "5-yr infertility OR endometriosis, DES, blocked tubes, male factor", "All fully insured", "Must fail other covered infertility treatments first. Facility must meet ACOG/ASRM standards."],
+            ["Illinois", "IL", "IVF Mandate", "6 oocyte retrievals (lifetime)", "12 months (≤35 yrs) or 6 months (>35 yrs) infertility; or inability to reproduce without intervention", "≥25 employees", "Broadest mandate — covers IVF, GIFT, ZIFT, AI, embryo transfer. No different cost-sharing than other Rx."],
+            ["Maine", "ME", "IVF Mandate", "Not specified", "Demonstrated condition causing infertility or 12 months unprotected intercourse", "All fully insured", "Covers fertility diagnostics, treatment, and preservation. No ERISA exemption workaround."],
+            ["Maryland", "MD", "IVF Mandate", "3 IVFs per live birth (lifetime max $100,000)", "1-yr heterosexual infertility; 3 IUI attempts same-sex/unmarried; or endometriosis/DES/blocked tubes/male factor", "≥50 employees", "Resets after each live birth. Does not cover sperm/oocyte storage."],
+            ["Massachusetts", "MA", "IVF Mandate", "Not specified (parity with other benefits)", "Unable to conceive after 1 year (≤35 yrs) or 6 months (>35 yrs)", "All fully insured", "Covers IVF, GIFT, ICSI, ZIFT, assisted hatching, cryopreservation. No different cost-sharing than other Rx."],
+            ["Montana", "MT", "IVF Mandate", "Not specified", "Physician-diagnosed infertility", "All fully insured", "Covers diagnosis and treatment of infertility. Excludes disability income, hospital indemnity, accident-only policies."],
+            ["New Hampshire", "NH", "IVF Mandate", "Not specified", "Disease impairing ability to become pregnant or carry to live birth", "All fully insured (excludes SHOP)", "Covers diagnosis, medically necessary treatment, and fertility preservation for gonadotoxic therapy. No different cost-sharing."],
+            ["New Jersey", "NJ", "IVF Mandate", "Not specified", "Inability to achieve pregnancy based on history, age, physical findings, or diagnostic testing; or need for donor gametes", "≥50 employees", "May limit to exhaustion of less expensive treatments. Does not cover sperm/oocyte storage."],
+            ["New York", "NY", "IVF Mandate", "3 IVF cycles", "Failure to establish pregnancy after 12 months (or 6 months if ≥35 yrs)", "≥100 employees (large group)", "Small employers (<100 employees) exempt. Effective January 1, 2020."],
+            ["Rhode Island", "RI", "IVF Mandate", "Not specified (lifetime max $100,000)", "Unable to conceive after 1 year; ages 25–42 for treatment coverage", "All fully insured", "Up to 20% co-payment allowed. Covers iatrogenic infertility preservation."],
+            ["Washington, D.C.", "DC", "IVF Mandate", "3 IVF rounds + ≥3 oocyte retrievals + unlimited transfers", "ASRM-guideline-based failure to conceive; or inability to reproduce without intervention", "All fully insured", "Effective January 1, 2025. Anti-discrimination provision — no exclusions based on sexual orientation, gender identity, marital status."],
+            ["West Virginia", "WV", "IVF Mandate", "Not specified", "No specific definition", "All fully insured", "Covers infertility services as part of 'basic health services.' Broad but vague mandate."],
+            ["Florida", "FL", "Infertility Only", "N/A", "Physician-diagnosed infertility", "All fully insured", "Requires insurers to offer infertility coverage as a rider; does not mandate IVF specifically."],
+            ["Georgia", "GA", "Infertility Only", "N/A", "Physician-diagnosed infertility", "All fully insured", "Requires offer of infertility coverage; IVF not mandated. Employer may decline to include."],
+            ["Ohio", "OH", "Infertility Only", "N/A — IVF/GIFT/ZIFT explicitly excluded", "Medically necessary infertility services", "All fully insured (HMOs)", "IVF, GIFT, and ZIFT are explicitly NOT required. Covers basic infertility services only."],
+            ["Kentucky", "KY", "Preservation Only", "N/A", "Iatrogenic infertility from surgery, radiation, chemotherapy", "All fully insured", "Covers oocyte and sperm preservation for medically necessary treatment causing infertility. No IVF mandate."],
+            ["Louisiana", "LA", "Preservation Only", "N/A", "Cancer diagnosis requiring gonadotoxic treatment", "All fully insured", "Covers fertility preservation for cancer patients only. Storage excluded after 3 years. No IVF mandate."],
+            ["Oklahoma", "OK", "Preservation Only", "N/A", "Cancer diagnosis within reproductive age requiring gonadotoxic treatment", "All fully insured", "Effective January 1, 2025. ASCO/ASRM guidelines define standard preservation services. No IVF mandate."],
+            ["Texas", "TX", "Offer Only", "N/A (if offered)", "5-yr infertility or endometriosis/DES/blocked tubes/oligospermia; must fail less costly treatments", "All fully insured", "Insurers must OFFER IVF coverage but employers may decline. Not a true mandate. Religious employer exemption."],
+            ["Utah", "UT", "Infertility Only", "Limited (pilot program ended Dec 31, 2024)", "Physician-verified infertility or specific genetic conditions (CF, SMA, sickle cell, etc.)", "Public Health Employees' Plan only", "3-year pilot program for state employees ended December 31, 2024. Status of renewal unclear."],
+            ["Alabama", "AL", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate. Appeal must rely on plan language and medical necessity."],
+            ["Alaska", "AK", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Arizona", "AZ", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Idaho", "ID", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Indiana", "IN", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Iowa", "IA", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Kansas", "KS", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Michigan", "MI", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Minnesota", "MN", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate. Legislation pending as of 2025."],
+            ["Mississippi", "MS", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Missouri", "MO", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Nebraska", "NE", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Nevada", "NV", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate. Legislation introduced 2023 session."],
+            ["New Mexico", "NM", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["North Carolina", "NC", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["North Dakota", "ND", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Oregon", "OR", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate. Legislation pending."],
+            ["Pennsylvania", "PA", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["South Carolina", "SC", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["South Dakota", "SD", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Tennessee", "TN", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Vermont", "VT", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Virginia", "VA", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Washington", "WA", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Wisconsin", "WI", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate."],
+            ["Wyoming", "WY", "No Mandate", "N/A", "N/A", "N/A", "No state infertility insurance mandate."]
+          ]
+        }
+      ]
+    }
+  }
+}

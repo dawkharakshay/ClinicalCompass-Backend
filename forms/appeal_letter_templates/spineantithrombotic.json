@@ -1,0 +1,30 @@
+{
+  "title": "Spine Antithrombotic Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "99213",
+      "credentials": "[Credentials]",
+      "icd_codes": "Z79.01, M47.816, M54.5",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — Perioperative Antithrombotic Management for Spine Procedures\nCPT Code(s): 62323, 64483, 64484, 22551, 22612\nICD-10 Code(s): M54.4, M54.5, Z79.01, Z79.02\nDear Medical Director / Utilization Review Committee,\n\nThis letter serves as an appeal for the medical necessity of Perioperative Antithrombotic Management for Spine Procedures for our patient, {{patient_name}}, born {{patient_dob}}, policy number {{policy_number}}. The requested procedure is essential for the patient's health and well-being, supported by clinical evidence and established guidelines.\n\nClinical Summary:\nPatient {{patient_name}} presents with [DIAGNOSIS_SUMMARY]. Based on a comprehensive assessment, the primary recommendation is: N/A. Bridging therapy is No. The recommended hold duration for antithrombotic agents is N/A, with resumption timing at N/A. The patient is categorized under a N/A risk profile, supported by an evidence level of N/A from N/A. The rationale for this management plan is: N/A. Key next steps include: N/A.\n\nGuideline Support:\n1. ASRA Pain Medicine Guidelines on Anticoagulation and Neuraxial Procedures 2018: These guidelines provide critical recommendations for the safe management of antithrombotic agents in patients undergoing neuraxial procedures, directly applicable to spine interventions.\n2. ACC/AHA Perioperative Cardiovascular Evaluation Guidelines 2014: These guidelines offer comprehensive strategies for perioperative cardiovascular risk assessment and management, including the appropriate use and cessation of antithrombotic therapy.\n3. CHEST Antithrombotic Therapy Guidelines 2021: This authoritative source provides evidence-based recommendations for antithrombotic therapy across various clinical scenarios, informing our decision-making for perioperative care.\n4. NASS Guidelines on Anticoagulation Management in Spine Surgery 2020: These specific guidelines address the unique challenges and considerations for antithrombotic management in patients undergoing spine surgery, ensuring optimal patient outcomes.\n\nMedical Necessity:\nThe perioperative antithrombotic management plan is medically necessary to mitigate the risks of both thrombotic and hemorrhagic complications during and after spine procedures. Failure to adhere to these evidence-based guidelines could lead to severe adverse events, including stroke, myocardial infarction, or significant bleeding, which would prolong recovery, increase healthcare costs, and compromise patient safety.\n\nRisk Without Treatment:\nWithout appropriate antithrombotic management, the patient faces a significantly elevated risk of adverse events. Discontinuing necessary antithrombotic therapy without proper bridging or hold periods can lead to life-threatening thrombotic events, while inadequate management of bleeding risk can result in severe hemorrhagic complications. Both scenarios pose substantial threats to the patient's health and recovery.\n\nRequested Action:\nWe respectfully request that you reconsider your denial and approve the Perioperative Antithrombotic Management for Spine Procedures as outlined. This plan is consistent with current medical literature and established clinical guidelines, and is crucial for ensuring the best possible outcome for our patient.\n\n{{additional_clinical_notes}}\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

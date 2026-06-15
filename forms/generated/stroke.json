@@ -1,0 +1,251 @@
+{
+  "title": "Acute Ischemic Stroke",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "stroke",
+    "hiddenDefaults": {
+      "hasEndocarditis": false,
+      "isPregnant": false,
+      "isPostAcutePhase": false,
+      "nihssAtPresentation": 8
+    },
+    "steps": [
+      {
+        "id": "presentation-timing",
+        "shortLabel": "Presentation & Timing",
+        "title": "Presentation & Timing",
+        "fields": [
+          {
+            "id": "onset-window",
+            "name": "onsetWindow",
+            "label": "Onset Window",
+            "type": "select",
+            "defaultValue": "within_3h",
+            "options": [
+              { "label": "Within 3 hours", "value": "within_3h" },
+              { "label": "3 to 4.5 hours", "value": "3_to_4_5h" },
+              { "label": "4.5 to 9 hours", "value": "4_5_to_9h" },
+              { "label": "9 to 24 hours", "value": "9_to_24h" },
+              { "label": "Wake-up / unknown onset", "value": "wake_up_unknown" },
+              { "label": "Beyond 24 hours", "value": "beyond_24h" }
+            ]
+          },
+          {
+            "id": "last-known-well-minutes",
+            "name": "lastKnownWellMinutes",
+            "label": "Last Known Well (minutes ago)",
+            "type": "number",
+            "defaultValue": 90,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "nihss-score",
+            "name": "nihssScore",
+            "label": "NIHSS Score (0–42)",
+            "type": "number",
+            "defaultValue": 8,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "age-years",
+            "name": "ageYears",
+            "label": "Patient Age (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "is-disabling",
+            "name": "isDisabling",
+            "label": "Symptoms Disabling to Patient",
+            "type": "switch",
+            "defaultValue": true
+          }
+        ]
+      },
+      {
+        "id": "imaging-vessel",
+        "shortLabel": "Imaging & Vessel",
+        "title": "Imaging & Vessel",
+        "fields": [
+          {
+            "id": "vessel-occlusion",
+            "name": "vesselOcclusion",
+            "label": "Vessel Occlusion (CTA/MRA)",
+            "type": "select",
+            "defaultValue": "lvo_anterior",
+            "options": [
+              { "label": "LVO — Anterior circulation (ICA, M1, M2)", "value": "lvo_anterior" },
+              { "label": "LVO — Posterior / Basilar artery", "value": "lvo_posterior" },
+              { "label": "Small vessel / Lacunar", "value": "small_vessel" },
+              { "label": "No occlusion identified", "value": "no_occlusion" },
+              { "label": "Unknown / CTA not yet done", "value": "unknown" }
+            ]
+          },
+          {
+            "id": "aspects-score",
+            "name": "aspectsScore",
+            "label": "ASPECTS Score (0–10)",
+            "type": "number",
+            "defaultValue": 9,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "imaging-availability",
+            "name": "imagingAvailability",
+            "label": "Imaging Availability",
+            "type": "select",
+            "defaultValue": "ct_only",
+            "options": [
+              { "label": "CT head only", "value": "ct_only" },
+              { "label": "CT perfusion available", "value": "ct_perfusion" },
+              { "label": "MRI DWI available", "value": "mri_dwi" },
+              { "label": "CT + perfusion", "value": "ct_and_perfusion" },
+              { "label": "No imaging yet", "value": "none" }
+            ]
+          },
+          {
+            "id": "perfusion-mismatch-ratio",
+            "name": "perfusionMismatchRatio",
+            "label": "Perfusion Mismatch Ratio (penumbra/core)",
+            "type": "number",
+            "defaultValue": 1.8,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "imagingAvailability", "op": "in", "value": ["ct_perfusion", "ct_and_perfusion"] }
+          },
+          {
+            "id": "core-infarct-volume-ml",
+            "name": "coreInfarctVolumeMl",
+            "label": "Core Infarct Volume (mL)",
+            "type": "number",
+            "defaultValue": 30,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "imagingAvailability", "op": "in", "value": ["ct_perfusion", "ct_and_perfusion"] }
+          }
+        ]
+      },
+      {
+        "id": "labs-bp",
+        "shortLabel": "Labs & BP",
+        "title": "Labs & BP",
+        "fields": [
+          {
+            "id": "blood-glucose",
+            "name": "bloodGlucose",
+            "label": "Blood Glucose (mg/dL)",
+            "type": "number",
+            "defaultValue": 110,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "systolic-bp",
+            "name": "systolicBP",
+            "label": "Systolic BP (mmHg)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "platelet-count",
+            "name": "plateletCount",
+            "label": "Platelet Count (×10³/µL)",
+            "type": "number",
+            "defaultValue": 220,
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "contraindications-context",
+        "shortLabel": "Contraindications & Context",
+        "title": "Contraindications & Context",
+        "fields": [
+          {
+            "id": "has-anticoagulation",
+            "name": "hasAnticoagulation",
+            "label": "Currently on Anticoagulation",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "anticoagulant-type",
+            "name": "anticoagulantType",
+            "label": "Anticoagulant Type",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "Warfarin", "value": "warfarin" },
+              { "label": "DOAC (apixaban, rivaroxaban, dabigatran, edoxaban)", "value": "doac" },
+              { "label": "Heparin / LMWH", "value": "heparin" },
+              { "label": "None", "value": "none" }
+            ],
+            "visibleWhen": { "field": "hasAnticoagulation", "op": "truthy" }
+          },
+          {
+            "id": "inr-if-warfarin",
+            "name": "inrIfWarfarin",
+            "label": "INR",
+            "type": "number",
+            "defaultValue": 1.0,
+            "keyboardType": "decimal",
+            "visibleWhen": { "all": [
+              { "field": "hasAnticoagulation", "op": "truthy" },
+              { "field": "anticoagulantType", "op": "eq", "value": "warfarin" }
+            ] }
+          },
+          {
+            "id": "has-history-ich",
+            "name": "hasHistoryICH",
+            "label": "History of Intracranial Hemorrhage",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-recent-surgery",
+            "name": "hasRecentSurgery",
+            "label": "Recent Surgery (within 14 days)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-recent-intracranial-surgery",
+            "name": "hasRecentIntracranialSurgery",
+            "label": "Recent Intracranial Surgery (within 3 months)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-active-bleeding",
+            "name": "hasActiveBleeding",
+            "label": "Active Bleeding",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-atrial-fibrillation",
+            "name": "hasAtrialFibrillation",
+            "label": "Atrial Fibrillation",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "stroke-mechanism",
+            "name": "strokeMechanism",
+            "label": "Stroke Mechanism",
+            "type": "select",
+            "defaultValue": "unknown",
+            "options": [
+              { "label": "Cardioembolic (AF, valvular)", "value": "cardioembolic" },
+              { "label": "Large artery atherosclerosis", "value": "large_artery" },
+              { "label": "Small vessel / lacunar", "value": "small_vessel" },
+              { "label": "Cryptogenic", "value": "cryptogenic" },
+              { "label": "Unknown", "value": "unknown" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

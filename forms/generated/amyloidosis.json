@@ -1,0 +1,337 @@
+{
+  "title": "Amyloidosis Diagnostic Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Assessment",
+    "logicKey": "amyloidosis",
+    "hiddenDefaults": {
+      "echoRelativeWallThickness": "increased",
+      "biopsySite": "none",
+      "ecogPS": 1,
+      "priorTherapy": false,
+      "patientPreference": "aggressive"
+    },
+    "steps": [
+      {
+        "id": "patient-profile",
+        "shortLabel": "Profile",
+        "title": "Step 1 — Patient Profile",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "sex",
+            "name": "sex",
+            "label": "Sex",
+            "type": "select",
+            "defaultValue": "male",
+            "options": [
+              { "label": "Male", "value": "male" },
+              { "label": "Female", "value": "female" }
+            ]
+          },
+          {
+            "id": "ethnicity",
+            "name": "ethnicity",
+            "label": "Ethnicity",
+            "type": "select",
+            "defaultValue": "other",
+            "options": [
+              { "label": "African American", "value": "african_american" },
+              { "label": "Other", "value": "other" }
+            ]
+          },
+          {
+            "id": "amyloid-type",
+            "name": "amyloidType",
+            "label": "Suspected Amyloid Type",
+            "type": "select",
+            "defaultValue": "unknown",
+            "options": [
+              { "label": "Unknown / Screening", "value": "unknown" },
+              { "label": "AL Amyloidosis (confirmed)", "value": "al_amyloidosis" },
+              { "label": "wt-ATTR (confirmed)", "value": "attr_wt" },
+              { "label": "hATTR (confirmed)", "value": "attr_hereditary" },
+              { "label": "AA Amyloidosis", "value": "aa_amyloidosis" }
+            ]
+          },
+          {
+            "id": "nyha-class",
+            "name": "nyhaClass",
+            "label": "NYHA Class",
+            "type": "select",
+            "defaultValue": 2,
+            "options": [
+              { "label": "NYHA Class 1", "value": 1 },
+              { "label": "NYHA Class 2", "value": 2 },
+              { "label": "NYHA Class 3", "value": 3 },
+              { "label": "NYHA Class 4", "value": 4 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "symptoms",
+        "shortLabel": "Symptoms",
+        "title": "Step 2 — Symptoms & Red Flags",
+        "fields": [
+          {
+            "id": "sym-heart-failure",
+            "name": "symptoms.heartFailure",
+            "label": "Heart failure (unexplained or disproportionate)",
+            "type": "checkbox",
+            "defaultValue": true
+          },
+          {
+            "id": "sym-unexplained-hcm",
+            "name": "symptoms.unexplainedHypertrophicCM",
+            "label": "Hypertrophic cardiomyopathy on echo (unexplained)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "sym-low-voltage-ecg",
+            "name": "symptoms.lowVoltageECG",
+            "label": "Low voltage on ECG despite LVH on echo",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "sym-bilateral-carpal-tunnel",
+            "name": "symptoms.bilateralCarpalTunnel",
+            "label": "Bilateral carpal tunnel syndrome",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "sym-spinal-stenosis",
+            "name": "symptoms.spinalStenosis",
+            "label": "Lumbar spinal stenosis",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "sym-peripheral-neuropathy",
+            "name": "symptoms.peripheralNeuropathy",
+            "label": "Peripheral neuropathy (unexplained)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "sym-autonomic-dysfunction",
+            "name": "symptoms.autonomicDysfunction",
+            "label": "Autonomic dysfunction (orthostasis, GI dysmotility)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "sym-nephrotic",
+            "name": "symptoms.nephrotic",
+            "label": "Nephrotic syndrome or heavy proteinuria",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "sym-hepatomegaly",
+            "name": "symptoms.hepatomegaly",
+            "label": "Hepatomegaly (unexplained)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "sym-macroglossia",
+            "name": "symptoms.macroglossia",
+            "label": "Macroglossia",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "sym-periorbital-purpura",
+            "name": "symptoms.periorbitalPurpura",
+            "label": "Periorbital purpura ('raccoon eyes')",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "sym-unexplained-weight-loss",
+            "name": "symptoms.unexplainedWeightLoss",
+            "label": "Unexplained weight loss",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "sym-fatigue",
+            "name": "symptoms.fatigue",
+            "label": "Fatigue / reduced exercise tolerance",
+            "type": "checkbox",
+            "defaultValue": true
+          }
+        ]
+      },
+      {
+        "id": "cardiac-labs",
+        "shortLabel": "Cardiac/Labs",
+        "title": "Step 3 — Cardiac Imaging & Lab Values",
+        "fields": [
+          {
+            "id": "echo-lv-wall-thickness",
+            "name": "echoLVWallThickness",
+            "label": "LV Wall Thickness (mm)",
+            "type": "number",
+            "defaultValue": 14,
+            "unit": "mm",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "echo-gls",
+            "name": "echoGLS",
+            "label": "Echo GLS Pattern",
+            "type": "select",
+            "defaultValue": "normal",
+            "options": [
+              { "label": "Normal GLS", "value": "normal" },
+              { "label": "Reduced GLS (diffuse)", "value": "reduced" },
+              { "label": "Apical sparing pattern (ATTR pattern)", "value": "apical_sparing" }
+            ]
+          },
+          {
+            "id": "ntprobnp",
+            "name": "ntproBNP",
+            "label": "NT-proBNP (pg/mL)",
+            "type": "number",
+            "defaultValue": 1200,
+            "unit": "pg/mL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "troponin-t",
+            "name": "troponinT",
+            "label": "hsTnT (ng/L)",
+            "type": "number",
+            "defaultValue": 20,
+            "unit": "ng/L",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "egfr",
+            "name": "egfr",
+            "label": "eGFR (mL/min/1.73m²)",
+            "type": "number",
+            "defaultValue": 65,
+            "unit": "mL/min/1.73m²",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "proteinuria",
+            "name": "proteinuria",
+            "label": "Proteinuria (g/24h)",
+            "type": "number",
+            "defaultValue": 0.3,
+            "unit": "g/24h",
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "diagnostic-tests",
+        "shortLabel": "Tests",
+        "title": "Step 4 — Diagnostic Test Results",
+        "fields": [
+          {
+            "id": "sflc-ratio",
+            "name": "sflcRatio",
+            "label": "SFLC Ratio",
+            "type": "select",
+            "defaultValue": "not_done",
+            "options": [
+              { "label": "Not done", "value": "not_done" },
+              { "label": "Normal (0.26–1.65)", "value": "normal" },
+              { "label": "Abnormal (MGUS/AL screen positive)", "value": "abnormal" }
+            ]
+          },
+          {
+            "id": "bone-scan-result",
+            "name": "boneScanResult",
+            "label": "Tc-99m PYP/DPD Bone Scan",
+            "type": "select",
+            "defaultValue": "not_done",
+            "options": [
+              { "label": "Not done", "value": "not_done" },
+              { "label": "Grade 0 (No uptake)", "value": "grade0" },
+              { "label": "Grade 1 (Bone > heart)", "value": "grade1" },
+              { "label": "Grade 2 (Heart = bone)", "value": "grade2" },
+              { "label": "Grade 3 (Heart > bone)", "value": "grade3" }
+            ]
+          },
+          {
+            "id": "ttr-genetic-test",
+            "name": "ttrGeneticTest",
+            "label": "TTR Genetic Test",
+            "type": "select",
+            "defaultValue": "not_done",
+            "options": [
+              { "label": "Not done", "value": "not_done" },
+              { "label": "Negative (wild-type)", "value": "negative" },
+              { "label": "Positive (pathogenic TTR mutation)", "value": "positive_pathogenic" }
+            ]
+          },
+          {
+            "id": "ttr-mutation",
+            "name": "ttrMutation",
+            "label": "TTR Mutation",
+            "type": "select",
+            "defaultValue": "none_wild_type",
+            "options": [
+              { "label": "V122I (Val122Ile) — African American", "value": "val122ile" },
+              { "label": "V30M (Val30Met) — Most common worldwide", "value": "val30met" },
+              { "label": "T60A (Thr60Ala) — Irish descent", "value": "thr60ala" },
+              { "label": "Other pathogenic mutation", "value": "other_pathogenic" }
+            ],
+            "visibleWhen": { "field": "ttrGeneticTest", "op": "eq", "value": "positive_pathogenic" }
+          },
+          {
+            "id": "biopsy-result",
+            "name": "biopsyResult",
+            "label": "Biopsy Result",
+            "type": "select",
+            "defaultValue": "not_done",
+            "options": [
+              { "label": "Not done", "value": "not_done" },
+              { "label": "Negative (no amyloid)", "value": "negative" },
+              { "label": "Positive — AL amyloidosis", "value": "positive_al" },
+              { "label": "Positive — ATTR amyloidosis", "value": "positive_attr" },
+              { "label": "Positive — AA amyloidosis", "value": "positive_aa" }
+            ]
+          },
+          {
+            "id": "has-mgus",
+            "name": "hasMGUS",
+            "label": "MGUS on SPEP / monoclonal protein detected",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-plasma-cell-dyscrasia",
+            "name": "hasPlasmaCellDyscrasia",
+            "label": "Plasma cell dyscrasia (bone marrow >10% plasma cells or myeloma)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "non-biopsy-attr-info",
+            "type": "alert",
+            "severity": "info",
+            "text": "Non-biopsy ATTR-CM diagnosis (Gillmore 2022): Bone scan grade 2–3 + normal SFLC ratio + no MGUS = ATTR-CM confirmed without biopsy."
+          }
+        ]
+      }
+    ]
+  }
+}

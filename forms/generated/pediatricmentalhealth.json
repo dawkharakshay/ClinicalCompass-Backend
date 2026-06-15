@@ -1,0 +1,303 @@
+{
+  "title": "Pediatric Mental Health Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendations",
+    "logicKey": "pediatricmentalhealth",
+    "hiddenDefaults": {
+      "asqScore": null,
+      "priorDiagnoses": [],
+      "currentMedications": []
+    },
+    "steps": [
+      {
+        "id": "demographics-screening",
+        "shortLabel": "Screening",
+        "title": "Patient Demographics & Screening Scores",
+        "fields": [
+          {
+            "id": "age-group",
+            "name": "ageGroup",
+            "label": "Age Group",
+            "type": "select",
+            "required": false,
+            "defaultValue": "school_age",
+            "options": [
+              { "label": "Infant/Toddler (0–2 years)", "value": "infant_toddler" },
+              { "label": "Preschool (3–5 years)", "value": "preschool" },
+              { "label": "School Age (6–11 years)", "value": "school_age" },
+              { "label": "Early Adolescent (12–14 years)", "value": "early_adolescent" },
+              { "label": "Late Adolescent (15–18 years)", "value": "late_adolescent" },
+              { "label": "Young Adult (19–21 years)", "value": "young_adult" }
+            ]
+          },
+          {
+            "id": "age-years",
+            "name": "ageYears",
+            "label": "Age (years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "sex",
+            "name": "sex",
+            "label": "Sex",
+            "type": "select",
+            "required": false,
+            "defaultValue": "male",
+            "options": [
+              { "label": "Male", "value": "male" },
+              { "label": "Female", "value": "female" },
+              { "label": "Other / Non-binary", "value": "other" }
+            ]
+          },
+          {
+            "id": "phq2-score",
+            "name": "phq2Score",
+            "label": "PHQ-2 Score (≥12 years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": null,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "phq9-score",
+            "name": "phq9Score",
+            "label": "PHQ-9 Score (if PHQ-2 ≥3)",
+            "type": "number",
+            "required": false,
+            "defaultValue": null,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "phq9-item-nine-score",
+            "name": "phq9ItemNineScore",
+            "label": "PHQ-9 Item 9 Score (suicidal ideation item)",
+            "type": "number",
+            "required": false,
+            "defaultValue": null,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "gad7-score",
+            "name": "gad7Score",
+            "label": "GAD-7 Score (anxiety, ≥12 years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": null,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "scared-score",
+            "name": "scaredScore",
+            "label": "SCARED Score (anxiety, ≥8 years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": null,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "mchat-score",
+            "name": "mchatScore",
+            "label": "M-CHAT-R/F Score (18–30 months)",
+            "type": "number",
+            "required": false,
+            "defaultValue": null,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "vanderbilt-score",
+            "name": "vanderbiltScore",
+            "label": "Vanderbilt ADHD Score",
+            "type": "select",
+            "required": false,
+            "defaultValue": null,
+            "options": [
+              { "label": "Not administered", "value": "not_done" },
+              { "label": "Normal", "value": "normal" },
+              { "label": "Possible ADHD", "value": "possible_adhd" },
+              { "label": "ADHD criteria met", "value": "adhd" }
+            ]
+          },
+          {
+            "id": "crafft-score",
+            "name": "crafftScore",
+            "label": "CRAFFT Score (substance use, ≥11 years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": null,
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "suicide-safety",
+        "shortLabel": "Safety",
+        "title": "Suicide & Safety Risk",
+        "fields": [
+          {
+            "id": "has-active-suicidal-ideation",
+            "name": "hasActiveSuicidalIdeation",
+            "label": "Active suicidal ideation",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-suicide-plan",
+            "name": "hasSuicidePlan",
+            "label": "Suicide plan present",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-suicide-attempt-history",
+            "name": "hasSuicideAttemptHistory",
+            "label": "Prior suicide attempt history",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-firearm-in-home",
+            "name": "hasFirearmInHome",
+            "label": "Firearm in home",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-medications-in-home",
+            "name": "hasMedicationsInHome",
+            "label": "Medications accessible at home (means restriction)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-trauma-history",
+            "name": "hasTraumaHistory",
+            "label": "Trauma history (ACEs, abuse, neglect)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-family-history-suicide",
+            "name": "hasFamilyHistorySuicide",
+            "label": "Family history of suicide",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "psychosocial-context",
+        "shortLabel": "Context",
+        "title": "Psychosocial Context",
+        "fields": [
+          {
+            "id": "has-prior-mental-health-diagnosis",
+            "name": "hasPriorMentalHealthDiagnosis",
+            "label": "Prior mental health diagnosis",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-chronic-medical-condition",
+            "name": "hasChronicMedicalCondition",
+            "label": "Chronic medical condition",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-lgbtq-identity",
+            "name": "hasLGBTQIdentity",
+            "label": "LGBTQ+ identity",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-family-history-mental-illness",
+            "name": "hasFamilyHistoryMentalIllness",
+            "label": "Family history of mental illness",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-school-problems",
+            "name": "hasSchoolProblems",
+            "label": "School problems (academic or behavioral)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-social-isolation",
+            "name": "hasSocialIsolation",
+            "label": "Social isolation",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-bullying-exposure",
+            "name": "hasBullyingExposure",
+            "label": "Bullying exposure (victim or perpetrator)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-sleep-problems",
+            "name": "hasSleepProblems",
+            "label": "Sleep problems",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "screen-time-hours-per-day",
+            "name": "screenTimeHoursPerDay",
+            "label": "Screen time (hours/day)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 3,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "physical-activity-minutes-per-day",
+            "name": "physicalActivityMinutesPerDay",
+            "label": "Physical activity (minutes/day)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 30,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "family-support-level",
+            "name": "familySupportLevel",
+            "label": "Family Support Level",
+            "type": "select",
+            "required": false,
+            "defaultValue": "moderate",
+            "options": [
+              { "label": "Strong", "value": "strong" },
+              { "label": "Moderate", "value": "moderate" },
+              { "label": "Weak / Limited", "value": "weak" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

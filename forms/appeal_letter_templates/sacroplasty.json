@@ -1,0 +1,30 @@
+{
+  "title": "Sacroplasty Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "0200T, 0201T, 72291, 72292",
+      "credentials": "[Credentials]",
+      "icd_codes": "M80.08XA, M84.452A, M84.58XA, S32.10XA, S32.19XA, M48.50XA",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "To Whom It May Concern,\n\nI am writing to formally appeal the denial of prior authorization for percutaneous sacroplasty for my patient {{patient_name}}, Date of Birth {{patient_dob}}, Member ID {{member_id}}.\n\nCLINICAL SUMMARY:\nThis patient presents with a sacral insufficiency fracture (Denis [ZONE]) occurring approximately [WEEKS] weeks ago, confirmed on MRI pelvis with STIR sequences demonstrating bone marrow edema. The patient reports a VAS pain score of [VAS]/10 with [FUNCTIONAL IMPAIRMENT] functional impairment. A [WEEKS]-week trial of conservative management including analgesics and physical therapy has been completed with persistent refractory pain and inability to ambulate independently.\n\nGUIDELINE SUPPORT:\nPercutaneous sacroplasty is supported by multiple prospective studies and society guidelines:\n\n• Frey ME, et al. (Spine. 2017;42(3):E169-E176): Ten-year prospective analysis of 52 patients treated with sacroplasty demonstrated mean VAS improvement from 8.9 to 2.7 at 1 week post-procedure, with sustained benefit at 12 months. No major complications were reported.\n\n• Pommersheim W, et al. (AJNR. 2003;24:1003-1007): Sacroplasty provided immediate and durable pain relief in patients with sacral insufficiency fractures, with VAS reduction from 8.5 to 2.0 at 24-hour follow-up.\n\n• ACR Appropriateness Criteria (2022): Sacroplasty is listed as an appropriate intervention for sacral insufficiency fractures refractory to conservative management with MRI-confirmed bone marrow edema.\n\n• Multiple systematic reviews confirm that sacroplasty provides rapid, durable pain relief with a favorable safety profile compared to continued conservative management.\n\nMEDICAL NECESSITY:\n1. Sacral insufficiency fracture confirmed on MRI with bone marrow edema (Denis [ZONE])\n2. Refractory pain (VAS [VAS]/10) despite [WEEKS] weeks of conservative therapy\n3. Significant functional impairment — patient unable to ambulate independently or perform activities of daily living\n4. [Osteoporotic / Pathologic / Radiation-induced] fracture etiology\n5. No sacral nerve compression or neurologic deficit on MRI\n\nCONCLUSION:\nDenial of this procedure will result in continued severe pain, progressive functional decline, and risk of complications from immobility (DVT, pressure ulcers, deconditioning). Sacroplasty is the appropriate, minimally invasive treatment for this patient's refractory sacral insufficiency fracture. I respectfully request immediate reconsideration and approval.\n\nSincerely,\n{{physician_name}}, {{credentials}}\nNPI: {{npi}}\n{{letter_date}}"
+  }
+}

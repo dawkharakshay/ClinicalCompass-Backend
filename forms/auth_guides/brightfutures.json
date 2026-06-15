@@ -1,0 +1,435 @@
+{
+  "title": "Bright Futures Well-Child Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "BrightFuturesAuthGuide.tsx",
+    "title": "BrightFutures Clinical Compass",
+    "subtitle": "Pediatric Well-Child Visits Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "99381",
+        "description": "Initial comprehensive preventive medicine evaluation and management, new patient; infant (age younger than 1 year).",
+        "device": "N/A",
+        "access": "N/A",
+        "rvu": 3.4,
+        "includes": [
+          "Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs.",
+          "Routine counseling or screenings integral to the preventive visit."
+        ],
+        "note": "For new patients under 1 year old. Focus on comprehensive preventive care."
+      },
+      {
+        "code": "99382",
+        "description": "Initial comprehensive preventive medicine evaluation and management, new patient; early childhood (age 1-4 years).",
+        "device": "N/A",
+        "access": "N/A",
+        "rvu": 3.55,
+        "includes": [
+          "Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs.",
+          "Routine counseling or screenings integral to the preventive visit."
+        ],
+        "note": "For new patients aged 1-4 years. Focus on comprehensive preventive care."
+      },
+      {
+        "code": "99383",
+        "description": "Initial comprehensive preventive medicine evaluation and management, new patient; late childhood (age 5-11 years).",
+        "device": "N/A",
+        "access": "N/A",
+        "rvu": 3.71,
+        "includes": [
+          "Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs.",
+          "Routine counseling or screenings integral to the preventive visit."
+        ],
+        "note": "For new patients aged 5-11 years. Focus on comprehensive preventive care."
+      },
+      {
+        "code": "99384",
+        "description": "Initial comprehensive preventive medicine evaluation and management, new patient; adolescent (age 12-17 years).",
+        "device": "N/A",
+        "access": "N/A",
+        "rvu": 4.15,
+        "includes": [
+          "Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs.",
+          "Time alone with adolescent to discuss sensitive topics should be documented.",
+          "Routine counseling or screenings integral to the preventive visit."
+        ],
+        "note": "For new patients aged 12-17 years. Focus on comprehensive preventive care."
+      },
+      {
+        "code": "99385",
+        "description": "Initial comprehensive preventive medicine evaluation and management, new patient; 18-39 years. (Used for completeness, though Bright Futures focuses on pediatric).",
+        "device": "N/A",
+        "access": "N/A",
+        "rvu": 4.55,
+        "includes": [
+          "Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs.",
+          "Routine counseling or screenings integral to the preventive visit."
+        ],
+        "note": "For new patients aged 18-39 years. Focus on comprehensive preventive care."
+      },
+      {
+        "code": "99391",
+        "description": "Periodic comprehensive preventive medicine reevaluation and management, established patient; infant (age younger than 1 year).",
+        "device": "N/A",
+        "access": "N/A",
+        "rvu": 3.07,
+        "includes": [
+          "Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs.",
+          "Routine counseling or screenings integral to the preventive visit."
+        ],
+        "note": "For established patients under 1 year old. Focus on comprehensive preventive care."
+      },
+      {
+        "code": "99392",
+        "description": "Periodic comprehensive preventive medicine reevaluation and management, established patient; early childhood (age 1-4 years).",
+        "device": "N/A",
+        "access": "N/A",
+        "rvu": 3.26,
+        "includes": [
+          "Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs.",
+          "Routine counseling or screenings integral to the preventive visit."
+        ],
+        "note": "For established patients aged 1-4 years. Focus on comprehensive preventive care."
+      },
+      {
+        "code": "99393",
+        "description": "Periodic comprehensive preventive medicine reevaluation and management, established patient; late childhood (age 5-11 years).",
+        "device": "N/A",
+        "access": "N/A",
+        "rvu": 3.25,
+        "includes": [
+          "Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs.",
+          "Routine counseling or screenings integral to the preventive visit."
+        ],
+        "note": "For established patients aged 5-11 years. Focus on comprehensive preventive care."
+      },
+      {
+        "code": "99394",
+        "description": "Periodic comprehensive preventive medicine reevaluation and management, established patient; adolescent (age 12-17 years).",
+        "device": "N/A",
+        "access": "N/A",
+        "rvu": 3.57,
+        "includes": [
+          "Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs.",
+          "Time alone with adolescent to discuss sensitive topics should be documented.",
+          "Routine counseling or screenings integral to the preventive visit."
+        ],
+        "note": "For established patients aged 12-17 years. Focus on comprehensive preventive care."
+      },
+      {
+        "code": "99395",
+        "description": "Periodic comprehensive preventive medicine reevaluation and management, established patient; 18-39 years. (Used for completeness, though Bright Futures focuses on pediatric).",
+        "device": "N/A",
+        "access": "N/A",
+        "rvu": 3.64,
+        "includes": [
+          "Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs.",
+          "Routine counseling or screenings integral to the preventive visit."
+        ],
+        "note": "For established patients aged 18-39 years. Focus on comprehensive preventive care."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "Z00.110",
+        "description": "Health examination for newborn under 8 days old.",
+        "notes": "Routine health examination for a newborn less than 8 days old. Use as primary diagnosis for well-baby checks.",
+        "required": true
+      },
+      {
+        "code": "Z00.111",
+        "description": "Health examination for newborn 8 to 28 days old.",
+        "notes": "Routine health examination for a newborn between 8 and 28 days old. Use as primary diagnosis for well-baby checks.",
+        "required": true
+      },
+      {
+        "code": "Z00.12",
+        "description": "Encounter for routine child health examination.",
+        "notes": "Routine health examination for a child over 28 days old. This code has sub-codes for with and without abnormal findings (Z00.121 and Z00.129). Use Z00.129 for routine exams without abnormal findings.",
+        "required": true
+      },
+      {
+        "code": "Z00.129",
+        "description": "Encounter for routine child health examination without abnormal findings.",
+        "notes": "Routine health examination for a child over 28 days old without any abnormal findings. Use as primary diagnosis for well-child checks when no issues are identified.",
+        "required": true
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Limited Coverage for Preventive Services",
+        "overview": "Medicare primarily covers services for individuals aged 65 or older, or those with certain disabilities or End-Stage Renal Disease. Routine well-child visits are typically not covered. Coverage may exist for specific medically necessary services that arise from a well-child visit, but these must be billed separately and adhere to Medicare guidelines.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Routine physical examinations (well-child visits) are generally excluded from Medicare coverage. Specific medically necessary diagnostic or treatment services identified during a a well-child visit may be covered if billed separately and meet Medicare medical necessity criteria. Prior authorization may be required for certain advanced diagnostic tests or specialized treatments.",
+        "reimbursementNote": "Reimbursement for pediatric services under Medicare is rare and generally limited to specific, medically necessary diagnostic or treatment services for eligible beneficiaries. Routine preventive care is not reimbursed.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Exclusion",
+            "items": [
+              "Routine physical examinations (CPT 99381-99385, 99391-99395) are statutorily excluded from Medicare coverage."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Covered Services (if medically necessary)",
+            "items": [
+              "Diagnostic services for identified medical conditions.",
+              "Treatment services for identified medical conditions.",
+              "Immunizations covered under Medicare Part B or D (e.g., influenza, pneumococcal, hepatitis B for at-risk individuals)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: For Covered Services",
+            "items": [
+              "Detailed medical record documentation supporting medical necessity for any billed services.",
+              "Physician orders for diagnostic tests or treatments."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims for medically necessary services using appropriate CPT and ICD-10 codes.",
+              "Ensure documentation clearly supports the medical necessity of each service billed.",
+              "For services that may require prior authorization (e.g., advanced imaging, specialized therapies), obtain authorization before rendering services."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Billing for routine well-child visits (preventive services) without a covered diagnosis.",
+              "Lack of medical necessity documentation for billed services.",
+              "Failure to obtain prior authorization for services that require it."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Educate parents that Medicare typically does not cover routine well-child visits.",
+              "Clearly distinguish between preventive services and medically necessary diagnostic/treatment services.",
+              "Bill only for services that meet Medicare coverage criteria and are supported by documentation."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS",
+            "status": "Non-covered",
+            "notes": "Routine physical examinations are statutorily excluded from Medicare coverage."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Comprehensive Coverage for Preventive Services",
+        "overview": "Medicaid provides comprehensive coverage for well-child visits and preventive services for eligible children and adolescents through the EPSDT program. This includes screenings, immunizations, physical assessments, and health education to ensure healthy development.",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Well-child visits are covered under the Early and Periodic Screening, Diagnostic, and Treatment (EPSDT) benefit. Prior authorization is generally not required for routine well-child visits, but may be needed for certain specialized diagnostic or treatment services identified during the visit.",
+        "reimbursementNote": "Medicaid provides robust reimbursement for well-child visits and associated preventive services under the EPSDT benefit, typically with no cost-sharing for beneficiaries.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: EPSDT Requirements",
+            "items": [
+              "Periodic comprehensive health screenings according to the Bright Futures periodicity schedule.",
+              "Vision, hearing, and dental screenings.",
+              "Immunizations appropriate for age.",
+              "Developmental and behavioral screenings.",
+              "Laboratory tests (e.g., lead screening)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Medical Necessity",
+            "items": [
+              "All medically necessary diagnostic and treatment services identified during a well-child visit are covered."
+            ]
+          },
+          {
+            "heading": "Required Documentation: General Documentation",
+            "items": [
+              "Documentation of all components of the well-child visit (history, exam, counseling, screenings).",
+              "Immunization records.",
+              "Results of all screenings and laboratory tests."
+            ]
+          },
+          {
+            "heading": "Required Documentation: For Specific Services",
+            "items": [
+              "Medical record documentation supporting medical necessity for any additional diagnostic or treatment services."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims for well-child visits using appropriate CPT and ICD-10 codes (e.g., 9938x/9939x with Z00.12x).",
+              "Ensure all EPSDT components are documented.",
+              "Follow state-specific Medicaid billing guidelines for any additional services."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Incomplete documentation of EPSDT components.",
+              "Billing for services not covered under EPSDT without appropriate medical necessity.",
+              "Failure to follow state-specific billing rules."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Adhere strictly to the Bright Futures periodicity schedule for well-child visits.",
+              "Document all screenings and counseling provided during the visit.",
+              "Utilize appropriate ICD-10 codes, especially Z00.12x for routine exams."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS Medicaid",
+            "status": "Covered",
+            "notes": "Comprehensive coverage for children and adolescents through EPSDT."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Comprehensive Coverage for Preventive Services",
+        "overview": "Private insurance plans typically cover well-child visits and recommended preventive services for children and adolescents as mandated by the ACA. Coverage usually includes age-appropriate screenings, immunizations, and health counseling without patient cost-sharing.",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Most private insurance plans are required to cover preventive services, including well-child visits, without cost-sharing due to the Affordable Care Act (ACA). Prior authorization is generally not required for routine well-child visits, but may be necessary for certain non-routine diagnostic tests, specialty referrals, or treatments.",
+        "reimbursementNote": "Private insurance plans generally provide good reimbursement for well-child visits as mandated by the ACA, with no cost-sharing for preventive services. Reimbursement for additional services depends on medical necessity and plan benefits.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: ACA Mandate",
+            "items": [
+              "Coverage of recommended preventive services, including well-child visits, without cost-sharing.",
+              "Adherence to the Bright Futures periodicity schedule."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Plan-Specific Benefits",
+            "items": [
+              "Coverage for additional services (e.g., vision, dental, mental health) may vary by plan.",
+              "Medical necessity criteria apply for non-preventive services."
+            ]
+          },
+          {
+            "heading": "Required Documentation: General Documentation",
+            "items": [
+              "Documentation of all components of the well-child visit.",
+              "Immunization records.",
+              "Results of all screenings and laboratory tests."
+            ]
+          },
+          {
+            "heading": "Required Documentation: For Specific Services",
+            "items": [
+              "Medical record documentation supporting medical necessity for any additional diagnostic or treatment services."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims using appropriate CPT and ICD-10 codes for well-child visits.",
+              "Verify plan-specific benefits and requirements for any additional services.",
+              "Obtain prior authorization for services that require it as per the specific plan policy."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Billing for non-covered services or services not deemed preventive.",
+              "Lack of documentation for services rendered.",
+              "Failure to obtain prior authorization for services that require it (e.g., specialty referrals, advanced imaging)."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify patient benefits and coverage details with the specific private insurance plan prior to the visit.",
+              "Clearly document all preventive services and any additional medically necessary services.",
+              "Be aware of plan-specific requirements for referrals and prior authorizations for non-routine services."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Various Private Insurers",
+            "status": "Covered",
+            "notes": "Preventive services, including well-child visits, are covered without cost-sharing as per ACA mandates."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment",
+        "href": "/brightfutures"
+      },
+      {
+        "heading": "Procedure Codes — note",
+        "kind": "prose",
+        "text": "Each CPT code card lists an RVU value, a Device/Access field (N/A for all well-child preventive codes), an \"Included in this code (do NOT bill separately)\" list, and an italic note describing the applicable patient age and that the focus is comprehensive preventive care."
+      },
+      {
+        "heading": "ICD-10 Diagnosis Codes — note",
+        "kind": "prose",
+        "text": "All four ICD-10 codes are marked required and display a \"Primary\" badge, indicating they are intended for use as the primary diagnosis for well-child / well-baby checks."
+      }
+    ],
+    "raw": {
+      "markdown": "# BrightFutures Clinical Compass\n## Pediatric Well-Child Visits Insurance Authorization Guide\n\n[Button] Back to Assessment (link: /brightfutures)\n\n---\n\n## Procedure Codes (CPT Codes)\n\nEach code card shows: CPT badge, RVU badge, description, Device/Access field, an \"Included in this code (do NOT bill separately)\" list, and an italic note.\n\n### CPT 99381 (RVU 3.4)\nInitial comprehensive preventive medicine evaluation and management, new patient; infant (age younger than 1 year).\nDevice/Access: N/A\nIncluded in this code (do NOT bill separately):\n- Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs.\n- Routine counseling or screenings integral to the preventive visit.\nNote: For new patients under 1 year old. Focus on comprehensive preventive care.\n\n### CPT 99382 (RVU 3.55)\nInitial comprehensive preventive medicine evaluation and management, new patient; early childhood (age 1-4 years).\nDevice/Access: N/A\nIncluded in this code (do NOT bill separately):\n- Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs.\n- Routine counseling or screenings integral to the preventive visit.\nNote: For new patients aged 1-4 years. Focus on comprehensive preventive care.\n\n### CPT 99383 (RVU 3.71)\nInitial comprehensive preventive medicine evaluation and management, new patient; late childhood (age 5-11 years).\nDevice/Access: N/A\nIncluded in this code (do NOT bill separately):\n- Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs.\n- Routine counseling or screenings integral to the preventive visit.\nNote: For new patients aged 5-11 years. Focus on comprehensive preventive care.\n\n### CPT 99384 (RVU 4.15)\nInitial comprehensive preventive medicine evaluation and management, new patient; adolescent (age 12-17 years).\nDevice/Access: N/A\nIncluded in this code (do NOT bill separately):\n- Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs.\n- Time alone with adolescent to discuss sensitive topics should be documented.\n- Routine counseling or screenings integral to the preventive visit.\nNote: For new patients aged 12-17 years. Focus on comprehensive preventive care.\n\n### CPT 99385 (RVU 4.55)\nInitial comprehensive preventive medicine evaluation and management, new patient; 18-39 years. (Used for completeness, though Bright Futures focuses on pediatric).\nDevice/Access: N/A\nIncluded in this code (do NOT bill separately):\n- Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs.\n- Routine counseling or screenings integral to the preventive visit.\nNote: For new patients aged 18-39 years. Focus on comprehensive preventive care.\n\n### CPT 99391 (RVU 3.07)\nPeriodic comprehensive preventive medicine reevaluation and management, established patient; infant (age younger than 1 year).\nDevice/Access: N/A\nIncluded in this code (do NOT bill separately):\n- Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs.\n- Routine counseling or screenings integral to the preventive visit.\nNote: For established patients under 1 year old. Focus on comprehensive preventive care.\n\n### CPT 99392 (RVU 3.26)\nPeriodic comprehensive preventive medicine reevaluation and management, established patient; early childhood (age 1-4 years).\nDevice/Access: N/A\nIncluded in this code (do NOT bill separately):\n- Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs.\n- Routine counseling or screenings integral to the preventive visit.\nNote: For established patients aged 1-4 years. Focus on comprehensive preventive care.\n\n### CPT 99393 (RVU 3.25)\nPeriodic comprehensive preventive medicine reevaluation and management, established patient; late childhood (age 5-11 years).\nDevice/Access: N/A\nIncluded in this code (do NOT bill separately):\n- Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs.\n- Routine counseling or screenings integral to the preventive visit.\nNote: For established patients aged 5-11 years. Focus on comprehensive preventive care.\n\n### CPT 99394 (RVU 3.57)\nPeriodic comprehensive preventive medicine reevaluation and management, established patient; adolescent (age 12-17 years).\nDevice/Access: N/A\nIncluded in this code (do NOT bill separately):\n- Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs.\n- Time alone with adolescent to discuss sensitive topics should be documented.\n- Routine counseling or screenings integral to the preventive visit.\nNote: For established patients aged 12-17 years. Focus on comprehensive preventive care.\n\n### CPT 99395 (RVU 3.64)\nPeriodic comprehensive preventive medicine reevaluation and management, established patient; 18-39 years. (Used for completeness, though Bright Futures focuses on pediatric).\nDevice/Access: N/A\nIncluded in this code (do NOT bill separately):\n- Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs.\n- Routine counseling or screenings integral to the preventive visit.\nNote: For established patients aged 18-39 years. Focus on comprehensive preventive care.\n\n---\n\n## ICD-10 Diagnosis Codes\n\nAll codes below are marked required and show a \"Primary\" badge.\n\n- **Z00.110** — Health examination for newborn under 8 days old. Notes: Routine health examination for a newborn less than 8 days old. Use as primary diagnosis for well-baby checks. [Primary]\n- **Z00.111** — Health examination for newborn 8 to 28 days old. Notes: Routine health examination for a newborn between 8 and 28 days old. Use as primary diagnosis for well-baby checks. [Primary]\n- **Z00.12** — Encounter for routine child health examination. Notes: Routine health examination for a child over 28 days old. This code has sub-codes for with and without abnormal findings (Z00.121 and Z00.129). Use Z00.129 for routine exams without abnormal findings. [Primary]\n- **Z00.129** — Encounter for routine child health examination without abnormal findings. Notes: Routine health examination for a child over 28 days old without any abnormal findings. Use as primary diagnosis for well-child checks when no issues are identified. [Primary]\n\n---\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance. Each payer shows a Prior Auth badge (\"Prior Auth Required\" or \"No Prior Auth (FFS)\"), a coverage status badge, a prior auth note (amber alert), an overview, Coverage Criteria, Required Documentation, Submission Process, Common Denial Reasons, Known Payer Policies table, Reimbursement Note, and Authorization Tips.\n\n### Medicare\nBadges: Prior Auth Required; Limited Coverage for Preventive Services\nPrior Auth Note: Routine physical examinations (well-child visits) are generally excluded from Medicare coverage. Specific medically necessary diagnostic or treatment services identified during a a well-child visit may be covered if billed separately and meet Medicare medical necessity criteria. Prior authorization may be required for certain advanced diagnostic tests or specialized treatments.\nOverview: Medicare primarily covers services for individuals aged 65 or older, or those with certain disabilities or End-Stage Renal Disease. Routine well-child visits are typically not covered. Coverage may exist for specific medically necessary services that arise from a well-child visit, but these must be billed separately and adhere to Medicare guidelines.\n\n**Coverage Criteria**\n- General Exclusion:\n  - Routine physical examinations (CPT 99381-99385, 99391-99395) are statutorily excluded from Medicare coverage.\n- Covered Services (if medically necessary):\n  - Diagnostic services for identified medical conditions.\n  - Treatment services for identified medical conditions.\n  - Immunizations covered under Medicare Part B or D (e.g., influenza, pneumococcal, hepatitis B for at-risk individuals).\n\n**Required Documentation**\n- For Covered Services:\n  - Detailed medical record documentation supporting medical necessity for any billed services.\n  - Physician orders for diagnostic tests or treatments.\n\n**Submission Process**\n1. Submit claims for medically necessary services using appropriate CPT and ICD-10 codes.\n2. Ensure documentation clearly supports the medical necessity of each service billed.\n3. For services that may require prior authorization (e.g., advanced imaging, specialized therapies), obtain authorization before rendering services.\n\n**Common Denial Reasons**\n- Billing for routine well-child visits (preventive services) without a covered diagnosis.\n- Lack of medical necessity documentation for billed services.\n- Failure to obtain prior authorization for services that require it.\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS | Non-covered | Routine physical examinations are statutorily excluded from Medicare coverage. |\n\n**Reimbursement Note:** Reimbursement for pediatric services under Medicare is rare and generally limited to specific, medically necessary diagnostic or treatment services for eligible beneficiaries. Routine preventive care is not reimbursed.\n\n**Authorization Tips**\n- Educate parents that Medicare typically does not cover routine well-child visits.\n- Clearly distinguish between preventive services and medically necessary diagnostic/treatment services.\n- Bill only for services that meet Medicare coverage criteria and are supported by documentation.\n\n### Medicaid\nBadges: No Prior Auth (FFS); Comprehensive Coverage for Preventive Services\nPrior Auth Note: Well-child visits are covered under the Early and Periodic Screening, Diagnostic, and Treatment (EPSDT) benefit. Prior authorization is generally not required for routine well-child visits, but may be needed for certain specialized diagnostic or treatment services identified during the visit.\nOverview: Medicaid provides comprehensive coverage for well-child visits and preventive services for eligible children and adolescents through the EPSDT program. This includes screenings, immunizations, physical assessments, and health education to ensure healthy development.\n\n**Coverage Criteria**\n- EPSDT Requirements:\n  - Periodic comprehensive health screenings according to the Bright Futures periodicity schedule.\n  - Vision, hearing, and dental screenings.\n  - Immunizations appropriate for age.\n  - Developmental and behavioral screenings.\n  - Laboratory tests (e.g., lead screening).\n- Medical Necessity:\n  - All medically necessary diagnostic and treatment services identified during a well-child visit are covered.\n\n**Required Documentation**\n- General Documentation:\n  - Documentation of all components of the well-child visit (history, exam, counseling, screenings).\n  - Immunization records.\n  - Results of all screenings and laboratory tests.\n- For Specific Services:\n  - Medical record documentation supporting medical necessity for any additional diagnostic or treatment services.\n\n**Submission Process**\n1. Submit claims for well-child visits using appropriate CPT and ICD-10 codes (e.g., 9938x/9939x with Z00.12x).\n2. Ensure all EPSDT components are documented.\n3. Follow state-specific Medicaid billing guidelines for any additional services.\n\n**Common Denial Reasons**\n- Incomplete documentation of EPSDT components.\n- Billing for services not covered under EPSDT without appropriate medical necessity.\n- Failure to follow state-specific billing rules.\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS Medicaid | Covered | Comprehensive coverage for children and adolescents through EPSDT. |\n\n**Reimbursement Note:** Medicaid provides robust reimbursement for well-child visits and associated preventive services under the EPSDT benefit, typically with no cost-sharing for beneficiaries.\n\n**Authorization Tips**\n- Adhere strictly to the Bright Futures periodicity schedule for well-child visits.\n- Document all screenings and counseling provided during the visit.\n- Utilize appropriate ICD-10 codes, especially Z00.12x for routine exams.\n\n### Private Insurance\nBadges: No Prior Auth (FFS); Comprehensive Coverage for Preventive Services\nPrior Auth Note: Most private insurance plans are required to cover preventive services, including well-child visits, without cost-sharing due to the Affordable Care Act (ACA). Prior authorization is generally not required for routine well-child visits, but may be necessary for certain non-routine diagnostic tests, specialty referrals, or treatments.\nOverview: Private insurance plans typically cover well-child visits and recommended preventive services for children and adolescents as mandated by the ACA. Coverage usually includes age-appropriate screenings, immunizations, and health counseling without patient cost-sharing.\n\n**Coverage Criteria**\n- ACA Mandate:\n  - Coverage of recommended preventive services, including well-child visits, without cost-sharing.\n  - Adherence to the Bright Futures periodicity schedule.\n- Plan-Specific Benefits:\n  - Coverage for additional services (e.g., vision, dental, mental health) may vary by plan.\n  - Medical necessity criteria apply for non-preventive services.\n\n**Required Documentation**\n- General Documentation:\n  - Documentation of all components of the well-child visit.\n  - Immunization records.\n  - Results of all screenings and laboratory tests.\n- For Specific Services:\n  - Medical record documentation supporting medical necessity for any additional diagnostic or treatment services.\n\n**Submission Process**\n1. Submit claims using appropriate CPT and ICD-10 codes for well-child visits.\n2. Verify plan-specific benefits and requirements for any additional services.\n3. Obtain prior authorization for services that require it as per the specific plan policy.\n\n**Common Denial Reasons**\n- Billing for non-covered services or services not deemed preventive.\n- Lack of documentation for services rendered.\n- Failure to obtain prior authorization for services that require it (e.g., specialty referrals, advanced imaging).\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Various Private Insurers | Covered | Preventive services, including well-child visits, are covered without cost-sharing as per ACA mandates. |\n\n**Reimbursement Note:** Private insurance plans generally provide good reimbursement for well-child visits as mandated by the ACA, with no cost-sharing for preventive services. Reimbursement for additional services depends on medical necessity and plan benefits.\n\n**Authorization Tips**\n- Verify patient benefits and coverage details with the specific private insurance plan prior to the visit.\n- Clearly document all preventive services and any additional medically necessary services.\n- Be aware of plan-specific requirements for referrals and prior authorizations for non-routine services.\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "RVU", "Description", "Device/Access", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            ["99381", "3.4", "Initial comprehensive preventive medicine evaluation and management, new patient; infant (age younger than 1 year).", "N/A", "Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs. | Routine counseling or screenings integral to the preventive visit.", "For new patients under 1 year old. Focus on comprehensive preventive care."],
+            ["99382", "3.55", "Initial comprehensive preventive medicine evaluation and management, new patient; early childhood (age 1-4 years).", "N/A", "Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs. | Routine counseling or screenings integral to the preventive visit.", "For new patients aged 1-4 years. Focus on comprehensive preventive care."],
+            ["99383", "3.71", "Initial comprehensive preventive medicine evaluation and management, new patient; late childhood (age 5-11 years).", "N/A", "Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs. | Routine counseling or screenings integral to the preventive visit.", "For new patients aged 5-11 years. Focus on comprehensive preventive care."],
+            ["99384", "4.15", "Initial comprehensive preventive medicine evaluation and management, new patient; adolescent (age 12-17 years).", "N/A", "Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs. | Time alone with adolescent to discuss sensitive topics should be documented. | Routine counseling or screenings integral to the preventive visit.", "For new patients aged 12-17 years. Focus on comprehensive preventive care."],
+            ["99385", "4.55", "Initial comprehensive preventive medicine evaluation and management, new patient; 18-39 years. (Used for completeness, though Bright Futures focuses on pediatric).", "N/A", "Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs. | Routine counseling or screenings integral to the preventive visit.", "For new patients aged 18-39 years. Focus on comprehensive preventive care."],
+            ["99391", "3.07", "Periodic comprehensive preventive medicine reevaluation and management, established patient; infant (age younger than 1 year).", "N/A", "Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs. | Routine counseling or screenings integral to the preventive visit.", "For established patients under 1 year old. Focus on comprehensive preventive care."],
+            ["99392", "3.26", "Periodic comprehensive preventive medicine reevaluation and management, established patient; early childhood (age 1-4 years).", "N/A", "Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs. | Routine counseling or screenings integral to the preventive visit.", "For established patients aged 1-4 years. Focus on comprehensive preventive care."],
+            ["99393", "3.25", "Periodic comprehensive preventive medicine reevaluation and management, established patient; late childhood (age 5-11 years).", "N/A", "Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs. | Routine counseling or screenings integral to the preventive visit.", "For established patients aged 5-11 years. Focus on comprehensive preventive care."],
+            ["99394", "3.57", "Periodic comprehensive preventive medicine reevaluation and management, established patient; adolescent (age 12-17 years).", "N/A", "Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs. | Time alone with adolescent to discuss sensitive topics should be documented. | Routine counseling or screenings integral to the preventive visit.", "For established patients aged 12-17 years. Focus on comprehensive preventive care."],
+            ["99395", "3.64", "Periodic comprehensive preventive medicine reevaluation and management, established patient; 18-39 years. (Used for completeness, though Bright Futures focuses on pediatric).", "N/A", "Age-appropriate history, physical exam, health education, anticipatory guidance, risk factor reduction, ordering of screenings/labs. | Routine counseling or screenings integral to the preventive visit.", "For established patients aged 18-39 years. Focus on comprehensive preventive care."]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["Code", "Description", "Notes", "Required"],
+          "rows": [
+            ["Z00.110", "Health examination for newborn under 8 days old.", "Routine health examination for a newborn less than 8 days old. Use as primary diagnosis for well-baby checks.", "true (Primary)"],
+            ["Z00.111", "Health examination for newborn 8 to 28 days old.", "Routine health examination for a newborn between 8 and 28 days old. Use as primary diagnosis for well-baby checks.", "true (Primary)"],
+            ["Z00.12", "Encounter for routine child health examination.", "Routine health examination for a child over 28 days old. This code has sub-codes for with and without abnormal findings (Z00.121 and Z00.129). Use Z00.129 for routine exams without abnormal findings.", "true (Primary)"],
+            ["Z00.129", "Encounter for routine child health examination without abnormal findings.", "Routine health examination for a child over 28 days old without any abnormal findings. Use as primary diagnosis for well-child checks when no issues are identified.", "true (Primary)"]
+          ]
+        },
+        {
+          "name": "Medicare — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS", "Non-covered", "Routine physical examinations are statutorily excluded from Medicare coverage."]
+          ]
+        },
+        {
+          "name": "Medicaid — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS Medicaid", "Covered", "Comprehensive coverage for children and adolescents through EPSDT."]
+          ]
+        },
+        {
+          "name": "Private Insurance — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Various Private Insurers", "Covered", "Preventive services, including well-child visits, are covered without cost-sharing as per ACA mandates."]
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "title": "Obesity Treatment Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "obesity",
+    "hiddenDefaults": {
+      "waistCircumference": 110,
+      "ibd": false
+    },
+    "steps": [
+      {
+        "id": "anthropometrics",
+        "shortLabel": "Anthropometrics",
+        "title": "Anthropometrics & Demographics",
+        "fields": [
+          {
+            "id": "bmi",
+            "name": "bmi",
+            "label": "BMI (kg/m²)",
+            "type": "slider",
+            "defaultValue": 0,
+            "unit": "kg/m²"
+          },
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "slider",
+            "defaultValue": 0,
+            "unit": "years"
+          },
+          {
+            "id": "sex",
+            "name": "sex",
+            "label": "Sex",
+            "type": "radio",
+            "defaultValue": "female",
+            "options": [
+              { "label": "Female", "value": "female" },
+              { "label": "Male", "value": "male" }
+            ]
+          },
+          {
+            "id": "pregnant",
+            "name": "pregnant",
+            "label": "Pregnant",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "surgical-risk",
+            "name": "surgicalRisk",
+            "label": "Surgical Risk",
+            "type": "select",
+            "defaultValue": "low",
+            "options": [
+              { "label": "Low surgical risk", "value": "low" },
+              { "label": "Moderate surgical risk", "value": "moderate" },
+              { "label": "High surgical risk", "value": "high" },
+              { "label": "Prohibitive surgical risk", "value": "prohibitive" }
+            ]
+          },
+          {
+            "id": "patient-preference",
+            "name": "patientPreference",
+            "label": "Patient Preference",
+            "type": "select",
+            "defaultValue": "no_preference",
+            "options": [
+              { "label": "No strong preference", "value": "no_preference" },
+              { "label": "Prefers pharmacotherapy (GLP-1)", "value": "pharmacotherapy" },
+              { "label": "Prefers endoscopic (ESG)", "value": "endoscopic" },
+              { "label": "Prefers surgery", "value": "surgical" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "comorbidities",
+        "shortLabel": "Comorbidities",
+        "title": "Obesity-Related Comorbidities",
+        "fields": [
+          {
+            "id": "t2dm",
+            "name": "t2dm",
+            "label": "Type 2 Diabetes (T2DM)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "hypertension",
+            "name": "hypertension",
+            "label": "Hypertension",
+            "type": "radio",
+            "defaultValue": true,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "osa",
+            "name": "osa",
+            "label": "Obstructive Sleep Apnea",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "nafld",
+            "name": "nafld",
+            "label": "MASLD/NAFLD",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "gerd",
+            "name": "gerd",
+            "label": "GERD / Reflux",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "dyslipidemia",
+            "name": "dyslipidemia",
+            "label": "Dyslipidemia",
+            "type": "radio",
+            "defaultValue": true,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "cardiovascular-disease",
+            "name": "cardiovascularDisease",
+            "label": "Cardiovascular Disease (CVD)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "heart-failure",
+            "name": "heartFailure",
+            "label": "Heart Failure",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "cirrhosis",
+            "name": "cirrhosis",
+            "label": "Cirrhosis",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "eating-disorder",
+            "name": "eatingDisorder",
+            "label": "Active Eating Disorder",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "treatment-history",
+        "shortLabel": "Treatment History",
+        "title": "Prior Treatment History",
+        "fields": [
+          {
+            "id": "lifestyle-intervention-attempted",
+            "name": "lifestyleInterventionAttempted",
+            "label": "Lifestyle Intervention ≥6 months",
+            "type": "radio",
+            "defaultValue": true,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "glp1-attempted",
+            "name": "glp1Attempted",
+            "label": "GLP-1 Agonist Attempted",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "glp1-response",
+            "name": "glp1Response",
+            "label": "GLP-1 Response",
+            "type": "select",
+            "defaultValue": "naive",
+            "options": [
+              { "label": "Naive (not yet tried)", "value": "naive" },
+              { "label": "Adequate response (>5% weight loss)", "value": "adequate" },
+              { "label": "Inadequate response (<5% weight loss at max dose)", "value": "inadequate" },
+              { "label": "Intolerant (GI side effects, contraindication)", "value": "intolerant" }
+            ],
+            "visibleWhen": { "field": "glp1Attempted", "op": "truthy" }
+          },
+          {
+            "id": "prior-bariatric-surgery",
+            "name": "priorBariatricSurgery",
+            "label": "Prior Bariatric Surgery",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "None", "value": "none" },
+              { "label": "Adjustable gastric band", "value": "band" },
+              { "label": "Sleeve gastrectomy", "value": "sleeve" },
+              { "label": "Roux-en-Y gastric bypass (RYGB)", "value": "rygb" },
+              { "label": "Other bariatric procedure", "value": "other" }
+            ]
+          },
+          {
+            "id": "substance-abuse",
+            "name": "substanceAbuse",
+            "label": "Substance Abuse (active)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

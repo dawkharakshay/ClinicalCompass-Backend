@@ -1,0 +1,30 @@
+{
+  "title": "Varicocele Embolization Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "37241, 55530",
+      "credentials": "[Credentials]",
+      "icd_codes": "I86.1",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\nRe: Medical Necessity Appeal — Varicocele Embolization\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\n\nDear Medical Director / Utilization Review Committee,\n\nI am writing to formally appeal the denial of prior authorization for varicocele embolization for my patient. This procedure is medically necessary and is supported by the highest level of evidence from current multisociety guidelines and peer-reviewed literature.\n\nCLINICAL SUMMARY\nMy patient presents with a clinically significant varicocele requiring treatment. Following comprehensive clinical evaluation using the Varicocele Compass™ clinical decision support tool (based on AUA/ASRM and EAU guidelines), the recommended intervention is: [Varicocele Treatment Recommendation].\n\nGUIDELINE SUPPORT\nThis recommendation is based on the following evidence-based guidelines and peer-reviewed literature:\n\n1. AUA/ASRM Male Infertility Best Practice Policy 2022: Varicocele repair is recommended for clinical varicocele with abnormal semen parameters and otherwise unexplained infertility — Grade A evidence from multiple randomized controlled trials.\n\n2. EAU Guidelines on Male Infertility 2024: Treatment indicated for clinical varicocele (Grade II-III) with impaired semen quality, with documented improvement in semen parameters and natural conception rates following repair.\n\n3. CIRSE Standards of Practice on Varicocele Embolisation 2023: Percutaneous embolization is the preferred minimally invasive treatment approach with equivalent efficacy to surgical ligation, lower complication rates, and faster recovery.\n\n4. Meta-analysis (Ficarra V et al., Eur Urol 2012;61:381-387): Analysis of 34 RCTs demonstrated that varicocele repair significantly improves semen parameters, spontaneous pregnancy rates, and assisted reproduction outcomes.\n\n5. SIR Quality Improvement Guidelines 2021: Varicocele embolization is a safe, effective outpatient procedure with technical success rates >95% and recurrence rates <10%.\n\nMEDICAL NECESSITY\nWithout this intervention, my patient faces:\n• Continued progressive impairment of semen parameters and testicular function\n• Ongoing infertility with reduced probability of spontaneous conception\n• Potential need for more invasive and costly assisted reproductive technologies\n• Progressive testicular atrophy and hormonal dysfunction\n\nConservative measures have been exhausted without adequate improvement. Varicocele embolization is the appropriate next intervention per multisociety guidelines.\n\nCOST-EFFECTIVENESS\nVaricocele embolization is a cost-effective outpatient procedure that avoids the costs of prolonged infertility treatment, multiple IVF cycles, and surgical intervention. Early treatment maximizes the probability of natural conception and reduces long-term reproductive healthcare costs.\n\nREQUESTED ACTION\nI respectfully request that you overturn the denial and authorize the requested varicocele embolization. I am available to discuss this case further and can provide comprehensive documentation including semen analysis results, scrotal ultrasound findings, and hormonal evaluation upon request.\n\n{{additional_clinical_notes}}\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

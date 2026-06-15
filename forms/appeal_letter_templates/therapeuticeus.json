@@ -1,0 +1,30 @@
+{
+  "title": "Therapeutic EUS Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "43231, 43240, 43242",
+      "credentials": "[Credentials]",
+      "icd_codes": "K86.1, K85.00, K85.10, K85.20, K85.30, K85.80, K85.90",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — Therapeutic EUS (Pseudocyst Drainage / Necrosectomy / Celiac Block)\nCPT Code(s): 43240, 43242, 43253, 43259\nICD-10 Code(s): K86.1, K85.90, K86.3, K86.2\nDear Medical Director / Utilization Review Committee,\n\nI am writing to appeal the denial of coverage for a medically necessary Therapeutic EUS procedure for my patient, {{patient_name}}, DOB: {{patient_dob}}. The requested procedure, Therapeutic EUS , is essential for the appropriate management of their condition.\n\nClinical Summary:\n{{patient_name}} presents with [PATIENT_SYMPTOMS] and diagnostic imaging revealing [DIAGNOSTIC_FINDINGS]. Given these findings, a therapeutic EUS procedure is indicated based on the patient's clinical presentation and diagnostic findings. Without this intervention, the patient is at high risk for [RISK_WITHOUT_TREATMENT].\n\nGuideline Support:\n1.  The ASGE Standards of Practice on EUS-Guided Drainage (2019) provides clear indications for EUS-guided interventions in managing pancreatic fluid collections.\n2.  The ESGE Clinical Guideline on EUS-Guided Drainage (2018) supports the use of EUS for drainage procedures in patients with symptomatic pancreatic collections.\n3.  The ACG Clinical Guideline on Acute Pancreatitis (2013) recognizes the role of endoscopic interventions in managing complications of acute pancreatitis.\n4.  The ASGE Guideline on Endoscopic Ultrasound (2021) further affirms the therapeutic utility of EUS in complex gastrointestinal and pancreatic disorders.\n\nMedical Necessity:\nBased on strong evidence from leading gastroenterology societies, Therapeutic EUS is the most appropriate and least invasive method to address [PATIENT_CONDITION]. This procedure is expected to [EXPECTED_OUTCOME].\n\nRisk Without Treatment:\nDelay or denial of this procedure would expose the patient to significant risks, including [SPECIFIC_RISKS], prolonged hospitalization, increased pain, and potential for more invasive surgical interventions.\n\nRequested Action:\nI urge you to reconsider your decision and approve coverage for the Therapeutic EUS procedure. Prompt authorization will allow us to provide timely and effective care, preventing further complications and improving patient outcomes.\n\n\n{{additional_clinical_notes}}\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

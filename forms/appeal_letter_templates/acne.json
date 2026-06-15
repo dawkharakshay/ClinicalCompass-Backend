@@ -1,0 +1,30 @@
+{
+  "title": "Acne Vulgaris Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "17000, 17110",
+      "credentials": "[Credentials]",
+      "icd_codes": "L70.0, L70.1",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\nRe: Medical Necessity Appeal — Isotretinoin / Antibiotic / Hormonal Therapy for Acne\nCPT Code(s): 99213, 99214, 10040\nICD-10 Code(s): L70.0, L70.1, L70.8, L70.9\n\nDear Medical Director / Utilization Review Committee,\n\nThis letter serves as an appeal for coverage of Isotretinoin / Antibiotic / Hormonal Therapy for our patient, {{patient_name}}, born {{patient_dob}}, with policy number {{policy_number}}. The patient presents with moderate to severe acne, characterized by persistent inflammatory lesions, which has been refractory to conventional therapies.\n\nClinical Summary:\n{{patient_name}} has a documented history of moderate to severe acne, consistent with ICD-10 codes L70.0, L70.1, L70.8, L70.9. Despite trials of [PREVIOUS_TREATMENTS], the patient's condition has not adequately improved, leading to significant physical and psychological distress. The current recommendation for Isotretinoin / Antibiotic / Hormonal Therapy is based on the patient's clinical presentation and lack of response to prior therapies.\n\nGuideline Support:\n1. The AAD Clinical Practice Guidelines for the Management of Acne Vulgaris (2016) recommend  and the Global Alliance to Improve Outcomes in Acne (2016) emphasizes individualized treatment plans for moderate to severe acne.\n2. The AAD Acne Clinical Care Algorithm (2021) supports the use of systemic therapies like  for appropriate cases of acne.\n\nMedical Necessity Statement:\nGiven the patient's moderate to severe acne and the failure of prior treatments, Isotretinoin / Antibiotic / Hormonal Therapy is medically necessary to prevent further progression of the disease, mitigate the risk of permanent scarring, and alleviate the significant psychosocial burden associated with chronic acne. Delay or denial of this essential treatment would result in prolonged suffering and potentially irreversible dermatological damage.\n\nRisk Without Treatment:\nWithout timely access to Isotretinoin / Antibiotic / Hormonal Therapy, {{patient_name}} is at high risk for developing severe and permanent acne scarring, post-inflammatory hyperpigmentation, and exacerbation of psychological distress, including anxiety and depression. These outcomes are well-documented in dermatological literature and underscore the urgency of this appeal.\n\nRequested Action:\nWe respectfully request that you reconsider your denial and approve coverage for Isotretinoin / Antibiotic / Hormonal Therapy for {{patient_name}}. Prompt approval will allow us to implement the most effective treatment strategy, consistent with established clinical guidelines, and improve the patient's long-term health and well-being. Please contact us if additional information is required. The next steps in the patient's care include: .\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

@@ -1,0 +1,312 @@
+{
+  "title": "Varicocele Embolization Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Get Recommendation",
+    "logicKey": "varicocele",
+    "hiddenDefaults": {
+      "isAdolescent": false,
+      "isolatedRightSided": false
+    },
+    "steps": [
+      {
+        "id": "characteristics",
+        "shortLabel": "Varicocele Characteristics",
+        "title": "Varicocele Characteristics",
+        "fields": [
+          {
+            "id": "grade",
+            "name": "grade",
+            "label": "Clinical Grade (Dubin-Amelar Classification)",
+            "type": "radio",
+            "required": true,
+            "defaultValue": "grade2",
+            "options": [
+              { "label": "Subclinical (Ultrasound-Only)", "value": "subclinical" },
+              { "label": "Grade I (Palpable with Valsalva only)", "value": "grade1" },
+              { "label": "Grade II (Palpable without Valsalva)", "value": "grade2" },
+              { "label": "Grade III (Visible — 'Bag of Worms')", "value": "grade3" }
+            ]
+          },
+          {
+            "id": "grade-subclinical-alert",
+            "type": "alert",
+            "severity": "warning",
+            "text": "AUA/ASRM (Strong, Grade C) and EAU 2024 do not recommend treatment for subclinical varicoceles.",
+            "visibleWhen": { "field": "grade", "op": "eq", "value": "subclinical" }
+          },
+          {
+            "id": "laterality",
+            "name": "laterality",
+            "label": "Laterality",
+            "type": "radio",
+            "required": true,
+            "defaultValue": "left",
+            "options": [
+              { "label": "Left", "value": "left" },
+              { "label": "Right", "value": "right" },
+              { "label": "Bilateral", "value": "bilateral" }
+            ]
+          },
+          {
+            "id": "isolated-right-alert",
+            "type": "alert",
+            "severity": "error",
+            "text": "Isolated right-sided varicocele: consider abdominal imaging to exclude retroperitoneal pathology before embolization.",
+            "visibleWhen": { "field": "isolatedRightSided", "op": "truthy" }
+          },
+          {
+            "id": "vein-diameter",
+            "name": "veinDiameter",
+            "label": "Max Vein Diameter on Doppler US (mm)",
+            "type": "slider",
+            "defaultValue": 3.5,
+            "min": 1,
+            "max": 10,
+            "unit": "mm"
+          },
+          {
+            "id": "reflux-on-valsalva",
+            "name": "refluxOnValsalva",
+            "label": "Venous Reflux on Valsalva (Doppler US)",
+            "type": "radio",
+            "defaultValue": true,
+            "options": [
+              { "label": "Present (>2 sec)", "value": true },
+              { "label": "Absent", "value": false }
+            ]
+          },
+          {
+            "id": "prior-treatment",
+            "name": "priorTreatment",
+            "label": "Prior Treatment History",
+            "type": "radio",
+            "defaultValue": "none",
+            "options": [
+              { "label": "No prior treatment", "value": "none" },
+              { "label": "Recurrent after surgical repair", "value": "prior_surgery_recurrent" },
+              { "label": "Recurrent after prior embolization", "value": "prior_embolization_recurrent" }
+            ]
+          },
+          {
+            "id": "prior-surgery-recurrent-alert",
+            "type": "alert",
+            "severity": "info",
+            "text": "Percutaneous embolization is the preferred approach for recurrent varicocele after surgical repair (AUA/ASRM; CIRSE 2023).",
+            "visibleWhen": { "field": "priorTreatment", "op": "eq", "value": "prior_surgery_recurrent" }
+          }
+        ]
+      },
+      {
+        "id": "fertility-symptoms",
+        "shortLabel": "Fertility & Symptoms",
+        "title": "Fertility & Symptoms",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Patient Age (years)",
+            "type": "slider",
+            "defaultValue": 32,
+            "min": 12,
+            "max": 70,
+            "unit": "years"
+          },
+          {
+            "id": "adolescent-alert",
+            "type": "alert",
+            "severity": "warning",
+            "text": "Adolescent: monitor for 6–12 months for spontaneous catch-up growth before intervention unless atrophy is progressive.",
+            "visibleWhen": { "field": "isAdolescent", "op": "truthy" }
+          },
+          {
+            "id": "infertility-duration",
+            "name": "infertilityDuration",
+            "label": "Duration of Infertility (months attempting conception)",
+            "type": "slider",
+            "defaultValue": 12,
+            "min": 0,
+            "max": 60,
+            "unit": "months"
+          },
+          {
+            "id": "semen-quality",
+            "name": "semenQuality",
+            "label": "Semen Analysis (WHO 6th Ed. 2021)",
+            "type": "radio",
+            "defaultValue": "moderately_abnormal",
+            "options": [
+              { "label": "Normal (WHO 6th ed. 2021)", "value": "normal" },
+              { "label": "Mildly Abnormal (1 parameter below reference)", "value": "mildly_abnormal" },
+              { "label": "Moderately Abnormal (2+ parameters below reference)", "value": "moderately_abnormal" },
+              { "label": "Severely Abnormal (severe oligo/astheno/teratospermia)", "value": "severely_abnormal" },
+              { "label": "Azoospermia", "value": "azoospermia" }
+            ],
+            "visibleWhen": { "field": "infertilityDuration", "op": "gt", "value": 0 }
+          },
+          {
+            "id": "partner-age",
+            "name": "partnerAge",
+            "label": "Female Partner Age (years)",
+            "type": "slider",
+            "defaultValue": 30,
+            "min": 18,
+            "max": 50,
+            "unit": "years",
+            "visibleWhen": { "field": "infertilityDuration", "op": "gt", "value": 0 }
+          },
+          {
+            "id": "partner-age-alert",
+            "type": "alert",
+            "severity": "warning",
+            "text": "Partner age ≥37: consider simultaneous varicocele repair + ART. Semen improvement takes 3–6 months post-repair.",
+            "visibleWhen": {
+              "all": [
+                { "field": "infertilityDuration", "op": "gt", "value": 0 },
+                { "field": "partnerAge", "op": "gte", "value": 37 }
+              ]
+            }
+          },
+          {
+            "id": "partner-fertility-status",
+            "name": "partnerFertilityStatus",
+            "label": "Female Partner Fertility Status",
+            "type": "radio",
+            "defaultValue": "normal",
+            "options": [
+              { "label": "Normal ovarian reserve, no identified cause", "value": "normal" },
+              { "label": "Reduced ovarian reserve or identified female factor", "value": "reduced" },
+              { "label": "Not yet evaluated", "value": "unknown" }
+            ],
+            "visibleWhen": { "field": "infertilityDuration", "op": "gt", "value": 0 }
+          },
+          {
+            "id": "sdf-elevated",
+            "name": "sdfElevated",
+            "label": "Sperm DNA Fragmentation (SDF)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "Not elevated / not tested", "value": false },
+              { "label": "Elevated SDF", "value": true }
+            ],
+            "visibleWhen": { "field": "infertilityDuration", "op": "gt", "value": 0 }
+          },
+          {
+            "id": "prior-art-failure",
+            "name": "priorArtFailure",
+            "label": "Prior ART (IVF/ICSI) Failure",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No prior ART / not applicable", "value": false },
+              { "label": "Prior ART failure", "value": true }
+            ],
+            "visibleWhen": { "field": "infertilityDuration", "op": "gt", "value": 0 }
+          },
+          {
+            "id": "non-obstructive-azoospermia",
+            "name": "nonObstructiveAzoospermia",
+            "label": "Non-Obstructive Azoospermia (NOA)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No / Not confirmed", "value": false },
+              { "label": "Confirmed NOA", "value": true }
+            ],
+            "visibleWhen": { "field": "infertilityDuration", "op": "gt", "value": 0 }
+          },
+          {
+            "id": "pain",
+            "name": "pain",
+            "label": "Scrotal Pain",
+            "type": "radio",
+            "defaultValue": "mild_intermittent",
+            "options": [
+              { "label": "None", "value": "none" },
+              { "label": "Mild / Intermittent — relieved with conservative measures", "value": "mild_intermittent" },
+              { "label": "Persistent Moderate — not relieved with NSAIDs/support", "value": "persistent_moderate" },
+              { "label": "Severe — activity-limiting", "value": "severe_limiting" }
+            ]
+          },
+          {
+            "id": "testicular-atrophy",
+            "name": "testicularAtrophy",
+            "label": "Testicular Volume Discrepancy (Adolescent)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "< 20% discrepancy", "value": false },
+              { "label": "≥ 20% discrepancy", "value": true }
+            ],
+            "visibleWhen": { "field": "isAdolescent", "op": "truthy" }
+          },
+          {
+            "id": "atrophy-percent",
+            "name": "atrophyPercent",
+            "label": "Volume Discrepancy (%)",
+            "type": "slider",
+            "defaultValue": 0,
+            "min": 0,
+            "max": 100,
+            "unit": "%",
+            "visibleWhen": {
+              "all": [
+                { "field": "isAdolescent", "op": "truthy" },
+                { "field": "testicularAtrophy", "op": "truthy" }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "patient-factors",
+        "shortLabel": "Patient Factors",
+        "title": "Patient Factors & Preferences",
+        "fields": [
+          {
+            "id": "prefer-minimally-invasive",
+            "name": "preferMinimallyInvasive",
+            "label": "Patient Preference for Minimally Invasive Approach",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No strong preference / open to surgery", "value": false },
+              { "label": "Strong preference for minimally invasive (embolization)", "value": true }
+            ]
+          },
+          {
+            "id": "general-anesthesia-risk",
+            "name": "generalAnesthesiaRisk",
+            "label": "General Anesthesia / Surgical Risk",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No significant surgical risk", "value": false },
+              { "label": "High surgical risk (comorbidities, prior abdominal surgery, anticoagulation)", "value": true }
+            ]
+          },
+          {
+            "id": "anatomic-access-concern",
+            "name": "anatomicAccessConcern",
+            "label": "Anatomic Access Concern for Embolization",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No concern", "value": false },
+              { "label": "Access concern present", "value": true }
+            ]
+          },
+          {
+            "id": "anatomic-access-concern-alert",
+            "type": "alert",
+            "severity": "warning",
+            "text": "Failure to access the internal spermatic vein occurs in 8–30% of cases (PMID 26658060). Surgical backup plan should be in place.",
+            "visibleWhen": { "field": "anatomicAccessConcern", "op": "truthy" }
+          }
+        ]
+      }
+    ]
+  }
+}

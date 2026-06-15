@@ -1,0 +1,12 @@
+{
+  "title": "Hidradenitis Suppurativa Clinical Compass",
+  "recommendation": {
+    "sourceFiles": [
+      "lib/hsLogic.ts"
+    ],
+    "hasLogic": false,
+    "raw": {
+      "markdown": "## 3. Result-Generation Logic (form data → recommendation)\n\n_No logic exists in the old code for this module._ Confirmed: there is no `lib/hsLogic.ts` (or any HS logic file) in `client/src/lib`, and no Compass page in which inline logic could be defined. The module is `comingSoon: true` with no implemented decision support.\n\n---"
+    }
+  }
+}

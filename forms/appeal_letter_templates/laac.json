@@ -1,0 +1,30 @@
+{
+  "title": "LAAC / Watchman Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "0052T, 93462, 93312, 93313, 93314, 93355",
+      "credentials": "[Credentials]",
+      "icd_codes": "I48.0, I48.11, I48.19, I48.20, Z79.01, I61.9, K92.1, N18.6",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\nRe: Medical Necessity Appeal — Left Atrial Appendage Closure (LAAC) — Watchman/Amulet Device\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\n\nDear Medical Director / Utilization Review Committee,\n\nI am writing to formally appeal the denial of prior authorization for Left Atrial Appendage Closure (LAAC) using the Watchman FLX / Amulet device for my patient. This procedure is medically necessary and is supported by the 2023 ACC/AHA/ACCP/HRS Guideline for Atrial Fibrillation, multiple randomized controlled trials, and CMS coverage policy NCD 20.34.\n\nCLINICAL ASSESSMENT SUMMARY:\nOur Clinical Compass LAAC Decision Support tool assessed this patient as: [LAAC Recommendation]\nGuideline Classification: [Guideline Class]\nCHA₂DS₂-VASc Score: [CHA2DS2-VASc] (high stroke risk)\nHAS-BLED Score: [HAS-BLED]\nDevice Consideration: [Device]\n\n\n\nCLINICAL INDICATION:\nThis patient has non-valvular atrial fibrillation ([PAROXYSMAL / PERSISTENT / LONG-STANDING PERSISTENT]) with a CHA₂DS₂-VASc score of [CHA2DS2-VASc], indicating high stroke risk. The patient has a documented contraindication to long-term oral anticoagulation as follows:\n\n[DESCRIBE OAC CONTRAINDICATION IN DETAIL — e.g.:]\n• Prior intracranial hemorrhage on {{letter_date}} — anticoagulation poses unacceptable risk of recurrent ICH\n• Prior major GI bleeding ({{letter_date}}) requiring hospitalization and transfusion — recurred on [DRUG]\n• [OTHER: absolute contraindication, intolerance, compliance issues, falls risk]\n\nEVIDENCE-BASED JUSTIFICATION:\n\n1. 2023 ACC/AHA GUIDELINE SUPPORT:\nPer the 2023 ACC/AHA/ACCP/HRS Guideline for Diagnosis and Management of Atrial Fibrillation (Joglar JA, et al., J Am Coll Cardiol 2024;83:109-279), LAAC is a Class IIa recommendation for patients with AF and high stroke risk (CHA₂DS₂-VASc ≥2) who have contraindications to long-term oral anticoagulation. This patient meets these criteria.\n\n2. RANDOMIZED CONTROLLED TRIAL EVIDENCE:\nThe PROTECT AF trial (Holmes DR, et al., Lancet 2009;374:534-542) and PREVAIL trial (Holmes DR, et al., J Am Coll Cardiol 2014;64:1-12) demonstrated that LAAC with the Watchman device is non-inferior to warfarin for stroke prevention in non-valvular AF, with a favorable long-term bleeding profile after the initial post-procedure antiplatelet period.\n\nThe PRAGUE-17 trial (Osmancik P, et al., J Am Coll Cardiol 2020;75:3122-3135) demonstrated that LAAC is non-inferior to DOAC therapy for the composite endpoint of stroke, cardiovascular death, and major bleeding, with significantly lower rates of non-procedural bleeding.\n\n[IF PRIOR ICH]: For patients with prior intracranial hemorrhage, LAAC is the preferred stroke prevention strategy over anticoagulation, as the risk of recurrent ICH on anticoagulation (3–8% per year) far exceeds the procedural risk of LAAC (<2% major complications in experienced centers).\n\n3. CMS COVERAGE POLICY:\nThis patient meets all criteria under CMS NCD 20.34 for LAAC coverage:\n✓ Non-valvular atrial fibrillation\n✓ CHA₂DS₂-VASc score ≥2\n✓ Documented contraindication to long-term anticoagulation\n✓ Structural heart team evaluation completed\n✓ Pre-procedure TEE confirmed no LAA thrombus\n\n4. PRE-PROCEDURE EVALUATION:\n• TEE/CTA ({{letter_date}}): No LAA thrombus; LAA ostium diameter [SIZE] mm — within device sizing range\n• Structural heart team evaluation: {{letter_date}} — LAAC recommended\n• Electrophysiology consultation: {{letter_date}}\n\nRISK OF DENIAL:\nWithout LAAC, this patient faces an annual stroke risk of approximately [CALCULATE FROM CHA2DS2-VASc] based on CHA₂DS₂-VASc score of [CHA2DS2-VASc]. Anticoagulation is contraindicated due to [REASON], leaving this patient without effective stroke prophylaxis. The risk of stroke without treatment significantly outweighs the procedural risk of LAAC in an experienced structural heart center.\n\nADDITIONAL CLINICAL NOTES:\n{{additional_clinical_notes}}\n\nIn summary, LAAC is medically necessary, guideline-directed, and the only appropriate stroke prevention strategy for this patient given their documented contraindication to oral anticoagulation. I respectfully request approval and am available for peer-to-peer review.\n\nSincerely,\n\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

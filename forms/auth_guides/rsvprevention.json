@@ -1,0 +1,335 @@
+{
+  "title": "RSV Prevention Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "RSVPreventionAuthGuide.tsx",
+    "title": "RSVPrevention Clinical Compass",
+    "subtitle": "RSV Prevention Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "90380",
+        "description": "Respiratory syncytial virus, monoclonal antibody, seasonal dose; 0.5 mL dosage, for intramuscular use",
+        "device": "Nirsevimab (Beyfortus) 0.5 mL",
+        "access": "Intramuscular injection",
+        "rvu": "0.0",
+        "includes": [
+          "Drug cost of Nirsevimab 0.5 mL",
+          "Preparation of the medication",
+          "Administration of the intramuscular injection"
+        ],
+        "note": "CPT 90380 is for the product itself, not the administration. Administration may be billed separately with an appropriate administration code (e.g., 96372)."
+      },
+      {
+        "code": "90378",
+        "description": "Respiratory syncytial virus, monoclonal antibody, recombinant, for intramuscular use, 50 mg, each",
+        "device": "Palivizumab (Synagis) 50 mg",
+        "access": "Intramuscular injection",
+        "rvu": "0.0",
+        "includes": [
+          "Drug cost of Palivizumab 50 mg",
+          "Preparation of the medication",
+          "Administration of the intramuscular injection"
+        ],
+        "note": "CPT 90378 is for the product itself, not the administration. Administration may be billed separately with an appropriate administration code (e.g., 96372)."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "Z29.11",
+        "description": "Encounter for prophylactic immunotherapy for respiratory syncytial virus (RSV)",
+        "notes": "Used for encounters for prophylactic administration of RSV monoclonal antibody.",
+        "required": true
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with specific criteria",
+        "overview": "Medicare covers RSV prophylactic agents (e.g., Nirsevimab, Palivizumab) for infants and young children who meet specific age and health criteria, as recommended by the CDC and ACIP. Coverage is typically under Part B for physician-administered drugs.",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Medicare generally covers RSV prevention for eligible beneficiaries without prior authorization, but specific criteria apply.",
+        "reimbursementNote": "Reimbursement for RSV prophylactic agents is typically based on the average sales price (ASP) plus a percentage for administration. Ensure correct coding for both the drug and its administration.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Age and Risk Factors",
+            "items": [
+              "Infants born during or entering their first RSV season.",
+              "Children up to 24 months of age with certain underlying medical conditions (e.g., chronic lung disease, congenital heart disease) entering their second RSV season."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Product Specific Criteria",
+            "items": [
+              "Nirsevimab (Beyfortus) for all infants younger than 8 months born during or entering their first RSV season, and for children aged 8-19 months who are at increased risk for severe RSV disease and entering their second RSV season.",
+              "Palivizumab (Synagis) for specific high-risk infants and children (e.g., premature infants, those with chronic lung disease or congenital heart disease) for up to 5 monthly doses during RSV season."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Patient demographics and medical history.",
+              "Documentation of gestational age at birth, chronological age, and current weight.",
+              "Diagnosis of underlying medical conditions (e.g., prematurity, chronic lung disease, congenital heart disease).",
+              "Confirmation of RSV season start and end dates in the patient’s geographic area.",
+              "Physician’s order for RSV prophylactic agent, including dose and frequency."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Billing Documentation",
+            "items": [
+              "CPT code for the RSV prophylactic agent (e.g., 90380, 90378).",
+              "Appropriate administration code (e.g., 96372).",
+              "ICD-10 diagnosis code Z29.11."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims electronically using appropriate CPT and ICD-10 codes.",
+              "Ensure all supporting clinical documentation is readily available for review upon request.",
+              "Follow Medicare Part B billing guidelines for physician-administered drugs."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of medical necessity based on Medicare criteria.",
+              "Incorrect or missing CPT/ICD-10 codes.",
+              "Incomplete or insufficient clinical documentation.",
+              "Administration outside of the approved RSV season or age range."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify patient eligibility and coverage prior to administration.",
+              "Maintain thorough and accurate medical records to support medical necessity.",
+              "Stay updated on the latest CDC and ACIP recommendations for RSV prevention.",
+              "Utilize Medicare’s online resources and provider manuals for specific billing guidance."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS",
+            "status": "Covered",
+            "notes": "Follows ACIP recommendations for Nirsevimab and Palivizumab."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered with prior authorization",
+        "overview": "Medicaid programs generally cover RSV prophylactic agents for eligible infants and children, but specific criteria, prior authorization requirements, and covered products can vary significantly by state.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid coverage for RSV prevention often requires prior authorization, especially for Palivizumab, and varies by state.",
+        "reimbursementNote": "Medicaid reimbursement rates vary by state and may be subject to specific fee schedules or negotiated rates. Ensure compliance with state billing regulations.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: State-Specific Guidelines",
+            "items": [
+              "Coverage criteria align with ACIP recommendations but may have additional state-specific restrictions.",
+              "Eligibility based on age, gestational age, and presence of high-risk medical conditions."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Prior Authorization",
+            "items": [
+              "Prior authorization is typically required for Palivizumab (Synagis) and may be required for Nirsevimab (Beyfortus) in some states.",
+              "Documentation must support medical necessity as per state Medicaid guidelines."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Detailed medical history, including birth weight, gestational age, and current age.",
+              "Documentation of chronic lung disease, congenital heart disease, or other qualifying conditions.",
+              "Proof of previous RSV infections or hospitalizations, if applicable.",
+              "Physician’s attestation of medical necessity and treatment plan."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization Forms",
+            "items": [
+              "Completed state-specific prior authorization forms.",
+              "Supporting clinical notes and test results."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization requests according to state Medicaid guidelines.",
+              "Once approved, submit claims electronically with the authorized CPT and ICD-10 codes.",
+              "Be prepared for potential audits and requests for additional documentation."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to obtain prior authorization.",
+              "Lack of documented medical necessity per state criteria.",
+              "Incomplete or incorrect prior authorization forms.",
+              "Patient not meeting state-specific age or risk factor criteria."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state’s specific Medicaid policies for RSV prevention.",
+              "Initiate prior authorization requests well in advance of the planned administration.",
+              "Maintain clear and concise documentation to support all criteria.",
+              "Appeal denials promptly with comprehensive supporting information."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (e.g., California Medi-Cal)",
+            "status": "Covered with PA",
+            "notes": "Requires prior authorization for Palivizumab; Nirsevimab coverage varies by state."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Covered with prior authorization",
+        "overview": "Private insurance coverage for RSV prevention is highly variable, depending on the specific plan, formulary, and medical policy. Prior authorization is almost always required, and strict criteria must be met.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for RSV prophylactic agents, with coverage dependent on plan-specific medical policies.",
+        "reimbursementNote": "Reimbursement for private insurance plans is based on negotiated contracts and may vary significantly. Be aware of deductibles, co-pays, and co-insurance that may apply to the patient.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Plan-Specific Medical Policies",
+            "items": [
+              "Coverage is based on the individual insurance plan’s medical policy, which typically aligns with ACIP recommendations but may have additional requirements.",
+              "Criteria often include gestational age, chronological age, and specific high-risk medical conditions."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Formulary and Tiering",
+            "items": [
+              "The specific RSV prophylactic agent may be subject to formulary restrictions, step therapy, or tiered co-payments.",
+              "Check the plan’s formulary for preferred products."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Comprehensive medical history, including prematurity, chronic lung disease, congenital heart disease, or other qualifying conditions.",
+              "Documentation of current RSV season and patient’s risk factors.",
+              "Physician’s letter of medical necessity, outlining why the specific agent is required and alternative treatments are not appropriate."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization Forms",
+            "items": [
+              "Completed plan-specific prior authorization forms.",
+              "Supporting clinical notes, laboratory results, and relevant diagnostic reports."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization requests through the insurer’s designated portal or fax.",
+              "Follow up regularly on the status of prior authorization requests.",
+              "Submit claims with the approved authorization number and appropriate CPT/ICD-10 codes."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to obtain prior authorization or expired authorization.",
+              "Medical necessity not met per plan criteria.",
+              "Incomplete or insufficient documentation.",
+              "Product not on formulary or step therapy requirements not followed.",
+              "Lack of clear justification for the chosen prophylactic agent."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Contact the patient’s insurance provider to verify benefits and prior authorization requirements before prescribing.",
+              "Provide detailed and compelling clinical documentation to support medical necessity.",
+              "Be aware of formulary restrictions and consider alternative agents if necessary.",
+              "Utilize the insurer’s appeals process for denied claims, providing additional clinical rationale."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Covered with PA",
+            "notes": "Requires prior authorization; criteria align with ACIP."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered with PA",
+            "notes": "Requires prior authorization; specific age and risk criteria apply."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Navigation",
+        "kind": "link",
+        "text": "Back to Assessment (links to /rsvprevention)",
+        "href": "/rsvprevention"
+      },
+      {
+        "heading": "Procedure Codes — CPT Card Note",
+        "kind": "prose",
+        "text": "Each CPT code card displays: a CPT code badge, an RVU badge, the code description, the Device/Access field, a list titled 'Included in this code (do NOT bill separately):', and an italic note. For both 90380 and 90378 the RVU is 0.0."
+      },
+      {
+        "heading": "Reimbursement Note (per payer)",
+        "kind": "prose",
+        "text": "Medicare: Reimbursement for RSV prophylactic agents is typically based on the average sales price (ASP) plus a percentage for administration. Ensure correct coding for both the drug and its administration. | Medicaid: Medicaid reimbursement rates vary by state and may be subject to specific fee schedules or negotiated rates. Ensure compliance with state billing regulations. | Private Insurance: Reimbursement for private insurance plans is based on negotiated contracts and may vary significantly. Be aware of deductibles, co-pays, and co-insurance that may apply to the patient."
+      }
+    ],
+    "raw": {
+      "markdown": "# RSVPrevention Clinical Compass\n## RSV Prevention Insurance Authorization Guide\n\n[Button] Back to Assessment (navigates to /rsvprevention)\n\n---\n\n## Procedure Codes (CPT Codes)\n\n### CPT 90380 — RVU 0.0\nRespiratory syncytial virus, monoclonal antibody, seasonal dose; 0.5 mL dosage, for intramuscular use\nDevice/Access: Nirsevimab (Beyfortus) 0.5 mL\nAccess: Intramuscular injection\nIncluded in this code (do NOT bill separately):\n- Drug cost of Nirsevimab 0.5 mL\n- Preparation of the medication\n- Administration of the intramuscular injection\nNote: CPT 90380 is for the product itself, not the administration. Administration may be billed separately with an appropriate administration code (e.g., 96372).\n\n### CPT 90378 — RVU 0.0\nRespiratory syncytial virus, monoclonal antibody, recombinant, for intramuscular use, 50 mg, each\nDevice/Access: Palivizumab (Synagis) 50 mg\nAccess: Intramuscular injection\nIncluded in this code (do NOT bill separately):\n- Drug cost of Palivizumab 50 mg\n- Preparation of the medication\n- Administration of the intramuscular injection\nNote: CPT 90378 is for the product itself, not the administration. Administration may be billed separately with an appropriate administration code (e.g., 96372).\n\n---\n\n## ICD-10 Diagnosis Codes\n\n### Z29.11 (Primary / Required)\nEncounter for prophylactic immunotherapy for respiratory syncytial virus (RSV)\nNotes: Used for encounters for prophylactic administration of RSV monoclonal antibody.\n\n---\n\n## Payer-Specific Authorization Requirements\n\n### Medicare\nPrior Auth: No Prior Auth (FFS)\nCoverage Status: Covered with specific criteria\nPrior Auth Note: Medicare generally covers RSV prevention for eligible beneficiaries without prior authorization, but specific criteria apply.\nOverview: Medicare covers RSV prophylactic agents (e.g., Nirsevimab, Palivizumab) for infants and young children who meet specific age and health criteria, as recommended by the CDC and ACIP. Coverage is typically under Part B for physician-administered drugs.\n\n#### Coverage Criteria\n**Age and Risk Factors**\n- Infants born during or entering their first RSV season.\n- Children up to 24 months of age with certain underlying medical conditions (e.g., chronic lung disease, congenital heart disease) entering their second RSV season.\n**Product Specific Criteria**\n- Nirsevimab (Beyfortus) for all infants younger than 8 months born during or entering their first RSV season, and for children aged 8-19 months who are at increased risk for severe RSV disease and entering their second RSV season.\n- Palivizumab (Synagis) for specific high-risk infants and children (e.g., premature infants, those with chronic lung disease or congenital heart disease) for up to 5 monthly doses during RSV season.\n\n#### Required Documentation\n**Clinical Documentation**\n- Patient demographics and medical history.\n- Documentation of gestational age at birth, chronological age, and current weight.\n- Diagnosis of underlying medical conditions (e.g., prematurity, chronic lung disease, congenital heart disease).\n- Confirmation of RSV season start and end dates in the patient’s geographic area.\n- Physician’s order for RSV prophylactic agent, including dose and frequency.\n**Billing Documentation**\n- CPT code for the RSV prophylactic agent (e.g., 90380, 90378).\n- Appropriate administration code (e.g., 96372).\n- ICD-10 diagnosis code Z29.11.\n\n#### Submission Process\n1. Submit claims electronically using appropriate CPT and ICD-10 codes.\n2. Ensure all supporting clinical documentation is readily available for review upon request.\n3. Follow Medicare Part B billing guidelines for physician-administered drugs.\n\n#### Common Denial Reasons\n- Lack of medical necessity based on Medicare criteria.\n- Incorrect or missing CPT/ICD-10 codes.\n- Incomplete or insufficient clinical documentation.\n- Administration outside of the approved RSV season or age range.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS | Covered | Follows ACIP recommendations for Nirsevimab and Palivizumab. |\n\n#### Reimbursement Note\nReimbursement for RSV prophylactic agents is typically based on the average sales price (ASP) plus a percentage for administration. Ensure correct coding for both the drug and its administration.\n\n#### Authorization Tips\n- Verify patient eligibility and coverage prior to administration.\n- Maintain thorough and accurate medical records to support medical necessity.\n- Stay updated on the latest CDC and ACIP recommendations for RSV prevention.\n- Utilize Medicare’s online resources and provider manuals for specific billing guidance.\n\n---\n\n### Medicaid\nPrior Auth: Prior Auth Required\nCoverage Status: Covered with prior authorization\nPrior Auth Note: Medicaid coverage for RSV prevention often requires prior authorization, especially for Palivizumab, and varies by state.\nOverview: Medicaid programs generally cover RSV prophylactic agents for eligible infants and children, but specific criteria, prior authorization requirements, and covered products can vary significantly by state.\n\n#### Coverage Criteria\n**State-Specific Guidelines**\n- Coverage criteria align with ACIP recommendations but may have additional state-specific restrictions.\n- Eligibility based on age, gestational age, and presence of high-risk medical conditions.\n**Prior Authorization**\n- Prior authorization is typically required for Palivizumab (Synagis) and may be required for Nirsevimab (Beyfortus) in some states.\n- Documentation must support medical necessity as per state Medicaid guidelines.\n\n#### Required Documentation\n**Clinical Documentation**\n- Detailed medical history, including birth weight, gestational age, and current age.\n- Documentation of chronic lung disease, congenital heart disease, or other qualifying conditions.\n- Proof of previous RSV infections or hospitalizations, if applicable.\n- Physician’s attestation of medical necessity and treatment plan.\n**Prior Authorization Forms**\n- Completed state-specific prior authorization forms.\n- Supporting clinical notes and test results.\n\n#### Submission Process\n1. Submit prior authorization requests according to state Medicaid guidelines.\n2. Once approved, submit claims electronically with the authorized CPT and ICD-10 codes.\n3. Be prepared for potential audits and requests for additional documentation.\n\n#### Common Denial Reasons\n- Failure to obtain prior authorization.\n- Lack of documented medical necessity per state criteria.\n- Incomplete or incorrect prior authorization forms.\n- Patient not meeting state-specific age or risk factor criteria.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (e.g., California Medi-Cal) | Covered with PA | Requires prior authorization for Palivizumab; Nirsevimab coverage varies by state. |\n\n#### Reimbursement Note\nMedicaid reimbursement rates vary by state and may be subject to specific fee schedules or negotiated rates. Ensure compliance with state billing regulations.\n\n#### Authorization Tips\n- Familiarize yourself with your state’s specific Medicaid policies for RSV prevention.\n- Initiate prior authorization requests well in advance of the planned administration.\n- Maintain clear and concise documentation to support all criteria.\n- Appeal denials promptly with comprehensive supporting information.\n\n---\n\n### Private Insurance\nPrior Auth: Prior Auth Required\nCoverage Status: Covered with prior authorization\nPrior Auth Note: Most private insurance plans require prior authorization for RSV prophylactic agents, with coverage dependent on plan-specific medical policies.\nOverview: Private insurance coverage for RSV prevention is highly variable, depending on the specific plan, formulary, and medical policy. Prior authorization is almost always required, and strict criteria must be met.\n\n#### Coverage Criteria\n**Plan-Specific Medical Policies**\n- Coverage is based on the individual insurance plan’s medical policy, which typically aligns with ACIP recommendations but may have additional requirements.\n- Criteria often include gestational age, chronological age, and specific high-risk medical conditions.\n**Formulary and Tiering**\n- The specific RSV prophylactic agent may be subject to formulary restrictions, step therapy, or tiered co-payments.\n- Check the plan’s formulary for preferred products.\n\n#### Required Documentation\n**Clinical Documentation**\n- Comprehensive medical history, including prematurity, chronic lung disease, congenital heart disease, or other qualifying conditions.\n- Documentation of current RSV season and patient’s risk factors.\n- Physician’s letter of medical necessity, outlining why the specific agent is required and alternative treatments are not appropriate.\n**Prior Authorization Forms**\n- Completed plan-specific prior authorization forms.\n- Supporting clinical notes, laboratory results, and relevant diagnostic reports.\n\n#### Submission Process\n1. Submit prior authorization requests through the insurer’s designated portal or fax.\n2. Follow up regularly on the status of prior authorization requests.\n3. Submit claims with the approved authorization number and appropriate CPT/ICD-10 codes.\n\n#### Common Denial Reasons\n- Failure to obtain prior authorization or expired authorization.\n- Medical necessity not met per plan criteria.\n- Incomplete or insufficient documentation.\n- Product not on formulary or step therapy requirements not followed.\n- Lack of clear justification for the chosen prophylactic agent.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Blue Cross Blue Shield | Covered with PA | Requires prior authorization; criteria align with ACIP. |\n| UnitedHealthcare | Covered with PA | Requires prior authorization; specific age and risk criteria apply. |\n\n#### Reimbursement Note\nReimbursement for private insurance plans is based on negotiated contracts and may vary significantly. Be aware of deductibles, co-pays, and co-insurance that may apply to the patient.\n\n#### Authorization Tips\n- Contact the patient’s insurance provider to verify benefits and prior authorization requirements before prescribing.\n- Provide detailed and compelling clinical documentation to support medical necessity.\n- Be aware of formulary restrictions and consider alternative agents if necessary.\n- Utilize the insurer’s appeals process for denied claims, providing additional clinical rationale.\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "RVU", "Description", "Device/Access", "Included in this code (do NOT bill separately)", "Note"],
+          "rows": [
+            ["90380", "0.0", "Respiratory syncytial virus, monoclonal antibody, seasonal dose; 0.5 mL dosage, for intramuscular use", "Nirsevimab (Beyfortus) 0.5 mL; Intramuscular injection", "Drug cost of Nirsevimab 0.5 mL; Preparation of the medication; Administration of the intramuscular injection", "CPT 90380 is for the product itself, not the administration. Administration may be billed separately with an appropriate administration code (e.g., 96372)."],
+            ["90378", "0.0", "Respiratory syncytial virus, monoclonal antibody, recombinant, for intramuscular use, 50 mg, each", "Palivizumab (Synagis) 50 mg; Intramuscular injection", "Drug cost of Palivizumab 50 mg; Preparation of the medication; Administration of the intramuscular injection", "CPT 90378 is for the product itself, not the administration. Administration may be billed separately with an appropriate administration code (e.g., 96372)."]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["Code", "Description", "Notes", "Required"],
+          "rows": [
+            ["Z29.11", "Encounter for prophylactic immunotherapy for respiratory syncytial virus (RSV)", "Used for encounters for prophylactic administration of RSV monoclonal antibody.", "Primary (Required)"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicare",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS", "Covered", "Follows ACIP recommendations for Nirsevimab and Palivizumab."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., California Medi-Cal)", "Covered with PA", "Requires prior authorization for Palivizumab; Nirsevimab coverage varies by state."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Private Insurance",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield", "Covered with PA", "Requires prior authorization; criteria align with ACIP."],
+            ["UnitedHealthcare", "Covered with PA", "Requires prior authorization; specific age and risk criteria apply."]
+          ]
+        }
+      ]
+    }
+  }
+}

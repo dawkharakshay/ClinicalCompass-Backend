@@ -1,0 +1,30 @@
+{
+  "title": "Biliary Strictures Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "43262, 43264, 43267, 43268",
+      "credentials": "[Credentials]",
+      "icd_codes": "K83.1",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — Endoscopic / Percutaneous Biliary Stricture Management\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\nDear Medical Director / Utilization Review Committee,\n\nThis letter serves as an appeal for the denial of coverage for Endoscopic / Percutaneous Biliary Stricture Management for our patient. The requested procedure is medically necessary and is supported by current clinical guidelines and the patient's specific clinical presentation.\n\nClinical Summary:\nThe patient has been diagnosed with a biliary stricture. Based on comprehensive evaluation, the recommended primary recommendation is management of biliary stricture.    The patient presents with a biliary stricture requiring intervention. \n\nGuideline Support:\n1.  ASGE Standards of Practice on Biliary Strictures 2019: These guidelines provide comprehensive recommendations for the diagnosis and management of biliary strictures, supporting the chosen intervention.\n2.  ESGE Clinical Guideline on Biliary Stenting 2018: This guideline outlines the appropriate use of biliary stenting, which is a key component of the proposed management plan.\n3.  AASLD Practice Guidance on Primary Sclerosing Cholangitis 2022: For strictures related to Primary Sclerosing Cholangitis, this guidance supports the necessity of intervention.\n4.  NCCN Biliary Tract Cancers Guidelines 2024: In cases of malignant strictures, these guidelines provide evidence-based recommendations for management.\n\nMedical Necessity Statement:\nThe patient's condition necessitates this procedure to alleviate symptoms, prevent complications such as cholangitis, liver failure, and improve overall quality of life. Delay or denial of this essential treatment poses significant risks to the patient's health and could lead to irreversible damage.\n\nRisk Without Treatment:\nWithout timely and appropriate Endoscopic / Percutaneous Biliary Stricture Management, the patient is at high risk for recurrent cholangitis, progressive liver damage, sepsis, and potentially life-threatening complications. This intervention is critical for disease management and prevention of further morbidity.\n\nRequested Action:\nWe respectfully request that you reconsider your denial and approve coverage for the Endoscopic / Percutural Biliary Stricture Management. We have provided detailed clinical documentation and guideline support to demonstrate the medical necessity of this procedure.\n\n{{additional_clinical_notes}}\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

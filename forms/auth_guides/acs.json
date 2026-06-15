@@ -1,0 +1,470 @@
+{
+  "title": "Acute Coronary Syndrome Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "ACSAuthGuide.tsx",
+    "title": "ACS Clinical Compass",
+    "subtitle": "Acute Coronary Syndrome Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "92928",
+        "description": "Percutaneous transcatheter placement of intracoronary stent(s), with coronary angioplasty when performed; single major coronary artery or branch",
+        "device": "Intracoronary stent(s), balloon catheter",
+        "access": "Percutaneous (e.g., femoral, radial artery)",
+        "rvu": 11.21,
+        "includes": [
+          "Vascular access and closure",
+          "Catheter placement and manipulation",
+          "Angiography and imaging supervision/interpretation",
+          "Angioplasty (if performed)",
+          "Stent deployment"
+        ],
+        "note": "Used for single lesion in a major coronary artery or its branches."
+      },
+      {
+        "code": "92933",
+        "description": "Percutaneous transcatheter placement of intracoronary stent(s), with coronary atherectomy and angioplasty when performed; single major coronary artery or branch",
+        "device": "Intracoronary stent(s), atherectomy device, balloon catheter",
+        "access": "Percutaneous (e.g., femoral, radial artery)",
+        "rvu": 12.29,
+        "includes": [
+          "Vascular access and closure",
+          "Catheter placement and manipulation",
+          "Angiography and imaging supervision/interpretation",
+          "Atherectomy",
+          "Angioplasty (if performed)",
+          "Stent deployment"
+        ],
+        "note": "Used for single lesion in a major coronary artery or its branches, including atherectomy."
+      },
+      {
+        "code": "92937",
+        "description": "Percutaneous transluminal revascularization of or through coronary artery bypass graft (internal mammary, free arterial, venous), any combination of atherectomy, angioplasty, and/or stent placement; single major coronary artery or branch",
+        "device": "Intracoronary stent(s), atherectomy device, balloon catheter",
+        "access": "Percutaneous (e.g., femoral, radial artery)",
+        "rvu": 11.50,
+        "includes": [
+          "Vascular access and closure",
+          "Catheter placement and manipulation",
+          "Angiography and imaging supervision/interpretation",
+          "Atherectomy (if performed)",
+          "Angioplasty (if performed)",
+          "Stent deployment"
+        ],
+        "note": "Used for revascularization of a single major coronary artery or its branches through a bypass graft.",
+        "rvuComment": "Estimated RVU, similar to native vessel PCI"
+      },
+      {
+        "code": "92941",
+        "description": "Percutaneous transluminal revascularization of acute total/subtotal occlusion of coronary artery or coronary artery bypass graft, any combination of atherectomy, angioplasty, and/or stent placement; with or without thrombectomy, in an acute myocardial infarction; single major coronary artery or coronary artery bypass graft",
+        "device": "Intracoronary stent(s), atherectomy device, balloon catheter, thrombectomy device",
+        "access": "Percutaneous (e.g., femoral, radial artery)",
+        "rvu": 15.00,
+        "includes": [
+          "Vascular access and closure",
+          "Catheter placement and manipulation",
+          "Angiography and imaging supervision/interpretation",
+          "Atherectomy (if performed)",
+          "Angioplasty (if performed)",
+          "Stent deployment",
+          "Thrombectomy (if performed)"
+        ],
+        "note": "Emergent revascularization for acute myocardial infarction (AMI) due to total/subtotal occlusion.",
+        "rvuComment": "Estimated RVU for emergent PCI in AMI"
+      },
+      {
+        "code": "92943",
+        "description": "Percutaneous transluminal revascularization of chronic total occlusion of coronary artery or coronary artery bypass graft, any combination of atherectomy, angioplasty, and/or stent placement; with or without thrombectomy, in a chronic total occlusion; single major coronary artery or coronary artery bypass graft",
+        "device": "Intracoronary stent(s), atherectomy device, balloon catheter, thrombectomy device",
+        "access": "Percutaneous (e.g., femoral, radial artery)",
+        "rvu": 16.50,
+        "includes": [
+          "Vascular access and closure",
+          "Catheter placement and manipulation",
+          "Angiography and imaging supervision/interpretation",
+          "Atherectomy (if performed)",
+          "Angioplasty (if performed)",
+          "Stent deployment",
+          "Thrombectomy (if performed)"
+        ],
+        "note": "Complex revascularization for chronic total occlusion (CTO) of a coronary artery or bypass graft.",
+        "rvuComment": "Estimated RVU for complex CTO PCI"
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "I21.0",
+        "description": "ST elevation (STEMI) myocardial infarction of anterior wall",
+        "notes": "Requires immediate intervention. Primary diagnosis for anterior STEMI.",
+        "required": true
+      },
+      {
+        "code": "I21.1",
+        "description": "ST elevation (STEMI) myocardial infarction of inferior wall",
+        "notes": "Requires immediate intervention. Primary diagnosis for inferior STEMI.",
+        "required": true
+      },
+      {
+        "code": "I21.2",
+        "description": "ST elevation (STEMI) myocardial infarction of other sites",
+        "notes": "Requires immediate intervention. Primary diagnosis for other STEMI locations.",
+        "required": true
+      },
+      {
+        "code": "I21.3",
+        "description": "ST elevation (STEMI) myocardial infarction of unspecified site",
+        "notes": "Requires immediate intervention. Primary diagnosis for unspecified STEMI.",
+        "required": true
+      },
+      {
+        "code": "I21.4",
+        "description": "Non-ST elevation (NSTEMI) myocardial infarction",
+        "notes": "Often requires urgent intervention. Primary diagnosis for NSTEMI.",
+        "required": true
+      },
+      {
+        "code": "I22.0",
+        "description": "Subsequent ST elevation (STEMI) myocardial infarction of anterior wall",
+        "notes": "Used for a new STEMI occurring within 28 days of a previous MI. Specify site.",
+        "required": false
+      },
+      {
+        "code": "I22.1",
+        "description": "Subsequent ST elevation (STEMI) myocardial infarction of inferior wall",
+        "notes": "Used for a new STEMI occurring within 28 days of a previous MI. Specify site.",
+        "required": false
+      },
+      {
+        "code": "I25.10",
+        "description": "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+        "notes": "Used for underlying coronary artery disease. Not a primary diagnosis for acute event.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered for Medically Necessary Services",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Generally, Medicare does not require prior authorization for emergent PCI procedures in the setting of acute myocardial infarction. However, documentation must clearly support medical necessity.",
+        "overview": "Medicare covers percutaneous coronary intervention (PCI) for beneficiaries with acute coronary syndromes (ACS) when performed in accordance with established clinical guidelines and medical necessity criteria. Coverage typically includes diagnostic catheterization, angioplasty, stenting, and atherectomy when indicated.",
+        "reimbursementNote": "Reimbursement for PCI procedures is typically based on DRG for inpatient stays and APC for outpatient services. Specific payment rates vary by geographic location and facility type.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Acute Myocardial Infarction (AMI)",
+            "items": [
+              "Clinical symptoms consistent with AMI (e.g., chest pain, shortness of breath)",
+              "ECG changes indicative of STEMI or high-risk NSTEMI",
+              "Elevated cardiac biomarkers (e.g., troponin, CK-MB)",
+              "Angiographic evidence of significant coronary artery stenosis or occlusion amenable to PCI"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Unstable Angina / NSTEMI (Non-Emergent)",
+            "items": [
+              "Recurrent angina at rest or with minimal exertion",
+              "Ischemic changes on ECG (e.g., ST depression, T-wave inversion)",
+              "Positive stress test or other non-invasive evidence of ischemia",
+              "Angiographic evidence of significant coronary artery stenosis amenable to PCI after medical management failure"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Records",
+            "items": [
+              "Detailed history and physical examination",
+              "Emergency department notes (if applicable)",
+              "Serial ECGs",
+              "Cardiac biomarker trends",
+              "Consultation reports (Cardiology, Interventional Cardiology)"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Procedure Documentation",
+            "items": [
+              "Operative report detailing procedure, findings, and devices used",
+              "Angiographic images and interpretation",
+              "Hemodynamic data",
+              "Device implant cards (for stents)"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims using appropriate CPT and ICD-10 codes.",
+              "Ensure all documentation supporting medical necessity is available upon request.",
+              "For emergent cases, use appropriate modifiers (e.g., -STAT) if applicable to indicate urgency."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of medical necessity documentation",
+              "Inadequate angiographic evidence of significant stenosis",
+              "PCI performed for stable angina without prior medical management failure (for non-emergent cases)",
+              "Incorrect coding or modifier usage"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Clearly document the patient's clinical presentation, especially for emergent cases.",
+              "Ensure all diagnostic findings (ECG, biomarkers, angiography) are thoroughly documented and support the intervention.",
+              "For non-emergent PCI, document prior medical management and its failure."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS",
+            "status": "Covered",
+            "notes": "National Coverage Determinations (NCDs) and Local Coverage Determinations (LCDs) apply. Refer to specific MAC policies."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered with Prior Authorization",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is generally required for all non-emergent PCI procedures. Emergent cases may be exempt but require retrospective review and robust documentation.",
+        "overview": "Medicaid programs cover PCI for ACS patients, but policies vary significantly by state. Most states require prior authorization for elective procedures and may have specific criteria for emergent interventions. Documentation of medical necessity is paramount.",
+        "reimbursementNote": "Medicaid reimbursement rates are generally lower than Medicare or private payers and vary by state. Providers should be aware of state-specific fee schedules.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Acute Myocardial Infarction (AMI)",
+            "items": [
+              "Clinical presentation consistent with AMI",
+              "ECG evidence of STEMI or high-risk NSTEMI",
+              "Elevated cardiac biomarkers",
+              "Angiographic evidence of significant coronary lesion requiring intervention"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Non-Emergent PCI (e.g., Unstable Angina)",
+            "items": [
+              "Documented failure of optimal medical therapy",
+              "Objective evidence of myocardial ischemia (e.g., stress test, FFR)",
+              "Significant coronary stenosis (typically >70% in major epicardial vessel or >50% in left main) on angiography",
+              "Symptoms refractory to medical management"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Authorization Request",
+            "items": [
+              "Completed prior authorization form",
+              "Clinical notes, including H&P, ED notes, cardiology consults",
+              "ECG reports and cardiac biomarker results",
+              "Angiography report and images",
+              "Documentation of failed medical therapy (for non-emergent cases)"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Procedure Documentation",
+            "items": [
+              "Operative report",
+              "Device implant information"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Obtain prior authorization before non-emergent procedures.",
+              "Submit claims with authorization number.",
+              "Ensure all medical records are readily available for post-service review."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization",
+              "Insufficient documentation of medical necessity",
+              "Failure to meet state-specific coverage criteria",
+              "Incomplete or illegible medical records"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify state-specific Medicaid policies for PCI and prior authorization requirements.",
+              "Maintain meticulous documentation, especially for emergent cases that bypass initial authorization.",
+              "Consider peer-to-peer review for complex cases or initial denials."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (e.g., California Medi-Cal)",
+            "status": "Covered with PA",
+            "notes": "Specific guidelines for emergent vs. elective PCI. Requires robust documentation."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Covered with Prior Authorization",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is almost always required for all PCI procedures, both emergent and elective. Retrospective authorization may be granted for true emergencies.",
+        "overview": "Private insurance plans typically cover PCI for ACS, but coverage criteria and prior authorization requirements can vary widely by plan and insurer. It is crucial to verify benefits and obtain authorization before any elective procedure.",
+        "reimbursementNote": "Reimbursement rates are negotiated between providers and individual private insurance companies. Out-of-network services may have different coverage and patient cost-sharing.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Acute Myocardial Infarction (AMI)",
+            "items": [
+              "Diagnosis of STEMI or high-risk NSTEMI",
+              "Clinical instability or ongoing ischemia",
+              "Angiographic findings consistent with acute coronary occlusion or severe stenosis requiring urgent intervention"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Elective PCI (e.g., Stable Angina, NSTEMI after stabilization)",
+            "items": [
+              "Documented symptoms of angina or anginal equivalents",
+              "Objective evidence of moderate to severe ischemia on non-invasive testing (e.g., stress test, nuclear scan)",
+              "Significant coronary stenosis (e.g., >70% in major epicardial vessel, >50% in left main) with corresponding ischemia",
+              "Failure of optimal medical therapy to control symptoms or improve prognosis"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Authorization Request",
+            "items": [
+              "Completed prior authorization form with clinical rationale",
+              "All relevant medical records (H&P, ED notes, consults, ECGs, labs)",
+              "Non-invasive test results (stress test, echo, nuclear)",
+              "Angiography report and images",
+              "Documentation of medical therapy and its efficacy/failure"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Procedure Documentation",
+            "items": [
+              "Operative report",
+              "Device implant information"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request well in advance for elective procedures.",
+              "Follow up on authorization status regularly.",
+              "Submit claims with the approved authorization number.",
+              "Be prepared for potential peer-to-peer reviews or appeals."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization",
+              "Insufficient medical necessity (e.g., PCI for non-ischemic lesions)",
+              "Failure to meet plan-specific criteria (e.g., stenosis severity, symptom burden)",
+              "Inadequate trial of medical therapy",
+              "Documentation discrepancies"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify patient's benefits and specific plan requirements before scheduling elective PCI.",
+              "Document all conservative management attempts and their outcomes.",
+              "Utilize peer-to-peer reviews as an opportunity to advocate for the patient and provide additional clinical context.",
+              "Be aware of specific payer policies regarding appropriate use criteria for revascularization."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Covered with PA",
+            "notes": "Follows ACC/AHA guidelines, but may have stricter criteria for elective PCI."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered with PA",
+            "notes": "Requires detailed clinical documentation and often a trial of medical therapy for stable CAD."
+          },
+          {
+            "payer": "Aetna",
+            "status": "Covered with PA",
+            "notes": "Emphasizes appropriate use criteria and evidence-based guidelines for revascularization."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Navigation",
+        "kind": "link",
+        "text": "Back to Assessment (links to /acs)",
+        "href": "/acs"
+      },
+      {
+        "heading": "Procedure Codes (Card intro)",
+        "kind": "prose",
+        "text": "Procedure Codes section. Each CPT entry displays a CPT code badge and an RVU badge, the procedure description, the Device/Access line, an 'Included in this code (do NOT bill separately):' checklist of bundled services, and an italic note."
+      },
+      {
+        "heading": "ICD-10 Diagnosis Codes (Card intro)",
+        "kind": "prose",
+        "text": "ICD-10 Diagnosis Codes section. Each code displays a code badge (highlighted when required), the description, the notes line, and a 'Primary' badge when required is true."
+      },
+      {
+        "heading": "Payer-Specific Authorization Requirements (Card intro)",
+        "kind": "prose",
+        "text": "Payer-Specific Authorization Requirements section with selectable tabs: Medicare, Medicaid, Private Insurance. For the active payer the page shows a Prior Auth Required / No Prior Auth (FFS) badge, the coverage status badge, a highlighted prior-auth note, the overview prose, Coverage Criteria groups, Required Documentation groups, a numbered Submission Process, Common Denial Reasons, a Known Payer Policies table, a Reimbursement Note callout, and Authorization Tips."
+      }
+    ],
+    "raw": {
+      "markdown": "# ACS Clinical Compass\n## Acute Coronary Syndrome Insurance Authorization Guide\n\n[Button] Back to Assessment (navigates to /acs)\n\n---\n\n## Procedure Codes (CPT)\n\nEach entry: CPT code badge, RVU badge, description, Device/Access line, 'Included in this code (do NOT bill separately):' checklist, and an italic note.\n\n### CPT 92928 — RVU 11.21\nPercutaneous transcatheter placement of intracoronary stent(s), with coronary angioplasty when performed; single major coronary artery or branch\nDevice/Access: Intracoronary stent(s), balloon catheter | Percutaneous (e.g., femoral, radial artery)\nIncluded in this code (do NOT bill separately):\n- Vascular access and closure\n- Catheter placement and manipulation\n- Angiography and imaging supervision/interpretation\n- Angioplasty (if performed)\n- Stent deployment\nNote: Used for single lesion in a major coronary artery or its branches.\n\n### CPT 92933 — RVU 12.29\nPercutaneous transcatheter placement of intracoronary stent(s), with coronary atherectomy and angioplasty when performed; single major coronary artery or branch\nDevice/Access: Intracoronary stent(s), atherectomy device, balloon catheter | Percutaneous (e.g., femoral, radial artery)\nIncluded in this code (do NOT bill separately):\n- Vascular access and closure\n- Catheter placement and manipulation\n- Angiography and imaging supervision/interpretation\n- Atherectomy\n- Angioplasty (if performed)\n- Stent deployment\nNote: Used for single lesion in a major coronary artery or its branches, including atherectomy.\n\n### CPT 92937 — RVU 11.50 (Estimated RVU, similar to native vessel PCI)\nPercutaneous transluminal revascularization of or through coronary artery bypass graft (internal mammary, free arterial, venous), any combination of atherectomy, angioplasty, and/or stent placement; single major coronary artery or branch\nDevice/Access: Intracoronary stent(s), atherectomy device, balloon catheter | Percutaneous (e.g., femoral, radial artery)\nIncluded in this code (do NOT bill separately):\n- Vascular access and closure\n- Catheter placement and manipulation\n- Angiography and imaging supervision/interpretation\n- Atherectomy (if performed)\n- Angioplasty (if performed)\n- Stent deployment\nNote: Used for revascularization of a single major coronary artery or its branches through a bypass graft.\n\n### CPT 92941 — RVU 15.00 (Estimated RVU for emergent PCI in AMI)\nPercutaneous transluminal revascularization of acute total/subtotal occlusion of coronary artery or coronary artery bypass graft, any combination of atherectomy, angioplasty, and/or stent placement; with or without thrombectomy, in an acute myocardial infarction; single major coronary artery or coronary artery bypass graft\nDevice/Access: Intracoronary stent(s), atherectomy device, balloon catheter, thrombectomy device | Percutaneous (e.g., femoral, radial artery)\nIncluded in this code (do NOT bill separately):\n- Vascular access and closure\n- Catheter placement and manipulation\n- Angiography and imaging supervision/interpretation\n- Atherectomy (if performed)\n- Angioplasty (if performed)\n- Stent deployment\n- Thrombectomy (if performed)\nNote: Emergent revascularization for acute myocardial infarction (AMI) due to total/subtotal occlusion.\n\n### CPT 92943 — RVU 16.50 (Estimated RVU for complex CTO PCI)\nPercutaneous transluminal revascularization of chronic total occlusion of coronary artery or coronary artery bypass graft, any combination of atherectomy, angioplasty, and/or stent placement; with or without thrombectomy, in a chronic total occlusion; single major coronary artery or coronary artery bypass graft\nDevice/Access: Intracoronary stent(s), atherectomy device, balloon catheter, thrombectomy device | Percutaneous (e.g., femoral, radial artery)\nIncluded in this code (do NOT bill separately):\n- Vascular access and closure\n- Catheter placement and manipulation\n- Angiography and imaging supervision/interpretation\n- Atherectomy (if performed)\n- Angioplasty (if performed)\n- Stent deployment\n- Thrombectomy (if performed)\nNote: Complex revascularization for chronic total occlusion (CTO) of a coronary artery or bypass graft.\n\n---\n\n## ICD-10 Diagnosis Codes\n\nEach entry shows code badge, description, notes, and a 'Primary' badge when required.\n\n- I21.0 (Primary) — ST elevation (STEMI) myocardial infarction of anterior wall. Requires immediate intervention. Primary diagnosis for anterior STEMI.\n- I21.1 (Primary) — ST elevation (STEMI) myocardial infarction of inferior wall. Requires immediate intervention. Primary diagnosis for inferior STEMI.\n- I21.2 (Primary) — ST elevation (STEMI) myocardial infarction of other sites. Requires immediate intervention. Primary diagnosis for other STEMI locations.\n- I21.3 (Primary) — ST elevation (STEMI) myocardial infarction of unspecified site. Requires immediate intervention. Primary diagnosis for unspecified STEMI.\n- I21.4 (Primary) — Non-ST elevation (NSTEMI) myocardial infarction. Often requires urgent intervention. Primary diagnosis for NSTEMI.\n- I22.0 — Subsequent ST elevation (STEMI) myocardial infarction of anterior wall. Used for a new STEMI occurring within 28 days of a previous MI. Specify site.\n- I22.1 — Subsequent ST elevation (STEMI) myocardial infarction of inferior wall. Used for a new STEMI occurring within 28 days of a previous MI. Specify site.\n- I25.10 — Atherosclerotic heart disease of native coronary artery without angina pectoris. Used for underlying coronary artery disease. Not a primary diagnosis for acute event.\n\n---\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\nStatus badges: No Prior Auth (FFS) | Covered for Medically Necessary Services\nPrior Auth Note: Generally, Medicare does not require prior authorization for emergent PCI procedures in the setting of acute myocardial infarction. However, documentation must clearly support medical necessity.\nOverview: Medicare covers percutaneous coronary intervention (PCI) for beneficiaries with acute coronary syndromes (ACS) when performed in accordance with established clinical guidelines and medical necessity criteria. Coverage typically includes diagnostic catheterization, angioplasty, stenting, and atherectomy when indicated.\n\nCoverage Criteria — Acute Myocardial Infarction (AMI):\n- Clinical symptoms consistent with AMI (e.g., chest pain, shortness of breath)\n- ECG changes indicative of STEMI or high-risk NSTEMI\n- Elevated cardiac biomarkers (e.g., troponin, CK-MB)\n- Angiographic evidence of significant coronary artery stenosis or occlusion amenable to PCI\nCoverage Criteria — Unstable Angina / NSTEMI (Non-Emergent):\n- Recurrent angina at rest or with minimal exertion\n- Ischemic changes on ECG (e.g., ST depression, T-wave inversion)\n- Positive stress test or other non-invasive evidence of ischemia\n- Angiographic evidence of significant coronary artery stenosis amenable to PCI after medical management failure\n\nRequired Documentation — Clinical Records:\n- Detailed history and physical examination\n- Emergency department notes (if applicable)\n- Serial ECGs\n- Cardiac biomarker trends\n- Consultation reports (Cardiology, Interventional Cardiology)\nRequired Documentation — Procedure Documentation:\n- Operative report detailing procedure, findings, and devices used\n- Angiographic images and interpretation\n- Hemodynamic data\n- Device implant cards (for stents)\n\nSubmission Process:\n1. Submit claims using appropriate CPT and ICD-10 codes.\n2. Ensure all documentation supporting medical necessity is available upon request.\n3. For emergent cases, use appropriate modifiers (e.g., -STAT) if applicable to indicate urgency.\n\nCommon Denial Reasons:\n- Lack of medical necessity documentation\n- Inadequate angiographic evidence of significant stenosis\n- PCI performed for stable angina without prior medical management failure (for non-emergent cases)\n- Incorrect coding or modifier usage\n\nKnown Payer Policies:\n| Payer | Status | Notes |\n| CMS | Covered | National Coverage Determinations (NCDs) and Local Coverage Determinations (LCDs) apply. Refer to specific MAC policies. |\n\nReimbursement Note: Reimbursement for PCI procedures is typically based on DRG for inpatient stays and APC for outpatient services. Specific payment rates vary by geographic location and facility type.\n\nAuthorization Tips:\n- Clearly document the patient's clinical presentation, especially for emergent cases.\n- Ensure all diagnostic findings (ECG, biomarkers, angiography) are thoroughly documented and support the intervention.\n- For non-emergent PCI, document prior medical management and its failure.\n\n### Medicaid\nStatus badges: Prior Auth Required | Covered with Prior Authorization\nPrior Auth Note: Prior authorization is generally required for all non-emergent PCI procedures. Emergent cases may be exempt but require retrospective review and robust documentation.\nOverview: Medicaid programs cover PCI for ACS patients, but policies vary significantly by state. Most states require prior authorization for elective procedures and may have specific criteria for emergent interventions. Documentation of medical necessity is paramount.\n\nCoverage Criteria — Acute Myocardial Infarction (AMI):\n- Clinical presentation consistent with AMI\n- ECG evidence of STEMI or high-risk NSTEMI\n- Elevated cardiac biomarkers\n- Angiographic evidence of significant coronary lesion requiring intervention\nCoverage Criteria — Non-Emergent PCI (e.g., Unstable Angina):\n- Documented failure of optimal medical therapy\n- Objective evidence of myocardial ischemia (e.g., stress test, FFR)\n- Significant coronary stenosis (typically >70% in major epicardial vessel or >50% in left main) on angiography\n- Symptoms refractory to medical management\n\nRequired Documentation — Authorization Request:\n- Completed prior authorization form\n- Clinical notes, including H&P, ED notes, cardiology consults\n- ECG reports and cardiac biomarker results\n- Angiography report and images\n- Documentation of failed medical therapy (for non-emergent cases)\nRequired Documentation — Procedure Documentation:\n- Operative report\n- Device implant information\n\nSubmission Process:\n1. Obtain prior authorization before non-emergent procedures.\n2. Submit claims with authorization number.\n3. Ensure all medical records are readily available for post-service review.\n\nCommon Denial Reasons:\n- Lack of prior authorization\n- Insufficient documentation of medical necessity\n- Failure to meet state-specific coverage criteria\n- Incomplete or illegible medical records\n\nKnown Payer Policies:\n| Payer | Status | Notes |\n| State Medicaid (e.g., California Medi-Cal) | Covered with PA | Specific guidelines for emergent vs. elective PCI. Requires robust documentation. |\n\nReimbursement Note: Medicaid reimbursement rates are generally lower than Medicare or private payers and vary by state. Providers should be aware of state-specific fee schedules.\n\nAuthorization Tips:\n- Verify state-specific Medicaid policies for PCI and prior authorization requirements.\n- Maintain meticulous documentation, especially for emergent cases that bypass initial authorization.\n- Consider peer-to-peer review for complex cases or initial denials.\n\n### Private Insurance\nStatus badges: Prior Auth Required | Covered with Prior Authorization\nPrior Auth Note: Prior authorization is almost always required for all PCI procedures, both emergent and elective. Retrospective authorization may be granted for true emergencies.\nOverview: Private insurance plans typically cover PCI for ACS, but coverage criteria and prior authorization requirements can vary widely by plan and insurer. It is crucial to verify benefits and obtain authorization before any elective procedure.\n\nCoverage Criteria — Acute Myocardial Infarction (AMI):\n- Diagnosis of STEMI or high-risk NSTEMI\n- Clinical instability or ongoing ischemia\n- Angiographic findings consistent with acute coronary occlusion or severe stenosis requiring urgent intervention\nCoverage Criteria — Elective PCI (e.g., Stable Angina, NSTEMI after stabilization):\n- Documented symptoms of angina or anginal equivalents\n- Objective evidence of moderate to severe ischemia on non-invasive testing (e.g., stress test, nuclear scan)\n- Significant coronary stenosis (e.g., >70% in major epicardial vessel, >50% in left main) with corresponding ischemia\n- Failure of optimal medical therapy to control symptoms or improve prognosis\n\nRequired Documentation — Authorization Request:\n- Completed prior authorization form with clinical rationale\n- All relevant medical records (H&P, ED notes, consults, ECGs, labs)\n- Non-invasive test results (stress test, echo, nuclear)\n- Angiography report and images\n- Documentation of medical therapy and its efficacy/failure\nRequired Documentation — Procedure Documentation:\n- Operative report\n- Device implant information\n\nSubmission Process:\n1. Submit prior authorization request well in advance for elective procedures.\n2. Follow up on authorization status regularly.\n3. Submit claims with the approved authorization number.\n4. Be prepared for potential peer-to-peer reviews or appeals.\n\nCommon Denial Reasons:\n- Lack of prior authorization\n- Insufficient medical necessity (e.g., PCI for non-ischemic lesions)\n- Failure to meet plan-specific criteria (e.g., stenosis severity, symptom burden)\n- Inadequate trial of medical therapy\n- Documentation discrepancies\n\nKnown Payer Policies:\n| Payer | Status | Notes |\n| Blue Cross Blue Shield | Covered with PA | Follows ACC/AHA guidelines, but may have stricter criteria for elective PCI. |\n| UnitedHealthcare | Covered with PA | Requires detailed clinical documentation and often a trial of medical therapy for stable CAD. |\n| Aetna | Covered with PA | Emphasizes appropriate use criteria and evidence-based guidelines for revascularization. |\n\nReimbursement Note: Reimbursement rates are negotiated between providers and individual private insurance companies. Out-of-network services may have different coverage and patient cost-sharing.\n\nAuthorization Tips:\n- Always verify patient's benefits and specific plan requirements before scheduling elective PCI.\n- Document all conservative management attempts and their outcomes.\n- Utilize peer-to-peer reviews as an opportunity to advocate for the patient and provide additional clinical context.\n- Be aware of specific payer policies regarding appropriate use criteria for revascularization.\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "Description", "Device", "Access", "RVU", "Includes", "Note"],
+          "rows": [
+            ["92928", "Percutaneous transcatheter placement of intracoronary stent(s), with coronary angioplasty when performed; single major coronary artery or branch", "Intracoronary stent(s), balloon catheter", "Percutaneous (e.g., femoral, radial artery)", "11.21", "Vascular access and closure; Catheter placement and manipulation; Angiography and imaging supervision/interpretation; Angioplasty (if performed); Stent deployment", "Used for single lesion in a major coronary artery or its branches."],
+            ["92933", "Percutaneous transcatheter placement of intracoronary stent(s), with coronary atherectomy and angioplasty when performed; single major coronary artery or branch", "Intracoronary stent(s), atherectomy device, balloon catheter", "Percutaneous (e.g., femoral, radial artery)", "12.29", "Vascular access and closure; Catheter placement and manipulation; Angiography and imaging supervision/interpretation; Atherectomy; Angioplasty (if performed); Stent deployment", "Used for single lesion in a major coronary artery or its branches, including atherectomy."],
+            ["92937", "Percutaneous transluminal revascularization of or through coronary artery bypass graft (internal mammary, free arterial, venous), any combination of atherectomy, angioplasty, and/or stent placement; single major coronary artery or branch", "Intracoronary stent(s), atherectomy device, balloon catheter", "Percutaneous (e.g., femoral, radial artery)", "11.50 (Estimated RVU, similar to native vessel PCI)", "Vascular access and closure; Catheter placement and manipulation; Angiography and imaging supervision/interpretation; Atherectomy (if performed); Angioplasty (if performed); Stent deployment", "Used for revascularization of a single major coronary artery or its branches through a bypass graft."],
+            ["92941", "Percutaneous transluminal revascularization of acute total/subtotal occlusion of coronary artery or coronary artery bypass graft, any combination of atherectomy, angioplasty, and/or stent placement; with or without thrombectomy, in an acute myocardial infarction; single major coronary artery or coronary artery bypass graft", "Intracoronary stent(s), atherectomy device, balloon catheter, thrombectomy device", "Percutaneous (e.g., femoral, radial artery)", "15.00 (Estimated RVU for emergent PCI in AMI)", "Vascular access and closure; Catheter placement and manipulation; Angiography and imaging supervision/interpretation; Atherectomy (if performed); Angioplasty (if performed); Stent deployment; Thrombectomy (if performed)", "Emergent revascularization for acute myocardial infarction (AMI) due to total/subtotal occlusion."],
+            ["92943", "Percutaneous transluminal revascularization of chronic total occlusion of coronary artery or coronary artery bypass graft, any combination of atherectomy, angioplasty, and/or stent placement; with or without thrombectomy, in a chronic total occlusion; single major coronary artery or coronary artery bypass graft", "Intracoronary stent(s), atherectomy device, balloon catheter, thrombectomy device", "Percutaneous (e.g., femoral, radial artery)", "16.50 (Estimated RVU for complex CTO PCI)", "Vascular access and closure; Catheter placement and manipulation; Angiography and imaging supervision/interpretation; Atherectomy (if performed); Angioplasty (if performed); Stent deployment; Thrombectomy (if performed)", "Complex revascularization for chronic total occlusion (CTO) of a coronary artery or bypass graft."]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["Code", "Description", "Notes", "Required (Primary)"],
+          "rows": [
+            ["I21.0", "ST elevation (STEMI) myocardial infarction of anterior wall", "Requires immediate intervention. Primary diagnosis for anterior STEMI.", "true"],
+            ["I21.1", "ST elevation (STEMI) myocardial infarction of inferior wall", "Requires immediate intervention. Primary diagnosis for inferior STEMI.", "true"],
+            ["I21.2", "ST elevation (STEMI) myocardial infarction of other sites", "Requires immediate intervention. Primary diagnosis for other STEMI locations.", "true"],
+            ["I21.3", "ST elevation (STEMI) myocardial infarction of unspecified site", "Requires immediate intervention. Primary diagnosis for unspecified STEMI.", "true"],
+            ["I21.4", "Non-ST elevation (NSTEMI) myocardial infarction", "Often requires urgent intervention. Primary diagnosis for NSTEMI.", "true"],
+            ["I22.0", "Subsequent ST elevation (STEMI) myocardial infarction of anterior wall", "Used for a new STEMI occurring within 28 days of a previous MI. Specify site.", "false"],
+            ["I22.1", "Subsequent ST elevation (STEMI) myocardial infarction of inferior wall", "Used for a new STEMI occurring within 28 days of a previous MI. Specify site.", "false"],
+            ["I25.10", "Atherosclerotic heart disease of native coronary artery without angina pectoris", "Used for underlying coronary artery disease. Not a primary diagnosis for acute event.", "false"]
+          ]
+        },
+        {
+          "name": "Medicare - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS", "Covered", "National Coverage Determinations (NCDs) and Local Coverage Determinations (LCDs) apply. Refer to specific MAC policies."]
+          ]
+        },
+        {
+          "name": "Medicaid - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., California Medi-Cal)", "Covered with PA", "Specific guidelines for emergent vs. elective PCI. Requires robust documentation."]
+          ]
+        },
+        {
+          "name": "Private Insurance - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield", "Covered with PA", "Follows ACC/AHA guidelines, but may have stricter criteria for elective PCI."],
+            ["UnitedHealthcare", "Covered with PA", "Requires detailed clinical documentation and often a trial of medical therapy for stable CAD."],
+            ["Aetna", "Covered with PA", "Emphasizes appropriate use criteria and evidence-based guidelines for revascularization."]
+          ]
+        }
+      ]
+    }
+  }
+}

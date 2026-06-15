@@ -1,0 +1,180 @@
+{
+  "title": "Spinal Fusion Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assess",
+    "logicKey": "spinalfusion",
+    "hiddenDefaults": {
+      "primaryDiagnosis": "",
+      "symptomDurationMonths": ""
+    },
+    "steps": [
+      {
+        "id": "patient-info",
+        "shortLabel": "Patient Info",
+        "title": "Patient Information",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "bmi",
+            "name": "bmi",
+            "label": "BMI (kg/m²)",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "spine-level",
+            "name": "spineLevel",
+            "label": "Spine Level",
+            "type": "buttongroup",
+            "required": true,
+            "defaultValue": "",
+            "options": [
+              { "label": "lumbar", "value": "lumbar" },
+              { "label": "cervical", "value": "cervical" },
+              { "label": "thoracic", "value": "thoracic" }
+            ]
+          },
+          {
+            "id": "pain-score",
+            "name": "painScore",
+            "label": "Pain Score (0-10)",
+            "type": "text",
+            "required": true,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "active-infection",
+            "name": "activeInfection",
+            "label": "Active spinal infection",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "malignancy",
+            "name": "malignancy",
+            "label": "Active malignancy involving spine",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "instability",
+            "name": "instability",
+            "label": "Radiographic instability / fracture",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "prior-spine-surgery",
+            "name": "priorSpineSurgery",
+            "label": "Prior spine surgery at same level",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "clinical-assessment",
+        "shortLabel": "Clinical Assessment",
+        "title": "Clinical Assessment",
+        "fields": [
+          {
+            "id": "conservative-therapy-months",
+            "name": "conservativeTherapyMonths",
+            "label": "Conservative Therapy Duration (months)",
+            "type": "text",
+            "required": true,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "neurologic-deficits",
+            "name": "neurologicDeficits",
+            "label": "Neurologic Deficits",
+            "type": "multiselect",
+            "required": false,
+            "defaultValue": [],
+            "options": [
+              { "label": "Radiculopathy (dermatomal pain/paresthesia)", "value": "radiculopathy" },
+              { "label": "Motor weakness (myotomal distribution)", "value": "motor-weakness" },
+              { "label": "Progressive neurologic deficit", "value": "progressive-weakness" },
+              { "label": "Myelopathy (cervical — gait, hand function)", "value": "myelopathy" },
+              { "label": "Cauda equina syndrome (bowel/bladder dysfunction)", "value": "cauda-equina" }
+            ]
+          },
+          {
+            "id": "conservative-therapies",
+            "name": "conservativeTherapies",
+            "label": "Conservative Therapies Tried",
+            "type": "multiselect",
+            "required": false,
+            "defaultValue": [],
+            "options": [
+              { "label": "Physical therapy (≥6 weeks)", "value": "pt" },
+              { "label": "NSAIDs / analgesics (≥4 weeks)", "value": "nsaids" },
+              { "label": "Epidural steroid injection(s)", "value": "epidural" },
+              { "label": "Activity modification", "value": "activity-mod" },
+              { "label": "Bracing / orthosis", "value": "bracing" },
+              { "label": "Chiropractic / manual therapy", "value": "chiro" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "imaging-comorbidities",
+        "shortLabel": "Imaging & Comorbidities",
+        "title": "Imaging & Comorbidities",
+        "fields": [
+          {
+            "id": "imaging-findings",
+            "name": "imagingFindings",
+            "label": "Imaging Findings (MRI or CT)",
+            "type": "multiselect",
+            "required": false,
+            "defaultValue": [],
+            "options": [
+              { "label": "Disc herniation with nerve root compression", "value": "disc-herniation" },
+              { "label": "Spinal stenosis (central or foraminal)", "value": "stenosis" },
+              { "label": "Spondylolisthesis (Grade I-II)", "value": "spondylolisthesis" },
+              { "label": "Spondylolisthesis (Grade III-IV)", "value": "spondylolisthesis-grade3" },
+              { "label": "Degenerative disc disease", "value": "degenerative-disc" },
+              { "label": "Fracture with instability", "value": "fracture-instability" },
+              { "label": "Tumor with instability", "value": "tumor-instability" }
+            ]
+          },
+          {
+            "id": "comorbidities",
+            "name": "comorbidities",
+            "label": "Comorbidities",
+            "type": "multiselect",
+            "required": false,
+            "defaultValue": [],
+            "options": [
+              { "label": "Active smoking", "value": "active-smoking" },
+              { "label": "Osteoporosis (T-score ≤ -2.5)", "value": "osteoporosis" },
+              { "label": "Uncontrolled diabetes (HbA1c >8%)", "value": "uncontrolled-dm" },
+              { "label": "Immunosuppression / biologic therapy", "value": "immunosuppression" },
+              { "label": "Significant cardiac disease", "value": "cardiac" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,363 @@
+{
+  "title": "OSA Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "osa",
+    "hiddenDefaults": {
+      "pregnant": false
+    },
+    "steps": [
+      {
+        "id": "sleep-study",
+        "shortLabel": "Sleep Study Results",
+        "title": "Sleep Study Results (PSG or Home Sleep Test)",
+        "fields": [
+          {
+            "id": "ahi",
+            "name": "ahi",
+            "label": "AHI (events/hour)",
+            "type": "slider",
+            "defaultValue": 20,
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "events/hour"
+          },
+          {
+            "id": "odi-level",
+            "name": "odiLevel",
+            "label": "ODI (Oxygen Desaturation Index)",
+            "type": "slider",
+            "defaultValue": 18,
+            "min": 0,
+            "max": 100,
+            "step": 1
+          },
+          {
+            "id": "min-o2-sat",
+            "name": "minO2Sat",
+            "label": "Minimum O2 Saturation (%)",
+            "type": "slider",
+            "defaultValue": 85,
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "ess",
+            "name": "ess",
+            "label": "Epworth Sleepiness Scale (ESS) /24",
+            "type": "slider",
+            "defaultValue": 12,
+            "min": 0,
+            "max": 24,
+            "step": 1
+          },
+          {
+            "id": "snoring",
+            "name": "snoring",
+            "label": "Snoring",
+            "type": "radio",
+            "defaultValue": true,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "witnessed-apneas",
+            "name": "witnessedApneas",
+            "label": "Witnessed Apneas",
+            "type": "radio",
+            "defaultValue": true,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "nocturia",
+            "name": "nocturia",
+            "label": "Nocturia",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "morning-headaches",
+            "name": "morningHeadaches",
+            "label": "Morning Headaches",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "positional-osa",
+            "name": "positionalOSA",
+            "label": "Positional OSA (AHI supine ≥2x non-supine)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "central-component",
+            "name": "centralComponent",
+            "label": "Central Component (>50% central events)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cpap-symptoms",
+        "shortLabel": "CPAP History & Symptoms",
+        "title": "CPAP History & Cardiovascular Comorbidities",
+        "fields": [
+          {
+            "id": "cpap-adherence",
+            "name": "cpapAdherence",
+            "label": "CPAP Adherence",
+            "type": "select",
+            "defaultValue": "naive",
+            "options": [
+              { "label": "CPAP naive (never tried)", "value": "naive" },
+              { "label": "Adherent (>4 hrs/night, >70% nights)", "value": "adherent" },
+              { "label": "Non-adherent (<4 hrs/night)", "value": "non_adherent" },
+              { "label": "Intolerant (claustrophobia, mask issues, unable to use)", "value": "intolerant" }
+            ]
+          },
+          {
+            "id": "cpap-trial-duration",
+            "name": "cpapTrialDuration",
+            "label": "CPAP Trial Duration (months)",
+            "type": "slider",
+            "defaultValue": 0,
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "months"
+          },
+          {
+            "id": "hypertension",
+            "name": "hypertension",
+            "label": "Hypertension",
+            "type": "radio",
+            "defaultValue": true,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "afib",
+            "name": "afib",
+            "label": "Atrial Fibrillation",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "heart-failure",
+            "name": "heartFailure",
+            "label": "Heart Failure",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "stroke",
+            "name": "stroke",
+            "label": "Prior Stroke",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "t2dm",
+            "name": "t2dm",
+            "label": "Type 2 Diabetes",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "depression",
+            "name": "depression",
+            "label": "Depression",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "anatomy-factors",
+        "shortLabel": "Anatomy & Patient Factors",
+        "title": "Anatomy, BMI & Patient Preferences",
+        "fields": [
+          {
+            "id": "bmi",
+            "name": "bmi",
+            "label": "BMI (kg/m²)",
+            "type": "slider",
+            "defaultValue": 0,
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "kg/m²"
+          },
+          {
+            "id": "neck-circumference",
+            "name": "neckCircumference",
+            "label": "Neck Circumference (cm)",
+            "type": "slider",
+            "defaultValue": 42,
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "cm"
+          },
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "slider",
+            "defaultValue": 0,
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "years"
+          },
+          {
+            "id": "sex",
+            "name": "sex",
+            "label": "Sex",
+            "type": "radio",
+            "defaultValue": "male",
+            "options": [
+              { "label": "Male", "value": "male" },
+              { "label": "Female", "value": "female" }
+            ]
+          },
+          {
+            "id": "anatomic-obstruction",
+            "name": "anatomicObstruction",
+            "label": "Anatomic Obstruction Level",
+            "type": "select",
+            "defaultValue": "palatal",
+            "options": [
+              { "label": "None identified / Not assessed", "value": "none_identified" },
+              { "label": "Nasal only (deviated septum, turbinate hypertrophy)", "value": "nasal_only" },
+              { "label": "Palatal (soft palate, uvula)", "value": "palatal" },
+              { "label": "Tongue base / Hypopharynx", "value": "tongue_base" },
+              { "label": "Multilevel obstruction", "value": "multilevel" },
+              { "label": "Retrognathia / Mandibular deficiency", "value": "retrognathia" }
+            ]
+          },
+          {
+            "id": "tonsil-size",
+            "name": "tonsilSize",
+            "label": "Tonsil Size (Friedman)",
+            "type": "select",
+            "defaultValue": 2,
+            "options": [
+              { "label": "0 — Absent (prior tonsillectomy)", "value": 0 },
+              { "label": "1 — Hidden within pillars", "value": 1 },
+              { "label": "2 — Visible beyond pillars", "value": 2 },
+              { "label": "3 — Extending to midline", "value": 3 },
+              { "label": "4 — Kissing tonsils", "value": 4 }
+            ]
+          },
+          {
+            "id": "mallampati-score",
+            "name": "mallampatiScore",
+            "label": "Mallampati Score",
+            "type": "select",
+            "defaultValue": 2,
+            "options": [
+              { "label": "I — Full visibility of soft palate, uvula, fauces, pillars", "value": 1 },
+              { "label": "II — Soft palate, uvula, fauces visible", "value": 2 },
+              { "label": "III — Soft palate, base of uvula visible", "value": 3 },
+              { "label": "IV — Soft palate not visible", "value": 4 }
+            ]
+          },
+          {
+            "id": "prior-uppp",
+            "name": "priorUPPP",
+            "label": "Prior UPPP",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "prior-nasal-surgery",
+            "name": "priorNasalSurgery",
+            "label": "Prior Nasal Surgery",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "patient-prefers-surgery",
+            "name": "patientPrefersSurgery",
+            "label": "Patient Prefers Surgery",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "patient-prefers-medical",
+            "name": "patientPrefersMedical",
+            "label": "Patient Prefers Medical/Device Therapy",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

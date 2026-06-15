@@ -1,0 +1,212 @@
+{
+  "title": "Central Sleep Apnea Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Assessment",
+    "logicKey": "centralsleepapnea",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "psg-data",
+        "shortLabel": "PSG Data",
+        "title": "PSG / Sleep Study Data",
+        "fields": [
+          {
+            "id": "psg-performed",
+            "name": "psg_performed",
+            "label": "In-lab PSG performed (required for CSA diagnosis)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "ahi",
+            "name": "ahi",
+            "label": "Total AHI (events/hour)",
+            "type": "number",
+            "required": true,
+            "defaultValue": "",
+            "min": 0,
+            "step": 0.1,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "cai",
+            "name": "cai",
+            "label": "Central Apnea Index (CAI, events/hour)",
+            "type": "number",
+            "defaultValue": "",
+            "min": 0,
+            "step": 0.1,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "cai-percent",
+            "name": "cai_percent",
+            "label": "Central Events as % of Total Apneas",
+            "type": "number",
+            "defaultValue": "",
+            "min": 0,
+            "max": 100,
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "csa-etiology",
+        "shortLabel": "CSA Etiology",
+        "title": "CSA Etiology",
+        "fields": [
+          {
+            "id": "etiology",
+            "name": "etiology",
+            "label": "Primary CSA Etiology",
+            "type": "select",
+            "defaultValue": "unknown",
+            "options": [
+              { "label": "Cheyne-Stokes Respiration (CSA-CSR) — heart failure", "value": "cheyneStokes" },
+              { "label": "Opioid-induced CSA", "value": "opioid" },
+              { "label": "Treatment-emergent CSA (on CPAP)", "value": "treatmentEmergent" },
+              { "label": "Idiopathic CSA (primary)", "value": "idiopathic" },
+              { "label": "High-altitude periodic breathing", "value": "highAltitude" },
+              { "label": "Cardiac/non-HF etiology", "value": "cardiac" },
+              { "label": "Unknown / under evaluation", "value": "unknown" }
+            ]
+          },
+          {
+            "id": "opioid-mme",
+            "name": "opioid_mme",
+            "label": "Daily Opioid Dose (MME/day)",
+            "type": "number",
+            "defaultValue": "",
+            "min": 0,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "etiology", "op": "eq", "value": "opioid" }
+          }
+        ]
+      },
+      {
+        "id": "comorbidities",
+        "shortLabel": "Comorbidities",
+        "title": "Comorbidities",
+        "fields": [
+          {
+            "id": "comorbid-hf",
+            "name": "comorbid_hf",
+            "label": "Heart failure (HF)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "comorbid-af",
+            "name": "comorbid_af",
+            "label": "Atrial fibrillation",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "comorbid-stroke",
+            "name": "comorbid_stroke",
+            "label": "Stroke or TIA",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "comorbid-osa",
+            "name": "comorbid_osa",
+            "label": "Comorbid OSA (mixed/complex sleep apnea)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "comorbid-obesity",
+            "name": "comorbid_obesity",
+            "label": "Obesity (BMI ≥30)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "opioid-use",
+            "name": "opioid_use",
+            "label": "Chronic opioid use",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "lvef-reduced",
+            "name": "lvef_reduced",
+            "label": "Reduced EF (HFrEF — EF <45%)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "comorbid_hf", "op": "truthy" }
+          },
+          {
+            "id": "ef-percent",
+            "name": "ef_percent",
+            "label": "LVEF (%)",
+            "type": "number",
+            "defaultValue": "",
+            "min": 10,
+            "max": 70,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "comorbid_hf", "op": "truthy" }
+          },
+          {
+            "id": "nyha-class",
+            "name": "nyha_class",
+            "label": "NYHA Class",
+            "type": "select",
+            "defaultValue": "unknown",
+            "options": [
+              { "label": "Class I — No symptoms with ordinary activity", "value": "I" },
+              { "label": "Class II — Slight limitation", "value": "II" },
+              { "label": "Class III — Marked limitation", "value": "III" },
+              { "label": "Class IV — Symptoms at rest", "value": "IV" },
+              { "label": "Unknown", "value": "unknown" }
+            ],
+            "visibleWhen": { "field": "comorbid_hf", "op": "truthy" }
+          },
+          {
+            "id": "bmi",
+            "name": "bmi",
+            "label": "BMI (kg/m²)",
+            "type": "number",
+            "defaultValue": "",
+            "min": 20,
+            "max": 70,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "comorbid_obesity", "op": "truthy" }
+          }
+        ]
+      },
+      {
+        "id": "current-treatment",
+        "shortLabel": "Current Treatment",
+        "title": "Current PAP Therapy",
+        "fields": [
+          {
+            "id": "current-cpap",
+            "name": "current_cpap",
+            "label": "Currently on CPAP",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "current-bpap",
+            "name": "current_bpap",
+            "label": "Currently on BPAP (bilevel)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "current-asv",
+            "name": "current_asv",
+            "label": "Currently on ASV (adaptive servo-ventilation)",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

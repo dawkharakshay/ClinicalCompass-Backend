@@ -1,0 +1,310 @@
+{
+  "title": "IBD Preventive Care Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "ibdpreventivecare",
+    "hiddenDefaults": {
+      "currentMedications": ["infliximab"],
+      "hasHepatitisCHistory": false,
+      "hasHistoplasmosisRisk": false,
+      "hasCoccidioidomycosisRisk": false,
+      "isCurrentSmoker": false,
+      "isOnCalciumVitaminD": false,
+      "hasCardiovascularDisease": false,
+      "isOnAnticoagulation": false
+    },
+    "steps": [
+      {
+        "id": "profile",
+        "shortLabel": "Profile",
+        "title": "IBD Profile & Immunosuppression",
+        "fields": [
+          {
+            "id": "ibd-type",
+            "name": "ibdType",
+            "label": "IBD Type",
+            "type": "select",
+            "defaultValue": "uc",
+            "options": [
+              { "label": "Ulcerative Colitis", "value": "uc" },
+              { "label": "Crohn's Disease", "value": "crohns" },
+              { "label": "Indeterminate Colitis", "value": "indeterminate" }
+            ]
+          },
+          {
+            "id": "ibd-duration-years",
+            "name": "ibdDurationYears",
+            "label": "IBD Duration (years)",
+            "type": "number",
+            "defaultValue": 8,
+            "unit": "years",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "ibd-extent",
+            "name": "ibdExtent",
+            "label": "IBD Extent",
+            "type": "select",
+            "defaultValue": "extensive",
+            "options": [
+              { "label": "Proctitis", "value": "proctitis" },
+              { "label": "Left-Sided", "value": "left_sided" },
+              { "label": "Extensive", "value": "extensive" },
+              { "label": "Pancolitis", "value": "pancolitis" },
+              { "label": "Ileal (CD)", "value": "ileal" },
+              { "label": "Ileocolonic (CD)", "value": "ileocolonic" },
+              { "label": "Colonic (CD)", "value": "colonic" }
+            ]
+          },
+          {
+            "id": "current-immunosuppression",
+            "name": "currentImmunosuppression",
+            "label": "Current Immunosuppression Level",
+            "type": "select",
+            "defaultValue": "high",
+            "options": [
+              { "label": "None", "value": "none" },
+              { "label": "Low (5-ASA, budesonide, low-dose prednisone)", "value": "low" },
+              { "label": "Moderate (Thiopurines, methotrexate, steroids)", "value": "moderate" },
+              { "label": "High (Biologic monotherapy)", "value": "high" },
+              { "label": "Combination (Biologic + immunomodulator)", "value": "combination" }
+            ]
+          },
+          {
+            "id": "age-years",
+            "name": "ageYears",
+            "label": "Age (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "unit": "years",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "sex",
+            "name": "sex",
+            "label": "Sex",
+            "type": "select",
+            "defaultValue": "female",
+            "options": [
+              { "label": "Male", "value": "male" },
+              { "label": "Female", "value": "female" }
+            ]
+          },
+          {
+            "id": "has-latent-tb",
+            "name": "hasLatentTB",
+            "label": "Latent TB",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-hepatitis-b",
+            "name": "hasHepatitisB",
+            "label": "Hepatitis B (HBsAg positive)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-hepatitis-b-core",
+            "name": "hasHepatitisBCore",
+            "label": "Hepatitis B Core Antibody Positive",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-hiv",
+            "name": "hasHIV",
+            "label": "HIV",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "vaccination",
+        "shortLabel": "Vaccines",
+        "title": "Vaccination Status",
+        "fields": [
+          {
+            "id": "has-had-influenza-this-year",
+            "name": "hasHadInfluenzaThisYear",
+            "label": "Influenza (this year)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-had-pneumococcal-pcv15or20",
+            "name": "hasHadPneumococcalPCV15or20",
+            "label": "Pneumococcal PCV15 or PCV20",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-had-pneumococcal-ppsv23",
+            "name": "hasHadPneumococcalPPSV23",
+            "label": "Pneumococcal PPSV23",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-had-hepatitis-b-vaccine",
+            "name": "hasHadHepatitisBVaccine",
+            "label": "Hepatitis B (complete series)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-had-hpv-vaccine",
+            "name": "hasHadHPVVaccine",
+            "label": "HPV Vaccine",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-had-varicella-vaccine",
+            "name": "hasHadVaricellaVaccine",
+            "label": "Varicella (VZV)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-had-zoster-vaccine",
+            "name": "hasHadZosterVaccine",
+            "label": "Zoster (Shingrix — recombinant)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-had-mmr-vaccine",
+            "name": "hasHadMMRVaccine",
+            "label": "MMR",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "has-had-covid19-vaccine",
+            "name": "hasHadCOVID19Vaccine",
+            "label": "COVID-19 (primary + booster)",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "has-had-meningococcal-vaccine",
+            "name": "hasHadMeningococcalVaccine",
+            "label": "Meningococcal",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "cancer-complications",
+        "shortLabel": "Cancer",
+        "title": "Cancer Prevention & Complications",
+        "fields": [
+          {
+            "id": "has-psc",
+            "name": "hasPSC",
+            "label": "PSC (Primary Sclerosing Cholangitis)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-prior-dysplasia",
+            "name": "hasPriorDysplasia",
+            "label": "Prior Dysplasia on Colonoscopy",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-had-cervical-cancer-screening",
+            "name": "hasHadCervicalCancerScreening",
+            "label": "Cervical Cancer Screening Up to Date",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "has-skin-exam-last-year",
+            "name": "hasSkinExamLastYear",
+            "label": "Skin Exam in Past Year",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-osteoporosis",
+            "name": "hasOsteoporosis",
+            "label": "Osteoporosis",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-osteopenia",
+            "name": "hasOsteopenia",
+            "label": "Osteopenia",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-vitamin-d-deficiency",
+            "name": "hasVitaminDDeficiency",
+            "label": "Vitamin D Deficiency",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "cumulative-steroid-months",
+            "name": "cumulativeSteroidMonths",
+            "label": "Cumulative Steroid Use (months)",
+            "type": "number",
+            "unit": "months",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "has-portal-vein-thrombosis",
+            "name": "hasPortalVeinThrombosis",
+            "label": "Portal Vein Thrombosis",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-vte-history",
+            "name": "hasVTEHistory",
+            "label": "VTE History",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-active-flare",
+            "name": "hasActiveFlare",
+            "label": "Active IBD Flare",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "is-hospitalized",
+            "name": "isHospitalized",
+            "label": "Currently Hospitalized",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-anxiety-depression",
+            "name": "hasAnxietyDepression",
+            "label": "Anxiety or Depression",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-been-screened-for-depression",
+            "name": "hasBeenScreenedForDepression",
+            "label": "Screened for Depression (PHQ-9)",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

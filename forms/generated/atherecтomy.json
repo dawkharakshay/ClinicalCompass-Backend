@@ -1,0 +1,225 @@
+{
+  "title": "Peripheral Atherectomy Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assess",
+    "logicKey": "atherecтomy",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "symptom-severity",
+        "shortLabel": "Symptom Severity",
+        "title": "Symptom Severity",
+        "fields": [
+          {
+            "id": "rutherford-category",
+            "name": "rutherfordCategory",
+            "label": "Rutherford Category",
+            "type": "select",
+            "required": false,
+            "defaultValue": "3",
+            "options": [
+              { "label": "0 — Asymptomatic", "value": "0" },
+              { "label": "1 — Mild claudication", "value": "1" },
+              { "label": "2 — Moderate claudication", "value": "2" },
+              { "label": "3 — Severe claudication", "value": "3" },
+              { "label": "4 — Ischemic rest pain", "value": "4" },
+              { "label": "5 — Minor tissue loss (non-healing ulcer)", "value": "5" },
+              { "label": "6 — Major tissue loss / gangrene", "value": "6" }
+            ]
+          },
+          {
+            "id": "ankle-index-abi",
+            "name": "ankleIndexABI",
+            "label": "Ankle-Brachial Index (ABI)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "min": 0,
+            "max": 1.4,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "critical-limb-ischemia-present",
+            "name": "criticalLimbIschemiaPresent",
+            "label": "Critical Limb Ischemia / CLTI present (Rutherford 4–6)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "wound-present",
+            "name": "woundPresent",
+            "label": "Non-healing wound or tissue loss present",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "anatomic-classification",
+        "shortLabel": "Anatomic Classification",
+        "title": "Anatomic Classification",
+        "fields": [
+          {
+            "id": "vessel-territory",
+            "name": "vesselTerritory",
+            "label": "Vessel Territory",
+            "type": "select",
+            "required": false,
+            "defaultValue": "femoropopliteal",
+            "options": [
+              { "label": "Aortoiliac (inflow)", "value": "aortoiliac" },
+              { "label": "Femoropopliteal (SFA/popliteal)", "value": "femoropopliteal" },
+              { "label": "Infrapopliteal (BTK — tibial/peroneal)", "value": "infrapopliteal" }
+            ]
+          },
+          {
+            "id": "tasc-class",
+            "name": "tascClass",
+            "label": "TASC II Classification",
+            "type": "select",
+            "required": false,
+            "defaultValue": "B",
+            "options": [
+              { "label": "A — Single short stenosis ≤10 cm or occlusion ≤5 cm", "value": "A" },
+              { "label": "B — Multiple lesions ≤5 cm each; single stenosis/occlusion 5–15 cm", "value": "B" },
+              { "label": "C — Multiple stenoses/occlusions >15 cm total; recurrent after 2 interventions", "value": "C" },
+              { "label": "D — Complete CFA/SFA occlusion or popliteal + proximal trifurcation occlusion", "value": "D" }
+            ]
+          },
+          {
+            "id": "glass-stage",
+            "name": "glassStage",
+            "label": "GLASS Stage (Global Limb Anatomic Staging)",
+            "type": "select",
+            "required": false,
+            "defaultValue": "I",
+            "options": [
+              { "label": "Stage I — Low complexity", "value": "I" },
+              { "label": "Stage II — Moderate complexity", "value": "II" },
+              { "label": "Stage III — High complexity", "value": "III" }
+            ]
+          },
+          {
+            "id": "lesion-length-cm",
+            "name": "lesionLengthCm",
+            "label": "Lesion Length (cm)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "unit": "cm",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "vessel-diameter-mm",
+            "name": "vesselDiameterMm",
+            "label": "Vessel Diameter (mm)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "unit": "mm",
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "lesion-characteristics",
+        "shortLabel": "Lesion Characteristics",
+        "title": "Lesion Characteristics",
+        "fields": [
+          {
+            "id": "lesion-type",
+            "name": "lesionType",
+            "label": "Lesion Type",
+            "type": "select",
+            "required": false,
+            "defaultValue": "de_novo",
+            "options": [
+              { "label": "De novo lesion", "value": "de_novo" },
+              { "label": "Restenotic (post-angioplasty)", "value": "restenotic" },
+              { "label": "In-stent restenosis (ISR)", "value": "in_stent_restenosis" }
+            ]
+          },
+          {
+            "id": "calcification-grade",
+            "name": "calcificationGrade",
+            "label": "Calcification Grade",
+            "type": "select",
+            "required": false,
+            "defaultValue": "mild",
+            "options": [
+              { "label": "None", "value": "none" },
+              { "label": "Mild (unilateral, <50% circumference)", "value": "mild" },
+              { "label": "Moderate (bilateral, <50% circumference)", "value": "moderate" },
+              { "label": "Severe (bilateral, >50% circumference / \"eggshell\")", "value": "severe" }
+            ]
+          },
+          {
+            "id": "prior-stent",
+            "name": "priorStent",
+            "label": "Prior stent in target vessel",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "prior-bypass",
+            "name": "priorBypass",
+            "label": "Prior surgical bypass in target territory",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "clinical-context",
+        "shortLabel": "Clinical Context",
+        "title": "Clinical Context",
+        "fields": [
+          {
+            "id": "medical-therapy-optimized",
+            "name": "medicalTherapyOptimized",
+            "label": "Medical therapy optimized (antiplatelet, statin, supervised exercise)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "smoking-cessation-counseled",
+            "name": "smokingCessationCounseled",
+            "label": "Smoking cessation counseled / patient is non-smoker",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "diabetes-mellitus",
+            "name": "diabetesMellitus",
+            "label": "Diabetes mellitus",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "renal-insufficiency",
+            "name": "renalInsufficiency",
+            "label": "Renal insufficiency (eGFR <30 or dialysis-dependent)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "assessment",
+        "shortLabel": "Assessment",
+        "title": "Assessment",
+        "fields": []
+      }
+    ]
+  }
+}

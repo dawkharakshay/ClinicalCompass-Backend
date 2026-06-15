@@ -1,0 +1,162 @@
+{
+  "title": "AF Ablation Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "AFAblationAuthGuide.tsx",
+    "title": "AF Ablation Authorization Guide",
+    "subtitle": null,
+    "cptCodes": [
+      { "code": "93656", "description": "Comprehensive electrophysiologic evaluation with right atrial pacing and recording, right ventricular pacing and recording, His bundle recording, including insertion and repositioning of multiple electrode catheters, and pulmonary vein isolation by ablation of arrhythmogenic focus", "notes": "Primary PVI ablation code — paroxysmal AF" },
+      { "code": "93657", "description": "Additional linear or focal intracardiac catheter ablation of the left or right atrium for treatment of atrial fibrillation remaining after completion of pulmonary vein isolation", "notes": "Add-on code for additional substrate ablation" },
+      { "code": "93655", "description": "Intracardiac catheter ablation of a discrete mechanism of arrhythmia which is not the clinical tachycardia, with the clinical tachycardia", "notes": "Additional focal ablation" },
+      { "code": "93621", "description": "Comprehensive electrophysiologic evaluation; with left atrial pacing and recording from coronary sinus or left atrium", "notes": "Left atrial mapping — often bundled" },
+      { "code": "93462", "description": "Left heart catheterization by transseptal puncture through intact septum or by left ventricular puncture", "notes": "Transseptal access — required for left-sided ablation" },
+      { "code": "93613", "description": "Intracardiac electrophysiologic 3-dimensional mapping", "notes": "3D electroanatomic mapping (CARTO, EnSite)" },
+      { "code": "93660", "description": "Evaluation of cardiovascular function with tilt table evaluation, with continuous ECG monitoring and intermittent blood pressure monitoring, with or without pharmacological intervention", "notes": "Pre-procedure evaluation if needed" }
+    ],
+    "icd10Codes": [
+      { "code": "I48.0", "description": "Paroxysmal atrial fibrillation", "notes": "Highest success rates with PVI; Class I indication after AAD failure" },
+      { "code": "I48.11", "description": "Longstanding persistent atrial fibrillation", "notes": "Lower success rates; may require additional substrate ablation" },
+      { "code": "I48.19", "description": "Other persistent atrial fibrillation", "notes": "Persistent AF — PVI with possible additional lines" },
+      { "code": "I48.20", "description": "Chronic atrial fibrillation, unspecified", "notes": "Document type precisely; permanent AF generally not ablated" },
+      { "code": "I48.91", "description": "Unspecified atrial fibrillation", "notes": "Use specific type code when possible" },
+      { "code": "I50.9", "description": "Heart failure, unspecified", "notes": "CASTLE-AF indication — AF with HFrEF" },
+      { "code": "I42.2", "description": "Other hypertrophic cardiomyopathy", "notes": "HCM with AF — specialized center required" }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "overview": "Medicare covers AF ablation under NCD 20.8.3. Paroxysmal AF after AAD failure is Class I (covered). First-line ablation for paroxysmal AF is now Class IIa per 2023 guidelines — document rationale for skipping AAD trial. CASTLE-AF data supports ablation for AF with HFrEF.",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "Documented AF (paroxysmal, persistent, or long-standing persistent) by ECG, Holter, or event monitor",
+              "Symptomatic AF (EHRA Class ≥2 or equivalent) — document symptom burden",
+              "Failed or intolerant to ≥1 Class I or III antiarrhythmic drug (AAD) — OR first-line ablation with documented rationale",
+              "No LAA thrombus (TEE or CTA required within 48 hours of procedure)",
+              "Electrophysiologist documentation of rhythm control strategy rationale",
+              "Anticoagulation management plan (DOAC or warfarin; therapeutic for ≥3 weeks pre-procedure or TEE-confirmed no thrombus)",
+              "Operator experience: ≥50 AF ablations/year (facility ≥100/year per HRS consensus)"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Symptomatic AF refractory to or intolerant of ≥1 AAD",
+              "Paroxysmal or persistent AF with documented episodes",
+              "No LAA thrombus on pre-procedure imaging",
+              "Adequate anticoagulation pre-procedure"
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicare (CMS)", "status": "Covered", "notes": "Covered per NCD 20.8.3; AAD failure or intolerance required; TEE pre-procedure required" }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "overview": "Medicaid coverage varies significantly by state. Many states follow Medicare NCD criteria. Some states require additional documentation or have specific volume requirements for facilities.",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "State-specific prior authorization required",
+              "Documented symptomatic AF",
+              "Failed AAD therapy documentation",
+              "Electrophysiology consultation",
+              "Pre-procedure TEE or CTA"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Symptomatic AF with failed AAD therapy",
+              "No LAA thrombus",
+              "Adequate anticoagulation"
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicaid (state-specific)", "status": "Covered", "notes": "Coverage varies; most states require AAD failure documentation and follow Medicare NCD 20.8.3" }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private",
+        "overview": "Commercial payers frequently deny AF ablation without documented AAD failure. Document specific AAD name, dose, duration, and reason for failure (inefficacy vs. intolerance). CABANA trial (2019) and CASTLE-AF (2018) data support ablation. First-line ablation (no prior AAD) may require peer-to-peer review.",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "Prior authorization required by all commercial payers",
+              "Documented symptomatic AF (paroxysmal, persistent, or long-standing persistent) by ECG/monitor",
+              "Failed or intolerant to ≥1 Class I or III AAD (flecainide, propafenone, amiodarone, sotalol, dofetilide, dronedarone)",
+              "Electrophysiology consultation note documenting rhythm control strategy",
+              "Pre-procedure TEE or CTA confirming no LAA thrombus",
+              "Anticoagulation plan (DOAC preferred; therapeutic pre-procedure)",
+              "Facility credentialing: ≥100 AF ablations/year",
+              "Peer-to-peer review available if denied"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Symptomatic AF (palpitations, dyspnea, fatigue, exercise intolerance, syncope) with documented episodes",
+              "Failed ≥1 AAD (document drug, dose, duration, reason for failure/intolerance)",
+              "Paroxysmal AF: Class I indication after AAD failure; Class IIa for first-line",
+              "Persistent AF: Class IIa after AAD failure; Class IIb for first-line",
+              "AF with HFrEF (EF <35%): Class IIa — CASTLE-AF demonstrated mortality benefit"
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "UnitedHealthcare", "status": "Covered", "notes": "Covers after ≥1 AAD failure; first-line requires peer-to-peer; TEE required" },
+          { "payer": "Aetna", "status": "Covered", "notes": "Covers paroxysmal/persistent AF after AAD failure; first-line paroxysmal covered with documentation" },
+          { "payer": "Cigna", "status": "Covered", "notes": "Requires ≥1 AAD failure; facility volume requirements apply" },
+          { "payer": "Anthem/BCBS", "status": "Covered", "notes": "Covers after AAD failure; first-line ablation may require additional documentation" },
+          { "payer": "Humana", "status": "Covered", "notes": "Covers per HRS/ACC guidelines; AAD failure documentation required" }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Layout Note",
+        "kind": "prose",
+        "text": "The page renders three Cards in source order: (1) CPT Codes — AF Catheter Ablation, (2) ICD-10 Codes, (3) Payer Requirements with a tabbed selector (Medicare / Medicaid / Private). The Payer Requirements card shows, per active tab: Required Documentation, Medical Necessity Criteria, a highlighted reimbursement/amber note, and Known Payer Policies (each with a Covered/Not Covered badge). The top-level page heading is \"AF Ablation Authorization Guide\"."
+      }
+    ],
+    "raw": {
+      "markdown": "# AF Ablation Authorization Guide\n\n## CPT Codes — AF Catheter Ablation\n\n| CPT | Description | Notes |\n| --- | --- | --- |\n| 93656 | Comprehensive electrophysiologic evaluation with right atrial pacing and recording, right ventricular pacing and recording, His bundle recording, including insertion and repositioning of multiple electrode catheters, and pulmonary vein isolation by ablation of arrhythmogenic focus | Primary PVI ablation code — paroxysmal AF |\n| 93657 | Additional linear or focal intracardiac catheter ablation of the left or right atrium for treatment of atrial fibrillation remaining after completion of pulmonary vein isolation | Add-on code for additional substrate ablation |\n| 93655 | Intracardiac catheter ablation of a discrete mechanism of arrhythmia which is not the clinical tachycardia, with the clinical tachycardia | Additional focal ablation |\n| 93621 | Comprehensive electrophysiologic evaluation; with left atrial pacing and recording from coronary sinus or left atrium | Left atrial mapping — often bundled |\n| 93462 | Left heart catheterization by transseptal puncture through intact septum or by left ventricular puncture | Transseptal access — required for left-sided ablation |\n| 93613 | Intracardiac electrophysiologic 3-dimensional mapping | 3D electroanatomic mapping (CARTO, EnSite) |\n| 93660 | Evaluation of cardiovascular function with tilt table evaluation, with continuous ECG monitoring and intermittent blood pressure monitoring, with or without pharmacological intervention | Pre-procedure evaluation if needed |\n\n## ICD-10 Codes\n\n| ICD-10 | Description | Notes |\n| --- | --- | --- |\n| I48.0 | Paroxysmal atrial fibrillation | Highest success rates with PVI; Class I indication after AAD failure |\n| I48.11 | Longstanding persistent atrial fibrillation | Lower success rates; may require additional substrate ablation |\n| I48.19 | Other persistent atrial fibrillation | Persistent AF — PVI with possible additional lines |\n| I48.20 | Chronic atrial fibrillation, unspecified | Document type precisely; permanent AF generally not ablated |\n| I48.91 | Unspecified atrial fibrillation | Use specific type code when possible |\n| I50.9 | Heart failure, unspecified | CASTLE-AF indication — AF with HFrEF |\n| I42.2 | Other hypertrophic cardiomyopathy | HCM with AF — specialized center required |\n\n## Payer Requirements\n\n_Tabs: Medicare | Medicaid | Private_\n\n### Medicare\n\n**Required Documentation**\n- Documented AF (paroxysmal, persistent, or long-standing persistent) by ECG, Holter, or event monitor\n- Symptomatic AF (EHRA Class ≥2 or equivalent) — document symptom burden\n- Failed or intolerant to ≥1 Class I or III antiarrhythmic drug (AAD) — OR first-line ablation with documented rationale\n- No LAA thrombus (TEE or CTA required within 48 hours of procedure)\n- Electrophysiologist documentation of rhythm control strategy rationale\n- Anticoagulation management plan (DOAC or warfarin; therapeutic for ≥3 weeks pre-procedure or TEE-confirmed no thrombus)\n- Operator experience: ≥50 AF ablations/year (facility ≥100/year per HRS consensus)\n\n**Medical Necessity Criteria**\n- Symptomatic AF refractory to or intolerant of ≥1 AAD\n- Paroxysmal or persistent AF with documented episodes\n- No LAA thrombus on pre-procedure imaging\n- Adequate anticoagulation pre-procedure\n\n**Reimbursement Note:** Medicare covers AF ablation under NCD 20.8.3. Paroxysmal AF after AAD failure is Class I (covered). First-line ablation for paroxysmal AF is now Class IIa per 2023 guidelines — document rationale for skipping AAD trial. CASTLE-AF data supports ablation for AF with HFrEF.\n\n**Known Payer Policies**\n- [Covered] Medicare (CMS): Covered per NCD 20.8.3; AAD failure or intolerance required; TEE pre-procedure required\n\n### Medicaid\n\n**Required Documentation**\n- State-specific prior authorization required\n- Documented symptomatic AF\n- Failed AAD therapy documentation\n- Electrophysiology consultation\n- Pre-procedure TEE or CTA\n\n**Medical Necessity Criteria**\n- Symptomatic AF with failed AAD therapy\n- No LAA thrombus\n- Adequate anticoagulation\n\n**Reimbursement Note:** Medicaid coverage varies significantly by state. Many states follow Medicare NCD criteria. Some states require additional documentation or have specific volume requirements for facilities.\n\n**Known Payer Policies**\n- [Covered] Medicaid (state-specific): Coverage varies; most states require AAD failure documentation and follow Medicare NCD 20.8.3\n\n### Private\n\n**Required Documentation**\n- Prior authorization required by all commercial payers\n- Documented symptomatic AF (paroxysmal, persistent, or long-standing persistent) by ECG/monitor\n- Failed or intolerant to ≥1 Class I or III AAD (flecainide, propafenone, amiodarone, sotalol, dofetilide, dronedarone)\n- Electrophysiology consultation note documenting rhythm control strategy\n- Pre-procedure TEE or CTA confirming no LAA thrombus\n- Anticoagulation plan (DOAC preferred; therapeutic pre-procedure)\n- Facility credentialing: ≥100 AF ablations/year\n- Peer-to-peer review available if denied\n\n**Medical Necessity Criteria**\n- Symptomatic AF (palpitations, dyspnea, fatigue, exercise intolerance, syncope) with documented episodes\n- Failed ≥1 AAD (document drug, dose, duration, reason for failure/intolerance)\n- Paroxysmal AF: Class I indication after AAD failure; Class IIa for first-line\n- Persistent AF: Class IIa after AAD failure; Class IIb for first-line\n- AF with HFrEF (EF <35%): Class IIa — CASTLE-AF demonstrated mortality benefit\n\n**Reimbursement Note:** Commercial payers frequently deny AF ablation without documented AAD failure. Document specific AAD name, dose, duration, and reason for failure (inefficacy vs. intolerance). CABANA trial (2019) and CASTLE-AF (2018) data support ablation. First-line ablation (no prior AAD) may require peer-to-peer review.\n\n**Known Payer Policies**\n- [Covered] UnitedHealthcare: Covers after ≥1 AAD failure; first-line requires peer-to-peer; TEE required\n- [Covered] Aetna: Covers paroxysmal/persistent AF after AAD failure; first-line paroxysmal covered with documentation\n- [Covered] Cigna: Requires ≥1 AAD failure; facility volume requirements apply\n- [Covered] Anthem/BCBS: Covers after AAD failure; first-line ablation may require additional documentation\n- [Covered] Humana: Covers per HRS/ACC guidelines; AAD failure documentation required\n",
+      "tables": [
+        {
+          "name": "CPT Codes — AF Catheter Ablation",
+          "header": ["CPT", "Description", "Notes"],
+          "rows": [
+            ["93656", "Comprehensive electrophysiologic evaluation with right atrial pacing and recording, right ventricular pacing and recording, His bundle recording, including insertion and repositioning of multiple electrode catheters, and pulmonary vein isolation by ablation of arrhythmogenic focus", "Primary PVI ablation code — paroxysmal AF"],
+            ["93657", "Additional linear or focal intracardiac catheter ablation of the left or right atrium for treatment of atrial fibrillation remaining after completion of pulmonary vein isolation", "Add-on code for additional substrate ablation"],
+            ["93655", "Intracardiac catheter ablation of a discrete mechanism of arrhythmia which is not the clinical tachycardia, with the clinical tachycardia", "Additional focal ablation"],
+            ["93621", "Comprehensive electrophysiologic evaluation; with left atrial pacing and recording from coronary sinus or left atrium", "Left atrial mapping — often bundled"],
+            ["93462", "Left heart catheterization by transseptal puncture through intact septum or by left ventricular puncture", "Transseptal access — required for left-sided ablation"],
+            ["93613", "Intracardiac electrophysiologic 3-dimensional mapping", "3D electroanatomic mapping (CARTO, EnSite)"],
+            ["93660", "Evaluation of cardiovascular function with tilt table evaluation, with continuous ECG monitoring and intermittent blood pressure monitoring, with or without pharmacological intervention", "Pre-procedure evaluation if needed"]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["ICD-10", "Description", "Notes"],
+          "rows": [
+            ["I48.0", "Paroxysmal atrial fibrillation", "Highest success rates with PVI; Class I indication after AAD failure"],
+            ["I48.11", "Longstanding persistent atrial fibrillation", "Lower success rates; may require additional substrate ablation"],
+            ["I48.19", "Other persistent atrial fibrillation", "Persistent AF — PVI with possible additional lines"],
+            ["I48.20", "Chronic atrial fibrillation, unspecified", "Document type precisely; permanent AF generally not ablated"],
+            ["I48.91", "Unspecified atrial fibrillation", "Use specific type code when possible"],
+            ["I50.9", "Heart failure, unspecified", "CASTLE-AF indication — AF with HFrEF"],
+            ["I42.2", "Other hypertrophic cardiomyopathy", "HCM with AF — specialized center required"]
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "title": "Rectal Cancer Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "rectalcancer",
+    "hiddenDefaults": {
+      "priorChemo": false
+    },
+    "steps": [
+      {
+        "id": "staging",
+        "shortLabel": "Staging",
+        "title": "Tumor Staging (MRI-based)",
+        "fields": [
+          {
+            "id": "t-stage",
+            "name": "tStage",
+            "label": "T Stage",
+            "type": "select",
+            "defaultValue": "T3",
+            "options": [
+              { "label": "T1 — Submucosa", "value": "T1" },
+              { "label": "T2 — Muscularis propria", "value": "T2" },
+              { "label": "T3 — Through muscularis propria", "value": "T3" },
+              { "label": "T4a — Visceral peritoneum", "value": "T4a" },
+              { "label": "T4b — Adjacent organs", "value": "T4b" }
+            ]
+          },
+          {
+            "id": "n-stage",
+            "name": "nStage",
+            "label": "N Stage",
+            "type": "select",
+            "defaultValue": "N1",
+            "options": [
+              { "label": "N0 — No regional nodes", "value": "N0" },
+              { "label": "N1 — 1-3 regional nodes", "value": "N1" },
+              { "label": "N2 — ≥4 regional nodes", "value": "N2" }
+            ]
+          },
+          {
+            "id": "m-stage",
+            "name": "mStage",
+            "label": "M Stage",
+            "type": "radio",
+            "defaultValue": "M0",
+            "options": [
+              { "label": "M0 — No distant metastasis", "value": "M0" },
+              { "label": "M1 — Distant metastasis", "value": "M1" }
+            ]
+          },
+          {
+            "id": "tumor-location",
+            "name": "tumorLocation",
+            "label": "Tumor Location",
+            "type": "select",
+            "defaultValue": "mid",
+            "options": [
+              { "label": "Upper rectum (>10 cm from anal verge)", "value": "upper" },
+              { "label": "Mid rectum (5–10 cm from anal verge)", "value": "mid" },
+              { "label": "Lower rectum (<5 cm from anal verge)", "value": "lower" }
+            ]
+          },
+          {
+            "id": "mrf-status",
+            "name": "mrfStatus",
+            "label": "MRF Status (MRI)",
+            "type": "select",
+            "defaultValue": "clear",
+            "options": [
+              { "label": "Clear (>1 mm margin)", "value": "clear" },
+              { "label": "Threatened (≤1 mm margin)", "value": "threatened" },
+              { "label": "Involved (tumor at MRF)", "value": "involved" }
+            ]
+          },
+          {
+            "id": "emvi-status",
+            "name": "emviStatus",
+            "label": "EMVI Status",
+            "type": "select",
+            "defaultValue": "negative",
+            "options": [
+              { "label": "Negative", "value": "negative" },
+              { "label": "Positive (extramural vascular invasion)", "value": "positive" },
+              { "label": "Unknown / Not assessed", "value": "unknown" }
+            ]
+          },
+          {
+            "id": "tumor-size",
+            "name": "tumorSize",
+            "label": "Tumor Size",
+            "type": "slider",
+            "defaultValue": 0,
+            "unit": "cm"
+          },
+          {
+            "id": "msi-mmr",
+            "name": "msi_mmr",
+            "label": "MSI/MMR Status",
+            "type": "select",
+            "defaultValue": "unknown",
+            "options": [
+              { "label": "Unknown / Not tested", "value": "unknown" },
+              { "label": "MSS (microsatellite stable)", "value": "MSS" },
+              { "label": "MSI-H / dMMR (high instability)", "value": "MSI-H" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tumor-factors",
+        "shortLabel": "Tumor Factors",
+        "title": "Treatment History & Response",
+        "fields": [
+          {
+            "id": "prior-pelvic-rt",
+            "name": "priorPelvicRT",
+            "label": "Prior Pelvic RT",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "response-assessment",
+            "name": "responseAssessment",
+            "label": "Response Assessment (post-neoadjuvant)",
+            "type": "select",
+            "defaultValue": "not_assessed",
+            "options": [
+              { "label": "Not assessed (pre-treatment)", "value": "not_assessed" },
+              { "label": "cCR — Clinical complete response", "value": "cCR" },
+              { "label": "Near-cCR — Minimal residual disease", "value": "near_cCR" },
+              { "label": "Partial response", "value": "partial" },
+              { "label": "No response / Progression", "value": "no_response" }
+            ]
+          },
+          {
+            "id": "ibd",
+            "name": "ibd",
+            "label": "IBD (Inflammatory Bowel Disease)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "patient-preference",
+            "name": "patientPreference",
+            "label": "Patient Preference",
+            "type": "select",
+            "defaultValue": "no_preference",
+            "options": [
+              { "label": "No strong preference", "value": "no_preference" },
+              { "label": "Strongly prefers organ preservation", "value": "organ_preservation" },
+              { "label": "Prefers definitive surgery", "value": "definitive_surgery" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "patient-factors",
+        "shortLabel": "Patient Factors",
+        "title": "Patient Factors",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age",
+            "type": "slider",
+            "defaultValue": 0,
+            "unit": "years"
+          },
+          {
+            "id": "ecog-ps",
+            "name": "ecogPS",
+            "label": "ECOG Performance Status",
+            "type": "select",
+            "defaultValue": 0,
+            "options": [
+              { "label": "0 — Fully active", "value": 0 },
+              { "label": "1 — Restricted but ambulatory", "value": 1 },
+              { "label": "2 — Ambulatory, limited self-care", "value": 2 },
+              { "label": "3 — Limited self-care, >50% in bed", "value": 3 },
+              { "label": "4 — Completely disabled", "value": 4 }
+            ]
+          },
+          {
+            "id": "surgical-fitness",
+            "name": "surgicalFitness",
+            "label": "Surgical Fitness",
+            "type": "select",
+            "defaultValue": "fit",
+            "options": [
+              { "label": "Fit for major surgery", "value": "fit" },
+              { "label": "Borderline fitness", "value": "borderline" },
+              { "label": "Unfit for surgery", "value": "unfit" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

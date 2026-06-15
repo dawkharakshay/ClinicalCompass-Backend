@@ -1,0 +1,273 @@
+{
+  "title": "Ulcerative Colitis Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "ulcerativecolitis",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "disease-characteristics",
+        "shortLabel": "Disease Characteristics",
+        "title": "Disease Characteristics",
+        "fields": [
+          {
+            "id": "extent",
+            "name": "extent",
+            "label": "Disease Extent (Montreal Classification)",
+            "type": "select",
+            "defaultValue": "extensive",
+            "options": [
+              { "label": "E1 — Proctitis", "value": "proctitis" },
+              { "label": "E2 — Left-sided", "value": "left_sided" },
+              { "label": "E3 — Extensive", "value": "extensive" },
+              { "label": "E4 — Pancolitis", "value": "pancolitis" }
+            ]
+          },
+          {
+            "id": "severity",
+            "name": "severity",
+            "label": "Disease Severity",
+            "type": "select",
+            "defaultValue": "moderate",
+            "options": [
+              { "label": "Mild", "value": "mild" },
+              { "label": "Moderate", "value": "moderate" },
+              { "label": "Severe", "value": "severe" },
+              { "label": "Acute Severe (Truelove-Witts)", "value": "acute_severe" }
+            ]
+          },
+          {
+            "id": "stool-frequency-per-day",
+            "name": "stoolFrequencyPerDay",
+            "label": "Stool Frequency per Day",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "crp-mgl",
+            "name": "crpMgL",
+            "label": "CRP (mg/L)",
+            "type": "number",
+            "defaultValue": 0,
+            "unit": "mg/L",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "has-bloody-stools",
+            "name": "hasBloodyStools",
+            "label": "Bloody Stools",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "has-nocturnal-symptoms",
+            "name": "hasNocturnalSymptoms",
+            "label": "Nocturnal Symptoms",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-anemia",
+            "name": "hasAnemia",
+            "label": "Anemia",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-colon-dilation",
+            "name": "hasColonDilation",
+            "label": "Colon Dilation (Toxic Megacolon)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-perforation",
+            "name": "hasPerforation",
+            "label": "Perforation",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "prior-therapy-hospitalization",
+        "shortLabel": "Prior Therapy & Hospitalization",
+        "title": "Prior Therapy & Hospitalization",
+        "fields": [
+          {
+            "id": "prior-therapy",
+            "name": "priorTherapy",
+            "label": "Prior Therapy",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "Biologic Naive", "value": "none" },
+              { "label": "On 5-ASA", "value": "on_5asa" },
+              { "label": "On Steroids Only", "value": "on_steroids_only" },
+              { "label": "Failed 5-ASA", "value": "failed_5asa" },
+              { "label": "Failed Immunomodulator (AZA/6-MP)", "value": "failed_immunomodulator" },
+              { "label": "Failed Anti-TNF", "value": "failed_anti_tnf" },
+              { "label": "Failed Vedolizumab", "value": "failed_vedolizumab" },
+              { "label": "Failed Ustekinumab", "value": "failed_ustekinumab" },
+              { "label": "Failed IL-23 Inhibitor", "value": "failed_il23" },
+              { "label": "Failed JAK Inhibitor", "value": "failed_jak" },
+              { "label": "Failed Multiple Biologics", "value": "failed_multiple_biologics" }
+            ]
+          },
+          {
+            "id": "has-lost-response-to-biologic",
+            "name": "hasLostResponseToBiologic",
+            "label": "Lost Response to Current Biologic",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-anti-drug-antibodies",
+            "name": "hasAntiDrugAntibodies",
+            "label": "Anti-Drug Antibodies Detected",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "is-on-steroids",
+            "name": "isOnSteroids",
+            "label": "Currently on Steroids",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "is-steroid-dependent",
+            "name": "isSteroidDependent",
+            "label": "Steroid Dependent (cannot taper)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "is-steroid-refractory",
+            "name": "isSteroidRefractory",
+            "label": "Steroid Refractory (no response to IV steroids)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "is-hospitalized",
+            "name": "isHospitalized",
+            "label": "Currently Hospitalized",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "days-on-iv-steroids",
+            "name": "daysOnIVSteroids",
+            "label": "Days on IV Steroids",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "isHospitalized", "op": "truthy" }
+          }
+        ]
+      },
+      {
+        "id": "comorbidities-preferences",
+        "shortLabel": "Comorbidities & Preferences",
+        "title": "Comorbidities & Preferences",
+        "fields": [
+          {
+            "id": "wants-rapid-onset",
+            "name": "wantsRapidOnset",
+            "label": "Wants Rapid Onset (favors JAK inhibitors)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "prefers-oral-therapy",
+            "name": "prefersOralTherapy",
+            "label": "Prefers Oral Therapy",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "prefers-subcutaneous",
+            "name": "prefersSubcutaneous",
+            "label": "Prefers Subcutaneous Injection",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-jak-contraindication",
+            "name": "hasJAKContraindication",
+            "label": "JAK Inhibitor Contraindication (DVT/PE, CV risk, malignancy)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-thromboembolism-history",
+            "name": "hasThromboembolismHistory",
+            "label": "Thromboembolism History",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-cardiovascular-risk",
+            "name": "hasCardiovascularRisk",
+            "label": "Cardiovascular Risk Factors",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-latent-tb",
+            "name": "hasLatentTB",
+            "label": "Latent TB",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-active-tb",
+            "name": "hasActiveTB",
+            "label": "Active TB",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-hepatitis-b",
+            "name": "hasHepatitisB",
+            "label": "Hepatitis B (HBsAg positive)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-malignancy-history",
+            "name": "hasMalignancyHistory",
+            "label": "History of Malignancy",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-congestive-heart-failure",
+            "name": "hasCongestiveHeartFailure",
+            "label": "Congestive Heart Failure",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-demyelinating-disease",
+            "name": "hasDemyelinatingDisease",
+            "label": "Demyelinating Disease (MS)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "is-pregnant-or-planning",
+            "name": "isPregnantOrPlanning",
+            "label": "Pregnant or Planning Pregnancy",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

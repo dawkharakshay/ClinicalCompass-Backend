@@ -1,0 +1,427 @@
+{
+  "title": "Low-Grade Glioma Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "LowGradeGliomaAuthGuide.tsx",
+    "title": "LowGradeGlioma Clinical Compass",
+    "subtitle": "Low Grade Glioma Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "61510",
+        "description": "Craniectomy or craniotomy for excision of brain tumor, supratentorial, except meningioma",
+        "device": "Surgical instruments, microscope",
+        "access": "Open surgical approach",
+        "rvu": "58.59",
+        "includes": [
+          "Approach, tumor localization, dura opening and closure",
+          "Intraoperative imaging (e.g., ultrasound, neuronavigation) when performed",
+          "Hemostasis and wound closure"
+        ],
+        "note": "Used for surgical resection of low-grade gliomas located supratentorially. Excludes meningiomas."
+      },
+      {
+        "code": "77407",
+        "description": "Radiation treatment delivery, intensity modulated radiation therapy (IMRT), intermediate",
+        "device": "Linear accelerator, treatment planning system",
+        "access": "External beam radiation",
+        "rvu": "15.00",
+        "includes": [
+          "Daily setup and verification imaging (e.g., IGRT)",
+          "Treatment delivery and monitoring",
+          "Dosimetry checks"
+        ],
+        "note": "Replaced deleted codes 77385 and 77386. Used for precise radiation delivery to brain tumors, minimizing dose to healthy tissue."
+      },
+      {
+        "code": "96413",
+        "description": "Chemotherapy administration, intravenous infusion technique; up to 1 hour, single or initial substance",
+        "device": "IV pump, chemotherapy administration set",
+        "access": "Intravenous",
+        "rvu": "2.00",
+        "includes": [
+          "Preparation of chemotherapy agent (e.g., temozolomide infusion)",
+          "Monitoring during infusion",
+          "Post-infusion flush"
+        ],
+        "note": "Used for intravenous administration of chemotherapy agents like temozolomide. For oral temozolomide, HCPCS codes J8700 or J9328 may apply."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "C71.0",
+        "description": "Malignant neoplasm of cerebrum, except lobes and ventricles",
+        "notes": "Low-grade glioma in the cerebrum, excluding specific lobes or ventricles.",
+        "required": true
+      },
+      {
+        "code": "C71.1",
+        "description": "Malignant neoplasm of frontal lobe",
+        "notes": "Low-grade glioma located in the frontal lobe.",
+        "required": false
+      },
+      {
+        "code": "C71.2",
+        "description": "Malignant neoplasm of temporal lobe",
+        "notes": "Low-grade glioma located in the temporal lobe.",
+        "required": false
+      },
+      {
+        "code": "C71.3",
+        "description": "Malignant neoplasm of parietal lobe",
+        "notes": "Low-grade glioma located in the parietal lobe.",
+        "required": false
+      },
+      {
+        "code": "C71.9",
+        "description": "Malignant neoplasm of brain, unspecified",
+        "notes": "Used when the specific location of the low-grade glioma within the brain is not documented or specified.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Generally Covered with Prior Authorization",
+        "overview": "Medicare covers a broad range of services for brain tumor diagnosis and treatment, including surgery, radiation therapy, and chemotherapy, when deemed medically necessary. Specific coverage may vary between Original Medicare and Medicare Advantage plans.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required",
+              "Prior authorization is often required for complex procedures like brain surgery, IMRT, and certain chemotherapy regimens. Coverage is generally strong for medically necessary treatments."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Surgical Resection (CPT 61510)",
+            "items": [
+              "Histologically confirmed low-grade glioma amenable to surgical resection.",
+              "Tumor location and size allow for safe resection with acceptable neurological risk.",
+              "Pre-operative imaging (MRI, CT) demonstrating tumor characteristics and extent."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — IMRT (CPT 77407)",
+            "items": [
+              "Histologically confirmed low-grade glioma requiring radiation therapy.",
+              "Detailed treatment plan demonstrating appropriate target volume and dose constraints.",
+              "Consideration of IMRT benefits (e.g., sparing critical structures) over conventional radiation."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Temozolomide (CPT 96413 / HCPCS J8700/J9328)",
+            "items": [
+              "Histologically confirmed low-grade glioma, typically after surgery and/or radiation.",
+              "Patient performance status and hematologic parameters meet treatment criteria.",
+              "Prescribed according to NCCN guidelines or other evidence-based protocols."
+            ]
+          },
+          {
+            "heading": "Required Documentation — General",
+            "items": [
+              "Detailed clinical notes, including history, physical exam, and neurological assessment.",
+              "Pathology report confirming low-grade glioma diagnosis.",
+              "All relevant imaging reports (MRI, CT, PET) and images.",
+              "Consultation notes from neurosurgeon, radiation oncologist, and medical oncologist."
+            ]
+          },
+          {
+            "heading": "Required Documentation — For Surgery",
+            "items": [
+              "Operative report (if prior surgery).",
+              "Pre-operative risk assessment and surgical plan."
+            ]
+          },
+          {
+            "heading": "Required Documentation — For Radiation Therapy",
+            "items": [
+              "Radiation oncology consultation and treatment plan (dosimetry, simulation).",
+              "Weekly on-treatment visit notes."
+            ]
+          },
+          {
+            "heading": "Required Documentation — For Chemotherapy",
+            "items": [
+              "Chemotherapy order and administration records.",
+              "Lab results (CBC, CMP) before and during treatment."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request form with all supporting clinical documentation.",
+              "Ensure all CPT and ICD-10 codes are accurate and specific.",
+              "Follow up with payer regularly for status updates. Appeal denials promptly."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of medical necessity documentation.",
+              "Incorrect or non-specific coding.",
+              "Missing or incomplete clinical information (e.g., pathology, imaging).",
+              "Treatment not aligning with established guidelines (e.g., NCCN)."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Reimbursement rates are determined by Medicare fee schedules. Co-pays and deductibles may apply based on the patient's plan (Original Medicare vs. Medicare Advantage)."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify patient eligibility and benefits prior to services.",
+              "Maintain thorough and accurate medical records.",
+              "Utilize payer-specific portals for submission and status checks.",
+              "Be prepared to appeal denials with additional clinical justification."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS (Medicare)",
+            "status": "Covered",
+            "notes": "Coverage for medically necessary brain tumor treatments, subject to local coverage determinations (LCDs)."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered with Strict Prior Authorization",
+        "overview": "Medicaid provides coverage for low-income individuals. While essential health benefits include cancer treatment, specific services for low-grade glioma may require stringent prior authorization and adherence to state-specific guidelines.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required",
+              "Prior authorization is almost always required for specialized cancer treatments. Coverage criteria can vary significantly by state Medicaid program."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — General",
+            "items": [
+              "Medical necessity clearly established by clinical documentation.",
+              "Treatment must be considered standard of care for low-grade glioma.",
+              "Failure of conservative management or less invasive options (if applicable)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Specific to Low-Grade Glioma",
+            "items": [
+              "Histological confirmation of low-grade glioma.",
+              "Evidence of tumor progression or symptomatic disease requiring intervention.",
+              "Treatment plan aligned with state Medicaid guidelines and evidence-based protocols."
+            ]
+          },
+          {
+            "heading": "Required Documentation — General",
+            "items": [
+              "Comprehensive medical history and physical examination.",
+              "Pathology reports, including tumor grading.",
+              "All diagnostic imaging (MRI, CT) with detailed reports.",
+              "Consultation notes from all involved specialists (neuro-oncology, neurosurgery, radiation oncology).",
+              "Documentation of prior treatments and their outcomes."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Complete state-specific Medicaid prior authorization forms.",
+              "Attach all required clinical documentation, ensuring it supports medical necessity.",
+              "Submit through the state Medicaid portal or designated fax/mail. Allow ample time for review."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of adherence to state-specific coverage policies.",
+              "Insufficient documentation of medical necessity or tumor characteristics.",
+              "Failure to obtain prior authorization before service delivery.",
+              "Treatment considered experimental or investigational by state policy."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Reimbursement rates are typically lower than Medicare or private insurance and are set by individual state Medicaid programs. Patients usually have minimal out-of-pocket costs."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state's Medicaid guidelines for oncology services.",
+              "Ensure all documentation is meticulously prepared and submitted.",
+              "Contact the state Medicaid program directly for clarification on complex cases.",
+              "Advocate for the patient through appeals processes if necessary."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (varies)",
+            "status": "Covered with PA",
+            "notes": "Coverage depends on state-specific medical necessity criteria and formulary adherence."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Covered with Prior Authorization",
+        "overview": "Private insurance coverage for low-grade glioma treatment is generally comprehensive but is subject to plan-specific benefits, deductibles, co-pays, and prior authorization requirements. In-network providers are preferred.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required",
+              "Most private insurance plans require prior authorization for brain tumor treatments, especially for high-cost therapies and complex procedures. Policies vary widely by plan and insurer."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — General Medical Necessity",
+            "items": [
+              "Diagnosis of low-grade glioma confirmed by pathology.",
+              "Treatment plan developed by a multidisciplinary team.",
+              "Consideration of evidence-based guidelines (e.g., NCCN, ASCO)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Specific to Modality",
+            "items": [
+              "For surgery: Documented resectable tumor, symptomatic relief, or diagnostic necessity.",
+              "For radiation: Unresectable tumor, residual disease, or adjuvant therapy indication.",
+              "For chemotherapy: Indication based on molecular markers, tumor progression, or adjuvant setting."
+            ]
+          },
+          {
+            "heading": "Required Documentation — General",
+            "items": [
+              "All clinical notes, including detailed neurological exams.",
+              "Pathology reports, including molecular testing results if performed.",
+              "Complete set of diagnostic imaging reports and films/CDs.",
+              "Referral and consultation notes from all treating physicians.",
+              "Documentation of patient's functional status (e.g., KPS, ECOG)."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request via insurer's online portal, fax, or phone.",
+              "Provide comprehensive clinical summary and all supporting documents.",
+              "Adhere to specific timelines for submission and appeals. Utilize peer-to-peer review if initially denied."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization.",
+              "Treatment deemed not medically necessary or experimental.",
+              "Incomplete or illegible documentation.",
+              "Out-of-network provider utilization without proper authorization.",
+              "Failure to meet specific plan criteria or step therapy requirements."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Reimbursement varies significantly by plan, network status, and negotiated rates. Patients are responsible for deductibles, co-insurance, and co-pays as per their policy terms."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Understand the patient's specific plan benefits and limitations.",
+              "Pre-certify all major procedures and high-cost medications.",
+              "Document all communications with the insurance company, including reference numbers.",
+              "Prepare for peer-to-peer reviews by having a physician available to discuss the case."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Major Private Insurers (e.g., Aetna, Cigna, UHC)",
+            "status": "Covered with PA",
+            "notes": "Policies are highly variable; always check plan-specific medical policies and guidelines."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment (navigates to /lowgradeglioma)",
+        "href": "/lowgradeglioma"
+      }
+    ],
+    "raw": {
+      "markdown": "# LowGradeGlioma Clinical Compass\n\nLow Grade Glioma Insurance Authorization Guide\n\n[Back to Assessment] (link -> /lowgradeglioma)\n\n## Procedure Codes (CPT)\n\n### CPT 61510 — RVU 58.59\nCraniectomy or craniotomy for excision of brain tumor, supratentorial, except meningioma\n\nDevice/Access: Surgical instruments, microscope (Open surgical approach)\n\nIncluded in this code (do NOT bill separately):\n- Approach, tumor localization, dura opening and closure\n- Intraoperative imaging (e.g., ultrasound, neuronavigation) when performed\n- Hemostasis and wound closure\n\nNote: Used for surgical resection of low-grade gliomas located supratentorially. Excludes meningiomas.\n\n### CPT 77407 — RVU 15.00\nRadiation treatment delivery, intensity modulated radiation therapy (IMRT), intermediate\n\nDevice/Access: Linear accelerator, treatment planning system (External beam radiation)\n\nIncluded in this code (do NOT bill separately):\n- Daily setup and verification imaging (e.g., IGRT)\n- Treatment delivery and monitoring\n- Dosimetry checks\n\nNote: Replaced deleted codes 77385 and 77386. Used for precise radiation delivery to brain tumors, minimizing dose to healthy tissue.\n\n### CPT 96413 — RVU 2.00\nChemotherapy administration, intravenous infusion technique; up to 1 hour, single or initial substance\n\nDevice/Access: IV pump, chemotherapy administration set (Intravenous)\n\nIncluded in this code (do NOT bill separately):\n- Preparation of chemotherapy agent (e.g., temozolomide infusion)\n- Monitoring during infusion\n- Post-infusion flush\n\nNote: Used for intravenous administration of chemotherapy agents like temozolomide. For oral temozolomide, HCPCS codes J8700 or J9328 may apply.\n\n## ICD-10 Diagnosis Codes\n\n- C71.0 (Primary/Required) — Malignant neoplasm of cerebrum, except lobes and ventricles. Notes: Low-grade glioma in the cerebrum, excluding specific lobes or ventricles.\n- C71.1 — Malignant neoplasm of frontal lobe. Notes: Low-grade glioma located in the frontal lobe.\n- C71.2 — Malignant neoplasm of temporal lobe. Notes: Low-grade glioma located in the temporal lobe.\n- C71.3 — Malignant neoplasm of parietal lobe. Notes: Low-grade glioma located in the parietal lobe.\n- C71.9 — Malignant neoplasm of brain, unspecified. Notes: Used when the specific location of the low-grade glioma within the brain is not documented or specified.\n\n## Payer-Specific Authorization Requirements\n\n### Medicare\nPrior Auth Required | Coverage Status: Generally Covered with Prior Authorization\n\nPrior Auth Note: Prior authorization is often required for complex procedures like brain surgery, IMRT, and certain chemotherapy regimens. Coverage is generally strong for medically necessary treatments.\n\nOverview: Medicare covers a broad range of services for brain tumor diagnosis and treatment, including surgery, radiation therapy, and chemotherapy, when deemed medically necessary. Specific coverage may vary between Original Medicare and Medicare Advantage plans.\n\n#### Coverage Criteria\n\nSurgical Resection (CPT 61510)\n- Histologically confirmed low-grade glioma amenable to surgical resection.\n- Tumor location and size allow for safe resection with acceptable neurological risk.\n- Pre-operative imaging (MRI, CT) demonstrating tumor characteristics and extent.\n\nIMRT (CPT 77407)\n- Histologically confirmed low-grade glioma requiring radiation therapy.\n- Detailed treatment plan demonstrating appropriate target volume and dose constraints.\n- Consideration of IMRT benefits (e.g., sparing critical structures) over conventional radiation.\n\nTemozolomide (CPT 96413 / HCPCS J8700/J9328)\n- Histologically confirmed low-grade glioma, typically after surgery and/or radiation.\n- Patient performance status and hematologic parameters meet treatment criteria.\n- Prescribed according to NCCN guidelines or other evidence-based protocols.\n\n#### Required Documentation\n\nGeneral\n- Detailed clinical notes, including history, physical exam, and neurological assessment.\n- Pathology report confirming low-grade glioma diagnosis.\n- All relevant imaging reports (MRI, CT, PET) and images.\n- Consultation notes from neurosurgeon, radiation oncologist, and medical oncologist.\n\nFor Surgery\n- Operative report (if prior surgery).\n- Pre-operative risk assessment and surgical plan.\n\nFor Radiation Therapy\n- Radiation oncology consultation and treatment plan (dosimetry, simulation).\n- Weekly on-treatment visit notes.\n\nFor Chemotherapy\n- Chemotherapy order and administration records.\n- Lab results (CBC, CMP) before and during treatment.\n\n#### Submission Process\n1. Submit prior authorization request form with all supporting clinical documentation.\n2. Ensure all CPT and ICD-10 codes are accurate and specific.\n3. Follow up with payer regularly for status updates. Appeal denials promptly.\n\n#### Common Denial Reasons\n- Lack of medical necessity documentation.\n- Incorrect or non-specific coding.\n- Missing or incomplete clinical information (e.g., pathology, imaging).\n- Treatment not aligning with established guidelines (e.g., NCCN).\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| CMS (Medicare) | Covered | Coverage for medically necessary brain tumor treatments, subject to local coverage determinations (LCDs). |\n\n#### Reimbursement Note\nReimbursement rates are determined by Medicare fee schedules. Co-pays and deductibles may apply based on the patient's plan (Original Medicare vs. Medicare Advantage).\n\n#### Authorization Tips\n- Verify patient eligibility and benefits prior to services.\n- Maintain thorough and accurate medical records.\n- Utilize payer-specific portals for submission and status checks.\n- Be prepared to appeal denials with additional clinical justification.\n\n### Medicaid\nPrior Auth Required | Coverage Status: Covered with Strict Prior Authorization\n\nPrior Auth Note: Prior authorization is almost always required for specialized cancer treatments. Coverage criteria can vary significantly by state Medicaid program.\n\nOverview: Medicaid provides coverage for low-income individuals. While essential health benefits include cancer treatment, specific services for low-grade glioma may require stringent prior authorization and adherence to state-specific guidelines.\n\n#### Coverage Criteria\n\nGeneral\n- Medical necessity clearly established by clinical documentation.\n- Treatment must be considered standard of care for low-grade glioma.\n- Failure of conservative management or less invasive options (if applicable).\n\nSpecific to Low-Grade Glioma\n- Histological confirmation of low-grade glioma.\n- Evidence of tumor progression or symptomatic disease requiring intervention.\n- Treatment plan aligned with state Medicaid guidelines and evidence-based protocols.\n\n#### Required Documentation\n\nGeneral\n- Comprehensive medical history and physical examination.\n- Pathology reports, including tumor grading.\n- All diagnostic imaging (MRI, CT) with detailed reports.\n- Consultation notes from all involved specialists (neuro-oncology, neurosurgery, radiation oncology).\n- Documentation of prior treatments and their outcomes.\n\n#### Submission Process\n1. Complete state-specific Medicaid prior authorization forms.\n2. Attach all required clinical documentation, ensuring it supports medical necessity.\n3. Submit through the state Medicaid portal or designated fax/mail. Allow ample time for review.\n\n#### Common Denial Reasons\n- Lack of adherence to state-specific coverage policies.\n- Insufficient documentation of medical necessity or tumor characteristics.\n- Failure to obtain prior authorization before service delivery.\n- Treatment considered experimental or investigational by state policy.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| State Medicaid (varies) | Covered with PA | Coverage depends on state-specific medical necessity criteria and formulary adherence. |\n\n#### Reimbursement Note\nReimbursement rates are typically lower than Medicare or private insurance and are set by individual state Medicaid programs. Patients usually have minimal out-of-pocket costs.\n\n#### Authorization Tips\n- Familiarize yourself with your state's Medicaid guidelines for oncology services.\n- Ensure all documentation is meticulously prepared and submitted.\n- Contact the state Medicaid program directly for clarification on complex cases.\n- Advocate for the patient through appeals processes if necessary.\n\n### Private Insurance\nPrior Auth Required | Coverage Status: Covered with Prior Authorization\n\nPrior Auth Note: Most private insurance plans require prior authorization for brain tumor treatments, especially for high-cost therapies and complex procedures. Policies vary widely by plan and insurer.\n\nOverview: Private insurance coverage for low-grade glioma treatment is generally comprehensive but is subject to plan-specific benefits, deductibles, co-pays, and prior authorization requirements. In-network providers are preferred.\n\n#### Coverage Criteria\n\nGeneral Medical Necessity\n- Diagnosis of low-grade glioma confirmed by pathology.\n- Treatment plan developed by a multidisciplinary team.\n- Consideration of evidence-based guidelines (e.g., NCCN, ASCO).\n\nSpecific to Modality\n- For surgery: Documented resectable tumor, symptomatic relief, or diagnostic necessity.\n- For radiation: Unresectable tumor, residual disease, or adjuvant therapy indication.\n- For chemotherapy: Indication based on molecular markers, tumor progression, or adjuvant setting.\n\n#### Required Documentation\n\nGeneral\n- All clinical notes, including detailed neurological exams.\n- Pathology reports, including molecular testing results if performed.\n- Complete set of diagnostic imaging reports and films/CDs.\n- Referral and consultation notes from all treating physicians.\n- Documentation of patient's functional status (e.g., KPS, ECOG).\n\n#### Submission Process\n1. Submit prior authorization request via insurer's online portal, fax, or phone.\n2. Provide comprehensive clinical summary and all supporting documents.\n3. Adhere to specific timelines for submission and appeals. Utilize peer-to-peer review if initially denied.\n\n#### Common Denial Reasons\n- Lack of prior authorization.\n- Treatment deemed not medically necessary or experimental.\n- Incomplete or illegible documentation.\n- Out-of-network provider utilization without proper authorization.\n- Failure to meet specific plan criteria or step therapy requirements.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| Major Private Insurers (e.g., Aetna, Cigna, UHC) | Covered with PA | Policies are highly variable; always check plan-specific medical policies and guidelines. |\n\n#### Reimbursement Note\nReimbursement varies significantly by plan, network status, and negotiated rates. Patients are responsible for deductibles, co-insurance, and co-pays as per their policy terms.\n\n#### Authorization Tips\n- Understand the patient's specific plan benefits and limitations.\n- Pre-certify all major procedures and high-cost medications.\n- Document all communications with the insurance company, including reference numbers.\n- Prepare for peer-to-peer reviews by having a physician available to discuss the case.\n",
+      "tables": [
+        {
+          "name": "CPT / Procedure Codes",
+          "header": ["CPT Code", "RVU", "Description", "Device/Access", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            [
+              "61510",
+              "58.59",
+              "Craniectomy or craniotomy for excision of brain tumor, supratentorial, except meningioma",
+              "Surgical instruments, microscope (Open surgical approach)",
+              "Approach, tumor localization, dura opening and closure; Intraoperative imaging (e.g., ultrasound, neuronavigation) when performed; Hemostasis and wound closure",
+              "Used for surgical resection of low-grade gliomas located supratentorially. Excludes meningiomas."
+            ],
+            [
+              "77407",
+              "15.00",
+              "Radiation treatment delivery, intensity modulated radiation therapy (IMRT), intermediate",
+              "Linear accelerator, treatment planning system (External beam radiation)",
+              "Daily setup and verification imaging (e.g., IGRT); Treatment delivery and monitoring; Dosimetry checks",
+              "Replaced deleted codes 77385 and 77386. Used for precise radiation delivery to brain tumors, minimizing dose to healthy tissue."
+            ],
+            [
+              "96413",
+              "2.00",
+              "Chemotherapy administration, intravenous infusion technique; up to 1 hour, single or initial substance",
+              "IV pump, chemotherapy administration set (Intravenous)",
+              "Preparation of chemotherapy agent (e.g., temozolomide infusion); Monitoring during infusion; Post-infusion flush",
+              "Used for intravenous administration of chemotherapy agents like temozolomide. For oral temozolomide, HCPCS codes J8700 or J9328 may apply."
+            ]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required (Primary)"],
+          "rows": [
+            ["C71.0", "Malignant neoplasm of cerebrum, except lobes and ventricles", "Low-grade glioma in the cerebrum, excluding specific lobes or ventricles.", "true"],
+            ["C71.1", "Malignant neoplasm of frontal lobe", "Low-grade glioma located in the frontal lobe.", "false"],
+            ["C71.2", "Malignant neoplasm of temporal lobe", "Low-grade glioma located in the temporal lobe.", "false"],
+            ["C71.3", "Malignant neoplasm of parietal lobe", "Low-grade glioma located in the parietal lobe.", "false"],
+            ["C71.9", "Malignant neoplasm of brain, unspecified", "Used when the specific location of the low-grade glioma within the brain is not documented or specified.", "false"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicare",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS (Medicare)", "Covered", "Coverage for medically necessary brain tumor treatments, subject to local coverage determinations (LCDs)."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (varies)", "Covered with PA", "Coverage depends on state-specific medical necessity criteria and formulary adherence."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Private Insurance",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Major Private Insurers (e.g., Aetna, Cigna, UHC)", "Covered with PA", "Policies are highly variable; always check plan-specific medical policies and guidelines."]
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "title": "Total Hip Arthroplasty Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assess",
+    "logicKey": "tha",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "patient-info",
+        "shortLabel": "Patient Info",
+        "title": "Patient Information",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "number",
+            "required": true,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "bmi",
+            "name": "bmi",
+            "label": "BMI (kg/m²)",
+            "type": "number",
+            "required": true,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "affected-side",
+            "name": "affectedSide",
+            "label": "Affected Side",
+            "type": "buttongroup",
+            "required": true,
+            "defaultValue": "",
+            "options": [
+              { "label": "right", "value": "right" },
+              { "label": "left", "value": "left" },
+              { "label": "bilateral", "value": "bilateral" }
+            ]
+          },
+          {
+            "id": "active-infection",
+            "name": "activeInfection",
+            "label": "Active local or systemic infection",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-hip-infection",
+            "name": "priorHipInfection",
+            "label": "Prior periprosthetic hip infection at this site",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "abductor-insufficiency",
+            "name": "abductorInsufficiency",
+            "label": "Severe abductor insufficiency (non-reconstructable)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "severe-vascular-disease",
+            "name": "severeVascularDisease",
+            "label": "Severe peripheral vascular disease",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "clinical-assessment",
+        "shortLabel": "Clinical Assessment",
+        "title": "Clinical Assessment",
+        "fields": [
+          {
+            "id": "pain-score",
+            "name": "painScore",
+            "label": "Pain Score (0-10)",
+            "type": "number",
+            "required": true,
+            "defaultValue": "",
+            "min": 0,
+            "max": 10,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "conservative-therapy-months",
+            "name": "conservativeTherapyMonths",
+            "label": "Conservative Therapy Duration (months)",
+            "type": "number",
+            "required": true,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "conservative-therapies",
+            "name": "conservativeTherapies",
+            "label": "Conservative Therapies Tried",
+            "type": "multiselect",
+            "defaultValue": [],
+            "options": [
+              { "label": "Physical therapy (≥6 weeks)", "value": "pt" },
+              { "label": "NSAIDs / analgesics (≥4 weeks)", "value": "nsaids" },
+              { "label": "Intraarticular corticosteroid injection", "value": "intraarticular" },
+              { "label": "Hyaluronic acid injection", "value": "hyaluronic" },
+              { "label": "Activity modification / assistive device", "value": "activity-mod" },
+              { "label": "Weight loss program", "value": "weight-loss" }
+            ]
+          },
+          {
+            "id": "functional-limitations",
+            "name": "functionalLimitations",
+            "label": "Functional Limitations",
+            "type": "multiselect",
+            "defaultValue": [],
+            "options": [
+              { "label": "Difficulty with activities of daily living (dressing, bathing)", "value": "adl" },
+              { "label": "Limited ambulation (<1 block)", "value": "ambulation" },
+              { "label": "Difficulty with stairs", "value": "stairs" },
+              { "label": "Sleep disturbance due to hip pain", "value": "sleep" },
+              { "label": "Unable to perform occupational duties", "value": "work" },
+              { "label": "Unable to participate in recreational activities", "value": "recreation" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "imaging-comorbidities",
+        "shortLabel": "Imaging & Comorbidities",
+        "title": "Imaging & Comorbidities",
+        "fields": [
+          {
+            "id": "radiographic-findings",
+            "name": "radiographicFindings",
+            "label": "Radiographic Findings (Weight-bearing AP Pelvis + Lateral)",
+            "type": "multiselect",
+            "defaultValue": [],
+            "options": [
+              { "label": "Joint space narrowing (≥50%)", "value": "joint-space-loss" },
+              { "label": "Severe joint space loss / bone-on-bone", "value": "severe-joint-space-loss" },
+              { "label": "Osteophyte formation", "value": "osteophytes" },
+              { "label": "Subchondral sclerosis", "value": "subchondral-sclerosis" },
+              { "label": "Avascular necrosis (AVN)", "value": "avascular-necrosis" },
+              { "label": "Hip dysplasia / developmental abnormality", "value": "dysplasia" },
+              { "label": "Protrusio acetabuli", "value": "protrusio" }
+            ]
+          },
+          {
+            "id": "comorbidities",
+            "name": "comorbidities",
+            "label": "Comorbidities",
+            "type": "multiselect",
+            "defaultValue": [],
+            "options": [
+              { "label": "Uncontrolled diabetes (HbA1c >8%)", "value": "uncontrolled-dm" },
+              { "label": "Active smoking", "value": "active-smoking" },
+              { "label": "Immunosuppression / biologic therapy", "value": "immunosuppression" },
+              { "label": "Significant cardiac disease", "value": "cardiac" },
+              { "label": "Coagulopathy / anticoagulation", "value": "coagulopathy" },
+              { "label": "Malnutrition / low albumin", "value": "malnutrition" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "title": "Narcolepsy Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Assessment",
+    "logicKey": "narcolepsy",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "symptoms",
+        "shortLabel": "Symptoms",
+        "title": "Symptom Assessment",
+        "fields": [
+          {
+            "id": "ess",
+            "name": "ess",
+            "label": "Epworth Sleepiness Scale (ESS) Score (0–24)",
+            "type": "number",
+            "required": true,
+            "defaultValue": "",
+            "min": 0,
+            "max": 24,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "cataplexy",
+            "name": "cataplexy",
+            "label": "Cataplexy (sudden bilateral muscle weakness triggered by emotions)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "sleep-paralysis",
+            "name": "sleepParalysis",
+            "label": "Sleep paralysis",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "hypnagogic-hallucinations",
+            "name": "hypnagogicHallucinations",
+            "label": "Hypnagogic/hypnopompic hallucinations",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "automatic-behavior",
+            "name": "automaticBehavior",
+            "label": "Automatic behavior episodes",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "disrupted-nocturnal-sleep",
+            "name": "disrupted_nocturnal_sleep",
+            "label": "Disrupted nocturnal sleep",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "diagnostic-criteria",
+        "shortLabel": "Diagnostic Criteria",
+        "title": "Diagnostic Criteria (ICSD-3 / AASM 2021)",
+        "fields": [
+          {
+            "id": "type",
+            "name": "type",
+            "label": "Narcolepsy Type",
+            "type": "select",
+            "defaultValue": "unknown",
+            "options": [
+              { "label": "Type 1 (with cataplexy or low CSF hypocretin)", "value": "type1" },
+              { "label": "Type 2 (without cataplexy, normal CSF hypocretin)", "value": "type2" },
+              { "label": "Not yet classified", "value": "unknown" }
+            ]
+          },
+          {
+            "id": "csf-hypocretin",
+            "name": "csf_hypocretin",
+            "label": "CSF Hypocretin-1 Level",
+            "type": "select",
+            "defaultValue": "not_tested",
+            "options": [
+              { "label": "Not tested", "value": "not_tested" },
+              { "label": "Low (≤110 pg/mL — diagnostic for NT1)", "value": "low" },
+              { "label": "Intermediate (111–200 pg/mL)", "value": "intermediate" },
+              { "label": "Normal (>200 pg/mL)", "value": "normal" }
+            ]
+          },
+          {
+            "id": "comorbid-osa",
+            "name": "comorbid_osa",
+            "label": "Comorbid obstructive sleep apnea (OSA)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "comorbid-depression",
+            "name": "comorbid_depression",
+            "label": "Comorbid depression",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "comorbid-anxiety",
+            "name": "comorbid_anxiety",
+            "label": "Comorbid anxiety disorder",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "sleep-study-data",
+        "shortLabel": "Sleep Study Data",
+        "title": "Sleep Study Data (PSG + MSLT)",
+        "fields": [
+          {
+            "id": "psg-performed",
+            "name": "psg_performed",
+            "label": "Overnight PSG performed",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "psg-rem-latency",
+            "name": "psg_rem_latency",
+            "label": "PSG REM Latency (minutes)",
+            "type": "number",
+            "defaultValue": "",
+            "min": 0,
+            "unit": "minutes",
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "psg_performed", "op": "truthy" }
+          },
+          {
+            "id": "mslt-sol",
+            "name": "mslt_sol",
+            "label": "MSLT Mean Sleep Onset Latency (minutes)",
+            "type": "number",
+            "defaultValue": "",
+            "min": 0,
+            "step": 0.5,
+            "unit": "minutes",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "mslt-sorems",
+            "name": "mslt_sorems",
+            "label": "MSLT Number of SOREMPs (0–5)",
+            "type": "number",
+            "defaultValue": "",
+            "min": 0,
+            "max": 5,
+            "keyboardType": "numeric"
+          }
+        ]
+      },
+      {
+        "id": "current-medications",
+        "shortLabel": "Current Medications",
+        "title": "Current Medications & Treatment History",
+        "fields": [
+          {
+            "id": "current-stimulant",
+            "name": "current_stimulant",
+            "label": "Stimulant (modafinil, armodafinil, amphetamine)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "current-sodium-oxybate",
+            "name": "current_sodium_oxybate",
+            "label": "Sodium oxybate (Xyrem / Lumryz)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "current-pitolisant",
+            "name": "current_pitolisant",
+            "label": "Pitolisant (Wakix)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "current-solriamfetol",
+            "name": "current_solriamfetol",
+            "label": "Solriamfetol (Sunosi)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-treatment-failed",
+            "name": "prior_treatment_failed",
+            "label": "Prior treatment failure documented",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "assessment",
+        "shortLabel": "Assessment",
+        "title": "Narcolepsy Assessment",
+        "fields": []
+      }
+    ]
+  }
+}

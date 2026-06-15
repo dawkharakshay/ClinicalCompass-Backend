@@ -1,0 +1,30 @@
+{
+  "title": "Sclerotherapy Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "36468, 36470, 36471, 36465, 36466, 93971",
+      "credentials": "[Credentials]",
+      "icd_codes": "I83.811, I83.812, I83.10, I83.001, I87.2, I78.1, I83.90",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "To Whom It May Concern,\n\nI am writing to formally appeal the denial of prior authorization for sclerotherapy for my patient {{patient_name}}, Date of Birth {{patient_dob}}, Member ID {{member_id}}.\n\nCLINICAL SUMMARY:\nThis patient presents with symptomatic chronic venous disease classified as CEAP [CLASS], involving [VESSEL TYPE] with a vessel diameter of approximately [DIAMETER] mm. The patient has undergone a [WEEKS]-week trial of graduated compression stockings with documented compliance and persistent symptoms including [SYMPTOMS].\n\nGUIDELINE SUPPORT:\nSclerotherapy is supported by the highest level of evidence in the 2022 Society for Vascular Surgery (SVS), American Venous Forum (AVF), and American Vein and Lymphatic Society (AVLS) Clinical Practice Guidelines:\n\n• Grade 1A Recommendation: \"We recommend sclerotherapy for treatment of telangiectasias, reticular veins, and residual varicosities after truncal vein ablation.\" (Gloviczki P, et al. J Vasc Surg Venous Lymphat Disord. 2023;11(2):231-261)\n\n• European Guidelines on Sclerotherapy (Rabe E, et al. Phlebology. 2014): Sclerotherapy is the treatment of choice for telangiectasias and reticular veins, and is recommended for varicose veins when endovenous ablation is not feasible.\n\n• Multiple randomized controlled trials demonstrate that foam sclerotherapy achieves 70–80% occlusion rates at 5 years for truncal veins, with a favorable safety profile and minimal recovery time.\n\nMEDICAL NECESSITY:\nThe requested procedure meets all criteria for medical necessity:\n1. CEAP clinical classification [CLASS] with symptomatic venous disease\n2. [Duplex-confirmed venous reflux / Residual varicosities after prior ablation]\n3. Completed compression stocking trial with documented failure\n4. Symptoms attributable to venous disease causing functional impairment\n\nCONCLUSION:\nDenial of this procedure is not consistent with current evidence-based guidelines. Sclerotherapy is the appropriate, minimally invasive, and cost-effective treatment for this patient's venous disease. I respectfully request immediate reconsideration and approval.\n\nSincerely,\n{{physician_name}}, {{credentials}}\nNPI: {{npi}}\n{{letter_date}}"
+  }
+}

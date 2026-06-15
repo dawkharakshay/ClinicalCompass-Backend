@@ -1,0 +1,30 @@
+{
+  "title": "Gestational Carrier Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "58970, 58974, 58976, 89250, 89253, 89280, 89337, 89352, 89353, 76830",
+      "credentials": "[Credentials]",
+      "icd_codes": "Q51.0, Q51.810, N85.6, Z90.710, Z90.711, Z90.712, N97.2, Z31.83",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "To Whom It May Concern,\n\nI am writing to formally appeal the denial of prior authorization for gestational carrier (surrogacy) procedures for my patient. The use of a gestational carrier is medically necessary due to an absolute uterine factor that makes it impossible for my patient to carry a pregnancy.\n\nCLINICAL SUMMARY\n\nMy patient has [congenital absence of the uterus (MRKH syndrome) / surgical absence of the uterus following hysterectomy for (indication) / severe Asherman syndrome with failed hysteroscopic treatment / medical contraindication to pregnancy (specify)]. She has no uterus and therefore cannot carry a pregnancy. A gestational carrier is the only option for her to have a genetically related child.\n\nDENIAL REBUTTAL\n\nIf denied as \"surrogacy exclusion\": The benefit exclusion for \"surrogacy\" applies to social or elective surrogacy arrangements. This is not an elective arrangement. My patient has an absolute medical indication — she is physically incapable of carrying a pregnancy. Denying this claim on the basis of a surrogacy exclusion misapplies the exclusion to a case of medical necessity.\n\nIf denied as \"not medically necessary\": The absence of a uterus is a medical condition. The gestational carrier is the medical treatment for this condition, just as a kidney transplant is the treatment for end-stage renal disease. There is no alternative treatment.\n\nEVIDENCE BASE\n\nASRM Practice Committee (Fertil Steril. 2022;118(1):65-74) identifies absolute uterine factor infertility as the primary indication for gestational carrier. ACOG Committee Opinion No. 660 (2016) supports the use of gestational carriers for women with medical conditions that make pregnancy impossible or medically contraindicated.\n\nCONCLUSION\n\nI respectfully request reconsideration and approval of gestational carrier procedures for my patient. This is not an elective arrangement — it is the only medically available treatment for her condition.\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\n{{letter_date}}"
+  }
+}

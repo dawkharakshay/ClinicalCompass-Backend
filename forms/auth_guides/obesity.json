@@ -1,0 +1,418 @@
+{
+  "title": "Obesity Treatment Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "ObesityAuthGuide.tsx",
+    "title": "Obesity Clinical Compass",
+    "subtitle": "Bariatric Surgery & GLP-1 Agonists Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "43644",
+        "description": "Laparoscopy, surgical, gastric restrictive procedure; gastric bypass and Roux-en-Y gastroenterostomy (roux limb 150 cm or less)",
+        "device": "Laparoscopic surgical instruments",
+        "access": "Laparoscopic",
+        "rvu": "29.40",
+        "includes": [
+          "Creation of gastric pouch",
+          "Roux-en-Y gastrojejunostomy",
+          "Closure of mesenteric defects"
+        ],
+        "note": "This code describes the laparoscopic Roux-en-Y gastric bypass, a common bariatric procedure."
+      },
+      {
+        "code": "43645",
+        "description": "Laparoscopy, surgical, gastric restrictive procedure; with gastric bypass and small intestine reconstruction to limit absorption",
+        "device": "Laparoscopic surgical instruments",
+        "access": "Laparoscopic",
+        "rvu": "31.53",
+        "includes": [
+          "Creation of gastric pouch",
+          "Biliopancreatic limb creation",
+          "Roux limb creation",
+          "Enteroenterostomy"
+        ],
+        "note": "This code is used for more complex malabsorptive procedures, such as biliopancreatic diversion with duodenal switch."
+      },
+      {
+        "code": "43770",
+        "description": "Laparoscopy, surgical, gastric restrictive procedure; placement of adjustable gastric restrictive device (e.g., gastric band and subcutaneous port components)",
+        "device": "Adjustable gastric band, subcutaneous port",
+        "access": "Laparoscopic",
+        "rvu": "18.00",
+        "includes": [
+          "Placement of gastric band",
+          "Placement of subcutaneous port",
+          "Connection of band to port"
+        ],
+        "note": "This code is for the placement of an adjustable gastric band. Note that this procedure is less common now due to efficacy and complication rates compared to other bariatric surgeries."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "E66.01",
+        "description": "Morbid (severe) obesity due to excess calories",
+        "notes": "Used for patients with a BMI of 40 or greater, or a BMI of 35 or greater with significant obesity-related comorbidities.",
+        "required": true
+      },
+      {
+        "code": "E66.9",
+        "description": "Obesity, unspecified",
+        "notes": "Use when the specific type of obesity is not documented or known.",
+        "required": false
+      },
+      {
+        "code": "Z68.37",
+        "description": "Body mass index (BMI) 37.0-37.9, adult",
+        "notes": "Used to specify BMI for adults. Often required by payers in conjunction with E66 codes.",
+        "required": false
+      },
+      {
+        "code": "Z68.41",
+        "description": "Body mass index (BMI) 40.0-44.9, adult",
+        "notes": "Used to specify BMI for adults. Often required by payers in conjunction with E66 codes, especially for morbid obesity.",
+        "required": true
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Conditional Coverage",
+        "overview": "Medicare covers certain bariatric surgical procedures for beneficiaries with morbid obesity who meet specific criteria. Coverage for GLP-1 agonists for weight loss is generally excluded unless for specific indications like type 2 diabetes with cardiovascular disease.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicare requires strict adherence to coverage criteria for bariatric surgery and GLP-1 agonists. Documentation must clearly support medical necessity.",
+        "reimbursementNote": "Reimbursement for bariatric surgery is typically bundled. Ensure all pre-operative requirements are met to avoid denials. GLP-1 agonist reimbursement is highly restricted.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Bariatric Surgery",
+            "items": [
+              "BMI ≥ 35 kg/m² with at least one obesity-related comorbidity (e.g., diabetes, hypertension, sleep apnea).",
+              "BMI ≥ 40 kg/m² without comorbidities. (Some MACs may require BMI ≥ 35 with comorbidities).",
+              "Participation in a supervised weight loss program for a specified duration (e.g., 6 months) prior to surgery. This program must be documented. (Some MACs may not require this).",
+              "Psychological evaluation and clearance. (Some MACs may not require this).",
+              "Absence of contraindications for surgery. (e.g., active substance abuse, uncontrolled psychiatric illness)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — GLP-1 Agonists (e.g., Wegovy, Saxenda)",
+            "items": [
+              "Generally not covered for weight loss alone due to statutory exclusion for drugs used for anorexia, weight loss, or weight gain.",
+              "May be covered if used for an FDA-approved indication other than weight loss (e.g., type 2 diabetes with established cardiovascular disease for Wegovy/Ozempic).",
+              "Beneficiary must meet specific criteria for the covered indication."
+            ]
+          },
+          {
+            "heading": "Required Documentation — Medical Records",
+            "items": [
+              "Detailed history and physical examination documenting obesity and related comorbidities.",
+              "Documentation of BMI over time.",
+              "Records of previous weight loss attempts, including diet, exercise, and behavioral therapy.",
+              "Consultation reports from specialists (e.g., endocrinologist, cardiologist, pulmonologist)."
+            ]
+          },
+          {
+            "heading": "Required Documentation — Pre-operative Evaluation",
+            "items": [
+              "Psychological evaluation report.",
+              "Nutritional counseling records.",
+              "Surgical risk assessment."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request with all supporting clinical documentation.",
+              "Ensure all coverage criteria are explicitly addressed in the documentation.",
+              "Follow specific Medicare Administrative Contractor (MAC) guidelines for submission."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet BMI criteria.",
+              "Insufficient documentation of supervised weight loss attempts.",
+              "Lack of psychological clearance.",
+              "Inadequate documentation of obesity-related comorbidities.",
+              "GLP-1 agonists prescribed solely for weight loss without a covered indication."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Thoroughly document all conservative weight loss efforts and their outcomes.",
+              "Ensure psychological evaluation addresses patient readiness and understanding of the procedure.",
+              "Stay updated on MAC-specific coverage policies, as they can vary.",
+              "For GLP-1s, clearly document the FDA-approved indication for which the drug is being prescribed if not for weight loss."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS (National)",
+            "status": "Covered (Bariatric Surgery)",
+            "notes": "Covers certain bariatric surgeries for morbid obesity meeting specific criteria."
+          },
+          {
+            "payer": "CMS (National)",
+            "status": "Non-covered (GLP-1 for weight loss)",
+            "notes": "Statutory exclusion for drugs used for weight loss."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Variable Coverage by State",
+        "overview": "Medicaid programs may cover bariatric surgery and, in some states, GLP-1 agonists for obesity, often with criteria similar to or stricter than Medicare. Coverage is highly dependent on state regulations and medical necessity.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid coverage for obesity treatments varies significantly by state. Always check state-specific guidelines.",
+        "reimbursementNote": "Reimbursement rates and coverage policies for obesity treatments under Medicaid are highly variable by state. Confirm eligibility and specific criteria beforehand.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Bariatric Surgery",
+            "items": [
+              "BMI ≥ 35 kg/m² with significant comorbidities or BMI ≥ 40 kg/m².",
+              "Completion of a multidisciplinary evaluation, including nutritional, psychological, and medical assessments.",
+              "Documented history of failed non-surgical weight loss attempts.",
+              "Age restrictions may apply (e.g., 18-65 years)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — GLP-1 Agonists",
+            "items": [
+              "Coverage for GLP-1 agonists for weight loss is emerging in some states but is not universal.",
+              "When covered, criteria often include BMI thresholds, documented comorbidities, and prior authorization requirements.",
+              "May require trial and failure of other weight management medications."
+            ]
+          },
+          {
+            "heading": "Required Documentation — Medical Records",
+            "items": [
+              "Comprehensive medical history and physical.",
+              "Documentation of BMI and obesity-related conditions.",
+              "Records of participation in a structured weight management program.",
+              "Psychological and nutritional evaluations."
+            ]
+          },
+          {
+            "heading": "Required Documentation — State-Specific Forms",
+            "items": [
+              "Completion of any required state Medicaid prior authorization forms.",
+              "Attestation of medical necessity by the treating physician."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request through the state Medicaid portal or designated process.",
+              "Adhere strictly to state-specific documentation requirements and timelines.",
+              "Be prepared for potential peer-to-peer reviews."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet state-specific BMI or comorbidity criteria.",
+              "Incomplete documentation of pre-operative evaluations.",
+              "Lack of documented failed conservative treatments.",
+              "GLP-1 agonist not covered by the specific state Medicaid plan for weight loss."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify the latest state Medicaid guidelines for obesity treatment prior to initiating care.",
+              "Maintain meticulous records of all patient evaluations and weight loss efforts.",
+              "Engage in early communication with Medicaid case managers if complex cases arise."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (e.g., California)",
+            "status": "Covered (Bariatric Surgery)",
+            "notes": "Covers bariatric surgery with specific medical necessity criteria."
+          },
+          {
+            "payer": "State Medicaid (e.g., New York)",
+            "status": "Emerging Coverage (GLP-1 for weight loss)",
+            "notes": "Some states are beginning to cover GLP-1s for weight loss under strict criteria."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Variable Coverage by Plan",
+        "overview": "Most private insurance plans offer some level of coverage for bariatric surgery, often with criteria similar to Medicare. Coverage for GLP-1 agonists for weight loss is increasing but remains highly variable and often requires strict prior authorization.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Private insurance plans vary widely in their coverage for obesity treatments. Always verify benefits and requirements for each patient.",
+        "reimbursementNote": "Reimbursement for bariatric surgery is generally good if criteria are met. Coverage for GLP-1 agonists for weight loss is highly variable and often requires significant advocacy.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Bariatric Surgery",
+            "items": [
+              "BMI ≥ 35 kg/m² with at least one severe obesity-related comorbidity (e.g., type 2 diabetes, severe sleep apnea, cardiovascular disease).",
+              "BMI ≥ 40 kg/m² without comorbidities.",
+              "Documented participation in a medically supervised weight management program (often 3-12 months).",
+              "Psychological evaluation and clearance.",
+              "Nutritional counseling and education.",
+              "Absence of contraindications (e.g., active eating disorder, uncontrolled psychiatric illness)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — GLP-1 Agonists (e.g., Wegovy, Zepbound)",
+            "items": [
+              "Coverage is highly plan-dependent and often requires a specific BMI threshold (e.g., BMI ≥ 30 or BMI ≥ 27 with comorbidities).",
+              "Prior authorization is almost always required, with documentation of medical necessity and failed trials of other weight loss interventions.",
+              "May require enrollment in a lifestyle modification program.",
+              "Some plans may exclude coverage for weight loss medications entirely."
+            ]
+          },
+          {
+            "heading": "Required Documentation — Medical Records",
+            "items": [
+              "Comprehensive medical history, including weight history and comorbidities.",
+              "Records of all prior weight loss interventions, including dates, duration, and outcomes.",
+              "Psychological and nutritional assessment reports.",
+              "Physician’s letter of medical necessity."
+            ]
+          },
+          {
+            "heading": "Required Documentation — Plan-Specific Forms",
+            "items": [
+              "Completion of the insurer’s specific prior authorization forms.",
+              "Submission of clinical notes and test results supporting the diagnosis and treatment plan."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request via the insurer’s online portal or fax.",
+              "Follow up regularly on the status of the authorization.",
+              "Be prepared to appeal denials with additional clinical information and peer-to-peer discussions."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet BMI or comorbidity criteria as defined by the plan.",
+              "Insufficient duration or documentation of supervised weight loss program.",
+              "Lack of psychological clearance or unresolved contraindications.",
+              "Plan exclusion for weight loss medications or bariatric surgery.",
+              "Inadequate documentation of medical necessity for GLP-1 agonists."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify patient-specific benefits and coverage criteria before initiating treatment.",
+              "Document all aspects of the patient’s weight loss journey thoroughly.",
+              "Be proactive in submitting comprehensive documentation and appealing denials.",
+              "Educate patients on their plan’s specific coverage for obesity treatments."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Covered (Bariatric Surgery)",
+            "notes": "Most plans cover bariatric surgery with strict criteria."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Variable Coverage (GLP-1 for weight loss)",
+            "notes": "Coverage depends on specific plan and formulary; often requires PA and step therapy."
+          },
+          {
+            "payer": "Aetna",
+            "status": "Covered (Bariatric Surgery)",
+            "notes": "Covers bariatric surgery for morbid obesity; may require Centers of Excellence."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment",
+        "href": "/obesity"
+      },
+      {
+        "heading": "Procedure Codes — Card Note",
+        "kind": "prose",
+        "text": "For each CPT code, the items listed under \"Included in this code\" are bundled and must NOT be billed separately."
+      }
+    ],
+    "raw": {
+      "markdown": "# Obesity Clinical Compass\n## Bariatric Surgery & GLP-1 Agonists Insurance Authorization Guide\n\n[Button] Back to Assessment (links to /obesity)\n\n---\n\n## Procedure Codes (CPT)\n\n### CPT 43644 — RVU 29.40\nLaparoscopy, surgical, gastric restrictive procedure; gastric bypass and Roux-en-Y gastroenterostomy (roux limb 150 cm or less)\nDevice/Access: Laparoscopic surgical instruments (Laparoscopic)\nIncluded in this code (do NOT bill separately):\n- Creation of gastric pouch\n- Roux-en-Y gastrojejunostomy\n- Closure of mesenteric defects\nNote: This code describes the laparoscopic Roux-en-Y gastric bypass, a common bariatric procedure.\n\n### CPT 43645 — RVU 31.53\nLaparoscopy, surgical, gastric restrictive procedure; with gastric bypass and small intestine reconstruction to limit absorption\nDevice/Access: Laparoscopic surgical instruments (Laparoscopic)\nIncluded in this code (do NOT bill separately):\n- Creation of gastric pouch\n- Biliopancreatic limb creation\n- Roux limb creation\n- Enteroenterostomy\nNote: This code is used for more complex malabsorptive procedures, such as biliopancreatic diversion with duodenal switch.\n\n### CPT 43770 — RVU 18.00\nLaparoscopy, surgical, gastric restrictive procedure; placement of adjustable gastric restrictive device (e.g., gastric band and subcutaneous port components)\nDevice/Access: Adjustable gastric band, subcutaneous port (Laparoscopic)\nIncluded in this code (do NOT bill separately):\n- Placement of gastric band\n- Placement of subcutaneous port\n- Connection of band to port\nNote: This code is for the placement of an adjustable gastric band. Note that this procedure is less common now due to efficacy and complication rates compared to other bariatric surgeries.\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- E66.01 — Morbid (severe) obesity due to excess calories [Primary/Required]\n  Notes: Used for patients with a BMI of 40 or greater, or a BMI of 35 or greater with significant obesity-related comorbidities.\n- E66.9 — Obesity, unspecified\n  Notes: Use when the specific type of obesity is not documented or known.\n- Z68.37 — Body mass index (BMI) 37.0-37.9, adult\n  Notes: Used to specify BMI for adults. Often required by payers in conjunction with E66 codes.\n- Z68.41 — Body mass index (BMI) 40.0-44.9, adult [Primary/Required]\n  Notes: Used to specify BMI for adults. Often required by payers in conjunction with E66 codes, especially for morbid obesity.\n\n---\n\n## Payer-Specific Authorization Requirements\n\n### Medicare\nPrior Auth Required | Conditional Coverage\nPrior Auth Note (warning): Medicare requires strict adherence to coverage criteria for bariatric surgery and GLP-1 agonists. Documentation must clearly support medical necessity.\nOverview: Medicare covers certain bariatric surgical procedures for beneficiaries with morbid obesity who meet specific criteria. Coverage for GLP-1 agonists for weight loss is generally excluded unless for specific indications like type 2 diabetes with cardiovascular disease.\n\n#### Coverage Criteria\nBariatric Surgery:\n- BMI ≥ 35 kg/m² with at least one obesity-related comorbidity (e.g., diabetes, hypertension, sleep apnea).\n- BMI ≥ 40 kg/m² without comorbidities. (Some MACs may require BMI ≥ 35 with comorbidities).\n- Participation in a supervised weight loss program for a specified duration (e.g., 6 months) prior to surgery. This program must be documented. (Some MACs may not require this).\n- Psychological evaluation and clearance. (Some MACs may not require this).\n- Absence of contraindications for surgery. (e.g., active substance abuse, uncontrolled psychiatric illness).\nGLP-1 Agonists (e.g., Wegovy, Saxenda):\n- Generally not covered for weight loss alone due to statutory exclusion for drugs used for anorexia, weight loss, or weight gain.\n- May be covered if used for an FDA-approved indication other than weight loss (e.g., type 2 diabetes with established cardiovascular disease for Wegovy/Ozempic).\n- Beneficiary must meet specific criteria for the covered indication.\n\n#### Required Documentation\nMedical Records:\n- Detailed history and physical examination documenting obesity and related comorbidities.\n- Documentation of BMI over time.\n- Records of previous weight loss attempts, including diet, exercise, and behavioral therapy.\n- Consultation reports from specialists (e.g., endocrinologist, cardiologist, pulmonologist).\nPre-operative Evaluation:\n- Psychological evaluation report.\n- Nutritional counseling records.\n- Surgical risk assessment.\n\n#### Submission Process\n1. Submit prior authorization request with all supporting clinical documentation.\n2. Ensure all coverage criteria are explicitly addressed in the documentation.\n3. Follow specific Medicare Administrative Contractor (MAC) guidelines for submission.\n\n#### Common Denial Reasons\n- Failure to meet BMI criteria.\n- Insufficient documentation of supervised weight loss attempts.\n- Lack of psychological clearance.\n- Inadequate documentation of obesity-related comorbidities.\n- GLP-1 agonists prescribed solely for weight loss without a covered indication.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS (National) | Covered (Bariatric Surgery) | Covers certain bariatric surgeries for morbid obesity meeting specific criteria. |\n| CMS (National) | Non-covered (GLP-1 for weight loss) | Statutory exclusion for drugs used for weight loss. |\n\n#### Reimbursement Note\nReimbursement for bariatric surgery is typically bundled. Ensure all pre-operative requirements are met to avoid denials. GLP-1 agonist reimbursement is highly restricted.\n\n#### Authorization Tips\n- Thoroughly document all conservative weight loss efforts and their outcomes.\n- Ensure psychological evaluation addresses patient readiness and understanding of the procedure.\n- Stay updated on MAC-specific coverage policies, as they can vary.\n- For GLP-1s, clearly document the FDA-approved indication for which the drug is being prescribed if not for weight loss.\n\n---\n\n### Medicaid\nPrior Auth Required | Variable Coverage by State\nPrior Auth Note (warning): Medicaid coverage for obesity treatments varies significantly by state. Always check state-specific guidelines.\nOverview: Medicaid programs may cover bariatric surgery and, in some states, GLP-1 agonists for obesity, often with criteria similar to or stricter than Medicare. Coverage is highly dependent on state regulations and medical necessity.\n\n#### Coverage Criteria\nBariatric Surgery:\n- BMI ≥ 35 kg/m² with significant comorbidities or BMI ≥ 40 kg/m².\n- Completion of a multidisciplinary evaluation, including nutritional, psychological, and medical assessments.\n- Documented history of failed non-surgical weight loss attempts.\n- Age restrictions may apply (e.g., 18-65 years).\nGLP-1 Agonists:\n- Coverage for GLP-1 agonists for weight loss is emerging in some states but is not universal.\n- When covered, criteria often include BMI thresholds, documented comorbidities, and prior authorization requirements.\n- May require trial and failure of other weight management medications.\n\n#### Required Documentation\nMedical Records:\n- Comprehensive medical history and physical.\n- Documentation of BMI and obesity-related conditions.\n- Records of participation in a structured weight management program.\n- Psychological and nutritional evaluations.\nState-Specific Forms:\n- Completion of any required state Medicaid prior authorization forms.\n- Attestation of medical necessity by the treating physician.\n\n#### Submission Process\n1. Submit prior authorization request through the state Medicaid portal or designated process.\n2. Adhere strictly to state-specific documentation requirements and timelines.\n3. Be prepared for potential peer-to-peer reviews.\n\n#### Common Denial Reasons\n- Failure to meet state-specific BMI or comorbidity criteria.\n- Incomplete documentation of pre-operative evaluations.\n- Lack of documented failed conservative treatments.\n- GLP-1 agonist not covered by the specific state Medicaid plan for weight loss.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (e.g., California) | Covered (Bariatric Surgery) | Covers bariatric surgery with specific medical necessity criteria. |\n| State Medicaid (e.g., New York) | Emerging Coverage (GLP-1 for weight loss) | Some states are beginning to cover GLP-1s for weight loss under strict criteria. |\n\n#### Reimbursement Note\nReimbursement rates and coverage policies for obesity treatments under Medicaid are highly variable by state. Confirm eligibility and specific criteria beforehand.\n\n#### Authorization Tips\n- Verify the latest state Medicaid guidelines for obesity treatment prior to initiating care.\n- Maintain meticulous records of all patient evaluations and weight loss efforts.\n- Engage in early communication with Medicaid case managers if complex cases arise.\n\n---\n\n### Private Insurance\nPrior Auth Required | Variable Coverage by Plan\nPrior Auth Note (warning): Private insurance plans vary widely in their coverage for obesity treatments. Always verify benefits and requirements for each patient.\nOverview: Most private insurance plans offer some level of coverage for bariatric surgery, often with criteria similar to Medicare. Coverage for GLP-1 agonists for weight loss is increasing but remains highly variable and often requires strict prior authorization.\n\n#### Coverage Criteria\nBariatric Surgery:\n- BMI ≥ 35 kg/m² with at least one severe obesity-related comorbidity (e.g., type 2 diabetes, severe sleep apnea, cardiovascular disease).\n- BMI ≥ 40 kg/m² without comorbidities.\n- Documented participation in a medically supervised weight management program (often 3-12 months).\n- Psychological evaluation and clearance.\n- Nutritional counseling and education.\n- Absence of contraindications (e.g., active eating disorder, uncontrolled psychiatric illness).\nGLP-1 Agonists (e.g., Wegovy, Zepbound):\n- Coverage is highly plan-dependent and often requires a specific BMI threshold (e.g., BMI ≥ 30 or BMI ≥ 27 with comorbidities).\n- Prior authorization is almost always required, with documentation of medical necessity and failed trials of other weight loss interventions.\n- May require enrollment in a lifestyle modification program.\n- Some plans may exclude coverage for weight loss medications entirely.\n\n#### Required Documentation\nMedical Records:\n- Comprehensive medical history, including weight history and comorbidities.\n- Records of all prior weight loss interventions, including dates, duration, and outcomes.\n- Psychological and nutritional assessment reports.\n- Physician’s letter of medical necessity.\nPlan-Specific Forms:\n- Completion of the insurer’s specific prior authorization forms.\n- Submission of clinical notes and test results supporting the diagnosis and treatment plan.\n\n#### Submission Process\n1. Submit prior authorization request via the insurer’s online portal or fax.\n2. Follow up regularly on the status of the authorization.\n3. Be prepared to appeal denials with additional clinical information and peer-to-peer discussions.\n\n#### Common Denial Reasons\n- Failure to meet BMI or comorbidity criteria as defined by the plan.\n- Insufficient duration or documentation of supervised weight loss program.\n- Lack of psychological clearance or unresolved contraindications.\n- Plan exclusion for weight loss medications or bariatric surgery.\n- Inadequate documentation of medical necessity for GLP-1 agonists.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Blue Cross Blue Shield | Covered (Bariatric Surgery) | Most plans cover bariatric surgery with strict criteria. |\n| UnitedHealthcare | Variable Coverage (GLP-1 for weight loss) | Coverage depends on specific plan and formulary; often requires PA and step therapy. |\n| Aetna | Covered (Bariatric Surgery) | Covers bariatric surgery for morbid obesity; may require Centers of Excellence. |\n\n#### Reimbursement Note\nReimbursement for bariatric surgery is generally good if criteria are met. Coverage for GLP-1 agonists for weight loss is highly variable and often requires significant advocacy.\n\n#### Authorization Tips\n- Always verify patient-specific benefits and coverage criteria before initiating treatment.\n- Document all aspects of the patient’s weight loss journey thoroughly.\n- Be proactive in submitting comprehensive documentation and appealing denials.\n- Educate patients on their plan’s specific coverage for obesity treatments.\n",
+      "tables": [
+        {
+          "name": "CPT Procedure Codes",
+          "header": ["Code", "Description", "Device/Access", "RVU", "Included (do not bill separately)", "Note"],
+          "rows": [
+            [
+              "43644",
+              "Laparoscopy, surgical, gastric restrictive procedure; gastric bypass and Roux-en-Y gastroenterostomy (roux limb 150 cm or less)",
+              "Laparoscopic surgical instruments (Laparoscopic)",
+              "29.40",
+              "Creation of gastric pouch; Roux-en-Y gastrojejunostomy; Closure of mesenteric defects",
+              "This code describes the laparoscopic Roux-en-Y gastric bypass, a common bariatric procedure."
+            ],
+            [
+              "43645",
+              "Laparoscopy, surgical, gastric restrictive procedure; with gastric bypass and small intestine reconstruction to limit absorption",
+              "Laparoscopic surgical instruments (Laparoscopic)",
+              "31.53",
+              "Creation of gastric pouch; Biliopancreatic limb creation; Roux limb creation; Enteroenterostomy",
+              "This code is used for more complex malabsorptive procedures, such as biliopancreatic diversion with duodenal switch."
+            ],
+            [
+              "43770",
+              "Laparoscopy, surgical, gastric restrictive procedure; placement of adjustable gastric restrictive device (e.g., gastric band and subcutaneous port components)",
+              "Adjustable gastric band, subcutaneous port (Laparoscopic)",
+              "18.00",
+              "Placement of gastric band; Placement of subcutaneous port; Connection of band to port",
+              "This code is for the placement of an adjustable gastric band. Note that this procedure is less common now due to efficacy and complication rates compared to other bariatric surgeries."
+            ]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required/Primary"],
+          "rows": [
+            ["E66.01", "Morbid (severe) obesity due to excess calories", "Used for patients with a BMI of 40 or greater, or a BMI of 35 or greater with significant obesity-related comorbidities.", "Yes (Primary)"],
+            ["E66.9", "Obesity, unspecified", "Use when the specific type of obesity is not documented or known.", "No"],
+            ["Z68.37", "Body mass index (BMI) 37.0-37.9, adult", "Used to specify BMI for adults. Often required by payers in conjunction with E66 codes.", "No"],
+            ["Z68.41", "Body mass index (BMI) 40.0-44.9, adult", "Used to specify BMI for adults. Often required by payers in conjunction with E66 codes, especially for morbid obesity.", "Yes (Primary)"]
+          ]
+        },
+        {
+          "name": "Medicare — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS (National)", "Covered (Bariatric Surgery)", "Covers certain bariatric surgeries for morbid obesity meeting specific criteria."],
+            ["CMS (National)", "Non-covered (GLP-1 for weight loss)", "Statutory exclusion for drugs used for weight loss."]
+          ]
+        },
+        {
+          "name": "Medicaid — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., California)", "Covered (Bariatric Surgery)", "Covers bariatric surgery with specific medical necessity criteria."],
+            ["State Medicaid (e.g., New York)", "Emerging Coverage (GLP-1 for weight loss)", "Some states are beginning to cover GLP-1s for weight loss under strict criteria."]
+          ]
+        },
+        {
+          "name": "Private Insurance — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield", "Covered (Bariatric Surgery)", "Most plans cover bariatric surgery with strict criteria."],
+            ["UnitedHealthcare", "Variable Coverage (GLP-1 for weight loss)", "Coverage depends on specific plan and formulary; often requires PA and step therapy."],
+            ["Aetna", "Covered (Bariatric Surgery)", "Covers bariatric surgery for morbid obesity; may require Centers of Excellence."]
+          ]
+        }
+      ]
+    }
+  }
+}

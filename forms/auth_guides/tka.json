@@ -1,0 +1,264 @@
+{
+  "title": "Total Knee Arthroplasty Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "TKAAuthGuide.tsx",
+    "title": "TKA Authorization Guide",
+    "subtitle": "CPT codes, ICD-10 codes, payer requirements, and documentation checklist for Total Knee Arthroplasty (TKA)",
+    "cptCodes": [
+      { "code": "27447", "description": "Total knee arthroplasty (primary)", "rvu": "22.83", "notes": "Includes all components: femoral, tibial, patellar" },
+      { "code": "27438", "description": "Arthroplasty, knee, with or without meniscectomy (unicompartmental)", "rvu": "18.50", "notes": "Unicompartmental/partial knee replacement" },
+      { "code": "27487", "description": "Revision total knee arthroplasty, femoral and entire tibial component", "rvu": "28.40", "notes": "Full revision — both components" },
+      { "code": "27486", "description": "Revision total knee arthroplasty, one component", "rvu": "22.10", "notes": "Single component revision" },
+      { "code": "27599", "description": "Unlisted procedure, femur or knee", "rvu": "Variable", "notes": "Complex/unusual TKA procedures" }
+    ],
+    "icd10Codes": [
+      { "code": "M17.11", "description": "Primary osteoarthritis, right knee", "notes": "Most common indication" },
+      { "code": "M17.12", "description": "Primary osteoarthritis, left knee", "notes": "Most common indication" },
+      { "code": "M17.31", "description": "Post-traumatic osteoarthritis, right knee", "notes": "Following prior trauma" },
+      { "code": "M17.32", "description": "Post-traumatic osteoarthritis, left knee", "notes": "Following prior trauma" },
+      { "code": "M17.21", "description": "Post-traumatic osteoarthritis, right knee (bilateral)", "notes": "Bilateral disease" },
+      { "code": "M17.0", "description": "Bilateral primary osteoarthritis of knee", "notes": "Bilateral primary OA" },
+      { "code": "M05.761", "description": "Rheumatoid arthritis with rheumatoid factor, right knee", "notes": "RA indication" },
+      { "code": "M05.762", "description": "Rheumatoid arthritis with rheumatoid factor, left knee", "notes": "RA indication" },
+      { "code": "M08.061", "description": "Juvenile rheumatoid arthritis, right knee", "notes": "JRA indication" }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Prior Auth Required",
+        "sections": [
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Documented diagnosis of knee OA (KL Grade 3-4 on weight-bearing X-ray)",
+              "Failure of ≥3 months conservative therapy (PT, NSAIDs, injections)",
+              "Functional impairment documented (KOOS, WOMAC, or VAS scores)",
+              "BMI <40 preferred; BMI 40-50 requires additional documentation",
+              "No active infection or absolute contraindications",
+              "Surgeon must be Medicare-enrolled and facility must be approved",
+              "Prior authorization required for certain Medicare Advantage plans"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Medicare pays ~$1,500-2,500 for facility fee; surgeon fee ~$1,200-1,800. Total episode payment under CJR bundled payment model."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicare FFS", "status": "Covered", "notes": "No prior auth for traditional Medicare; required for most MA plans" },
+          { "payer": "Medicare Advantage (UHC)", "status": "Prior Auth Required", "notes": "Submit clinical notes, imaging, conservative therapy documentation" },
+          { "payer": "Medicare Advantage (Humana)", "status": "Prior Auth Required", "notes": "eviCore criteria apply; peer-to-peer available" }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Prior Auth Required",
+        "sections": [
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "State-specific criteria vary significantly",
+              "Most states require documented OA with radiographic evidence",
+              "Conservative therapy failure (typically ≥6 months)",
+              "Age ≥18 years; some states restrict coverage for patients <50",
+              "BMI criteria may apply (varies by state)",
+              "Prior authorization universally required"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Medicaid reimbursement typically 40-60% of Medicare rates. Many states use managed care organizations with separate PA requirements."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicaid MCO (general)", "status": "Prior Auth Required", "notes": "Criteria vary by state; conservative therapy documentation critical" }
+        ]
+      },
+      {
+        "key": "private-insurance",
+        "label": "Private Insurance",
+        "coverageStatus": "Prior Auth Required",
+        "sections": [
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Radiographic evidence of OA (KL Grade 3-4 on weight-bearing films)",
+              "Documented failure of ≥3-6 months conservative treatment",
+              "Functional assessment scores (KOOS, WOMAC, SF-36)",
+              "Pain score documentation (NRS ≥7 or VAS ≥70mm)",
+              "BMI <40 (most plans); BMI 40-50 requires bariatric consultation note",
+              "No active infection, malignancy, or severe comorbidities",
+              "Surgeon board certification and facility accreditation"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Commercial rates typically 120-180% of Medicare. Many plans use eviCore, Carelon, or MCG criteria for prior authorization."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Aetna", "status": "Prior Auth Required", "notes": "Clinical Policy Bulletin 0400; eviCore criteria; 3-month conservative therapy required" },
+          { "payer": "UnitedHealthcare", "status": "Prior Auth Required", "notes": "Optum criteria; functional assessment required; peer-to-peer available" },
+          { "payer": "BCBS (most plans)", "status": "Prior Auth Required", "notes": "Medical Policy MED.00004; KL Grade 3-4 required; conservative therapy documentation" },
+          { "payer": "Cigna", "status": "Prior Auth Required", "notes": "Coverage Policy 0053; eviCore criteria; BMI <40 preferred" },
+          { "payer": "Humana", "status": "Prior Auth Required", "notes": "Medical Coverage Policy HUM-0053; functional limitation documentation required" }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "CPT Codes (intro)",
+        "kind": "prose",
+        "text": "Primary CPT code for total knee arthroplasty. Use the most specific code for the procedure performed."
+      },
+      {
+        "heading": "Required Documentation — Clinical Documentation",
+        "kind": "list",
+        "items": [
+          "Office notes documenting knee OA diagnosis and symptom duration",
+          "Pain score documentation (NRS/VAS) at multiple visits",
+          "Functional assessment (KOOS, WOMAC, or LEFS scores)",
+          "BMI and weight history"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Imaging",
+        "kind": "list",
+        "items": [
+          "Weight-bearing AP, lateral, and sunrise X-rays of affected knee(s)",
+          "Kellgren-Lawrence grading documented",
+          "MRI if soft tissue pathology suspected (not required for primary OA)"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Conservative Therapy",
+        "kind": "list",
+        "items": [
+          "Physical therapy records (≥6 weeks, ≥12 sessions)",
+          "Medication trial documentation (NSAIDs, acetaminophen, topicals)",
+          "Intraarticular injection records (corticosteroid and/or hyaluronic acid)",
+          "Bracing trial if applicable"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Pre-operative Clearance",
+        "kind": "list",
+        "items": [
+          "Medical clearance from PCP or internist",
+          "Cardiac risk assessment if indicated (RCRI)",
+          "HbA1c <8% documentation for diabetic patients",
+          "BMI optimization plan if BMI >35"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Surgical Planning",
+        "kind": "list",
+        "items": [
+          "Implant selection documentation",
+          "Anesthesia pre-operative evaluation",
+          "DVT prophylaxis plan",
+          "Discharge planning (SNF vs. home with PT)"
+        ]
+      },
+      {
+        "heading": "Submission Steps",
+        "kind": "list",
+        "items": [
+          "Obtain weight-bearing knee X-rays with KL grading documented in radiology report.",
+          "Document ≥3 months conservative therapy with specific modalities and duration.",
+          "Complete functional assessment (KOOS or WOMAC) and document pain scores.",
+          "Obtain pre-operative medical clearance and optimize modifiable risk factors.",
+          "Submit prior authorization request with CPT 27447 (or applicable code) and primary ICD-10.",
+          "Include all supporting documentation: imaging reports, PT records, office notes.",
+          "If denied, request peer-to-peer review with the plan's medical director within 72 hours.",
+          "For Medicare Advantage, confirm CJR bundle participation and episode pricing."
+        ]
+      },
+      {
+        "heading": "Denial Reasons (intro)",
+        "kind": "prose",
+        "text": "Most common reasons for TKA prior authorization denial. Address these proactively before submission."
+      },
+      {
+        "heading": "Common Denial Reasons",
+        "kind": "list",
+        "items": [
+          "Insufficient conservative therapy documentation (most common denial reason)",
+          "KL Grade <3 on imaging — insufficient radiographic OA severity",
+          "BMI >40 without documented weight loss program or bariatric consultation",
+          "Missing functional assessment scores (KOOS/WOMAC not documented)",
+          "Uncontrolled diabetes (HbA1c >8%) without optimization plan",
+          "Active infection or recent joint infection not addressed",
+          "Incomplete pre-operative clearance documentation",
+          "Wrong CPT code submitted (e.g., 27438 for primary TKA instead of 27447)"
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# TKA Authorization Guide\n\nCPT codes, ICD-10 codes, payer requirements, and documentation checklist for Total Knee Arthroplasty (TKA)\n\nTabs: CPT Codes | ICD-10 | Payer Requirements | Documentation | Submission | Denial Reasons\n\n## CPT Codes\n\nPrimary CPT code for total knee arthroplasty. Use the most specific code for the procedure performed.\n\n- 27447 — Total knee arthroplasty (primary) — RVU: 22.83 — Includes all components: femoral, tibial, patellar\n- 27438 — Arthroplasty, knee, with or without meniscectomy (unicompartmental) — RVU: 18.50 — Unicompartmental/partial knee replacement\n- 27487 — Revision total knee arthroplasty, femoral and entire tibial component — RVU: 28.40 — Full revision — both components\n- 27486 — Revision total knee arthroplasty, one component — RVU: 22.10 — Single component revision\n- 27599 — Unlisted procedure, femur or knee — RVU: Variable — Complex/unusual TKA procedures\n\n## ICD-10 Codes\n\n- M17.11 — Primary osteoarthritis, right knee — Most common indication\n- M17.12 — Primary osteoarthritis, left knee — Most common indication\n- M17.31 — Post-traumatic osteoarthritis, right knee — Following prior trauma\n- M17.32 — Post-traumatic osteoarthritis, left knee — Following prior trauma\n- M17.21 — Post-traumatic osteoarthritis, right knee (bilateral) — Bilateral disease\n- M17.0 — Bilateral primary osteoarthritis of knee — Bilateral primary OA\n- M05.761 — Rheumatoid arthritis with rheumatoid factor, right knee — RA indication\n- M05.762 — Rheumatoid arthritis with rheumatoid factor, left knee — RA indication\n- M08.061 — Juvenile rheumatoid arthritis, right knee — JRA indication\n\n## Payer Requirements\n\n### Medicare — Prior Auth Required\n\n**Medical Necessity Criteria:**\n- Documented diagnosis of knee OA (KL Grade 3-4 on weight-bearing X-ray)\n- Failure of ≥3 months conservative therapy (PT, NSAIDs, injections)\n- Functional impairment documented (KOOS, WOMAC, or VAS scores)\n- BMI <40 preferred; BMI 40-50 requires additional documentation\n- No active infection or absolute contraindications\n- Surgeon must be Medicare-enrolled and facility must be approved\n- Prior authorization required for certain Medicare Advantage plans\n\n**Reimbursement:** Medicare pays ~$1,500-2,500 for facility fee; surgeon fee ~$1,200-1,800. Total episode payment under CJR bundled payment model.\n\n**Known Payer Policies:**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicare FFS | Covered | No prior auth for traditional Medicare; required for most MA plans |\n| Medicare Advantage (UHC) | Prior Auth Required | Submit clinical notes, imaging, conservative therapy documentation |\n| Medicare Advantage (Humana) | Prior Auth Required | eviCore criteria apply; peer-to-peer available |\n\n### Medicaid — Prior Auth Required\n\n**Medical Necessity Criteria:**\n- State-specific criteria vary significantly\n- Most states require documented OA with radiographic evidence\n- Conservative therapy failure (typically ≥6 months)\n- Age ≥18 years; some states restrict coverage for patients <50\n- BMI criteria may apply (varies by state)\n- Prior authorization universally required\n\n**Reimbursement:** Medicaid reimbursement typically 40-60% of Medicare rates. Many states use managed care organizations with separate PA requirements.\n\n**Known Payer Policies:**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicaid MCO (general) | Prior Auth Required | Criteria vary by state; conservative therapy documentation critical |\n\n### Private Insurance — Prior Auth Required\n\n**Medical Necessity Criteria:**\n- Radiographic evidence of OA (KL Grade 3-4 on weight-bearing films)\n- Documented failure of ≥3-6 months conservative treatment\n- Functional assessment scores (KOOS, WOMAC, SF-36)\n- Pain score documentation (NRS ≥7 or VAS ≥70mm)\n- BMI <40 (most plans); BMI 40-50 requires bariatric consultation note\n- No active infection, malignancy, or severe comorbidities\n- Surgeon board certification and facility accreditation\n\n**Reimbursement:** Commercial rates typically 120-180% of Medicare. Many plans use eviCore, Carelon, or MCG criteria for prior authorization.\n\n**Known Payer Policies:**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Aetna | Prior Auth Required | Clinical Policy Bulletin 0400; eviCore criteria; 3-month conservative therapy required |\n| UnitedHealthcare | Prior Auth Required | Optum criteria; functional assessment required; peer-to-peer available |\n| BCBS (most plans) | Prior Auth Required | Medical Policy MED.00004; KL Grade 3-4 required; conservative therapy documentation |\n| Cigna | Prior Auth Required | Coverage Policy 0053; eviCore criteria; BMI <40 preferred |\n| Humana | Prior Auth Required | Medical Coverage Policy HUM-0053; functional limitation documentation required |\n\n## Documentation\n\n### Clinical Documentation\n✓ Office notes documenting knee OA diagnosis and symptom duration\n✓ Pain score documentation (NRS/VAS) at multiple visits\n✓ Functional assessment (KOOS, WOMAC, or LEFS scores)\n✓ BMI and weight history\n\n### Imaging\n✓ Weight-bearing AP, lateral, and sunrise X-rays of affected knee(s)\n✓ Kellgren-Lawrence grading documented\n✓ MRI if soft tissue pathology suspected (not required for primary OA)\n\n### Conservative Therapy\n✓ Physical therapy records (≥6 weeks, ≥12 sessions)\n✓ Medication trial documentation (NSAIDs, acetaminophen, topicals)\n✓ Intraarticular injection records (corticosteroid and/or hyaluronic acid)\n✓ Bracing trial if applicable\n\n### Pre-operative Clearance\n✓ Medical clearance from PCP or internist\n✓ Cardiac risk assessment if indicated (RCRI)\n✓ HbA1c <8% documentation for diabetic patients\n✓ BMI optimization plan if BMI >35\n\n### Surgical Planning\n✓ Implant selection documentation\n✓ Anesthesia pre-operative evaluation\n✓ DVT prophylaxis plan\n✓ Discharge planning (SNF vs. home with PT)\n\n## Submission\n\n1. Obtain weight-bearing knee X-rays with KL grading documented in radiology report.\n2. Document ≥3 months conservative therapy with specific modalities and duration.\n3. Complete functional assessment (KOOS or WOMAC) and document pain scores.\n4. Obtain pre-operative medical clearance and optimize modifiable risk factors.\n5. Submit prior authorization request with CPT 27447 (or applicable code) and primary ICD-10.\n6. Include all supporting documentation: imaging reports, PT records, office notes.\n7. If denied, request peer-to-peer review with the plan's medical director within 72 hours.\n8. For Medicare Advantage, confirm CJR bundle participation and episode pricing.\n\n## Denial Reasons\n\nMost common reasons for TKA prior authorization denial. Address these proactively before submission.\n\n- ⚠ Insufficient conservative therapy documentation (most common denial reason)\n- ⚠ KL Grade <3 on imaging — insufficient radiographic OA severity\n- ⚠ BMI >40 without documented weight loss program or bariatric consultation\n- ⚠ Missing functional assessment scores (KOOS/WOMAC not documented)\n- ⚠ Uncontrolled diabetes (HbA1c >8%) without optimization plan\n- ⚠ Active infection or recent joint infection not addressed\n- ⚠ Incomplete pre-operative clearance documentation\n- ⚠ Wrong CPT code submitted (e.g., 27438 for primary TKA instead of 27447)\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "Description", "RVU", "Notes"],
+          "rows": [
+            ["27447", "Total knee arthroplasty (primary)", "22.83", "Includes all components: femoral, tibial, patellar"],
+            ["27438", "Arthroplasty, knee, with or without meniscectomy (unicompartmental)", "18.50", "Unicompartmental/partial knee replacement"],
+            ["27487", "Revision total knee arthroplasty, femoral and entire tibial component", "28.40", "Full revision — both components"],
+            ["27486", "Revision total knee arthroplasty, one component", "22.10", "Single component revision"],
+            ["27599", "Unlisted procedure, femur or knee", "Variable", "Complex/unusual TKA procedures"]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["Code", "Description", "Notes"],
+          "rows": [
+            ["M17.11", "Primary osteoarthritis, right knee", "Most common indication"],
+            ["M17.12", "Primary osteoarthritis, left knee", "Most common indication"],
+            ["M17.31", "Post-traumatic osteoarthritis, right knee", "Following prior trauma"],
+            ["M17.32", "Post-traumatic osteoarthritis, left knee", "Following prior trauma"],
+            ["M17.21", "Post-traumatic osteoarthritis, right knee (bilateral)", "Bilateral disease"],
+            ["M17.0", "Bilateral primary osteoarthritis of knee", "Bilateral primary OA"],
+            ["M05.761", "Rheumatoid arthritis with rheumatoid factor, right knee", "RA indication"],
+            ["M05.762", "Rheumatoid arthritis with rheumatoid factor, left knee", "RA indication"],
+            ["M08.061", "Juvenile rheumatoid arthritis, right knee", "JRA indication"]
+          ]
+        },
+        {
+          "name": "Medicare — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicare FFS", "Covered", "No prior auth for traditional Medicare; required for most MA plans"],
+            ["Medicare Advantage (UHC)", "Prior Auth Required", "Submit clinical notes, imaging, conservative therapy documentation"],
+            ["Medicare Advantage (Humana)", "Prior Auth Required", "eviCore criteria apply; peer-to-peer available"]
+          ]
+        },
+        {
+          "name": "Medicaid — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicaid MCO (general)", "Prior Auth Required", "Criteria vary by state; conservative therapy documentation critical"]
+          ]
+        },
+        {
+          "name": "Private Insurance — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Aetna", "Prior Auth Required", "Clinical Policy Bulletin 0400; eviCore criteria; 3-month conservative therapy required"],
+            ["UnitedHealthcare", "Prior Auth Required", "Optum criteria; functional assessment required; peer-to-peer available"],
+            ["BCBS (most plans)", "Prior Auth Required", "Medical Policy MED.00004; KL Grade 3-4 required; conservative therapy documentation"],
+            ["Cigna", "Prior Auth Required", "Coverage Policy 0053; eviCore criteria; BMI <40 preferred"],
+            ["Humana", "Prior Auth Required", "Medical Coverage Policy HUM-0053; functional limitation documentation required"]
+          ]
+        }
+      ]
+    }
+  }
+}

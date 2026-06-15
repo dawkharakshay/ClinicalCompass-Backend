@@ -1,0 +1,197 @@
+{
+  "title": "Age-Related Macular Degeneration",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "amd",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "stage-vision",
+        "shortLabel": "AMD Stage & Vision",
+        "title": "AMD Stage & Vision",
+        "fields": [
+          {
+            "id": "stage",
+            "name": "stage",
+            "label": "AMD Stage (Affected Eye)",
+            "type": "select",
+            "defaultValue": "intermediate",
+            "options": [
+              { "label": "Early AMD — small drusen (<63 μm), no pigment changes", "value": "early" },
+              { "label": "Intermediate AMD — medium/large drusen or pigment changes", "value": "intermediate" },
+              { "label": "Advanced Dry AMD — geographic atrophy (GA)", "value": "advanced_dry" },
+              { "label": "Advanced Wet AMD — neovascular/exudative AMD (CNV)", "value": "advanced_wet" }
+            ]
+          },
+          {
+            "id": "affected-eye",
+            "name": "affectedEye",
+            "label": "Affected Eye",
+            "type": "select",
+            "defaultValue": "right",
+            "options": [
+              { "label": "Right eye", "value": "right" },
+              { "label": "Left eye", "value": "left" },
+              { "label": "Both eyes", "value": "both" }
+            ]
+          },
+          {
+            "id": "visual-acuity",
+            "name": "visualAcuity",
+            "label": "Best-Corrected Visual Acuity (Affected Eye)",
+            "type": "select",
+            "defaultValue": "20/50_to_20/100",
+            "options": [
+              { "label": "20/20 to 20/40 (good)", "value": "20/20_to_20/40" },
+              { "label": "20/50 to 20/100 (moderate impairment)", "value": "20/50_to_20/100" },
+              { "label": "20/200 or worse (severe impairment)", "value": "20/200_or_worse" },
+              { "label": "Count fingers or worse", "value": "count_fingers_or_worse" }
+            ]
+          },
+          {
+            "id": "contralateral-eye-status",
+            "name": "contralateralEyeStatus",
+            "label": "Contralateral Eye Status",
+            "type": "select",
+            "defaultValue": "intermediate_amd",
+            "options": [
+              { "label": "Normal", "value": "normal" },
+              { "label": "Early AMD", "value": "early_amd" },
+              { "label": "Intermediate AMD", "value": "intermediate_amd" },
+              { "label": "Advanced AMD", "value": "advanced_amd" }
+            ]
+          },
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Patient Age (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "lesion",
+        "shortLabel": "Lesion Characteristics",
+        "title": "Lesion Characteristics",
+        "fields": [
+          {
+            "id": "cnv-type",
+            "name": "cnvType",
+            "label": "CNV Type (Wet AMD)",
+            "type": "select",
+            "defaultValue": "not_applicable",
+            "options": [
+              { "label": "Not applicable (Dry AMD)", "value": "not_applicable" },
+              { "label": "Type 1 — Occult (sub-RPE)", "value": "type1_occult" },
+              { "label": "Type 2 — Classic (sub-retinal)", "value": "type2_classic" },
+              { "label": "Type 3 — RAP (retinal angiomatous proliferation)", "value": "type3_rar" },
+              { "label": "Mixed type", "value": "mixed" }
+            ]
+          },
+          {
+            "id": "lesion-size",
+            "name": "lesionSize",
+            "label": "Lesion Size (Greatest Linear Dimension)",
+            "type": "select",
+            "defaultValue": "medium",
+            "options": [
+              { "label": "Small — GLD ≤1500 μm", "value": "small" },
+              { "label": "Medium — GLD 1500–3000 μm", "value": "medium" },
+              { "label": "Large — GLD >3000 μm", "value": "large" }
+            ]
+          },
+          {
+            "id": "has-geographic-atrophy",
+            "name": "hasGeographicAtrophy",
+            "label": "Geographic Atrophy (GA) Present",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "ga-area",
+            "name": "gaArea",
+            "label": "GA Area (mm²)",
+            "type": "number",
+            "defaultValue": 2,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "hasGeographicAtrophy", "op": "truthy" }
+          },
+          {
+            "id": "has-pcv-or-rap",
+            "name": "hasPCVorRAP",
+            "label": "PCV or RAP (Polypoidal / Retinal Angiomatous Proliferation)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-subretinal-fluid",
+            "name": "hasSubretinalFluid",
+            "label": "Subretinal Fluid on OCT",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-intraretinal-fluid",
+            "name": "hasIntraretinalFluid",
+            "label": "Intraretinal Fluid on OCT",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "history-risk",
+        "shortLabel": "Treatment History & Risk Factors",
+        "title": "Treatment History & Risk Factors",
+        "fields": [
+          {
+            "id": "anti-vegf-history",
+            "name": "antiVEGFHistory",
+            "label": "Prior Anti-VEGF Treatment",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "No prior anti-VEGF", "value": "none" },
+              { "label": "On ranibizumab (Lucentis)", "value": "on_ranibizumab" },
+              { "label": "On bevacizumab (Avastin)", "value": "on_bevacizumab" },
+              { "label": "On aflibercept (Eylea)", "value": "on_aflibercept" },
+              { "label": "On faricimab (Vabysmo)", "value": "on_faricimab" },
+              { "label": "On brolucizumab (Beovu)", "value": "on_brolucizumab" },
+              { "label": "Suboptimal response to prior anti-VEGF", "value": "suboptimal_response" }
+            ]
+          },
+          {
+            "id": "is-on-areds2-supplements",
+            "name": "isOnAREDS2Supplements",
+            "label": "Currently on AREDS2 Supplements",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "smoking-status",
+            "name": "smokingStatus",
+            "label": "Smoking Status",
+            "type": "select",
+            "defaultValue": "never",
+            "options": [
+              { "label": "Never smoked", "value": "never" },
+              { "label": "Former smoker", "value": "former" },
+              { "label": "Current smoker", "value": "current" }
+            ]
+          },
+          {
+            "id": "has-dietary-risk-factors",
+            "name": "hasDietaryRiskFactors",
+            "label": "Dietary Risk Factors (low lutein/zeaxanthin intake)",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

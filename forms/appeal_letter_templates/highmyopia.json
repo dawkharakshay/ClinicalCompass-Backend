@@ -1,0 +1,30 @@
+{
+  "title": "High Myopia / Pathologic Myopia",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "S0800, 66999, V2599",
+      "credentials": "[Credentials]",
+      "icd_codes": "H52.10, H52.11, H52.12, H52.13, H44.20, H44.21, H44.22, H44.23",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — Myopia Control Therapy (Multifocal Lenses)\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\nDear Medical Director / Utilization Review Committee,\n\nThis letter serves as an appeal for coverage of myopia control therapy for our patient, {{patient_name}}, whose myopia progression may be considered. Clinical assessment indicates a moderate to high risk of further myopia progression, which, if left untreated, significantly increases the risk of severe ocular complications such as retinal detachment, glaucoma, and myopic maculopathy.\n\nMedical necessity for Myopia Control Therapy is supported by strong evidence from multiple peer-reviewed studies and professional guidelines. Key guidelines and studies include:\n1. IMI Clinical Management Guidelines for Myopia 2019\n2. COMET Study (Gwiazda 2003, IOVS)\n3. ATOM2 Study (Chia 2012, Ophthalmology)\n4. AAO Preferred Practice Pattern for Refractive Errors 2017\n\nBased on these guidelines and the patient's clinical presentation, Myopia Control Therapy is medically necessary to slow the progression of myopia and reduce the risk of associated ocular pathologies. Delay or denial of this treatment would place the patient at increased risk for irreversible vision loss.\n\nWe request immediate approval for Myopia Control Therapy. Please contact our office if additional information is required.\n\n{{additional_clinical_notes}}\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "title": "RLS / PLMD Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Assessment",
+    "logicKey": "rlsplmd",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "diagnosis",
+        "shortLabel": "Diagnosis",
+        "title": "Diagnosis Confirmation",
+        "fields": [
+          {
+            "id": "rls-diagnosis",
+            "name": "rls_diagnosis",
+            "label": "RLS diagnosis confirmed (IRLSSG 5 essential criteria)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "plm-diagnosis",
+            "name": "plm_diagnosis",
+            "label": "PLMD diagnosis confirmed (PSG: PLMI ≥15 adults, ≥5 children)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "irlss-score",
+            "name": "irlss_score",
+            "label": "IRLSS Score (0–40)",
+            "type": "number",
+            "defaultValue": "",
+            "min": 0,
+            "max": 40
+          },
+          {
+            "id": "plmi",
+            "name": "plmi",
+            "label": "PLMI (events/hour on PSG)",
+            "type": "number",
+            "defaultValue": "",
+            "min": 0,
+            "visibleWhen": { "field": "plm_diagnosis", "op": "truthy" }
+          },
+          {
+            "id": "duration-years",
+            "name": "duration_years",
+            "label": "Duration of Symptoms (years)",
+            "type": "number",
+            "defaultValue": "",
+            "min": 0
+          }
+        ]
+      },
+      {
+        "id": "severity",
+        "shortLabel": "Severity",
+        "title": "Severity & Comorbidities",
+        "fields": [
+          {
+            "id": "severity",
+            "name": "severity",
+            "label": "Clinical Severity (if IRLSS not available)",
+            "type": "select",
+            "defaultValue": "unknown",
+            "options": [
+              { "label": "Mild — symptoms <3 nights/week, minimal distress", "value": "mild" },
+              { "label": "Moderate — symptoms ≥3 nights/week, moderate distress", "value": "moderate" },
+              { "label": "Severe — nightly symptoms, significant sleep disruption", "value": "severe" },
+              { "label": "Unknown", "value": "unknown" }
+            ]
+          },
+          {
+            "id": "renal-impairment",
+            "name": "renal_impairment",
+            "label": "Chronic kidney disease / renal impairment",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "pregnancy",
+            "name": "pregnancy",
+            "label": "Pregnancy",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "comorbid-depression",
+            "name": "comorbid_depression",
+            "label": "Comorbid depression",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "comorbid-anxiety",
+            "name": "comorbid_anxiety",
+            "label": "Comorbid anxiety disorder",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "egfr",
+            "name": "egfr",
+            "label": "eGFR (mL/min/1.73m²)",
+            "type": "number",
+            "defaultValue": "",
+            "min": 0,
+            "max": 120,
+            "visibleWhen": { "field": "renal_impairment", "op": "truthy" }
+          }
+        ]
+      },
+      {
+        "id": "iron-status",
+        "shortLabel": "Iron Status",
+        "title": "Iron Status",
+        "fields": [
+          {
+            "id": "iron-cpg-alert",
+            "type": "alert",
+            "severity": "warning",
+            "text": "AASM 2024 CPG: IV Ferric Carboxymaltose is STRONGLY RECOMMENDED for RLS with serum ferritin <75 ng/mL. Iron status must be evaluated before initiating pharmacotherapy."
+          },
+          {
+            "id": "ferritin",
+            "name": "ferritin",
+            "label": "Serum Ferritin (ng/mL)",
+            "type": "number",
+            "defaultValue": "",
+            "min": 0
+          },
+          {
+            "id": "transferrin-sat",
+            "name": "transferrin_sat",
+            "label": "Transferrin Saturation (%)",
+            "type": "number",
+            "defaultValue": "",
+            "min": 0,
+            "max": 100
+          },
+          {
+            "id": "iron-infusion-tried",
+            "name": "iron_infusion_tried",
+            "label": "IV iron infusion previously attempted",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "prior-treatments",
+        "shortLabel": "Prior Treatments",
+        "title": "Prior Treatments",
+        "fields": [
+          {
+            "id": "dopamine-agonist-alert",
+            "type": "alert",
+            "severity": "error",
+            "text": "⚠️ AASM 2024 Update: Dopamine agonists (pramipexole, ropinirole) are now CONDITIONALLY RECOMMENDED AGAINST as first-line therapy due to augmentation risk. Document prior use and augmentation status."
+          },
+          {
+            "id": "prior-gabapentin-enacarbil",
+            "name": "prior_gabapentin_enacarbil",
+            "label": "Gabapentin enacarbil (Horizant) — prior trial",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-pregabalin",
+            "name": "prior_pregabalin",
+            "label": "Pregabalin (Lyrica) — prior trial",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-gabapentin",
+            "name": "prior_gabapentin",
+            "label": "Gabapentin (Neurontin) — prior trial",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-pramipexole",
+            "name": "prior_pramipexole",
+            "label": "Pramipexole (Mirapex) — prior trial",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-ropinirole",
+            "name": "prior_ropinirole",
+            "label": "Ropinirole (Requip) — prior trial",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "augmentation",
+            "name": "augmentation",
+            "label": "Augmentation documented (symptoms worsening, spreading, occurring earlier)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": {
+              "any": [
+                { "field": "prior_pramipexole", "op": "truthy" },
+                { "field": "prior_ropinirole", "op": "truthy" }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

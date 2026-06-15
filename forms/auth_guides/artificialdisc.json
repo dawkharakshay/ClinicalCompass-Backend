@@ -1,0 +1,217 @@
+{
+  "title": "Artificial Disc Replacement Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "ArtificialDiscAuthGuide.tsx",
+    "title": "Artificial Disc Compass",
+    "subtitle": "Cervical & Lumbar Disc Replacement Decision Support — FDA / NASS Guidelines",
+    "cptCodes": [
+      { "code": "22856", "description": "Total disc arthroplasty (artificial disc), anterior approach — cervical, single level", "rvu": "22.40", "notes": "FDA-approved cervical ADR (ProDisc-C, Prestige, Bryan, Mobi-C)" },
+      { "code": "22858", "description": "Total disc arthroplasty — cervical, second level (add-on)", "rvu": "12.10", "notes": "Add-on to 22856; two-level cervical ADR" },
+      { "code": "22861", "description": "Revision of total disc arthroplasty — cervical, single level", "rvu": "26.80", "notes": "Revision procedure" },
+      { "code": "22857", "description": "Total disc arthroplasty — lumbar, single level", "rvu": "24.60", "notes": "FDA-approved lumbar ADR (ProDisc-L, Charité)" },
+      { "code": "22862", "description": "Revision of total disc arthroplasty — lumbar, single level", "rvu": "28.40", "notes": "Lumbar ADR revision" }
+    ],
+    "icd10Codes": [
+      { "code": "M50.12", "description": "Cervical disc displacement with radiculopathy, mid-cervical region", "notes": "C3-7 cervical ADR indication" },
+      { "code": "M50.22", "description": "Other cervical disc displacement, mid-cervical region", "notes": "Cervical DDD" },
+      { "code": "M47.812", "description": "Spondylosis with radiculopathy, cervical region", "notes": "Cervical radiculopathy" },
+      { "code": "M51.16", "description": "Intervertebral disc degeneration, lumbar region", "notes": "Lumbar ADR indication" },
+      { "code": "M51.17", "description": "Intervertebral disc degeneration, lumbosacral region", "notes": "L5-S1 DDD" },
+      { "code": "M47.816", "description": "Spondylosis with radiculopathy, lumbar region", "notes": "Lumbar radiculopathy" }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Prior Auth Required",
+        "overview": "Reimbursement: Medicare covers cervical ADR as non-experimental. Lumbar ADR coverage varies by MAC jurisdiction.",
+        "sections": [
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Cervical ADR: FDA-approved device; single or two-level C3-C7; DDD with radiculopathy or myelopathy",
+              "Failure of ≥6 weeks conservative therapy",
+              "No osteoporosis, instability, or facet arthrosis at affected level",
+              "Lumbar ADR: more restrictive — many Medicare plans consider experimental",
+              "Prior authorization required for Medicare Advantage plans"
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicare FFS (cervical)", "status": "Covered", "notes": "Non-experimental; prior auth for MA plans" },
+          { "payer": "Medicare FFS (lumbar)", "status": "Coverage Varies", "notes": "Some MACs consider experimental; verify with local MAC" },
+          { "payer": "Medicare Advantage", "status": "Prior Auth Required", "notes": "eviCore criteria; cervical ADR generally covered" }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Prior Auth Required",
+        "overview": "Reimbursement: Coverage and reimbursement vary significantly by state Medicaid program.",
+        "sections": [
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Coverage highly variable by state",
+              "Many states consider lumbar ADR experimental",
+              "Cervical ADR more likely covered with FDA-approved device",
+              "Prior authorization universally required"
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicaid MCO", "status": "Coverage Varies", "notes": "Verify state-specific policy before proceeding" }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Prior Auth Required",
+        "overview": "Reimbursement: Commercial rates typically 130-180% of Medicare. Cervical ADR widely covered; lumbar ADR coverage varies.",
+        "sections": [
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "FDA-approved device required",
+              "Single or two-level cervical (C3-C7) or lumbar (L3-S1) DDD",
+              "Documented radiculopathy or myelopathy with imaging correlation",
+              "Failure of ≥6 weeks conservative therapy",
+              "No osteoporosis (T-score > -2.5), instability, or significant facet arthrosis",
+              "Age typically 18-60 for lumbar ADR"
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Aetna", "status": "Prior Auth Required", "notes": "Cervical ADR covered; lumbar ADR — Clinical Policy Bulletin required" },
+          { "payer": "UnitedHealthcare", "status": "Prior Auth Required", "notes": "Cervical covered; lumbar ADR — verify current policy" },
+          { "payer": "BCBS", "status": "Prior Auth Required", "notes": "Cervical ADR covered; lumbar varies by plan" },
+          { "payer": "Cigna", "status": "Prior Auth Required", "notes": "eviCore criteria; FDA-approved device required" }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Required Documentation — Clinical Documentation",
+        "kind": "list",
+        "items": [
+          "Office notes documenting DDD diagnosis and symptom duration",
+          "Neurologic examination findings (radiculopathy/myelopathy)",
+          "Functional assessment (NDI for cervical, ODI for lumbar)",
+          "Pain score documentation at multiple visits"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Imaging",
+        "kind": "list",
+        "items": [
+          "MRI spine within 6 months (required)",
+          "Standing X-rays with flexion/extension views",
+          "CT scan if bony anatomy assessment needed",
+          "Radiologist report correlating findings to symptoms"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Conservative Therapy",
+        "kind": "list",
+        "items": [
+          "Physical therapy records (≥6 weeks)",
+          "Medication trial documentation (NSAIDs, neuropathic agents)",
+          "Epidural steroid injection records",
+          "Activity modification documentation"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Device & Surgical",
+        "kind": "list",
+        "items": [
+          "FDA-approved device specification",
+          "Surgeon attestation of no contraindications (osteoporosis, instability, facet arthrosis)",
+          "Bone density scan if osteoporosis suspected",
+          "Pre-operative medical clearance"
+        ]
+      },
+      {
+        "heading": "Submission Process",
+        "kind": "list",
+        "items": [
+          "Confirm FDA-approved device will be used (required for all payers).",
+          "Obtain MRI spine within 6 months with radiologist report.",
+          "Document ≥6 weeks conservative therapy with specific modalities.",
+          "Complete functional assessment (NDI or ODI) and document pain scores.",
+          "Obtain bone density scan to rule out osteoporosis if clinically indicated.",
+          "Submit prior authorization with CPT 22856 (cervical) or 22857 (lumbar) and primary ICD-10.",
+          "Include surgeon attestation that no contraindications are present.",
+          "If denied, request peer-to-peer review emphasizing FDA approval and patient selection criteria."
+        ]
+      },
+      {
+        "heading": "Common Denial Reasons",
+        "kind": "list",
+        "items": [
+          "Non-FDA-approved device proposed",
+          "Osteoporosis not ruled out (most common contraindication-related denial)",
+          "Significant facet arthrosis at affected level",
+          "Instability or spondylolisthesis at affected level",
+          "More than 2 levels proposed (exceeds FDA indication)",
+          "Insufficient conservative therapy documentation",
+          "Lumbar ADR — payer considers experimental without strong evidence documentation",
+          "Age >60 for lumbar ADR (some payer restrictions)"
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# Artificial Disc Compass\n_Cervical & Lumbar Disc Replacement Decision Support — FDA / NASS Guidelines_\n\nTabs: CPT Codes | ICD-10 | Payer Requirements | Documentation | Submission | Denial Reasons\n\n## CPT Codes\n\n- **22856** (RVU: 22.40) — Total disc arthroplasty (artificial disc), anterior approach — cervical, single level. FDA-approved cervical ADR (ProDisc-C, Prestige, Bryan, Mobi-C)\n- **22858** (RVU: 12.10) — Total disc arthroplasty — cervical, second level (add-on). Add-on to 22856; two-level cervical ADR\n- **22861** (RVU: 26.80) — Revision of total disc arthroplasty — cervical, single level. Revision procedure\n- **22857** (RVU: 24.60) — Total disc arthroplasty — lumbar, single level. FDA-approved lumbar ADR (ProDisc-L, Charité)\n- **22862** (RVU: 28.40) — Revision of total disc arthroplasty — lumbar, single level. Lumbar ADR revision\n\n## ICD-10 Codes\n\n- **M50.12** — Cervical disc displacement with radiculopathy, mid-cervical region. C3-7 cervical ADR indication\n- **M50.22** — Other cervical disc displacement, mid-cervical region. Cervical DDD\n- **M47.812** — Spondylosis with radiculopathy, cervical region. Cervical radiculopathy\n- **M51.16** — Intervertebral disc degeneration, lumbar region. Lumbar ADR indication\n- **M51.17** — Intervertebral disc degeneration, lumbosacral region. L5-S1 DDD\n- **M47.816** — Spondylosis with radiculopathy, lumbar region. Lumbar radiculopathy\n\n## Payer Requirements\n\n### Medicare — Prior Auth Required\n\n**Medical Necessity Criteria:**\n- Cervical ADR: FDA-approved device; single or two-level C3-C7; DDD with radiculopathy or myelopathy\n- Failure of ≥6 weeks conservative therapy\n- No osteoporosis, instability, or facet arthrosis at affected level\n- Lumbar ADR: more restrictive — many Medicare plans consider experimental\n- Prior authorization required for Medicare Advantage plans\n\n**Reimbursement:** Medicare covers cervical ADR as non-experimental. Lumbar ADR coverage varies by MAC jurisdiction.\n\n**Known Payer Policies:**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicare FFS (cervical) | Covered | Non-experimental; prior auth for MA plans |\n| Medicare FFS (lumbar) | Coverage Varies | Some MACs consider experimental; verify with local MAC |\n| Medicare Advantage | Prior Auth Required | eviCore criteria; cervical ADR generally covered |\n\n### Medicaid — Prior Auth Required\n\n**Medical Necessity Criteria:**\n- Coverage highly variable by state\n- Many states consider lumbar ADR experimental\n- Cervical ADR more likely covered with FDA-approved device\n- Prior authorization universally required\n\n**Reimbursement:** Coverage and reimbursement vary significantly by state Medicaid program.\n\n**Known Payer Policies:**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicaid MCO | Coverage Varies | Verify state-specific policy before proceeding |\n\n### Private Insurance — Prior Auth Required\n\n**Medical Necessity Criteria:**\n- FDA-approved device required\n- Single or two-level cervical (C3-C7) or lumbar (L3-S1) DDD\n- Documented radiculopathy or myelopathy with imaging correlation\n- Failure of ≥6 weeks conservative therapy\n- No osteoporosis (T-score > -2.5), instability, or significant facet arthrosis\n- Age typically 18-60 for lumbar ADR\n\n**Reimbursement:** Commercial rates typically 130-180% of Medicare. Cervical ADR widely covered; lumbar ADR coverage varies.\n\n**Known Payer Policies:**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Aetna | Prior Auth Required | Cervical ADR covered; lumbar ADR — Clinical Policy Bulletin required |\n| UnitedHealthcare | Prior Auth Required | Cervical covered; lumbar ADR — verify current policy |\n| BCBS | Prior Auth Required | Cervical ADR covered; lumbar varies by plan |\n| Cigna | Prior Auth Required | eviCore criteria; FDA-approved device required |\n\n## Documentation (Required Docs)\n\n### Clinical Documentation\n- ✓ Office notes documenting DDD diagnosis and symptom duration\n- ✓ Neurologic examination findings (radiculopathy/myelopathy)\n- ✓ Functional assessment (NDI for cervical, ODI for lumbar)\n- ✓ Pain score documentation at multiple visits\n\n### Imaging\n- ✓ MRI spine within 6 months (required)\n- ✓ Standing X-rays with flexion/extension views\n- ✓ CT scan if bony anatomy assessment needed\n- ✓ Radiologist report correlating findings to symptoms\n\n### Conservative Therapy\n- ✓ Physical therapy records (≥6 weeks)\n- ✓ Medication trial documentation (NSAIDs, neuropathic agents)\n- ✓ Epidural steroid injection records\n- ✓ Activity modification documentation\n\n### Device & Surgical\n- ✓ FDA-approved device specification\n- ✓ Surgeon attestation of no contraindications (osteoporosis, instability, facet arthrosis)\n- ✓ Bone density scan if osteoporosis suspected\n- ✓ Pre-operative medical clearance\n\n## Submission Process\n\n1. Confirm FDA-approved device will be used (required for all payers).\n2. Obtain MRI spine within 6 months with radiologist report.\n3. Document ≥6 weeks conservative therapy with specific modalities.\n4. Complete functional assessment (NDI or ODI) and document pain scores.\n5. Obtain bone density scan to rule out osteoporosis if clinically indicated.\n6. Submit prior authorization with CPT 22856 (cervical) or 22857 (lumbar) and primary ICD-10.\n7. Include surgeon attestation that no contraindications are present.\n8. If denied, request peer-to-peer review emphasizing FDA approval and patient selection criteria.\n\n## Denial Reasons\n\n- ⚠ Non-FDA-approved device proposed\n- ⚠ Osteoporosis not ruled out (most common contraindication-related denial)\n- ⚠ Significant facet arthrosis at affected level\n- ⚠ Instability or spondylolisthesis at affected level\n- ⚠ More than 2 levels proposed (exceeds FDA indication)\n- ⚠ Insufficient conservative therapy documentation\n- ⚠ Lumbar ADR — payer considers experimental without strong evidence documentation\n- ⚠ Age >60 for lumbar ADR (some payer restrictions)\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "Description", "RVU", "Notes"],
+          "rows": [
+            ["22856", "Total disc arthroplasty (artificial disc), anterior approach — cervical, single level", "22.40", "FDA-approved cervical ADR (ProDisc-C, Prestige, Bryan, Mobi-C)"],
+            ["22858", "Total disc arthroplasty — cervical, second level (add-on)", "12.10", "Add-on to 22856; two-level cervical ADR"],
+            ["22861", "Revision of total disc arthroplasty — cervical, single level", "26.80", "Revision procedure"],
+            ["22857", "Total disc arthroplasty — lumbar, single level", "24.60", "FDA-approved lumbar ADR (ProDisc-L, Charité)"],
+            ["22862", "Revision of total disc arthroplasty — lumbar, single level", "28.40", "Lumbar ADR revision"]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["Code", "Description", "Notes"],
+          "rows": [
+            ["M50.12", "Cervical disc displacement with radiculopathy, mid-cervical region", "C3-7 cervical ADR indication"],
+            ["M50.22", "Other cervical disc displacement, mid-cervical region", "Cervical DDD"],
+            ["M47.812", "Spondylosis with radiculopathy, cervical region", "Cervical radiculopathy"],
+            ["M51.16", "Intervertebral disc degeneration, lumbar region", "Lumbar ADR indication"],
+            ["M51.17", "Intervertebral disc degeneration, lumbosacral region", "L5-S1 DDD"],
+            ["M47.816", "Spondylosis with radiculopathy, lumbar region", "Lumbar radiculopathy"]
+          ]
+        },
+        {
+          "name": "Medicare — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicare FFS (cervical)", "Covered", "Non-experimental; prior auth for MA plans"],
+            ["Medicare FFS (lumbar)", "Coverage Varies", "Some MACs consider experimental; verify with local MAC"],
+            ["Medicare Advantage", "Prior Auth Required", "eviCore criteria; cervical ADR generally covered"]
+          ]
+        },
+        {
+          "name": "Medicaid — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicaid MCO", "Coverage Varies", "Verify state-specific policy before proceeding"]
+          ]
+        },
+        {
+          "name": "Private Insurance — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Aetna", "Prior Auth Required", "Cervical ADR covered; lumbar ADR — Clinical Policy Bulletin required"],
+            ["UnitedHealthcare", "Prior Auth Required", "Cervical covered; lumbar ADR — verify current policy"],
+            ["BCBS", "Prior Auth Required", "Cervical ADR covered; lumbar varies by plan"],
+            ["Cigna", "Prior Auth Required", "eviCore criteria; FDA-approved device required"]
+          ]
+        }
+      ]
+    }
+  }
+}

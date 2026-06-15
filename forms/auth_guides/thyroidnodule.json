@@ -1,0 +1,367 @@
+{
+  "title": "Thyroid Nodule Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "ThyroidNoduleAuthGuide.tsx",
+    "title": "Thyroid Nodule Clinical Compass",
+    "subtitle": "Thyroid Nodule Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "10005",
+        "description": "Fine needle aspiration biopsy, first lesion, including ultrasound guidance",
+        "device": "Ultrasound guidance",
+        "access": "Percutaneous",
+        "rvu": "2.00",
+        "includes": [
+          "Interpretation and report of imaging guidance",
+          "Collection of specimen(s)",
+          "Preparation of specimen(s) for cytologic evaluation"
+        ],
+        "note": "For each additional lesion, use add-on code 10006."
+      },
+      {
+        "code": "60660",
+        "description": "Ablation of one or more thyroid nodule(s), one lobe or the isthmus, percutaneous, including imaging guidance, radiofrequency",
+        "device": "Radiofrequency ablation device, Ultrasound guidance",
+        "access": "Percutaneous",
+        "rvu": "15.00",
+        "includes": [
+          "Pre-procedure imaging for planning",
+          "Intra-procedure imaging guidance",
+          "Post-procedure assessment"
+        ],
+        "note": "This code is effective January 1, 2025, for radiofrequency ablation of thyroid nodules."
+      },
+      {
+        "code": "60220",
+        "description": "Total thyroid lobectomy, unilateral; with or without isthmusectomy",
+        "device": "Surgical instruments",
+        "access": "Open surgical approach",
+        "rvu": "25.00",
+        "includes": [
+          "Dissection and removal of thyroid lobe",
+          "Hemostasis",
+          "Closure of surgical site"
+        ],
+        "note": "This code describes the removal of one entire thyroid lobe. For total thyroidectomy, use appropriate codes."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "E04.1",
+        "description": "Nontoxic single thyroid nodule",
+        "notes": "Used for solitary, non-functioning thyroid nodules without signs of hyperthyroidism.",
+        "required": true
+      },
+      {
+        "code": "D34",
+        "description": "Benign neoplasm of thyroid gland",
+        "notes": "Used for confirmed benign thyroid tumors, such as follicular adenoma.",
+        "required": false
+      },
+      {
+        "code": "C73",
+        "description": "Malignant neoplasm of thyroid gland",
+        "notes": "Used for confirmed malignant thyroid cancers, such as papillary or follicular carcinoma.",
+        "required": true
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with Medical Necessity",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Medicare generally does not require prior authorization for diagnostic thyroid nodule evaluations (FNA, ultrasound) or for medically necessary thyroidectomy. However, prior authorization may be required for newer ablation procedures (e.g., RFA) depending on local coverage determinations (LCDs). Always verify with the specific Medicare Administrative Contractor (MAC).",
+        "overview": "Medicare covers services for thyroid nodule diagnosis and treatment when deemed medically necessary. This includes imaging, biopsies, and surgical interventions. Newer procedures like RFA for benign nodules may have specific coverage criteria and require prior authorization based on LCDs.",
+        "reimbursementNote": "Reimbursement for thyroid nodule procedures varies based on the specific CPT code, place of service, and Medicare Administrative Contractor (MAC). Ensure accurate coding and complete documentation to support medical necessity. ",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Fine Needle Aspiration (FNA)",
+            "items": [
+              "Thyroid nodule size ≥ 1 cm with suspicious ultrasound features (e.g., microcalcifications, irregular margins, taller-than-wide shape).",
+              "Thyroid nodule size ≥ 1.5 cm without suspicious ultrasound features. ",
+              "Growth of a previously stable nodule. ",
+              "Nodule with increased metabolic activity on PET scan. "
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Thyroidectomy",
+            "items": [
+              "Confirmed malignant or suspicious for malignancy on FNA. ",
+              "Nodule causing compressive symptoms (dysphagia, dyspnea, hoarseness). ",
+              "Toxic nodule causing hyperthyroidism unresponsive to medical management. ",
+              "Cosmetic concerns for very large goiters. "
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Thyroid Nodule Ablation (e.g., RFA)",
+            "items": [
+              "Symptomatic benign thyroid nodule (e.g., compressive symptoms, cosmetic concerns). ",
+              "Confirmed benign cytology on at least two separate FNAs. ",
+              "Nodule size ≥ 2 cm. ",
+              "Patient refusal or contraindication to surgery. ",
+              "Growth of nodule despite observation. "
+            ]
+          },
+          {
+            "heading": "Required Documentation: General",
+            "items": [
+              "Detailed clinical history and physical examination findings. ",
+              "Thyroid function tests (TSH, T3, T4). ",
+              "Thyroid ultrasound report with nodule characteristics and measurements. ",
+              "Pathology report from FNA biopsy. "
+            ]
+          },
+          {
+            "heading": "Required Documentation: For Ablation Procedures",
+            "items": [
+              "Documentation of symptoms (e.g., neck discomfort, dysphagia). ",
+              "Evidence of at least two benign FNA results. ",
+              "Discussion of surgical alternatives and patient preference. "
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims electronically using appropriate CPT and ICD-10 codes. ",
+              "For RFA, check MAC-specific LCDs for prior authorization requirements. ",
+              "Ensure all supporting documentation is readily available for review upon request. "
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of medical necessity documentation. ",
+              "Incomplete or unclear FNA pathology reports. ",
+              "Nodule size not meeting criteria for biopsy or intervention. ",
+              "Failure to obtain prior authorization for RFA when required. "
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Maintain thorough documentation of all diagnostic findings and treatment plans. ",
+              "Stay updated on MAC-specific LCDs for thyroid nodule management, especially for newer procedures. ",
+              "Clearly document patient symptoms and impact on quality of life for symptomatic benign nodules. "
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "CMS (National)", "status": "Covered", "notes": "General coverage for medically necessary diagnostic and therapeutic procedures." },
+          { "payer": "Various MACs", "status": "Varies", "notes": "Specific LCDs may apply for RFA and other advanced procedures, requiring prior authorization." }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Prior Authorization Required",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid programs often require prior authorization for most non-emergency surgical procedures, including thyroidectomy, and for advanced diagnostic imaging or interventional procedures like RFA. Coverage criteria can vary significantly by state. ",
+        "overview": "Medicaid coverage for thyroid nodule management is determined by individual state programs. Prior authorization is typically required for surgical and interventional procedures. Documentation of medical necessity and adherence to state-specific guidelines are crucial. ",
+        "reimbursementNote": "Medicaid reimbursement rates are generally lower than Medicare or private insurance. Timely and accurate submission of claims with proper authorization is essential for payment. ",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General",
+            "items": [
+              "Medical necessity established by clinical evaluation and diagnostic findings. ",
+              "Adherence to state-specific clinical guidelines for thyroid nodule management. "
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Thyroidectomy/Ablation",
+            "items": [
+              "Confirmed malignancy or high suspicion of malignancy. ",
+              "Significant compressive symptoms refractory to conservative management. ",
+              "Hyperthyroidism due to toxic nodule unresponsive to medical therapy. ",
+              "For ablation, typically requires confirmed benign nodule with significant symptoms and contraindication to surgery. "
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization Request",
+            "items": [
+              "Completed Medicaid prior authorization form. ",
+              "Clinical notes detailing diagnosis, symptoms, and impact on patient. ",
+              "All relevant diagnostic reports (ultrasound, FNA pathology, thyroid function tests). ",
+              "Proposed treatment plan and rationale. "
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request to the state Medicaid agency or managed care organization. ",
+              "Await approval before performing non-emergency procedures. ",
+              "Submit claims with authorization number once approved. "
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization. ",
+              "Insufficient documentation of medical necessity. ",
+              "Failure to meet state-specific coverage criteria. ",
+              "Incomplete or illegible documentation. "
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state's specific Medicaid guidelines for thyroid nodule management. ",
+              "Initiate prior authorization early for all elective procedures. ",
+              "Ensure all documentation clearly supports the medical necessity of the requested service. "
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "State Medicaid Programs", "status": "Varies by State", "notes": "Coverage and prior authorization rules are highly state-dependent." }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Prior Authorization Often Required",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for thyroid nodule ablation and thyroidectomy. Diagnostic procedures like FNA and ultrasound may or may not require prior authorization depending on the plan and network status. Verify benefits and requirements for each patient. ",
+        "overview": "Private insurance coverage for thyroid nodule management varies widely by plan. Prior authorization is commonly required for surgical and interventional procedures. It is critical to verify benefits and specific policy requirements for each patient's plan. ",
+        "reimbursementNote": "Reimbursement rates vary significantly among private insurance plans. Negotiated rates with in-network providers generally lead to better reimbursement. ",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General",
+            "items": [
+              "Medical necessity established by clinical evaluation and diagnostic findings. ",
+              "Adherence to evidence-based clinical guidelines (e.g., ATA guidelines). "
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Thyroidectomy/Ablation",
+            "items": [
+              "Confirmed malignancy or high suspicion of malignancy. ",
+              "Significant compressive symptoms impacting quality of life. ",
+              "Hyperthyroidism due to toxic nodule unresponsive to medical management. ",
+              "For ablation, typically requires confirmed benign nodule with symptoms and failure of conservative management or contraindication to surgery. "
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization Request",
+            "items": [
+              "Completed insurance-specific prior authorization form. ",
+              "Clinical notes detailing diagnosis, symptoms, and treatment rationale. ",
+              "All relevant diagnostic reports (ultrasound, FNA pathology, thyroid function tests). ",
+              "Letter of medical necessity from the treating physician. "
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request to the patient's private insurance carrier. ",
+              "Follow up regularly on the status of the authorization. ",
+              "Submit claims with the approved authorization number. "
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization. ",
+              "Insufficient documentation of medical necessity or failure to meet plan-specific criteria. ",
+              "Experimental/investigational status for certain newer procedures. ",
+              "Out-of-network services without proper authorization. "
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify patient benefits and prior authorization requirements with each private insurance plan. ",
+              "Provide comprehensive documentation, including a strong letter of medical necessity. ",
+              "Be prepared to appeal denials with additional clinical information. "
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Various Commercial Payers", "status": "Varies", "notes": "Policies differ widely; always check individual plan documents and medical policies." }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Navigation",
+        "kind": "link",
+        "text": "Back to Assessment",
+        "href": "/thyroidnodule"
+      },
+      {
+        "heading": "Procedure Codes — note (CPT 10005)",
+        "kind": "prose",
+        "text": "For each additional lesion, use add-on code 10006."
+      },
+      {
+        "heading": "Procedure Codes — note (CPT 60660)",
+        "kind": "prose",
+        "text": "This code is effective January 1, 2025, for radiofrequency ablation of thyroid nodules."
+      },
+      {
+        "heading": "Procedure Codes — note (CPT 60220)",
+        "kind": "prose",
+        "text": "This code describes the removal of one entire thyroid lobe. For total thyroidectomy, use appropriate codes."
+      },
+      {
+        "heading": "Reimbursement Note (Medicare)",
+        "kind": "prose",
+        "text": "Reimbursement for thyroid nodule procedures varies based on the specific CPT code, place of service, and Medicare Administrative Contractor (MAC). Ensure accurate coding and complete documentation to support medical necessity. "
+      },
+      {
+        "heading": "Reimbursement Note (Medicaid)",
+        "kind": "prose",
+        "text": "Medicaid reimbursement rates are generally lower than Medicare or private insurance. Timely and accurate submission of claims with proper authorization is essential for payment. "
+      },
+      {
+        "heading": "Reimbursement Note (Private Insurance)",
+        "kind": "prose",
+        "text": "Reimbursement rates vary significantly among private insurance plans. Negotiated rates with in-network providers generally lead to better reimbursement. "
+      }
+    ],
+    "raw": {
+      "markdown": "# Thyroid Nodule Clinical Compass\n## Thyroid Nodule Insurance Authorization Guide\n\n[Back to Assessment](/thyroidnodule)\n\n---\n\n## Procedure Codes (CPT)\n\n### CPT 10005 — RVU 2.00\nFine needle aspiration biopsy, first lesion, including ultrasound guidance\n\n- **Device/Access:** Ultrasound guidance (Percutaneous)\n\n**Included in this code (do NOT bill separately):**\n- Interpretation and report of imaging guidance\n- Collection of specimen(s)\n- Preparation of specimen(s) for cytologic evaluation\n\n*For each additional lesion, use add-on code 10006.*\n\n### CPT 60660 — RVU 15.00\nAblation of one or more thyroid nodule(s), one lobe or the isthmus, percutaneous, including imaging guidance, radiofrequency\n\n- **Device/Access:** Radiofrequency ablation device, Ultrasound guidance (Percutaneous)\n\n**Included in this code (do NOT bill separately):**\n- Pre-procedure imaging for planning\n- Intra-procedure imaging guidance\n- Post-procedure assessment\n\n*This code is effective January 1, 2025, for radiofrequency ablation of thyroid nodules.*\n\n### CPT 60220 — RVU 25.00\nTotal thyroid lobectomy, unilateral; with or without isthmusectomy\n\n- **Device/Access:** Surgical instruments (Open surgical approach)\n\n**Included in this code (do NOT bill separately):**\n- Dissection and removal of thyroid lobe\n- Hemostasis\n- Closure of surgical site\n\n*This code describes the removal of one entire thyroid lobe. For total thyroidectomy, use appropriate codes.*\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **E04.1** (Primary) — Nontoxic single thyroid nodule. Used for solitary, non-functioning thyroid nodules without signs of hyperthyroidism.\n- **D34** — Benign neoplasm of thyroid gland. Used for confirmed benign thyroid tumors, such as follicular adenoma.\n- **C73** (Primary) — Malignant neoplasm of thyroid gland. Used for confirmed malignant thyroid cancers, such as papillary or follicular carcinoma.\n\n---\n\n## Payer-Specific Authorization Requirements\n\n### Medicare\n**No Prior Auth (FFS)** | Coverage Status: **Covered with Medical Necessity**\n\n> ⚠ Medicare generally does not require prior authorization for diagnostic thyroid nodule evaluations (FNA, ultrasound) or for medically necessary thyroidectomy. However, prior authorization may be required for newer ablation procedures (e.g., RFA) depending on local coverage determinations (LCDs). Always verify with the specific Medicare Administrative Contractor (MAC).\n\nMedicare covers services for thyroid nodule diagnosis and treatment when deemed medically necessary. This includes imaging, biopsies, and surgical interventions. Newer procedures like RFA for benign nodules may have specific coverage criteria and require prior authorization based on LCDs.\n\n#### Coverage Criteria\n**Fine Needle Aspiration (FNA)**\n- Thyroid nodule size ≥ 1 cm with suspicious ultrasound features (e.g., microcalcifications, irregular margins, taller-than-wide shape).\n- Thyroid nodule size ≥ 1.5 cm without suspicious ultrasound features. \n- Growth of a previously stable nodule. \n- Nodule with increased metabolic activity on PET scan. \n\n**Thyroidectomy**\n- Confirmed malignant or suspicious for malignancy on FNA. \n- Nodule causing compressive symptoms (dysphagia, dyspnea, hoarseness). \n- Toxic nodule causing hyperthyroidism unresponsive to medical management. \n- Cosmetic concerns for very large goiters. \n\n**Thyroid Nodule Ablation (e.g., RFA)**\n- Symptomatic benign thyroid nodule (e.g., compressive symptoms, cosmetic concerns). \n- Confirmed benign cytology on at least two separate FNAs. \n- Nodule size ≥ 2 cm. \n- Patient refusal or contraindication to surgery. \n- Growth of nodule despite observation. \n\n#### Required Documentation\n**General**\n- Detailed clinical history and physical examination findings. \n- Thyroid function tests (TSH, T3, T4). \n- Thyroid ultrasound report with nodule characteristics and measurements. \n- Pathology report from FNA biopsy. \n\n**For Ablation Procedures**\n- Documentation of symptoms (e.g., neck discomfort, dysphagia). \n- Evidence of at least two benign FNA results. \n- Discussion of surgical alternatives and patient preference. \n\n#### Submission Process\n1. Submit claims electronically using appropriate CPT and ICD-10 codes. \n2. For RFA, check MAC-specific LCDs for prior authorization requirements. \n3. Ensure all supporting documentation is readily available for review upon request. \n\n#### Common Denial Reasons\n- Lack of medical necessity documentation. \n- Incomplete or unclear FNA pathology reports. \n- Nodule size not meeting criteria for biopsy or intervention. \n- Failure to obtain prior authorization for RFA when required. \n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS (National) | Covered | General coverage for medically necessary diagnostic and therapeutic procedures. |\n| Various MACs | Varies | Specific LCDs may apply for RFA and other advanced procedures, requiring prior authorization. |\n\n#### Reimbursement Note\nReimbursement for thyroid nodule procedures varies based on the specific CPT code, place of service, and Medicare Administrative Contractor (MAC). Ensure accurate coding and complete documentation to support medical necessity. \n\n#### Authorization Tips\n- Maintain thorough documentation of all diagnostic findings and treatment plans. \n- Stay updated on MAC-specific LCDs for thyroid nodule management, especially for newer procedures. \n- Clearly document patient symptoms and impact on quality of life for symptomatic benign nodules. \n\n---\n\n### Medicaid\n**Prior Auth Required** | Coverage Status: **Prior Authorization Required**\n\n> ⚠ Medicaid programs often require prior authorization for most non-emergency surgical procedures, including thyroidectomy, and for advanced diagnostic imaging or interventional procedures like RFA. Coverage criteria can vary significantly by state. \n\nMedicaid coverage for thyroid nodule management is determined by individual state programs. Prior authorization is typically required for surgical and interventional procedures. Documentation of medical necessity and adherence to state-specific guidelines are crucial. \n\n#### Coverage Criteria\n**General**\n- Medical necessity established by clinical evaluation and diagnostic findings. \n- Adherence to state-specific clinical guidelines for thyroid nodule management. \n\n**Thyroidectomy/Ablation**\n- Confirmed malignancy or high suspicion of malignancy. \n- Significant compressive symptoms refractory to conservative management. \n- Hyperthyroidism due to toxic nodule unresponsive to medical therapy. \n- For ablation, typically requires confirmed benign nodule with significant symptoms and contraindication to surgery. \n\n#### Required Documentation\n**Prior Authorization Request**\n- Completed Medicaid prior authorization form. \n- Clinical notes detailing diagnosis, symptoms, and impact on patient. \n- All relevant diagnostic reports (ultrasound, FNA pathology, thyroid function tests). \n- Proposed treatment plan and rationale. \n\n#### Submission Process\n1. Submit prior authorization request to the state Medicaid agency or managed care organization. \n2. Await approval before performing non-emergency procedures. \n3. Submit claims with authorization number once approved. \n\n#### Common Denial Reasons\n- Lack of prior authorization. \n- Insufficient documentation of medical necessity. \n- Failure to meet state-specific coverage criteria. \n- Incomplete or illegible documentation. \n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid Programs | Varies by State | Coverage and prior authorization rules are highly state-dependent. |\n\n#### Reimbursement Note\nMedicaid reimbursement rates are generally lower than Medicare or private insurance. Timely and accurate submission of claims with proper authorization is essential for payment. \n\n#### Authorization Tips\n- Familiarize yourself with your state's specific Medicaid guidelines for thyroid nodule management. \n- Initiate prior authorization early for all elective procedures. \n- Ensure all documentation clearly supports the medical necessity of the requested service. \n\n---\n\n### Private Insurance\n**Prior Auth Required** | Coverage Status: **Prior Authorization Often Required**\n\n> ⚠ Most private insurance plans require prior authorization for thyroid nodule ablation and thyroidectomy. Diagnostic procedures like FNA and ultrasound may or may not require prior authorization depending on the plan and network status. Verify benefits and requirements for each patient. \n\nPrivate insurance coverage for thyroid nodule management varies widely by plan. Prior authorization is commonly required for surgical and interventional procedures. It is critical to verify benefits and specific policy requirements for each patient's plan. \n\n#### Coverage Criteria\n**General**\n- Medical necessity established by clinical evaluation and diagnostic findings. \n- Adherence to evidence-based clinical guidelines (e.g., ATA guidelines). \n\n**Thyroidectomy/Ablation**\n- Confirmed malignancy or high suspicion of malignancy. \n- Significant compressive symptoms impacting quality of life. \n- Hyperthyroidism due to toxic nodule unresponsive to medical management. \n- For ablation, typically requires confirmed benign nodule with symptoms and failure of conservative management or contraindication to surgery. \n\n#### Required Documentation\n**Prior Authorization Request**\n- Completed insurance-specific prior authorization form. \n- Clinical notes detailing diagnosis, symptoms, and treatment rationale. \n- All relevant diagnostic reports (ultrasound, FNA pathology, thyroid function tests). \n- Letter of medical necessity from the treating physician. \n\n#### Submission Process\n1. Submit prior authorization request to the patient's private insurance carrier. \n2. Follow up regularly on the status of the authorization. \n3. Submit claims with the approved authorization number. \n\n#### Common Denial Reasons\n- Lack of prior authorization. \n- Insufficient documentation of medical necessity or failure to meet plan-specific criteria. \n- Experimental/investigational status for certain newer procedures. \n- Out-of-network services without proper authorization. \n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Various Commercial Payers | Varies | Policies differ widely; always check individual plan documents and medical policies. |\n\n#### Reimbursement Note\nReimbursement rates vary significantly among private insurance plans. Negotiated rates with in-network providers generally lead to better reimbursement. \n\n#### Authorization Tips\n- Always verify patient benefits and prior authorization requirements with each private insurance plan. \n- Provide comprehensive documentation, including a strong letter of medical necessity. \n- Be prepared to appeal denials with additional clinical information. \n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "RVU", "Description", "Device/Access", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            ["10005", "2.00", "Fine needle aspiration biopsy, first lesion, including ultrasound guidance", "Ultrasound guidance (Percutaneous)", "Interpretation and report of imaging guidance; Collection of specimen(s); Preparation of specimen(s) for cytologic evaluation", "For each additional lesion, use add-on code 10006."],
+            ["60660", "15.00", "Ablation of one or more thyroid nodule(s), one lobe or the isthmus, percutaneous, including imaging guidance, radiofrequency", "Radiofrequency ablation device, Ultrasound guidance (Percutaneous)", "Pre-procedure imaging for planning; Intra-procedure imaging guidance; Post-procedure assessment", "This code is effective January 1, 2025, for radiofrequency ablation of thyroid nodules."],
+            ["60220", "25.00", "Total thyroid lobectomy, unilateral; with or without isthmusectomy", "Surgical instruments (Open surgical approach)", "Dissection and removal of thyroid lobe; Hemostasis; Closure of surgical site", "This code describes the removal of one entire thyroid lobe. For total thyroidectomy, use appropriate codes."]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["Code", "Description", "Notes", "Required/Primary"],
+          "rows": [
+            ["E04.1", "Nontoxic single thyroid nodule", "Used for solitary, non-functioning thyroid nodules without signs of hyperthyroidism.", "Primary"],
+            ["D34", "Benign neoplasm of thyroid gland", "Used for confirmed benign thyroid tumors, such as follicular adenoma.", ""],
+            ["C73", "Malignant neoplasm of thyroid gland", "Used for confirmed malignant thyroid cancers, such as papillary or follicular carcinoma.", "Primary"]
+          ]
+        },
+        {
+          "name": "Medicare — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS (National)", "Covered", "General coverage for medically necessary diagnostic and therapeutic procedures."],
+            ["Various MACs", "Varies", "Specific LCDs may apply for RFA and other advanced procedures, requiring prior authorization."]
+          ]
+        },
+        {
+          "name": "Medicaid — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid Programs", "Varies by State", "Coverage and prior authorization rules are highly state-dependent."]
+          ]
+        },
+        {
+          "name": "Private Insurance — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Various Commercial Payers", "Varies", "Policies differ widely; always check individual plan documents and medical policies."]
+          ]
+        }
+      ]
+    }
+  }
+}

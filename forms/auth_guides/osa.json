@@ -1,0 +1,393 @@
+{
+  "title": "OSA Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "OSAAuthGuide.tsx",
+    "title": "OSA Clinical Compass",
+    "subtitle": "Obstructive Sleep Apnea Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "95810",
+        "description": "Polysomnography; sleep staging with 4 or more additional parameters of sleep (e.g., EEG, EOG, EMG, respiration, ECG, etc.) attended by a technologist",
+        "device": "Diagnostic Sleep Study Equipment",
+        "access": "In-facility or Home Sleep Apnea Test (HSAT)",
+        "rvu": "18.15",
+        "includes": [
+          "Continuous and simultaneous monitoring and recording of various physiological and pathophysiological parameters of sleep for six or more hours",
+          "Physician review, interpretation, and report"
+        ],
+        "note": "Used for the diagnosis of Obstructive Sleep Apnea. RVU is an approximate value and may vary."
+      },
+      {
+        "code": "64582",
+        "description": "Open implantation of hypoglossal nerve neurostimulator array, pulse generator, and distal respiratory sensor electrode or electrode array",
+        "device": "Hypoglossal Nerve Stimulator System (e.g., Inspire)",
+        "access": "Surgical Implantation",
+        "rvu": "Varies",
+        "includes": [
+          "Surgical placement of the neurostimulator array",
+          "Implantation of the pulse generator",
+          "Placement of the distal respiratory sensor electrode"
+        ],
+        "note": "Used for the treatment of moderate to severe Obstructive Sleep Apnea in select patients. RVU varies based on payer and specific procedure details."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "G47.33",
+        "description": "Obstructive sleep apnea (adult) (pediatric)",
+        "notes": "Primary diagnosis code for Obstructive Sleep Apnea.",
+        "required": true
+      },
+      {
+        "code": "R06.83",
+        "description": "Snoring",
+        "notes": "May be used as a secondary diagnosis, often associated with OSA.",
+        "required": false
+      },
+      {
+        "code": "I27.2",
+        "description": "Other secondary pulmonary hypertension",
+        "notes": "May be a comorbidity associated with severe OSA.",
+        "required": false
+      },
+      {
+        "code": "E66.9",
+        "description": "Obesity, unspecified",
+        "notes": "Often a significant contributing factor to OSA.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with specific criteria",
+        "overview": "Medicare Part B covers CPAP machines and accessories as durable medical equipment (DME) for beneficiaries diagnosed with moderate to severe obstructive sleep apnea after a sleep study. Hypoglossal nerve stimulation is also covered under specific criteria outlined in Local Coverage Determinations (LCDs).",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is required for hypoglossal nerve stimulation and often for ongoing CPAP therapy and replacement supplies. Initial CPAP trial may not require prior authorization.",
+        "reimbursementNote": "Reimbursement for CPAP is typically under DME benefits. HNS is covered under surgical benefits. Specific reimbursement rates vary by MAC and geographic location.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Diagnosis",
+            "items": [
+              "Diagnosis of moderate to severe obstructive sleep apnea confirmed by a Medicare-approved sleep study (e.g., polysomnography CPT 95810).",
+              "Apnea-Hypopnea Index (AHI) or Respiratory Disturbance Index (RDI) greater than or equal to 15 events per hour, or AHI/RDI greater than or equal to 5 and less than 15 events per hour with documented symptoms (e.g., excessive daytime sleepiness, hypertension, ischemic heart disease, history of stroke)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: CPAP Therapy",
+            "items": [
+              "Initial 12-week trial of CPAP therapy with documented adherence and improvement. If criteria are met, continued coverage is provided.",
+              "Replacement of CPAP device typically covered every five years. Replacement supplies (masks, tubing, filters) covered at regular intervals."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Hypoglossal Nerve Stimulation (HNS)",
+            "items": [
+              "Age 22 years or older with moderate to severe OSA (AHI 15-65).",
+              "BMI < 32 kg/m² (some MACs may allow up to 35 kg/m²).",
+              "Failed or intolerant to CPAP therapy (documented).",
+              "Absence of complete concentric collapse at the soft palate level on drug-induced sleep endoscopy (DISE).",
+              "No other anatomical conditions that would prevent treatment success."
+            ]
+          },
+          {
+            "heading": "Required Documentation: General",
+            "items": [
+              "Detailed physician order for DME or HNS.",
+              "Results of a Medicare-approved sleep study (e.g., CPT 95810).",
+              "Progress notes documenting patient symptoms, physical exam, and medical necessity."
+            ]
+          },
+          {
+            "heading": "Required Documentation: CPAP Specific",
+            "items": [
+              "Documentation of CPAP trial, usage data, and patient compliance (e.g., download from CPAP device).",
+              "Face-to-face evaluation by treating physician to assess effectiveness and compliance."
+            ]
+          },
+          {
+            "heading": "Required Documentation: HNS Specific",
+            "items": [
+              "Documentation of CPAP failure or intolerance.",
+              "Results of drug-induced sleep endoscopy (DISE).",
+              "Multidisciplinary team evaluation (e.g., sleep physician, ENT surgeon)."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Obtain detailed physician order and all supporting clinical documentation.",
+              "Submit prior authorization request (if required) to the Durable Medical Equipment Medicare Administrative Contractor (DME MAC) or appropriate MAC.",
+              "Ensure all coding (CPT, HCPCS, ICD-10) is accurate and supported by documentation.",
+              "Follow up on authorization status and appeal denials if necessary."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Insufficient documentation of medical necessity.",
+              "Failure to meet AHI/RDI criteria.",
+              "Lack of documented CPAP trial or intolerance for HNS.",
+              "Incomplete or incorrect coding.",
+              "Failure to obtain prior authorization when required."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Ensure all sleep study results clearly state AHI/RDI and associated symptoms.",
+              "Document thoroughly all attempts and failures with CPAP therapy before considering HNS.",
+              "Keep detailed records of patient compliance with CPAP.",
+              "Verify specific MAC LCDs for the most current coverage criteria for HNS."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Noridian (DME MAC)",
+            "status": "Covered",
+            "notes": "Follows national coverage determinations and local coverage determinations for PAP devices and HNS."
+          },
+          {
+            "payer": "Palmetto GBA (DME MAC)",
+            "status": "Covered",
+            "notes": "Specific LCDs for PAP and HNS. May have unique documentation requirements."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered with state-specific criteria",
+        "overview": "Medicaid programs cover diagnosis and treatment of OSA, including CPAP therapy and, in some states, hypoglossal nerve stimulation. Coverage is determined by individual state Medicaid policies, which often align with Medicare guidelines but may have additional restrictions or requirements.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is generally required for CPAP devices, accessories, and hypoglossal nerve stimulation. Coverage criteria vary significantly by state.",
+        "reimbursementNote": "Reimbursement rates are set by individual state Medicaid programs and are generally lower than Medicare or private insurance. HNS coverage is often limited.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Diagnosis",
+            "items": [
+              "Diagnosis of moderate to severe obstructive sleep apnea confirmed by an approved sleep study.",
+              "AHI/RDI criteria similar to Medicare, but may vary by state."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: CPAP Therapy",
+            "items": [
+              "Medical necessity for CPAP device and accessories.",
+              "Documented trial and adherence for continued coverage. Some states may have age restrictions or specific criteria for pediatric OSA."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Hypoglossal Nerve Stimulation (HNS)",
+            "items": [
+              "Coverage is limited and highly state-specific. Many states consider HNS investigational or require extensive prior authorization.",
+              "When covered, criteria generally mirror Medicare, including age, BMI, CPAP failure, and DISE results."
+            ]
+          },
+          {
+            "heading": "Required Documentation: General",
+            "items": [
+              "Physician order and prescription.",
+              "Sleep study results.",
+              "Clinical notes detailing symptoms, diagnosis, and treatment plan."
+            ]
+          },
+          {
+            "heading": "Required Documentation: CPAP Specific",
+            "items": [
+              "Documentation of CPAP usage and compliance.",
+              "Justification for replacement supplies."
+            ]
+          },
+          {
+            "heading": "Required Documentation: HNS Specific",
+            "items": [
+              "Extensive documentation of medical necessity, CPAP failure, and adherence to state-specific HNS criteria.",
+              "DISE results and multidisciplinary team recommendations."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Consult state-specific Medicaid provider manuals for detailed prior authorization and billing guidelines.",
+              "Submit prior authorization request to the state Medicaid agency or managed care organization.",
+              "Ensure all documentation is complete and accurately reflects state criteria.",
+              "Be prepared for potential delays and appeals due to varying state policies."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet state-specific medical necessity criteria.",
+              "Inadequate documentation.",
+              "HNS considered investigational by the state.",
+              "Lack of prior authorization.",
+              "Incorrect coding for state Medicaid."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always check the specific Medicaid policies for the state in which the patient resides.",
+              "Be aware of any age or BMI restrictions that may apply.",
+              "Document all conservative treatment failures thoroughly.",
+              "For HNS, confirm coverage with the state Medicaid program prior to initiating treatment."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "California Medi-Cal",
+            "status": "Covered with PA",
+            "notes": "Follows specific guidelines for CPAP and may cover HNS under certain conditions."
+          },
+          {
+            "payer": "New York Medicaid",
+            "status": "Covered with PA",
+            "notes": "Has specific criteria for sleep studies and CPAP. HNS coverage is reviewed on a case-by-case basis."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Covered with plan-specific criteria",
+        "overview": "Private insurance plans typically cover the diagnosis and treatment of OSA, including CPAP therapy and hypoglossal nerve stimulation. Coverage criteria, prior authorization requirements, and out-of-pocket costs vary significantly based on the specific insurance plan and policy.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is almost always required for CPAP devices, accessories, and hypoglossal nerve stimulation. Coverage varies widely by plan and employer.",
+        "reimbursementNote": "Reimbursement rates vary significantly by plan, network status, and negotiated contracts. Patients may have substantial out-of-pocket costs (deductibles, co-insurance).",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Diagnosis",
+            "items": [
+              "Diagnosis of moderate to severe obstructive sleep apnea confirmed by an accredited sleep study (e.g., CPT 95810).",
+              "AHI/RDI criteria generally align with Medicare guidelines, but some plans may have stricter thresholds."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: CPAP Therapy",
+            "items": [
+              "Medical necessity for CPAP device and accessories.",
+              "Documented trial of CPAP with adherence and clinical improvement for ongoing coverage. Some plans may have specific rental vs. purchase policies."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Hypoglossal Nerve Stimulation (HNS)",
+            "items": [
+              "Coverage is common but requires extensive prior authorization and adherence to strict criteria.",
+              "Criteria typically include age, BMI, documented CPAP failure or intolerance, and DISE results demonstrating appropriate anatomy."
+            ]
+          },
+          {
+            "heading": "Required Documentation: General",
+            "items": [
+              "Physician order/prescription.",
+              "Comprehensive sleep study report.",
+              "Clinical notes detailing patient history, symptoms, and treatment rationale."
+            ]
+          },
+          {
+            "heading": "Required Documentation: CPAP Specific",
+            "items": [
+              "Documentation of CPAP trial, usage data, and patient compliance.",
+              "Justification for replacement parts and accessories."
+            ]
+          },
+          {
+            "heading": "Required Documentation: HNS Specific",
+            "items": [
+              "Detailed documentation of CPAP failure/intolerance.",
+              "DISE report.",
+              "Surgeon's operative plan and multidisciplinary team evaluation."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify patient's specific insurance benefits and requirements prior to initiating treatment.",
+              "Submit prior authorization request with all required clinical documentation to the insurance carrier.",
+              "Follow up regularly on authorization status and be prepared to provide additional information or appeal denials.",
+              "Ensure all coding is accurate and consistent with plan policies."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization.",
+              "Failure to meet plan-specific medical necessity criteria.",
+              "Inadequate or incomplete documentation.",
+              "HNS considered experimental or investigational by the plan (less common now, but still possible).",
+              "Out-of-network provider issues."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify benefits and obtain prior authorization before any diagnostic testing or treatment.",
+              "Document all patient education regarding CPAP use and compliance.",
+              "For HNS, ensure all pre-surgical evaluations and imaging are meticulously documented.",
+              "Be proactive in communicating with the insurance company and patient regarding coverage status."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Covered with PA",
+            "notes": "Generally covers CPAP and HNS, but specific criteria vary by plan. Often aligns with national guidelines."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered with PA",
+            "notes": "Has specific medical policies for OSA diagnosis and treatment, including HNS. Requires strict adherence to criteria."
+          },
+          {
+            "payer": "Aetna",
+            "status": "Covered with PA",
+            "notes": "Covers CPAP and HNS with medical necessity. May have specific BMI or AHI requirements for HNS."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment",
+        "href": "/osa"
+      }
+    ],
+    "raw": {
+      "markdown": "# OSA Clinical Compass\n_Obstructive Sleep Apnea Insurance Authorization Guide_\n\n[Back to Assessment](/osa)\n\n## Procedure Codes\n\n### CPT 95810 (RVU 18.15)\nPolysomnography; sleep staging with 4 or more additional parameters of sleep (e.g., EEG, EOG, EMG, respiration, ECG, etc.) attended by a technologist\n\n- Device/Access: Diagnostic Sleep Study Equipment\n- Access: In-facility or Home Sleep Apnea Test (HSAT)\n\nIncluded in this code (do NOT bill separately):\n- Continuous and simultaneous monitoring and recording of various physiological and pathophysiological parameters of sleep for six or more hours\n- Physician review, interpretation, and report\n\n_Used for the diagnosis of Obstructive Sleep Apnea. RVU is an approximate value and may vary._\n\n### CPT 64582 (RVU Varies)\nOpen implantation of hypoglossal nerve neurostimulator array, pulse generator, and distal respiratory sensor electrode or electrode array\n\n- Device/Access: Hypoglossal Nerve Stimulator System (e.g., Inspire)\n- Access: Surgical Implantation\n\nIncluded in this code (do NOT bill separately):\n- Surgical placement of the neurostimulator array\n- Implantation of the pulse generator\n- Placement of the distal respiratory sensor electrode\n\n_Used for the treatment of moderate to severe Obstructive Sleep Apnea in select patients. RVU varies based on payer and specific procedure details._\n\n## ICD-10 Diagnosis Codes\n\n- **G47.33** (Primary) — Obstructive sleep apnea (adult) (pediatric). Primary diagnosis code for Obstructive Sleep Apnea.\n- **R06.83** — Snoring. May be used as a secondary diagnosis, often associated with OSA.\n- **I27.2** — Other secondary pulmonary hypertension. May be a comorbidity associated with severe OSA.\n- **E66.9** — Obesity, unspecified. Often a significant contributing factor to OSA.\n\n## Payer-Specific Authorization Requirements\n\n### Medicare\nStatus badges: Prior Auth Required; Covered with specific criteria\n\nPrior Auth Note: Prior authorization is required for hypoglossal nerve stimulation and often for ongoing CPAP therapy and replacement supplies. Initial CPAP trial may not require prior authorization.\n\nOverview: Medicare Part B covers CPAP machines and accessories as durable medical equipment (DME) for beneficiaries diagnosed with moderate to severe obstructive sleep apnea after a sleep study. Hypoglossal nerve stimulation is also covered under specific criteria outlined in Local Coverage Determinations (LCDs).\n\n**Coverage Criteria**\n\nDiagnosis\n- Diagnosis of moderate to severe obstructive sleep apnea confirmed by a Medicare-approved sleep study (e.g., polysomnography CPT 95810).\n- Apnea-Hypopnea Index (AHI) or Respiratory Disturbance Index (RDI) greater than or equal to 15 events per hour, or AHI/RDI greater than or equal to 5 and less than 15 events per hour with documented symptoms (e.g., excessive daytime sleepiness, hypertension, ischemic heart disease, history of stroke).\n\nCPAP Therapy\n- Initial 12-week trial of CPAP therapy with documented adherence and improvement. If criteria are met, continued coverage is provided.\n- Replacement of CPAP device typically covered every five years. Replacement supplies (masks, tubing, filters) covered at regular intervals.\n\nHypoglossal Nerve Stimulation (HNS)\n- Age 22 years or older with moderate to severe OSA (AHI 15-65).\n- BMI < 32 kg/m² (some MACs may allow up to 35 kg/m²).\n- Failed or intolerant to CPAP therapy (documented).\n- Absence of complete concentric collapse at the soft palate level on drug-induced sleep endoscopy (DISE).\n- No other anatomical conditions that would prevent treatment success.\n\n**Required Documentation**\n\nGeneral\n- Detailed physician order for DME or HNS.\n- Results of a Medicare-approved sleep study (e.g., CPT 95810).\n- Progress notes documenting patient symptoms, physical exam, and medical necessity.\n\nCPAP Specific\n- Documentation of CPAP trial, usage data, and patient compliance (e.g., download from CPAP device).\n- Face-to-face evaluation by treating physician to assess effectiveness and compliance.\n\nHNS Specific\n- Documentation of CPAP failure or intolerance.\n- Results of drug-induced sleep endoscopy (DISE).\n- Multidisciplinary team evaluation (e.g., sleep physician, ENT surgeon).\n\n**Submission Process**\n1. Obtain detailed physician order and all supporting clinical documentation.\n2. Submit prior authorization request (if required) to the Durable Medical Equipment Medicare Administrative Contractor (DME MAC) or appropriate MAC.\n3. Ensure all coding (CPT, HCPCS, ICD-10) is accurate and supported by documentation.\n4. Follow up on authorization status and appeal denials if necessary.\n\n**Common Denial Reasons**\n- Insufficient documentation of medical necessity.\n- Failure to meet AHI/RDI criteria.\n- Lack of documented CPAP trial or intolerance for HNS.\n- Incomplete or incorrect coding.\n- Failure to obtain prior authorization when required.\n\n**Known Payer Policies**\n\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Noridian (DME MAC) | Covered | Follows national coverage determinations and local coverage determinations for PAP devices and HNS. |\n| Palmetto GBA (DME MAC) | Covered | Specific LCDs for PAP and HNS. May have unique documentation requirements. |\n\n**Reimbursement Note**: Reimbursement for CPAP is typically under DME benefits. HNS is covered under surgical benefits. Specific reimbursement rates vary by MAC and geographic location.\n\n**Authorization Tips**\n- Ensure all sleep study results clearly state AHI/RDI and associated symptoms.\n- Document thoroughly all attempts and failures with CPAP therapy before considering HNS.\n- Keep detailed records of patient compliance with CPAP.\n- Verify specific MAC LCDs for the most current coverage criteria for HNS.\n\n### Medicaid\nStatus badges: Prior Auth Required; Covered with state-specific criteria\n\nPrior Auth Note: Prior authorization is generally required for CPAP devices, accessories, and hypoglossal nerve stimulation. Coverage criteria vary significantly by state.\n\nOverview: Medicaid programs cover diagnosis and treatment of OSA, including CPAP therapy and, in some states, hypoglossal nerve stimulation. Coverage is determined by individual state Medicaid policies, which often align with Medicare guidelines but may have additional restrictions or requirements.\n\n**Coverage Criteria**\n\nDiagnosis\n- Diagnosis of moderate to severe obstructive sleep apnea confirmed by an approved sleep study.\n- AHI/RDI criteria similar to Medicare, but may vary by state.\n\nCPAP Therapy\n- Medical necessity for CPAP device and accessories.\n- Documented trial and adherence for continued coverage. Some states may have age restrictions or specific criteria for pediatric OSA.\n\nHypoglossal Nerve Stimulation (HNS)\n- Coverage is limited and highly state-specific. Many states consider HNS investigational or require extensive prior authorization.\n- When covered, criteria generally mirror Medicare, including age, BMI, CPAP failure, and DISE results.\n\n**Required Documentation**\n\nGeneral\n- Physician order and prescription.\n- Sleep study results.\n- Clinical notes detailing symptoms, diagnosis, and treatment plan.\n\nCPAP Specific\n- Documentation of CPAP usage and compliance.\n- Justification for replacement supplies.\n\nHNS Specific\n- Extensive documentation of medical necessity, CPAP failure, and adherence to state-specific HNS criteria.\n- DISE results and multidisciplinary team recommendations.\n\n**Submission Process**\n1. Consult state-specific Medicaid provider manuals for detailed prior authorization and billing guidelines.\n2. Submit prior authorization request to the state Medicaid agency or managed care organization.\n3. Ensure all documentation is complete and accurately reflects state criteria.\n4. Be prepared for potential delays and appeals due to varying state policies.\n\n**Common Denial Reasons**\n- Failure to meet state-specific medical necessity criteria.\n- Inadequate documentation.\n- HNS considered investigational by the state.\n- Lack of prior authorization.\n- Incorrect coding for state Medicaid.\n\n**Known Payer Policies**\n\n| Payer | Status | Notes |\n| --- | --- | --- |\n| California Medi-Cal | Covered with PA | Follows specific guidelines for CPAP and may cover HNS under certain conditions. |\n| New York Medicaid | Covered with PA | Has specific criteria for sleep studies and CPAP. HNS coverage is reviewed on a case-by-case basis. |\n\n**Reimbursement Note**: Reimbursement rates are set by individual state Medicaid programs and are generally lower than Medicare or private insurance. HNS coverage is often limited.\n\n**Authorization Tips**\n- Always check the specific Medicaid policies for the state in which the patient resides.\n- Be aware of any age or BMI restrictions that may apply.\n- Document all conservative treatment failures thoroughly.\n- For HNS, confirm coverage with the state Medicaid program prior to initiating treatment.\n\n### Private Insurance\nStatus badges: Prior Auth Required; Covered with plan-specific criteria\n\nPrior Auth Note: Prior authorization is almost always required for CPAP devices, accessories, and hypoglossal nerve stimulation. Coverage varies widely by plan and employer.\n\nOverview: Private insurance plans typically cover the diagnosis and treatment of OSA, including CPAP therapy and hypoglossal nerve stimulation. Coverage criteria, prior authorization requirements, and out-of-pocket costs vary significantly based on the specific insurance plan and policy.\n\n**Coverage Criteria**\n\nDiagnosis\n- Diagnosis of moderate to severe obstructive sleep apnea confirmed by an accredited sleep study (e.g., CPT 95810).\n- AHI/RDI criteria generally align with Medicare guidelines, but some plans may have stricter thresholds.\n\nCPAP Therapy\n- Medical necessity for CPAP device and accessories.\n- Documented trial of CPAP with adherence and clinical improvement for ongoing coverage. Some plans may have specific rental vs. purchase policies.\n\nHypoglossal Nerve Stimulation (HNS)\n- Coverage is common but requires extensive prior authorization and adherence to strict criteria.\n- Criteria typically include age, BMI, documented CPAP failure or intolerance, and DISE results demonstrating appropriate anatomy.\n\n**Required Documentation**\n\nGeneral\n- Physician order/prescription.\n- Comprehensive sleep study report.\n- Clinical notes detailing patient history, symptoms, and treatment rationale.\n\nCPAP Specific\n- Documentation of CPAP trial, usage data, and patient compliance.\n- Justification for replacement parts and accessories.\n\nHNS Specific\n- Detailed documentation of CPAP failure/intolerance.\n- DISE report.\n- Surgeon's operative plan and multidisciplinary team evaluation.\n\n**Submission Process**\n1. Verify patient's specific insurance benefits and requirements prior to initiating treatment.\n2. Submit prior authorization request with all required clinical documentation to the insurance carrier.\n3. Follow up regularly on authorization status and be prepared to provide additional information or appeal denials.\n4. Ensure all coding is accurate and consistent with plan policies.\n\n**Common Denial Reasons**\n- Lack of prior authorization.\n- Failure to meet plan-specific medical necessity criteria.\n- Inadequate or incomplete documentation.\n- HNS considered experimental or investigational by the plan (less common now, but still possible).\n- Out-of-network provider issues.\n\n**Known Payer Policies**\n\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Blue Cross Blue Shield | Covered with PA | Generally covers CPAP and HNS, but specific criteria vary by plan. Often aligns with national guidelines. |\n| UnitedHealthcare | Covered with PA | Has specific medical policies for OSA diagnosis and treatment, including HNS. Requires strict adherence to criteria. |\n| Aetna | Covered with PA | Covers CPAP and HNS with medical necessity. May have specific BMI or AHI requirements for HNS. |\n\n**Reimbursement Note**: Reimbursement rates vary significantly by plan, network status, and negotiated contracts. Patients may have substantial out-of-pocket costs (deductibles, co-insurance).\n\n**Authorization Tips**\n- Always verify benefits and obtain prior authorization before any diagnostic testing or treatment.\n- Document all patient education regarding CPAP use and compliance.\n- For HNS, ensure all pre-surgical evaluations and imaging are meticulously documented.\n- Be proactive in communicating with the insurance company and patient regarding coverage status.\n",
+      "tables": [
+        {
+          "name": "Medicare Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Noridian (DME MAC)", "Covered", "Follows national coverage determinations and local coverage determinations for PAP devices and HNS."],
+            ["Palmetto GBA (DME MAC)", "Covered", "Specific LCDs for PAP and HNS. May have unique documentation requirements."]
+          ]
+        },
+        {
+          "name": "Medicaid Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["California Medi-Cal", "Covered with PA", "Follows specific guidelines for CPAP and may cover HNS under certain conditions."],
+            ["New York Medicaid", "Covered with PA", "Has specific criteria for sleep studies and CPAP. HNS coverage is reviewed on a case-by-case basis."]
+          ]
+        },
+        {
+          "name": "Private Insurance Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield", "Covered with PA", "Generally covers CPAP and HNS, but specific criteria vary by plan. Often aligns with national guidelines."],
+            ["UnitedHealthcare", "Covered with PA", "Has specific medical policies for OSA diagnosis and treatment, including HNS. Requires strict adherence to criteria."],
+            ["Aetna", "Covered with PA", "Covers CPAP and HNS with medical necessity. May have specific BMI or AHI requirements for HNS."]
+          ]
+        }
+      ]
+    }
+  }
+}

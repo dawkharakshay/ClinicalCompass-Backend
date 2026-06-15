@@ -1,0 +1,30 @@
+{
+  "title": "Gender-Affirming Urologic Procedures Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "57291, 57292, 55175, 55180, 55970, 55980, 54520, 58150, 58661, 53410",
+      "credentials": "[Credentials]",
+      "icd_codes": "F64.0, F64.8, F64.9, Z87.890, Z76.89, Q56.4",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "To Whom It May Concern,\n\nI am writing to formally appeal the denial of prior authorization for gender-affirming urologic surgery for my patient. This procedure is medically necessary and is supported by the World Professional Association for Transgender Health (WPATH) Standards of Care Version 8 (2022), the American Urological Association (AUA), the American Medical Association (AMA), and the Endocrine Society.\n\nCLINICAL SUMMARY\n\nMy patient presents with gender dysphoria (DSM-5 F64.0), a well-established medical condition recognized by all major medical and psychiatric organizations. The proposed procedure — [procedure name] — is medically necessary to treat this condition and has been recommended following a comprehensive multidisciplinary evaluation including mental health assessment, endocrinology consultation, and surgical evaluation.\n\nAll WPATH SOC-8 criteria have been met:\n1. Persistent, well-documented gender dysphoria\n2. Capacity to make fully informed decisions and consent to treatment\n3. Relevant medical or mental health concerns reasonably well-controlled\n4. ≥12 months of hormone therapy (if applicable and not contraindicated)\n5. Mental health evaluation and clearance from qualified provider(s)\n\nDENIAL REBUTTAL\n\nIf denied as \"cosmetic\": Gender-affirming surgery is not cosmetic. It is a medically necessary treatment for gender dysphoria (F64.0), a recognized psychiatric diagnosis. The AMA, AUA, American Psychiatric Association, American Psychological Association, and WPATH all classify gender-affirming surgery as medically necessary. Denial on cosmetic grounds is inconsistent with the medical consensus.\n\nIf denied as \"experimental\": Gender-affirming urologic procedures have been performed for decades with extensive long-term outcomes data demonstrating significant improvement in gender dysphoria, psychological well-being, and quality of life. These procedures are not experimental.\n\nIf denied due to plan exclusion: ACA Section 1557 prohibits sex discrimination in health coverage, which includes discrimination based on gender identity. Blanket exclusions for \"sex transformation surgery\" have been found to violate federal non-discrimination law in multiple court decisions.\n\nEVIDENCE BASE\n\nWPATH SOC-8 (Coleman et al., Int J Transgend Health. 2022;23(Suppl 1):S1-S259) provides the current international standard of care for gender-affirming surgical procedures, endorsed by over 60 professional medical organizations worldwide.\n\nCONCLUSION\n\nI respectfully request immediate reconsideration and approval of this medically necessary procedure. Denial of this treatment causes significant harm to my patient by prolonging untreated gender dysphoria.\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\n{{letter_date}}"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "title": "Intracytoplasmic Sperm Injection Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assessment",
+    "logicKey": "icsi",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "semen-analysis",
+        "shortLabel": "Semen Analysis",
+        "title": "Semen Analysis",
+        "fields": [
+          {
+            "id": "sperm-concentration",
+            "name": "spermConcentration",
+            "label": "Sperm Concentration",
+            "type": "select",
+            "required": false,
+            "defaultValue": "normal",
+            "options": [
+              { "label": "Normal (≥16M/mL)", "value": "normal" },
+              { "label": "Mild oligospermia (10–15M/mL)", "value": "mild" },
+              { "label": "Moderate oligospermia (5–9M/mL)", "value": "moderate" },
+              { "label": "Severe oligospermia (<5M/mL)", "value": "severe" },
+              { "label": "Azoospermia (no sperm)", "value": "azoospermia" }
+            ]
+          },
+          {
+            "id": "total-motile-count",
+            "name": "totalMotileCount",
+            "label": "Total Motile Count (millions)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "morphology-percent",
+            "name": "morphologyPercent",
+            "label": "Strict Morphology (Kruger, %)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "unit": "%",
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "clinical-factors",
+        "shortLabel": "Clinical Factors",
+        "title": "Clinical Factors",
+        "fields": [
+          {
+            "id": "prior-ivf-failed-fertilization",
+            "name": "priorIVFFailedFertilization",
+            "label": "Prior IVF cycle with complete fertilization failure",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "prior-ivf-low-fertilization",
+            "name": "priorIVFLowFertilization",
+            "label": "Prior IVF cycle with low fertilization rate (<25%)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "antisperm-antibodies",
+            "name": "antispermAntibodies",
+            "label": "Antisperm antibodies present (IBT or MAR test positive)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "obstructive-azoospermia",
+            "name": "obstructiveAzoospermia",
+            "label": "Obstructive azoospermia (CBAVD, vasectomy, epididymal obstruction)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "non-obstructive-azoospermia",
+            "name": "nonObstructiveAzoospermia",
+            "label": "Non-obstructive azoospermia (testicular failure)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "surgical-sperm-retrieval",
+            "name": "surgicalSpermRetrieval",
+            "label": "Surgically retrieved sperm (TESE, PESA, TESA, micro-TESE)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "frozen-sperm",
+            "name": "frozenSperm",
+            "label": "Frozen/thawed sperm being used (reduced motility)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "unexplained-ivf-failure",
+            "name": "unexplainedIVFFailure",
+            "label": "Unexplained IVF failure with normal semen parameters",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

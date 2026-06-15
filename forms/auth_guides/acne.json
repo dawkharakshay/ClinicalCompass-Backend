@@ -1,0 +1,361 @@
+{
+  "title": "Acne Vulgaris Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "AcneAuthGuide.tsx",
+    "title": "Acne Clinical Compass",
+    "subtitle": "Acne Vulgaris Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "17000",
+        "description": "Destruction (e.g., laser surgery, electrosurgery, cryosurgery, chemosurgery, surgical curettement), premalignant lesions (e.g., actinic keratoses); first lesion",
+        "device": "Various (e.g., cryosurgery, electrosurgery)",
+        "access": "Direct visualization",
+        "rvu": 0.59,
+        "includes": [
+          "Destruction of the first or only premalignant lesion",
+          "Local anesthesia",
+          "Routine post-procedure care"
+        ],
+        "note": "This code is for premalignant lesions, not typically for acne vulgaris directly, but can be used for associated conditions like actinic keratoses often treated in dermatology settings."
+      },
+      {
+        "code": "17110",
+        "description": "Destruction (e.g., laser surgery, electrosurgery, cryosurgery, chemosurgery, surgical curettement), of benign lesions other than skin tags or cutaneous vascular proliferative lesions; up to 14 lesions",
+        "device": "Various (e.g., cryosurgery, electrosurgery)",
+        "access": "Direct visualization",
+        "rvu": 0.93,
+        "includes": [
+          "Destruction of one to 14 benign lesions",
+          "Local anesthesia",
+          "Routine post-procedure care"
+        ],
+        "note": "This code is appropriate for benign lesions like warts or other benign skin lesions that might be treated in conjunction with acne, but not for acne lesions themselves."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "L70.0",
+        "description": "Acne vulgaris",
+        "notes": "Use for typical acne with comedones, papules, and pustules. This is the most common form of acne.",
+        "required": true
+      },
+      {
+        "code": "L70.1",
+        "description": "Acne conglobata",
+        "notes": "Severe and chronic form of acne characterized by large, burrowing abscesses, interconnected nodules, and irregular scars. Often requires more aggressive treatment.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Generally Covered",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Medicare generally does not require prior authorization for common acne treatments, especially for topical or oral medications. However, certain advanced procedures or biologics may require medical necessity documentation.",
+        "overview": "Medicare covers medically necessary services for the diagnosis and treatment of acne. Coverage typically includes office visits, prescription medications (Part D), and certain procedures deemed medically appropriate.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Medical Necessity",
+            "items": [
+              "Documentation of acne diagnosis (e.g., L70.0, L70.1)",
+              "Failure of conservative treatments (e.g., topical retinoids, antibiotics) for at least 3 months",
+              "Presence of inflammatory lesions, nodules, cysts, or significant scarring",
+              "Impact on quality of life or psychological distress (documented)"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Procedure-Specific Criteria",
+            "items": [
+              "For destruction of benign lesions (CPT 17110): Lesions must be symptomatic (e.g., painful, bleeding, infected) or interfere with function.",
+              "For isotretinoin: Patient must meet iPLEDGE program requirements and have severe nodular acne unresponsive to other therapies."
+            ]
+          },
+          {
+            "heading": "Required Documentation — Clinical Documentation",
+            "items": [
+              "Detailed history and physical examination notes",
+              "Acne severity assessment (e.g., lesion count, grading scale)",
+              "Previous treatments attempted and their outcomes",
+              "Photographic documentation (if applicable, especially for severe cases)",
+              "Pathology reports for any biopsies performed"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Prescription Documentation",
+            "items": [
+              "For Part D coverage: Prescription must be from an authorized provider and for a covered medication",
+              "For isotretinoin: iPLEDGE enrollment and monthly documentation of compliance"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims with appropriate CPT and ICD-10 codes.",
+              "For Part D medications, pharmacies submit claims directly.",
+              "For procedures, ensure medical necessity is clearly documented in the patient record."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of medical necessity for procedures (e.g., cosmetic removal of benign lesions)",
+              "Insufficient documentation of prior treatment failure",
+              "Incorrect coding or missing modifiers",
+              "Non-compliance with iPLEDGE program for isotretinoin"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Reimbursement for acne treatments under Medicare varies based on the specific service (office visit, medication, procedure) and the Medicare fee schedule. Part D covers most prescription medications."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Clearly document the medical necessity for all procedures and treatments.",
+              "Maintain thorough records of all prior treatments and patient responses.",
+              "Ensure all isotretinoin prescriptions and monitoring meet iPLEDGE requirements.",
+              "Consider using an Advance Beneficiary Notice (ABN) for services that may be considered cosmetic."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS (Medicare)",
+            "status": "Covered",
+            "notes": "Medically necessary services for acne treatment are covered."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Varies by State",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Many state Medicaid programs require prior authorization for certain acne medications (especially newer or more expensive ones) and procedures. Always verify specific state guidelines.",
+        "overview": "Medicaid coverage for acne treatment varies significantly by state. Generally, it covers medically necessary services, but may have stricter criteria for certain medications, particularly isotretinoin, and procedures.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Medical Necessity",
+            "items": [
+              "Diagnosis of acne (L70.0, L70.1) with documented severity",
+              "Failure of less costly, first-line treatments",
+              "For isotretinoin: Severe recalcitrant nodular acne, often with specific age and duration requirements",
+              "For procedures: Lesions causing significant pain, infection, or functional impairment."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Medication-Specific Criteria",
+            "items": [
+              "Step therapy often required for oral antibiotics and retinoids",
+              "Isotretinoin typically requires prior authorization, documented severe acne, and adherence to risk management programs (e.g., iPLEDGE)."
+            ]
+          },
+          {
+            "heading": "Required Documentation — Clinical Documentation",
+            "items": [
+              "Comprehensive medical history and physical exam",
+              "Documentation of acne type and severity",
+              "Record of all previous treatments, dosages, and duration, and reasons for failure",
+              "For isotretinoin: Confirmation of iPLEDGE enrollment and monthly lab results (pregnancy tests, LFTs)."
+            ]
+          },
+          {
+            "heading": "Required Documentation — Prior Authorization Forms",
+            "items": [
+              "Completed state-specific prior authorization forms for medications or procedures",
+              "Supporting clinical notes and lab results"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization requests as per state Medicaid guidelines.",
+              "Once approved, submit claims with appropriate CPT and ICD-10 codes.",
+              "Adhere to state-specific billing and coding rules."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization for required services/medications",
+              "Failure to meet state-specific coverage criteria",
+              "Incomplete or insufficient documentation",
+              "Use of non-preferred medications without justification",
+              "Cosmetic indications for procedures"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicaid reimbursement rates are typically lower than Medicare or private insurance and are set by each state. Timely and accurate submission is crucial for payment."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state's specific Medicaid guidelines for acne treatment and prior authorization.",
+              "Always obtain prior authorization for medications and procedures when required.",
+              "Document thoroughly, especially prior treatment failures and severity of acne.",
+              "Utilize preferred drug lists and step therapy protocols to avoid denials."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (e.g., California Medi-Cal)",
+            "status": "Covered with PA",
+            "notes": "Isotretinoin and certain biologics require prior authorization."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Varies by Plan",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Many private insurance plans require prior authorization for expensive acne medications (e.g., isotretinoin, biologics) and certain dermatological procedures. Coverage varies widely by plan.",
+        "overview": "Private insurance coverage for acne treatment is highly variable, depending on the specific plan benefits. Most plans cover medically necessary treatments, but may impose step therapy, quantity limits, or require prior authorization for higher-cost options.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Medical Necessity",
+            "items": [
+              "Diagnosis of acne (L70.0, L70.1) and documented severity",
+              "Failure of a trial of generic or preferred formulary medications",
+              "For isotretinoin: Severe recalcitrant nodular acne, documented failure of at least two systemic antibiotics and topical treatments, and adherence to iPLEDGE.",
+              "For biologics (if applicable for severe inflammatory conditions): Specific diagnostic criteria and failure of conventional therapies."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Procedure-Specific Criteria",
+            "items": [
+              "Destruction of benign lesions (CPT 17110): Must be symptomatic, infected, or pose a health risk, not purely cosmetic.",
+              "Other dermatological procedures: Medical necessity must be clearly established and documented."
+            ]
+          },
+          {
+            "heading": "Required Documentation — Clinical Documentation",
+            "items": [
+              "Detailed clinical notes, including history, physical exam, and acne grading",
+              "List of all prior treatments, dates, dosages, and response (or lack thereof)",
+              "For isotretinoin: iPLEDGE documentation, lab results, and patient counseling notes",
+              "For prior authorization: Completed PA forms, supporting clinical rationale, and relevant test results."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify patient's benefits and any prior authorization requirements before treatment.",
+              "Submit prior authorization requests with all required clinical documentation.",
+              "Submit claims with appropriate CPT and ICD-10 codes after services are rendered and authorization is obtained (if required)."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization",
+              "Failure to meet step therapy requirements",
+              "Insufficient documentation of medical necessity or prior treatment failure",
+              "Treatment deemed cosmetic rather than medically necessary",
+              "Non-formulary medication use without adequate justification"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Reimbursement rates are negotiated between the provider and the insurance company. Out-of-pocket costs for patients depend on their plan's deductible, co-insurance, and co-payments."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify patient's insurance benefits and prior authorization requirements for specific treatments and medications.",
+              "Document all prior treatment attempts and their outcomes comprehensively.",
+              "Be prepared to appeal denials with strong clinical rationale and supporting documentation.",
+              "Educate patients on their financial responsibility for non-covered or cosmetic services."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Covered with PA",
+            "notes": "Isotretinoin requires prior authorization and step therapy."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered with PA",
+            "notes": "Certain acne procedures and medications may require prior authorization."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment button linking to the /acne assessment page.",
+        "href": "/acne"
+      }
+    ],
+    "raw": {
+      "markdown": "# Acne Clinical Compass\n## Acne Vulgaris Insurance Authorization Guide\n\n[Button] Back to Assessment (links to /acne)\n\n---\n\n## Procedure Codes (CPT Codes)\n\n### CPT 17000 (RVU 0.59)\nDestruction (e.g., laser surgery, electrosurgery, cryosurgery, chemosurgery, surgical curettement), premalignant lesions (e.g., actinic keratoses); first lesion\n\n**Device/Access:** Various (e.g., cryosurgery, electrosurgery) / Direct visualization\n\n**Included in this code (do NOT bill separately):**\n- Destruction of the first or only premalignant lesion\n- Local anesthesia\n- Routine post-procedure care\n\n_Note: This code is for premalignant lesions, not typically for acne vulgaris directly, but can be used for associated conditions like actinic keratoses often treated in dermatology settings._\n\n### CPT 17110 (RVU 0.93)\nDestruction (e.g., laser surgery, electrosurgery, cryosurgery, chemosurgery, surgical curettement), of benign lesions other than skin tags or cutaneous vascular proliferative lesions; up to 14 lesions\n\n**Device/Access:** Various (e.g., cryosurgery, electrosurgery) / Direct visualization\n\n**Included in this code (do NOT bill separately):**\n- Destruction of one to 14 benign lesions\n- Local anesthesia\n- Routine post-procedure care\n\n_Note: This code is appropriate for benign lesions like warts or other benign skin lesions that might be treated in conjunction with acne, but not for acne lesions themselves._\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **L70.0** (Primary / required) — Acne vulgaris — Use for typical acne with comedones, papules, and pustules. This is the most common form of acne.\n- **L70.1** — Acne conglobata — Severe and chronic form of acne characterized by large, burrowing abscesses, interconnected nodules, and irregular scars. Often requires more aggressive treatment.\n\n---\n\n## Payer-Specific Authorization Requirements\n\n(Tabs: Medicare | Medicaid | Private Insurance)\n\n### Medicare\n- **No Prior Auth (FFS)** | Coverage Status: **Generally Covered**\n- Prior Auth Note: Medicare generally does not require prior authorization for common acne treatments, especially for topical or oral medications. However, certain advanced procedures or biologics may require medical necessity documentation.\n- Overview: Medicare covers medically necessary services for the diagnosis and treatment of acne. Coverage typically includes office visits, prescription medications (Part D), and certain procedures deemed medically appropriate.\n\n**Coverage Criteria**\n\n_Medical Necessity_\n- Documentation of acne diagnosis (e.g., L70.0, L70.1)\n- Failure of conservative treatments (e.g., topical retinoids, antibiotics) for at least 3 months\n- Presence of inflammatory lesions, nodules, cysts, or significant scarring\n- Impact on quality of life or psychological distress (documented)\n\n_Procedure-Specific Criteria_\n- For destruction of benign lesions (CPT 17110): Lesions must be symptomatic (e.g., painful, bleeding, infected) or interfere with function.\n- For isotretinoin: Patient must meet iPLEDGE program requirements and have severe nodular acne unresponsive to other therapies.\n\n**Required Documentation**\n\n_Clinical Documentation_\n- Detailed history and physical examination notes\n- Acne severity assessment (e.g., lesion count, grading scale)\n- Previous treatments attempted and their outcomes\n- Photographic documentation (if applicable, especially for severe cases)\n- Pathology reports for any biopsies performed\n\n_Prescription Documentation_\n- For Part D coverage: Prescription must be from an authorized provider and for a covered medication\n- For isotretinoin: iPLEDGE enrollment and monthly documentation of compliance\n\n**Submission Process**\n1. Submit claims with appropriate CPT and ICD-10 codes.\n2. For Part D medications, pharmacies submit claims directly.\n3. For procedures, ensure medical necessity is clearly documented in the patient record.\n\n**Common Denial Reasons**\n- Lack of medical necessity for procedures (e.g., cosmetic removal of benign lesions)\n- Insufficient documentation of prior treatment failure\n- Incorrect coding or missing modifiers\n- Non-compliance with iPLEDGE program for isotretinoin\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS (Medicare) | Covered | Medically necessary services for acne treatment are covered. |\n\n**Reimbursement Note:** Reimbursement for acne treatments under Medicare varies based on the specific service (office visit, medication, procedure) and the Medicare fee schedule. Part D covers most prescription medications.\n\n**Authorization Tips**\n- Clearly document the medical necessity for all procedures and treatments.\n- Maintain thorough records of all prior treatments and patient responses.\n- Ensure all isotretinoin prescriptions and monitoring meet iPLEDGE requirements.\n- Consider using an Advance Beneficiary Notice (ABN) for services that may be considered cosmetic.\n\n### Medicaid\n- **Prior Auth Required** | Coverage Status: **Varies by State**\n- Prior Auth Note: Many state Medicaid programs require prior authorization for certain acne medications (especially newer or more expensive ones) and procedures. Always verify specific state guidelines.\n- Overview: Medicaid coverage for acne treatment varies significantly by state. Generally, it covers medically necessary services, but may have stricter criteria for certain medications, particularly isotretinoin, and procedures.\n\n**Coverage Criteria**\n\n_Medical Necessity_\n- Diagnosis of acne (L70.0, L70.1) with documented severity\n- Failure of less costly, first-line treatments\n- For isotretinoin: Severe recalcitrant nodular acne, often with specific age and duration requirements\n- For procedures: Lesions causing significant pain, infection, or functional impairment.\n\n_Medication-Specific Criteria_\n- Step therapy often required for oral antibiotics and retinoids\n- Isotretinoin typically requires prior authorization, documented severe acne, and adherence to risk management programs (e.g., iPLEDGE).\n\n**Required Documentation**\n\n_Clinical Documentation_\n- Comprehensive medical history and physical exam\n- Documentation of acne type and severity\n- Record of all previous treatments, dosages, and duration, and reasons for failure\n- For isotretinoin: Confirmation of iPLEDGE enrollment and monthly lab results (pregnancy tests, LFTs).\n\n_Prior Authorization Forms_\n- Completed state-specific prior authorization forms for medications or procedures\n- Supporting clinical notes and lab results\n\n**Submission Process**\n1. Submit prior authorization requests as per state Medicaid guidelines.\n2. Once approved, submit claims with appropriate CPT and ICD-10 codes.\n3. Adhere to state-specific billing and coding rules.\n\n**Common Denial Reasons**\n- Lack of prior authorization for required services/medications\n- Failure to meet state-specific coverage criteria\n- Incomplete or insufficient documentation\n- Use of non-preferred medications without justification\n- Cosmetic indications for procedures\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (e.g., California Medi-Cal) | Covered with PA | Isotretinoin and certain biologics require prior authorization. |\n\n**Reimbursement Note:** Medicaid reimbursement rates are typically lower than Medicare or private insurance and are set by each state. Timely and accurate submission is crucial for payment.\n\n**Authorization Tips**\n- Familiarize yourself with your state's specific Medicaid guidelines for acne treatment and prior authorization.\n- Always obtain prior authorization for medications and procedures when required.\n- Document thoroughly, especially prior treatment failures and severity of acne.\n- Utilize preferred drug lists and step therapy protocols to avoid denials.\n\n### Private Insurance\n- **Prior Auth Required** | Coverage Status: **Varies by Plan**\n- Prior Auth Note: Many private insurance plans require prior authorization for expensive acne medications (e.g., isotretinoin, biologics) and certain dermatological procedures. Coverage varies widely by plan.\n- Overview: Private insurance coverage for acne treatment is highly variable, depending on the specific plan benefits. Most plans cover medically necessary treatments, but may impose step therapy, quantity limits, or require prior authorization for higher-cost options.\n\n**Coverage Criteria**\n\n_Medical Necessity_\n- Diagnosis of acne (L70.0, L70.1) and documented severity\n- Failure of a trial of generic or preferred formulary medications\n- For isotretinoin: Severe recalcitrant nodular acne, documented failure of at least two systemic antibiotics and topical treatments, and adherence to iPLEDGE.\n- For biologics (if applicable for severe inflammatory conditions): Specific diagnostic criteria and failure of conventional therapies.\n\n_Procedure-Specific Criteria_\n- Destruction of benign lesions (CPT 17110): Must be symptomatic, infected, or pose a health risk, not purely cosmetic.\n- Other dermatological procedures: Medical necessity must be clearly established and documented.\n\n**Required Documentation**\n\n_Clinical Documentation_\n- Detailed clinical notes, including history, physical exam, and acne grading\n- List of all prior treatments, dates, dosages, and response (or lack thereof)\n- For isotretinoin: iPLEDGE documentation, lab results, and patient counseling notes\n- For prior authorization: Completed PA forms, supporting clinical rationale, and relevant test results.\n\n**Submission Process**\n1. Verify patient's benefits and any prior authorization requirements before treatment.\n2. Submit prior authorization requests with all required clinical documentation.\n3. Submit claims with appropriate CPT and ICD-10 codes after services are rendered and authorization is obtained (if required).\n\n**Common Denial Reasons**\n- Lack of prior authorization\n- Failure to meet step therapy requirements\n- Insufficient documentation of medical necessity or prior treatment failure\n- Treatment deemed cosmetic rather than medically necessary\n- Non-formulary medication use without adequate justification\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Blue Cross Blue Shield | Covered with PA | Isotretinoin requires prior authorization and step therapy. |\n| UnitedHealthcare | Covered with PA | Certain acne procedures and medications may require prior authorization. |\n\n**Reimbursement Note:** Reimbursement rates are negotiated between the provider and the insurance company. Out-of-pocket costs for patients depend on their plan's deductible, co-insurance, and co-payments.\n\n**Authorization Tips**\n- Always verify patient's insurance benefits and prior authorization requirements for specific treatments and medications.\n- Document all prior treatment attempts and their outcomes comprehensively.\n- Be prepared to appeal denials with strong clinical rationale and supporting documentation.\n- Educate patients on their financial responsibility for non-covered or cosmetic services.\n",
+      "tables": [
+        {
+          "name": "CPT Codes (Procedure Codes)",
+          "header": ["CPT Code", "RVU", "Description", "Device/Access", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            [
+              "17000",
+              "0.59",
+              "Destruction (e.g., laser surgery, electrosurgery, cryosurgery, chemosurgery, surgical curettement), premalignant lesions (e.g., actinic keratoses); first lesion",
+              "Various (e.g., cryosurgery, electrosurgery) / Direct visualization",
+              "Destruction of the first or only premalignant lesion; Local anesthesia; Routine post-procedure care",
+              "This code is for premalignant lesions, not typically for acne vulgaris directly, but can be used for associated conditions like actinic keratoses often treated in dermatology settings."
+            ],
+            [
+              "17110",
+              "0.93",
+              "Destruction (e.g., laser surgery, electrosurgery, cryosurgery, chemosurgery, surgical curettement), of benign lesions other than skin tags or cutaneous vascular proliferative lesions; up to 14 lesions",
+              "Various (e.g., cryosurgery, electrosurgery) / Direct visualization",
+              "Destruction of one to 14 benign lesions; Local anesthesia; Routine post-procedure care",
+              "This code is appropriate for benign lesions like warts or other benign skin lesions that might be treated in conjunction with acne, but not for acne lesions themselves."
+            ]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Primary/Required"],
+          "rows": [
+            ["L70.0", "Acne vulgaris", "Use for typical acne with comedones, papules, and pustules. This is the most common form of acne.", "Yes (Primary)"],
+            ["L70.1", "Acne conglobata", "Severe and chronic form of acne characterized by large, burrowing abscesses, interconnected nodules, and irregular scars. Often requires more aggressive treatment.", "No"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicare",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS (Medicare)", "Covered", "Medically necessary services for acne treatment are covered."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., California Medi-Cal)", "Covered with PA", "Isotretinoin and certain biologics require prior authorization."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Private Insurance",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield", "Covered with PA", "Isotretinoin requires prior authorization and step therapy."],
+            ["UnitedHealthcare", "Covered with PA", "Certain acne procedures and medications may require prior authorization."]
+          ]
+        }
+      ]
+    }
+  }
+}

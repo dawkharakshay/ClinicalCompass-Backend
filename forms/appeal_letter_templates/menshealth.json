@@ -1,0 +1,30 @@
+{
+  "title": "Prostatic Artery Embolization Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "37243, 36245, 36246",
+      "credentials": "[Credentials]",
+      "icd_codes": "N40.1, N40.0, R33.8, N13.8, R35.0",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "Re: Prior Authorization Appeal — Prostatic Artery Embolization (PAE) for Benign Prostatic Hyperplasia\n\nDear Medical Director,\n\nI am writing to formally appeal the denial of prior authorization for Prostatic Artery Embolization (PAE) for my patient, who presents with symptomatic benign prostatic hyperplasia (BPH) refractory to medical management.\n\nCLINICAL ASSESSMENT SUMMARY\n\nOur clinical decision support assessment classified this patient as a Strong Candidate for PAE (composite score: 0/100). \n\nCLINICAL INDICATION\n\nThis patient presents with moderate-to-severe lower urinary tract symptoms (LUTS) secondary to BPH with an IPSS score indicating significant functional impairment. The patient has failed or is intolerant of guideline-directed medical therapy including alpha-blockers and/or 5-alpha reductase inhibitors, consistent with the AUA 2021 BPH Guidelines criteria for procedural intervention.\n\nEVIDENCE BASE FOR PAE\n\n1. The ROPE Registry (McWilliams et al., JVIR 2017; PMID 28259566) — multicenter prospective study demonstrating PAE achieves durable symptom relief with IPSS improvement of ≥10 points in >80% of patients at 12 months.\n\n2. The WATER Trial (Gao et al., Cardiovasc Intervent Radiol 2022) — randomized controlled trial comparing PAE to TURP, demonstrating non-inferior IPSS improvement with significantly fewer adverse events (urinary incontinence, retrograde ejaculation, sexual dysfunction).\n\n3. SIR Clinical Practice Guideline — PAE (Bagla et al., JVIR 2020; PMID 32605761) — Society of Interventional Radiology endorses PAE as a safe and effective minimally invasive treatment for symptomatic BPH, particularly in patients who wish to preserve sexual function or who are high surgical risk.\n\n4. AUA/SUFU Guideline on Surgical Management of LUTS (2018, amended 2021) — recognizes PAE as an option for patients with BPH-related LUTS who have failed medical therapy, particularly those with large prostates (>80 mL) where surgical risk is elevated.\n\n5. NICE Guidance IPG 611 (2018) — concluded that PAE is safe and efficacious for BPH, with evidence of symptom improvement comparable to TURP.\n\nMEDICAL NECESSITY\n\nDenial of PAE in this patient would necessitate either continued medical management with inadequate symptom control or referral for open/endoscopic surgical intervention (TURP, HoLEP), which carries significantly higher risks of anesthesia complications, bleeding, retrograde ejaculation (50–90%), and urinary incontinence. PAE offers equivalent symptom relief with a superior safety profile and preservation of sexual function, making it the medically appropriate choice for this patient.\n\nREQUESTED ACTION\n\nI respectfully request that you reconsider and approve prior authorization for:\n- CPT {{cpt_codes}} — Prostatic Artery Embolization\n- ICD-10 {{icd_codes}}\n\nI am available for a peer-to-peer review at your earliest convenience. Please contact me at {{practice_phone}}.\n\nSincerely,\n\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\n{{practice_address}}\nPhone: {{practice_phone}} | Fax: {{practice_fax}}\n{{practice_email}}"
+  }
+}

@@ -1,0 +1,246 @@
+{
+  "title": "Vertebroplasty / Kyphoplasty Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Run Assessment",
+    "logicKey": "vertebroplasty",
+    "hiddenDefaults": {
+      "fractureLevel": ""
+    },
+    "steps": [
+      {
+        "id": "patient-fracture",
+        "shortLabel": "Patient & Fracture Info",
+        "title": "Patient & Fracture Info",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Patient Age",
+            "type": "number",
+            "defaultValue": "",
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "fracture-age-weeks",
+            "name": "fractureAgeWeeks",
+            "label": "Fracture Age (weeks) *",
+            "type": "number",
+            "required": true,
+            "defaultValue": "",
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "procedure-type",
+            "name": "procedureType",
+            "label": "Procedure Type",
+            "type": "select",
+            "defaultValue": "",
+            "options": [
+              { "label": "Physician discretion / not yet determined", "value": "" },
+              { "label": "Vertebroplasty (direct cement injection)", "value": "vertebroplasty" },
+              { "label": "Kyphoplasty (balloon-assisted, height restoration)", "value": "kyphoplasty" }
+            ]
+          },
+          {
+            "id": "fracture-levels",
+            "name": "fractureLevels",
+            "label": "Fracture Level(s) * (select all that apply)",
+            "type": "multiselect",
+            "required": true,
+            "defaultValue": [],
+            "options": [
+              { "label": "T4", "value": "T4" },
+              { "label": "T5", "value": "T5" },
+              { "label": "T6", "value": "T6" },
+              { "label": "T7", "value": "T7" },
+              { "label": "T8", "value": "T8" },
+              { "label": "T9", "value": "T9" },
+              { "label": "T10", "value": "T10" },
+              { "label": "T11", "value": "T11" },
+              { "label": "T12", "value": "T12" },
+              { "label": "L1", "value": "L1" },
+              { "label": "L2", "value": "L2" },
+              { "label": "L3", "value": "L3" },
+              { "label": "L4", "value": "L4" },
+              { "label": "L5", "value": "L5" }
+            ]
+          },
+          {
+            "id": "osteoporosis",
+            "name": "osteoporosis",
+            "label": "Osteoporotic insufficiency fracture",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "malignancy",
+            "name": "malignancy",
+            "label": "Pathologic fracture (malignancy / metastasis)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "trauma",
+            "name": "trauma",
+            "label": "Traumatic fracture",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "height-loss",
+            "name": "heightLoss",
+            "label": "Vertebral Height Loss (%)",
+            "type": "number",
+            "defaultValue": "",
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "kyphosis-angle",
+            "name": "kyphosisAngle",
+            "label": "Kyphosis Angle (degrees)",
+            "type": "number",
+            "defaultValue": "",
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "acute-onset",
+            "name": "acuteOnset",
+            "label": "Acute onset of pain (sudden onset with activity or minor trauma)",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "pain-function",
+        "shortLabel": "Pain & Function",
+        "title": "Pain & Function",
+        "fields": [
+          {
+            "id": "vas-score",
+            "name": "vasScore",
+            "label": "VAS Pain Score (0–10) *",
+            "type": "number",
+            "required": true,
+            "defaultValue": "",
+            "min": 0,
+            "max": 10,
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "oswestry-score",
+            "name": "oswestryScore",
+            "label": "Oswestry Disability Index (0–100)",
+            "type": "number",
+            "defaultValue": "",
+            "min": 0,
+            "max": 100,
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "analgesics-used",
+            "name": "analgesicsUsed",
+            "label": "Analgesics prescribed (NSAIDs, opioids, acetaminophen)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "brace-used",
+            "name": "braceUsed",
+            "label": "Thoracolumbar orthosis / brace prescribed",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "conservative-weeks",
+            "name": "conservativeWeeks",
+            "label": "Conservative Therapy Duration (weeks)",
+            "type": "number",
+            "defaultValue": "",
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "bed-rest-days",
+            "name": "bedRestDays",
+            "label": "Bed Rest Duration (days)",
+            "type": "number",
+            "defaultValue": "",
+            "keyboardType": "numeric"
+          }
+        ]
+      },
+      {
+        "id": "imaging-contraindications",
+        "shortLabel": "Imaging & Contraindications",
+        "title": "Imaging & Contraindications",
+        "fields": [
+          {
+            "id": "mri-edema",
+            "name": "mriEdema",
+            "label": "MRI bone marrow edema (STIR/fat-suppressed sequences)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "ct-fracture-line",
+            "name": "ctFractureLine",
+            "label": "CT fracture line confirmed",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "posterior-wall-intact",
+            "name": "posteriorWallIntact",
+            "label": "Posterior vertebral wall intact (no retropulsion)",
+            "type": "checkbox",
+            "defaultValue": true
+          },
+          {
+            "id": "active-infection",
+            "name": "activeInfection",
+            "label": "Active systemic or local infection",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "coagulopathy",
+            "name": "coagulopathy",
+            "label": "Uncorrected coagulopathy / anticoagulation",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "spinal-cord-compression",
+            "name": "spinalCordCompression",
+            "label": "Spinal cord compression from retropulsed fragment",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "radiculopathy",
+            "name": "radiculopathy",
+            "label": "Radiculopathy (nerve root compression)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "allergy",
+            "name": "allergy",
+            "label": "Known allergy to bone cement (PMMA) or contrast",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "pregnancy",
+            "name": "pregnancy",
+            "label": "Pregnancy",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

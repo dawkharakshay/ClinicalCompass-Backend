@@ -1,0 +1,241 @@
+{
+  "title": "Spinal Fusion Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "SpinalFusionAuthGuide.tsx",
+    "title": null,
+    "subtitle": null,
+    "cptCodes": [
+      { "code": "22612", "description": "Posterior lumbar interbody fusion (PLIF) — single level", "rvu": "28.50", "notes": "Add-on 22614 for each additional level" },
+      { "code": "22630", "description": "Transforaminal lumbar interbody fusion (TLIF) — single level", "rvu": "28.50", "notes": "Most commonly used lumbar fusion code" },
+      { "code": "22633", "description": "Combined posterior + PLIF/TLIF — single level", "rvu": "32.10", "notes": "Combination procedure" },
+      { "code": "22551", "description": "Anterior cervical discectomy and fusion (ACDF) — single level", "rvu": "20.40", "notes": "Add-on 22552 for each additional level" },
+      { "code": "22554", "description": "Anterior cervical interbody fusion — single level", "rvu": "18.20", "notes": "Without discectomy" },
+      { "code": "22558", "description": "Anterior lumbar interbody fusion (ALIF) — single level", "rvu": "26.80", "notes": "Retroperitoneal approach" },
+      { "code": "22842", "description": "Posterior segmental instrumentation — 3-6 vertebral segments", "rvu": "14.20", "notes": "Pedicle screws; add-on code" },
+      { "code": "22845", "description": "Anterior instrumentation — 2-3 vertebral segments", "rvu": "10.80", "notes": "Cervical plate; add-on code" }
+    ],
+    "icd10Codes": [
+      { "code": "M51.16", "description": "Intervertebral disc degeneration, lumbar region", "notes": "Primary DDD indication" },
+      { "code": "M51.17", "description": "Intervertebral disc degeneration, lumbosacral region", "notes": "L5-S1 DDD" },
+      { "code": "M48.06", "description": "Spinal stenosis, lumbar region", "notes": "Lumbar stenosis" },
+      { "code": "M43.16", "description": "Spondylolisthesis, lumbar region", "notes": "Lumbar spondylolisthesis" },
+      { "code": "M50.12", "description": "Cervical disc displacement with radiculopathy, mid-cervical region", "notes": "C3-7 disc herniation with radiculopathy" },
+      { "code": "M47.816", "description": "Spondylosis with radiculopathy, lumbar region", "notes": "Lumbar radiculopathy" },
+      { "code": "M47.812", "description": "Spondylosis with radiculopathy, cervical region", "notes": "Cervical radiculopathy" },
+      { "code": "M47.12", "description": "Other spondylosis with myelopathy, cervical region", "notes": "Cervical myelopathy" }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Prior Auth Required",
+        "sections": [
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Documented radiculopathy or myelopathy with imaging correlation",
+              "Failure of ≥6 weeks conservative therapy (PT, NSAIDs, injections)",
+              "Radiographic evidence: disc herniation, stenosis, or spondylolisthesis",
+              "Functional impairment documented (ODI, VAS, or equivalent)",
+              "Prior authorization required for most Medicare Advantage plans",
+              "Lumbar fusion for DDD alone (without instability) requires strong documentation"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Medicare pays ~$2,000-3,500 surgeon fee depending on levels and approach."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicare FFS", "status": "Covered", "notes": "No prior auth for traditional Medicare; required for MA plans" },
+          { "payer": "Medicare Advantage (UHC)", "status": "Prior Auth Required", "notes": "eviCore criteria; 6-week conservative therapy required" },
+          { "payer": "Medicare Advantage (Humana)", "status": "Prior Auth Required", "notes": "Peer-to-peer available; functional assessment required" }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Prior Auth Required",
+        "sections": [
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "State-specific criteria; most require imaging evidence and conservative therapy failure",
+              "Typically ≥6 months conservative therapy for elective fusion",
+              "Neurologic deficit or instability may expedite approval",
+              "Prior authorization universally required"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Medicaid reimbursement typically 40-60% of Medicare rates."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicaid MCO", "status": "Prior Auth Required", "notes": "Conservative therapy documentation critical; state criteria vary" }
+        ]
+      },
+      {
+        "key": "private-insurance",
+        "label": "Private Insurance",
+        "coverageStatus": "Prior Auth Required",
+        "sections": [
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Imaging-confirmed disc herniation, stenosis, or spondylolisthesis",
+              "Documented failure of ≥6 weeks conservative treatment",
+              "Functional assessment scores (ODI ≥40% or equivalent)",
+              "Pain score documentation (NRS ≥7)",
+              "Neurologic deficit or progressive symptoms strengthen approval",
+              "Smoking cessation required by many plans before elective fusion"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Commercial rates typically 130-200% of Medicare. eviCore, Carelon, or MCG criteria commonly used."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Aetna", "status": "Prior Auth Required", "notes": "Clinical Policy Bulletin; eviCore criteria; ODI documentation required" },
+          { "payer": "UnitedHealthcare", "status": "Prior Auth Required", "notes": "Optum criteria; 6-week PT required; functional assessment" },
+          { "payer": "BCBS", "status": "Prior Auth Required", "notes": "Medical Policy; imaging + conservative therapy + functional impairment" },
+          { "payer": "Cigna", "status": "Prior Auth Required", "notes": "eviCore criteria; smoking cessation required for elective fusion" }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Documentation — Clinical Documentation",
+        "kind": "list",
+        "items": [
+          "Office notes with diagnosis, symptom duration, and severity",
+          "Neurologic examination findings",
+          "Functional assessment (ODI, NDI, or VAS)",
+          "Pain score documentation at multiple visits"
+        ]
+      },
+      {
+        "heading": "Documentation — Imaging",
+        "kind": "list",
+        "items": [
+          "MRI spine with and without contrast (within 6 months)",
+          "Standing X-rays with flexion/extension views if instability suspected",
+          "CT myelogram if MRI contraindicated",
+          "Radiologist report with correlation to symptoms"
+        ]
+      },
+      {
+        "heading": "Documentation — Conservative Therapy",
+        "kind": "list",
+        "items": [
+          "Physical therapy records (≥6 weeks)",
+          "Medication trial documentation (NSAIDs, muscle relaxants)",
+          "Epidural steroid injection records",
+          "Chiropractic or manual therapy records if applicable"
+        ]
+      },
+      {
+        "heading": "Documentation — Pre-operative",
+        "kind": "list",
+        "items": [
+          "Medical clearance from PCP",
+          "Smoking cessation documentation if required",
+          "HbA1c <8% for diabetic patients",
+          "Bone density scan if osteoporosis suspected"
+        ]
+      },
+      {
+        "heading": "Submission",
+        "kind": "list",
+        "items": [
+          "Obtain MRI spine with radiologist report correlating findings to symptoms.",
+          "Document ≥6 weeks conservative therapy with specific modalities and outcomes.",
+          "Complete functional assessment (ODI or NDI) and document pain scores.",
+          "Obtain pre-operative medical clearance and optimize modifiable risk factors.",
+          "Submit prior authorization with appropriate CPT codes and primary ICD-10.",
+          "Include all supporting documentation: imaging, PT records, office notes, functional scores.",
+          "If denied, request peer-to-peer review within 72 hours; emphasize neurologic deficits."
+        ]
+      },
+      {
+        "heading": "Denial Reasons",
+        "kind": "list",
+        "items": [
+          "Insufficient conservative therapy documentation (most common denial reason)",
+          "Imaging findings not correlated with clinical symptoms in documentation",
+          "Missing functional assessment scores (ODI/NDI not documented)",
+          "Fusion for DDD alone without instability — requires very strong documentation",
+          "Active smoking without cessation program documentation",
+          "Uncontrolled diabetes without optimization plan",
+          "Multi-level fusion without adequate documentation for each level"
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# Spinal Fusion Clinical Compass\n\n_Source component: SpinalFusionAuthGuideContent (SpinalFusionAuthGuide.tsx). Tabbed interface with tabs: CPT Codes, ICD-10, Payer Requirements, Documentation, Submission, Denial Reasons._\n\n## CPT Codes\n\n- **22612** — Posterior lumbar interbody fusion (PLIF) — single level — Add-on 22614 for each additional level (RVU: 28.50)\n- **22630** — Transforaminal lumbar interbody fusion (TLIF) — single level — Most commonly used lumbar fusion code (RVU: 28.50)\n- **22633** — Combined posterior + PLIF/TLIF — single level — Combination procedure (RVU: 32.10)\n- **22551** — Anterior cervical discectomy and fusion (ACDF) — single level — Add-on 22552 for each additional level (RVU: 20.40)\n- **22554** — Anterior cervical interbody fusion — single level — Without discectomy (RVU: 18.20)\n- **22558** — Anterior lumbar interbody fusion (ALIF) — single level — Retroperitoneal approach (RVU: 26.80)\n- **22842** — Posterior segmental instrumentation — 3-6 vertebral segments — Pedicle screws; add-on code (RVU: 14.20)\n- **22845** — Anterior instrumentation — 2-3 vertebral segments — Cervical plate; add-on code (RVU: 10.80)\n\n## ICD-10 Codes\n\n- **M51.16** — Intervertebral disc degeneration, lumbar region — Primary DDD indication\n- **M51.17** — Intervertebral disc degeneration, lumbosacral region — L5-S1 DDD\n- **M48.06** — Spinal stenosis, lumbar region — Lumbar stenosis\n- **M43.16** — Spondylolisthesis, lumbar region — Lumbar spondylolisthesis\n- **M50.12** — Cervical disc displacement with radiculopathy, mid-cervical region — C3-7 disc herniation with radiculopathy\n- **M47.816** — Spondylosis with radiculopathy, lumbar region — Lumbar radiculopathy\n- **M47.812** — Spondylosis with radiculopathy, cervical region — Cervical radiculopathy\n- **M47.12** — Other spondylosis with myelopathy, cervical region — Cervical myelopathy\n\n## Payer Requirements\n\n### Medicare — Prior Auth Required\n\n**Medical Necessity Criteria:**\n- Documented radiculopathy or myelopathy with imaging correlation\n- Failure of ≥6 weeks conservative therapy (PT, NSAIDs, injections)\n- Radiographic evidence: disc herniation, stenosis, or spondylolisthesis\n- Functional impairment documented (ODI, VAS, or equivalent)\n- Prior authorization required for most Medicare Advantage plans\n- Lumbar fusion for DDD alone (without instability) requires strong documentation\n\n**Reimbursement:** Medicare pays ~$2,000-3,500 surgeon fee depending on levels and approach.\n\n**Known Payer Policies:**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicare FFS | Covered | No prior auth for traditional Medicare; required for MA plans |\n| Medicare Advantage (UHC) | Prior Auth Required | eviCore criteria; 6-week conservative therapy required |\n| Medicare Advantage (Humana) | Prior Auth Required | Peer-to-peer available; functional assessment required |\n\n### Medicaid — Prior Auth Required\n\n**Medical Necessity Criteria:**\n- State-specific criteria; most require imaging evidence and conservative therapy failure\n- Typically ≥6 months conservative therapy for elective fusion\n- Neurologic deficit or instability may expedite approval\n- Prior authorization universally required\n\n**Reimbursement:** Medicaid reimbursement typically 40-60% of Medicare rates.\n\n**Known Payer Policies:**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicaid MCO | Prior Auth Required | Conservative therapy documentation critical; state criteria vary |\n\n### Private Insurance — Prior Auth Required\n\n**Medical Necessity Criteria:**\n- Imaging-confirmed disc herniation, stenosis, or spondylolisthesis\n- Documented failure of ≥6 weeks conservative treatment\n- Functional assessment scores (ODI ≥40% or equivalent)\n- Pain score documentation (NRS ≥7)\n- Neurologic deficit or progressive symptoms strengthen approval\n- Smoking cessation required by many plans before elective fusion\n\n**Reimbursement:** Commercial rates typically 130-200% of Medicare. eviCore, Carelon, or MCG criteria commonly used.\n\n**Known Payer Policies:**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Aetna | Prior Auth Required | Clinical Policy Bulletin; eviCore criteria; ODI documentation required |\n| UnitedHealthcare | Prior Auth Required | Optum criteria; 6-week PT required; functional assessment |\n| BCBS | Prior Auth Required | Medical Policy; imaging + conservative therapy + functional impairment |\n| Cigna | Prior Auth Required | eviCore criteria; smoking cessation required for elective fusion |\n\n## Documentation\n\n### Clinical Documentation\n✓ Office notes with diagnosis, symptom duration, and severity\n✓ Neurologic examination findings\n✓ Functional assessment (ODI, NDI, or VAS)\n✓ Pain score documentation at multiple visits\n\n### Imaging\n✓ MRI spine with and without contrast (within 6 months)\n✓ Standing X-rays with flexion/extension views if instability suspected\n✓ CT myelogram if MRI contraindicated\n✓ Radiologist report with correlation to symptoms\n\n### Conservative Therapy\n✓ Physical therapy records (≥6 weeks)\n✓ Medication trial documentation (NSAIDs, muscle relaxants)\n✓ Epidural steroid injection records\n✓ Chiropractic or manual therapy records if applicable\n\n### Pre-operative\n✓ Medical clearance from PCP\n✓ Smoking cessation documentation if required\n✓ HbA1c <8% for diabetic patients\n✓ Bone density scan if osteoporosis suspected\n\n## Submission\n\n1. Obtain MRI spine with radiologist report correlating findings to symptoms.\n2. Document ≥6 weeks conservative therapy with specific modalities and outcomes.\n3. Complete functional assessment (ODI or NDI) and document pain scores.\n4. Obtain pre-operative medical clearance and optimize modifiable risk factors.\n5. Submit prior authorization with appropriate CPT codes and primary ICD-10.\n6. Include all supporting documentation: imaging, PT records, office notes, functional scores.\n7. If denied, request peer-to-peer review within 72 hours; emphasize neurologic deficits.\n\n## Denial Reasons\n\n⚠ Insufficient conservative therapy documentation (most common denial reason)\n⚠ Imaging findings not correlated with clinical symptoms in documentation\n⚠ Missing functional assessment scores (ODI/NDI not documented)\n⚠ Fusion for DDD alone without instability — requires very strong documentation\n⚠ Active smoking without cessation program documentation\n⚠ Uncontrolled diabetes without optimization plan\n⚠ Multi-level fusion without adequate documentation for each level\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "Description", "Notes", "RVU"],
+          "rows": [
+            ["22612", "Posterior lumbar interbody fusion (PLIF) — single level", "Add-on 22614 for each additional level", "28.50"],
+            ["22630", "Transforaminal lumbar interbody fusion (TLIF) — single level", "Most commonly used lumbar fusion code", "28.50"],
+            ["22633", "Combined posterior + PLIF/TLIF — single level", "Combination procedure", "32.10"],
+            ["22551", "Anterior cervical discectomy and fusion (ACDF) — single level", "Add-on 22552 for each additional level", "20.40"],
+            ["22554", "Anterior cervical interbody fusion — single level", "Without discectomy", "18.20"],
+            ["22558", "Anterior lumbar interbody fusion (ALIF) — single level", "Retroperitoneal approach", "26.80"],
+            ["22842", "Posterior segmental instrumentation — 3-6 vertebral segments", "Pedicle screws; add-on code", "14.20"],
+            ["22845", "Anterior instrumentation — 2-3 vertebral segments", "Cervical plate; add-on code", "10.80"]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["Code", "Description", "Notes"],
+          "rows": [
+            ["M51.16", "Intervertebral disc degeneration, lumbar region", "Primary DDD indication"],
+            ["M51.17", "Intervertebral disc degeneration, lumbosacral region", "L5-S1 DDD"],
+            ["M48.06", "Spinal stenosis, lumbar region", "Lumbar stenosis"],
+            ["M43.16", "Spondylolisthesis, lumbar region", "Lumbar spondylolisthesis"],
+            ["M50.12", "Cervical disc displacement with radiculopathy, mid-cervical region", "C3-7 disc herniation with radiculopathy"],
+            ["M47.816", "Spondylosis with radiculopathy, lumbar region", "Lumbar radiculopathy"],
+            ["M47.812", "Spondylosis with radiculopathy, cervical region", "Cervical radiculopathy"],
+            ["M47.12", "Other spondylosis with myelopathy, cervical region", "Cervical myelopathy"]
+          ]
+        },
+        {
+          "name": "Medicare — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicare FFS", "Covered", "No prior auth for traditional Medicare; required for MA plans"],
+            ["Medicare Advantage (UHC)", "Prior Auth Required", "eviCore criteria; 6-week conservative therapy required"],
+            ["Medicare Advantage (Humana)", "Prior Auth Required", "Peer-to-peer available; functional assessment required"]
+          ]
+        },
+        {
+          "name": "Medicaid — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicaid MCO", "Prior Auth Required", "Conservative therapy documentation critical; state criteria vary"]
+          ]
+        },
+        {
+          "name": "Private Insurance — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Aetna", "Prior Auth Required", "Clinical Policy Bulletin; eviCore criteria; ODI documentation required"],
+            ["UnitedHealthcare", "Prior Auth Required", "Optum criteria; 6-week PT required; functional assessment"],
+            ["BCBS", "Prior Auth Required", "Medical Policy; imaging + conservative therapy + functional impairment"],
+            ["Cigna", "Prior Auth Required", "eviCore criteria; smoking cessation required for elective fusion"]
+          ]
+        }
+      ]
+    }
+  }
+}

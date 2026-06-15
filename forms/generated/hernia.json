@@ -1,0 +1,289 @@
+{
+  "title": "Hernia Repair Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assess Candidacy",
+    "logicKey": "hernia",
+    "hiddenDefaults": {
+      "reducible": true
+    },
+    "steps": [
+      {
+        "id": "type-symptoms",
+        "shortLabel": "Hernia Type & Symptoms",
+        "title": "Hernia Type & Symptoms",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "sex",
+            "name": "sex",
+            "label": "Sex",
+            "type": "select",
+            "required": false,
+            "defaultValue": "male",
+            "options": [
+              { "label": "Male", "value": "male" },
+              { "label": "Female", "value": "female" }
+            ]
+          },
+          {
+            "id": "hernia-type",
+            "name": "herniaType",
+            "label": "Hernia Type",
+            "type": "select",
+            "required": false,
+            "defaultValue": "inguinal",
+            "options": [
+              { "label": "Inguinal", "value": "inguinal" },
+              { "label": "Umbilical", "value": "umbilical" },
+              { "label": "Incisional", "value": "incisional" },
+              { "label": "Ventral", "value": "ventral" },
+              { "label": "Femoral", "value": "femoral" },
+              { "label": "Hiatal", "value": "hiatal" },
+              { "label": "Other", "value": "other" }
+            ]
+          },
+          {
+            "id": "side",
+            "name": "side",
+            "label": "Side / Location",
+            "type": "select",
+            "required": false,
+            "defaultValue": "right",
+            "options": [
+              { "label": "Right", "value": "right" },
+              { "label": "Left", "value": "left" },
+              { "label": "Bilateral", "value": "bilateral" },
+              { "label": "Midline", "value": "midline" },
+              { "label": "N/A", "value": "na" }
+            ]
+          },
+          {
+            "id": "defect-size",
+            "name": "defectSize",
+            "label": "Defect Size (cm)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "symptomatic",
+            "name": "symptomatic",
+            "label": "Symptomatic hernia (pain, discomfort, bulge)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "worsening-symptoms",
+            "name": "worseningSymptoms",
+            "label": "Worsening symptoms over time",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "pain-level",
+            "name": "painLevel",
+            "label": "Pain Level (0–10)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "min": 0,
+            "max": 10,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "symptomatic", "op": "truthy" }
+          },
+          {
+            "id": "duration-months",
+            "name": "durationMonths",
+            "label": "Duration (months)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "symptomatic", "op": "truthy" }
+          }
+        ]
+      },
+      {
+        "id": "complications-risk",
+        "shortLabel": "Complications & Risk",
+        "title": "Complications & Surgical Risk",
+        "fields": [
+          {
+            "id": "reducible",
+            "name": "reducible",
+            "label": "Hernia is reducible",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": true
+          },
+          {
+            "id": "incarcerated",
+            "name": "incarcerated",
+            "label": "Incarcerated (non-reducible)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "strangulated",
+            "name": "strangulated",
+            "label": "Strangulated (vascular compromise)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "recurrent",
+            "name": "recurrent",
+            "label": "Recurrent hernia (prior repair failed)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "prior-repair",
+            "name": "priorRepair",
+            "label": "Prior hernia repair at this site",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "asa",
+            "name": "asa",
+            "label": "ASA Classification",
+            "type": "select",
+            "required": false,
+            "defaultValue": 1,
+            "options": [
+              { "label": "ASA I — Healthy", "value": 1 },
+              { "label": "ASA II — Mild systemic disease", "value": 2 },
+              { "label": "ASA III — Severe systemic disease", "value": 3 },
+              { "label": "ASA IV — Life-threatening disease", "value": 4 }
+            ]
+          },
+          {
+            "id": "obesity",
+            "name": "obesity",
+            "label": "Obesity",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "diabetes",
+            "name": "diabetes",
+            "label": "Diabetes mellitus",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "smoking",
+            "name": "smoking",
+            "label": "Active smoking",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "copd",
+            "name": "copd",
+            "label": "COPD / chronic lung disease",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "ascites",
+            "name": "ascites",
+            "label": "Ascites",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "immunosuppressed",
+            "name": "immunosuppressed",
+            "label": "Immunosuppression",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "prior-abdominal-surgery",
+            "name": "priorAbdominalSurgery",
+            "label": "Prior abdominal surgery",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "coagulopathy",
+            "name": "coagulopathy",
+            "label": "Coagulopathy / anticoagulation",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "bmi",
+            "name": "bmi",
+            "label": "BMI (kg/m²)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "obesity", "op": "truthy" }
+          }
+        ]
+      },
+      {
+        "id": "conservative-tx",
+        "shortLabel": "Conservative Tx",
+        "title": "Conservative Treatment History",
+        "fields": [
+          {
+            "id": "tried-truss",
+            "name": "triedTruss",
+            "label": "Truss / hernia belt tried",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "watchful-waiting",
+            "name": "watchfulWaiting",
+            "label": "Watchful waiting period completed",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "watchful-waiting-duration",
+            "name": "watchfulWaitingDuration",
+            "label": "Watchful Waiting Duration (months)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "watchfulWaiting", "op": "truthy" }
+          }
+        ]
+      }
+    ]
+  }
+}

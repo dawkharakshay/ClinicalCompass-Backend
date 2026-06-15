@@ -1,0 +1,30 @@
+{
+  "title": "Portal Hypertension Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "37182, 43244",
+      "credentials": "[Credentials]",
+      "icd_codes": "K76.6, I85.00, I85.01, I86.4",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\nRe: Medical Necessity Appeal — Transjugular Intrahepatic Portosystemic Shunt (TIPS)\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\n\nDear Medical Director / Utilization Review Committee,\n\nI am writing to formally appeal the denial of prior authorization for a Transjugular Intrahepatic Portosystemic Shunt (TIPS) procedure for my patient. This procedure is medically necessary and is supported by the highest level of evidence from current multisociety guidelines and randomized controlled trials.\n\nCLINICAL SUMMARY\nMy patient presents with portal hypertension and complications requiring TIPS intervention. Following comprehensive clinical evaluation using the Portal Hypertension Compass™ clinical decision support tool (based on AASLD, EASL, and Baveno VII guidelines), the recommended intervention is: [TIPS/Portal Hypertension Recommendation].\n\nGUIDELINE SUPPORT\nThis recommendation is based on the following evidence-based guidelines and peer-reviewed literature:\n\n1. AASLD Practice Guidance on Portal Hypertension 2022: TIPS is recommended for refractory ascites, recurrent variceal bleeding unresponsive to endoscopic therapy, and hepatic hydrothorax — Level I evidence from multiple randomized controlled trials.\n\n2. Baveno VII Consensus 2022: Early TIPS (within 72 hours) significantly reduces treatment failure and mortality in high-risk variceal bleeding. This international consensus represents the current standard of care.\n\n3. EASL Clinical Practice Guidelines on Decompensated Cirrhosis 2018: TIPS is the preferred treatment for refractory ascites and secondary prophylaxis of variceal bleeding after failed endoscopic/pharmacologic therapy.\n\n4. Landmark RCT (Garcia-Pagan JC et al., NEJM 2010;362:2370-2379): Early TIPS reduced treatment failure from 50% to 14% and 1-year mortality from 39% to 14% in high-risk variceal bleeding — the highest level of evidence supporting TIPS.\n\n5. Randomized Trial (Salerno F et al., Hepatology 2007;46:98-103): TIPS was superior to large-volume paracentesis for refractory ascites with improved transplant-free survival.\n\nMEDICAL NECESSITY\nWithout this intervention, my patient faces:\n• Continued life-threatening variceal hemorrhage or refractory ascites\n• Repeated hospitalizations for large-volume paracentesis or endoscopic band ligation\n• Progressive hepatic decompensation and increased mortality risk\n• Significantly reduced quality of life and functional status\n\nAll appropriate conservative measures including pharmacologic therapy (non-selective beta-blockers), endoscopic therapy, and large-volume paracentesis have been exhausted or are contraindicated. TIPS is the appropriate next intervention per multisociety guidelines.\n\nREQUESTED ACTION\nI respectfully request that you overturn the denial and authorize the requested TIPS procedure. I am available to discuss this case further and can provide comprehensive documentation including endoscopy reports, imaging studies, liver function tests, and prior treatment records upon request.\n\n{{additional_clinical_notes}}\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

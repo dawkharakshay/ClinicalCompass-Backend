@@ -1,0 +1,30 @@
+{
+  "title": "PAD Revascularization Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "37254, 37267, 37271, 37280, 37288",
+      "credentials": "[Credentials]",
+      "icd_codes": "I70.211, I70.212, I70.219, I73.9",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\nRe: Medical Necessity Appeal — Lower Extremity Peripheral Artery Disease (PAD) Revascularization\n\nDear Medical Director / Utilization Review Committee,\n\nI am writing to formally appeal the denial of authorization for lower extremity revascularization for my patient, who has been diagnosed with [Clinical Subset]. This procedure is medically necessary and is supported by the highest level of evidence from current societal guidelines.\n\nCLINICAL SUMMARY\n\nMy patient presents with [Clinical Subset], requiring elective revascularization. Following comprehensive clinical evaluation, the recommended intervention is: [Primary recommendation text]\n\n\n\nGUIDELINE SUPPORT\n\nThis recommendation is based on the 2024 ACC/AHA/AACVPR/APMA/ABC/SCAI/SVM/SVN/SVS/SIR/VESS Guideline for the Management of Lower Extremity Peripheral Artery Disease (Gornik HL et al., Circulation. 2024;149(24):e1313–e410. PMID 38743805), which is the most current and comprehensive multisociety guideline on this topic.\n\nThe procedure (CPT: {{cpt_codes}}, ICD-10: {{icd_codes}}) is indicated for this patient based on the following evidence:\n\n1. 2024 ACC/AHA PAD Guideline (Gornik HL et al., Circulation 2024, PMID 38743805): Class I/IIa recommendation for revascularization in patients with [Clinical Subset] when anatomically feasible and clinically appropriate.\n\n2. BEST-CLI Trial (Menard MT et al., NEJM 2022): Demonstrated that revascularization significantly improves limb salvage and quality of life in patients with chronic limb-threatening ischemia (CLTI).\n\n3. BASIL-2 Trial (Bradbury AW et al., Lancet 2023): Confirmed the benefit of revascularization-first strategies in CLTI patients requiring below-the-knee intervention.\n\n4. WIfI Classification (Mills JL et al., J Vasc Surg 2014): Validated risk stratification confirming that patients with higher WIfI stages derive the greatest benefit from revascularization.\n\nMEDICAL NECESSITY\n\nWithout timely revascularization, this patient faces significant risk of:\n• Major limb amputation\n• Irreversible ischemic tissue loss\n• Functional decline and loss of ambulation\n• Markedly reduced quality of life\n\nConservative measures including guideline-directed medical therapy (GDMT) and supervised exercise therapy have been considered and/or attempted as appropriate. The patient's clinical presentation necessitates revascularization as the next appropriate step in care.\n\nREQUESTED ACTION\n\nI respectfully request that you overturn the denial and authorize the requested revascularization procedure. I am available to discuss this case further and can provide additional clinical documentation upon request.\n\n{{additional_clinical_notes}}\n\nSincerely,\n\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "title": "Prostatic Artery Embolization Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Compute PAE Candidacy Score",
+    "logicKey": "menshealth",
+    "hiddenDefaults": {
+      "priorInterventions": [],
+      "middleLobeEnlargement": false,
+      "bilateralDisease": false,
+      "noBladderCancer": true,
+      "noNeurogenicBladder": true,
+      "noUrethralStricture": true,
+      "noSevereAtherosclerosis": true,
+      "noRenalInsufficiency": true
+    },
+    "steps": [
+      {
+        "id": "patient-information",
+        "shortLabel": "Patient",
+        "title": "Patient Information",
+        "fields": [
+          {
+            "id": "patient-name",
+            "name": "patientName",
+            "label": "Patient Name",
+            "type": "text",
+            "required": false,
+            "defaultValue": ""
+          }
+        ]
+      },
+      {
+        "id": "symptom-assessment",
+        "shortLabel": "Symptoms",
+        "title": "Symptom Assessment",
+        "fields": [
+          {
+            "id": "ipss-score",
+            "name": "ipssScore",
+            "label": "IPSS Score",
+            "type": "slider",
+            "required": false,
+            "defaultValue": 0,
+            "min": 0,
+            "max": 35,
+            "step": 1
+          },
+          {
+            "id": "ipss-qol",
+            "name": "ipssQol",
+            "label": "IPSS QoL Score",
+            "type": "slider",
+            "required": false,
+            "defaultValue": 0,
+            "min": 0,
+            "max": 6,
+            "step": 1
+          },
+          {
+            "id": "peak-flow-rate",
+            "name": "peakFlowRate",
+            "label": "Peak Flow Rate (Qmax, mL/s)",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "unit": "mL/s",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "post-void-residual",
+            "name": "postVoidResidual",
+            "label": "Post-Void Residual (PVR, mL)",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "unit": "mL",
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "clinical-criteria",
+        "shortLabel": "Clinical",
+        "title": "Clinical Criteria",
+        "fields": [
+          {
+            "id": "prostate-volume-over-40",
+            "name": "prostateVolumeOver40",
+            "label": "Prostate Volume > 40 cc",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "failed-medical-therapy",
+            "name": "failedMedicalTherapy",
+            "label": "Failed Medical Therapy (>6 months)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "symptom-duration-over-6-months",
+            "name": "symptomDurationOver6Months",
+            "label": "Symptom Duration > 6 Months",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "urinary-retention-history",
+            "name": "urinaryRetentionHistory",
+            "label": "History of Urinary Retention",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "recurrent-uti",
+            "name": "recurrentUTI",
+            "label": "Recurrent UTI",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "recurrent-hematuria",
+            "name": "recurrentHematuria",
+            "label": "Recurrent Hematuria",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "imaging-exclusion-criteria",
+        "shortLabel": "Imaging",
+        "title": "Imaging & Exclusion Criteria",
+        "fields": [
+          {
+            "id": "mri-performed",
+            "name": "mriPerformed",
+            "label": "MRI Performed",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "cta-performed",
+            "name": "ctaPerformed",
+            "label": "CTA Performed",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "no-prostate-cancer",
+            "name": "noProstateCancer",
+            "label": "No Active Prostate Cancer",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": true
+          },
+          {
+            "id": "no-active-uti",
+            "name": "noActiveUTI",
+            "label": "No Active UTI",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": true
+          },
+          {
+            "id": "no-coagulopathy",
+            "name": "noCoagulopathy",
+            "label": "No Coagulopathy",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": true
+          }
+        ]
+      },
+      {
+        "id": "review-compute-score",
+        "shortLabel": "Review",
+        "title": "Review & Compute Score",
+        "fields": [
+          {
+            "id": "review-patient-alert",
+            "label": "Review patient information and compute PAE candidacy score",
+            "type": "alert",
+            "severity": "info",
+            "text": "Review patient information and compute PAE candidacy score."
+          }
+        ]
+      }
+    ]
+  }
+}

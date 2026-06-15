@@ -1,0 +1,30 @@
+{
+  "title": "Low-Grade Glioma Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "61510, 77407, 96413",
+      "credentials": "[Credentials]",
+      "icd_codes": "C71.0, C71.1, C71.2, C71.3, C71.9",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "\n{{letter_date}}\nRe: Medical Necessity Appeal — Low-Grade Glioma Treatment (Surgery / Radiation / Chemotherapy)\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\nDear Medical Director / Utilization Review Committee,\n\nThis letter serves as an appeal for the denial of coverage for medically necessary treatment for our patient, {{patient_name}}, diagnosed with low-grade glioma. The recommended treatment plan, which includes active management , is fully supported by current medical literature and established clinical guidelines.\n\nClinical Summary:\n{{patient_name}} is a [AGE]-year-old [MALE/FEMALE] diagnosed with a low-grade glioma, confirmed by [DIAGNOSTIC_METHOD, e.g., biopsy/MRI findings]. The patient presents with [SYMPTOMS/CLINICAL_FINDINGS]. Given the tumor characteristics and the patient's clinical status, active intervention is crucial to prevent disease progression and improve long-term outcomes.\n\nGuideline Support:\n1.  **NCCN Central Nervous System Cancers Guidelines v2.2024:** These guidelines provide strong recommendations for the management of low-grade gliomas, advocating for active treatment strategies based on risk factors such as age, tumor size, and molecular markers. Our patient meets criteria for active management as outlined in these guidelines.\n2.  **EANO Guidelines on Low-Grade Gliomas 2017:** These European guidelines support individualized treatment approaches for diffuse low-grade gliomas, often including surgery, radiation, and/or chemotherapy to optimize patient outcomes.\n3.  **AANS/CNS Guidelines on Low-Grade Glioma 2015:** These American guidelines emphasize the importance of maximal safe resection and adjuvant therapies for adult low-grade gliomas to improve progression-free and overall survival.\n4.  **RTOG 9802 Trial (Shaw 2012, JCO):** This landmark study demonstrated the survival benefit of adjuvant chemotherapy in addition to radiation therapy for high-risk low-grade glioma, highlighting the efficacy of multimodal treatment.\n\nMedical Necessity Statement:\nBased on the comprehensive assessment of {{patient_name}}'s condition and the robust evidence from leading clinical guidelines, the proposed active management is medically necessary. The treatment aims to [STATE_TREATMENT_GOALS, e.g., achieve tumor control, alleviate symptoms, prevent malignant transformation, and extend survival]. Delay or denial of this treatment would significantly compromise the patient's prognosis and quality of life. The evidence level for this recommendation is High, as supported by NCCN Guidelines.\n\nRisk Without Treatment:\nWithout the recommended active management, {{patient_name}} faces a high risk of [RISKS, e.g., tumor progression, neurological deficits, malignant transformation, and reduced survival]. Early and appropriate intervention is critical to mitigate these risks and provide the best possible chance for a favorable outcome.\n\nRequested Action:\nWe respectfully request that you reconsider your denial and approve coverage for the medically necessary Low-Grade Glioma Treatment (Surgery / Radiation / Chemotherapy) for {{patient_name}}. We have attached all relevant medical records for your review. Please contact my office if you require any further information.\n\n{{additional_clinical_notes}}\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

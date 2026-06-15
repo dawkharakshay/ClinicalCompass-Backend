@@ -1,0 +1,108 @@
+{
+  "title": "Ovulation Induction Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "OvulationInductionAuthGuide.tsx",
+    "title": "Ovulation Induction — Authorization Guide",
+    "subtitle": "CPT Codes · ICD-10 · Payer Requirements",
+    "cptCodes": [
+      {"code": "58321", "description": "Artificial insemination; intra-uterine (IUI)", "type": "IUI procedure"},
+      {"code": "76857", "description": "Ultrasound, pelvic (nonobstetric), real time with image documentation; limited", "type": "Follicle monitoring"},
+      {"code": "76830", "description": "Ultrasound, transvaginal", "type": "Transvaginal US"},
+      {"code": "82670", "description": "Estradiol", "type": "Estradiol level"},
+      {"code": "83001", "description": "Gonadotropin; follicle stimulating hormone (FSH)", "type": "FSH level"},
+      {"code": "83002", "description": "Gonadotropin; luteinizing hormone (LH)", "type": "LH level"},
+      {"code": "96372", "description": "Therapeutic, prophylactic, or diagnostic injection; subcutaneous or intramuscular", "type": "Injection admin"},
+      {"code": "J3490", "description": "Unclassified drugs (letrozole, clomiphene)", "type": "Oral OI agents"},
+      {"code": "J0725", "description": "Chorionic gonadotropin per 1,000 USP units (hCG trigger)", "type": "hCG trigger"},
+      {"code": "S9560", "description": "Home infusion therapy, subcutaneous therapy; administrative services", "type": "Home injection"}
+    ],
+    "icd10Codes": [
+      {"code": "N97.0", "description": "Female infertility associated with anovulation"},
+      {"code": "E28.2", "description": "Polycystic ovarian syndrome"},
+      {"code": "E28.0", "description": "Estrogen excess"},
+      {"code": "E23.0", "description": "Hypopituitarism (hypothalamic anovulation)"},
+      {"code": "E22.1", "description": "Hyperprolactinemia"},
+      {"code": "E03.9", "description": "Hypothyroidism, unspecified"},
+      {"code": "E05.90", "description": "Thyrotoxicosis, unspecified"},
+      {"code": "Z31.41", "description": "Encounter for fertility testing"},
+      {"code": "Z31.83", "description": "Encounter for assisted reproductive fertility procedure cycle"}
+    ],
+    "payers": [],
+    "customSections": [
+      {
+        "heading": "Injectable Gonadotropin NDC Codes (for pharmacy PA)",
+        "kind": "prose",
+        "text": "Follitropin alfa (Gonal-F): J3490 or specific NDC | Follitropin beta (Follistim): J3490 | Menotropins (Menopur): J3490 | Urofollitropin (Bravelle): J3490"
+      },
+      {
+        "heading": "Coverage Landscape — Common Denial Reasons",
+        "kind": "list",
+        "items": [
+          "Injectable gonadotropins denied as \"not medically necessary\"",
+          "\"Benefit exclusion\" for infertility medications",
+          "Monitoring ultrasounds denied as \"excessive frequency\"",
+          "Letrozole denied (off-label for ovulation induction — FDA approved for breast cancer)"
+        ]
+      },
+      {
+        "heading": "Coverage Landscape — Strongest Coverage Arguments",
+        "kind": "list",
+        "items": [
+          "PCOS (E28.2) is a diagnosable endocrine disorder — treatment is medically necessary",
+          "Letrozole: ASRM/Endocrine Society first-line recommendation for PCOS (Legro NEJM 2014)",
+          "Monitoring ultrasounds are medically necessary to prevent OHSS and multiple gestation",
+          "State mandate may apply to medications if plan covers infertility treatment"
+        ]
+      },
+      {
+        "heading": "Prior Authorization Requirements — Required Documentation",
+        "kind": "list",
+        "items": [
+          "Diagnosis of anovulation with specific etiology (PCOS, hypothalamic, etc.)",
+          "Hormonal workup: FSH, LH, estradiol, prolactin, TSH, AMH",
+          "Documentation of failed oral agent trials (letrozole, clomiphene) before injectables",
+          "Tubal patency confirmed (HSG or SHG)",
+          "Normal semen analysis (or male factor addressed)",
+          "Letter of medical necessity from REI or OB/GYN",
+          "For injectables: documentation of failed oral OI (typically 3–6 cycles)"
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# Ovulation Induction — Authorization Guide\n_CPT Codes · ICD-10 · Payer Requirements_\n\nbackHref: /ovulation-induction\n\n## CPT Codes\n\n| CPT | Description | Type |\n| --- | --- | --- |\n| 58321 | Artificial insemination; intra-uterine (IUI) | IUI procedure |\n| 76857 | Ultrasound, pelvic (nonobstetric), real time with image documentation; limited | Follicle monitoring |\n| 76830 | Ultrasound, transvaginal | Transvaginal US |\n| 82670 | Estradiol | Estradiol level |\n| 83001 | Gonadotropin; follicle stimulating hormone (FSH) | FSH level |\n| 83002 | Gonadotropin; luteinizing hormone (LH) | LH level |\n| 96372 | Therapeutic, prophylactic, or diagnostic injection; subcutaneous or intramuscular | Injection admin |\n| J3490 | Unclassified drugs (letrozole, clomiphene) | Oral OI agents |\n| J0725 | Chorionic gonadotropin per 1,000 USP units (hCG trigger) | hCG trigger |\n| S9560 | Home infusion therapy, subcutaneous therapy; administrative services | Home injection |\n\n**Injectable Gonadotropin NDC Codes (for pharmacy PA)**\nFollitropin alfa (Gonal-F): J3490 or specific NDC | Follitropin beta (Follistim): J3490 | Menotropins (Menopur): J3490 | Urofollitropin (Bravelle): J3490\n\n## ICD-10 Diagnoses\n\n| ICD-10 | Description |\n| --- | --- |\n| N97.0 | Female infertility associated with anovulation |\n| E28.2 | Polycystic ovarian syndrome |\n| E28.0 | Estrogen excess |\n| E23.0 | Hypopituitarism (hypothalamic anovulation) |\n| E22.1 | Hyperprolactinemia |\n| E03.9 | Hypothyroidism, unspecified |\n| E05.90 | Thyrotoxicosis, unspecified |\n| Z31.41 | Encounter for fertility testing |\n| Z31.83 | Encounter for assisted reproductive fertility procedure cycle |\n\n## Coverage Landscape\n\n**Common Denial Reasons**\n- Injectable gonadotropins denied as \"not medically necessary\"\n- \"Benefit exclusion\" for infertility medications\n- Monitoring ultrasounds denied as \"excessive frequency\"\n- Letrozole denied (off-label for ovulation induction — FDA approved for breast cancer)\n\n**Strongest Coverage Arguments**\n- PCOS (E28.2) is a diagnosable endocrine disorder — treatment is medically necessary\n- Letrozole: ASRM/Endocrine Society first-line recommendation for PCOS (Legro NEJM 2014)\n- Monitoring ultrasounds are medically necessary to prevent OHSS and multiple gestation\n- State mandate may apply to medications if plan covers infertility treatment\n\n## Prior Authorization Requirements\n\n### Required Documentation\n- Diagnosis of anovulation with specific etiology (PCOS, hypothalamic, etc.)\n- Hormonal workup: FSH, LH, estradiol, prolactin, TSH, AMH\n- Documentation of failed oral agent trials (letrozole, clomiphene) before injectables\n- Tubal patency confirmed (HSG or SHG)\n- Normal semen analysis (or male factor addressed)\n- Letter of medical necessity from REI or OB/GYN\n- For injectables: documentation of failed oral OI (typically 3–6 cycles)\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["CPT", "Description", "Type"],
+          "rows": [
+            ["58321", "Artificial insemination; intra-uterine (IUI)", "IUI procedure"],
+            ["76857", "Ultrasound, pelvic (nonobstetric), real time with image documentation; limited", "Follicle monitoring"],
+            ["76830", "Ultrasound, transvaginal", "Transvaginal US"],
+            ["82670", "Estradiol", "Estradiol level"],
+            ["83001", "Gonadotropin; follicle stimulating hormone (FSH)", "FSH level"],
+            ["83002", "Gonadotropin; luteinizing hormone (LH)", "LH level"],
+            ["96372", "Therapeutic, prophylactic, or diagnostic injection; subcutaneous or intramuscular", "Injection admin"],
+            ["J3490", "Unclassified drugs (letrozole, clomiphene)", "Oral OI agents"],
+            ["J0725", "Chorionic gonadotropin per 1,000 USP units (hCG trigger)", "hCG trigger"],
+            ["S9560", "Home infusion therapy, subcutaneous therapy; administrative services", "Home injection"]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnoses",
+          "header": ["ICD-10", "Description"],
+          "rows": [
+            ["N97.0", "Female infertility associated with anovulation"],
+            ["E28.2", "Polycystic ovarian syndrome"],
+            ["E28.0", "Estrogen excess"],
+            ["E23.0", "Hypopituitarism (hypothalamic anovulation)"],
+            ["E22.1", "Hyperprolactinemia"],
+            ["E03.9", "Hypothyroidism, unspecified"],
+            ["E05.90", "Thyrotoxicosis, unspecified"],
+            ["Z31.41", "Encounter for fertility testing"],
+            ["Z31.83", "Encounter for assisted reproductive fertility procedure cycle"]
+          ]
+        }
+      ]
+    }
+  }
+}

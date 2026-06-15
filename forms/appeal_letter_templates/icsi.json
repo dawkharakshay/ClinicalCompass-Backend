@@ -1,0 +1,30 @@
+{
+  "title": "Intracytoplasmic Sperm Injection Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "89280, 89281, 89260, 89261, 89264, 89257",
+      "credentials": "[Credentials]",
+      "icd_codes": "N46.01, N46.11, N46.021, N97.9, Z31.83, Z31.81",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "To Whom It May Concern,\n\nI am writing to formally appeal the denial of prior authorization for intracytoplasmic sperm injection (ICSI) for my patient. ICSI is medically necessary based on the following documented indication: [azoospermia / severe male factor / surgically retrieved sperm / prior IVF fertilization failure / antisperm antibodies].\n\nCLINICAL SUMMARY\n\nSemen analysis demonstrates: concentration [X] M/mL, total motile count [X] million, morphology [X]%. [If azoospermia: Sperm will be retrieved via TESE/PESA/micro-TESE.] [If prior failure: Prior IVF cycle on {{letter_date}} resulted in [0% / X%] fertilization rate.]\n\nDENIAL REBUTTAL\n\nIf denied as \"add-on\" or \"not medically necessary\": ICSI is not a discretionary add-on in this case. It is the only method by which fertilization can be achieved given the documented male factor. Without ICSI, the IVF cycle cannot result in fertilization.\n\nIf denied as \"bundled\" with egg retrieval: CPT codes 89280/89281 (ICSI) are distinct services from egg retrieval (58970) and are not bundled per AMA CPT guidelines. Each code describes a separate laboratory procedure performed by different personnel.\n\nEVIDENCE BASE\n\nASRM Practice Committee (Fertil Steril. 2020;114(2):239-245) identifies the following as absolute indications for ICSI: severe oligospermia (TMC less than 1M), azoospermia requiring surgical sperm retrieval, prior IVF fertilization failure, and antisperm antibodies. All applicable criteria are met in this patient.\n\nCONCLUSION\n\nI respectfully request reconsideration and approval of ICSI as a medically necessary component of this patient's IVF treatment.\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\n{{letter_date}}"
+  }
+}

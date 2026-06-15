@@ -1,0 +1,448 @@
+{
+  "title": "Percutaneous AV Fistula Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "PAVFAuthGuide.tsx",
+    "title": "pAVF Auth Guide",
+    "subtitle": "Insurance Authorization Reference",
+    "cptCodes": [
+      {
+        "code": "36837",
+        "description": "Percutaneous arteriovenous fistula creation, upper extremity, separate access of both peripheral artery and peripheral vein",
+        "device": "WavelinQ™ (BD)",
+        "access": "Dual access — separate arterial and venous punctures",
+        "rvu": "9.07",
+        "includes": [
+          "All vascular access for the procedure",
+          "Ultrasound and fluoroscopic guidance (imaging included)",
+          "Radiologic supervision and interpretation",
+          "Maturation procedures performed at the same session",
+          "Balloon angioplasty of fistula creation site (if performed)"
+        ],
+        "note": "Most commonly billed code for WavelinQ system. Category I CPT code effective January 2023."
+      },
+      {
+        "code": "36836",
+        "description": "Percutaneous arteriovenous fistula creation, upper extremity, single access of both peripheral artery and peripheral vein",
+        "device": "Ellipsys® (Medtronic) — historical; device discontinued",
+        "access": "Single access — one puncture site for both artery and vein",
+        "rvu": "7.20",
+        "includes": [
+          "All vascular access for the procedure",
+          "Ultrasound guidance (imaging included)",
+          "Radiologic supervision and interpretation",
+          "Maturation procedures performed at the same session"
+        ],
+        "note": "Ellipsys device discontinued. Code may still be used if single-access technique is employed."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "N18.6",
+        "description": "End-stage renal disease (ESRD)",
+        "notes": "Primary diagnosis. Required for all pAVF claims. Patient must be on dialysis or imminently requiring dialysis.",
+        "required": true
+      },
+      {
+        "code": "Z99.2",
+        "description": "Dependence on renal dialysis",
+        "notes": "Use when patient is already receiving hemodialysis via catheter or other temporary access.",
+        "required": false
+      },
+      {
+        "code": "N18.5",
+        "description": "Chronic kidney disease, stage 5",
+        "notes": "Use when patient has CKD Stage 5 but has not yet initiated dialysis (pre-emptive access creation).",
+        "required": false
+      },
+      {
+        "code": "T82.49XA",
+        "description": "Other complication of vascular dialysis catheter, initial encounter",
+        "notes": "Use when prior catheter complication (infection, thrombosis, dysfunction) is driving the need for permanent access.",
+        "required": false
+      },
+      {
+        "code": "Z87.39",
+        "description": "Personal history of other endocrine, nutritional and metabolic diseases",
+        "notes": "Secondary code for relevant comorbidities (diabetes, hypertension) contributing to CKD.",
+        "required": false
+      },
+      {
+        "code": "I10",
+        "description": "Essential (primary) hypertension",
+        "notes": "Common secondary diagnosis. Include when hypertension is a contributing factor to ESRD.",
+        "required": false
+      },
+      {
+        "code": "E11.65",
+        "description": "Type 2 diabetes mellitus with hyperglycemia",
+        "notes": "Include when diabetic nephropathy is the etiology of ESRD.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare (Fee-for-Service)",
+        "coverageStatus": "covered",
+        "coverageStatusLabel": "Covered — No Prior Auth Required (FFS)",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Medicare Fee-for-Service (Traditional Medicare) does NOT require prior authorization for CPT 36836/36837. These are Category I CPT codes effective January 2023. Claim is submitted post-procedure.",
+        "overview": "Traditional Medicare (Parts A and B) covers percutaneous AV fistula creation under CPT 36836 and 36837 as Category I CPT codes, effective January 1, 2023. There is no National Coverage Determination (NCD) or Local Coverage Determination (LCD) specifically for pAVF. Coverage is based on the general principle of medical necessity for ESRD dialysis access. No prior authorization is required for Medicare Fee-for-Service.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria",
+            "items": [
+              "Diagnosis of ESRD (ICD-10: N18.6) or CKD Stage 5 requiring imminent dialysis (N18.5)",
+              "Patient requires permanent hemodialysis vascular access",
+              "Procedure performed by a qualified physician with appropriate training (per SIR 2025 guidance: 2-hour didactic + 1-on-1 training + 3 simulated proctored cases)",
+              "Procedure performed in a Medicare-participating facility (hospital outpatient, ASC, or office-based lab)",
+              "Medical necessity documented in the medical record",
+              "Vessel mapping performed confirming adequate anatomy (perforator vein ≥2 mm, superficial vein ≤6 mm depth, central veins patent)"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Clinical Record (must be in chart)",
+            "items": [
+              "Nephrology or treating physician note documenting ESRD diagnosis and dialysis need",
+              "Vessel mapping report: perforator vein diameter (≥2 mm), superficial vein depth (≤6 mm), Barbeau test result, arterial calcification grade, central vein patency",
+              "Barbeau test documentation (Type A, B, C, or D)",
+              "Arterial Doppler waveform assessment",
+              "Documentation of why pAVF is preferred (e.g., forearm veins unsuitable for surgical AVF, patient preference, surgical unavailability)",
+              "Physician attestation of pAVF training completion (SIR 2025 GS-7)",
+              "Informed consent"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Billing Documentation",
+            "items": [
+              "Operative/procedure report documenting: device used, access sites, fluoroscopic and US guidance, fistula confirmation, any maturation procedures",
+              "ICD-10 primary diagnosis code (N18.6 or N18.5)",
+              "CPT code: 36837 (WavelinQ dual access) or 36836 (single access)",
+              "Place of service code (hospital outpatient: 22; ASC: 24; office: 11)",
+              "Modifier -26 if billing professional component only (facility setting)"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Perform procedure — no pre-authorization needed for Medicare FFS",
+              "Document procedure report including device, access sites, guidance modalities, and fistula confirmation",
+              "Submit claim to Medicare contractor (Noridian, CGS, Palmetto, etc.) post-procedure",
+              "Bill CPT 36837 (or 36836) with primary ICD-10 N18.6",
+              "If denied, submit appeal with operative report, vessel mapping, and medical necessity letter citing SIR 2025 guidance"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Insufficient documentation of medical necessity in the medical record",
+              "Missing vessel mapping report or inadequate documentation of anatomy",
+              "Procedure billed with incorrect CPT code (e.g., using unlisted code 37799 instead of 36837)",
+              "Medicare Advantage plan (not FFS) — these plans can have their own policies",
+              "Facility not enrolled in Medicare or procedure performed outside covered setting"
+            ]
+          },
+          {
+            "heading": "Billing & Authorization Tips",
+            "items": [
+              "Medicare FFS does NOT require prior auth — submit claim post-procedure with complete documentation",
+              "Medicare Advantage plans are separate from FFS and may require prior auth or have non-coverage policies",
+              "Always verify the patient's specific plan: Medicare FFS vs. Medicare Advantage (Part C)",
+              "CPT 36837 includes imaging guidance — do NOT separately bill 76937 (US guidance) or 77001 (fluoroscopy)",
+              "Subsequent pAVF maintenance procedures use CPT 36901–36909 (not 36837)",
+              "RVU for 36837 = 9.07 (2025 Physician Fee Schedule)"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicare FFS reimbursement for CPT 36837: approximately $800–$1,200 (physician component) depending on geographic adjustment. Facility component billed separately by the hospital/ASC."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicare FFS (Traditional)", "status": "Covered", "notes": "No prior auth required. Category I CPT codes since Jan 2023." },
+          { "payer": "Medicare Advantage (varies by plan)", "status": "Variable", "notes": "Plans can create own policies. Some require prior auth. Verify with specific plan." }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "conditional",
+        "coverageStatusLabel": "Generally Covered — Prior Auth Usually Required",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most state Medicaid programs cover pAVF but typically require prior authorization. Reimbursement rates are generally lower than Medicare (often under $2,000 for the procedure). Requirements vary significantly by state.",
+        "overview": "Medicaid coverage for pAVF (CPT 36836/36837) varies by state. Most state Medicaid programs cover the procedure as a medically necessary dialysis access intervention, but prior authorization is typically required. Reimbursement rates are generally lower than Medicare, often under $2,000. Some states follow Medicare coverage policies; others have independent coverage determinations. Always verify with the specific state Medicaid program.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria",
+            "items": [
+              "ESRD diagnosis (ICD-10: N18.6) requiring hemodialysis",
+              "Prior authorization approved before procedure (most states)",
+              "Vessel mapping confirming adequate anatomy",
+              "Documentation that pAVF is medically necessary and appropriate",
+              "Procedure performed by a qualified, Medicaid-enrolled provider",
+              "Facility must be Medicaid-enrolled",
+              "State-specific criteria may apply — check your state's Medicaid fee schedule and coverage policy"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Prior Authorization Submission",
+            "items": [
+              "Completed prior authorization request form (state-specific)",
+              "Letter of medical necessity from treating nephrologist or vascular access physician",
+              "Diagnosis documentation: ESRD (N18.6), dialysis dependence (Z99.2)",
+              "Vessel mapping report with measurements (perforator vein, superficial vein depth, Barbeau test)",
+              "Documentation of why pAVF is preferred over surgical AVF or AV graft",
+              "History of prior vascular access attempts (if applicable)",
+              "Physician credentials and Medicaid provider enrollment number"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Clinical Record",
+            "items": [
+              "Nephrology note confirming ESRD and dialysis requirement",
+              "Vascular access history (prior catheters, failed fistulas, AV grafts)",
+              "Current dialysis access status and complications (if any)",
+              "Barbeau test result and arterial assessment",
+              "Informed consent",
+              "Operative/procedure report (post-procedure)"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Obtain prior authorization BEFORE scheduling the procedure",
+              "Submit PA request to state Medicaid program with all required documentation",
+              "Allow 5–15 business days for standard review (varies by state)",
+              "Expedited review (72 hours) available if urgent dialysis access needed",
+              "Upon approval, schedule procedure and document authorization number",
+              "Submit claim post-procedure with authorization number, CPT 36837, and ICD-10 N18.6",
+              "If denied, appeal with additional clinical documentation and SIR 2025 guideline citations"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Prior authorization not obtained before procedure",
+              "Insufficient medical necessity documentation",
+              "State Medicaid policy classifies pAVF as investigational (some states)",
+              "Provider or facility not enrolled in Medicaid",
+              "Missing or incomplete vessel mapping documentation",
+              "Reimbursement rate disputes (procedure cost exceeds Medicaid fee schedule)"
+            ]
+          },
+          {
+            "heading": "Billing & Authorization Tips",
+            "items": [
+              "Always check your specific state's Medicaid fee schedule for CPT 36837 — rates vary widely",
+              "Some states have adopted Medicare's coverage policy by reference — cite this if applicable",
+              "Dual-eligible patients (Medicare + Medicaid): bill Medicare first, Medicaid as secondary payer",
+              "ESRD patients on Medicaid who are also Medicare-eligible should be enrolled in Medicare ESRD benefit",
+              "Contact your state Medicaid program's provider relations line for current coverage policy",
+              "Medicaid managed care plans may have different PA requirements than fee-for-service Medicaid"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicaid reimbursement for CPT 36837 is typically under $2,000 (combined physician + facility). Rates vary significantly by state. Some states reimburse at Medicare rates; others use their own fee schedules."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicaid FFS (most states)", "status": "Covered with PA", "notes": "Prior auth typically required. Rates often under $2,000." },
+          { "payer": "Medicaid Managed Care", "status": "Variable", "notes": "Plan-specific policies. May require PA and additional criteria." },
+          { "payer": "Dual-Eligible (Medicare + Medicaid)", "status": "Medicare Primary", "notes": "Bill Medicare first; Medicaid covers cost-sharing." }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private / Commercial Insurance",
+        "coverageStatus": "variable",
+        "coverageStatusLabel": "Variable — Many Plans Classify as Investigational",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Private/commercial insurance coverage for pAVF is highly variable. Many major payers (BCBS in most regions, Humana, some Aetna plans) classify pAVF as investigational and deny coverage. Prior authorization is required by virtually all commercial plans. Always verify coverage before scheduling.",
+        "overview": "Commercial insurance coverage for pAVF is the most challenging payer category. Many major insurers have adopted non-coverage policies classifying pAVF as investigational, citing limited long-term data. As of 2024, BCBS (most regions), Humana, and some Aetna plans have non-coverage policies. However, some plans do cover pAVF with prior authorization. Always verify coverage with the specific plan before scheduling. If denied, appeal with SIR 2025 guideline citations and peer-reviewed evidence.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria",
+            "items": [
+              "Prior authorization approved before procedure (virtually all commercial plans)",
+              "ESRD diagnosis (N18.6) requiring hemodialysis",
+              "Vessel mapping confirming adequate anatomy per SIR 2025 criteria",
+              "Barbeau test Type A, B, or C (not D)",
+              "Documentation that surgical AVF is not feasible or has failed",
+              "Physician has completed required pAVF training (SIR 2025 GS-7)",
+              "Plan-specific medical necessity criteria met (varies by payer)",
+              "Some plans require: failed prior surgical AVF attempt, specific vessel diameter thresholds, or nephrology co-management"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Prior Authorization Request",
+            "items": [
+              "Completed PA request form (payer-specific)",
+              "Letter of medical necessity (physician-authored, not template)",
+              "Vessel mapping report: perforator vein diameter, superficial vein depth (≤6 mm), Barbeau test result, arterial calcification grade",
+              "Nephrology note confirming ESRD and dialysis requirement",
+              "Documentation of why pAVF is preferred: surgical AVF not feasible, patient preference, urgency",
+              "Prior vascular access history: failed fistulas, AV grafts, catheter complications",
+              "Physician training documentation (SIR 2025 GS-7 requirements)",
+              "Peer-reviewed literature supporting pAVF (NEAT Trial, EASE Trial, SIR 2025)"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Supporting Clinical Evidence",
+            "items": [
+              "SIR Practice Guidance Document (Dolmatch et al., JVIR 2025;36(12):1945-1957)",
+              "KDOQI 2019 Vascular Access Guidelines (Lok CE et al., AJKD 2020)",
+              "NEAT Trial results (Lok CE et al., JASN 2017)",
+              "EASE Trial results (Rajan DK et al., CJASN 2021)",
+              "Fistula First Catheter Last (FFCL) initiative documentation",
+              "CPT Category I code designation (effective January 2023) — demonstrates AMA recognition",
+              "Medicare coverage confirmation (no NCD/LCD restriction) — useful for MA plan appeals"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "FIRST: Verify coverage by calling the plan's provider services line — ask specifically about CPT 36837 and pAVF",
+              "If covered: submit PA request with all required documentation before scheduling",
+              "Allow 5–15 business days for standard review; request expedited review if urgent",
+              "If denied at PA stage: submit peer-to-peer review request immediately (within 24–48 hours)",
+              "Peer-to-peer: cite SIR 2025, NEAT Trial, EASE Trial, KDOQI 2019, and CPT Category I status",
+              "If peer-to-peer fails: submit formal written appeal with complete clinical documentation",
+              "Include appeal letter citing all evidence (use pAVF Compass Appeal Letter generator)",
+              "If all internal appeals fail: consider external independent review (required by ACA for most plans)"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "\"Investigational\" or \"experimental\" classification — most common denial reason",
+              "Insufficient evidence of medical necessity",
+              "Surgical AVF not documented as infeasible",
+              "Missing vessel mapping documentation",
+              "Physician training not documented",
+              "Plan-specific criteria not met (e.g., requires failed prior surgical AVF)",
+              "Non-participating provider or facility",
+              "Benefit exclusion for \"new technology\" procedures"
+            ]
+          },
+          {
+            "heading": "Billing & Authorization Tips",
+            "items": [
+              "Always verify coverage BEFORE scheduling — many commercial plans deny pAVF",
+              "Request peer-to-peer review immediately after denial — this is your best opportunity to reverse",
+              "Use the pAVF Compass Appeal Letter generator to create a guideline-based appeal",
+              "Cite CPT Category I status (Jan 2023) and Medicare coverage as evidence of mainstream acceptance",
+              "BCBS: coverage varies significantly by region — Michigan, Massachusetts, and Highmark (PA/DE/WV) cover Ellipsys; most other regions deny",
+              "Humana: national non-coverage policy as of 2024 — appeal with peer-to-peer and written appeal",
+              "Aetna: check current policy — some plans cover with criteria; see Aetna CPB 0541",
+              "United Healthcare: verify current policy — coverage varies by plan and region"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Commercial reimbursement for CPT 36837 varies widely. Plans that cover pAVF typically reimburse at 110–150% of Medicare rates. Negotiate rates in your payer contracts specifically for 36837 given the procedure complexity."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Aetna", "status": "Covered with criteria", "notes": "CPB 0541 covers 36836/36837 if selection criteria met. Verify current policy." },
+          { "payer": "BCBS (most regions)", "status": "Non-covered / Investigational", "notes": "Most BCBS regions classify as investigational. MI, MA, and Highmark (PA/DE/WV) may cover Ellipsys." },
+          { "payer": "Humana", "status": "Non-covered", "notes": "National non-coverage policy as of 2024. Appeal with peer-to-peer." },
+          { "payer": "United Healthcare", "status": "Variable", "notes": "Coverage varies by plan. Verify with specific UHC plan." },
+          { "payer": "Cigna", "status": "Variable", "notes": "Check current medical coverage policy. Some plans cover with criteria." },
+          { "payer": "Priority Health", "status": "Covered with PA", "notes": "Requires prior authorization for all vascular access procedures." }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Header",
+        "kind": "prose",
+        "text": "Back to pAVF Compass\n\nInsurance Authorization Guide\npAVF Compass™ — CPT 36836 / 36837 · SIR 2025 / KDOQI 2019"
+      },
+      {
+        "heading": "Procedure Codes — Section Intro",
+        "kind": "prose",
+        "text": "Each CPT code lists: CPT badge, RVU badge, device badge, full description, Access line, and an \"Included in this code (do NOT bill separately):\" checklist, plus an italic note."
+      },
+      {
+        "heading": "Prior Authorization Requirements by Payer — Section Intro",
+        "kind": "prose",
+        "text": "Payer-specific section presented as three tabs: Medicare FFS, Medicaid, Private / Commercial. Each payer card shows coverage status badge, prior-auth badge, overview, prior-auth note, coverage criteria, required documentation (grouped by category), submission process (numbered), common denial reasons, known payer policies table, billing & authorization tips, and a reimbursement note."
+      },
+      {
+        "heading": "Action Buttons",
+        "kind": "link",
+        "text": "Back to pAVF Compass (navigates to /pavf); Generate Appeal Letter (navigates to /pavf/appeal)",
+        "href": "/pavf/appeal"
+      },
+      {
+        "heading": "Disclaimer (full page)",
+        "kind": "prose",
+        "text": "Disclaimer: This authorization guide is provided by Clinical Compass™ for informational purposes only. Coverage policies, prior authorization requirements, and reimbursement rates change frequently. Always verify current payer policies directly with the insurance plan before scheduling procedures. This information does not constitute legal, billing, or compliance advice. Last updated: April 2026 based on SIR 2025, KDOQI 2019, and publicly available payer policies."
+      },
+      {
+        "heading": "Disclaimer (embedded Step 6 version)",
+        "kind": "prose",
+        "text": "Disclaimer: Coverage policies change frequently. Always verify current payer policies directly with the insurance plan before scheduling procedures. Last updated: April 2026."
+      },
+      {
+        "heading": "Routing / Component Notes",
+        "kind": "prose",
+        "text": "Route: /pavf/auth-guide. Static reference page — no server calls, no cloud storage. Displays CPT codes, ICD-10 codes, and required documentation by payer type. A named export PAVFAuthGuideContent() renders the same content for inline embedding in PAVFCompass Step 6."
+      }
+    ],
+    "raw": {
+      "markdown": "# pAVF Auth Guide\n## Insurance Authorization Reference\n\n_Route: /pavf/auth-guide. Static reference page — no server calls, no cloud storage. Displays CPT codes, ICD-10 codes, and required documentation by payer type._\n\n**Back to pAVF Compass**\n\n## Insurance Authorization Guide\npAVF Compass™ — CPT 36836 / 36837 · SIR 2025 / KDOQI 2019\n\n---\n\n## Procedure Codes (CPT)\n\n### CPT 36837 — RVU 9.07 — WavelinQ™ (BD)\nPercutaneous arteriovenous fistula creation, upper extremity, separate access of both peripheral artery and peripheral vein\n\n**Access:** Dual access — separate arterial and venous punctures\n\n**Included in this code (do NOT bill separately):**\n- All vascular access for the procedure\n- Ultrasound and fluoroscopic guidance (imaging included)\n- Radiologic supervision and interpretation\n- Maturation procedures performed at the same session\n- Balloon angioplasty of fistula creation site (if performed)\n\n_Most commonly billed code for WavelinQ system. Category I CPT code effective January 2023._\n\n### CPT 36836 — RVU 7.20 — Ellipsys® (Medtronic) — historical; device discontinued\nPercutaneous arteriovenous fistula creation, upper extremity, single access of both peripheral artery and peripheral vein\n\n**Access:** Single access — one puncture site for both artery and vein\n\n**Included in this code (do NOT bill separately):**\n- All vascular access for the procedure\n- Ultrasound guidance (imaging included)\n- Radiologic supervision and interpretation\n- Maturation procedures performed at the same session\n\n_Ellipsys device discontinued. Code may still be used if single-access technique is employed._\n\n---\n\n## ICD-10 Diagnosis Codes\n\n| Code | Description | Usage Notes | Status |\n| --- | --- | --- | --- |\n| N18.6 | End-stage renal disease (ESRD) | Primary diagnosis. Required for all pAVF claims. Patient must be on dialysis or imminently requiring dialysis. | Primary |\n| Z99.2 | Dependence on renal dialysis | Use when patient is already receiving hemodialysis via catheter or other temporary access. | Secondary |\n| N18.5 | Chronic kidney disease, stage 5 | Use when patient has CKD Stage 5 but has not yet initiated dialysis (pre-emptive access creation). | Secondary |\n| T82.49XA | Other complication of vascular dialysis catheter, initial encounter | Use when prior catheter complication (infection, thrombosis, dysfunction) is driving the need for permanent access. | Secondary |\n| Z87.39 | Personal history of other endocrine, nutritional and metabolic diseases | Secondary code for relevant comorbidities (diabetes, hypertension) contributing to CKD. | Secondary |\n| I10 | Essential (primary) hypertension | Common secondary diagnosis. Include when hypertension is a contributing factor to ESRD. | Secondary |\n| E11.65 | Type 2 diabetes mellitus with hyperglycemia | Include when diabetic nephropathy is the etiology of ESRD. | Secondary |\n\n---\n\n## Prior Authorization Requirements by Payer\n\n_Tabs: Medicare FFS · Medicaid · Private / Commercial_\n\n### Medicare (Fee-for-Service)\n**Coverage Status:** Covered — No Prior Auth Required (FFS)  \n**Prior Auth:** No Prior Auth (FFS)\n\n**Overview:** Traditional Medicare (Parts A and B) covers percutaneous AV fistula creation under CPT 36836 and 36837 as Category I CPT codes, effective January 1, 2023. There is no National Coverage Determination (NCD) or Local Coverage Determination (LCD) specifically for pAVF. Coverage is based on the general principle of medical necessity for ESRD dialysis access. No prior authorization is required for Medicare Fee-for-Service.\n\n**Prior Auth Note:** Medicare Fee-for-Service (Traditional Medicare) does NOT require prior authorization for CPT 36836/36837. These are Category I CPT codes effective January 2023. Claim is submitted post-procedure.\n\n**Coverage Criteria:**\n- Diagnosis of ESRD (ICD-10: N18.6) or CKD Stage 5 requiring imminent dialysis (N18.5)\n- Patient requires permanent hemodialysis vascular access\n- Procedure performed by a qualified physician with appropriate training (per SIR 2025 guidance: 2-hour didactic + 1-on-1 training + 3 simulated proctored cases)\n- Procedure performed in a Medicare-participating facility (hospital outpatient, ASC, or office-based lab)\n- Medical necessity documented in the medical record\n- Vessel mapping performed confirming adequate anatomy (perforator vein ≥2 mm, superficial vein ≤6 mm depth, central veins patent)\n\n**Required Documentation — Clinical Record (must be in chart):**\n- Nephrology or treating physician note documenting ESRD diagnosis and dialysis need\n- Vessel mapping report: perforator vein diameter (≥2 mm), superficial vein depth (≤6 mm), Barbeau test result, arterial calcification grade, central vein patency\n- Barbeau test documentation (Type A, B, C, or D)\n- Arterial Doppler waveform assessment\n- Documentation of why pAVF is preferred (e.g., forearm veins unsuitable for surgical AVF, patient preference, surgical unavailability)\n- Physician attestation of pAVF training completion (SIR 2025 GS-7)\n- Informed consent\n\n**Required Documentation — Billing Documentation:**\n- Operative/procedure report documenting: device used, access sites, fluoroscopic and US guidance, fistula confirmation, any maturation procedures\n- ICD-10 primary diagnosis code (N18.6 or N18.5)\n- CPT code: 36837 (WavelinQ dual access) or 36836 (single access)\n- Place of service code (hospital outpatient: 22; ASC: 24; office: 11)\n- Modifier -26 if billing professional component only (facility setting)\n\n**Submission Process:**\n1. Perform procedure — no pre-authorization needed for Medicare FFS\n2. Document procedure report including device, access sites, guidance modalities, and fistula confirmation\n3. Submit claim to Medicare contractor (Noridian, CGS, Palmetto, etc.) post-procedure\n4. Bill CPT 36837 (or 36836) with primary ICD-10 N18.6\n5. If denied, submit appeal with operative report, vessel mapping, and medical necessity letter citing SIR 2025 guidance\n\n**Common Denial Reasons:**\n- Insufficient documentation of medical necessity in the medical record\n- Missing vessel mapping report or inadequate documentation of anatomy\n- Procedure billed with incorrect CPT code (e.g., using unlisted code 37799 instead of 36837)\n- Medicare Advantage plan (not FFS) — these plans can have their own policies\n- Facility not enrolled in Medicare or procedure performed outside covered setting\n\n**Known Payer Policies:**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicare FFS (Traditional) | Covered | No prior auth required. Category I CPT codes since Jan 2023. |\n| Medicare Advantage (varies by plan) | Variable | Plans can create own policies. Some require prior auth. Verify with specific plan. |\n\n**Billing & Authorization Tips:**\n- Medicare FFS does NOT require prior auth — submit claim post-procedure with complete documentation\n- Medicare Advantage plans are separate from FFS and may require prior auth or have non-coverage policies\n- Always verify the patient's specific plan: Medicare FFS vs. Medicare Advantage (Part C)\n- CPT 36837 includes imaging guidance — do NOT separately bill 76937 (US guidance) or 77001 (fluoroscopy)\n- Subsequent pAVF maintenance procedures use CPT 36901–36909 (not 36837)\n- RVU for 36837 = 9.07 (2025 Physician Fee Schedule)\n\n**Reimbursement Note:** Medicare FFS reimbursement for CPT 36837: approximately $800–$1,200 (physician component) depending on geographic adjustment. Facility component billed separately by the hospital/ASC.\n\n### Medicaid\n**Coverage Status:** Generally Covered — Prior Auth Usually Required  \n**Prior Auth:** Prior Auth Required\n\n**Overview:** Medicaid coverage for pAVF (CPT 36836/36837) varies by state. Most state Medicaid programs cover the procedure as a medically necessary dialysis access intervention, but prior authorization is typically required. Reimbursement rates are generally lower than Medicare, often under $2,000. Some states follow Medicare coverage policies; others have independent coverage determinations. Always verify with the specific state Medicaid program.\n\n**Prior Auth Note:** Most state Medicaid programs cover pAVF but typically require prior authorization. Reimbursement rates are generally lower than Medicare (often under $2,000 for the procedure). Requirements vary significantly by state.\n\n**Coverage Criteria:**\n- ESRD diagnosis (ICD-10: N18.6) requiring hemodialysis\n- Prior authorization approved before procedure (most states)\n- Vessel mapping confirming adequate anatomy\n- Documentation that pAVF is medically necessary and appropriate\n- Procedure performed by a qualified, Medicaid-enrolled provider\n- Facility must be Medicaid-enrolled\n- State-specific criteria may apply — check your state's Medicaid fee schedule and coverage policy\n\n**Required Documentation — Prior Authorization Submission:**\n- Completed prior authorization request form (state-specific)\n- Letter of medical necessity from treating nephrologist or vascular access physician\n- Diagnosis documentation: ESRD (N18.6), dialysis dependence (Z99.2)\n- Vessel mapping report with measurements (perforator vein, superficial vein depth, Barbeau test)\n- Documentation of why pAVF is preferred over surgical AVF or AV graft\n- History of prior vascular access attempts (if applicable)\n- Physician credentials and Medicaid provider enrollment number\n\n**Required Documentation — Clinical Record:**\n- Nephrology note confirming ESRD and dialysis requirement\n- Vascular access history (prior catheters, failed fistulas, AV grafts)\n- Current dialysis access status and complications (if any)\n- Barbeau test result and arterial assessment\n- Informed consent\n- Operative/procedure report (post-procedure)\n\n**Submission Process:**\n1. Obtain prior authorization BEFORE scheduling the procedure\n2. Submit PA request to state Medicaid program with all required documentation\n3. Allow 5–15 business days for standard review (varies by state)\n4. Expedited review (72 hours) available if urgent dialysis access needed\n5. Upon approval, schedule procedure and document authorization number\n6. Submit claim post-procedure with authorization number, CPT 36837, and ICD-10 N18.6\n7. If denied, appeal with additional clinical documentation and SIR 2025 guideline citations\n\n**Common Denial Reasons:**\n- Prior authorization not obtained before procedure\n- Insufficient medical necessity documentation\n- State Medicaid policy classifies pAVF as investigational (some states)\n- Provider or facility not enrolled in Medicaid\n- Missing or incomplete vessel mapping documentation\n- Reimbursement rate disputes (procedure cost exceeds Medicaid fee schedule)\n\n**Known Payer Policies:**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicaid FFS (most states) | Covered with PA | Prior auth typically required. Rates often under $2,000. |\n| Medicaid Managed Care | Variable | Plan-specific policies. May require PA and additional criteria. |\n| Dual-Eligible (Medicare + Medicaid) | Medicare Primary | Bill Medicare first; Medicaid covers cost-sharing. |\n\n**Billing & Authorization Tips:**\n- Always check your specific state's Medicaid fee schedule for CPT 36837 — rates vary widely\n- Some states have adopted Medicare's coverage policy by reference — cite this if applicable\n- Dual-eligible patients (Medicare + Medicaid): bill Medicare first, Medicaid as secondary payer\n- ESRD patients on Medicaid who are also Medicare-eligible should be enrolled in Medicare ESRD benefit\n- Contact your state Medicaid program's provider relations line for current coverage policy\n- Medicaid managed care plans may have different PA requirements than fee-for-service Medicaid\n\n**Reimbursement Note:** Medicaid reimbursement for CPT 36837 is typically under $2,000 (combined physician + facility). Rates vary significantly by state. Some states reimburse at Medicare rates; others use their own fee schedules.\n\n### Private / Commercial Insurance\n**Coverage Status:** Variable — Many Plans Classify as Investigational  \n**Prior Auth:** Prior Auth Required\n\n**Overview:** Commercial insurance coverage for pAVF is the most challenging payer category. Many major insurers have adopted non-coverage policies classifying pAVF as investigational, citing limited long-term data. As of 2024, BCBS (most regions), Humana, and some Aetna plans have non-coverage policies. However, some plans do cover pAVF with prior authorization. Always verify coverage with the specific plan before scheduling. If denied, appeal with SIR 2025 guideline citations and peer-reviewed evidence.\n\n**Prior Auth Note:** Private/commercial insurance coverage for pAVF is highly variable. Many major payers (BCBS in most regions, Humana, some Aetna plans) classify pAVF as investigational and deny coverage. Prior authorization is required by virtually all commercial plans. Always verify coverage before scheduling.\n\n**Coverage Criteria:**\n- Prior authorization approved before procedure (virtually all commercial plans)\n- ESRD diagnosis (N18.6) requiring hemodialysis\n- Vessel mapping confirming adequate anatomy per SIR 2025 criteria\n- Barbeau test Type A, B, or C (not D)\n- Documentation that surgical AVF is not feasible or has failed\n- Physician has completed required pAVF training (SIR 2025 GS-7)\n- Plan-specific medical necessity criteria met (varies by payer)\n- Some plans require: failed prior surgical AVF attempt, specific vessel diameter thresholds, or nephrology co-management\n\n**Required Documentation — Prior Authorization Request:**\n- Completed PA request form (payer-specific)\n- Letter of medical necessity (physician-authored, not template)\n- Vessel mapping report: perforator vein diameter, superficial vein depth (≤6 mm), Barbeau test result, arterial calcification grade\n- Nephrology note confirming ESRD and dialysis requirement\n- Documentation of why pAVF is preferred: surgical AVF not feasible, patient preference, urgency\n- Prior vascular access history: failed fistulas, AV grafts, catheter complications\n- Physician training documentation (SIR 2025 GS-7 requirements)\n- Peer-reviewed literature supporting pAVF (NEAT Trial, EASE Trial, SIR 2025)\n\n**Required Documentation — Supporting Clinical Evidence:**\n- SIR Practice Guidance Document (Dolmatch et al., JVIR 2025;36(12):1945-1957)\n- KDOQI 2019 Vascular Access Guidelines (Lok CE et al., AJKD 2020)\n- NEAT Trial results (Lok CE et al., JASN 2017)\n- EASE Trial results (Rajan DK et al., CJASN 2021)\n- Fistula First Catheter Last (FFCL) initiative documentation\n- CPT Category I code designation (effective January 2023) — demonstrates AMA recognition\n- Medicare coverage confirmation (no NCD/LCD restriction) — useful for MA plan appeals\n\n**Submission Process:**\n1. FIRST: Verify coverage by calling the plan's provider services line — ask specifically about CPT 36837 and pAVF\n2. If covered: submit PA request with all required documentation before scheduling\n3. Allow 5–15 business days for standard review; request expedited review if urgent\n4. If denied at PA stage: submit peer-to-peer review request immediately (within 24–48 hours)\n5. Peer-to-peer: cite SIR 2025, NEAT Trial, EASE Trial, KDOQI 2019, and CPT Category I status\n6. If peer-to-peer fails: submit formal written appeal with complete clinical documentation\n7. Include appeal letter citing all evidence (use pAVF Compass Appeal Letter generator)\n8. If all internal appeals fail: consider external independent review (required by ACA for most plans)\n\n**Common Denial Reasons:**\n- \"Investigational\" or \"experimental\" classification — most common denial reason\n- Insufficient evidence of medical necessity\n- Surgical AVF not documented as infeasible\n- Missing vessel mapping documentation\n- Physician training not documented\n- Plan-specific criteria not met (e.g., requires failed prior surgical AVF)\n- Non-participating provider or facility\n- Benefit exclusion for \"new technology\" procedures\n\n**Known Payer Policies:**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Aetna | Covered with criteria | CPB 0541 covers 36836/36837 if selection criteria met. Verify current policy. |\n| BCBS (most regions) | Non-covered / Investigational | Most BCBS regions classify as investigational. MI, MA, and Highmark (PA/DE/WV) may cover Ellipsys. |\n| Humana | Non-covered | National non-coverage policy as of 2024. Appeal with peer-to-peer. |\n| United Healthcare | Variable | Coverage varies by plan. Verify with specific UHC plan. |\n| Cigna | Variable | Check current medical coverage policy. Some plans cover with criteria. |\n| Priority Health | Covered with PA | Requires prior authorization for all vascular access procedures. |\n\n**Billing & Authorization Tips:**\n- Always verify coverage BEFORE scheduling — many commercial plans deny pAVF\n- Request peer-to-peer review immediately after denial — this is your best opportunity to reverse\n- Use the pAVF Compass Appeal Letter generator to create a guideline-based appeal\n- Cite CPT Category I status (Jan 2023) and Medicare coverage as evidence of mainstream acceptance\n- BCBS: coverage varies significantly by region — Michigan, Massachusetts, and Highmark (PA/DE/WV) cover Ellipsys; most other regions deny\n- Humana: national non-coverage policy as of 2024 — appeal with peer-to-peer and written appeal\n- Aetna: check current policy — some plans cover with criteria; see Aetna CPB 0541\n- United Healthcare: verify current policy — coverage varies by plan and region\n\n**Reimbursement Note:** Commercial reimbursement for CPT 36837 varies widely. Plans that cover pAVF typically reimburse at 110–150% of Medicare rates. Negotiate rates in your payer contracts specifically for 36837 given the procedure complexity.\n\n---\n\n## Action Buttons\n- Back to pAVF Compass (→ /pavf)\n- Generate Appeal Letter (→ /pavf/appeal)\n\n---\n\n## Disclaimer\n**Disclaimer:** This authorization guide is provided by Clinical Compass™ for informational purposes only. Coverage policies, prior authorization requirements, and reimbursement rates change frequently. Always verify current payer policies directly with the insurance plan before scheduling procedures. This information does not constitute legal, billing, or compliance advice. Last updated: April 2026 based on SIR 2025, KDOQI 2019, and publicly available payer policies.\n\n## Disclaimer (embedded Step 6 version)\n**Disclaimer:** Coverage policies change frequently. Always verify current payer policies directly with the insurance plan before scheduling procedures. Last updated: April 2026.\n",
+      "tables": [
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Usage Notes", "Status"],
+          "rows": [
+            ["N18.6", "End-stage renal disease (ESRD)", "Primary diagnosis. Required for all pAVF claims. Patient must be on dialysis or imminently requiring dialysis.", "Primary"],
+            ["Z99.2", "Dependence on renal dialysis", "Use when patient is already receiving hemodialysis via catheter or other temporary access.", "Secondary"],
+            ["N18.5", "Chronic kidney disease, stage 5", "Use when patient has CKD Stage 5 but has not yet initiated dialysis (pre-emptive access creation).", "Secondary"],
+            ["T82.49XA", "Other complication of vascular dialysis catheter, initial encounter", "Use when prior catheter complication (infection, thrombosis, dysfunction) is driving the need for permanent access.", "Secondary"],
+            ["Z87.39", "Personal history of other endocrine, nutritional and metabolic diseases", "Secondary code for relevant comorbidities (diabetes, hypertension) contributing to CKD.", "Secondary"],
+            ["I10", "Essential (primary) hypertension", "Common secondary diagnosis. Include when hypertension is a contributing factor to ESRD.", "Secondary"],
+            ["E11.65", "Type 2 diabetes mellitus with hyperglycemia", "Include when diabetic nephropathy is the etiology of ESRD.", "Secondary"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicare (Fee-for-Service)",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicare FFS (Traditional)", "Covered", "No prior auth required. Category I CPT codes since Jan 2023."],
+            ["Medicare Advantage (varies by plan)", "Variable", "Plans can create own policies. Some require prior auth. Verify with specific plan."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicaid FFS (most states)", "Covered with PA", "Prior auth typically required. Rates often under $2,000."],
+            ["Medicaid Managed Care", "Variable", "Plan-specific policies. May require PA and additional criteria."],
+            ["Dual-Eligible (Medicare + Medicaid)", "Medicare Primary", "Bill Medicare first; Medicaid covers cost-sharing."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Private / Commercial Insurance",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Aetna", "Covered with criteria", "CPB 0541 covers 36836/36837 if selection criteria met. Verify current policy."],
+            ["BCBS (most regions)", "Non-covered / Investigational", "Most BCBS regions classify as investigational. MI, MA, and Highmark (PA/DE/WV) may cover Ellipsys."],
+            ["Humana", "Non-covered", "National non-coverage policy as of 2024. Appeal with peer-to-peer."],
+            ["United Healthcare", "Variable", "Coverage varies by plan. Verify with specific UHC plan."],
+            ["Cigna", "Variable", "Check current medical coverage policy. Some plans cover with criteria."],
+            ["Priority Health", "Covered with PA", "Requires prior authorization for all vascular access procedures."]
+          ]
+        }
+      ]
+    }
+  }
+}

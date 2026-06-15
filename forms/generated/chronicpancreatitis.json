@@ -1,0 +1,402 @@
+{
+  "title": "Chronic Pancreatitis Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "chronicpancreatitis",
+    "hiddenDefaults": {
+      "diagnosisConfirmed": true,
+      "hasSplenicVeinThrombosis": false,
+      "hasPancreaticAscites": false,
+      "hasPriorEndoscopicDrainage": false
+    },
+    "steps": [
+      {
+        "id": "diagnosis-etiology",
+        "shortLabel": "Diagnosis & Etiology",
+        "title": "Diagnosis & Etiology",
+        "fields": [
+          {
+            "id": "diagnosis-method",
+            "name": "diagnosisMethod",
+            "label": "Diagnosis Method",
+            "type": "select",
+            "required": false,
+            "defaultValue": "imaging",
+            "options": [
+              { "label": "CT/MRI Imaging", "value": "imaging" },
+              { "label": "EUS Criteria (Rosedale)", "value": "eus_criteria" },
+              { "label": "MRCP", "value": "mrcp" },
+              { "label": "ERCP (Cambridge Classification)", "value": "ercp" },
+              { "label": "Histology", "value": "histology" },
+              { "label": "Clinical Diagnosis", "value": "clinical" }
+            ]
+          },
+          {
+            "id": "cambridge-grade",
+            "name": "cambridgeGrade",
+            "label": "Cambridge Grade (imaging)",
+            "type": "select",
+            "required": false,
+            "defaultValue": "II",
+            "options": [
+              { "label": "Grade I — Equivocal", "value": "I" },
+              { "label": "Grade II — Mild", "value": "II" },
+              { "label": "Grade III — Moderate", "value": "III" },
+              { "label": "Grade IV — Severe", "value": "IV" }
+            ]
+          },
+          {
+            "id": "etiology",
+            "name": "etiology",
+            "label": "Etiology",
+            "type": "select",
+            "required": false,
+            "defaultValue": "alcohol",
+            "options": [
+              { "label": "Alcohol", "value": "alcohol" },
+              { "label": "Smoking (independent risk)", "value": "smoking" },
+              { "label": "Idiopathic", "value": "idiopathic" },
+              { "label": "Hereditary / Genetic (PRSS1, SPINK1, CFTR)", "value": "hereditary_genetic" },
+              { "label": "Autoimmune Type 1 (IgG4)", "value": "autoimmune_type1" },
+              { "label": "Autoimmune Type 2", "value": "autoimmune_type2" },
+              { "label": "Obstructive (stricture, tumor, divisum)", "value": "obstructive" },
+              { "label": "Metabolic (hypercalcemia, hypertriglyceridemia)", "value": "metabolic" },
+              { "label": "Post-Necrotizing Pancreatitis", "value": "post_necrotizing_pancreatitis" }
+            ]
+          },
+          {
+            "id": "is-smoker",
+            "name": "isSmoker",
+            "label": "Current Smoker",
+            "type": "switch",
+            "required": false,
+            "defaultValue": true
+          },
+          {
+            "id": "has-genetic-mutation",
+            "name": "hasGeneticMutation",
+            "label": "Genetic Mutation Identified",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "genetic-mutation",
+            "name": "geneticMutation",
+            "label": "Genetic Mutation",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "visibleWhen": { "field": "hasGeneticMutation", "op": "truthy" }
+          },
+          {
+            "id": "suspected-malignancy",
+            "name": "suspectedMalignancy",
+            "label": "Suspected Malignancy",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "age-years",
+            "name": "ageYears",
+            "label": "Age (years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "pain-duct-anatomy",
+        "shortLabel": "Pain & Duct Anatomy",
+        "title": "Pain & Duct Anatomy",
+        "fields": [
+          {
+            "id": "pain-pattern",
+            "name": "painPattern",
+            "label": "Pain Pattern",
+            "type": "select",
+            "required": false,
+            "defaultValue": "type_b",
+            "options": [
+              { "label": "Type A — Intermittent Episodes", "value": "type_a" },
+              { "label": "Type B — Continuous / Persistent", "value": "type_b" },
+              { "label": "Painless", "value": "painless" }
+            ]
+          },
+          {
+            "id": "vas-score",
+            "name": "vasScore",
+            "label": "VAS Pain Score (0–10)",
+            "type": "number",
+            "required": false,
+            "min": 0,
+            "max": 10,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "has-pain-related-hospitalizations",
+            "name": "hasPainRelatedHospitalizations",
+            "label": "Pain-Related Hospitalizations",
+            "type": "switch",
+            "required": false,
+            "defaultValue": true
+          },
+          {
+            "id": "is-on-opioids",
+            "name": "isOnOpioids",
+            "label": "On Opioids",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "duct-anatomy",
+            "name": "ductAnatomy",
+            "label": "Pancreatic Duct Anatomy",
+            "type": "select",
+            "required": false,
+            "defaultValue": "dilated_with_stricture",
+            "options": [
+              { "label": "Normal", "value": "normal" },
+              { "label": "Dilated — No Stricture (MPD ≥5mm)", "value": "dilated_without_stricture" },
+              { "label": "Dilated + Dominant Stricture", "value": "dilated_with_stricture" },
+              { "label": "Stones — No Stricture", "value": "stones_without_stricture" },
+              { "label": "Stones + Stricture", "value": "stones_with_stricture" },
+              { "label": "Pancreas Divisum", "value": "pancreas_divisum" },
+              { "label": "Disconnected Pancreatic Duct", "value": "disconnected_duct" }
+            ]
+          },
+          {
+            "id": "mpd-diameter-mm",
+            "name": "mpdDiameterMm",
+            "label": "Main PD Diameter (mm)",
+            "type": "number",
+            "required": false,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "has-stones",
+            "name": "hasStones",
+            "label": "Pancreatic Stones",
+            "type": "switch",
+            "required": false,
+            "defaultValue": true
+          },
+          {
+            "id": "stone-size-mm",
+            "name": "stoneSizeMm",
+            "label": "Stone Size (mm)",
+            "type": "number",
+            "required": false,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "hasStones", "op": "truthy" }
+          },
+          {
+            "id": "has-calcifications",
+            "name": "hasCalcifications",
+            "label": "Calcifications",
+            "type": "switch",
+            "required": false,
+            "defaultValue": true
+          },
+          {
+            "id": "has-stricture",
+            "name": "hasStricture",
+            "label": "Dominant Stricture",
+            "type": "switch",
+            "required": false,
+            "defaultValue": true
+          },
+          {
+            "id": "has-prior-ercp",
+            "name": "hasPriorERCP",
+            "label": "Prior ERCP",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-prior-eswl",
+            "name": "hasPriorESWL",
+            "label": "Prior ESWL (lithotripsy)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-prior-surgery",
+            "name": "hasPriorSurgery",
+            "label": "Prior Surgery",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "prior-surgery-type",
+            "name": "priorSurgeryType",
+            "label": "Prior Surgery Type",
+            "type": "select",
+            "required": false,
+            "defaultValue": "puestow",
+            "visibleWhen": { "field": "hasPriorSurgery", "op": "truthy" },
+            "options": [
+              { "label": "Puestow (Lateral Pancreaticojejunostomy)", "value": "puestow" },
+              { "label": "Frey Procedure", "value": "frey" },
+              { "label": "Beger Procedure", "value": "beger" },
+              { "label": "Whipple (Pancreaticoduodenectomy)", "value": "whipple" },
+              { "label": "Distal Pancreatectomy", "value": "distal_pancreatectomy" },
+              { "label": "Other", "value": "other" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "complications-insufficiency",
+        "shortLabel": "Complications & Insufficiency",
+        "title": "Complications & Insufficiency",
+        "fields": [
+          {
+            "id": "has-pseudocyst",
+            "name": "hasPseudocyst",
+            "label": "Pseudocyst",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "pseudocyst-size-cm",
+            "name": "pseudocystSizeCm",
+            "label": "Pseudocyst Size (cm)",
+            "type": "number",
+            "required": false,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "hasPseudocyst", "op": "truthy" }
+          },
+          {
+            "id": "pseudocyst-symptoms",
+            "name": "pseudocystSymptoms",
+            "label": "Pseudocyst Symptoms",
+            "type": "select",
+            "required": false,
+            "defaultValue": "none",
+            "visibleWhen": { "field": "hasPseudocyst", "op": "truthy" },
+            "options": [
+              { "label": "Asymptomatic", "value": "none" },
+              { "label": "Pain", "value": "pain" },
+              { "label": "Compression (gastric/biliary)", "value": "compression" },
+              { "label": "Infected", "value": "infected" }
+            ]
+          },
+          {
+            "id": "has-biliary-stenosis",
+            "name": "hasBiliaryStenosis",
+            "label": "Biliary Stenosis",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-duodenal-obstruction",
+            "name": "hasDuodenalObstruction",
+            "label": "Duodenal Obstruction",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-pancreatic-fistula",
+            "name": "hasPancreaticFistula",
+            "label": "Pancreatic Fistula",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-exocrine-insufficiency",
+            "name": "hasExocrineInsufficiency",
+            "label": "Exocrine Insufficiency",
+            "type": "switch",
+            "required": false,
+            "defaultValue": true
+          },
+          {
+            "id": "has-steatorrhea",
+            "name": "hasSteatorrhea",
+            "label": "Steatorrhea",
+            "type": "switch",
+            "required": false,
+            "defaultValue": true
+          },
+          {
+            "id": "has-malnutrition",
+            "name": "hasMalnutrition",
+            "label": "Malnutrition",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "is-on-pert",
+            "name": "isOnPERT",
+            "label": "On PERT (Pancreatic Enzyme Replacement)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-type-3c-diabetes",
+            "name": "hasType3cDiabetes",
+            "label": "Type 3c Diabetes (pancreatogenic)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "hba1c-percent",
+            "name": "hba1cPercent",
+            "label": "HbA1c (%)",
+            "type": "number",
+            "required": false,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "hasType3cDiabetes", "op": "truthy" }
+          },
+          {
+            "id": "is-on-insulin",
+            "name": "isOnInsulin",
+            "label": "On Insulin",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "hasType3cDiabetes", "op": "truthy" }
+          },
+          {
+            "id": "performance-status",
+            "name": "performanceStatus",
+            "label": "Performance Status",
+            "type": "select",
+            "required": false,
+            "defaultValue": "good",
+            "options": [
+              { "label": "Good (ECOG 0–1)", "value": "good" },
+              { "label": "Moderate (ECOG 2)", "value": "moderate" },
+              { "label": "Poor (ECOG 3–4)", "value": "poor" }
+            ]
+          },
+          {
+            "id": "is-surgical-candidate",
+            "name": "isSurgicalCandidate",
+            "label": "Surgical Candidate",
+            "type": "switch",
+            "required": false,
+            "defaultValue": true
+          }
+        ]
+      }
+    ]
+  }
+}

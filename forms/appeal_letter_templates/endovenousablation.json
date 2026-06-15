@@ -1,0 +1,30 @@
+{
+  "title": "Endovenous Ablation Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "36475, 36476, 36478, 36479, 36482, 36483, 93971",
+      "credentials": "[Credentials]",
+      "icd_codes": "I83.001, I83.009, I83.10, I83.209, I83.811, I83.812, I83.891, I83.90, I87.2, I87.301",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "To Whom It May Concern,\n\nI am writing to formally appeal the denial of prior authorization for endovenous thermal ablation for my patient {{patient_name}}, Date of Birth {{patient_dob}}, Member ID {{member_id}}.\n\nCLINICAL SUMMARY:\nThis patient presents with symptomatic chronic venous insufficiency classified as CEAP [CLASS], with duplex ultrasound confirming great saphenous vein (GSV) reflux of [REFLUX DURATION] seconds in the standing position. The patient has undergone a [WEEKS]-week trial of graduated compression stockings (20–30 mmHg) with documented compliance and persistent symptoms including [SYMPTOMS].\n\nGUIDELINE SUPPORT:\nEndovenous thermal ablation is supported by the highest level of evidence in the 2022 Society for Vascular Surgery (SVS), American Venous Forum (AVF), and American Vein and Lymphatic Society (AVLS) Clinical Practice Guidelines for the Management of Varicose Veins:\n\n• Grade 1A Recommendation: \"We recommend endovenous thermal ablation (EVLA or RFA) over open surgery for treatment of great saphenous vein incompetence in patients with symptomatic varicose veins (CEAP C2–C6).\" (Gloviczki P, et al. J Vasc Surg Venous Lymphat Disord. 2023;11(2):231-261)\n\n• Multiple randomized controlled trials demonstrate 5-year occlusion rates of 90–95% for both EVLA and RFA, with significantly lower complication rates, faster recovery, and equivalent long-term outcomes compared to surgical stripping.\n\n• The RECOVERY trial (Rasmussen LH, et al. Br J Surg. 2011) demonstrated endovenous ablation is superior to surgical stripping in terms of pain, recovery time, and patient satisfaction.\n\nMEDICAL NECESSITY:\nThe requested procedure meets all criteria for medical necessity:\n1. CEAP clinical classification [CLASS] with symptomatic venous insufficiency\n2. Duplex-confirmed truncal vein reflux ≥0.5 seconds in standing position\n3. Completed compression stocking trial with documented failure\n4. Venous Clinical Severity Score (VCSS) of [VCSS SCORE], indicating [MILD/MODERATE/SEVERE] disease burden\n\nCONCLUSION:\nDenial of this procedure is not consistent with current evidence-based guidelines and will result in continued patient suffering, progression of venous disease, and increased risk of venous ulceration. I respectfully request immediate reconsideration and approval of this medically necessary procedure.\n\nSincerely,\n{{physician_name}}, {{credentials}}\nNPI: {{npi}}\n{{letter_date}}"
+  }
+}

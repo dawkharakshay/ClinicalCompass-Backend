@@ -1,0 +1,158 @@
+{
+  "title": "Vertebroplasty / Kyphoplasty Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "VertebroplastyAuthGuide.tsx",
+    "title": "Vertebroplasty / Kyphoplasty — Authorization Guide",
+    "subtitle": null,
+    "cptCodes": [
+      {
+        "code": "22510",
+        "description": "Percutaneous vertebroplasty (bone biopsy included when performed), 1 vertebral body, unilateral or bilateral injection; cervicothoracic"
+      },
+      {
+        "code": "22511",
+        "description": "Percutaneous vertebroplasty; lumbosacral"
+      },
+      {
+        "code": "22512",
+        "description": "Percutaneous vertebroplasty; each additional cervicothoracic or lumbosacral vertebral body (add-on)"
+      },
+      {
+        "code": "22513",
+        "description": "Percutaneous vertebral augmentation (kyphoplasty), 1 vertebral body, unilateral or bilateral; thoracic"
+      },
+      {
+        "code": "22514",
+        "description": "Percutaneous vertebral augmentation (kyphoplasty); lumbar"
+      },
+      {
+        "code": "22515",
+        "description": "Percutaneous vertebral augmentation; each additional thoracic or lumbar vertebral body (add-on)"
+      },
+      {
+        "code": "72291",
+        "description": "Radiological supervision and interpretation, percutaneous vertebroplasty or vertebral augmentation; under fluoroscopic guidance"
+      },
+      {
+        "code": "72292",
+        "description": "Radiological supervision and interpretation; under CT guidance"
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "M80.08XA",
+        "description": "Age-related osteoporosis with current pathological fracture, vertebra(e), initial encounter"
+      },
+      {
+        "code": "M80.08XD",
+        "description": "Age-related osteoporosis with current pathological fracture, vertebra(e), subsequent encounter"
+      },
+      {
+        "code": "M80.88XA",
+        "description": "Other osteoporosis with current pathological fracture, vertebra(e), initial encounter"
+      },
+      {
+        "code": "M84.58XA",
+        "description": "Pathological fracture in neoplastic disease, vertebra(e), initial encounter"
+      },
+      {
+        "code": "M48.50XA",
+        "description": "Collapsed vertebra, not elsewhere classified, site unspecified, initial encounter"
+      },
+      {
+        "code": "M48.52XA",
+        "description": "Collapsed vertebra, cervical region, initial encounter"
+      },
+      {
+        "code": "M48.54XA",
+        "description": "Collapsed vertebra, thoracic region, initial encounter"
+      },
+      {
+        "code": "M48.56XA",
+        "description": "Collapsed vertebra, lumbar region, initial encounter"
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare (CMS LCD L35050 / A57566)",
+        "sections": [
+          {
+            "heading": "Coverage Criteria",
+            "items": [
+              "Acute or subacute vertebral compression fracture (VCF) — typically within 12 months",
+              "MRI bone marrow edema (STIR or fat-suppressed sequences) confirming acute fracture",
+              "VAS pain score ≥4 or significant functional impairment",
+              "Conservative therapy trial ≥6 weeks (may be waived for severe pain or hospitalized patients)",
+              "Posterior vertebral wall intact (no significant retropulsion)",
+              "Osteoporotic, traumatic, or pathologic (malignant) etiology"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "commercial",
+        "label": "Commercial Payers (Aetna, BCBS, UHC, Cigna)",
+        "sections": [
+          {
+            "heading": "Coverage Criteria",
+            "items": [
+              "Most require MRI confirmation of bone marrow edema",
+              "Conservative therapy trial ≥6 weeks with documented failure",
+              "VAS ≥4 and functional impairment documented",
+              "Some payers limit coverage to fractures within 6 months",
+              "Kyphoplasty: same criteria as vertebroplasty; some require height loss or kyphosis documentation"
+            ]
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Documentation Checklist",
+        "kind": "list",
+        "items": [
+          "MRI report with STIR/fat-suppressed sequences confirming bone marrow edema",
+          "VAS pain score and Oswestry Disability Index documented",
+          "Conservative therapy documentation (dates, medications, brace use)",
+          "Fracture level(s), height loss percentage, and kyphosis angle",
+          "Bone density (DXA) results if osteoporotic etiology",
+          "Posterior wall integrity confirmed on CT or MRI"
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# Vertebroplasty / Kyphoplasty — Authorization Guide\n\n## CPT Codes — Vertebral Augmentation\n\n| CPT | Description |\n| --- | --- |\n| 22510 | Percutaneous vertebroplasty (bone biopsy included when performed), 1 vertebral body, unilateral or bilateral injection; cervicothoracic |\n| 22511 | Percutaneous vertebroplasty; lumbosacral |\n| 22512 | Percutaneous vertebroplasty; each additional cervicothoracic or lumbosacral vertebral body (add-on) |\n| 22513 | Percutaneous vertebral augmentation (kyphoplasty), 1 vertebral body, unilateral or bilateral; thoracic |\n| 22514 | Percutaneous vertebral augmentation (kyphoplasty); lumbar |\n| 22515 | Percutaneous vertebral augmentation; each additional thoracic or lumbar vertebral body (add-on) |\n| 72291 | Radiological supervision and interpretation, percutaneous vertebroplasty or vertebral augmentation; under fluoroscopic guidance |\n| 72292 | Radiological supervision and interpretation; under CT guidance |\n\n## ICD-10 Diagnosis Codes\n\n| ICD-10 | Description |\n| --- | --- |\n| M80.08XA | Age-related osteoporosis with current pathological fracture, vertebra(e), initial encounter |\n| M80.08XD | Age-related osteoporosis with current pathological fracture, vertebra(e), subsequent encounter |\n| M80.88XA | Other osteoporosis with current pathological fracture, vertebra(e), initial encounter |\n| M84.58XA | Pathological fracture in neoplastic disease, vertebra(e), initial encounter |\n| M48.50XA | Collapsed vertebra, not elsewhere classified, site unspecified, initial encounter |\n| M48.52XA | Collapsed vertebra, cervical region, initial encounter |\n| M48.54XA | Collapsed vertebra, thoracic region, initial encounter |\n| M48.56XA | Collapsed vertebra, lumbar region, initial encounter |\n\n## Standard Payer Requirements\n\n### Medicare (CMS LCD L35050 / A57566)\n\n- Acute or subacute vertebral compression fracture (VCF) — typically within 12 months\n- MRI bone marrow edema (STIR or fat-suppressed sequences) confirming acute fracture\n- VAS pain score ≥4 or significant functional impairment\n- Conservative therapy trial ≥6 weeks (may be waived for severe pain or hospitalized patients)\n- Posterior vertebral wall intact (no significant retropulsion)\n- Osteoporotic, traumatic, or pathologic (malignant) etiology\n\n### Commercial Payers (Aetna, BCBS, UHC, Cigna)\n\n- Most require MRI confirmation of bone marrow edema\n- Conservative therapy trial ≥6 weeks with documented failure\n- VAS ≥4 and functional impairment documented\n- Some payers limit coverage to fractures within 6 months\n- Kyphoplasty: same criteria as vertebroplasty; some require height loss or kyphosis documentation\n\n### Documentation Checklist\n\n- MRI report with STIR/fat-suppressed sequences confirming bone marrow edema\n- VAS pain score and Oswestry Disability Index documented\n- Conservative therapy documentation (dates, medications, brace use)\n- Fracture level(s), height loss percentage, and kyphosis angle\n- Bone density (DXA) results if osteoporotic etiology\n- Posterior wall integrity confirmed on CT or MRI\n",
+      "tables": [
+        {
+          "name": "CPT Codes — Vertebral Augmentation",
+          "header": ["CPT", "Description"],
+          "rows": [
+            ["22510", "Percutaneous vertebroplasty (bone biopsy included when performed), 1 vertebral body, unilateral or bilateral injection; cervicothoracic"],
+            ["22511", "Percutaneous vertebroplasty; lumbosacral"],
+            ["22512", "Percutaneous vertebroplasty; each additional cervicothoracic or lumbosacral vertebral body (add-on)"],
+            ["22513", "Percutaneous vertebral augmentation (kyphoplasty), 1 vertebral body, unilateral or bilateral; thoracic"],
+            ["22514", "Percutaneous vertebral augmentation (kyphoplasty); lumbar"],
+            ["22515", "Percutaneous vertebral augmentation; each additional thoracic or lumbar vertebral body (add-on)"],
+            ["72291", "Radiological supervision and interpretation, percutaneous vertebroplasty or vertebral augmentation; under fluoroscopic guidance"],
+            ["72292", "Radiological supervision and interpretation; under CT guidance"]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["ICD-10", "Description"],
+          "rows": [
+            ["M80.08XA", "Age-related osteoporosis with current pathological fracture, vertebra(e), initial encounter"],
+            ["M80.08XD", "Age-related osteoporosis with current pathological fracture, vertebra(e), subsequent encounter"],
+            ["M80.88XA", "Other osteoporosis with current pathological fracture, vertebra(e), initial encounter"],
+            ["M84.58XA", "Pathological fracture in neoplastic disease, vertebra(e), initial encounter"],
+            ["M48.50XA", "Collapsed vertebra, not elsewhere classified, site unspecified, initial encounter"],
+            ["M48.52XA", "Collapsed vertebra, cervical region, initial encounter"],
+            ["M48.54XA", "Collapsed vertebra, thoracic region, initial encounter"],
+            ["M48.56XA", "Collapsed vertebra, lumbar region, initial encounter"]
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Glaucoma",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "65855, 66170, 66174, 66991, 0449T",
+      "credentials": "[Credentials]",
+      "icd_codes": "H40.111, H40.112, H40.10X, H40.20X, H40.011, H40.012",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — Glaucoma Surgery / Laser Trabeculoplasty / Medical Therapy\nCPT Code(s): 65850, 65855, 66170, 66172, 66174, 66175\nICD-10 Code(s): H40.10, H40.11, H40.12, H40.20, H40.30\nDear Medical Director / Utilization Review Committee,\n\nThis letter serves as an appeal for coverage of the recommended treatment for our patient, {{patient_name}}, diagnosed with unspecified glaucoma (ICD-10: H40.10, H40.11, H40.12, H40.20, H40.30). The patient's current intraocular pressure (IOP) is not available, and clinical findings indicate a need for intervention to prevent irreversible vision loss.\n\nClinical Summary:\n{{patient_name}} presents with [SYMPTOMS/FINDINGS]. Based on comprehensive ophthalmic examination, including visual field testing, optic nerve head evaluation, and gonioscopy, the patient's condition warrants the proposed treatment. The patient is not a candidate for surgery and laser therapy is not indicated.\n\nGuideline Support:\n1. The AAO Preferred Practice Pattern for Primary Open-Angle Glaucoma 2020 supports individualized treatment strategies based on disease severity and progression, aligning with the patient's current needs.\n2. The EGS Guidelines on Glaucoma 2020 emphasize the importance of achieving and maintaining a target IOP to halt disease progression, which is the primary goal of the recommended treatment.\n3. The OHTS Study (Kass 2002, ARVO) provides strong evidence that lowering IOP significantly reduces the risk of glaucoma development or progression in high-risk individuals.\n4. The CIGTS Study (Lichter 2001, Ophthalmology) supports the efficacy of surgical interventions in controlling IOP and preserving visual function in advanced glaucoma.\n\nMedical Necessity Statement:\nThe recommended treatment is medically necessary to preserve {{patient_name}}'s vision and prevent further irreversible damage to the optic nerve. The decision for this treatment is supported by strong evidence and aligns with established guidelines. The rationale for this approach is based on clinical assessment and current guidelines.\n\nRisk Without Treatment:\nWithout the recommended treatment, {{patient_name}} faces a high risk of continued glaucoma progression, leading to further visual field loss, decreased quality of life, and eventual blindness. Delaying or denying this essential treatment would be detrimental to the patient's long-term ocular health.\n\nRequested Action:\nWe respectfully request approval for the treatment for {{patient_name}}. The next steps in the patient's care plan include further evaluation. Please contact my office if additional information is required.\n\n{{additional_clinical_notes}}\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

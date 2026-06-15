@@ -1,0 +1,352 @@
+{
+  "title": "Functional Seizures (PNES)",
+  "auth_guide": {
+    "sourceFile": "FunctionalSeizuresAuthGuide.tsx",
+    "title": "FunctionalSeizures Clinical Compass",
+    "subtitle": "Functional Seizures / PNES Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "95720",
+        "description": "Electroencephalogram (EEG), continuous recording, physician or other qualified health care professional review of recorded events, analysis of spike and seizure detection, and report, each 24 hours; with video",
+        "device": "Video-EEG Monitoring System",
+        "access": "Inpatient or Outpatient Epilepsy Monitoring Unit (EMU)",
+        "rvu": "6.14",
+        "includes": [
+          "Physician or other qualified healthcare professional (QHCP) review of recorded events",
+          "Analysis of spike and seizure detection",
+          "Interpretation of findings and preparation of a report after each 24-hour period",
+          "Video recording of clinical behavior synchronous with EEG"
+        ],
+        "note": "Report this code for each increment of greater than 12 hours up to 26 hours of EEG recording. This code replaced 95951 in 2020."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "F44.5",
+        "description": "Dissociative convulsions",
+        "notes": "Used for psychogenic non-epileptic seizures (PNES) when linked to a conversion disorder.",
+        "required": true
+      },
+      {
+        "code": "R56.9",
+        "description": "Unspecified convulsions",
+        "notes": "May be used for PNES when not explicitly linked to a conversion disorder, but F44.5 is preferred when appropriate.",
+        "required": false
+      },
+      {
+        "code": "G40.803",
+        "description": "Other epilepsy and recurrent convulsive disorders, intractable, without status epilepticus",
+        "notes": "Important for differential diagnosis; often ruled out by video-EEG monitoring.",
+        "required": false
+      },
+      {
+        "code": "G40.804",
+        "description": "Other epilepsy and recurrent convulsive disorders, intractable, with status epilepticus",
+        "notes": "Important for differential diagnosis; often ruled out by video-EEG monitoring.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Generally Covered",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is typically required for video-EEG monitoring to confirm medical necessity and differentiate from epileptic seizures.",
+        "overview": "Medicare generally covers medically necessary video-EEG monitoring for the diagnosis and management of seizure disorders, including the differentiation of psychogenic non-epileptic seizures (PNES) from epileptic seizures, when standard diagnostic methods are inconclusive.",
+        "reimbursementNote": "Reimbursement for CPT 95720 is based on Medicare Physician Fee Schedule (MPFS) rates, subject to geographic adjustments, deductibles, and co-insurance. The RVU for 95720 is 6.14 (Total RVUs) and 3.86 (Physician work RVU) as per 2024 MPFS.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Medical Necessity",
+            "items": [
+              "Clinical suspicion of PNES based on history and physical examination.",
+              "Failure of routine EEG to establish a diagnosis or differentiate seizure type.",
+              "Need to characterize seizure semiology and correlate with EEG changes to distinguish epileptic from non-epileptic events.",
+              "Evaluation for surgical candidacy (if epilepsy is suspected and later ruled out)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Documentation Requirements",
+            "items": [
+              "Detailed clinical history of events, including frequency, duration, and associated symptoms.",
+              "Results of prior neurological evaluations and routine EEG studies.",
+              "Psychological or psychiatric evaluation supporting the diagnosis of PNES or conversion disorder.",
+              "Treatment plan outlining how video-EEG results will impact management."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Notes",
+            "items": [
+              "Physician orders for video-EEG",
+              "Neurological consultation notes",
+              "Psychiatric/psychological evaluation notes"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Diagnostic Reports",
+            "items": [
+              "Previous routine EEG reports",
+              "Neuroimaging (MRI/CT) reports, if performed"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Patient History",
+            "items": [
+              "Detailed seizure history and semiology",
+              "Medication history"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit authorization request electronically via Medicare portal.",
+              "Include all supporting clinical documentation.",
+              "Expect potential for peer-to-peer review for complex cases or if initial documentation is insufficient."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity (e.g., routine EEG not performed or inconclusive).",
+              "Insufficient clinical information to support the need for prolonged monitoring.",
+              "Services deemed experimental or investigational (unlikely for standard video-EEG, but possible for novel approaches).",
+              "Incomplete or missing documentation."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Ensure thorough documentation of clinical history and previous diagnostic attempts.",
+              "Clearly articulate the diagnostic question that video-EEG is expected to answer.",
+              "Highlight the need to differentiate PNES from epilepsy to guide appropriate treatment and avoid unnecessary anti-epileptic drug use."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS",
+            "status": "Covered",
+            "notes": "Local Coverage Determinations (LCDs) may provide specific criteria; check regional MAC policies."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Generally Covered",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is typically required for video-EEG monitoring, with specific criteria varying by state Medicaid program.",
+        "overview": "Medicaid programs generally cover medically necessary video-EEG monitoring for the diagnosis of seizure disorders, including PNES, when clinical criteria are met and prior authorization is obtained. Coverage policies are state-specific.",
+        "reimbursementNote": "Reimbursement rates vary significantly by state Medicaid program. Providers should consult their state’s Medicaid fee schedule for specific rates for CPT 95720.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Medical Necessity (State-Specific)",
+            "items": [
+              "Clinical presentation suggestive of PNES or unclear seizure type.",
+              "Previous diagnostic workup (e.g., routine EEG) has been inconclusive.",
+              "Video-EEG is expected to provide information critical for diagnosis and treatment planning.",
+              "Patient is a candidate for the procedure and can tolerate monitoring."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Documentation Requirements",
+            "items": [
+              "Physician referral and orders.",
+              "Comprehensive medical history and neurological examination findings.",
+              "Results of all relevant diagnostic tests.",
+              "Justification for the need for video-EEG over less intensive diagnostic methods."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Records",
+            "items": [
+              "Physician notes detailing seizure episodes",
+              "Neurological assessment",
+              "Psychological assessment (if available)"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Diagnostic Reports",
+            "items": [
+              "Routine EEG reports",
+              "Other relevant lab/imaging results"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Follow state-specific Medicaid authorization procedures.",
+              "Submit all required clinical documentation and forms.",
+              "Be prepared for potential delays and requests for additional information."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of adherence to state-specific medical necessity criteria.",
+              "Incomplete or illegible documentation.",
+              "Services considered not medically necessary or duplicative of prior testing.",
+              "Failure to obtain timely prior authorization."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state’s specific Medicaid clinical coverage policies for EEG/video-EEG monitoring.",
+              "Clearly document the impact of the events on the patient’s daily life and the need for accurate diagnosis.",
+              "Emphasize the cost-effectiveness of accurate diagnosis in preventing unnecessary treatments for epilepsy."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Various State Medicaid Programs",
+            "status": "Varies by State",
+            "notes": "Each state has its own clinical coverage policies; review the specific state Medicaid manual."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Generally Covered",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for video-EEG monitoring to ensure medical necessity and appropriate utilization.",
+        "overview": "Private insurance plans typically cover video-EEG monitoring for the diagnosis of seizure disorders, including PNES, when medical necessity criteria are met. Coverage can vary widely based on the specific plan and insurer.",
+        "reimbursementNote": "Reimbursement rates are determined by individual insurance contracts and patient benefit plans. Rates for CPT 95720 will vary, and patients may be responsible for deductibles, co-payments, and co-insurance.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Medical Necessity",
+            "items": [
+              "Clinical history suggestive of PNES or events of uncertain etiology.",
+              "Previous non-invasive diagnostic studies (e.g., routine EEG) have not yielded a definitive diagnosis.",
+              "Video-EEG is necessary to differentiate PNES from epileptic seizures or other paroxysmal events.",
+              "The results of the study are expected to directly impact the patient’s treatment plan."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Documentation Requirements",
+            "items": [
+              "Physician referral and detailed orders for video-EEG.",
+              "Comprehensive clinical notes, including differential diagnoses considered.",
+              "Results of prior diagnostic tests and treatments.",
+              "Rationale for video-EEG, explaining why it is essential for diagnosis and management."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Neurologist’s notes",
+              "Psychiatric/psychological evaluation (if performed)",
+              "Referral notes"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Diagnostic Test Results",
+            "items": [
+              "Routine EEG reports",
+              "Other relevant diagnostic reports"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request through the insurer’s provider portal or fax.",
+              "Ensure all required forms and clinical documentation are attached.",
+              "Be prepared for potential peer-to-peer review or requests for additional clinical information."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of clear medical necessity or insufficient clinical rationale.",
+              "Incomplete or missing documentation.",
+              "Services considered experimental/investigational (rare for video-EEG, but check specific policy).",
+              "Out-of-network provider or facility issues."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify patient-specific benefits and coverage with the insurance plan prior to scheduling.",
+              "Provide a clear and concise clinical summary emphasizing the diagnostic challenge and the role of video-EEG.",
+              "Document all previous failed diagnostic attempts and treatments."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Aetna",
+            "status": "Covered with Medical Necessity",
+            "notes": "Refer to Aetna Clinical Policy Bulletin 0322 for Electroencephalographic (EEG) Video Monitoring."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered with Medical Necessity",
+            "notes": "Refer to UnitedHealthcare Medical Policy for Video Electroencephalographic (vEEG) Monitoring and Recording."
+          },
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Varies by Plan",
+            "notes": "Coverage depends on the specific BCBS plan and state; medical necessity criteria generally apply."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Header",
+        "kind": "prose",
+        "text": "FunctionalSeizures Clinical Compass — Functional Seizures / PNES Insurance Authorization Guide. Navigation: \"Back to Assessment\" button links to /functionalseizures."
+      },
+      {
+        "heading": "Procedure Codes — CPT 95720 (Device/Access)",
+        "kind": "prose",
+        "text": "Device/Access for CPT 95720: Video-EEG Monitoring System. Access: Inpatient or Outpatient Epilepsy Monitoring Unit (EMU). RVU 6.14."
+      },
+      {
+        "heading": "Medicare — Reimbursement Note",
+        "kind": "prose",
+        "text": "Reimbursement for CPT 95720 is based on Medicare Physician Fee Schedule (MPFS) rates, subject to geographic adjustments, deductibles, and co-insurance. The RVU for 95720 is 6.14 (Total RVUs) and 3.86 (Physician work RVU) as per 2024 MPFS."
+      },
+      {
+        "heading": "Medicaid — Reimbursement Note",
+        "kind": "prose",
+        "text": "Reimbursement rates vary significantly by state Medicaid program. Providers should consult their state’s Medicaid fee schedule for specific rates for CPT 95720."
+      },
+      {
+        "heading": "Private Insurance — Reimbursement Note",
+        "kind": "prose",
+        "text": "Reimbursement rates are determined by individual insurance contracts and patient benefit plans. Rates for CPT 95720 will vary, and patients may be responsible for deductibles, co-payments, and co-insurance."
+      }
+    ],
+    "raw": {
+      "markdown": "# FunctionalSeizures Clinical Compass\n## Functional Seizures / PNES Insurance Authorization Guide\n\n[Button] Back to Assessment (links to /functionalseizures)\n\n---\n\n## Procedure Codes\n\n### CPT 95720 (RVU 6.14)\n**Description:** Electroencephalogram (EEG), continuous recording, physician or other qualified health care professional review of recorded events, analysis of spike and seizure detection, and report, each 24 hours; with video\n\n**Device/Access:** Video-EEG Monitoring System\n**Access:** Inpatient or Outpatient Epilepsy Monitoring Unit (EMU)\n\n**Included in this code (do NOT bill separately):**\n- Physician or other qualified healthcare professional (QHCP) review of recorded events\n- Analysis of spike and seizure detection\n- Interpretation of findings and preparation of a report after each 24-hour period\n- Video recording of clinical behavior synchronous with EEG\n\n*Note:* Report this code for each increment of greater than 12 hours up to 26 hours of EEG recording. This code replaced 95951 in 2020.\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **F44.5** (Primary / required) — Dissociative convulsions. Notes: Used for psychogenic non-epileptic seizures (PNES) when linked to a conversion disorder.\n- **R56.9** — Unspecified convulsions. Notes: May be used for PNES when not explicitly linked to a conversion disorder, but F44.5 is preferred when appropriate.\n- **G40.803** — Other epilepsy and recurrent convulsive disorders, intractable, without status epilepticus. Notes: Important for differential diagnosis; often ruled out by video-EEG monitoring.\n- **G40.804** — Other epilepsy and recurrent convulsive disorders, intractable, with status epilepticus. Notes: Important for differential diagnosis; often ruled out by video-EEG monitoring.\n\n---\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\n**Badges:** Prior Auth Required | Generally Covered\n**Prior Auth Note (warning):** Prior authorization is typically required for video-EEG monitoring to confirm medical necessity and differentiate from epileptic seizures.\n\n**Overview:** Medicare generally covers medically necessary video-EEG monitoring for the diagnosis and management of seizure disorders, including the differentiation of psychogenic non-epileptic seizures (PNES) from epileptic seizures, when standard diagnostic methods are inconclusive.\n\n#### Coverage Criteria\n**Medical Necessity**\n- Clinical suspicion of PNES based on history and physical examination.\n- Failure of routine EEG to establish a diagnosis or differentiate seizure type.\n- Need to characterize seizure semiology and correlate with EEG changes to distinguish epileptic from non-epileptic events.\n- Evaluation for surgical candidacy (if epilepsy is suspected and later ruled out).\n\n**Documentation Requirements**\n- Detailed clinical history of events, including frequency, duration, and associated symptoms.\n- Results of prior neurological evaluations and routine EEG studies.\n- Psychological or psychiatric evaluation supporting the diagnosis of PNES or conversion disorder.\n- Treatment plan outlining how video-EEG results will impact management.\n\n#### Required Documentation\n**Clinical Notes**\n- Physician orders for video-EEG\n- Neurological consultation notes\n- Psychiatric/psychological evaluation notes\n\n**Diagnostic Reports**\n- Previous routine EEG reports\n- Neuroimaging (MRI/CT) reports, if performed\n\n**Patient History**\n- Detailed seizure history and semiology\n- Medication history\n\n#### Submission Process\n1. Submit authorization request electronically via Medicare portal.\n2. Include all supporting clinical documentation.\n3. Expect potential for peer-to-peer review for complex cases or if initial documentation is insufficient.\n\n#### Common Denial Reasons\n- Lack of documented medical necessity (e.g., routine EEG not performed or inconclusive).\n- Insufficient clinical information to support the need for prolonged monitoring.\n- Services deemed experimental or investigational (unlikely for standard video-EEG, but possible for novel approaches).\n- Incomplete or missing documentation.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS | Covered | Local Coverage Determinations (LCDs) may provide specific criteria; check regional MAC policies. |\n\n#### Reimbursement Note\nReimbursement for CPT 95720 is based on Medicare Physician Fee Schedule (MPFS) rates, subject to geographic adjustments, deductibles, and co-insurance. The RVU for 95720 is 6.14 (Total RVUs) and 3.86 (Physician work RVU) as per 2024 MPFS.\n\n#### Authorization Tips\n- Ensure thorough documentation of clinical history and previous diagnostic attempts.\n- Clearly articulate the diagnostic question that video-EEG is expected to answer.\n- Highlight the need to differentiate PNES from epilepsy to guide appropriate treatment and avoid unnecessary anti-epileptic drug use.\n\n---\n\n### Medicaid\n**Badges:** Prior Auth Required | Generally Covered\n**Prior Auth Note (warning):** Prior authorization is typically required for video-EEG monitoring, with specific criteria varying by state Medicaid program.\n\n**Overview:** Medicaid programs generally cover medically necessary video-EEG monitoring for the diagnosis of seizure disorders, including PNES, when clinical criteria are met and prior authorization is obtained. Coverage policies are state-specific.\n\n#### Coverage Criteria\n**Medical Necessity (State-Specific)**\n- Clinical presentation suggestive of PNES or unclear seizure type.\n- Previous diagnostic workup (e.g., routine EEG) has been inconclusive.\n- Video-EEG is expected to provide information critical for diagnosis and treatment planning.\n- Patient is a candidate for the procedure and can tolerate monitoring.\n\n**Documentation Requirements**\n- Physician referral and orders.\n- Comprehensive medical history and neurological examination findings.\n- Results of all relevant diagnostic tests.\n- Justification for the need for video-EEG over less intensive diagnostic methods.\n\n#### Required Documentation\n**Clinical Records**\n- Physician notes detailing seizure episodes\n- Neurological assessment\n- Psychological assessment (if available)\n\n**Diagnostic Reports**\n- Routine EEG reports\n- Other relevant lab/imaging results\n\n#### Submission Process\n1. Follow state-specific Medicaid authorization procedures.\n2. Submit all required clinical documentation and forms.\n3. Be prepared for potential delays and requests for additional information.\n\n#### Common Denial Reasons\n- Lack of adherence to state-specific medical necessity criteria.\n- Incomplete or illegible documentation.\n- Services considered not medically necessary or duplicative of prior testing.\n- Failure to obtain timely prior authorization.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Various State Medicaid Programs | Varies by State | Each state has its own clinical coverage policies; review the specific state Medicaid manual. |\n\n#### Reimbursement Note\nReimbursement rates vary significantly by state Medicaid program. Providers should consult their state’s Medicaid fee schedule for specific rates for CPT 95720.\n\n#### Authorization Tips\n- Familiarize yourself with your state’s specific Medicaid clinical coverage policies for EEG/video-EEG monitoring.\n- Clearly document the impact of the events on the patient’s daily life and the need for accurate diagnosis.\n- Emphasize the cost-effectiveness of accurate diagnosis in preventing unnecessary treatments for epilepsy.\n\n---\n\n### Private Insurance\n**Badges:** Prior Auth Required | Generally Covered\n**Prior Auth Note (warning):** Most private insurance plans require prior authorization for video-EEG monitoring to ensure medical necessity and appropriate utilization.\n\n**Overview:** Private insurance plans typically cover video-EEG monitoring for the diagnosis of seizure disorders, including PNES, when medical necessity criteria are met. Coverage can vary widely based on the specific plan and insurer.\n\n#### Coverage Criteria\n**Medical Necessity**\n- Clinical history suggestive of PNES or events of uncertain etiology.\n- Previous non-invasive diagnostic studies (e.g., routine EEG) have not yielded a definitive diagnosis.\n- Video-EEG is necessary to differentiate PNES from epileptic seizures or other paroxysmal events.\n- The results of the study are expected to directly impact the patient’s treatment plan.\n\n**Documentation Requirements**\n- Physician referral and detailed orders for video-EEG.\n- Comprehensive clinical notes, including differential diagnoses considered.\n- Results of prior diagnostic tests and treatments.\n- Rationale for video-EEG, explaining why it is essential for diagnosis and management.\n\n#### Required Documentation\n**Clinical Documentation**\n- Neurologist’s notes\n- Psychiatric/psychological evaluation (if performed)\n- Referral notes\n\n**Diagnostic Test Results**\n- Routine EEG reports\n- Other relevant diagnostic reports\n\n#### Submission Process\n1. Submit prior authorization request through the insurer’s provider portal or fax.\n2. Ensure all required forms and clinical documentation are attached.\n3. Be prepared for potential peer-to-peer review or requests for additional clinical information.\n\n#### Common Denial Reasons\n- Lack of clear medical necessity or insufficient clinical rationale.\n- Incomplete or missing documentation.\n- Services considered experimental/investigational (rare for video-EEG, but check specific policy).\n- Out-of-network provider or facility issues.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Aetna | Covered with Medical Necessity | Refer to Aetna Clinical Policy Bulletin 0322 for Electroencephalographic (EEG) Video Monitoring. |\n| UnitedHealthcare | Covered with Medical Necessity | Refer to UnitedHealthcare Medical Policy for Video Electroencephalographic (vEEG) Monitoring and Recording. |\n| Blue Cross Blue Shield | Varies by Plan | Coverage depends on the specific BCBS plan and state; medical necessity criteria generally apply. |\n\n#### Reimbursement Note\nReimbursement rates are determined by individual insurance contracts and patient benefit plans. Rates for CPT 95720 will vary, and patients may be responsible for deductibles, co-payments, and co-insurance.\n\n#### Authorization Tips\n- Verify patient-specific benefits and coverage with the insurance plan prior to scheduling.\n- Provide a clear and concise clinical summary emphasizing the diagnostic challenge and the role of video-EEG.\n- Document all previous failed diagnostic attempts and treatments.\n",
+      "tables": [
+        {
+          "name": "Medicare — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS", "Covered", "Local Coverage Determinations (LCDs) may provide specific criteria; check regional MAC policies."]
+          ]
+        },
+        {
+          "name": "Medicaid — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Various State Medicaid Programs", "Varies by State", "Each state has its own clinical coverage policies; review the specific state Medicaid manual."]
+          ]
+        },
+        {
+          "name": "Private Insurance — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Aetna", "Covered with Medical Necessity", "Refer to Aetna Clinical Policy Bulletin 0322 for Electroencephalographic (EEG) Video Monitoring."],
+            ["UnitedHealthcare", "Covered with Medical Necessity", "Refer to UnitedHealthcare Medical Policy for Video Electroencephalographic (vEEG) Monitoring and Recording."],
+            ["Blue Cross Blue Shield", "Varies by Plan", "Coverage depends on the specific BCBS plan and state; medical necessity criteria generally apply."]
+          ]
+        }
+      ]
+    }
+  }
+}

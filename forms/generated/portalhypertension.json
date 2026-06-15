@@ -1,0 +1,399 @@
+{
+  "title": "Portal Hypertension Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendations",
+    "logicKey": "portalhypertension",
+    "hiddenDefaults": {
+      "saagHighGradient": true
+    },
+    "steps": [
+      {
+        "id": "scenario",
+        "shortLabel": "Profile",
+        "title": "Primary Clinical Scenario & Patient Profile",
+        "fields": [
+          {
+            "id": "primary-scenario",
+            "name": "primaryScenario",
+            "label": "Primary Clinical Scenario",
+            "type": "select",
+            "defaultValue": "pvt_management",
+            "options": [
+              { "label": "Portal Vein Thrombosis (PVT) Management", "value": "pvt_management" },
+              { "label": "Primary Variceal Prophylaxis", "value": "primary_prophylaxis" },
+              { "label": "Acute Variceal Bleeding", "value": "acute_variceal_bleed" },
+              { "label": "Secondary Variceal Prophylaxis (post-bleed)", "value": "secondary_prophylaxis" },
+              { "label": "Ascites / Refractory Ascites", "value": "ascites_management" },
+              { "label": "Hepatic Encephalopathy", "value": "hepatic_encephalopathy" },
+              { "label": "Hepatorenal Syndrome (HRS)", "value": "hepatorenal_syndrome" }
+            ]
+          },
+          {
+            "id": "age-years",
+            "name": "ageYears",
+            "label": "Age (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "meld-category",
+            "name": "meldCategory",
+            "label": "MELD Category",
+            "type": "select",
+            "defaultValue": "moderate",
+            "options": [
+              { "label": "Low (MELD <10)", "value": "low" },
+              { "label": "Moderate (MELD 10–14)", "value": "moderate" },
+              { "label": "High (MELD 15–19)", "value": "high" },
+              { "label": "Very High (MELD ≥20)", "value": "very_high" }
+            ]
+          },
+          {
+            "id": "has-cirrhosis",
+            "name": "hasCirrhosis",
+            "label": "Cirrhosis confirmed (biopsy, imaging, or clinical)",
+            "type": "checkbox",
+            "defaultValue": true
+          },
+          {
+            "id": "child-pugh-class",
+            "name": "childPughClass",
+            "label": "Child-Pugh Class",
+            "type": "select",
+            "defaultValue": "B",
+            "options": [
+              { "label": "Child-Pugh A (5–6 pts — Compensated)", "value": "A" },
+              { "label": "Child-Pugh B (7–9 pts — Moderate)", "value": "B" },
+              { "label": "Child-Pugh C (10–15 pts — Decompensated)", "value": "C" }
+            ],
+            "visibleWhen": { "field": "hasCirrhosis", "op": "truthy" }
+          },
+          {
+            "id": "has-clinically-significant-ph",
+            "name": "hasClinicallySignificantPH",
+            "label": "Clinically significant portal hypertension (HVPG ≥10 mmHg or indirect evidence)",
+            "type": "checkbox",
+            "defaultValue": true
+          },
+          {
+            "id": "baveno-vii-criteria-met",
+            "name": "bavenoVIICriteriaMet",
+            "label": "Baveno VII criteria met: LSM <20 kPa AND platelets >150k (rules out CSPH)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "is-transplant-candidate",
+            "name": "isTransplantCandidate",
+            "label": "Liver transplant candidate",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "is-listed-for-transplant",
+            "name": "isListedForTransplant",
+            "label": "Already listed for transplant",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "isTransplantCandidate", "op": "truthy" }
+          }
+        ]
+      },
+      {
+        "id": "pvt",
+        "shortLabel": "PVT",
+        "title": "Portal Vein Thrombosis (PVT)",
+        "fields": [
+          {
+            "id": "pvt-extent",
+            "name": "pvtExtent",
+            "label": "PVT Extent",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "No PVT", "value": "none" },
+              { "label": "Partial main PV (<50% occlusion)", "value": "partial_main" },
+              { "label": "Complete main PV (≥50% occlusion)", "value": "complete_main" },
+              { "label": "Extending into SMV", "value": "extending_smv" },
+              { "label": "Cavernous transformation (chronic)", "value": "cavernous_transformation" }
+            ]
+          },
+          {
+            "id": "pvt-acuity",
+            "name": "pvtAcuity",
+            "label": "PVT Acuity",
+            "type": "select",
+            "defaultValue": "unknown",
+            "options": [
+              { "label": "Acute (≤6 weeks)", "value": "acute" },
+              { "label": "Subacute (6 weeks–6 months)", "value": "subacute" },
+              { "label": "Chronic (>6 months)", "value": "chronic" },
+              { "label": "Unknown / Not assessed", "value": "unknown" }
+            ]
+          },
+          {
+            "id": "has-intestinal-ischemia",
+            "name": "hasIntestinalIschemia",
+            "label": "Signs of intestinal ischemia (acute mesenteric ischemia)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-thrombophilia",
+            "name": "hasThrombophilia",
+            "label": "Known thrombophilia (JAK2, antiphospholipid, factor V Leiden, etc.)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "is-on-anticoagulation",
+            "name": "isOnAnticoagulation",
+            "label": "Currently on anticoagulation for PVT",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-anticoagulation-contraindication",
+            "name": "hasAnticoagulationContraindication",
+            "label": "Contraindication to anticoagulation (active bleed, thrombocytopenia <50k, etc.)",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "varices",
+        "shortLabel": "Varices",
+        "title": "Esophageal & Gastric Varices",
+        "fields": [
+          {
+            "id": "varices-grade",
+            "name": "varicesGrade",
+            "label": "Esophageal Varices Grade (last EGD)",
+            "type": "select",
+            "defaultValue": "not_screened",
+            "options": [
+              { "label": "Not screened / EGD not done", "value": "not_screened" },
+              { "label": "None", "value": "none" },
+              { "label": "Small (<5mm, no red wale marks)", "value": "small" },
+              { "label": "Medium (5–10mm)", "value": "medium" },
+              { "label": "Large (>10mm or >1/3 lumen)", "value": "large" }
+            ]
+          },
+          {
+            "id": "has-red-wale-marks",
+            "name": "hasRedWaleMarks",
+            "label": "Red wale marks or red spots (high-risk stigmata)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-active-variceal-bleeding",
+            "name": "hasActiveVaricealBleeding",
+            "label": "Active variceal bleeding (current presentation)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-prior-variceal-bleeding",
+            "name": "hasPriorVaricealBleeding",
+            "label": "Prior variceal bleed (secondary prophylaxis)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "is-on-nsbb",
+            "name": "isOnNSBB",
+            "label": "Currently on non-selective beta-blocker (NSBB)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-prior-ebl",
+            "name": "hasPriorEBL",
+            "label": "Prior endoscopic band ligation (EBL)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-gastric-varices",
+            "name": "hasGastricVarices",
+            "label": "Gastric varices present",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "gastric-varices-type",
+            "name": "gastricVaricesType",
+            "label": "Gastric Varices Type (Sarin Classification)",
+            "type": "select",
+            "defaultValue": "GOV1",
+            "options": [
+              { "label": "GOV1 — Extension along lesser curve", "value": "GOV1" },
+              { "label": "GOV2 — Extension along greater curve/fundus", "value": "GOV2" },
+              { "label": "IGV1 — Isolated fundal varices", "value": "IGV1" }
+            ],
+            "visibleWhen": { "field": "hasGastricVarices", "op": "truthy" }
+          }
+        ]
+      },
+      {
+        "id": "ascites",
+        "shortLabel": "Ascites",
+        "title": "Ascites, SBP & Hepatorenal Syndrome",
+        "fields": [
+          {
+            "id": "ascites-grade",
+            "name": "ascitesGrade",
+            "label": "Ascites Grade",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "None", "value": "none" },
+              { "label": "Grade 1 — Ultrasound only", "value": "grade1" },
+              { "label": "Grade 2 — Moderate, visible distension", "value": "grade2" },
+              { "label": "Grade 3 — Tense ascites", "value": "grade3" },
+              { "label": "Refractory — Failed max diuretics", "value": "refractory" }
+            ]
+          },
+          {
+            "id": "has-sbp",
+            "name": "hasSBP",
+            "label": "Active SBP (PMN ≥250/mm³ on diagnostic paracentesis)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-prior-sbp",
+            "name": "hasPriorSBP",
+            "label": "Prior SBP episode (secondary prophylaxis)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "ascites-protein-low",
+            "name": "ascitesProteinLow",
+            "label": "Ascitic fluid protein <1.5 g/dL (primary SBP prophylaxis indicator)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "is-diuretic-refractory",
+            "name": "isDiureticRefractory",
+            "label": "Diuretic-refractory (failed spironolactone 400mg + furosemide 160mg)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "is-diuretic-intolerant",
+            "name": "isDiureticIntolerant",
+            "label": "Diuretic-intolerant (hyponatremia, encephalopathy, or renal impairment on diuretics)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-hrs",
+            "name": "hasHRS",
+            "label": "Hepatorenal syndrome (HRS) present",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "hrs-type",
+            "name": "hrsType",
+            "label": "HRS Type",
+            "type": "select",
+            "defaultValue": "HRS_AKI",
+            "options": [
+              { "label": "HRS-AKI (Acute — rapid creatinine rise)", "value": "HRS_AKI" },
+              { "label": "HRS-CKD (Chronic — GFR <60 >3 months)", "value": "HRS_CKD" }
+            ],
+            "visibleWhen": { "field": "hasHRS", "op": "truthy" }
+          }
+        ]
+      },
+      {
+        "id": "he-tips",
+        "shortLabel": "HE & TIPS",
+        "title": "Hepatic Encephalopathy & TIPS Assessment",
+        "fields": [
+          {
+            "id": "he-grade",
+            "name": "heGrade",
+            "label": "Hepatic Encephalopathy Grade (West Haven)",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "None", "value": "none" },
+              { "label": "Minimal / Covert HE (psychometric tests only)", "value": "minimal" },
+              { "label": "Grade 1 — Trivial inattention, euphoria", "value": "grade1" },
+              { "label": "Grade 2 — Lethargy, disorientation", "value": "grade2" },
+              { "label": "Grade 3 — Somnolence, gross disorientation", "value": "grade3" },
+              { "label": "Grade 4 — Coma", "value": "grade4" }
+            ]
+          },
+          {
+            "id": "he-precipitant-identified",
+            "name": "hePrecipitantIdentified",
+            "label": "HE precipitant identified",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-prior-he-episode",
+            "name": "hasPriorHEEpisode",
+            "label": "Prior HE episode (recurrent HE)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "is-on-lactulose",
+            "name": "isOnLactulose",
+            "label": "Currently on lactulose",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "is-on-rifaximin",
+            "name": "isOnRifaximin",
+            "label": "Currently on rifaximin",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-prior-tips",
+            "name": "hasPriorTIPS",
+            "label": "Prior TIPS placed",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-tips-contraindication",
+            "name": "hasTIPSContraindication",
+            "label": "TIPS contraindication present",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "tips-contraindications",
+            "name": "tipsContraindications",
+            "label": "Select all that apply:",
+            "type": "multiselect",
+            "defaultValue": [],
+            "options": [
+              { "label": "Congestive heart failure", "value": "heart_failure" },
+              { "label": "Severe pulmonary hypertension (mean PAP >45 mmHg)", "value": "severe_pulmonary_htn" },
+              { "label": "Uncontrolled infection / sepsis", "value": "uncontrolled_infection" },
+              { "label": "Biliary obstruction", "value": "biliary_obstruction" },
+              { "label": "Uncontrolled HE Grade 3–4", "value": "he_grade3_4" }
+            ],
+            "visibleWhen": { "field": "hasTIPSContraindication", "op": "truthy" }
+          }
+        ]
+      }
+    ]
+  }
+}

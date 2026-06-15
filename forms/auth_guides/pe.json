@@ -1,0 +1,433 @@
+{
+  "title": "Pulmonary Embolism Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "PEAuthGuide.tsx",
+    "title": "PE Clinical Compass",
+    "subtitle": "Pulmonary Embolism Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "37212",
+        "description": "Transcatheter therapy, venous infusion for thrombolysis, any method, including radiological supervision and interpretation; initial treatment day",
+        "device": "Catheter-directed thrombolysis (CDT) system",
+        "access": "Venous",
+        "rvu": "6.64",
+        "includes": [
+          "Catheter insertion",
+          "Infusion of thrombolytic medication",
+          "Radiological supervision and interpretation"
+        ],
+        "note": "Used for the initial day of thrombolytic therapy in a venous vessel."
+      },
+      {
+        "code": "37213",
+        "description": "Transcatheter therapy, arterial or venous infusion for thrombolysis other than coronary, any method, including radiological supervision and interpretation; subsequent treatment day",
+        "device": "Catheter-directed thrombolysis (CDT) system",
+        "access": "Arterial or Venous",
+        "rvu": "4.63",
+        "includes": [
+          "Catheter contrast injection",
+          "Catheter position change or replacement",
+          "Radiological supervision and interpretation"
+        ],
+        "note": "Used for subsequent treatment days during the course of thrombolytic therapy."
+      },
+      {
+        "code": "37214",
+        "description": "Transcatheter therapy, arterial or venous infusion for thrombolysis other than coronary, any method, including radiological supervision and interpretation; cessation of thrombolytic therapy by any method, including, but not limited to, removal of the catheter and vessel closure by any method",
+        "device": "Catheter-directed thrombolysis (CDT) system",
+        "access": "Arterial or Venous",
+        "rvu": "Varies, often bundled with 37213 or primary procedure",
+        "includes": [
+          "Catheter contrast injection",
+          "Catheter position change or replacement",
+          "Cessation of thrombolytic therapy",
+          "Catheter removal",
+          "Vessel closure by any method",
+          "Radiological supervision and interpretation"
+        ],
+        "note": "Used for subsequent treatment days and includes the final cessation of thrombolytic therapy and catheter removal."
+      },
+      {
+        "code": "37184",
+        "description": "Primary percutaneous mechanical thrombectomy, noncoronary, nonintracranial artery or arterial bypass graft, including fluoroscopic guidance and intraprocedural pharmacological thrombolytic injection, initial vessel",
+        "device": "Mechanical thrombectomy device (e.g., AngioJet, EKOS, Indigo)",
+        "access": "Arterial",
+        "rvu": "14.73",
+        "includes": [
+          "Mechanical thrombectomy",
+          "Pharmacological thrombolytic injection (intraprocedural)",
+          "Fluoroscopic guidance"
+        ],
+        "note": "Used for the initial vessel treated with mechanical thrombectomy."
+      },
+      {
+        "code": "37185",
+        "description": "Secondary percutaneous mechanical thrombectomy, noncoronary, nonintracranial artery or arterial bypass graft, including fluoroscopic guidance and intraprocedural pharmacological thrombolytic injection, each additional vessel (List separately in addition to code for primary procedure)",
+        "device": "Mechanical thrombectomy device (e.g., AngioJet, EKOS, Indigo)",
+        "access": "Arterial",
+        "rvu": "5.85",
+        "includes": [
+          "Mechanical thrombectomy",
+          "Pharmacological thrombolytic injection (intraprocedural)",
+          "Fluoroscopic guidance"
+        ],
+        "note": "Add-on code for each additional vessel treated after the primary procedure (37184)."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "I26.0",
+        "description": "Pulmonary embolism with acute cor pulmonale",
+        "notes": "Indicates PE with acute right heart strain.",
+        "required": true
+      },
+      {
+        "code": "I26.01",
+        "description": "Septic pulmonary embolism with acute cor pulmonale",
+        "notes": "PE due to septic emboli with acute right heart strain.",
+        "required": false
+      },
+      {
+        "code": "I26.02",
+        "description": "Saddle embolus of pulmonary artery with acute cor pulmonale",
+        "notes": "Large embolus straddling the bifurcation of the pulmonary artery with acute right heart strain.",
+        "required": true
+      },
+      {
+        "code": "I26.09",
+        "description": "Other pulmonary embolism with acute cor pulmonale",
+        "notes": "Other specified types of PE with acute right heart strain.",
+        "required": false
+      },
+      {
+        "code": "I26.9",
+        "description": "Pulmonary embolism without acute cor pulmonale",
+        "notes": "Indicates PE without acute right heart strain.",
+        "required": true
+      },
+      {
+        "code": "I26.90",
+        "description": "Septic pulmonary embolism without acute cor pulmonale",
+        "notes": "PE due to septic emboli without acute right heart strain.",
+        "required": false
+      },
+      {
+        "code": "I26.92",
+        "description": "Saddle embolus of pulmonary artery without acute cor pulmonale",
+        "notes": "Large embolus straddling the bifurcation of the pulmonary artery without acute right heart strain.",
+        "required": true
+      },
+      {
+        "code": "I26.99",
+        "description": "Other pulmonary embolism without acute cor pulmonale",
+        "notes": "Other specified types of PE without acute right heart strain.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered for Medically Necessary Procedures",
+        "overview": "Medicare covers medically necessary diagnostic and therapeutic services for pulmonary embolism. Coverage is generally provided for evidence-based treatments such as catheter-directed thrombolysis and mechanical thrombectomy when conventional anticoagulation is insufficient or contraindicated, or in cases of massive/submassive PE.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is often required for advanced interventional procedures for Pulmonary Embolism, especially for catheter-directed thrombolysis and mechanical thrombectomy. Coverage may vary by Medicare Administrative Contractor (MAC) and specific local coverage determinations (LCDs).",
+        "reimbursementNote": "Reimbursement is based on the Medicare Physician Fee Schedule (MPFS) for professional services and the Outpatient Prospective Payment System (OPPS) for hospital outpatient services. Payment rates may vary by geographic location.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Diagnosis",
+            "items": [
+              "Confirmed diagnosis of acute pulmonary embolism (PE) by imaging (e.g., CT pulmonary angiography).",
+              "Clinical signs and symptoms consistent with PE."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Medical Necessity",
+            "items": [
+              "Massive or submassive PE with hemodynamic instability or right ventricular dysfunction.",
+              "Contraindication to systemic thrombolysis or failure of anticoagulation therapy.",
+              "High risk of bleeding with systemic thrombolysis."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Procedure Specific",
+            "items": [
+              "Performed by a qualified physician in an appropriate facility."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Detailed physician notes documenting symptoms, physical exam, and medical history.",
+              "Results of diagnostic imaging (CTPA, V/Q scan, echocardiogram).",
+              "Lab results (e.g., D-dimer, troponin, BNP).",
+              "Documentation of hemodynamic status and right ventricular function."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Treatment Plan",
+            "items": [
+              "Rationale for chosen intervention (CDT, mechanical thrombectomy) over conventional therapy.",
+              "Discussion of risks and benefits with the patient."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request with complete clinical documentation.",
+              "Electronic claim submission (CMS-1500 for professional, UB-04 for facility) with appropriate CPT and ICD-10 codes.",
+              "Adhere to specific MAC guidelines and LCDs."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity (e.g., PE not classified as massive/submassive).",
+              "Incomplete or insufficient clinical documentation.",
+              "Failure to obtain prior authorization when required.",
+              "Services deemed experimental or investigational by MAC."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always check the specific Local Coverage Determinations (LCDs) for your region.",
+              "Ensure thorough documentation of hemodynamic status, RV dysfunction, and rationale for intervention.",
+              "Obtain prior authorization proactively and track its status."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS",
+            "status": "Covered",
+            "notes": "Transvenous (Catheter) Pulmonary Embolectomy coverage is determined by MACs based on medical necessity."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered for Medically Necessary Procedures (State-Specific)",
+        "overview": "Medicaid programs cover medically necessary treatments for pulmonary embolism, including advanced interventional therapies, subject to state-specific guidelines and prior authorization requirements. Coverage criteria often align with national standards but may have additional restrictions.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is almost always required for interventional PE treatments due to high cost and complexity. Policies are state-specific and can vary significantly.",
+        "reimbursementNote": "Medicaid reimbursement rates are typically lower than Medicare and private insurance, and vary by state. Providers should be aware of state-specific fee schedules.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Diagnosis",
+            "items": [
+              "Confirmed diagnosis of acute pulmonary embolism (PE).",
+              "Clinical presentation consistent with severe PE."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Medical Necessity",
+            "items": [
+              "Massive or submassive PE with clinical instability.",
+              "Failure or contraindication to conventional therapies.",
+              "Meets state-specific criteria for advanced PE intervention."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Comprehensive medical records supporting PE diagnosis and severity.",
+              "Imaging reports and interpretation.",
+              "Documentation of prior authorization approval."
+            ]
+          },
+          {
+            "heading": "Required Documentation: State-Specific Forms",
+            "items": [
+              "Completion of all required state Medicaid prior authorization forms."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Obtain mandatory prior authorization from the state Medicaid agency.",
+              "Submit claims electronically using state-specific systems.",
+              "Ensure all documentation supports medical necessity as per state guidelines."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization or denial of authorization.",
+              "Failure to meet state-specific medical necessity criteria.",
+              "Incomplete or incorrect documentation.",
+              "Services deemed not medically necessary or experimental by the state program."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Thoroughly review and adhere to your state’s specific Medicaid policies for PE interventions.",
+              "Initiate prior authorization early and follow up diligently.",
+              "Maintain meticulous documentation to support medical necessity."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Various State Medicaid Programs",
+            "status": "Varies",
+            "notes": "Coverage and prior authorization requirements are highly variable by state. Consult individual state Medicaid manuals."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Covered for Medically Necessary Procedures",
+        "overview": "Private insurance plans generally cover advanced interventional treatments for pulmonary embolism when deemed medically necessary and appropriate based on clinical guidelines. Coverage policies often align with national medical society recommendations.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for catheter-directed thrombolysis and mechanical thrombectomy for pulmonary embolism. Coverage criteria are typically based on evidence-based guidelines.",
+        "reimbursementNote": "Reimbursement rates vary widely among private insurance plans. Negotiated rates with individual providers and facilities determine the final payment.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Diagnosis",
+            "items": [
+              "Acute PE confirmed by objective testing.",
+              "Clinical presentation indicating need for advanced therapy."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Medical Necessity",
+            "items": [
+              "Massive or submassive PE with evidence of right ventricular strain or hemodynamic compromise.",
+              "Contraindication to or failure of systemic thrombolysis.",
+              "High risk of adverse outcomes with anticoagulation alone."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Plan Specific",
+            "items": [
+              "Adherence to plan-specific medical policies and clinical guidelines."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Physician orders, progress notes, and consultation reports.",
+              "Diagnostic imaging (CTPA, echocardiogram) and interpretation.",
+              "Hemodynamic monitoring data.",
+              "Documentation of prior authorization approval."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Justification",
+            "items": [
+              "Detailed clinical rationale for the chosen interventional procedure."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request through the insurer’s portal or by fax/phone.",
+              "Provide comprehensive clinical documentation to support medical necessity.",
+              "Follow up on authorization status regularly.",
+              "Submit claims electronically with proper CPT and ICD-10 codes."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization.",
+              "Medical necessity criteria not met as per plan policy.",
+              "Insufficient clinical documentation.",
+              "Procedure considered experimental or investigational by the insurer.",
+              "Failure to follow step therapy requirements (if applicable)."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Review the specific medical policy of the patient’s insurance plan for PE interventions.",
+              "Ensure all clinical documentation clearly supports the medical necessity based on plan criteria.",
+              "Obtain and confirm prior authorization before performing the procedure."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Aetna",
+            "status": "Covered",
+            "notes": "Aetna considers AngioJet Rheolytic Thrombectomy System medically necessary for specific indications related to PE."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered",
+            "notes": "Covers catheter-directed thrombolysis and mechanical thrombectomy for PE when medical necessity criteria are met."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment (navigates to /pe)",
+        "href": "/pe"
+      },
+      {
+        "heading": "Procedure Codes — Card Note",
+        "kind": "prose",
+        "text": "Each CPT code lists its RVU, full description, Device/Access, the list of items \"Included in this code (do NOT bill separately)\", and a usage note."
+      }
+    ],
+    "raw": {
+      "markdown": "# PE Clinical Compass\n## Pulmonary Embolism Insurance Authorization Guide\n\n[Button] Back to Assessment (navigates to /pe)\n\n## Procedure Codes (CPT Codes)\n\nFor each code: RVU badge, description, Device/Access, \"Included in this code (do NOT bill separately):\" list, and italic usage note.\n\n### CPT 37212 — RVU 6.64\nTranscatheter therapy, venous infusion for thrombolysis, any method, including radiological supervision and interpretation; initial treatment day\nDevice/Access: Catheter-directed thrombolysis (CDT) system | Venous\nIncluded in this code (do NOT bill separately):\n- Catheter insertion\n- Infusion of thrombolytic medication\n- Radiological supervision and interpretation\nNote: Used for the initial day of thrombolytic therapy in a venous vessel.\n\n### CPT 37213 — RVU 4.63\nTranscatheter therapy, arterial or venous infusion for thrombolysis other than coronary, any method, including radiological supervision and interpretation; subsequent treatment day\nDevice/Access: Catheter-directed thrombolysis (CDT) system | Arterial or Venous\nIncluded in this code (do NOT bill separately):\n- Catheter contrast injection\n- Catheter position change or replacement\n- Radiological supervision and interpretation\nNote: Used for subsequent treatment days during the course of thrombolytic therapy.\n\n### CPT 37214 — RVU Varies, often bundled with 37213 or primary procedure\nTranscatheter therapy, arterial or venous infusion for thrombolysis other than coronary, any method, including radiological supervision and interpretation; cessation of thrombolytic therapy by any method, including, but not limited to, removal of the catheter and vessel closure by any method\nDevice/Access: Catheter-directed thrombolysis (CDT) system | Arterial or Venous\nIncluded in this code (do NOT bill separately):\n- Catheter contrast injection\n- Catheter position change or replacement\n- Cessation of thrombolytic therapy\n- Catheter removal\n- Vessel closure by any method\n- Radiological supervision and interpretation\nNote: Used for subsequent treatment days and includes the final cessation of thrombolytic therapy and catheter removal.\n\n### CPT 37184 — RVU 14.73\nPrimary percutaneous mechanical thrombectomy, noncoronary, nonintracranial artery or arterial bypass graft, including fluoroscopic guidance and intraprocedural pharmacological thrombolytic injection, initial vessel\nDevice/Access: Mechanical thrombectomy device (e.g., AngioJet, EKOS, Indigo) | Arterial\nIncluded in this code (do NOT bill separately):\n- Mechanical thrombectomy\n- Pharmacological thrombolytic injection (intraprocedural)\n- Fluoroscopic guidance\nNote: Used for the initial vessel treated with mechanical thrombectomy.\n\n### CPT 37185 — RVU 5.85\nSecondary percutaneous mechanical thrombectomy, noncoronary, nonintracranial artery or arterial bypass graft, including fluoroscopic guidance and intraprocedural pharmacological thrombolytic injection, each additional vessel (List separately in addition to code for primary procedure)\nDevice/Access: Mechanical thrombectomy device (e.g., AngioJet, EKOS, Indigo) | Arterial\nIncluded in this code (do NOT bill separately):\n- Mechanical thrombectomy\n- Pharmacological thrombolytic injection (intraprocedural)\n- Fluoroscopic guidance\nNote: Add-on code for each additional vessel treated after the primary procedure (37184).\n\n## ICD-10 Diagnosis Codes\n\n(Codes marked \"Primary\" are required=true.)\n\n- I26.0 [Primary] — Pulmonary embolism with acute cor pulmonale. Indicates PE with acute right heart strain.\n- I26.01 — Septic pulmonary embolism with acute cor pulmonale. PE due to septic emboli with acute right heart strain.\n- I26.02 [Primary] — Saddle embolus of pulmonary artery with acute cor pulmonale. Large embolus straddling the bifurcation of the pulmonary artery with acute right heart strain.\n- I26.09 — Other pulmonary embolism with acute cor pulmonale. Other specified types of PE with acute right heart strain.\n- I26.9 [Primary] — Pulmonary embolism without acute cor pulmonale. Indicates PE without acute right heart strain.\n- I26.90 — Septic pulmonary embolism without acute cor pulmonale. PE due to septic emboli without acute right heart strain.\n- I26.92 [Primary] — Saddle embolus of pulmonary artery without acute cor pulmonale. Large embolus straddling the bifurcation of the pulmonary artery without acute right heart strain.\n- I26.99 — Other pulmonary embolism without acute cor pulmonale. Other specified types of PE without acute right heart strain.\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\nStatus badges: Prior Auth Required | Covered for Medically Necessary Procedures\nPrior Auth Note: Prior authorization is often required for advanced interventional procedures for Pulmonary Embolism, especially for catheter-directed thrombolysis and mechanical thrombectomy. Coverage may vary by Medicare Administrative Contractor (MAC) and specific local coverage determinations (LCDs).\nOverview: Medicare covers medically necessary diagnostic and therapeutic services for pulmonary embolism. Coverage is generally provided for evidence-based treatments such as catheter-directed thrombolysis and mechanical thrombectomy when conventional anticoagulation is insufficient or contraindicated, or in cases of massive/submassive PE.\n\nCoverage Criteria\n- Diagnosis:\n  - Confirmed diagnosis of acute pulmonary embolism (PE) by imaging (e.g., CT pulmonary angiography).\n  - Clinical signs and symptoms consistent with PE.\n- Medical Necessity:\n  - Massive or submassive PE with hemodynamic instability or right ventricular dysfunction.\n  - Contraindication to systemic thrombolysis or failure of anticoagulation therapy.\n  - High risk of bleeding with systemic thrombolysis.\n- Procedure Specific:\n  - Performed by a qualified physician in an appropriate facility.\n\nRequired Documentation\n- Clinical Documentation:\n  - Detailed physician notes documenting symptoms, physical exam, and medical history.\n  - Results of diagnostic imaging (CTPA, V/Q scan, echocardiogram).\n  - Lab results (e.g., D-dimer, troponin, BNP).\n  - Documentation of hemodynamic status and right ventricular function.\n- Treatment Plan:\n  - Rationale for chosen intervention (CDT, mechanical thrombectomy) over conventional therapy.\n  - Discussion of risks and benefits with the patient.\n\nSubmission Process\n1. Submit prior authorization request with complete clinical documentation.\n2. Electronic claim submission (CMS-1500 for professional, UB-04 for facility) with appropriate CPT and ICD-10 codes.\n3. Adhere to specific MAC guidelines and LCDs.\n\nCommon Denial Reasons\n- Lack of documented medical necessity (e.g., PE not classified as massive/submassive).\n- Incomplete or insufficient clinical documentation.\n- Failure to obtain prior authorization when required.\n- Services deemed experimental or investigational by MAC.\n\nKnown Payer Policies\n| Payer | Status | Notes |\n| CMS | Covered | Transvenous (Catheter) Pulmonary Embolectomy coverage is determined by MACs based on medical necessity. |\n\nReimbursement Note: Reimbursement is based on the Medicare Physician Fee Schedule (MPFS) for professional services and the Outpatient Prospective Payment System (OPPS) for hospital outpatient services. Payment rates may vary by geographic location.\n\nAuthorization Tips\n- Always check the specific Local Coverage Determinations (LCDs) for your region.\n- Ensure thorough documentation of hemodynamic status, RV dysfunction, and rationale for intervention.\n- Obtain prior authorization proactively and track its status.\n\n### Medicaid\nStatus badges: Prior Auth Required | Covered for Medically Necessary Procedures (State-Specific)\nPrior Auth Note: Prior authorization is almost always required for interventional PE treatments due to high cost and complexity. Policies are state-specific and can vary significantly.\nOverview: Medicaid programs cover medically necessary treatments for pulmonary embolism, including advanced interventional therapies, subject to state-specific guidelines and prior authorization requirements. Coverage criteria often align with national standards but may have additional restrictions.\n\nCoverage Criteria\n- Diagnosis:\n  - Confirmed diagnosis of acute pulmonary embolism (PE).\n  - Clinical presentation consistent with severe PE.\n- Medical Necessity:\n  - Massive or submassive PE with clinical instability.\n  - Failure or contraindication to conventional therapies.\n  - Meets state-specific criteria for advanced PE intervention.\n\nRequired Documentation\n- Clinical Documentation:\n  - Comprehensive medical records supporting PE diagnosis and severity.\n  - Imaging reports and interpretation.\n  - Documentation of prior authorization approval.\n- State-Specific Forms:\n  - Completion of all required state Medicaid prior authorization forms.\n\nSubmission Process\n1. Obtain mandatory prior authorization from the state Medicaid agency.\n2. Submit claims electronically using state-specific systems.\n3. Ensure all documentation supports medical necessity as per state guidelines.\n\nCommon Denial Reasons\n- Lack of prior authorization or denial of authorization.\n- Failure to meet state-specific medical necessity criteria.\n- Incomplete or incorrect documentation.\n- Services deemed not medically necessary or experimental by the state program.\n\nKnown Payer Policies\n| Payer | Status | Notes |\n| Various State Medicaid Programs | Varies | Coverage and prior authorization requirements are highly variable by state. Consult individual state Medicaid manuals. |\n\nReimbursement Note: Medicaid reimbursement rates are typically lower than Medicare and private insurance, and vary by state. Providers should be aware of state-specific fee schedules.\n\nAuthorization Tips\n- Thoroughly review and adhere to your state’s specific Medicaid policies for PE interventions.\n- Initiate prior authorization early and follow up diligently.\n- Maintain meticulous documentation to support medical necessity.\n\n### Private Insurance\nStatus badges: Prior Auth Required | Covered for Medically Necessary Procedures\nPrior Auth Note: Most private insurance plans require prior authorization for catheter-directed thrombolysis and mechanical thrombectomy for pulmonary embolism. Coverage criteria are typically based on evidence-based guidelines.\nOverview: Private insurance plans generally cover advanced interventional treatments for pulmonary embolism when deemed medically necessary and appropriate based on clinical guidelines. Coverage policies often align with national medical society recommendations.\n\nCoverage Criteria\n- Diagnosis:\n  - Acute PE confirmed by objective testing.\n  - Clinical presentation indicating need for advanced therapy.\n- Medical Necessity:\n  - Massive or submassive PE with evidence of right ventricular strain or hemodynamic compromise.\n  - Contraindication to or failure of systemic thrombolysis.\n  - High risk of adverse outcomes with anticoagulation alone.\n- Plan Specific:\n  - Adherence to plan-specific medical policies and clinical guidelines.\n\nRequired Documentation\n- Clinical Documentation:\n  - Physician orders, progress notes, and consultation reports.\n  - Diagnostic imaging (CTPA, echocardiogram) and interpretation.\n  - Hemodynamic monitoring data.\n  - Documentation of prior authorization approval.\n- Justification:\n  - Detailed clinical rationale for the chosen interventional procedure.\n\nSubmission Process\n1. Submit prior authorization request through the insurer’s portal or by fax/phone.\n2. Provide comprehensive clinical documentation to support medical necessity.\n3. Follow up on authorization status regularly.\n4. Submit claims electronically with proper CPT and ICD-10 codes.\n\nCommon Denial Reasons\n- Lack of prior authorization.\n- Medical necessity criteria not met as per plan policy.\n- Insufficient clinical documentation.\n- Procedure considered experimental or investigational by the insurer.\n- Failure to follow step therapy requirements (if applicable).\n\nKnown Payer Policies\n| Payer | Status | Notes |\n| Aetna | Covered | Aetna considers AngioJet Rheolytic Thrombectomy System medically necessary for specific indications related to PE. |\n| UnitedHealthcare | Covered | Covers catheter-directed thrombolysis and mechanical thrombectomy for PE when medical necessity criteria are met. |\n\nReimbursement Note: Reimbursement rates vary widely among private insurance plans. Negotiated rates with individual providers and facilities determine the final payment.\n\nAuthorization Tips\n- Review the specific medical policy of the patient’s insurance plan for PE interventions.\n- Ensure all clinical documentation clearly supports the medical necessity based on plan criteria.\n- Obtain and confirm prior authorization before performing the procedure.\n",
+      "tables": [
+        {
+          "name": "CPT Procedure Codes",
+          "header": ["Code", "Description", "Device", "Access", "RVU", "Includes", "Note"],
+          "rows": [
+            ["37212", "Transcatheter therapy, venous infusion for thrombolysis, any method, including radiological supervision and interpretation; initial treatment day", "Catheter-directed thrombolysis (CDT) system", "Venous", "6.64", "Catheter insertion; Infusion of thrombolytic medication; Radiological supervision and interpretation", "Used for the initial day of thrombolytic therapy in a venous vessel."],
+            ["37213", "Transcatheter therapy, arterial or venous infusion for thrombolysis other than coronary, any method, including radiological supervision and interpretation; subsequent treatment day", "Catheter-directed thrombolysis (CDT) system", "Arterial or Venous", "4.63", "Catheter contrast injection; Catheter position change or replacement; Radiological supervision and interpretation", "Used for subsequent treatment days during the course of thrombolytic therapy."],
+            ["37214", "Transcatheter therapy, arterial or venous infusion for thrombolysis other than coronary, any method, including radiological supervision and interpretation; cessation of thrombolytic therapy by any method, including, but not limited to, removal of the catheter and vessel closure by any method", "Catheter-directed thrombolysis (CDT) system", "Arterial or Venous", "Varies, often bundled with 37213 or primary procedure", "Catheter contrast injection; Catheter position change or replacement; Cessation of thrombolytic therapy; Catheter removal; Vessel closure by any method; Radiological supervision and interpretation", "Used for subsequent treatment days and includes the final cessation of thrombolytic therapy and catheter removal."],
+            ["37184", "Primary percutaneous mechanical thrombectomy, noncoronary, nonintracranial artery or arterial bypass graft, including fluoroscopic guidance and intraprocedural pharmacological thrombolytic injection, initial vessel", "Mechanical thrombectomy device (e.g., AngioJet, EKOS, Indigo)", "Arterial", "14.73", "Mechanical thrombectomy; Pharmacological thrombolytic injection (intraprocedural); Fluoroscopic guidance", "Used for the initial vessel treated with mechanical thrombectomy."],
+            ["37185", "Secondary percutaneous mechanical thrombectomy, noncoronary, nonintracranial artery or arterial bypass graft, including fluoroscopic guidance and intraprocedural pharmacological thrombolytic injection, each additional vessel (List separately in addition to code for primary procedure)", "Mechanical thrombectomy device (e.g., AngioJet, EKOS, Indigo)", "Arterial", "5.85", "Mechanical thrombectomy; Pharmacological thrombolytic injection (intraprocedural); Fluoroscopic guidance", "Add-on code for each additional vessel treated after the primary procedure (37184)."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required (Primary)"],
+          "rows": [
+            ["I26.0", "Pulmonary embolism with acute cor pulmonale", "Indicates PE with acute right heart strain.", "true"],
+            ["I26.01", "Septic pulmonary embolism with acute cor pulmonale", "PE due to septic emboli with acute right heart strain.", "false"],
+            ["I26.02", "Saddle embolus of pulmonary artery with acute cor pulmonale", "Large embolus straddling the bifurcation of the pulmonary artery with acute right heart strain.", "true"],
+            ["I26.09", "Other pulmonary embolism with acute cor pulmonale", "Other specified types of PE with acute right heart strain.", "false"],
+            ["I26.9", "Pulmonary embolism without acute cor pulmonale", "Indicates PE without acute right heart strain.", "true"],
+            ["I26.90", "Septic pulmonary embolism without acute cor pulmonale", "PE due to septic emboli without acute right heart strain.", "false"],
+            ["I26.92", "Saddle embolus of pulmonary artery without acute cor pulmonale", "Large embolus straddling the bifurcation of the pulmonary artery without acute right heart strain.", "true"],
+            ["I26.99", "Other pulmonary embolism without acute cor pulmonale", "Other specified types of PE without acute right heart strain.", "false"]
+          ]
+        },
+        {
+          "name": "Medicare — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS", "Covered", "Transvenous (Catheter) Pulmonary Embolectomy coverage is determined by MACs based on medical necessity."]
+          ]
+        },
+        {
+          "name": "Medicaid — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Various State Medicaid Programs", "Varies", "Coverage and prior authorization requirements are highly variable by state. Consult individual state Medicaid manuals."]
+          ]
+        },
+        {
+          "name": "Private Insurance — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Aetna", "Covered", "Aetna considers AngioJet Rheolytic Thrombectomy System medically necessary for specific indications related to PE."],
+            ["UnitedHealthcare", "Covered", "Covers catheter-directed thrombolysis and mechanical thrombectomy for PE when medical necessity criteria are met."]
+          ]
+        }
+      ]
+    }
+  }
+}

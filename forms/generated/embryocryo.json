@@ -1,0 +1,97 @@
+{
+  "title": "Embryo Cryopreservation Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assessment",
+    "logicKey": "embryocryo",
+    "hiddenDefaults": {
+      "excessEmbryos": false,
+      "embryoCount": 0
+    },
+    "steps": [
+      {
+        "id": "indication",
+        "shortLabel": "Indication",
+        "title": "Indication",
+        "fields": [
+          {
+            "id": "indication",
+            "name": "indication",
+            "label": "Primary Indication",
+            "type": "select",
+            "required": true,
+            "defaultValue": "ivf_excess",
+            "options": [
+              { "label": "Excess embryos from IVF cycle (standard)", "value": "ivf_excess" },
+              { "label": "Oncofertility — before gonadotoxic therapy", "value": "oncofertility" },
+              { "label": "PGT — biopsy and awaiting genetic results", "value": "pgt" },
+              { "label": "Elective freeze — defer transfer", "value": "defer_transfer" },
+              { "label": "Donor embryo banking", "value": "donor" }
+            ]
+          },
+          {
+            "id": "gonadotoxic-therapy",
+            "name": "gonadotoxicTherapy",
+            "label": "Gonadotoxic therapy planned (chemotherapy, radiation, surgery)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "indication", "op": "eq", "value": "oncofertility" }
+          }
+        ]
+      },
+      {
+        "id": "clinical-context",
+        "shortLabel": "Clinical Context",
+        "title": "Clinical Context",
+        "fields": [
+          {
+            "id": "ovarian-hyperstimulation-risk",
+            "name": "ovarianHyperstimulationRisk",
+            "label": "High OHSS risk (elevated estradiol, large follicle cohort, PCOS)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "endometrial-issue",
+            "name": "endometrialIssue",
+            "label": "Endometrial issue identified (thin lining, polyp, fluid)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "pgt-planned",
+            "name": "pgtPlanned",
+            "label": "PGT planned (embryo biopsy required before transfer)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "single-embryo",
+            "name": "singleEmbryo",
+            "label": "Single embryo transfer policy (excess embryos for cryopreservation)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "storage-years",
+            "name": "storageYears",
+            "label": "Planned Storage Duration (years)",
+            "type": "slider",
+            "defaultValue": 0,
+            "min": 1,
+            "max": 20,
+            "step": 1,
+            "unit": "years"
+          }
+        ]
+      },
+      {
+        "id": "assessment",
+        "shortLabel": "Assessment",
+        "title": "Assessment",
+        "fields": []
+      }
+    ]
+  }
+}

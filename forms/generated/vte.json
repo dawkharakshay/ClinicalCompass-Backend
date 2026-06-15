@@ -1,0 +1,618 @@
+{
+  "title": "Venous Thromboembolism Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Calculate",
+    "logicKey": "vte",
+    "hiddenDefaults": {
+      "peHemodynamicStatus": "stable",
+      "distalDVTSymptoms": "symptomatic",
+      "khoranaScore": 1,
+      "surgicalProcedure": null,
+      "standardOfCareAnticoagulation": "would_stop",
+      "familyHistoryHighRiskThrombophilia": false,
+      "hemodynamicCompromise": false,
+      "ratHighRiskFeatures": false,
+      "ratBleedingRisk": "low",
+      "rvtLifeThreatening": false,
+      "pvtOcclusive": true,
+      "cvadFunctioning": true,
+      "csvtHemorrhage": false,
+      "provokedExclusions": false,
+      "priorVTEHistory": false,
+      "priorVTEProvoked": true,
+      "trimester": "second",
+      "thrombophiliaType": "none"
+    },
+    "steps": [
+      {
+        "id": "pathway-selection",
+        "shortLabel": "Pathway Selection",
+        "title": "Select Clinical Pathway",
+        "fields": [
+          {
+            "id": "pathway",
+            "name": "pathway",
+            "label": "Select Clinical Pathway",
+            "type": "radio",
+            "required": true,
+            "defaultValue": "",
+            "options": [
+              { "label": "DVT / PE Treatment (Non-Cancer Adult)", "value": "dvt_pe_treatment" },
+              { "label": "Cancer-Associated Thrombosis (CAT)", "value": "cancer_associated_thrombosis" },
+              { "label": "Thrombophilia Testing", "value": "thrombophilia_testing" },
+              { "label": "Pediatric VTE", "value": "pediatric_vte" },
+              { "label": "Pregnancy-Associated VTE", "value": "pregnancy_vte" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "patient-details",
+        "shortLabel": "Patient Details",
+        "title": "Patient Details",
+        "fields": [
+          {
+            "id": "dvtpe-vte-type",
+            "name": "vteType",
+            "label": "VTE Type",
+            "type": "select",
+            "defaultValue": "dvt_proximal",
+            "visibleWhen": { "field": "pathway", "op": "eq", "value": "dvt_pe_treatment" },
+            "options": [
+              { "label": "Proximal DVT (popliteal or above)", "value": "dvt_proximal" },
+              { "label": "Isolated Distal DVT (below popliteal)", "value": "dvt_distal" },
+              { "label": "Pulmonary Embolism (PE)", "value": "pe" },
+              { "label": "DVT + PE", "value": "dvt_and_pe" }
+            ]
+          },
+          {
+            "id": "dvtpe-pe-hemodynamic",
+            "name": "peHemodynamicStatus",
+            "label": "PE Hemodynamic Status",
+            "type": "select",
+            "defaultValue": "stable",
+            "visibleWhen": {
+              "all": [
+                { "field": "pathway", "op": "eq", "value": "dvt_pe_treatment" },
+                { "field": "vteType", "op": "in", "value": ["pe", "dvt_and_pe"] }
+              ]
+            },
+            "options": [
+              { "label": "Hemodynamically Stable (Low Risk)", "value": "stable" },
+              { "label": "Submassive (RV Dysfunction, Stable)", "value": "submassive" },
+              { "label": "Massive (Hemodynamic Compromise)", "value": "massive" }
+            ]
+          },
+          {
+            "id": "dvtpe-distal-symptoms",
+            "name": "distalDVTSymptoms",
+            "label": "Distal DVT Presentation",
+            "type": "select",
+            "defaultValue": "symptomatic",
+            "visibleWhen": {
+              "all": [
+                { "field": "pathway", "op": "eq", "value": "dvt_pe_treatment" },
+                { "field": "vteType", "op": "eq", "value": "dvt_distal" }
+              ]
+            },
+            "options": [
+              { "label": "Symptomatic", "value": "symptomatic" },
+              { "label": "Asymptomatic / Incidentally Detected", "value": "asymptomatic" }
+            ]
+          },
+          {
+            "id": "dvtpe-provoked",
+            "name": "provoked",
+            "label": "Provocation Status",
+            "type": "select",
+            "defaultValue": "unprovoked",
+            "visibleWhen": { "field": "pathway", "op": "eq", "value": "dvt_pe_treatment" },
+            "options": [
+              { "label": "Unprovoked", "value": "unprovoked" },
+              { "label": "Provoked — Transient Risk Factor (surgery, trauma, immobility, estrogen)", "value": "provoked_transient" },
+              { "label": "Provoked — Chronic / Persistent Risk Factor", "value": "provoked_chronic" }
+            ]
+          },
+          {
+            "id": "dvtpe-prior-vte",
+            "name": "priorVTEHistory",
+            "label": "Prior VTE History",
+            "type": "select",
+            "defaultValue": "none",
+            "visibleWhen": { "field": "pathway", "op": "eq", "value": "dvt_pe_treatment" },
+            "options": [
+              { "label": "No prior VTE", "value": "none" },
+              { "label": "Prior unprovoked VTE", "value": "prior_unprovoked" },
+              { "label": "Prior VTE provoked by transient risk factor", "value": "prior_transient_provoked" },
+              { "label": "Prior VTE provoked by chronic risk factor", "value": "prior_chronic_provoked" }
+            ]
+          },
+          {
+            "id": "cat-clinical-context",
+            "name": "clinicalContext",
+            "label": "Clinical Context",
+            "type": "select",
+            "defaultValue": "treatment_of_vte",
+            "visibleWhen": { "field": "pathway", "op": "eq", "value": "cancer_associated_thrombosis" },
+            "options": [
+              { "label": "Treatment of Established VTE", "value": "treatment_of_vte" },
+              { "label": "Hospitalized Medical Patient", "value": "hospitalized_medical" },
+              { "label": "Ambulatory — Receiving Systemic Therapy", "value": "ambulatory_systemic_therapy" },
+              { "label": "Surgical Cancer Patient", "value": "surgical" },
+              { "label": "Central Venous Catheter (CVC)", "value": "cvc_related" }
+            ]
+          },
+          {
+            "id": "cat-cancer-type",
+            "name": "cancerType",
+            "label": "Cancer Type",
+            "type": "select",
+            "defaultValue": "other_solid_tumor",
+            "visibleWhen": { "field": "pathway", "op": "eq", "value": "cancer_associated_thrombosis" },
+            "options": [
+              { "label": "GI Cancer (gastric, colorectal, pancreatic, esophageal)", "value": "gi_cancer" },
+              { "label": "GU Cancer (bladder, renal, prostate)", "value": "gu_cancer" },
+              { "label": "Hematologic Malignancy", "value": "hematologic" },
+              { "label": "Other Solid Tumor (lung, breast, gynecologic, etc.)", "value": "other_solid_tumor" }
+            ]
+          },
+          {
+            "id": "cat-khorana-score",
+            "name": "khoranaScore",
+            "label": "Khorana Score",
+            "type": "select",
+            "defaultValue": 1,
+            "visibleWhen": {
+              "all": [
+                { "field": "pathway", "op": "eq", "value": "cancer_associated_thrombosis" },
+                { "field": "clinicalContext", "op": "eq", "value": "ambulatory_systemic_therapy" }
+              ]
+            },
+            "options": [
+              { "label": "0 — Very Low Risk", "value": 0 },
+              { "label": "1 — Low Risk", "value": 1 },
+              { "label": "2 — High Risk", "value": 2 },
+              { "label": "3 — High Risk", "value": 3 },
+              { "label": "≥4 — Very High Risk", "value": 4 }
+            ]
+          },
+          {
+            "id": "cat-treatment-phase",
+            "name": "treatmentPhase",
+            "label": "Treatment Phase",
+            "type": "select",
+            "defaultValue": "short_term_3_6mo",
+            "visibleWhen": {
+              "all": [
+                { "field": "pathway", "op": "eq", "value": "cancer_associated_thrombosis" },
+                { "field": "clinicalContext", "op": "eq", "value": "treatment_of_vte" }
+              ]
+            },
+            "options": [
+              { "label": "Initial (First Week)", "value": "initial_first_week" },
+              { "label": "Short-Term (3–6 Months)", "value": "short_term_3_6mo" },
+              { "label": "Long-Term (>6 Months)", "value": "long_term_over_6mo" }
+            ]
+          },
+          {
+            "id": "cat-vte-type",
+            "name": "vteType",
+            "label": "VTE Type",
+            "type": "select",
+            "defaultValue": "dvt",
+            "visibleWhen": {
+              "all": [
+                { "field": "pathway", "op": "eq", "value": "cancer_associated_thrombosis" },
+                { "field": "clinicalContext", "op": "eq", "value": "treatment_of_vte" }
+              ]
+            },
+            "options": [
+              { "label": "DVT", "value": "dvt" },
+              { "label": "PE (symptomatic)", "value": "pe" },
+              { "label": "Incidental (Unsuspected) PE", "value": "incidental_pe" },
+              { "label": "Subsegmental PE (SSPE)", "value": "subsegmental_pe" },
+              { "label": "Visceral / Splanchnic Vein Thrombosis", "value": "visceral_splanchnic" },
+              { "label": "CVC-Related VTE", "value": "cvc_related_vte" }
+            ]
+          },
+          {
+            "id": "cat-surgical-procedure",
+            "name": "surgicalProcedure",
+            "label": "Surgical Procedure Type",
+            "type": "select",
+            "defaultValue": null,
+            "visibleWhen": {
+              "all": [
+                { "field": "pathway", "op": "eq", "value": "cancer_associated_thrombosis" },
+                { "field": "clinicalContext", "op": "eq", "value": "surgical" }
+              ]
+            },
+            "options": [
+              { "label": "Low Bleeding Risk Surgery", "value": "low_bleed_risk" },
+              { "label": "High Bleeding Risk Surgery", "value": "high_bleed_risk" },
+              { "label": "Major Abdominal / Pelvic Surgery", "value": "major_abdominal_pelvic" }
+            ]
+          },
+          {
+            "id": "thrombo-vte-type",
+            "name": "vteType",
+            "label": "VTE Presentation / Clinical Context",
+            "type": "select",
+            "defaultValue": "unprovoked",
+            "visibleWhen": { "field": "pathway", "op": "eq", "value": "thrombophilia_testing" },
+            "options": [
+              { "label": "Unprovoked VTE", "value": "unprovoked" },
+              { "label": "VTE Provoked by Surgery", "value": "provoked_surgical" },
+              { "label": "VTE Provoked by Nonsurgical Major Transient Risk Factor (hospitalization, immobility, trauma)", "value": "provoked_nonsurgical_major_transient" },
+              { "label": "VTE Provoked by Pregnancy / Postpartum", "value": "provoked_pregnancy_postpartum" },
+              { "label": "VTE Associated with Combined Oral Contraceptive (COC) Use", "value": "provoked_coc" },
+              { "label": "Unusual Site — Cerebral Venous Thrombosis (CVT)", "value": "unusual_site_cvt" },
+              { "label": "Unusual Site — Splanchnic / Visceral Vein Thrombosis", "value": "unusual_site_splanchnic" },
+              { "label": "Asymptomatic — Family History of Thrombophilia", "value": "asymptomatic_family_history" }
+            ]
+          },
+          {
+            "id": "thrombo-standard-of-care",
+            "name": "standardOfCareAnticoagulation",
+            "label": "Standard of Care Anticoagulation Decision",
+            "type": "select",
+            "defaultValue": "would_stop",
+            "visibleWhen": {
+              "all": [
+                { "field": "pathway", "op": "eq", "value": "thrombophilia_testing" },
+                { "field": "vteType", "op": "in", "value": ["unusual_site_cvt", "unusual_site_splanchnic"] }
+              ]
+            },
+            "options": [
+              { "label": "Would stop anticoagulation after primary treatment", "value": "would_stop" },
+              { "label": "Would continue anticoagulation indefinitely regardless", "value": "would_continue_indefinitely" }
+            ]
+          },
+          {
+            "id": "thrombo-family-history",
+            "name": "familyHistoryHighRiskThrombophilia",
+            "label": "Family History Type",
+            "type": "select",
+            "defaultValue": false,
+            "visibleWhen": {
+              "all": [
+                { "field": "pathway", "op": "eq", "value": "thrombophilia_testing" },
+                { "field": "vteType", "op": "eq", "value": "asymptomatic_family_history" }
+              ]
+            },
+            "options": [
+              { "label": "High-Risk Thrombophilia (antithrombin, protein C/S deficiency, homozygous FVL/PGM, APS)", "value": true },
+              { "label": "Low-Risk Thrombophilia (heterozygous FVL or PGM) or Unknown", "value": false }
+            ]
+          },
+          {
+            "id": "ped-age-group",
+            "name": "ageGroup",
+            "label": "Age Group",
+            "type": "select",
+            "defaultValue": "infant_child",
+            "visibleWhen": { "field": "pathway", "op": "eq", "value": "pediatric_vte" },
+            "options": [
+              { "label": "Neonate (0–28 days)", "value": "neonate" },
+              { "label": "Infant / Child (1 month – 11 years)", "value": "infant_child" },
+              { "label": "Adolescent (12–17 years)", "value": "adolescent" }
+            ]
+          },
+          {
+            "id": "ped-vte-type",
+            "name": "vteType",
+            "label": "VTE Type / Clinical Scenario",
+            "type": "select",
+            "defaultValue": "symptomatic_dvt_or_pe",
+            "visibleWhen": { "field": "pathway", "op": "eq", "value": "pediatric_vte" },
+            "options": [
+              { "label": "Symptomatic DVT or PE", "value": "symptomatic_dvt_or_pe" },
+              { "label": "Clinically Unsuspected (Incidental) DVT or PE", "value": "clinically_unsuspected" },
+              { "label": "Provoked VTE (duration decision)", "value": "provoked_vte" },
+              { "label": "Unprovoked VTE (duration decision)", "value": "unprovoked_vte" },
+              { "label": "Cerebral Sinus Venous Thrombosis (CSVT)", "value": "csvt" },
+              { "label": "Right Atrial Thrombus (RAT)", "value": "rat_right_atrial_thrombus" },
+              { "label": "Renal Vein Thrombosis (RVT) — Neonatal", "value": "rvt_renal_vein_thrombosis" },
+              { "label": "Portal Vein Thrombosis (PVT)", "value": "pvt_portal_vein_thrombosis" },
+              { "label": "CVAD-Related Thrombosis", "value": "cvad_related" }
+            ]
+          },
+          {
+            "id": "ped-hemodynamic",
+            "name": "hemodynamicCompromise",
+            "label": "PE Hemodynamic Status",
+            "type": "select",
+            "defaultValue": false,
+            "visibleWhen": {
+              "all": [
+                { "field": "pathway", "op": "eq", "value": "pediatric_vte" },
+                { "field": "vteType", "op": "eq", "value": "symptomatic_dvt_or_pe" }
+              ]
+            },
+            "options": [
+              { "label": "Hemodynamically Stable", "value": false },
+              { "label": "Hemodynamic Compromise", "value": true }
+            ]
+          },
+          {
+            "id": "ped-provoked-exclusions",
+            "name": "provokedExclusions",
+            "label": "Exclusion Criteria for 6-Week Duration",
+            "type": "select",
+            "defaultValue": false,
+            "visibleWhen": {
+              "all": [
+                { "field": "pathway", "op": "eq", "value": "pediatric_vte" },
+                { "field": "vteType", "op": "eq", "value": "provoked_vte" }
+              ]
+            },
+            "options": [
+              { "label": "No exclusion criteria (recurrent VTE, cancer, persistent APLA, major thrombophilia, ongoing risk factors, persistent occlusive thrombus at 6 wk)", "value": false },
+              { "label": "One or more exclusion criteria present", "value": true }
+            ]
+          },
+          {
+            "id": "ped-csvt-hemorrhage",
+            "name": "csvtHemorrhage",
+            "label": "Hemorrhage Present Secondary to Venous Congestion",
+            "type": "select",
+            "defaultValue": false,
+            "visibleWhen": {
+              "all": [
+                { "field": "pathway", "op": "eq", "value": "pediatric_vte" },
+                { "field": "vteType", "op": "eq", "value": "csvt" }
+              ]
+            },
+            "options": [
+              { "label": "No hemorrhage", "value": false },
+              { "label": "Hemorrhage present", "value": true }
+            ]
+          },
+          {
+            "id": "ped-rat-high-risk",
+            "name": "ratHighRiskFeatures",
+            "label": "High-Risk Features",
+            "type": "select",
+            "defaultValue": false,
+            "visibleWhen": {
+              "all": [
+                { "field": "pathway", "op": "eq", "value": "pediatric_vte" },
+                { "field": "vteType", "op": "eq", "value": "rat_right_atrial_thrombus" }
+              ]
+            },
+            "options": [
+              { "label": "No high-risk features", "value": false },
+              { "label": "High-risk features present (large thrombus, mobile, tricuspid valve involvement, RV dysfunction)", "value": true }
+            ]
+          },
+          {
+            "id": "ped-rat-bleeding-risk",
+            "name": "ratBleedingRisk",
+            "label": "Perceived Bleeding Risk",
+            "type": "select",
+            "defaultValue": "low",
+            "visibleWhen": {
+              "all": [
+                { "field": "pathway", "op": "eq", "value": "pediatric_vte" },
+                { "field": "vteType", "op": "eq", "value": "rat_right_atrial_thrombus" }
+              ]
+            },
+            "options": [
+              { "label": "Low Bleeding Risk", "value": "low" },
+              { "label": "High Bleeding Risk", "value": "high" }
+            ]
+          },
+          {
+            "id": "ped-rvt-life-threatening",
+            "name": "rvtLifeThreatening",
+            "label": "Life-Threatening RVT",
+            "type": "select",
+            "defaultValue": false,
+            "visibleWhen": {
+              "all": [
+                { "field": "pathway", "op": "eq", "value": "pediatric_vte" },
+                { "field": "vteType", "op": "eq", "value": "rvt_renal_vein_thrombosis" }
+              ]
+            },
+            "options": [
+              { "label": "Non-life-threatening", "value": false },
+              { "label": "Life-threatening (bilateral, IVC extension, renal failure)", "value": true }
+            ]
+          },
+          {
+            "id": "ped-pvt-occlusive",
+            "name": "pvtOcclusive",
+            "label": "PVT Type",
+            "type": "select",
+            "defaultValue": true,
+            "visibleWhen": {
+              "all": [
+                { "field": "pathway", "op": "eq", "value": "pediatric_vte" },
+                { "field": "vteType", "op": "eq", "value": "pvt_portal_vein_thrombosis" }
+              ]
+            },
+            "options": [
+              { "label": "Occlusive PVT, OR non-occlusive post-liver transplant, OR unprovoked non-occlusive", "value": true },
+              { "label": "Non-occlusive PVT in neonate, OR patient already has portal hypertension", "value": false }
+            ]
+          },
+          {
+            "id": "ped-cvad-status",
+            "name": "cvadFunctioning",
+            "label": "CVAD Status",
+            "type": "select",
+            "defaultValue": true,
+            "visibleWhen": {
+              "all": [
+                { "field": "pathway", "op": "eq", "value": "pediatric_vte" },
+                { "field": "vteType", "op": "eq", "value": "cvad_related" }
+              ]
+            },
+            "options": [
+              { "label": "CVAD still required and functioning", "value": true },
+              { "label": "CVAD no longer required OR non-functioning", "value": false }
+            ]
+          },
+          {
+            "id": "preg-clinical-context",
+            "name": "clinicalContext",
+            "label": "Clinical Context",
+            "type": "select",
+            "defaultValue": "treatment_acute_vte",
+            "visibleWhen": { "field": "pathway", "op": "eq", "value": "pregnancy_vte" },
+            "options": [
+              { "label": "Treatment of Acute VTE During Pregnancy", "value": "treatment_acute_vte" },
+              { "label": "Prophylaxis — Prior VTE History", "value": "prophylaxis_prior_vte" },
+              { "label": "Prophylaxis — Thrombophilia (No Prior VTE)", "value": "prophylaxis_thrombophilia" },
+              { "label": "Postpartum Anticoagulation Management", "value": "postpartum_management" }
+            ]
+          },
+          {
+            "id": "preg-trimester",
+            "name": "trimester",
+            "label": "Trimester / Timing",
+            "type": "select",
+            "defaultValue": "second",
+            "visibleWhen": { "field": "pathway", "op": "eq", "value": "pregnancy_vte" },
+            "options": [
+              { "label": "First Trimester (0–13 weeks)", "value": "first" },
+              { "label": "Second Trimester (14–26 weeks)", "value": "second" },
+              { "label": "Third Trimester (27–40 weeks)", "value": "third" },
+              { "label": "Postpartum", "value": "postpartum" }
+            ]
+          },
+          {
+            "id": "preg-thrombophilia-type",
+            "name": "thrombophiliaType",
+            "label": "Thrombophilia Status",
+            "type": "select",
+            "defaultValue": "none",
+            "visibleWhen": { "field": "pathway", "op": "eq", "value": "pregnancy_vte" },
+            "options": [
+              { "label": "No known thrombophilia", "value": "none" },
+              { "label": "Low-Risk Thrombophilia (heterozygous FVL or PGM)", "value": "low_risk" },
+              { "label": "High-Risk Thrombophilia (antithrombin, protein C/S deficiency, homozygous FVL/PGM)", "value": "high_risk" },
+              { "label": "Antiphospholipid Syndrome (APS)", "value": "antiphospholipid_syndrome" }
+            ]
+          },
+          {
+            "id": "preg-prior-vte-provoked",
+            "name": "priorVTEProvoked",
+            "label": "Prior VTE Provocation Status",
+            "type": "select",
+            "defaultValue": true,
+            "visibleWhen": {
+              "all": [
+                { "field": "pathway", "op": "eq", "value": "pregnancy_vte" },
+                { "field": "clinicalContext", "op": "eq", "value": "prophylaxis_prior_vte" }
+              ]
+            },
+            "options": [
+              { "label": "Prior VTE was provoked by a transient risk factor", "value": true },
+              { "label": "Prior VTE was unprovoked or provoked by chronic/hormonal factor", "value": false }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "clinical-details",
+        "shortLabel": "Clinical Details",
+        "title": "Clinical Details",
+        "fields": [
+          {
+            "id": "dvtpe-cancer-present",
+            "name": "cancerPresent",
+            "label": "Active Cancer",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "pathway", "op": "eq", "value": "dvt_pe_treatment" }
+          },
+          {
+            "id": "dvtpe-aps",
+            "name": "antiphospholipidSyndrome",
+            "label": "Antiphospholipid Syndrome (APS)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "pathway", "op": "eq", "value": "dvt_pe_treatment" }
+          },
+          {
+            "id": "dvtpe-high-bleeding-risk",
+            "name": "highBleedingRisk",
+            "label": "High Bleeding Risk",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "pathway", "op": "eq", "value": "dvt_pe_treatment" }
+          },
+          {
+            "id": "dvtpe-on-vka",
+            "name": "currentlyOnVKA",
+            "label": "Breakthrough VTE on Therapeutic VKA",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "pathway", "op": "eq", "value": "dvt_pe_treatment" }
+          },
+          {
+            "id": "dvtpe-on-doac",
+            "name": "currentlyOnDOAC",
+            "label": "Currently on DOAC",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "pathway", "op": "eq", "value": "dvt_pe_treatment" }
+          },
+          {
+            "id": "dvtpe-renal-function",
+            "name": "renalFunction",
+            "label": "Renal Function",
+            "type": "select",
+            "defaultValue": "normal",
+            "visibleWhen": { "field": "pathway", "op": "eq", "value": "dvt_pe_treatment" },
+            "options": [
+              { "label": "Normal (CrCl ≥50 mL/min)", "value": "normal" },
+              { "label": "Mild Impairment (CrCl 30–49 mL/min)", "value": "mild_impairment" },
+              { "label": "Severe Impairment (CrCl <30 mL/min)", "value": "severe_impairment" }
+            ]
+          },
+          {
+            "id": "dvtpe-liver-disease",
+            "name": "liverDisease",
+            "label": "Liver Disease",
+            "type": "select",
+            "defaultValue": "none",
+            "visibleWhen": { "field": "pathway", "op": "eq", "value": "dvt_pe_treatment" },
+            "options": [
+              { "label": "None", "value": "none" },
+              { "label": "Mild", "value": "mild" },
+              { "label": "Moderate to Severe", "value": "moderate_severe" }
+            ]
+          },
+          {
+            "id": "cat-high-bleeding-risk",
+            "name": "highBleedingRisk",
+            "label": "High Bleeding Risk",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "pathway", "op": "eq", "value": "cancer_associated_thrombosis" }
+          },
+          {
+            "id": "cat-recurrent-on-lmwh",
+            "name": "recurrentVTEOnLMWH",
+            "label": "Recurrent VTE Despite Therapeutic LMWH",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "pathway", "op": "eq", "value": "cancer_associated_thrombosis" }
+          },
+          {
+            "id": "cat-recurrent-on-anticoagulation",
+            "name": "recurrentVTEOnAnticoagulation",
+            "label": "Recurrent VTE Despite Anticoagulation",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "pathway", "op": "eq", "value": "cancer_associated_thrombosis" }
+          }
+        ]
+      }
+    ]
+  }
+}

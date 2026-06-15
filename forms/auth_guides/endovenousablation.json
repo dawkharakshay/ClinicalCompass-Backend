@@ -1,0 +1,126 @@
+{
+  "title": "Endovenous Ablation Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "EndovenousAblationAuthGuide.tsx",
+    "title": "Endovenous Ablation — Authorization Guide",
+    "subtitle": null,
+    "cptCodes": [
+      { "code": "36475", "description": "Endovenous ablation therapy of incompetent vein, extremity, inclusive of all imaging guidance and monitoring, percutaneous, radiofrequency; first vein treated" },
+      { "code": "36476", "description": "Endovenous ablation, radiofrequency; second and subsequent veins treated in a single extremity, each through separate access sites" },
+      { "code": "36478", "description": "Endovenous ablation therapy, laser; first vein treated" },
+      { "code": "36479", "description": "Endovenous ablation, laser; second and subsequent veins treated in a single extremity" },
+      { "code": "36482", "description": "Endovenous ablation therapy, mechanochemical (MOCA); first vein treated" },
+      { "code": "36483", "description": "Endovenous ablation, mechanochemical; second and subsequent veins" },
+      { "code": "93971", "description": "Duplex scan of extremity veins, unilateral (pre-procedure mapping)" }
+    ],
+    "icd10Codes": [
+      { "code": "I83.001", "description": "Varicose veins of right lower extremity with ulcer of thigh" },
+      { "code": "I83.009", "description": "Varicose veins of right lower extremity with ulcer of unspecified site" },
+      { "code": "I83.10", "description": "Varicose veins of unspecified lower extremity with inflammation" },
+      { "code": "I83.209", "description": "Varicose veins of unspecified lower extremity with both ulcer and inflammation" },
+      { "code": "I83.811", "description": "Varicose veins of right lower extremity with pain" },
+      { "code": "I83.812", "description": "Varicose veins of left lower extremity with pain" },
+      { "code": "I83.891", "description": "Varicose veins of right lower extremity with other complications" },
+      { "code": "I83.90", "description": "Asymptomatic varicose veins of unspecified lower extremity" },
+      { "code": "I87.2", "description": "Venous insufficiency (chronic) (peripheral)" },
+      { "code": "I87.301", "description": "Chronic venous hypertension (idiopathic) with ulcer of right lower extremity" }
+    ],
+    "payers": [
+      {
+        "key": "universal",
+        "label": "Universal Requirements (Most Payers)",
+        "sections": [
+          {
+            "heading": "Universal Requirements (Most Payers)",
+            "items": [
+              "CEAP classification C2 or higher (symptomatic varicose veins or higher)",
+              "Duplex ultrasound confirming truncal vein (GSV or SSV) reflux ≥0.5 seconds in standing position",
+              "Graduated compression stocking trial ≥6 weeks (20–30 mmHg) with documented compliance and failure",
+              "Symptoms attributable to venous insufficiency (pain, heaviness, swelling, skin changes)",
+              "Procedure performed by qualified physician in accredited facility"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "medicare",
+        "label": "Medicare (CMS LCD L35000 / A56648)",
+        "sections": [
+          {
+            "heading": "Medicare (CMS LCD L35000 / A56648)",
+            "items": [
+              "CEAP C2–C6 with documented symptoms",
+              "Duplex-confirmed reflux ≥0.5s (GSV) or ≥1.0s (SSV) in standing position",
+              "Compression stocking trial ≥12 weeks for C2–C3; may be waived for C4–C6",
+              "Vein diameter ≥2 mm on duplex (most LCDs)",
+              "Medical necessity documentation including VCSS score"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "commercial",
+        "label": "Commercial Payers (Aetna, BCBS, UHC, Cigna)",
+        "sections": [
+          {
+            "heading": "Commercial Payers (Aetna, BCBS, UHC, Cigna)",
+            "items": [
+              "Most require 3–6 week compression trial; some require 12 weeks",
+              "VCSS ≥7 or CEAP C3+ often required for expedited authorization",
+              "Active venous ulcer (C6) may qualify without compression trial",
+              "Bilateral procedures may require separate authorizations",
+              "Aetna: Requires CEAP C2+ with symptoms AND duplex-confirmed reflux; C1 not covered"
+            ]
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Documentation Checklist",
+        "kind": "list",
+        "items": [
+          "Duplex ultrasound report with reflux duration, vein diameter, and standing protocol",
+          "CEAP classification and VCSS score documented in office note",
+          "Compression stocking prescription and compliance documentation",
+          "Photographs of varicosities and/or skin changes",
+          "Failed conservative therapy documentation (dates, duration, compliance)"
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# Endovenous Ablation — Authorization Guide\n\n## CPT Codes — Endovenous Ablation\n\n| CPT | Description |\n| --- | --- |\n| 36475 | Endovenous ablation therapy of incompetent vein, extremity, inclusive of all imaging guidance and monitoring, percutaneous, radiofrequency; first vein treated |\n| 36476 | Endovenous ablation, radiofrequency; second and subsequent veins treated in a single extremity, each through separate access sites |\n| 36478 | Endovenous ablation therapy, laser; first vein treated |\n| 36479 | Endovenous ablation, laser; second and subsequent veins treated in a single extremity |\n| 36482 | Endovenous ablation therapy, mechanochemical (MOCA); first vein treated |\n| 36483 | Endovenous ablation, mechanochemical; second and subsequent veins |\n| 93971 | Duplex scan of extremity veins, unilateral (pre-procedure mapping) |\n\n## ICD-10 Diagnosis Codes\n\n| ICD-10 | Description |\n| --- | --- |\n| I83.001 | Varicose veins of right lower extremity with ulcer of thigh |\n| I83.009 | Varicose veins of right lower extremity with ulcer of unspecified site |\n| I83.10 | Varicose veins of unspecified lower extremity with inflammation |\n| I83.209 | Varicose veins of unspecified lower extremity with both ulcer and inflammation |\n| I83.811 | Varicose veins of right lower extremity with pain |\n| I83.812 | Varicose veins of left lower extremity with pain |\n| I83.891 | Varicose veins of right lower extremity with other complications |\n| I83.90 | Asymptomatic varicose veins of unspecified lower extremity |\n| I87.2 | Venous insufficiency (chronic) (peripheral) |\n| I87.301 | Chronic venous hypertension (idiopathic) with ulcer of right lower extremity |\n\n## Standard Payer Requirements\n\n### Universal Requirements (Most Payers)\n\n- CEAP classification C2 or higher (symptomatic varicose veins or higher)\n- Duplex ultrasound confirming truncal vein (GSV or SSV) reflux ≥0.5 seconds in standing position\n- Graduated compression stocking trial ≥6 weeks (20–30 mmHg) with documented compliance and failure\n- Symptoms attributable to venous insufficiency (pain, heaviness, swelling, skin changes)\n- Procedure performed by qualified physician in accredited facility\n\n### Medicare (CMS LCD L35000 / A56648)\n\n- CEAP C2–C6 with documented symptoms\n- Duplex-confirmed reflux ≥0.5s (GSV) or ≥1.0s (SSV) in standing position\n- Compression stocking trial ≥12 weeks for C2–C3; may be waived for C4–C6\n- Vein diameter ≥2 mm on duplex (most LCDs)\n- Medical necessity documentation including VCSS score\n\n### Commercial Payers (Aetna, BCBS, UHC, Cigna)\n\n- Most require 3–6 week compression trial; some require 12 weeks\n- VCSS ≥7 or CEAP C3+ often required for expedited authorization\n- Active venous ulcer (C6) may qualify without compression trial\n- Bilateral procedures may require separate authorizations\n- Aetna: Requires CEAP C2+ with symptoms AND duplex-confirmed reflux; C1 not covered\n\n### Documentation Checklist\n\n- Duplex ultrasound report with reflux duration, vein diameter, and standing protocol\n- CEAP classification and VCSS score documented in office note\n- Compression stocking prescription and compliance documentation\n- Photographs of varicosities and/or skin changes\n- Failed conservative therapy documentation (dates, duration, compliance)\n",
+      "tables": [
+        {
+          "name": "CPT Codes — Endovenous Ablation",
+          "header": ["CPT", "Description"],
+          "rows": [
+            ["36475", "Endovenous ablation therapy of incompetent vein, extremity, inclusive of all imaging guidance and monitoring, percutaneous, radiofrequency; first vein treated"],
+            ["36476", "Endovenous ablation, radiofrequency; second and subsequent veins treated in a single extremity, each through separate access sites"],
+            ["36478", "Endovenous ablation therapy, laser; first vein treated"],
+            ["36479", "Endovenous ablation, laser; second and subsequent veins treated in a single extremity"],
+            ["36482", "Endovenous ablation therapy, mechanochemical (MOCA); first vein treated"],
+            ["36483", "Endovenous ablation, mechanochemical; second and subsequent veins"],
+            ["93971", "Duplex scan of extremity veins, unilateral (pre-procedure mapping)"]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["ICD-10", "Description"],
+          "rows": [
+            ["I83.001", "Varicose veins of right lower extremity with ulcer of thigh"],
+            ["I83.009", "Varicose veins of right lower extremity with ulcer of unspecified site"],
+            ["I83.10", "Varicose veins of unspecified lower extremity with inflammation"],
+            ["I83.209", "Varicose veins of unspecified lower extremity with both ulcer and inflammation"],
+            ["I83.811", "Varicose veins of right lower extremity with pain"],
+            ["I83.812", "Varicose veins of left lower extremity with pain"],
+            ["I83.891", "Varicose veins of right lower extremity with other complications"],
+            ["I83.90", "Asymptomatic varicose veins of unspecified lower extremity"],
+            ["I87.2", "Venous insufficiency (chronic) (peripheral)"],
+            ["I87.301", "Chronic venous hypertension (idiopathic) with ulcer of right lower extremity"]
+          ]
+        }
+      ]
+    }
+  }
+}

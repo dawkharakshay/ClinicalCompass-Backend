@@ -1,0 +1,30 @@
+{
+  "title": "Venous Thromboembolism Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "37212, 37191, 37187",
+      "credentials": "[Credentials]",
+      "icd_codes": "I82.409, I82.4Z1, I82.4Z2, I26.99",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\nRe: Medical Necessity Appeal — VTE Treatment / Catheter-Directed Thrombolysis\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\n\nDear Medical Director / Utilization Review Committee,\n\nI am writing to formally appeal the denial of prior authorization for venous thromboembolic (VTE) treatment for my patient. This intervention is medically necessary and is supported by the highest level of evidence from current multisociety guidelines and randomized controlled trials.\n\nCLINICAL SUMMARY\nMy patient presents with acute VTE requiring treatment. Following comprehensive clinical evaluation using the VTE Compass™ clinical decision support tool (based on ASH 2020, CHEST 2021, and ESC 2019 guidelines), the recommended intervention is: [VTE Treatment Recommendation].\n\nGUIDELINE SUPPORT\nThis recommendation is based on the following evidence-based guidelines and peer-reviewed literature:\n\n1. ASH 2020 Guidelines for VTE Management: Catheter-directed thrombolysis (CDT) is recommended for massive and submassive PE with hemodynamic compromise or right ventricular dysfunction — conditional recommendation based on randomized controlled trial data.\n\n2. CHEST 2021 Antithrombotic Therapy Guidelines: Extended anticoagulation is recommended for unprovoked DVT/PE to prevent recurrence — Grade 1B recommendation from multiple RCTs demonstrating 50-80% reduction in recurrent VTE.\n\n3. ATTRACT Trial (NEJM 2017;377:2240-2252): Pharmacomechanical CDT significantly reduced post-thrombotic syndrome severity at 24 months in patients with proximal DVT — landmark multicenter RCT.\n\n4. SEATTLE II Trial (JACC Cardiovasc Interv 2015;8:1382-1392): Ultrasound-facilitated CDT reduced RV/LV ratio, pulmonary hypertension, and clot burden in intermediate-risk PE with a favorable safety profile.\n\n5. ESC 2019 Guidelines on Acute PE: Reperfusion therapy (CDT or surgical embolectomy) is recommended for high-risk PE with hemodynamic instability — Class I, Level B recommendation.\n\nMEDICAL NECESSITY\nWithout this intervention, my patient faces:\n• Ongoing hemodynamic compromise and risk of cardiovascular collapse\n• Progressive right ventricular dysfunction and failure\n• Development of chronic thromboembolic pulmonary hypertension (CTEPH)\n• Post-thrombotic syndrome with chronic venous insufficiency and disability\n• Significant risk of recurrent VTE and mortality\n\nThe requested intervention is the appropriate next step per multisociety guidelines and is necessary to prevent life-threatening complications.\n\nREQUESTED ACTION\nI respectfully request that you overturn the denial and authorize the requested VTE treatment. I am available to discuss this case further and can provide comprehensive documentation including imaging studies, echocardiography results, laboratory values, and prior treatment records upon request.\n\n{{additional_clinical_notes}}\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

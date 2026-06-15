@@ -1,0 +1,376 @@
+{
+  "title": "Varicocele Embolization Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "VaricoceleAuthGuide.tsx",
+    "title": "Varicocele Clinical Compass",
+    "subtitle": "Varicocele Embolization and Surgical Ligation Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "37241",
+        "description": "Vascular embolization or occlusion, inclusive of all radiological supervision and interpretation, intraprocedural roadmapping, and imaging guidance necessary to complete the intervention; venous, other than hemorrhage (e.g., congenital or acquired venous malformations, varicoceles, varices, etc.)",
+        "device": "Catheter, Embolic Agents (coils, sclerosants)",
+        "access": "Percutaneous",
+        "rvu": 8.75,
+        "includes": [
+          "Radiological supervision and interpretation",
+          "Intraprocedural roadmapping",
+          "Imaging guidance"
+        ],
+        "note": "Used for varicocele embolization procedures."
+      },
+      {
+        "code": "55530",
+        "description": "Excision of varicocele or ligation of spermatic veins for varicocele; (separate procedure)",
+        "device": "Surgical instruments",
+        "access": "Open surgical approach (inguinal, subinguinal, retroperitoneal)",
+        "rvu": 5.75,
+        "includes": [
+          "Ligation of spermatic veins",
+          "Excision of varicocele"
+        ],
+        "note": "Used for surgical correction of varicocele."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "I86.1",
+        "description": "Scrotal varices",
+        "notes": "Primary diagnosis code for varicocele.",
+        "required": true
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered (Medically Necessary)",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Medicare generally does not require prior authorization for medically necessary varicocele repair procedures, but local coverage determinations (LCDs) may apply. Always verify with the specific Medicare Administrative Contractor (MAC).",
+        "overview": "Medicare covers varicocele repair (embolization or surgical ligation) when deemed medically necessary, typically for symptomatic varicoceles or those contributing to infertility. Documentation must support medical necessity.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Criteria",
+            "items": [
+              "Symptomatic varicocele (e.g., pain, discomfort)",
+              "Varicocele associated with male infertility (e.g., abnormal semen parameters)",
+              "Ipsilateral testicular atrophy in adolescents with Grade II or III varicocele",
+              "Recurrence after previous varicocele repair"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Infertility-Specific Criteria",
+            "items": [
+              "Couple has been unable to conceive after 12 months of unprotected intercourse (or 6 months if female partner is >35 years old)",
+              "Female partner has normal fertility or correctable infertility factors",
+              "Male partner has abnormal semen analysis (e.g., oligozoospermia, asthenozoospermia, teratozoospermia) consistent with varicocele effect"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Detailed history and physical examination notes",
+              "Documentation of symptoms (e.g., pain severity, duration, impact on daily activities)",
+              "Semen analysis reports (at least two abnormal analyses for infertility cases)",
+              "Testicular ultrasound reports (confirming varicocele grade and testicular volume)",
+              "Hormone levels (e.g., FSH, LH, testosterone) if indicated",
+              "Documentation of conservative management attempts (if applicable)"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Adolescent-Specific Documentation",
+            "items": [
+              "Serial testicular volume measurements demonstrating progressive ipsilateral testicular atrophy",
+              "Documentation of Tanner staging"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims with appropriate CPT and ICD-10 codes.",
+              "Ensure all supporting clinical documentation is readily available for review upon request.",
+              "For complex cases, consider submitting a redetermination request with comprehensive medical records if initially denied."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity (e.g., asymptomatic varicocele, normal semen parameters)",
+              "Insufficient documentation of testicular atrophy in adolescents",
+              "Failure to meet specific local coverage determination (LCD) criteria",
+              "Experimental/investigational designation for certain techniques or devices (rare for standard procedures)."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Reimbursement is based on the Medicare Physician Fee Schedule (MPFS) and applicable Ambulatory Surgical Center (ASC) payment systems. RVU values are used in calculating physician payment."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your MAC's specific LCDs for varicocele repair.",
+              "Clearly document all symptoms, physical exam findings, and diagnostic test results.",
+              "For infertility cases, ensure comprehensive evaluation of both partners is documented."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS (National)",
+            "status": "Covered",
+            "notes": "Covers medically necessary varicocele repair."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered with Prior Authorization (Medically Necessary)",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid programs almost universally require prior authorization for varicocele repair procedures. Coverage criteria and documentation requirements vary significantly by state. Always verify with the specific state Medicaid program.",
+        "overview": "Medicaid covers varicocele repair when medically necessary, but policies are highly state-specific. Prior authorization is typically required, and strict adherence to state-defined medical necessity criteria is essential.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Criteria (State-Specific)",
+            "items": [
+              "Significant scrotal pain or discomfort unresponsive to conservative management",
+              "Documented male infertility with abnormal semen parameters attributable to varicocele",
+              "Adolescent with Grade II or III varicocele and documented ipsilateral testicular hypotrophy/atrophy",
+              "Recurrent varicocele after prior surgical correction"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Infertility-Specific Criteria (Often Stricter)",
+            "items": [
+              "Proof of couple's infertility for at least 1 year (or 6 months if female >35)",
+              "Normal female fertility workup or corrected female factors",
+              "Multiple abnormal semen analyses",
+              "Varicocele confirmed by physical exam and ultrasound"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Comprehensive medical history and physical exam",
+              "Pain assessment (if applicable) with failed conservative treatment documentation",
+              "Semen analysis results (multiple, if required by state)",
+              "Testicular ultrasound with measurements",
+              "Growth charts for adolescents with testicular atrophy",
+              "Infertility workup results for both partners (if applicable)"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization Form",
+            "items": [
+              "Completed state-specific prior authorization form",
+              "All supporting clinical notes and diagnostic reports"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request with all required documentation before the procedure.",
+              "Follow up on authorization status regularly.",
+              "Once approved, submit claims with the authorization number and appropriate CPT/ICD-10 codes."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization",
+              "Failure to meet state-specific medical necessity criteria",
+              "Incomplete or insufficient documentation",
+              "Varicocele considered asymptomatic or not contributing to infertility",
+              "Procedure deemed cosmetic or elective (especially for infertility without clear medical indication)."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Reimbursement rates are determined by individual state Medicaid fee schedules, which are typically lower than Medicare or private insurance."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Contact the state Medicaid program directly for their most current varicocele policy.",
+              "Be meticulous with documentation, especially for infertility-related claims.",
+              "Appeal denials promptly with additional supporting evidence."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (Varies)",
+            "status": "Covered with PA",
+            "notes": "Policies are highly variable by state; always check specific state guidelines."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Covered with Prior Authorization (Medically Necessary)",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for varicocele embolization or surgical ligation. Coverage criteria are generally similar to Medicare but can vary significantly by plan and employer group. Always verify benefits and requirements.",
+        "overview": "Private insurance coverage for varicocele repair is common but almost always requires prior authorization. Medical necessity must be clearly established through clinical documentation, and specific plan criteria must be met.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Medical Necessity",
+            "items": [
+              "Persistent scrotal pain or discomfort (Grade II or III varicocele) unresponsive to analgesics and scrotal support for at least 3-6 months",
+              "Documented testicular atrophy (≥20% volume reduction or >2 mL difference compared to contralateral testis) in adolescents with palpable varicocele",
+              "Male factor infertility with abnormal semen parameters (e.g., low sperm count, motility, or morphology) and palpable varicocele",
+              "Recurrence of varicocele after prior surgical intervention"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Infertility-Specific (Additional)",
+            "items": [
+              "Infertility duration of at least 1 year (or 6 months if female partner is ≥35 years old)",
+              "Normal or corrected female fertility factors",
+              "At least two abnormal semen analyses demonstrating persistent abnormalities",
+              "Absence of other identifiable causes of male infertility"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Records",
+            "items": [
+              "Physician's office notes detailing history, physical exam, and symptoms",
+              "Diagnostic imaging reports (e.g., scrotal ultrasound with Doppler flow studies) confirming varicocele",
+              "Semen analysis reports (multiple, if required by policy)",
+              "Testicular volume measurements (for adolescents)",
+              "Documentation of failed conservative management",
+              "Infertility workup documentation for both partners (if applicable)"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization Request",
+            "items": [
+              "Completed prior authorization form with all relevant clinical information",
+              "Letter of medical necessity from the treating physician"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit a prior authorization request with all required clinical documentation and forms.",
+              "Follow up with the insurance company to confirm receipt and status of the request.",
+              "Obtain a prior authorization approval number before scheduling the procedure.",
+              "Submit claims with the authorization number and all supporting documentation."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization or expired authorization",
+              "Failure to meet specific plan medical necessity criteria (e.g., insufficient pain, normal semen parameters)",
+              "Inadequate or missing clinical documentation",
+              "Procedure considered experimental or investigational by the plan (less common for established procedures but can occur with novel techniques)",
+              "Infertility treatment exclusions (some plans may exclude or limit coverage for infertility services)."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Reimbursement rates are based on negotiated contracts between providers and private payers. Out-of-network benefits may apply if the provider is not contracted."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify benefits and prior authorization requirements for each patient's specific plan.",
+              "Provide detailed and thorough clinical documentation to support medical necessity.",
+              "Be prepared to appeal denials with additional medical records and a strong letter of appeal."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Aetna",
+            "status": "Covered with PA",
+            "notes": "Requires medical necessity criteria to be met for embolization or ligation."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered with PA",
+            "notes": "Similar criteria to Aetna, often emphasizes symptomatic relief or infertility."
+          },
+          {
+            "payer": "Blue Cross Blue Shield (Varies)",
+            "status": "Covered with PA",
+            "notes": "Policies vary by state and specific plan; generally requires medical necessity."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Navigation",
+        "kind": "link",
+        "text": "Back to Assessment (links to /varicocele)",
+        "href": "/varicocele"
+      }
+    ],
+    "raw": {
+      "markdown": "# Varicocele Clinical Compass\n\n_Varicocele Embolization and Surgical Ligation Insurance Authorization Guide_\n\n[Back to Assessment](/varicocele)\n\n---\n\n## Procedure Codes\n\n### CPT 37241 (RVU 8.75)\n\nVascular embolization or occlusion, inclusive of all radiological supervision and interpretation, intraprocedural roadmapping, and imaging guidance necessary to complete the intervention; venous, other than hemorrhage (e.g., congenital or acquired venous malformations, varicoceles, varices, etc.)\n\n**Device/Access:** Catheter, Embolic Agents (coils, sclerosants) — Percutaneous\n\n**Included in this code (do NOT bill separately):**\n- Radiological supervision and interpretation\n- Intraprocedural roadmapping\n- Imaging guidance\n\n_Used for varicocele embolization procedures._\n\n### CPT 55530 (RVU 5.75)\n\nExcision of varicocele or ligation of spermatic veins for varicocele; (separate procedure)\n\n**Device/Access:** Surgical instruments — Open surgical approach (inguinal, subinguinal, retroperitoneal)\n\n**Included in this code (do NOT bill separately):**\n- Ligation of spermatic veins\n- Excision of varicocele\n\n_Used for surgical correction of varicocele._\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **I86.1** (Primary) — Scrotal varices. Primary diagnosis code for varicocele.\n\n---\n\n## Payer-Specific Authorization Requirements\n\n### Medicare\n\n**No Prior Auth (FFS)** | Covered (Medically Necessary)\n\n> Medicare generally does not require prior authorization for medically necessary varicocele repair procedures, but local coverage determinations (LCDs) may apply. Always verify with the specific Medicare Administrative Contractor (MAC).\n\nMedicare covers varicocele repair (embolization or surgical ligation) when deemed medically necessary, typically for symptomatic varicoceles or those contributing to infertility. Documentation must support medical necessity.\n\n#### Coverage Criteria\n\n**General Criteria**\n- Symptomatic varicocele (e.g., pain, discomfort)\n- Varicocele associated with male infertility (e.g., abnormal semen parameters)\n- Ipsilateral testicular atrophy in adolescents with Grade II or III varicocele\n- Recurrence after previous varicocele repair\n\n**Infertility-Specific Criteria**\n- Couple has been unable to conceive after 12 months of unprotected intercourse (or 6 months if female partner is >35 years old)\n- Female partner has normal fertility or correctable infertility factors\n- Male partner has abnormal semen analysis (e.g., oligozoospermia, asthenozoospermia, teratozoospermia) consistent with varicocele effect\n\n#### Required Documentation\n\n**Clinical Documentation**\n- Detailed history and physical examination notes\n- Documentation of symptoms (e.g., pain severity, duration, impact on daily activities)\n- Semen analysis reports (at least two abnormal analyses for infertility cases)\n- Testicular ultrasound reports (confirming varicocele grade and testicular volume)\n- Hormone levels (e.g., FSH, LH, testosterone) if indicated\n- Documentation of conservative management attempts (if applicable)\n\n**Adolescent-Specific Documentation**\n- Serial testicular volume measurements demonstrating progressive ipsilateral testicular atrophy\n- Documentation of Tanner staging\n\n#### Submission Process\n1. Submit claims with appropriate CPT and ICD-10 codes.\n2. Ensure all supporting clinical documentation is readily available for review upon request.\n3. For complex cases, consider submitting a redetermination request with comprehensive medical records if initially denied.\n\n#### Common Denial Reasons\n- Lack of documented medical necessity (e.g., asymptomatic varicocele, normal semen parameters)\n- Insufficient documentation of testicular atrophy in adolescents\n- Failure to meet specific local coverage determination (LCD) criteria\n- Experimental/investigational designation for certain techniques or devices (rare for standard procedures).\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS (National) | Covered | Covers medically necessary varicocele repair. |\n\n#### Reimbursement Note\nReimbursement is based on the Medicare Physician Fee Schedule (MPFS) and applicable Ambulatory Surgical Center (ASC) payment systems. RVU values are used in calculating physician payment.\n\n#### Authorization Tips\n- Familiarize yourself with your MAC's specific LCDs for varicocele repair.\n- Clearly document all symptoms, physical exam findings, and diagnostic test results.\n- For infertility cases, ensure comprehensive evaluation of both partners is documented.\n\n---\n\n### Medicaid\n\n**Prior Auth Required** | Covered with Prior Authorization (Medically Necessary)\n\n> Medicaid programs almost universally require prior authorization for varicocele repair procedures. Coverage criteria and documentation requirements vary significantly by state. Always verify with the specific state Medicaid program.\n\nMedicaid covers varicocele repair when medically necessary, but policies are highly state-specific. Prior authorization is typically required, and strict adherence to state-defined medical necessity criteria is essential.\n\n#### Coverage Criteria\n\n**General Criteria (State-Specific)**\n- Significant scrotal pain or discomfort unresponsive to conservative management\n- Documented male infertility with abnormal semen parameters attributable to varicocele\n- Adolescent with Grade II or III varicocele and documented ipsilateral testicular hypotrophy/atrophy\n- Recurrent varicocele after prior surgical correction\n\n**Infertility-Specific Criteria (Often Stricter)**\n- Proof of couple's infertility for at least 1 year (or 6 months if female >35)\n- Normal female fertility workup or corrected female factors\n- Multiple abnormal semen analyses\n- Varicocele confirmed by physical exam and ultrasound\n\n#### Required Documentation\n\n**Clinical Documentation**\n- Comprehensive medical history and physical exam\n- Pain assessment (if applicable) with failed conservative treatment documentation\n- Semen analysis results (multiple, if required by state)\n- Testicular ultrasound with measurements\n- Growth charts for adolescents with testicular atrophy\n- Infertility workup results for both partners (if applicable)\n\n**Prior Authorization Form**\n- Completed state-specific prior authorization form\n- All supporting clinical notes and diagnostic reports\n\n#### Submission Process\n1. Submit prior authorization request with all required documentation before the procedure.\n2. Follow up on authorization status regularly.\n3. Once approved, submit claims with the authorization number and appropriate CPT/ICD-10 codes.\n\n#### Common Denial Reasons\n- Lack of prior authorization\n- Failure to meet state-specific medical necessity criteria\n- Incomplete or insufficient documentation\n- Varicocele considered asymptomatic or not contributing to infertility\n- Procedure deemed cosmetic or elective (especially for infertility without clear medical indication).\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (Varies) | Covered with PA | Policies are highly variable by state; always check specific state guidelines. |\n\n#### Reimbursement Note\nReimbursement rates are determined by individual state Medicaid fee schedules, which are typically lower than Medicare or private insurance.\n\n#### Authorization Tips\n- Contact the state Medicaid program directly for their most current varicocele policy.\n- Be meticulous with documentation, especially for infertility-related claims.\n- Appeal denials promptly with additional supporting evidence.\n\n---\n\n### Private Insurance\n\n**Prior Auth Required** | Covered with Prior Authorization (Medically Necessary)\n\n> Most private insurance plans require prior authorization for varicocele embolization or surgical ligation. Coverage criteria are generally similar to Medicare but can vary significantly by plan and employer group. Always verify benefits and requirements.\n\nPrivate insurance coverage for varicocele repair is common but almost always requires prior authorization. Medical necessity must be clearly established through clinical documentation, and specific plan criteria must be met.\n\n#### Coverage Criteria\n\n**General Medical Necessity**\n- Persistent scrotal pain or discomfort (Grade II or III varicocele) unresponsive to analgesics and scrotal support for at least 3-6 months\n- Documented testicular atrophy (≥20% volume reduction or >2 mL difference compared to contralateral testis) in adolescents with palpable varicocele\n- Male factor infertility with abnormal semen parameters (e.g., low sperm count, motility, or morphology) and palpable varicocele\n- Recurrence of varicocele after prior surgical intervention\n\n**Infertility-Specific (Additional)**\n- Infertility duration of at least 1 year (or 6 months if female partner is ≥35 years old)\n- Normal or corrected female fertility factors\n- At least two abnormal semen analyses demonstrating persistent abnormalities\n- Absence of other identifiable causes of male infertility\n\n#### Required Documentation\n\n**Clinical Records**\n- Physician's office notes detailing history, physical exam, and symptoms\n- Diagnostic imaging reports (e.g., scrotal ultrasound with Doppler flow studies) confirming varicocele\n- Semen analysis reports (multiple, if required by policy)\n- Testicular volume measurements (for adolescents)\n- Documentation of failed conservative management\n- Infertility workup documentation for both partners (if applicable)\n\n**Prior Authorization Request**\n- Completed prior authorization form with all relevant clinical information\n- Letter of medical necessity from the treating physician\n\n#### Submission Process\n1. Submit a prior authorization request with all required clinical documentation and forms.\n2. Follow up with the insurance company to confirm receipt and status of the request.\n3. Obtain a prior authorization approval number before scheduling the procedure.\n4. Submit claims with the authorization number and all supporting documentation.\n\n#### Common Denial Reasons\n- Lack of prior authorization or expired authorization\n- Failure to meet specific plan medical necessity criteria (e.g., insufficient pain, normal semen parameters)\n- Inadequate or missing clinical documentation\n- Procedure considered experimental or investigational by the plan (less common for established procedures but can occur with novel techniques)\n- Infertility treatment exclusions (some plans may exclude or limit coverage for infertility services).\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Aetna | Covered with PA | Requires medical necessity criteria to be met for embolization or ligation. |\n| UnitedHealthcare | Covered with PA | Similar criteria to Aetna, often emphasizes symptomatic relief or infertility. |\n| Blue Cross Blue Shield (Varies) | Covered with PA | Policies vary by state and specific plan; generally requires medical necessity. |\n\n#### Reimbursement Note\nReimbursement rates are based on negotiated contracts between providers and private payers. Out-of-network benefits may apply if the provider is not contracted.\n\n#### Authorization Tips\n- Always verify benefits and prior authorization requirements for each patient's specific plan.\n- Provide detailed and thorough clinical documentation to support medical necessity.\n- Be prepared to appeal denials with additional medical records and a strong letter of appeal.\n",
+      "tables": [
+        {
+          "name": "CPT Procedure Codes",
+          "header": ["Code", "Description", "Device", "Access", "RVU", "Includes", "Note"],
+          "rows": [
+            [
+              "37241",
+              "Vascular embolization or occlusion, inclusive of all radiological supervision and interpretation, intraprocedural roadmapping, and imaging guidance necessary to complete the intervention; venous, other than hemorrhage (e.g., congenital or acquired venous malformations, varicoceles, varices, etc.)",
+              "Catheter, Embolic Agents (coils, sclerosants)",
+              "Percutaneous",
+              "8.75",
+              "Radiological supervision and interpretation; Intraprocedural roadmapping; Imaging guidance",
+              "Used for varicocele embolization procedures."
+            ],
+            [
+              "55530",
+              "Excision of varicocele or ligation of spermatic veins for varicocele; (separate procedure)",
+              "Surgical instruments",
+              "Open surgical approach (inguinal, subinguinal, retroperitoneal)",
+              "5.75",
+              "Ligation of spermatic veins; Excision of varicocele",
+              "Used for surgical correction of varicocele."
+            ]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required"],
+          "rows": [
+            ["I86.1", "Scrotal varices", "Primary diagnosis code for varicocele.", "Yes (Primary)"]
+          ]
+        },
+        {
+          "name": "Medicare — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS (National)", "Covered", "Covers medically necessary varicocele repair."]
+          ]
+        },
+        {
+          "name": "Medicaid — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (Varies)", "Covered with PA", "Policies are highly variable by state; always check specific state guidelines."]
+          ]
+        },
+        {
+          "name": "Private Insurance — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Aetna", "Covered with PA", "Requires medical necessity criteria to be met for embolization or ligation."],
+            ["UnitedHealthcare", "Covered with PA", "Similar criteria to Aetna, often emphasizes symptomatic relief or infertility."],
+            ["Blue Cross Blue Shield (Varies)", "Covered with PA", "Policies vary by state and specific plan; generally requires medical necessity."]
+          ]
+        }
+      ]
+    }
+  }
+}

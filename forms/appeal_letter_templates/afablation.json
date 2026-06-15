@@ -1,0 +1,30 @@
+{
+  "title": "AF Ablation Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "93656, 93657, 93655, 93621, 93462, 93613, 93660",
+      "credentials": "[Credentials]",
+      "icd_codes": "I48.0, I48.11, I48.19, I48.20, I48.91, I50.9, I42.2",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\nRe: Medical Necessity Appeal — Catheter Ablation for Atrial Fibrillation\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\n\nDear Medical Director / Utilization Review Committee,\n\nI am writing to formally appeal the denial of prior authorization for catheter ablation for atrial fibrillation (AF) for my patient. This procedure is medically necessary and is supported by the 2023 ACC/AHA/ACCP/HRS Guideline for Diagnosis and Management of Atrial Fibrillation, multiple randomized controlled trials, and CMS coverage policy NCD 20.8.3.\n\nCLINICAL ASSESSMENT SUMMARY:\nOur Clinical Compass AF Ablation Decision Support tool assessed this patient as: [AF Ablation Recommendation]\nGuideline Classification: [Guideline Class]\nCHA₂DS₂-VASc Score: [CHA2DS2-VASc]\n\n\n\nCLINICAL INDICATION:\nThis patient has [PAROXYSMAL / PERSISTENT] atrial fibrillation, first diagnosed {{letter_date}}, with [DESCRIBE SYMPTOMS: palpitations, dyspnea, fatigue, exercise intolerance, presyncope]. Symptoms have significantly impacted quality of life, limiting [DESCRIBE FUNCTIONAL IMPACT].\n\nANTIARRHYTHMIC DRUG HISTORY:\nThe patient has failed the following antiarrhythmic drug therapy:\n• [DRUG 1]: [DOSE], [DURATION] — failed due to [INEFFICACY / INTOLERANCE: describe]\n• [DRUG 2 if applicable]: [DOSE], [DURATION] — failed due to [INEFFICACY / INTOLERANCE: describe]\n\nThis satisfies the requirement for failed AAD therapy prior to catheter ablation per the 2023 ACC/AHA/ACCP/HRS Guidelines (Class I recommendation after AAD failure).\n\nEVIDENCE-BASED JUSTIFICATION:\n\n1. 2023 ACC/AHA GUIDELINE SUPPORT:\nPer the 2023 ACC/AHA/ACCP/HRS Guideline for Diagnosis and Management of Atrial Fibrillation (Joglar JA, et al., J Am Coll Cardiol 2024;83:109-279):\n• Catheter ablation is a Class I recommendation for patients with symptomatic paroxysmal or persistent AF who have failed or are intolerant of ≥1 Class I or III antiarrhythmic drug\n• Catheter ablation is a Class IIa recommendation as first-line therapy for symptomatic paroxysmal AF\n• Pulmonary vein isolation (PVI) is the cornerstone of AF ablation with success rates of 70–85% for paroxysmal AF\n\n2. RANDOMIZED CONTROLLED TRIAL EVIDENCE:\nThe CABANA trial (Packer DL, et al., JAMA 2019;321:1261-1274) demonstrated that catheter ablation significantly reduced AF recurrence and improved quality of life compared to medical therapy. Per-protocol analysis showed significant reductions in the composite endpoint of death, disabling stroke, serious bleeding, and cardiac arrest.\n\n[IF HF PRESENT]: The CASTLE-AF trial (Marrouche NF, et al., NEJM 2018;378:417-427) demonstrated that catheter ablation in patients with AF and heart failure with reduced ejection fraction (HFrEF) significantly reduced all-cause mortality (hazard ratio 0.53, p=0.01) and hospitalization for worsening heart failure compared to medical therapy.\n\n3. PRE-PROCEDURE EVALUATION:\n• Transesophageal echocardiography (TEE) / CT angiography: [RESULT — no LAA thrombus confirmed]\n• Anticoagulation: [DESCRIBE — therapeutic DOAC/warfarin for ≥3 weeks pre-procedure]\n• Electrophysiology consultation: {{letter_date}} — rhythm control strategy recommended\n\n4. RISK OF DENIAL:\nWithout catheter ablation, this patient will continue to experience [DESCRIBE: symptom burden, AF recurrence, quality-of-life impairment, risk of AF-related complications including stroke, cardiomyopathy, hospitalization]. Continued antiarrhythmic drug therapy has been unsuccessful and poses ongoing risks of [DESCRIBE AAD SIDE EFFECTS].\n\nADDITIONAL CLINICAL NOTES:\n{{additional_clinical_notes}}\n\nIn summary, catheter ablation for atrial fibrillation is medically necessary, guideline-directed, and supported by robust clinical trial evidence. I respectfully request approval of this procedure and am available for peer-to-peer review at your earliest convenience.\n\nSincerely,\n\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Geniculate Artery Embolization Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "37242, 36245, 36246, 37244",
+      "credentials": "[Credentials]",
+      "icd_codes": "M17.11, M17.12, M17.31, M17.32, M25.361, M25.362, M25.561, M25.562, M25.061, M25.062, Z96.651, Z96.652",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\nRe: Medical Necessity Appeal — Geniculate Artery Embolization (GAE) for Knee Osteoarthritis\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\n\nDear Medical Director / Utilization Review Committee,\n\nI am writing to formally appeal the denial of prior authorization for Geniculate Artery Embolization (GAE) for my patient with symptomatic knee osteoarthritis. This procedure is medically necessary and is supported by published prospective studies, randomized controlled trial data, and emerging multisociety guidance.\n\nCLINICAL SUMMARY\nMy patient presents with moderate-to-severe knee osteoarthritis with chronic pain refractory to conservative management. Following comprehensive clinical evaluation using the GAE Compass™ clinical decision support tool (based on current evidence and SIR/ACR criteria), the recommended intervention is: [GAE Recommendation].\n\nGUIDELINE SUPPORT\nThis recommendation is based on the following evidence-based publications and guidelines:\n\n1. Prospective Study (Okuno Y et al., Cardiovasc Intervent Radiol 2017): GAE demonstrated significant improvement in VAS pain scores from 7.4 to 2.4 and KOOS scores at 12 months with no major complications — the foundational evidence for GAE in knee OA.\n\n2. Multicenter Prospective Trial (Bagla S et al., J Vasc Interv Radiol 2020): 70% responder rate with durable pain relief at 12 months in patients with moderate-to-severe knee OA who had failed conservative therapy.\n\n3. Randomized Controlled Trial (Landers S et al., Cardiovasc Intervent Radiol 2021): GAE demonstrated significant superiority over sham procedure for pain and function improvement at 6 months — the highest level of evidence for this intervention.\n\n4. AOSSM/AAOS Position Statement 2023: GAE is recognized as an emerging minimally invasive option for symptomatic knee OA patients who have failed conservative therapy and are not surgical candidates or wish to defer surgery.\n\n5. ACR Appropriateness Criteria 2022: GAE is considered appropriate for moderate-to-severe knee OA pain refractory to conservative treatment in patients who are not surgical candidates.\n\nMEDICAL NECESSITY\nMy patient has failed the following conservative treatments:\n• Extended course of physical therapy (minimum 6 weeks)\n• NSAIDs and analgesic medications\n• Intra-articular corticosteroid injections\n• Viscosupplementation (hyaluronic acid)\n\nThe patient is not an appropriate surgical candidate due to [clinical reasons] or wishes to defer total knee arthroplasty. GAE represents the appropriate next intervention per current evidence and guidelines.\n\nCOST-EFFECTIVENESS\nGAE is a minimally invasive outpatient procedure that avoids the costs, risks, and recovery associated with total knee arthroplasty. It provides meaningful pain relief and functional improvement, potentially deferring or eliminating the need for surgical intervention.\n\nREQUESTED ACTION\nI respectfully request that you overturn the denial and authorize the requested GAE procedure. I am available to discuss this case further and can provide comprehensive documentation including imaging studies, prior treatment records, and functional assessment scores upon request.\n\n{{additional_clinical_notes}}\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

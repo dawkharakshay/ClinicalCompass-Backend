@@ -1,0 +1,224 @@
+{
+  "title": "Psoriasis Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "psoriasis",
+    "hiddenDefaults": {
+      "isImmunocompromised": false
+    },
+    "steps": [
+      {
+        "id": "severity",
+        "shortLabel": "Severity",
+        "title": "Psoriasis Severity Assessment",
+        "fields": [
+          {
+            "id": "pga-score",
+            "name": "pgaScore",
+            "label": "PGA Score",
+            "type": "select",
+            "defaultValue": 3,
+            "options": [
+              { "label": "0 — Clear", "value": 0 },
+              { "label": "1 — Minimal", "value": 1 },
+              { "label": "2 — Mild", "value": 2 },
+              { "label": "3 — Moderate", "value": 3 },
+              { "label": "4 — Marked", "value": 4 },
+              { "label": "5 — Severe", "value": 5 }
+            ]
+          },
+          {
+            "id": "subtype",
+            "name": "subtype",
+            "label": "Psoriasis Subtype",
+            "type": "select",
+            "defaultValue": "plaque",
+            "options": [
+              { "label": "Plaque (Psoriasis Vulgaris)", "value": "plaque" },
+              { "label": "Guttate", "value": "guttate" },
+              { "label": "Pustular — Localized (PPP)", "value": "pustular_localized" },
+              { "label": "Pustular — Generalized (GPP)", "value": "pustular_generalized" },
+              { "label": "Erythrodermic", "value": "erythrodermic" },
+              { "label": "Inverse / Intertriginous", "value": "inverse" },
+              { "label": "Nail Psoriasis", "value": "nail" },
+              { "label": "Scalp Psoriasis", "value": "scalp" }
+            ]
+          },
+          {
+            "id": "bsa-percent",
+            "name": "bsaPercent",
+            "label": "BSA Affected (%)",
+            "type": "slider",
+            "defaultValue": 10,
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "dlqi",
+            "name": "dlqi",
+            "label": "DLQI Score (0-30)",
+            "type": "slider",
+            "defaultValue": 8,
+            "min": 0,
+            "max": 30,
+            "step": 1
+          }
+        ]
+      },
+      {
+        "id": "disease-type",
+        "shortLabel": "Disease Type",
+        "title": "Disease Characteristics & Special Sites",
+        "fields": [
+          {
+            "id": "special-sites",
+            "name": "specialSites",
+            "label": "Special Site Involvement",
+            "type": "multiselect",
+            "defaultValue": [],
+            "options": [
+              { "label": "Scalp", "value": "scalp" },
+              { "label": "Nails", "value": "nails" },
+              { "label": "Palmoplantar (palms/soles)", "value": "palmoplantar" },
+              { "label": "Intertriginous", "value": "intertriginous" },
+              { "label": "Genitalia", "value": "genitalia" }
+            ]
+          },
+          {
+            "id": "has-psoriatic-arthritis",
+            "name": "hasPsoriaticArthritis",
+            "label": "Psoriatic arthritis (PsA) — confirmed or suspected",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-nail-involvement",
+            "name": "hasNailInvolvement",
+            "label": "Nail psoriasis (pitting, onycholysis, oil spots)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-obesity",
+            "name": "hasObesity",
+            "label": "Obesity (BMI >30) — affects ustekinumab dosing; GLP-1 synergy emerging",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-metabolic-syndrome",
+            "name": "hasMetabolicSyndrome",
+            "label": "Metabolic syndrome (HTN, DM, dyslipidemia, obesity)",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "history",
+        "shortLabel": "History",
+        "title": "Prior Treatment History",
+        "fields": [
+          {
+            "id": "prior-treatment",
+            "name": "priorTreatment",
+            "label": "Prior Treatment History",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "No prior treatment", "value": "none" },
+              { "label": "Failed topicals only (TCS, vitamin D analogs)", "value": "topicals_only" },
+              { "label": "Failed topicals + phototherapy (nbUVB/PUVA)", "value": "topicals_and_phototherapy" },
+              { "label": "Failed conventional systemic (MTX, cyclosporine, acitretin)", "value": "prior_conventional_systemic" },
+              { "label": "Failed TNF inhibitor (adalimumab, etanercept, infliximab)", "value": "prior_tnf" },
+              { "label": "Failed IL-17 inhibitor (secukinumab, ixekizumab, bimekizumab)", "value": "prior_il17" },
+              { "label": "Failed IL-23 inhibitor (risankizumab, guselkumab, tildrakizumab)", "value": "prior_il23" },
+              { "label": "Failed ustekinumab (IL-12/23)", "value": "prior_il12_23" }
+            ]
+          },
+          {
+            "id": "prefers-oral-therapy",
+            "name": "prefersOralTherapy",
+            "label": "Patient prefers oral therapy (deucravacitinib, apremilast, methotrexate) over injectable biologics",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "comorbidities",
+        "shortLabel": "Comorbidities",
+        "title": "Comorbidities & Contraindications",
+        "fields": [
+          {
+            "id": "has-inflammatory-bowel-disease",
+            "name": "hasInflammatoryBowelDisease",
+            "label": "Inflammatory bowel disease (Crohn's or UC) — avoid IL-17 inhibitors",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-demyelinating-disease",
+            "name": "hasDemyelinatingDisease",
+            "label": "Demyelinating disease (MS, optic neuritis) — avoid TNF inhibitors",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-cardiovascular-disease",
+            "name": "hasCardiovascularDisease",
+            "label": "Cardiovascular disease (CAD, HF, prior MACE)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-active-tuberculosis",
+            "name": "hasActiveTuberculosis",
+            "label": "Active tuberculosis — all biologics contraindicated until treated",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-chronic-hbv",
+            "name": "hasChronicHBV",
+            "label": "Chronic hepatitis B — antiviral prophylaxis required before biologics",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-hepatic-impairment",
+            "name": "hasHepaticImpairment",
+            "label": "Hepatic impairment (affects methotrexate, acitretin)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-malignancy-history",
+            "name": "hasMalignancyHistory",
+            "label": "History of malignancy — avoid TNF inhibitors",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "is-pregnant",
+            "name": "isPregnant",
+            "label": "Pregnant — avoid methotrexate, acitretin; certolizumab safest biologic",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "is-breastfeeding",
+            "name": "isBreastfeeding",
+            "label": "Breastfeeding — limited data for most biologics",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

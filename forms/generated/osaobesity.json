@@ -1,0 +1,195 @@
+{
+  "title": "OSA + Obesity Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Get Recommendation",
+    "logicKey": "osaobesity",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "osa_severity",
+        "shortLabel": "OSA Severity",
+        "title": "OSA Severity",
+        "fields": [
+          {
+            "id": "osa-severity-info",
+            "type": "alert",
+            "severity": "info",
+            "text": "AHI classification: Mild = 5–14.9 events/hr; Moderate = 15–29.9 events/hr; Severe = ≥30 events/hr. SURMOUNT-OSA enrolled patients with AHI ≥15 (moderate-to-severe). FDA approval of Zepbound for OSA requires moderate-to-severe OSA."
+          },
+          {
+            "id": "osa-severity",
+            "name": "osa_severity",
+            "label": "What is the patient's confirmed OSA severity by polysomnography (PSG) or home sleep apnea test (HSAT)?",
+            "type": "radio",
+            "required": true,
+            "options": [
+              { "label": "Mild OSA (AHI 5–14.9 events/hr)", "value": "mild" },
+              { "label": "Moderate OSA (AHI 15–29.9 events/hr)", "value": "moderate" },
+              { "label": "Severe OSA (AHI ≥30 events/hr)", "value": "severe" },
+              { "label": "Not yet confirmed — PSG/HSAT pending", "value": "pending" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "obesity_status",
+        "shortLabel": "Obesity Status",
+        "title": "Obesity Status",
+        "fields": [
+          {
+            "id": "obesity-status-info",
+            "type": "alert",
+            "severity": "info",
+            "text": "FDA approval of Zepbound for OSA requires obesity (BMI ≥30 kg/m²). SURMOUNT-OSA mean BMI was 38.8 kg/m². The OSA-obesity indication is distinct from the weight management indication."
+          },
+          {
+            "id": "obesity-status",
+            "name": "obesity_status",
+            "label": "What is the patient's BMI?",
+            "type": "radio",
+            "required": true,
+            "options": [
+              { "label": "BMI ≥40 kg/m² (Class III / severe obesity)", "value": "bmi_40plus" },
+              { "label": "BMI 35–39.9 kg/m² (Class II obesity)", "value": "bmi_35_39" },
+              { "label": "BMI 30–34.9 kg/m² (Class I obesity)", "value": "bmi_30_34" },
+              { "label": "BMI 27–29.9 kg/m² (overweight)", "value": "bmi_27_29" },
+              { "label": "BMI <27 kg/m²", "value": "bmi_under_27" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "diabetes_status",
+        "shortLabel": "Diabetes Status",
+        "title": "Diabetes Status",
+        "fields": [
+          {
+            "id": "diabetes-status-info",
+            "type": "alert",
+            "severity": "info",
+            "text": "SURMOUNT-OSA excluded patients with T2DM. The Zepbound OSA indication is specifically for patients WITHOUT T2DM. Patients with T2DM and OSA who need GIP/GLP-1 therapy should use Mounjaro (tirzepatide for T2DM) — a separate indication. Semaglutide (Ozempic/Wegovy) may be considered for weight management in T2DM patients with OSA."
+          },
+          {
+            "id": "diabetes-status",
+            "name": "diabetes_status",
+            "label": "Does the patient have type 2 diabetes mellitus (T2DM)?",
+            "type": "radio",
+            "required": true,
+            "options": [
+              { "label": "No T2DM", "value": "no_dm" },
+              { "label": "Yes — T2DM present", "value": "t2dm" },
+              { "label": "Prediabetes (A1c 5.7–6.4%)", "value": "prediabetes" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pap_status",
+        "shortLabel": "PAP Therapy Status",
+        "title": "PAP Therapy Status",
+        "fields": [
+          {
+            "id": "pap-status-info",
+            "type": "alert",
+            "severity": "info",
+            "text": "SURMOUNT-OSA enrolled two cohorts: Trial 1 (unable/unwilling to use PAP) and Trial 2 (on PAP ≥3 months). Both showed significant AHI reduction with tirzepatide. Zepbound is approved as adjunct to PAP or as standalone therapy when PAP is not used."
+          },
+          {
+            "id": "pap-status",
+            "name": "pap_status",
+            "label": "What is the patient's current PAP therapy status?",
+            "type": "radio",
+            "required": true,
+            "options": [
+              { "label": "Currently using PAP therapy (CPAP/APAP/BiPAP) ≥3 months", "value": "pap_current" },
+              { "label": "Unable to tolerate PAP therapy (documented)", "value": "pap_intolerant" },
+              { "label": "Unwilling to use PAP therapy", "value": "pap_unwilling" },
+              { "label": "PAP naive — newly diagnosed", "value": "pap_naive" },
+              { "label": "Prior PAP user, now non-adherent", "value": "pap_nonadherent" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "contraindications",
+        "shortLabel": "Contraindications Check",
+        "title": "Contraindications Check",
+        "fields": [
+          {
+            "id": "contraindications-info",
+            "type": "alert",
+            "severity": "info",
+            "text": "Absolute contraindications to Zepbound: personal/family history of medullary thyroid carcinoma (MTC) or Multiple Endocrine Neoplasia type 2 (MEN2). Relative contraindications: prior acute/chronic pancreatitis, severe GI disease, pregnancy."
+          },
+          {
+            "id": "contraindications",
+            "name": "contraindications",
+            "label": "Does the patient have any of the following contraindications to tirzepatide (Zepbound)?",
+            "type": "radio",
+            "required": true,
+            "options": [
+              { "label": "No contraindications identified", "value": "none" },
+              { "label": "Personal or family history of MTC or MEN2", "value": "mtc_men2" },
+              { "label": "History of acute or chronic pancreatitis", "value": "pancreatitis" },
+              { "label": "Severe gastroparesis or GI motility disorder", "value": "gi_disorder" },
+              { "label": "Pregnancy or planning pregnancy", "value": "pregnancy" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "prior_weight_loss",
+        "shortLabel": "Prior Weight Loss Attempts",
+        "title": "Prior Weight Loss Attempts",
+        "fields": [
+          {
+            "id": "prior-weight-loss-info",
+            "type": "alert",
+            "severity": "info",
+            "text": "Most payer prior authorization criteria require documentation of ≥1 unsuccessful dietary attempt to lose weight before approving Zepbound. SURMOUNT-OSA required ≥1 self-reported unsuccessful dietary attempt as an inclusion criterion."
+          },
+          {
+            "id": "prior-weight-loss",
+            "name": "prior_weight_loss",
+            "label": "Has the patient attempted dietary/lifestyle weight loss prior to pharmacologic therapy?",
+            "type": "radio",
+            "required": true,
+            "options": [
+              { "label": "Yes — documented unsuccessful dietary/lifestyle attempt(s)", "value": "prior_attempt" },
+              { "label": "Yes — currently enrolled in structured weight management program", "value": "in_program" },
+              { "label": "No prior documented attempts", "value": "no_attempt" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "glp1_preference",
+        "shortLabel": "GLP-1/GIP Agent Selection",
+        "title": "GLP-1/GIP Agent Selection",
+        "fields": [
+          {
+            "id": "glp1-preference-info",
+            "type": "alert",
+            "severity": "info",
+            "text": "Only tirzepatide (Zepbound) has FDA approval specifically for OSA. Semaglutide (Wegovy) is FDA-approved for chronic weight management but NOT for OSA as a specific indication. Semaglutide produces 12–15% average weight loss which can improve OSA severity; it may be considered off-label or when tirzepatide is not tolerated/available."
+          },
+          {
+            "id": "glp1-preference",
+            "name": "glp1_preference",
+            "label": "Which pharmacologic agent is being considered?",
+            "type": "radio",
+            "required": true,
+            "options": [
+              { "label": "Tirzepatide (Zepbound) — FDA-approved for OSA + obesity", "value": "tirzepatide" },
+              { "label": "Semaglutide (Wegovy) — weight management, off-label for OSA", "value": "semaglutide" },
+              { "label": "Other GLP-1 RA (liraglutide, dulaglutide)", "value": "other_glp1" },
+              { "label": "Not yet determined", "value": "undecided" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

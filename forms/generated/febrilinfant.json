@@ -1,0 +1,253 @@
+{
+  "title": "Febrile Infant Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendations",
+    "logicKey": "febrilinfant",
+    "hiddenDefaults": {
+      "gestationalAgeWeeks": 39
+    },
+    "steps": [
+      {
+        "id": "patient-age-presentation",
+        "shortLabel": "Patient Age & Presentation",
+        "title": "Patient Age & Presentation",
+        "fields": [
+          {
+            "id": "age-group",
+            "name": "ageGroup",
+            "label": "Age Group",
+            "type": "select",
+            "required": false,
+            "defaultValue": "29_60_days",
+            "options": [
+              { "label": "0–28 Days (Neonatal)", "value": "0_28_days" },
+              { "label": "29–60 Days", "value": "29_60_days" },
+              { "label": "61–90 Days", "value": "61_90_days" }
+            ]
+          },
+          {
+            "id": "age-days",
+            "name": "ageDays",
+            "label": "Age (days)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 35,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "temperature-celsius",
+            "name": "temperatureCelsius",
+            "label": "Temperature (°C)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 38.5,
+            "unit": "°C",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "well-appearing",
+            "name": "wellAppearing",
+            "label": "Well-appearing (normal Yale Observation / clinical gestalt)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": true
+          },
+          {
+            "id": "preterm-birth",
+            "name": "pretermBirth",
+            "label": "Preterm birth (<37 weeks)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "prior-antibiotics",
+            "name": "priorAntibiotics",
+            "label": "Prior antibiotics (within 48h)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "prior-hospitalization",
+            "name": "priorHospitalization",
+            "label": "Prior hospitalization (within 7 days)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "immunocompromised",
+            "name": "immunocompromised",
+            "label": "Immunocompromised",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "source-focus-found",
+            "name": "sourceFocusFound",
+            "label": "Identifiable source of fever found",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "laboratory-values",
+        "shortLabel": "Laboratory Values",
+        "title": "Laboratory Values",
+        "fields": [
+          {
+            "id": "wbc-count",
+            "name": "wbcCount",
+            "label": "WBC Count (cells/μL, leave blank if not done)",
+            "type": "number",
+            "required": false,
+            "defaultValue": null,
+            "unit": "cells/μL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "absolute-neutrophil-count",
+            "name": "absoluteNeutrophilCount",
+            "label": "Absolute Neutrophil Count (cells/μL)",
+            "type": "number",
+            "required": false,
+            "defaultValue": null,
+            "unit": "cells/μL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "band-count",
+            "name": "bandCount",
+            "label": "Band Count (%)",
+            "type": "number",
+            "required": false,
+            "defaultValue": null,
+            "unit": "%",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "c-reactive-protein",
+            "name": "cReactiveProtein",
+            "label": "C-Reactive Protein (mg/L)",
+            "type": "number",
+            "required": false,
+            "defaultValue": null,
+            "unit": "mg/L",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "procalcitonin",
+            "name": "procalcitonin",
+            "label": "Procalcitonin (ng/mL)",
+            "type": "number",
+            "required": false,
+            "defaultValue": null,
+            "unit": "ng/mL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "urinalysis-positive",
+            "name": "urinalysisPositive",
+            "label": "Urinalysis Result",
+            "type": "select",
+            "required": false,
+            "defaultValue": null,
+            "options": [
+              { "label": "Not performed", "value": "not_done" },
+              { "label": "Negative", "value": "negative" },
+              { "label": "Positive (≥5 WBC/hpf or positive LE)", "value": "positive" }
+            ]
+          },
+          {
+            "id": "csf-wbc",
+            "name": "csfWBC",
+            "label": "CSF WBC (cells/μL, if LP performed)",
+            "type": "number",
+            "required": false,
+            "defaultValue": null,
+            "unit": "cells/μL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "csf-protein",
+            "name": "csfProtein",
+            "label": "CSF Protein (mg/dL)",
+            "type": "number",
+            "required": false,
+            "defaultValue": null,
+            "unit": "mg/dL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "csf-glucose",
+            "name": "csfGlucose",
+            "label": "CSF Glucose (mg/dL)",
+            "type": "number",
+            "required": false,
+            "defaultValue": null,
+            "unit": "mg/dL",
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "clinical-risk-factors",
+        "shortLabel": "Clinical Risk Factors",
+        "title": "Clinical Risk Factors",
+        "fields": [
+          {
+            "id": "hsv-risk-factors",
+            "name": "hsvRiskFactors",
+            "label": "HSV risk factors (maternal HSV, skin/eye/mouth lesions)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-seizures",
+            "name": "hasSeizures",
+            "label": "Seizures",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-skin-lesions",
+            "name": "hasSkinLesions",
+            "label": "Skin vesicles or lesions",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-eye-discharge",
+            "name": "hasEyeDischarge",
+            "label": "Eye discharge",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "pecarn-low-risk",
+            "name": "pecarnLowRisk",
+            "label": "PECARN Low-Risk Criteria Met (29–60 days)",
+            "type": "select",
+            "required": false,
+            "defaultValue": null,
+            "options": [
+              { "label": "Not calculated", "value": "not_calculated" },
+              { "label": "Yes — low risk criteria met", "value": "yes" },
+              { "label": "No — not low risk", "value": "no" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

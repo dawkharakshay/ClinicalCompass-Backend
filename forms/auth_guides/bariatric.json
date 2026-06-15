@@ -1,0 +1,160 @@
+{
+  "title": "Bariatric Surgery Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "BariatricAuthGuide.tsx",
+    "title": "Bariatric Surgery Authorization Guide",
+    "subtitle": null,
+    "cptCodes": [
+      { "code": "43775", "description": "Laparoscopic sleeve gastrectomy, including gastroesophageal reflux disease evaluation", "notes": "Sleeve gastrectomy — most commonly performed bariatric procedure" },
+      { "code": "43644", "description": "Laparoscopic Roux-en-Y gastric bypass; with small intestine reconstruction to bypass stomach, duodenum, and all or part of jejunum", "notes": "RYGB — gold standard for T2DM remission" },
+      { "code": "43645", "description": "Laparoscopic Roux-en-Y gastric bypass; with small intestine reconstruction to bypass stomach, duodenum, and all or part of jejunum; with gastric pouch creation", "notes": "RYGB with pouch creation" },
+      { "code": "43770", "description": "Laparoscopic, gastric restrictive procedure; placement of adjustable gastric band (gastric band and subcutaneous port components)", "notes": "Adjustable gastric band — less commonly performed" },
+      { "code": "43843", "description": "Gastric restrictive procedure, without gastric bypass, for morbid obesity; other than vertical-banded gastroplasty", "notes": "Open sleeve or restrictive procedure" },
+      { "code": "43846", "description": "Gastric restrictive procedure, with gastric bypass for morbid obesity; with short limb (150 cm or less) Roux-en-Y gastroenterostomy", "notes": "Open RYGB" },
+      { "code": "43659", "description": "Unlisted laparoscopic procedure, stomach", "notes": "Revision/conversion procedures — requires documentation" }
+    ],
+    "icd10Codes": [
+      { "code": "E66.01", "description": "Morbid (severe) obesity due to excess calories", "notes": "BMI ≥40 — primary code for Class III obesity" },
+      { "code": "E66.09", "description": "Other obesity due to excess calories", "notes": "BMI 35–39.9 — Class II obesity" },
+      { "code": "E66.9", "description": "Obesity, unspecified", "notes": "Use specific code when possible" },
+      { "code": "Z68.41", "description": "Body mass index (BMI) 40.0-44.9, adult", "notes": "BMI specificity code — use with E66.01" },
+      { "code": "Z68.42", "description": "Body mass index (BMI) 45.0-49.9, adult", "notes": "BMI specificity code" },
+      { "code": "Z68.43", "description": "Body mass index (BMI) 50.0-59.9, adult", "notes": "BMI specificity code" },
+      { "code": "E11.9", "description": "Type 2 diabetes mellitus without complications", "notes": "T2DM — key comorbidity for metabolic surgery indication" },
+      { "code": "I10", "description": "Essential (primary) hypertension", "notes": "Hypertension comorbidity" },
+      { "code": "G47.33", "description": "Obstructive sleep apnea (adult)", "notes": "OSA comorbidity" }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "overview": "Medicare covers bariatric surgery for BMI ≥35 with at least one obesity-related comorbidity when performed at an accredited facility. Coverage includes sleeve gastrectomy (43775), RYGB (43644), and adjustable gastric band (43770). Note: Medicare does NOT cover bariatric surgery for BMI 30–34.9 even with T2DM, unlike the 2022 ASMBS guidelines.",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "BMI ≥35 with at least one obesity-related comorbidity (T2DM, HTN, OSA, dyslipidemia, GERD, osteoarthritis, etc.)",
+              "Documentation of failure of non-surgical weight loss treatment",
+              "Psychological evaluation confirming no active contraindications",
+              "Nutrition consultation completed",
+              "Surgery performed at a Bariatric Surgery Center of Excellence (BSCOE) or similar accredited facility",
+              "Surgeon must have specific bariatric surgery training and experience",
+              "Multidisciplinary team evaluation (surgery, nutrition, psychology, medicine)"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "BMI ≥35 with obesity-related comorbidity OR BMI ≥40 without comorbidity",
+              "Failed non-surgical weight loss attempts",
+              "Psychological clearance",
+              "Nutrition consultation"
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicare (CMS)", "status": "Covered", "notes": "Covered for BMI ≥35 + comorbidity at accredited BSCOE; sleeve, RYGB, and band covered" }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "overview": "Medicaid coverage varies significantly by state. Most states cover bariatric surgery for BMI ≥35 with comorbidities. Some states require 6-month supervised program. A few states do not cover bariatric surgery at all. Verify state-specific policy.",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "State-specific criteria — most states follow Medicare BMI ≥35 + comorbidity criteria",
+              "Supervised weight loss program (3–6 months depending on state)",
+              "Psychological evaluation",
+              "Nutrition consultation",
+              "Prior authorization required"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "BMI ≥35 with comorbidity (most states) or BMI ≥40",
+              "Completed supervised weight loss program",
+              "Psychological clearance"
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicaid (state-specific)", "status": "Covered", "notes": "Coverage varies; most states require BMI ≥35 + comorbidity + supervised program; verify state policy" }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private",
+        "overview": "Commercial payers almost universally require a 6-month supervised weight loss program. Document each monthly visit with weight, dietary counseling, and exercise guidance. Some plans require the program to be supervised by a physician (not just a dietitian). Psychological clearance must specifically address bariatric surgery. Accredited facility (MBSAQIP) is required by most payers.",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "Prior authorization required by all commercial payers",
+              "BMI ≥40 OR BMI ≥35 with at least one obesity-related comorbidity",
+              "Documented failure of supervised weight loss program (typically 6 months — diet, exercise, behavioral modification)",
+              "Psychological evaluation and clearance",
+              "Nutrition consultation",
+              "Medical clearance from primary care physician",
+              "Multidisciplinary team evaluation",
+              "Accredited bariatric surgery facility (MBSAQIP or equivalent)"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "BMI ≥40 (Class III obesity) — primary criterion",
+              "BMI ≥35 with documented comorbidity (T2DM, HTN, OSA, GERD, dyslipidemia, osteoarthritis, etc.)",
+              "BMI ≥30 with T2DM or metabolic syndrome — some plans per 2022 ASMBS guidelines",
+              "Failed ≥6 months of supervised, physician-directed weight loss program",
+              "Psychological clearance with no active contraindications"
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "UnitedHealthcare", "status": "Covered", "notes": "Covers BMI ≥40 or ≥35 + comorbidity; 6-month supervised program required; MBSAQIP facility required" },
+          { "payer": "Aetna", "status": "Covered", "notes": "Covers BMI ≥40 or ≥35 + comorbidity; 6-month program; psychological clearance required" },
+          { "payer": "Cigna", "status": "Covered", "notes": "Covers BMI ≥40 or ≥35 + comorbidity; 6-month program; accredited facility required" },
+          { "payer": "Anthem/BCBS", "status": "Covered", "notes": "Covers BMI ≥40 or ≥35 + comorbidity; 6-month program; multidisciplinary team evaluation required" },
+          { "payer": "Humana", "status": "Covered", "notes": "Covers BMI ≥40 or ≥35 + comorbidity; 6-month program; psychological and nutrition clearance required" }
+        ]
+      }
+    ],
+    "customSections": [],
+    "raw": {
+      "markdown": "# Bariatric Surgery Authorization Guide\n\n## CPT Codes — Bariatric Surgery\n\n| CPT | Description | Notes |\n| --- | --- | --- |\n| 43775 | Laparoscopic sleeve gastrectomy, including gastroesophageal reflux disease evaluation | Sleeve gastrectomy — most commonly performed bariatric procedure |\n| 43644 | Laparoscopic Roux-en-Y gastric bypass; with small intestine reconstruction to bypass stomach, duodenum, and all or part of jejunum | RYGB — gold standard for T2DM remission |\n| 43645 | Laparoscopic Roux-en-Y gastric bypass; with small intestine reconstruction to bypass stomach, duodenum, and all or part of jejunum; with gastric pouch creation | RYGB with pouch creation |\n| 43770 | Laparoscopic, gastric restrictive procedure; placement of adjustable gastric band (gastric band and subcutaneous port components) | Adjustable gastric band — less commonly performed |\n| 43843 | Gastric restrictive procedure, without gastric bypass, for morbid obesity; other than vertical-banded gastroplasty | Open sleeve or restrictive procedure |\n| 43846 | Gastric restrictive procedure, with gastric bypass for morbid obesity; with short limb (150 cm or less) Roux-en-Y gastroenterostomy | Open RYGB |\n| 43659 | Unlisted laparoscopic procedure, stomach | Revision/conversion procedures — requires documentation |\n\n## ICD-10 Codes\n\n| ICD-10 | Description | Notes |\n| --- | --- | --- |\n| E66.01 | Morbid (severe) obesity due to excess calories | BMI ≥40 — primary code for Class III obesity |\n| E66.09 | Other obesity due to excess calories | BMI 35–39.9 — Class II obesity |\n| E66.9 | Obesity, unspecified | Use specific code when possible |\n| Z68.41 | Body mass index (BMI) 40.0-44.9, adult | BMI specificity code — use with E66.01 |\n| Z68.42 | Body mass index (BMI) 45.0-49.9, adult | BMI specificity code |\n| Z68.43 | Body mass index (BMI) 50.0-59.9, adult | BMI specificity code |\n| E11.9 | Type 2 diabetes mellitus without complications | T2DM — key comorbidity for metabolic surgery indication |\n| I10 | Essential (primary) hypertension | Hypertension comorbidity |\n| G47.33 | Obstructive sleep apnea (adult) | OSA comorbidity |\n\n## Payer Requirements\n\nTabs: Medicare | Medicaid | Private\n\n### Medicare\n\n**Required Documentation**\n- BMI ≥35 with at least one obesity-related comorbidity (T2DM, HTN, OSA, dyslipidemia, GERD, osteoarthritis, etc.)\n- Documentation of failure of non-surgical weight loss treatment\n- Psychological evaluation confirming no active contraindications\n- Nutrition consultation completed\n- Surgery performed at a Bariatric Surgery Center of Excellence (BSCOE) or similar accredited facility\n- Surgeon must have specific bariatric surgery training and experience\n- Multidisciplinary team evaluation (surgery, nutrition, psychology, medicine)\n\n**Medical Necessity Criteria**\n- ✓ BMI ≥35 with obesity-related comorbidity OR BMI ≥40 without comorbidity\n- ✓ Failed non-surgical weight loss attempts\n- ✓ Psychological clearance\n- ✓ Nutrition consultation\n\n**Reimbursement Note:** Medicare covers bariatric surgery for BMI ≥35 with at least one obesity-related comorbidity when performed at an accredited facility. Coverage includes sleeve gastrectomy (43775), RYGB (43644), and adjustable gastric band (43770). Note: Medicare does NOT cover bariatric surgery for BMI 30–34.9 even with T2DM, unlike the 2022 ASMBS guidelines.\n\n**Known Payer Policies**\n- [Covered] Medicare (CMS): Covered for BMI ≥35 + comorbidity at accredited BSCOE; sleeve, RYGB, and band covered\n\n### Medicaid\n\n**Required Documentation**\n- State-specific criteria — most states follow Medicare BMI ≥35 + comorbidity criteria\n- Supervised weight loss program (3–6 months depending on state)\n- Psychological evaluation\n- Nutrition consultation\n- Prior authorization required\n\n**Medical Necessity Criteria**\n- ✓ BMI ≥35 with comorbidity (most states) or BMI ≥40\n- ✓ Completed supervised weight loss program\n- ✓ Psychological clearance\n\n**Reimbursement Note:** Medicaid coverage varies significantly by state. Most states cover bariatric surgery for BMI ≥35 with comorbidities. Some states require 6-month supervised program. A few states do not cover bariatric surgery at all. Verify state-specific policy.\n\n**Known Payer Policies**\n- [Covered] Medicaid (state-specific): Coverage varies; most states require BMI ≥35 + comorbidity + supervised program; verify state policy\n\n### Private\n\n**Required Documentation**\n- Prior authorization required by all commercial payers\n- BMI ≥40 OR BMI ≥35 with at least one obesity-related comorbidity\n- Documented failure of supervised weight loss program (typically 6 months — diet, exercise, behavioral modification)\n- Psychological evaluation and clearance\n- Nutrition consultation\n- Medical clearance from primary care physician\n- Multidisciplinary team evaluation\n- Accredited bariatric surgery facility (MBSAQIP or equivalent)\n\n**Medical Necessity Criteria**\n- ✓ BMI ≥40 (Class III obesity) — primary criterion\n- ✓ BMI ≥35 with documented comorbidity (T2DM, HTN, OSA, GERD, dyslipidemia, osteoarthritis, etc.)\n- ✓ BMI ≥30 with T2DM or metabolic syndrome — some plans per 2022 ASMBS guidelines\n- ✓ Failed ≥6 months of supervised, physician-directed weight loss program\n- ✓ Psychological clearance with no active contraindications\n\n**Reimbursement Note:** Commercial payers almost universally require a 6-month supervised weight loss program. Document each monthly visit with weight, dietary counseling, and exercise guidance. Some plans require the program to be supervised by a physician (not just a dietitian). Psychological clearance must specifically address bariatric surgery. Accredited facility (MBSAQIP) is required by most payers.\n\n**Known Payer Policies**\n- [Covered] UnitedHealthcare: Covers BMI ≥40 or ≥35 + comorbidity; 6-month supervised program required; MBSAQIP facility required\n- [Covered] Aetna: Covers BMI ≥40 or ≥35 + comorbidity; 6-month program; psychological clearance required\n- [Covered] Cigna: Covers BMI ≥40 or ≥35 + comorbidity; 6-month program; accredited facility required\n- [Covered] Anthem/BCBS: Covers BMI ≥40 or ≥35 + comorbidity; 6-month program; multidisciplinary team evaluation required\n- [Covered] Humana: Covers BMI ≥40 or ≥35 + comorbidity; 6-month program; psychological and nutrition clearance required\n",
+      "tables": [
+        {
+          "name": "CPT Codes — Bariatric Surgery",
+          "header": ["CPT", "Description", "Notes"],
+          "rows": [
+            ["43775", "Laparoscopic sleeve gastrectomy, including gastroesophageal reflux disease evaluation", "Sleeve gastrectomy — most commonly performed bariatric procedure"],
+            ["43644", "Laparoscopic Roux-en-Y gastric bypass; with small intestine reconstruction to bypass stomach, duodenum, and all or part of jejunum", "RYGB — gold standard for T2DM remission"],
+            ["43645", "Laparoscopic Roux-en-Y gastric bypass; with small intestine reconstruction to bypass stomach, duodenum, and all or part of jejunum; with gastric pouch creation", "RYGB with pouch creation"],
+            ["43770", "Laparoscopic, gastric restrictive procedure; placement of adjustable gastric band (gastric band and subcutaneous port components)", "Adjustable gastric band — less commonly performed"],
+            ["43843", "Gastric restrictive procedure, without gastric bypass, for morbid obesity; other than vertical-banded gastroplasty", "Open sleeve or restrictive procedure"],
+            ["43846", "Gastric restrictive procedure, with gastric bypass for morbid obesity; with short limb (150 cm or less) Roux-en-Y gastroenterostomy", "Open RYGB"],
+            ["43659", "Unlisted laparoscopic procedure, stomach", "Revision/conversion procedures — requires documentation"]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["ICD-10", "Description", "Notes"],
+          "rows": [
+            ["E66.01", "Morbid (severe) obesity due to excess calories", "BMI ≥40 — primary code for Class III obesity"],
+            ["E66.09", "Other obesity due to excess calories", "BMI 35–39.9 — Class II obesity"],
+            ["E66.9", "Obesity, unspecified", "Use specific code when possible"],
+            ["Z68.41", "Body mass index (BMI) 40.0-44.9, adult", "BMI specificity code — use with E66.01"],
+            ["Z68.42", "Body mass index (BMI) 45.0-49.9, adult", "BMI specificity code"],
+            ["Z68.43", "Body mass index (BMI) 50.0-59.9, adult", "BMI specificity code"],
+            ["E11.9", "Type 2 diabetes mellitus without complications", "T2DM — key comorbidity for metabolic surgery indication"],
+            ["I10", "Essential (primary) hypertension", "Hypertension comorbidity"],
+            ["G47.33", "Obstructive sleep apnea (adult)", "OSA comorbidity"]
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,321 @@
+{
+  "title": "Brain Metastases Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "brainmetastases",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "tumor",
+        "shortLabel": "Tumor",
+        "title": "Tumor Characteristics",
+        "fields": [
+          {
+            "id": "primary-histology",
+            "name": "primaryHistology",
+            "label": "Primary Histology",
+            "type": "select",
+            "required": true,
+            "defaultValue": "nsclc_other",
+            "options": [
+              { "label": "NSCLC — EGFR-mutant", "value": "nsclc_egfr" },
+              { "label": "NSCLC — ALK-rearranged", "value": "nsclc_alk" },
+              { "label": "NSCLC — Other / Unknown driver", "value": "nsclc_other" },
+              { "label": "SCLC (Small cell lung cancer)", "value": "sclc" },
+              { "label": "Breast — HER2-positive", "value": "breast_her2" },
+              { "label": "Breast — Triple-negative (TNBC)", "value": "breast_tnbc" },
+              { "label": "Breast — HR-positive / HER2-negative", "value": "breast_hr_pos" },
+              { "label": "Melanoma — BRAF V600E-mutant", "value": "melanoma_braf" },
+              { "label": "Melanoma — BRAF wild-type", "value": "melanoma_other" },
+              { "label": "Renal cell carcinoma", "value": "renal_cell" },
+              { "label": "Colorectal", "value": "colorectal" },
+              { "label": "Other", "value": "other" }
+            ]
+          },
+          {
+            "id": "metastasis-count",
+            "name": "metastasisCount",
+            "label": "Number of Brain Metastases",
+            "type": "select",
+            "required": true,
+            "defaultValue": "limited",
+            "options": [
+              { "label": "Single (1 lesion)", "value": "single" },
+              { "label": "Oligometastatic (2–4 lesions)", "value": "limited" },
+              { "label": "Multiple (5–10 lesions)", "value": "multiple" },
+              { "label": "Diffuse (>10 lesions)", "value": "disseminated" }
+            ]
+          },
+          {
+            "id": "largest-lesion-cm",
+            "name": "largestLesionCm",
+            "label": "Largest Lesion (cm)",
+            "type": "slider",
+            "defaultValue": 2.5,
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "cm"
+          },
+          {
+            "id": "leptomeningeal-disease",
+            "name": "leptomeningealDisease",
+            "label": "Leptomeningeal Disease (MRI or CSF)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "symptomatic",
+            "name": "symptomatic",
+            "label": "Symptomatic (Headache, Focal Deficit, Seizure)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "mass-effect",
+            "name": "massEffect",
+            "label": "Significant Mass Effect / Midline Shift",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "molecular",
+        "shortLabel": "Molecular",
+        "title": "Molecular & Systemic Status",
+        "fields": [
+          {
+            "id": "egfr-mutation",
+            "name": "egfrMutation",
+            "label": "EGFR Mutation (Exon 19 del or L858R)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ],
+            "visibleWhen": { "field": "primaryHistology", "op": "in", "value": ["nsclc_other", "nsclc_egfr", "nsclc_alk"] }
+          },
+          {
+            "id": "alk-mutation",
+            "name": "alkMutation",
+            "label": "ALK Rearrangement",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ],
+            "visibleWhen": { "field": "primaryHistology", "op": "in", "value": ["nsclc_other", "nsclc_egfr", "nsclc_alk"] }
+          },
+          {
+            "id": "braf-v600e-nsclc",
+            "name": "brafV600E",
+            "label": "BRAF V600E Mutation",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ],
+            "visibleWhen": { "field": "primaryHistology", "op": "in", "value": ["nsclc_other", "nsclc_egfr", "nsclc_alk"] }
+          },
+          {
+            "id": "pdl1-expression",
+            "name": "pdl1Expression",
+            "label": "PD-L1 Expression",
+            "type": "select",
+            "defaultValue": "unknown",
+            "options": [
+              { "label": "Unknown / Not tested", "value": "unknown" },
+              { "label": "Low (TPS <1%)", "value": "low" },
+              { "label": "Intermediate (TPS 1–49%)", "value": "intermediate" },
+              { "label": "High (TPS ≥50%)", "value": "high" }
+            ],
+            "visibleWhen": { "field": "primaryHistology", "op": "in", "value": ["nsclc_other", "nsclc_egfr", "nsclc_alk"] }
+          },
+          {
+            "id": "braf-v600e-melanoma",
+            "name": "brafV600E",
+            "label": "BRAF V600E Mutation",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ],
+            "visibleWhen": { "field": "primaryHistology", "op": "in", "value": ["melanoma_braf", "melanoma_other"] }
+          },
+          {
+            "id": "her2-positive",
+            "name": "her2Positive",
+            "label": "HER2-Positive Confirmed",
+            "type": "radio",
+            "defaultValue": true,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ],
+            "visibleWhen": { "field": "primaryHistology", "op": "eq", "value": "breast_her2" }
+          },
+          {
+            "id": "controlled-extracranial-disease",
+            "name": "controlledExtracranialDisease",
+            "label": "Controlled Extracranial Disease",
+            "type": "radio",
+            "defaultValue": true,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "extracranial-metastases",
+            "name": "extracranialMetastases",
+            "label": "Extracranial Metastases Present",
+            "type": "radio",
+            "defaultValue": true,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "current-systemic-therapy",
+            "name": "currentSystemicTherapy",
+            "label": "Currently on Systemic Therapy",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "patient",
+        "shortLabel": "Patient",
+        "title": "Patient Factors & History",
+        "fields": [
+          {
+            "id": "kps-score",
+            "name": "kpsScore",
+            "label": "KPS Performance Status",
+            "type": "select",
+            "required": true,
+            "defaultValue": "high",
+            "options": [
+              { "label": "KPS ≥70 — Ambulatory, functional", "value": "high" },
+              { "label": "KPS 50–69 — Requires assistance", "value": "intermediate" },
+              { "label": "KPS <50 — Disabled / Bedbound", "value": "low" }
+            ]
+          },
+          {
+            "id": "age-years",
+            "name": "ageYears",
+            "label": "Age (years)",
+            "type": "slider",
+            "defaultValue": 0,
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "years"
+          },
+          {
+            "id": "neurologic-deficit",
+            "name": "neurologicDeficit",
+            "label": "Neurologic Deficit (Focal)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "seizure-history",
+            "name": "seizureHistory",
+            "label": "Seizure History",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "performance-status-decline",
+            "name": "performanceStatusDecline",
+            "label": "Performance Status Decline (Recent)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "prior-wbrt",
+            "name": "priorWBRT",
+            "label": "Prior Whole Brain Radiotherapy (WBRT)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "prior-srs",
+            "name": "priorSRS",
+            "label": "Prior Stereotactic Radiosurgery (SRS)",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "prior-surgery",
+            "name": "priorSurgery",
+            "label": "Prior Surgical Resection",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "prior-systemic-therapy",
+            "name": "priorSystemicTherapy",
+            "label": "Prior Systemic Therapy",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

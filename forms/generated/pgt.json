@@ -1,0 +1,127 @@
+{
+  "title": "Preimplantation Genetic Testing Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assessment",
+    "logicKey": "pgt",
+    "hiddenDefaults": {
+      "advancedMaternalAge": false,
+      "oncologyIndication": false,
+      "sexSelection": false
+    },
+    "steps": [
+      {
+        "id": "indication",
+        "shortLabel": "Indication",
+        "title": "Indication",
+        "fields": [
+          {
+            "id": "pgt-type",
+            "name": "pgtType",
+            "label": "PGT Type",
+            "type": "select",
+            "required": false,
+            "defaultValue": "pgt_a",
+            "options": [
+              { "label": "PGT-A — Aneuploidy screening (chromosome number)", "value": "pgt_a" },
+              { "label": "PGT-M — Monogenic/single gene disorder", "value": "pgt_m" },
+              { "label": "PGT-SR — Structural rearrangement (translocation)", "value": "pgt_sr" }
+            ]
+          },
+          {
+            "id": "female-age",
+            "name": "femaleAge",
+            "label": "Female Patient Age",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "numeric"
+          }
+        ]
+      },
+      {
+        "id": "genetic-history",
+        "shortLabel": "Genetic History",
+        "title": "Genetic History",
+        "fields": [
+          {
+            "id": "recurrent-pregnancy-loss",
+            "name": "recurrentPregnancyLoss",
+            "label": "Recurrent pregnancy loss (RPL)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "rpl-count",
+            "name": "rplCount",
+            "label": "Number of Pregnancy Losses",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "numeric",
+            "visibleWhen": { "field": "recurrentPregnancyLoss", "op": "truthy" }
+          },
+          {
+            "id": "prior-aneuploid-pregnancy",
+            "name": "priorAneuploidPregnancy",
+            "label": "Prior pregnancy with chromosomal abnormality (trisomy, monosomy)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "known-genetic-disorder",
+            "name": "knownGeneticDisorder",
+            "label": "Known heritable genetic disorder in family",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "gene-disorder-name",
+            "name": "geneDisorderName",
+            "label": "Genetic Disorder Name",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "visibleWhen": { "field": "knownGeneticDisorder", "op": "truthy" }
+          },
+          {
+            "id": "chromosomal-translocation",
+            "name": "chromosomalTranslocation",
+            "label": "Chromosomal translocation (balanced or Robertsonian)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "repeated-ivf-failure",
+            "name": "repeatedIVFFailure",
+            "label": "Repeated IVF failure (implantation failure)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "ivf-failure-count",
+            "name": "ivfFailureCount",
+            "label": "Number of Failed IVF Cycles",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "numeric",
+            "visibleWhen": { "field": "repeatedIVFFailure", "op": "truthy" }
+          }
+        ]
+      },
+      {
+        "id": "assessment",
+        "shortLabel": "Assessment",
+        "title": "Assessment",
+        "fields": []
+      }
+    ]
+  }
+}

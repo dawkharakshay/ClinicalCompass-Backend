@@ -1,0 +1,431 @@
+{
+  "title": "Parkinson's Disease",
+  "auth_guide": {
+    "sourceFile": "ParkinsonsAuthGuide.tsx",
+    "title": "Parkinsons Clinical Compass",
+    "subtitle": "Deep Brain Stimulation Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "61886",
+        "description": "Insertion or replacement of cranial neurostimulator pulse generator or receiver, direct or inductive coupling; with connection to 2 or more electrode arrays",
+        "device": "Deep Brain Stimulator (DBS) system",
+        "access": "Open Approach",
+        "rvu": "27.89",
+        "includes": [
+          "Pre-operative planning and imaging guidance",
+          "Intraoperative neurophysiological monitoring (if performed by same physician)",
+          "Post-operative wound care"
+        ],
+        "note": "Used for the implantation or replacement of the pulse generator component of a DBS system connected to multiple electrodes."
+      },
+      {
+        "code": "95983",
+        "description": "Electronic analysis of implanted neurostimulator pulse generator/transmitter; with brain neurostimulator pulse generator/transmitter programming, first 15 minutes face-to-face time with physician or other qualified health care professional",
+        "device": "Deep Brain Stimulator (DBS) system",
+        "access": "Non-invasive programming",
+        "rvu": "5.44",
+        "includes": [
+          "Initial assessment of device function",
+          "Adjustment of stimulation parameters",
+          "Patient education on device usage"
+        ],
+        "note": "Covers the initial 15 minutes of programming for a brain neurostimulator. Additional time is billed with 95984."
+      },
+      {
+        "code": "95984",
+        "description": "Electronic analysis of implanted neurostimulator pulse generator/transmitter; with brain neurostimulator pulse generator/transmitter programming, each additional 15 minutes face-to-face time with physician or other qualified healthcare professional",
+        "device": "Deep Brain Stimulator (DBS) system",
+        "access": "Non-invasive programming",
+        "rvu": "1.26",
+        "includes": [
+          "Continued adjustment of stimulation parameters",
+          "Further patient education and troubleshooting"
+        ],
+        "note": "Used in conjunction with 95983 for programming sessions exceeding 15 minutes."
+      },
+      {
+        "code": "61867",
+        "description": "Twist drill, burr hole, craniotomy, or craniectomy with stereotactic implantation of neurostimulator electrode array in subcortical site (eg, thalamus, globus pallidus, subthalamic nucleus, periventricular, periaqueductal gray), with use of intraoperative microelectrode recording; first array",
+        "device": "Deep Brain Stimulator (DBS) electrode array",
+        "access": "Open Approach",
+        "rvu": "66.05",
+        "includes": [
+          "Stereotactic frame placement",
+          "Intraoperative imaging",
+          "Microelectrode recording and stimulation for targeting"
+        ],
+        "note": "Covers the surgical implantation of the first DBS electrode array with intraoperative microelectrode recording for precise placement."
+      },
+      {
+        "code": "61868",
+        "description": "Each additional array (List separately in addition to primary procedure)",
+        "device": "Deep Brain Stimulator (DBS) electrode array",
+        "access": "Open Approach",
+        "rvu": "13.65",
+        "includes": [
+          "Placement of subsequent electrode arrays",
+          "Additional intraoperative monitoring as needed"
+        ],
+        "note": "Add-on code for implantation of additional DBS electrode arrays during the same surgical session as 61867."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "G20.A1",
+        "description": "Parkinson's disease without dyskinesia, without mention of fluctuations",
+        "notes": "Primary diagnosis for Parkinson's disease without motor complications.",
+        "required": true
+      },
+      {
+        "code": "G20.A2",
+        "description": "Parkinson's disease without dyskinesia, with fluctuations",
+        "notes": "Parkinson's disease with motor fluctuations but no dyskinesia.",
+        "required": true
+      },
+      {
+        "code": "G20.B1",
+        "description": "Parkinson's disease with dyskinesia, without mention of fluctuations",
+        "notes": "Parkinson's disease with dyskinesia but without motor fluctuations.",
+        "required": true
+      },
+      {
+        "code": "G20.B2",
+        "description": "Parkinson's disease with dyskinesia, with fluctuations",
+        "notes": "Parkinson's disease with both dyskinesia and motor fluctuations.",
+        "required": true
+      },
+      {
+        "code": "G20.C",
+        "description": "Parkinsonism, unspecified",
+        "notes": "Used when the specific type of Parkinsonism is not documented.",
+        "required": false
+      },
+      {
+        "code": "G20",
+        "description": "Parkinson's disease",
+        "notes": "General code for Parkinson's disease, less specific than sub-codes.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with Prior Authorization",
+        "overview": "Medicare covers Deep Brain Stimulation (DBS) for beneficiaries with advanced Parkinson's Disease that is refractory to medical therapy, provided specific criteria are met. Coverage typically includes the surgical implantation of the neurostimulator and subsequent programming.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is required for Deep Brain Stimulation (DBS) procedures for Parkinson's Disease. Documentation must support medical necessity and adherence to CMS coverage criteria.",
+        "reimbursementNote": "Reimbursement for DBS procedures is typically bundled, covering the device, surgical implantation, and initial programming. Subsequent programming sessions are billed separately. Specific rates vary by MAC and facility type.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Diagnosis and Severity",
+            "items": [
+              "Diagnosis of idiopathic Parkinson's Disease (PD) confirmed by a neurologist.",
+              "Advanced, levodopa-responsive PD with disabling motor complications (e.g., severe tremor, dyskinesia, motor fluctuations) despite optimal medical management.",
+              "Disease duration of at least 5 years (may vary by MAC/LCD)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Response to Medical Therapy",
+            "items": [
+              "Persistent disabling motor symptoms despite trials of multiple anti-Parkinsonian medications at optimal doses.",
+              "Demonstrated improvement in motor symptoms with levodopa (e.g., 'on' state improvement)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Patient Suitability",
+            "items": [
+              "Absence of severe cognitive impairment or dementia.",
+              "Absence of severe psychiatric illness (e.g., uncontrolled depression, psychosis).",
+              "Realistic expectations regarding the benefits and risks of DBS.",
+              "Ability to comply with post-operative care and programming sessions."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Notes",
+            "items": [
+              "Neurologist's evaluation and diagnosis of Parkinson's Disease.",
+              "Detailed history of motor symptoms, their impact on daily activities, and response to medical therapy.",
+              "Documentation of trials and failures of various anti-Parkinsonian medications.",
+              "Cognitive and psychiatric evaluations, including formal neuropsychological testing if indicated."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Imaging and Testing",
+            "items": [
+              "Pre-operative MRI of the brain to rule out other pathologies and for surgical planning.",
+              "Levodopa challenge test results demonstrating responsiveness."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Surgical Team Evaluation",
+            "items": [
+              "Documentation of multidisciplinary team evaluation (neurologist, neurosurgeon, neuropsychologist, psychiatrist, etc.).",
+              "Surgical consent form outlining risks, benefits, and alternatives."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request through the Medicare Administrative Contractor (MAC) portal or fax.",
+              "Include all supporting clinical documentation, imaging reports, and specialist evaluations.",
+              "Await approval before scheduling the surgical procedure. Expedited review may be available for urgent cases."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented failure of optimal medical management.",
+              "Evidence of significant cognitive impairment or psychiatric comorbidities.",
+              "Insufficient documentation of levodopa responsiveness.",
+              "Incomplete submission of required clinical notes or test results."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Ensure all medical records clearly demonstrate the patient meets all coverage criteria.",
+              "Provide a comprehensive narrative summarizing the patient's journey and rationale for DBS.",
+              "Follow up regularly with the MAC regarding the status of the prior authorization request."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS (National Coverage Determination)",
+            "status": "Covered",
+            "notes": "DBS for essential tremor and Parkinsonian tremor, and other movement disorders when medically necessary."
+          },
+          {
+            "payer": "Various MACs (Local Coverage Determinations)",
+            "status": "Covered with specific criteria",
+            "notes": "MACs may have additional specific criteria or documentation requirements. Always check local policies."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered with Prior Authorization (State-Specific)",
+        "overview": "Medicaid coverage for DBS in Parkinson's Disease is determined at the state level. Most states follow similar medical necessity criteria to Medicare but may have additional requirements or limitations based on their specific program guidelines and budget.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid programs generally require prior authorization for DBS procedures. Coverage criteria and documentation requirements can vary significantly by state.",
+        "reimbursementNote": "Medicaid reimbursement rates for DBS procedures are typically lower than Medicare or private insurance. Providers should confirm rates with their state Medicaid program.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Diagnosis and Severity",
+            "items": [
+              "Confirmed diagnosis of advanced Parkinson's Disease.",
+              "Disabling motor symptoms unresponsive to optimal medical therapy."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Patient Selection",
+            "items": [
+              "Absence of severe cognitive or psychiatric comorbidities.",
+              "Multidisciplinary team evaluation recommending DBS."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Records",
+            "items": [
+              "Neurologist's assessment and treatment history.",
+              "Documentation of medication trials and their efficacy.",
+              "Neuropsychological and psychiatric evaluations."
+            ]
+          },
+          {
+            "heading": "Required Documentation: State-Specific Forms",
+            "items": [
+              "Completion of all required state Medicaid prior authorization forms.",
+              "Submission of detailed operative reports and device information."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request to the state Medicaid agency.",
+              "Adhere to state-specific submission deadlines and formats.",
+              "Be prepared for potential appeals processes due to variations in state policies."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet state-specific medical necessity criteria.",
+              "Incomplete or improperly submitted documentation.",
+              "Lack of evidence for comprehensive pre-surgical evaluation."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify the specific Medicaid policies for DBS in your state prior to submission.",
+              "Maintain thorough and well-organized patient records.",
+              "Consider engaging a patient advocate or social worker familiar with Medicaid processes."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid Programs",
+            "status": "Varies by State",
+            "notes": "Each state's Medicaid program has its own specific coverage policies and criteria for DBS. Consultation of individual state policies is crucial."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Covered with Prior Authorization (Plan-Specific)",
+        "overview": "Private insurance coverage for DBS for Parkinson's Disease is widespread but subject to the specific terms and conditions of each individual policy. Plans typically require evidence of medical necessity and adherence to established clinical guidelines.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for DBS. Coverage criteria are generally aligned with Medicare but can vary significantly by plan and insurer.",
+        "reimbursementNote": "Reimbursement rates and patient out-of-pocket costs (deductibles, co-pays, co-insurance) vary widely among private insurance plans. Verification of benefits is essential.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Medical Necessity",
+            "items": [
+              "Diagnosis of advanced Parkinson's Disease.",
+              "Disabling motor symptoms refractory to optimal pharmacologic treatment.",
+              "No contraindications to surgery or general anesthesia."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Pre-surgical Evaluation",
+            "items": [
+              "Comprehensive evaluation by a movement disorder specialist and neurosurgeon.",
+              "Neuropsychological and psychiatric clearance."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Physician Orders and Notes",
+            "items": [
+              "Referral from a neurologist or movement disorder specialist.",
+              "Detailed clinical notes supporting the diagnosis and treatment history.",
+              "Results of all diagnostic tests (e.g., MRI, levodopa challenge)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Authorization Forms",
+            "items": [
+              "Completed prior authorization forms specific to the insurance carrier.",
+              "Letter of medical necessity from the treating physician."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request through the insurer's online portal, fax, or phone.",
+              "Ensure all required forms and supporting documentation are attached.",
+              "Be prepared for peer-to-peer reviews or requests for additional information."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Policy exclusions or limitations for experimental/investigational procedures (less common now for DBS).",
+              "Lack of sufficient clinical documentation to support medical necessity.",
+              "Failure to follow the insurer's specific prior authorization process."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Thoroughly review the patient's insurance policy for specific DBS coverage details.",
+              "Pre-certify the procedure well in advance of the planned surgery date.",
+              "Document all communications with the insurance company, including reference numbers and representative names."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Generally Covered",
+            "notes": "Coverage typically aligns with Medicare criteria, but specific plan benefits apply."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Generally Covered",
+            "notes": "Requires prior authorization and adherence to clinical guidelines for movement disorders."
+          },
+          {
+            "payer": "Aetna",
+            "status": "Generally Covered",
+            "notes": "Medical necessity criteria similar to national guidelines; prior authorization is mandatory."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Procedure Codes — Card Note",
+        "kind": "prose",
+        "text": "Each CPT code lists \"Included in this code (do NOT bill separately):\" items and is labeled with its RVU and Device/Access value."
+      },
+      {
+        "heading": "ICD-10 Diagnosis Codes — Card Note",
+        "kind": "prose",
+        "text": "Required diagnosis codes are flagged with a \"Primary\" badge. Required (Primary): G20.A1, G20.A2, G20.B1, G20.B2. Non-required: G20.C, G20."
+      },
+      {
+        "heading": "Page Navigation",
+        "kind": "link",
+        "text": "Back to Assessment button links to the Parkinsons assessment page.",
+        "href": "/parkinsons"
+      }
+    ],
+    "raw": {
+      "markdown": "# Parkinsons Clinical Compass\n## Deep Brain Stimulation Insurance Authorization Guide\n\n[Button] Back to Assessment (links to /parkinsons)\n\n---\n\n## Procedure Codes (CPT Codes)\n\n### CPT 61886 — RVU 27.89\nInsertion or replacement of cranial neurostimulator pulse generator or receiver, direct or inductive coupling; with connection to 2 or more electrode arrays\nDevice/Access: Deep Brain Stimulator (DBS) system | Open Approach\nIncluded in this code (do NOT bill separately):\n- Pre-operative planning and imaging guidance\n- Intraoperative neurophysiological monitoring (if performed by same physician)\n- Post-operative wound care\nNote: Used for the implantation or replacement of the pulse generator component of a DBS system connected to multiple electrodes.\n\n### CPT 95983 — RVU 5.44\nElectronic analysis of implanted neurostimulator pulse generator/transmitter; with brain neurostimulator pulse generator/transmitter programming, first 15 minutes face-to-face time with physician or other qualified health care professional\nDevice/Access: Deep Brain Stimulator (DBS) system | Non-invasive programming\nIncluded in this code (do NOT bill separately):\n- Initial assessment of device function\n- Adjustment of stimulation parameters\n- Patient education on device usage\nNote: Covers the initial 15 minutes of programming for a brain neurostimulator. Additional time is billed with 95984.\n\n### CPT 95984 — RVU 1.26\nElectronic analysis of implanted neurostimulator pulse generator/transmitter; with brain neurostimulator pulse generator/transmitter programming, each additional 15 minutes face-to-face time with physician or other qualified healthcare professional\nDevice/Access: Deep Brain Stimulator (DBS) system | Non-invasive programming\nIncluded in this code (do NOT bill separately):\n- Continued adjustment of stimulation parameters\n- Further patient education and troubleshooting\nNote: Used in conjunction with 95983 for programming sessions exceeding 15 minutes.\n\n### CPT 61867 — RVU 66.05\nTwist drill, burr hole, craniotomy, or craniectomy with stereotactic implantation of neurostimulator electrode array in subcortical site (eg, thalamus, globus pallidus, subthalamic nucleus, periventricular, periaqueductal gray), with use of intraoperative microelectrode recording; first array\nDevice/Access: Deep Brain Stimulator (DBS) electrode array | Open Approach\nIncluded in this code (do NOT bill separately):\n- Stereotactic frame placement\n- Intraoperative imaging\n- Microelectrode recording and stimulation for targeting\nNote: Covers the surgical implantation of the first DBS electrode array with intraoperative microelectrode recording for precise placement.\n\n### CPT 61868 — RVU 13.65\nEach additional array (List separately in addition to primary procedure)\nDevice/Access: Deep Brain Stimulator (DBS) electrode array | Open Approach\nIncluded in this code (do NOT bill separately):\n- Placement of subsequent electrode arrays\n- Additional intraoperative monitoring as needed\nNote: Add-on code for implantation of additional DBS electrode arrays during the same surgical session as 61867.\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **G20.A1** (Primary) — Parkinson's disease without dyskinesia, without mention of fluctuations. Primary diagnosis for Parkinson's disease without motor complications.\n- **G20.A2** (Primary) — Parkinson's disease without dyskinesia, with fluctuations. Parkinson's disease with motor fluctuations but no dyskinesia.\n- **G20.B1** (Primary) — Parkinson's disease with dyskinesia, without mention of fluctuations. Parkinson's disease with dyskinesia but without motor fluctuations.\n- **G20.B2** (Primary) — Parkinson's disease with dyskinesia, with fluctuations. Parkinson's disease with both dyskinesia and motor fluctuations.\n- **G20.C** — Parkinsonism, unspecified. Used when the specific type of Parkinsonism is not documented.\n- **G20** — Parkinson's disease. General code for Parkinson's disease, less specific than sub-codes.\n\n---\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\nBadges: Prior Auth Required | Covered with Prior Authorization\nPrior Auth Note (warning): Prior authorization is required for Deep Brain Stimulation (DBS) procedures for Parkinson's Disease. Documentation must support medical necessity and adherence to CMS coverage criteria.\nOverview: Medicare covers Deep Brain Stimulation (DBS) for beneficiaries with advanced Parkinson's Disease that is refractory to medical therapy, provided specific criteria are met. Coverage typically includes the surgical implantation of the neurostimulator and subsequent programming.\n\n#### Coverage Criteria\n**Diagnosis and Severity**\n- Diagnosis of idiopathic Parkinson's Disease (PD) confirmed by a neurologist.\n- Advanced, levodopa-responsive PD with disabling motor complications (e.g., severe tremor, dyskinesia, motor fluctuations) despite optimal medical management.\n- Disease duration of at least 5 years (may vary by MAC/LCD).\n**Response to Medical Therapy**\n- Persistent disabling motor symptoms despite trials of multiple anti-Parkinsonian medications at optimal doses.\n- Demonstrated improvement in motor symptoms with levodopa (e.g., 'on' state improvement).\n**Patient Suitability**\n- Absence of severe cognitive impairment or dementia.\n- Absence of severe psychiatric illness (e.g., uncontrolled depression, psychosis).\n- Realistic expectations regarding the benefits and risks of DBS.\n- Ability to comply with post-operative care and programming sessions.\n\n#### Required Documentation\n**Clinical Notes**\n- Neurologist's evaluation and diagnosis of Parkinson's Disease.\n- Detailed history of motor symptoms, their impact on daily activities, and response to medical therapy.\n- Documentation of trials and failures of various anti-Parkinsonian medications.\n- Cognitive and psychiatric evaluations, including formal neuropsychological testing if indicated.\n**Imaging and Testing**\n- Pre-operative MRI of the brain to rule out other pathologies and for surgical planning.\n- Levodopa challenge test results demonstrating responsiveness.\n**Surgical Team Evaluation**\n- Documentation of multidisciplinary team evaluation (neurologist, neurosurgeon, neuropsychologist, psychiatrist, etc.).\n- Surgical consent form outlining risks, benefits, and alternatives.\n\n#### Submission Process\n1. Submit prior authorization request through the Medicare Administrative Contractor (MAC) portal or fax.\n2. Include all supporting clinical documentation, imaging reports, and specialist evaluations.\n3. Await approval before scheduling the surgical procedure. Expedited review may be available for urgent cases.\n\n#### Common Denial Reasons\n- Lack of documented failure of optimal medical management.\n- Evidence of significant cognitive impairment or psychiatric comorbidities.\n- Insufficient documentation of levodopa responsiveness.\n- Incomplete submission of required clinical notes or test results.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS (National Coverage Determination) | Covered | DBS for essential tremor and Parkinsonian tremor, and other movement disorders when medically necessary. |\n| Various MACs (Local Coverage Determinations) | Covered with specific criteria | MACs may have additional specific criteria or documentation requirements. Always check local policies. |\n\n#### Reimbursement Note\nReimbursement for DBS procedures is typically bundled, covering the device, surgical implantation, and initial programming. Subsequent programming sessions are billed separately. Specific rates vary by MAC and facility type.\n\n#### Authorization Tips\n- Ensure all medical records clearly demonstrate the patient meets all coverage criteria.\n- Provide a comprehensive narrative summarizing the patient's journey and rationale for DBS.\n- Follow up regularly with the MAC regarding the status of the prior authorization request.\n\n### Medicaid\nBadges: Prior Auth Required | Covered with Prior Authorization (State-Specific)\nPrior Auth Note (warning): Medicaid programs generally require prior authorization for DBS procedures. Coverage criteria and documentation requirements can vary significantly by state.\nOverview: Medicaid coverage for DBS in Parkinson's Disease is determined at the state level. Most states follow similar medical necessity criteria to Medicare but may have additional requirements or limitations based on their specific program guidelines and budget.\n\n#### Coverage Criteria\n**Diagnosis and Severity**\n- Confirmed diagnosis of advanced Parkinson's Disease.\n- Disabling motor symptoms unresponsive to optimal medical therapy.\n**Patient Selection**\n- Absence of severe cognitive or psychiatric comorbidities.\n- Multidisciplinary team evaluation recommending DBS.\n\n#### Required Documentation\n**Clinical Records**\n- Neurologist's assessment and treatment history.\n- Documentation of medication trials and their efficacy.\n- Neuropsychological and psychiatric evaluations.\n**State-Specific Forms**\n- Completion of all required state Medicaid prior authorization forms.\n- Submission of detailed operative reports and device information.\n\n#### Submission Process\n1. Submit prior authorization request to the state Medicaid agency.\n2. Adhere to state-specific submission deadlines and formats.\n3. Be prepared for potential appeals processes due to variations in state policies.\n\n#### Common Denial Reasons\n- Failure to meet state-specific medical necessity criteria.\n- Incomplete or improperly submitted documentation.\n- Lack of evidence for comprehensive pre-surgical evaluation.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid Programs | Varies by State | Each state's Medicaid program has its own specific coverage policies and criteria for DBS. Consultation of individual state policies is crucial. |\n\n#### Reimbursement Note\nMedicaid reimbursement rates for DBS procedures are typically lower than Medicare or private insurance. Providers should confirm rates with their state Medicaid program.\n\n#### Authorization Tips\n- Verify the specific Medicaid policies for DBS in your state prior to submission.\n- Maintain thorough and well-organized patient records.\n- Consider engaging a patient advocate or social worker familiar with Medicaid processes.\n\n### Private Insurance\nBadges: Prior Auth Required | Covered with Prior Authorization (Plan-Specific)\nPrior Auth Note (warning): Most private insurance plans require prior authorization for DBS. Coverage criteria are generally aligned with Medicare but can vary significantly by plan and insurer.\nOverview: Private insurance coverage for DBS for Parkinson's Disease is widespread but subject to the specific terms and conditions of each individual policy. Plans typically require evidence of medical necessity and adherence to established clinical guidelines.\n\n#### Coverage Criteria\n**Medical Necessity**\n- Diagnosis of advanced Parkinson's Disease.\n- Disabling motor symptoms refractory to optimal pharmacologic treatment.\n- No contraindications to surgery or general anesthesia.\n**Pre-surgical Evaluation**\n- Comprehensive evaluation by a movement disorder specialist and neurosurgeon.\n- Neuropsychological and psychiatric clearance.\n\n#### Required Documentation\n**Physician Orders and Notes**\n- Referral from a neurologist or movement disorder specialist.\n- Detailed clinical notes supporting the diagnosis and treatment history.\n- Results of all diagnostic tests (e.g., MRI, levodopa challenge).\n**Authorization Forms**\n- Completed prior authorization forms specific to the insurance carrier.\n- Letter of medical necessity from the treating physician.\n\n#### Submission Process\n1. Submit prior authorization request through the insurer's online portal, fax, or phone.\n2. Ensure all required forms and supporting documentation are attached.\n3. Be prepared for peer-to-peer reviews or requests for additional information.\n\n#### Common Denial Reasons\n- Policy exclusions or limitations for experimental/investigational procedures (less common now for DBS).\n- Lack of sufficient clinical documentation to support medical necessity.\n- Failure to follow the insurer's specific prior authorization process.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Blue Cross Blue Shield | Generally Covered | Coverage typically aligns with Medicare criteria, but specific plan benefits apply. |\n| UnitedHealthcare | Generally Covered | Requires prior authorization and adherence to clinical guidelines for movement disorders. |\n| Aetna | Generally Covered | Medical necessity criteria similar to national guidelines; prior authorization is mandatory. |\n\n#### Reimbursement Note\nReimbursement rates and patient out-of-pocket costs (deductibles, co-pays, co-insurance) vary widely among private insurance plans. Verification of benefits is essential.\n\n#### Authorization Tips\n- Thoroughly review the patient's insurance policy for specific DBS coverage details.\n- Pre-certify the procedure well in advance of the planned surgery date.\n- Document all communications with the insurance company, including reference numbers and representative names.\n",
+      "tables": [
+        {
+          "name": "CPT Codes (Procedure Codes)",
+          "header": ["Code", "Description", "Device/Access", "RVU", "Included in this code (do NOT bill separately)", "Note"],
+          "rows": [
+            ["61886", "Insertion or replacement of cranial neurostimulator pulse generator or receiver, direct or inductive coupling; with connection to 2 or more electrode arrays", "Deep Brain Stimulator (DBS) system | Open Approach", "27.89", "Pre-operative planning and imaging guidance; Intraoperative neurophysiological monitoring (if performed by same physician); Post-operative wound care", "Used for the implantation or replacement of the pulse generator component of a DBS system connected to multiple electrodes."],
+            ["95983", "Electronic analysis of implanted neurostimulator pulse generator/transmitter; with brain neurostimulator pulse generator/transmitter programming, first 15 minutes face-to-face time with physician or other qualified health care professional", "Deep Brain Stimulator (DBS) system | Non-invasive programming", "5.44", "Initial assessment of device function; Adjustment of stimulation parameters; Patient education on device usage", "Covers the initial 15 minutes of programming for a brain neurostimulator. Additional time is billed with 95984."],
+            ["95984", "Electronic analysis of implanted neurostimulator pulse generator/transmitter; with brain neurostimulator pulse generator/transmitter programming, each additional 15 minutes face-to-face time with physician or other qualified healthcare professional", "Deep Brain Stimulator (DBS) system | Non-invasive programming", "1.26", "Continued adjustment of stimulation parameters; Further patient education and troubleshooting", "Used in conjunction with 95983 for programming sessions exceeding 15 minutes."],
+            ["61867", "Twist drill, burr hole, craniotomy, or craniectomy with stereotactic implantation of neurostimulator electrode array in subcortical site (eg, thalamus, globus pallidus, subthalamic nucleus, periventricular, periaqueductal gray), with use of intraoperative microelectrode recording; first array", "Deep Brain Stimulator (DBS) electrode array | Open Approach", "66.05", "Stereotactic frame placement; Intraoperative imaging; Microelectrode recording and stimulation for targeting", "Covers the surgical implantation of the first DBS electrode array with intraoperative microelectrode recording for precise placement."],
+            ["61868", "Each additional array (List separately in addition to primary procedure)", "Deep Brain Stimulator (DBS) electrode array | Open Approach", "13.65", "Placement of subsequent electrode arrays; Additional intraoperative monitoring as needed", "Add-on code for implantation of additional DBS electrode arrays during the same surgical session as 61867."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required (Primary)"],
+          "rows": [
+            ["G20.A1", "Parkinson's disease without dyskinesia, without mention of fluctuations", "Primary diagnosis for Parkinson's disease without motor complications.", "Yes"],
+            ["G20.A2", "Parkinson's disease without dyskinesia, with fluctuations", "Parkinson's disease with motor fluctuations but no dyskinesia.", "Yes"],
+            ["G20.B1", "Parkinson's disease with dyskinesia, without mention of fluctuations", "Parkinson's disease with dyskinesia but without motor fluctuations.", "Yes"],
+            ["G20.B2", "Parkinson's disease with dyskinesia, with fluctuations", "Parkinson's disease with both dyskinesia and motor fluctuations.", "Yes"],
+            ["G20.C", "Parkinsonism, unspecified", "Used when the specific type of Parkinsonism is not documented.", "No"],
+            ["G20", "Parkinson's disease", "General code for Parkinson's disease, less specific than sub-codes.", "No"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicare",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS (National Coverage Determination)", "Covered", "DBS for essential tremor and Parkinsonian tremor, and other movement disorders when medically necessary."],
+            ["Various MACs (Local Coverage Determinations)", "Covered with specific criteria", "MACs may have additional specific criteria or documentation requirements. Always check local policies."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid Programs", "Varies by State", "Each state's Medicaid program has its own specific coverage policies and criteria for DBS. Consultation of individual state policies is crucial."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Private Insurance",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield", "Generally Covered", "Coverage typically aligns with Medicare criteria, but specific plan benefits apply."],
+            ["UnitedHealthcare", "Generally Covered", "Requires prior authorization and adherence to clinical guidelines for movement disorders."],
+            ["Aetna", "Generally Covered", "Medical necessity criteria similar to national guidelines; prior authorization is mandatory."]
+          ]
+        }
+      ]
+    }
+  }
+}

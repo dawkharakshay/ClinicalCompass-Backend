@@ -1,0 +1,30 @@
+{
+  "title": "Bone Cancer Interventional Oncology Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "20982, 20983, 22510, 77013",
+      "credentials": "[Credentials]",
+      "icd_codes": "C79.51, C79.52, C41.9, G89.3, M84.50, M84.58",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "Re: Prior Authorization Appeal — Percutaneous Bone Tumor Ablation\n\nDear Medical Director,\n\nI am writing to formally appeal the denial of prior authorization for percutaneous bone tumor ablation for my patient who presents with painful bone metastases and/or primary bone tumor requiring interventional oncologic treatment.\n\nCLINICAL ASSESSMENT SUMMARY\n\nOur clinical decision support assessment classified this patient as a Candidate for bone tumor ablation (candidacy score: 0/100). Recommended modality: percutaneous ablation.\n\nCLINICAL INDICATION\n\nThis patient has documented painful bone metastases and/or primary bone tumor causing significant pain (NRS ≥4/10) and/or functional impairment. Conventional analgesic therapy including opioids has provided inadequate relief or is associated with intolerable side effects. The patient's performance status and tumor characteristics make percutaneous ablation a medically appropriate and necessary intervention.\n\nEVIDENCE BASE FOR PERCUTANEOUS BONE TUMOR ABLATION\n\n1. Callstrom MR et al. Painful Metastases Involving Bone: Feasibility of Percutaneous CT- and US-Guided Radio-Frequency Ablation. Radiology 2002; PMID 12177438 — landmark study demonstrating 95% technical success and significant pain reduction.\n\n2. Dupuy DE et al. Percutaneous Radiofrequency Ablation of Painful Osseous Metastases. Cancer 2010; PMID 20564102 — multicenter prospective study showing NRS pain reduction of ≥2 points in 78% of patients at 1 month.\n\n3. Tomasian A et al. Cryoablation of Spinal Metastases. Radiology 2016; PMID 27092773 — 100-patient series demonstrating durable pain relief with cryoablation of spinal metastases.\n\n4. SIR/ACR/CIRSE/ESTI Practice Guideline for Percutaneous Ablation of Bone Tumors (2021) — endorses radiofrequency ablation, cryoablation, and microwave ablation as effective treatments for painful bone metastases and primary bone tumors.\n\n5. NCCN Clinical Practice Guidelines in Oncology — Bone Cancer (2024) — recommends ablation as a palliative option for painful bone metastases when radiation therapy is not feasible or has failed.\n\n6. Palussière J et al. Cryoablation of Bone Metastases from Renal Cell Carcinoma. Eur Radiol 2017; PMID 27815646 — demonstrates efficacy of cryoablation for renal cell carcinoma bone metastases.\n\nMEDICAL NECESSITY\n\nDenial of percutaneous bone tumor ablation would leave this patient without an effective minimally invasive option for pain palliation. External beam radiation therapy (EBRT) is not always feasible due to prior radiation exposure, proximity to critical structures, or patient refusal. Surgical resection carries significantly higher morbidity. Percutaneous ablation is a well-established, guideline-supported procedure with an excellent safety profile and durable pain relief.\n\nREQUESTED ACTION\n\nI respectfully request reconsideration and approval of prior authorization for:\n- CPT {{cpt_codes}} — Percutaneous Bone Tumor Ablation\n- ICD-10 {{icd_codes}}\n\nI am available for a peer-to-peer review. Please contact me at {{practice_phone}}.\n\nSincerely,\n\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\n{{practice_address}}\nPhone: {{practice_phone}} | Fax: {{practice_fax}}\n{{practice_email}}"
+  }
+}

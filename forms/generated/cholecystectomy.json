@@ -1,0 +1,284 @@
+{
+  "title": "Cholecystectomy Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assess Candidacy",
+    "logicKey": "cholecystectomy",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "indication",
+        "shortLabel": "Indication & Symptoms",
+        "title": "Indication & Symptoms",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "sex",
+            "name": "sex",
+            "label": "Sex",
+            "type": "select",
+            "required": false,
+            "defaultValue": "male",
+            "options": [
+              { "label": "Male", "value": "male" },
+              { "label": "Female", "value": "female" }
+            ]
+          },
+          {
+            "id": "indication",
+            "name": "indication",
+            "label": "Primary Indication",
+            "type": "select",
+            "required": false,
+            "defaultValue": "symptomatic-cholelithiasis",
+            "options": [
+              { "label": "Symptomatic cholelithiasis", "value": "symptomatic-cholelithiasis" },
+              { "label": "Acute cholecystitis", "value": "acute-cholecystitis" },
+              { "label": "Biliary dyskinesia (low EF on HIDA)", "value": "biliary-dyskinesia" },
+              { "label": "Gallbladder polyp", "value": "polyp" },
+              { "label": "Other", "value": "other" }
+            ]
+          },
+          {
+            "id": "biliary-colic",
+            "name": "biliaryColic",
+            "label": "Biliary colic (right upper quadrant / epigastric pain)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "nausea",
+            "name": "nausea",
+            "label": "Nausea / vomiting associated with meals",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "intolerance",
+            "name": "intolerance",
+            "label": "Fatty food intolerance",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "frequency",
+            "name": "frequency",
+            "label": "Symptom Frequency",
+            "type": "select",
+            "required": false,
+            "defaultValue": "monthly",
+            "options": [
+              { "label": "Rare (<1/month)", "value": "rare" },
+              { "label": "Monthly", "value": "monthly" },
+              { "label": "Weekly", "value": "weekly" },
+              { "label": "Daily", "value": "daily" }
+            ]
+          },
+          {
+            "id": "pain-duration",
+            "name": "painDuration",
+            "label": "Duration (months)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "ejection-fraction",
+            "name": "ejectionFraction",
+            "label": "HIDA Scan Ejection Fraction (%)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "indication", "op": "eq", "value": "biliary-dyskinesia" }
+          },
+          {
+            "id": "polyp-size",
+            "name": "polypSize",
+            "label": "Polyp Size (mm)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "indication", "op": "eq", "value": "polyp" }
+          }
+        ]
+      },
+      {
+        "id": "imaging",
+        "shortLabel": "Imaging & Complications",
+        "title": "Imaging & Complications",
+        "fields": [
+          {
+            "id": "ultrasound-confirmed",
+            "name": "ultrasoundConfirmed",
+            "label": "Ultrasound performed",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "gallstones-present",
+            "name": "gallstonesPresent",
+            "label": "Gallstones confirmed on imaging",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "wall-thickening",
+            "name": "wallThickening",
+            "label": "Gallbladder wall thickening (>3mm)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "pericholecystic-fluid",
+            "name": "pericholecysticFluid",
+            "label": "Pericholecystic fluid",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "acute-cholecystitis",
+            "name": "acuteCholecystitis",
+            "label": "Acute cholecystitis (clinical + imaging)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "choledocholithiasis",
+            "name": "choledocholithiasis",
+            "label": "Choledocholithiasis (CBD stones)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "cholangitis",
+            "name": "cholangitis",
+            "label": "Acute cholangitis",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "gallstone-pancreatitis",
+            "name": "gallstonePancreatitis",
+            "label": "Gallstone pancreatitis",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "mirizzy-syndrome",
+            "name": "mirizzySyndrome",
+            "label": "Mirizzi syndrome",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "surgical-risk",
+        "shortLabel": "Surgical Risk",
+        "title": "Surgical Risk & Conservative Treatment",
+        "fields": [
+          {
+            "id": "asa",
+            "name": "asa",
+            "label": "ASA Classification",
+            "type": "select",
+            "required": false,
+            "defaultValue": 1,
+            "options": [
+              { "label": "ASA I — Healthy patient", "value": 1 },
+              { "label": "ASA II — Mild systemic disease", "value": 2 },
+              { "label": "ASA III — Severe systemic disease", "value": 3 },
+              { "label": "ASA IV — Life-threatening disease", "value": 4 }
+            ]
+          },
+          {
+            "id": "prior-abdominal-surgery",
+            "name": "priorAbdominalSurgery",
+            "label": "Prior abdominal surgery",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "cirrhosis",
+            "name": "cirrhosis",
+            "label": "Liver cirrhosis",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "coagulopathy",
+            "name": "coagulopathy",
+            "label": "Coagulopathy / anticoagulation",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "pregnancy",
+            "name": "pregnancy",
+            "label": "Pregnancy",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "tried-diet-modification",
+            "name": "triedDietModification",
+            "label": "Dietary modification attempted",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "tried-medications",
+            "name": "triedMedications",
+            "label": "Medications tried (ursodiol, etc.)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "pregnancy-trimester",
+            "name": "pregnancyTrimester",
+            "label": "Trimester",
+            "type": "select",
+            "required": false,
+            "defaultValue": 0,
+            "options": [
+              { "label": "1st trimester", "value": 1 },
+              { "label": "2nd trimester (safest for surgery)", "value": 2 },
+              { "label": "3rd trimester", "value": 3 }
+            ],
+            "visibleWhen": { "field": "pregnancy", "op": "truthy" }
+          }
+        ]
+      }
+    ]
+  }
+}

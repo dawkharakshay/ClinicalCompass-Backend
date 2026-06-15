@@ -1,0 +1,363 @@
+{
+  "title": "Pediatric Obesity Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "PediatricObesityAuthGuide.tsx",
+    "title": "PediatricObesity Clinical Compass",
+    "subtitle": "Pediatric Obesity Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "99213",
+        "description": "Office or other outpatient visit for the evaluation and management of an established patient, which requires at least 2 of 3 key components: expanded problem focused history; expanded problem focused examination; medical decision making of low complexity.",
+        "device": "N/A",
+        "access": "Direct Patient Contact",
+        "rvu": "1.92",
+        "includes": ["History, Exam, Medical Decision Making"],
+        "note": "Used for general E/M visits related to pediatric obesity management and follow-up."
+      },
+      {
+        "code": "99401",
+        "description": "Preventive medicine counseling and/or risk factor reduction intervention(s) provided to an individual (separate procedure); approximately 15 minutes.",
+        "device": "N/A",
+        "access": "Direct Patient Contact",
+        "rvu": "0.60",
+        "includes": ["Counseling on diet, exercise, lifestyle changes"],
+        "note": "Used for behavioral counseling for obesity. Time-based code."
+      },
+      {
+        "code": "G0447",
+        "description": "Face-to-face behavioral counseling for obesity, 15 minutes.",
+        "device": "N/A",
+        "access": "Direct Patient Contact",
+        "rvu": "0.60",
+        "includes": ["Behavioral assessment, counseling, goal setting"],
+        "note": "Specific HCPCS code for intensive behavioral therapy for obesity, often recognized by Medicare and some commercial payers."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "E66.01",
+        "description": "Morbid (severe) obesity due to excess calories",
+        "notes": "Primary diagnosis for severe pediatric obesity.",
+        "required": true
+      },
+      {
+        "code": "Z68.53",
+        "description": "Body mass index (BMI) 95th percentile or greater for age, pediatric, 13 years to 17 years",
+        "notes": "Secondary diagnosis to specify BMI for adolescents.",
+        "required": false
+      },
+      {
+        "code": "Z68.52",
+        "description": "Body mass index (BMI) 95th percentile or greater for age, pediatric, 6 years to 12 years",
+        "notes": "Secondary diagnosis to specify BMI for school-aged children.",
+        "required": false
+      },
+      {
+        "code": "Z68.51",
+        "description": "Body mass index (BMI) 95th percentile or greater for age, pediatric, 2 years to 5 years",
+        "notes": "Secondary diagnosis to specify BMI for preschool-aged children.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Limited Coverage",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Medicare generally covers Intensive Behavioral Therapy (IBT) for obesity (BMI ≥ 30) without prior authorization, but specific criteria apply. GLP-1 agonists for weight loss are typically not covered.",
+        "overview": "Medicare covers Intensive Behavioral Therapy (IBT) for obesity for beneficiaries with a BMI of 30 kg/m2 or greater. Coverage includes face-to-face counseling sessions. GLP-1 agonists are generally not covered for weight loss, but may be covered for type 2 diabetes with a secondary benefit of weight loss.",
+        "reimbursementNote": "Reimbursement for IBT is generally consistent, but GLP-1 coverage is highly restricted to diabetes management.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Intensive Behavioral Therapy (IBT)",
+            "items": [
+              "Patient must have a BMI ≥ 30 kg/m2.",
+              "Counseling must be furnished by a qualified primary care physician or other primary care provider.",
+              "Sessions must be face-to-face.",
+              "Initial visit: 1 face-to-face visit every week for the first month.",
+              "Subsequent visits: 1 face-to-face visit every other week for months 2-6.",
+              "Follow-up visits: 1 face-to-face visit every month for months 7-12, if the beneficiary achieves a 3kg weight loss during the first 6 months."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — GLP-1 Agonists",
+            "items": [
+              "Generally not covered for weight loss alone.",
+              "May be covered if prescribed for type 2 diabetes with documented medical necessity and patient meets specific criteria for diabetes management."
+            ]
+          },
+          {
+            "heading": "Required Documentation — For IBT",
+            "items": [
+              "Documentation of BMI ≥ 30 kg/m2.",
+              "Medical record notes detailing counseling content and time spent.",
+              "Progress notes demonstrating weight loss or maintenance of weight loss."
+            ]
+          },
+          {
+            "heading": "Required Documentation — For GLP-1 Agonists (if applicable)",
+            "items": [
+              "Documentation of type 2 diabetes diagnosis.",
+              "Trial and failure of other anti-diabetic medications.",
+              "Documentation of patient education and monitoring plan."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims using appropriate CPT/HCPCS codes (e.g., G0447, 99213) with ICD-10 codes.",
+              "Ensure medical records support the medical necessity and services rendered."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented BMI ≥ 30 kg/m2 for IBT.",
+              "Insufficient documentation of counseling content or time.",
+              "GLP-1 agonists prescribed solely for weight loss.",
+              "Services provided by non-qualified providers."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Clearly document BMI and medical necessity for all obesity-related services.",
+              "For GLP-1 agonists, emphasize the primary diagnosis of type 2 diabetes if applicable.",
+              "Educate patients on Medicare coverage limitations for weight loss medications."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "CMS", "status": "Covered", "notes": "Intensive Behavioral Therapy for Obesity (IBT) for BMI ≥ 30." },
+          { "payer": "CMS", "status": "Non-covered", "notes": "GLP-1 agonists for weight loss only." }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Variable Coverage by State",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid coverage for pediatric obesity treatment, including IBT and GLP-1 agonists, varies significantly by state and often requires prior authorization.",
+        "overview": "Medicaid programs vary by state regarding coverage for pediatric obesity interventions. Many states cover intensive behavioral therapy, and some may cover GLP-1 agonists with strict criteria and prior authorization, especially for adolescents.",
+        "reimbursementNote": "Reimbursement for pediatric obesity services is highly dependent on state-specific Medicaid policies and often requires meticulous documentation and prior authorization.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Intensive Behavioral Therapy (IBT)",
+            "items": [
+              "Patient must meet state-specific age and BMI criteria for obesity.",
+              "Referral from a primary care provider.",
+              "Participation in a structured, evidence-based weight management program.",
+              "Documentation of co-morbidities related to obesity may be required."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — GLP-1 Agonists",
+            "items": [
+              "Patient must meet state-specific age and BMI criteria (e.g., BMI ≥ 30 or BMI ≥ 27 with co-morbidities).",
+              "Prior authorization is almost always required.",
+              "Documentation of trial and failure of lifestyle interventions.",
+              "Prescribed by a specialist (e.g., endocrinologist, pediatric obesity specialist).",
+              "Specific GLP-1 agents may be preferred or require step therapy."
+            ]
+          },
+          {
+            "heading": "Required Documentation — For IBT",
+            "items": [
+              "Prior authorization request form.",
+              "Patient demographics and medical history.",
+              "Documentation of BMI percentile for age.",
+              "Treatment plan outlining behavioral interventions and goals."
+            ]
+          },
+          {
+            "heading": "Required Documentation — For GLP-1 Agonists",
+            "items": [
+              "Prior authorization request form with detailed clinical justification.",
+              "Growth charts and BMI percentile documentation.",
+              "Documentation of co-morbidities (e.g., type 2 diabetes, severe dyslipidemia).",
+              "Notes on previous failed weight management attempts.",
+              "Prescriber information and specialty."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify state-specific Medicaid policies and formularies.",
+              "Submit prior authorization requests electronically or via fax.",
+              "Follow up on authorization status regularly.",
+              "Submit claims with authorized CPT/HCPCS and ICD-10 codes."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to obtain prior authorization.",
+              "Lack of medical necessity according to state guidelines.",
+              "Insufficient documentation of BMI or co-morbidities.",
+              "Prescribing outside of approved age ranges or for non-covered indications.",
+              "Failure of step therapy requirements."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always check the specific state Medicaid guidelines for pediatric obesity.",
+              "Thoroughly document all conservative management attempts before requesting GLP-1 agonists.",
+              "Provide comprehensive clinical notes supporting medical necessity for all services."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "State Medicaid (e.g., California)", "status": "Covered with PA", "notes": "IBT and some GLP-1s for adolescents meeting specific criteria." },
+          { "payer": "State Medicaid (e.g., Texas)", "status": "Limited Coverage", "notes": "Focus on IBT; GLP-1s may be very restricted." }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Varies by Plan",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for intensive behavioral therapy and GLP-1 agonists for pediatric obesity, with varying coverage criteria and formularies.",
+        "overview": "Private insurance coverage for pediatric obesity treatment varies widely. Many plans cover behavioral interventions, but coverage for GLP-1 agonists for weight loss is often restricted, requiring prior authorization, specific BMI criteria, and documentation of co-morbidities or failed conservative treatments.",
+        "reimbursementNote": "Reimbursement for pediatric obesity treatments, especially GLP-1 agonists, is highly variable and often requires significant advocacy and detailed documentation.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Intensive Behavioral Therapy (IBT)",
+            "items": [
+              "Patient must meet plan-specific age and BMI criteria for obesity.",
+              "Participation in an approved, evidence-based weight management program.",
+              "Referral from a primary care physician or specialist.",
+              "Documentation of medical necessity and potential for improvement."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — GLP-1 Agonists",
+            "items": [
+              "Patient must meet plan-specific age and BMI criteria (e.g., BMI ≥ 30 or BMI ≥ 27 with co-morbidities).",
+              "Prior authorization is almost always required.",
+              "Documentation of trial and failure of at least 3-6 months of supervised lifestyle modification.",
+              "Prescribed by a specialist (e.g., pediatric endocrinologist, bariatric specialist).",
+              "Specific GLP-1 agents may be on a preferred drug list or require step therapy.",
+              "Exclusion of underlying medical conditions contributing to obesity."
+            ]
+          },
+          {
+            "heading": "Required Documentation — For IBT",
+            "items": [
+              "Prior authorization request form.",
+              "Detailed clinical notes supporting medical necessity.",
+              "BMI percentile for age and growth charts.",
+              "Outline of the behavioral intervention program."
+            ]
+          },
+          {
+            "heading": "Required Documentation — For GLP-1 Agonists",
+            "items": [
+              "Prior authorization request form with comprehensive clinical justification.",
+              "Growth charts, BMI percentile, and documentation of obesity-related co-morbidities.",
+              "Detailed notes on previous supervised diet and exercise programs, including duration and outcomes.",
+              "Prescriber specialty and rationale for medication choice.",
+              "Lab results (e.g., A1c, lipids) if co-morbidities are present."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify patient eligibility and benefits for obesity management.",
+              "Submit prior authorization requests through the plan's portal or fax.",
+              "Provide all requested clinical documentation promptly.",
+              "Appeal denials with additional clinical information if necessary.",
+              "Submit claims with authorized CPT/HCPCS and ICD-10 codes."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization.",
+              "Failure to meet BMI or age criteria.",
+              "Insufficient documentation of failed conservative treatments.",
+              "Medication not on formulary or failure of step therapy.",
+              "Lack of documented obesity-related co-morbidities for medication coverage.",
+              "Services deemed experimental or investigational."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify specific plan benefits and prior authorization requirements before initiating treatment.",
+              "Document all lifestyle interventions and their outcomes meticulously.",
+              "Highlight any obesity-related co-morbidities to strengthen medical necessity arguments.",
+              "Be prepared to appeal denials with robust clinical documentation."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Blue Cross Blue Shield (example)", "status": "Covered with PA", "notes": "IBT and some GLP-1s for adolescents with severe obesity and co-morbidities." },
+          { "payer": "UnitedHealthcare (example)", "status": "Limited/Investigational", "notes": "GLP-1s for weight loss often considered investigational for pediatric population." }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Navigation",
+        "kind": "link",
+        "text": "Back to Assessment",
+        "href": "/pediatricobesity"
+      },
+      {
+        "heading": "Procedure Codes Card Note",
+        "kind": "prose",
+        "text": "For each CPT code, the 'Included in this code (do NOT bill separately)' list itemizes services bundled into that code. Each CPT card also displays an RVU badge and a Device/Access value."
+      }
+    ],
+    "raw": {
+      "markdown": "# PediatricObesity Clinical Compass\n## Pediatric Obesity Insurance Authorization Guide\n\n[Button: Back to Assessment → /pediatricobesity]\n\n## Procedure Codes (CPT)\n\n### CPT 99213 (RVU 1.92)\nOffice or other outpatient visit for the evaluation and management of an established patient, which requires at least 2 of 3 key components: expanded problem focused history; expanded problem focused examination; medical decision making of low complexity.\nDevice/Access: N/A\nIncluded in this code (do NOT bill separately):\n- History, Exam, Medical Decision Making\nNote: Used for general E/M visits related to pediatric obesity management and follow-up.\n\n### CPT 99401 (RVU 0.60)\nPreventive medicine counseling and/or risk factor reduction intervention(s) provided to an individual (separate procedure); approximately 15 minutes.\nDevice/Access: N/A\nIncluded in this code (do NOT bill separately):\n- Counseling on diet, exercise, lifestyle changes\nNote: Used for behavioral counseling for obesity. Time-based code.\n\n### CPT G0447 (RVU 0.60)\nFace-to-face behavioral counseling for obesity, 15 minutes.\nDevice/Access: N/A\nIncluded in this code (do NOT bill separately):\n- Behavioral assessment, counseling, goal setting\nNote: Specific HCPCS code for intensive behavioral therapy for obesity, often recognized by Medicare and some commercial payers.\n\n## ICD-10 Diagnosis Codes\n\n- E66.01 (Primary / Required): Morbid (severe) obesity due to excess calories — Primary diagnosis for severe pediatric obesity.\n- Z68.53: Body mass index (BMI) 95th percentile or greater for age, pediatric, 13 years to 17 years — Secondary diagnosis to specify BMI for adolescents.\n- Z68.52: Body mass index (BMI) 95th percentile or greater for age, pediatric, 6 years to 12 years — Secondary diagnosis to specify BMI for school-aged children.\n- Z68.51: Body mass index (BMI) 95th percentile or greater for age, pediatric, 2 years to 5 years — Secondary diagnosis to specify BMI for preschool-aged children.\n\n## Payer-Specific Authorization Requirements\n\n### Medicare\nStatus: No Prior Auth (FFS) | Limited Coverage\nPrior Auth Note: Medicare generally covers Intensive Behavioral Therapy (IBT) for obesity (BMI ≥ 30) without prior authorization, but specific criteria apply. GLP-1 agonists for weight loss are typically not covered.\nOverview: Medicare covers Intensive Behavioral Therapy (IBT) for obesity for beneficiaries with a BMI of 30 kg/m2 or greater. Coverage includes face-to-face counseling sessions. GLP-1 agonists are generally not covered for weight loss, but may be covered for type 2 diabetes with a secondary benefit of weight loss.\n\n**Coverage Criteria**\n_Intensive Behavioral Therapy (IBT)_\n- Patient must have a BMI ≥ 30 kg/m2.\n- Counseling must be furnished by a qualified primary care physician or other primary care provider.\n- Sessions must be face-to-face.\n- Initial visit: 1 face-to-face visit every week for the first month.\n- Subsequent visits: 1 face-to-face visit every other week for months 2-6.\n- Follow-up visits: 1 face-to-face visit every month for months 7-12, if the beneficiary achieves a 3kg weight loss during the first 6 months.\n_GLP-1 Agonists_\n- Generally not covered for weight loss alone.\n- May be covered if prescribed for type 2 diabetes with documented medical necessity and patient meets specific criteria for diabetes management.\n\n**Required Documentation**\n_For IBT_\n- Documentation of BMI ≥ 30 kg/m2.\n- Medical record notes detailing counseling content and time spent.\n- Progress notes demonstrating weight loss or maintenance of weight loss.\n_For GLP-1 Agonists (if applicable)_\n- Documentation of type 2 diabetes diagnosis.\n- Trial and failure of other anti-diabetic medications.\n- Documentation of patient education and monitoring plan.\n\n**Submission Process**\n1. Submit claims using appropriate CPT/HCPCS codes (e.g., G0447, 99213) with ICD-10 codes.\n2. Ensure medical records support the medical necessity and services rendered.\n\n**Common Denial Reasons**\n- Lack of documented BMI ≥ 30 kg/m2 for IBT.\n- Insufficient documentation of counseling content or time.\n- GLP-1 agonists prescribed solely for weight loss.\n- Services provided by non-qualified providers.\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS | Covered | Intensive Behavioral Therapy for Obesity (IBT) for BMI ≥ 30. |\n| CMS | Non-covered | GLP-1 agonists for weight loss only. |\n\n**Reimbursement Note:** Reimbursement for IBT is generally consistent, but GLP-1 coverage is highly restricted to diabetes management.\n\n**Authorization Tips**\n- Clearly document BMI and medical necessity for all obesity-related services.\n- For GLP-1 agonists, emphasize the primary diagnosis of type 2 diabetes if applicable.\n- Educate patients on Medicare coverage limitations for weight loss medications.\n\n### Medicaid\nStatus: Prior Auth Required | Variable Coverage by State\nPrior Auth Note: Medicaid coverage for pediatric obesity treatment, including IBT and GLP-1 agonists, varies significantly by state and often requires prior authorization.\nOverview: Medicaid programs vary by state regarding coverage for pediatric obesity interventions. Many states cover intensive behavioral therapy, and some may cover GLP-1 agonists with strict criteria and prior authorization, especially for adolescents.\n\n**Coverage Criteria**\n_Intensive Behavioral Therapy (IBT)_\n- Patient must meet state-specific age and BMI criteria for obesity.\n- Referral from a primary care provider.\n- Participation in a structured, evidence-based weight management program.\n- Documentation of co-morbidities related to obesity may be required.\n_GLP-1 Agonists_\n- Patient must meet state-specific age and BMI criteria (e.g., BMI ≥ 30 or BMI ≥ 27 with co-morbidities).\n- Prior authorization is almost always required.\n- Documentation of trial and failure of lifestyle interventions.\n- Prescribed by a specialist (e.g., endocrinologist, pediatric obesity specialist).\n- Specific GLP-1 agents may be preferred or require step therapy.\n\n**Required Documentation**\n_For IBT_\n- Prior authorization request form.\n- Patient demographics and medical history.\n- Documentation of BMI percentile for age.\n- Treatment plan outlining behavioral interventions and goals.\n_For GLP-1 Agonists_\n- Prior authorization request form with detailed clinical justification.\n- Growth charts and BMI percentile documentation.\n- Documentation of co-morbidities (e.g., type 2 diabetes, severe dyslipidemia).\n- Notes on previous failed weight management attempts.\n- Prescriber information and specialty.\n\n**Submission Process**\n1. Verify state-specific Medicaid policies and formularies.\n2. Submit prior authorization requests electronically or via fax.\n3. Follow up on authorization status regularly.\n4. Submit claims with authorized CPT/HCPCS and ICD-10 codes.\n\n**Common Denial Reasons**\n- Failure to obtain prior authorization.\n- Lack of medical necessity according to state guidelines.\n- Insufficient documentation of BMI or co-morbidities.\n- Prescribing outside of approved age ranges or for non-covered indications.\n- Failure of step therapy requirements.\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (e.g., California) | Covered with PA | IBT and some GLP-1s for adolescents meeting specific criteria. |\n| State Medicaid (e.g., Texas) | Limited Coverage | Focus on IBT; GLP-1s may be very restricted. |\n\n**Reimbursement Note:** Reimbursement for pediatric obesity services is highly dependent on state-specific Medicaid policies and often requires meticulous documentation and prior authorization.\n\n**Authorization Tips**\n- Always check the specific state Medicaid guidelines for pediatric obesity.\n- Thoroughly document all conservative management attempts before requesting GLP-1 agonists.\n- Provide comprehensive clinical notes supporting medical necessity for all services.\n\n### Private Insurance\nStatus: Prior Auth Required | Varies by Plan\nPrior Auth Note: Most private insurance plans require prior authorization for intensive behavioral therapy and GLP-1 agonists for pediatric obesity, with varying coverage criteria and formularies.\nOverview: Private insurance coverage for pediatric obesity treatment varies widely. Many plans cover behavioral interventions, but coverage for GLP-1 agonists for weight loss is often restricted, requiring prior authorization, specific BMI criteria, and documentation of co-morbidities or failed conservative treatments.\n\n**Coverage Criteria**\n_Intensive Behavioral Therapy (IBT)_\n- Patient must meet plan-specific age and BMI criteria for obesity.\n- Participation in an approved, evidence-based weight management program.\n- Referral from a primary care physician or specialist.\n- Documentation of medical necessity and potential for improvement.\n_GLP-1 Agonists_\n- Patient must meet plan-specific age and BMI criteria (e.g., BMI ≥ 30 or BMI ≥ 27 with co-morbidities).\n- Prior authorization is almost always required.\n- Documentation of trial and failure of at least 3-6 months of supervised lifestyle modification.\n- Prescribed by a specialist (e.g., pediatric endocrinologist, bariatric specialist).\n- Specific GLP-1 agents may be on a preferred drug list or require step therapy.\n- Exclusion of underlying medical conditions contributing to obesity.\n\n**Required Documentation**\n_For IBT_\n- Prior authorization request form.\n- Detailed clinical notes supporting medical necessity.\n- BMI percentile for age and growth charts.\n- Outline of the behavioral intervention program.\n_For GLP-1 Agonists_\n- Prior authorization request form with comprehensive clinical justification.\n- Growth charts, BMI percentile, and documentation of obesity-related co-morbidities.\n- Detailed notes on previous supervised diet and exercise programs, including duration and outcomes.\n- Prescriber specialty and rationale for medication choice.\n- Lab results (e.g., A1c, lipids) if co-morbidities are present.\n\n**Submission Process**\n1. Verify patient eligibility and benefits for obesity management.\n2. Submit prior authorization requests through the plan's portal or fax.\n3. Provide all requested clinical documentation promptly.\n4. Appeal denials with additional clinical information if necessary.\n5. Submit claims with authorized CPT/HCPCS and ICD-10 codes.\n\n**Common Denial Reasons**\n- Lack of prior authorization.\n- Failure to meet BMI or age criteria.\n- Insufficient documentation of failed conservative treatments.\n- Medication not on formulary or failure of step therapy.\n- Lack of documented obesity-related co-morbidities for medication coverage.\n- Services deemed experimental or investigational.\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Blue Cross Blue Shield (example) | Covered with PA | IBT and some GLP-1s for adolescents with severe obesity and co-morbidities. |\n| UnitedHealthcare (example) | Limited/Investigational | GLP-1s for weight loss often considered investigational for pediatric population. |\n\n**Reimbursement Note:** Reimbursement for pediatric obesity treatments, especially GLP-1 agonists, is highly variable and often requires significant advocacy and detailed documentation.\n\n**Authorization Tips**\n- Always verify specific plan benefits and prior authorization requirements before initiating treatment.\n- Document all lifestyle interventions and their outcomes meticulously.\n- Highlight any obesity-related co-morbidities to strengthen medical necessity arguments.\n- Be prepared to appeal denials with robust clinical documentation.",
+      "tables": [
+        {
+          "name": "CPT Procedure Codes",
+          "header": ["Code", "Description", "Device/Access", "RVU", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            ["99213", "Office or other outpatient visit for the evaluation and management of an established patient, which requires at least 2 of 3 key components: expanded problem focused history; expanded problem focused examination; medical decision making of low complexity.", "N/A / Direct Patient Contact", "1.92", "History, Exam, Medical Decision Making", "Used for general E/M visits related to pediatric obesity management and follow-up."],
+            ["99401", "Preventive medicine counseling and/or risk factor reduction intervention(s) provided to an individual (separate procedure); approximately 15 minutes.", "N/A / Direct Patient Contact", "0.60", "Counseling on diet, exercise, lifestyle changes", "Used for behavioral counseling for obesity. Time-based code."],
+            ["G0447", "Face-to-face behavioral counseling for obesity, 15 minutes.", "N/A / Direct Patient Contact", "0.60", "Behavioral assessment, counseling, goal setting", "Specific HCPCS code for intensive behavioral therapy for obesity, often recognized by Medicare and some commercial payers."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required/Primary"],
+          "rows": [
+            ["E66.01", "Morbid (severe) obesity due to excess calories", "Primary diagnosis for severe pediatric obesity.", "Yes (Primary)"],
+            ["Z68.53", "Body mass index (BMI) 95th percentile or greater for age, pediatric, 13 years to 17 years", "Secondary diagnosis to specify BMI for adolescents.", "No"],
+            ["Z68.52", "Body mass index (BMI) 95th percentile or greater for age, pediatric, 6 years to 12 years", "Secondary diagnosis to specify BMI for school-aged children.", "No"],
+            ["Z68.51", "Body mass index (BMI) 95th percentile or greater for age, pediatric, 2 years to 5 years", "Secondary diagnosis to specify BMI for preschool-aged children.", "No"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicare",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS", "Covered", "Intensive Behavioral Therapy for Obesity (IBT) for BMI ≥ 30."],
+            ["CMS", "Non-covered", "GLP-1 agonists for weight loss only."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., California)", "Covered with PA", "IBT and some GLP-1s for adolescents meeting specific criteria."],
+            ["State Medicaid (e.g., Texas)", "Limited Coverage", "Focus on IBT; GLP-1s may be very restricted."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Private Insurance",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield (example)", "Covered with PA", "IBT and some GLP-1s for adolescents with severe obesity and co-morbidities."],
+            ["UnitedHealthcare (example)", "Limited/Investigational", "GLP-1s for weight loss often considered investigational for pediatric population."]
+          ]
+        }
+      ]
+    }
+  }
+}

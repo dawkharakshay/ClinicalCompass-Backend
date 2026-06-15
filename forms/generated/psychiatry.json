@@ -1,0 +1,282 @@
+{
+  "title": "Psychiatry Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Get Recommendations",
+    "logicKey": "psychiatry",
+    "hiddenDefaults": {
+      "acuity": "",
+      "priorDBT": false,
+      "priorMBT": false,
+      "comorbidMDD": false,
+      "comorbidBipolar": false,
+      "polypharmacy": false,
+      "substanceUse": false,
+      "trialsFailed": 0,
+      "esketamineCandidacy": false,
+      "psychoticFeatures": false,
+      "bipolarHistory": false,
+      "pregnancyOrPostpartum": false,
+      "currentMedication": "",
+      "augmentationTried": false,
+      "ecgAbnormal": false,
+      "measurementBasedCare": false,
+      "clozapineEligible": false,
+      "metabolicConcerns": false,
+      "laiCandidate": false,
+      "nonadherence": false,
+      "comorbidSubstanceUse": false,
+      "tardiveDyskinesia": false,
+      "acuteExacerbation": false,
+      "currentAntipsychotic": "",
+      "pediatric": false,
+      "medicallyUnstable": false,
+      "priorFBT": false,
+      "priorCBT": false,
+      "priorIOP": false,
+      "anxietyComorbid": false,
+      "seizureHistory": false,
+      "withdrawalHistory": false,
+      "substanceUseDisorder": false,
+      "ptsdSeverity": "",
+      "recentLoss": false,
+      "protectiveFactors": false,
+      "suicideRiskLevel": "",
+      "currentPhase": "",
+      "rapidCycling": false,
+      "mixedFeatures": false,
+      "lithiumTried": false,
+      "valproateTried": false,
+      "lamotrigineTried": false
+    },
+    "steps": [
+      {
+        "id": "condition",
+        "shortLabel": "Condition",
+        "title": "Select psychiatric condition and patient demographics",
+        "fields": [
+          {
+            "id": "condition",
+            "name": "condition",
+            "label": "Psychiatric Condition",
+            "type": "select",
+            "required": true,
+            "defaultValue": "",
+            "options": [
+              { "label": "Delirium (APA 2025)", "value": "delirium" },
+              { "label": "Major Depressive Disorder (APA 2025–2026)", "value": "depression" },
+              { "label": "Borderline Personality Disorder (APA 2025)", "value": "bpd" },
+              { "label": "Schizophrenia (APA 2020)", "value": "schizophrenia" },
+              { "label": "PTSD (VA/DoD 2023)", "value": "ptsd" },
+              { "label": "Eating Disorder (APA 2023)", "value": "eating_disorder" },
+              { "label": "Benzodiazepine Tapering (APA 2025)", "value": "benzo_tapering" },
+              { "label": "Suicide Risk Assessment (VA/DoD)", "value": "suicide_risk" },
+              { "label": "Bipolar Disorder (APA 2020)", "value": "bipolar" }
+            ]
+          },
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "gender",
+            "name": "gender",
+            "label": "Gender",
+            "type": "select",
+            "defaultValue": "",
+            "options": [
+              { "label": "Male", "value": "male" },
+              { "label": "Female", "value": "female" },
+              { "label": "Other", "value": "other" }
+            ]
+          },
+          {
+            "id": "severity",
+            "name": "severity",
+            "label": "Depression Severity",
+            "type": "select",
+            "defaultValue": "",
+            "options": [
+              { "label": "Mild (5–9 symptoms)", "value": "mild" },
+              { "label": "Moderate (10–14 symptoms)", "value": "moderate" },
+              { "label": "Severe (≥15 symptoms)", "value": "severe" }
+            ],
+            "visibleWhen": { "field": "condition", "op": "eq", "value": "depression" }
+          },
+          {
+            "id": "trd",
+            "name": "trd",
+            "label": "Treatment-Resistant Depression (failed ≥2 adequate trials)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "condition", "op": "eq", "value": "depression" }
+          },
+          {
+            "id": "suicidal-ideation",
+            "name": "suicidalIdeation",
+            "label": "Active Suicidal Ideation",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "condition", "op": "eq", "value": "depression" }
+          },
+          {
+            "id": "diagnosis-confirmed",
+            "name": "diagnosisConfirmed",
+            "label": "Diagnosis Confirmed",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "condition", "op": "eq", "value": "bpd" }
+          },
+          {
+            "id": "current-crisis",
+            "name": "currentCrisis",
+            "label": "Current Crisis (SI/SH)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "condition", "op": "eq", "value": "bpd" }
+          },
+          {
+            "id": "first-episode",
+            "name": "firstEpisode",
+            "label": "First-Episode Psychosis",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "condition", "op": "eq", "value": "schizophrenia" }
+          },
+          {
+            "id": "treatment-resistant",
+            "name": "treatmentResistant",
+            "label": "Treatment-Resistant (failed ≥2 antipsychotics)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "condition", "op": "eq", "value": "schizophrenia" }
+          },
+          {
+            "id": "ptsd-duration",
+            "name": "ptsdDuration",
+            "label": "PTSD Duration",
+            "type": "select",
+            "defaultValue": "",
+            "options": [
+              { "label": "Acute (<3 months)", "value": "acute" },
+              { "label": "Chronic (≥3 months)", "value": "chronic" },
+              { "label": "Delayed Onset (>6 months after event)", "value": "delayed" }
+            ],
+            "visibleWhen": { "field": "condition", "op": "eq", "value": "ptsd" }
+          },
+          {
+            "id": "military-veteran",
+            "name": "militaryVeteran",
+            "label": "Military Veteran",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "condition", "op": "eq", "value": "ptsd" }
+          },
+          {
+            "id": "ed-type",
+            "name": "edType",
+            "label": "Eating Disorder Type",
+            "type": "select",
+            "defaultValue": "",
+            "options": [
+              { "label": "Anorexia Nervosa", "value": "AN" },
+              { "label": "Bulimia Nervosa", "value": "BN" },
+              { "label": "Binge Eating Disorder", "value": "BED" },
+              { "label": "ARFID", "value": "ARFID" }
+            ],
+            "visibleWhen": { "field": "condition", "op": "eq", "value": "eating_disorder" }
+          },
+          {
+            "id": "bmi",
+            "name": "bmi",
+            "label": "BMI",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "condition", "op": "eq", "value": "eating_disorder" }
+          },
+          {
+            "id": "benzo-name",
+            "name": "benzoName",
+            "label": "Benzodiazepine Name",
+            "type": "select",
+            "defaultValue": "",
+            "options": [
+              { "label": "Diazepam", "value": "diazepam" },
+              { "label": "Alprazolam", "value": "alprazolam" },
+              { "label": "Clonazepam", "value": "clonazepam" },
+              { "label": "Lorazepam", "value": "lorazepam" }
+            ],
+            "visibleWhen": { "field": "condition", "op": "eq", "value": "benzo_tapering" }
+          },
+          {
+            "id": "duration-years",
+            "name": "durationYears",
+            "label": "Duration (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "condition", "op": "eq", "value": "benzo_tapering" }
+          },
+          {
+            "id": "daily-dose-mg",
+            "name": "dailyDoseMg",
+            "label": "Daily Dose (mg)",
+            "type": "number",
+            "defaultValue": 0,
+            "unit": "mg",
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "condition", "op": "eq", "value": "benzo_tapering" }
+          },
+          {
+            "id": "bipolar-type",
+            "name": "bipolarType",
+            "label": "Bipolar Type",
+            "type": "select",
+            "defaultValue": "",
+            "options": [
+              { "label": "Type I", "value": "I" },
+              { "label": "Type II", "value": "II" },
+              { "label": "Cyclothymia", "value": "cyclothymia" }
+            ],
+            "visibleWhen": { "field": "condition", "op": "eq", "value": "bipolar" }
+          },
+          {
+            "id": "current-phase",
+            "name": "currentPhase",
+            "label": "Current Phase",
+            "type": "select",
+            "defaultValue": "",
+            "options": [
+              { "label": "Manic", "value": "manic" },
+              { "label": "Hypomanic", "value": "hypomanic" },
+              { "label": "Depressed", "value": "depressed" },
+              { "label": "Mixed", "value": "mixed" },
+              { "label": "Euthymic", "value": "euthymic" }
+            ],
+            "visibleWhen": { "field": "condition", "op": "eq", "value": "bipolar" }
+          }
+        ]
+      },
+      {
+        "id": "parameters",
+        "shortLabel": "Parameters",
+        "title": "Provide condition-specific clinical parameters",
+        "fields": [
+          {
+            "id": "params-info",
+            "label": "Provide additional clinical parameters for this condition",
+            "type": "alert",
+            "severity": "info",
+            "text": "Provide additional clinical parameters for this condition"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Renal Cryoablation Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "50593, 76940, 77013, 77022, 50200, 74178, 74183",
+      "credentials": "[Credentials]",
+      "icd_codes": "C64.1, C64.2, C64.9, D30.01, D30.02, D41.01, D41.02, Z85.528, Q61.3, D36.7",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "To Whom It May Concern,\n\nI am writing to formally appeal the denial of prior authorization for percutaneous renal cryoablation for my patient {{patient_name}}, Date of Birth {{patient_dob}}, Member ID {{member_id}}.\n\nCLINICAL SUMMARY:\nThis patient presents with a renal mass measuring [SIZE] cm at [LOCATION] on cross-sectional imaging (CT/MRI). The lesion demonstrates [ENHANCEMENT CHARACTERISTICS] consistent with a solid renal neoplasm. R.E.N.A.L. Nephrometry Score: [SCORE] ([LOW/MODERATE/HIGH] complexity). The patient has been evaluated by a multidisciplinary team and is a candidate for percutaneous image-guided cryoablation based on tumor size, location, and patient comorbidities.\n\nGUIDELINE SUPPORT:\nPercutaneous renal cryoablation is supported by multiple society guidelines and high-quality evidence:\n\n- AUA Guidelines on Renal Mass and Localized Renal Cancer (2021): Thermal ablation (including cryoablation) is recommended as an alternative to partial nephrectomy for cT1a tumors (<=4 cm) and selected cT1b tumors in patients with comorbidities, advanced age, or solitary kidney. Evidence Level: Grade B.\n\n- NCCN Clinical Practice Guidelines in Oncology - Kidney Cancer (v2.2024): Ablative techniques including cryoablation are listed as acceptable treatment options for Stage I renal cell carcinoma, particularly in patients who are poor surgical candidates or prefer a minimally invasive approach.\n\n- ACR Appropriateness Criteria - Renal Cell Carcinoma Staging (2022): Image-guided percutaneous ablation is rated \"Usually Appropriate\" for small renal masses (<=4 cm) in patients with comorbidities precluding surgery or those with imperative indications (solitary kidney, bilateral tumors, hereditary RCC syndromes).\n\n- Psutka SP, et al. (J Urol. 2013;190:1255-1262): Long-term outcomes of percutaneous cryoablation for T1a renal cell carcinoma demonstrated 5-year cancer-specific survival of 95.6% and local recurrence-free survival of 89.0%, comparable to surgical series.\n\n- Atwell TD, et al. (AJR. 2016;206:1259-1265): Cryoablation of T1b renal tumors demonstrated technical success in 97% of cases with 3-year local tumor progression-free survival of 89%, supporting extension of ablative therapy to selected larger tumors.\n\nMEDICAL NECESSITY:\n1. Renal mass [SIZE] cm - meets size criteria for ablative therapy per AUA 2021 guidelines\n2. R.E.N.A.L. Nephrometry Score [SCORE] - [favorable/acceptable] complexity for percutaneous approach\n3. [Patient comorbidities: e.g., CKD, solitary kidney, advanced age, cardiopulmonary disease] - increased surgical risk favoring minimally invasive ablation\n4. Percutaneous cryoablation preserves maximal renal parenchyma, reducing risk of CKD progression compared to radical nephrectomy\n5. Image-guided approach (CT/ultrasound) allows real-time iceball monitoring and precise margin control\n6. Outpatient or overnight procedure with rapid recovery - appropriate for patient's functional status\n\nCONCLUSION:\nDenial of percutaneous renal cryoablation is inconsistent with current AUA, NCCN, and ACR evidence-based guidelines. This procedure represents the standard of care for this patient's clinical scenario and offers equivalent oncologic outcomes with superior preservation of renal function and reduced procedural risk compared to surgical alternatives. I respectfully request immediate reconsideration and approval.\n\nSincerely,\n{{physician_name}}, {{credentials}}\nNPI: {{npi}}\n{{letter_date}}"
+  }
+}

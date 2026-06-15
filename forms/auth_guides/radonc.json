@@ -1,0 +1,417 @@
+{
+  "title": "Radiation Oncology Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "RadOncAuthGuide.tsx",
+    "title": "RadOnc Clinical Compass",
+    "subtitle": "Radiation Oncology Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "77385",
+        "description": "Intensity Modulated Radiation Therapy (IMRT) delivery, simple, includes guidance and tracking",
+        "device": "Linear Accelerator, Image-Guided Radiation Therapy (IGRT)",
+        "access": "External Beam Radiation Therapy",
+        "rvu": 15.0,
+        "includes": [
+          "Daily image guidance (e.g., kV, CBCT)",
+          "Setup and positioning verification",
+          "Basic treatment planning and dose calculation"
+        ],
+        "note": "Typically used for less complex tumor sites or smaller treatment volumes."
+      },
+      {
+        "code": "77386",
+        "description": "Intensity Modulated Radiation Therapy (IMRT) delivery, complex, includes guidance and tracking",
+        "device": "Linear Accelerator, Image-Guided Radiation Therapy (IGRT)",
+        "access": "External Beam Radiation Therapy",
+        "rvu": 25.0,
+        "includes": [
+          "Daily image guidance (e.g., kV, CBCT)",
+          "Setup and positioning verification",
+          "Advanced treatment planning and dose calculation (e.g., inverse planning)",
+          "Adaptive radiation therapy components"
+        ],
+        "note": "Used for complex tumor sites, re-irradiation, or where critical structures are in close proximity."
+      },
+      {
+        "code": "77520",
+        "description": "Proton treatment delivery; simple, without compensation",
+        "device": "Proton Therapy System",
+        "access": "External Beam Radiation Therapy",
+        "rvu": 30.0,
+        "includes": [
+          "Daily patient setup and positioning",
+          "Basic proton beam delivery and monitoring",
+          "Initial treatment planning and dose distribution"
+        ],
+        "note": "Proton therapy is often used to spare healthy tissue due to its Bragg peak characteristic."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "Z51.0",
+        "description": "Encounter for antineoplastic radiation therapy",
+        "notes": "Primary diagnosis for radiation therapy administration.",
+        "required": true
+      },
+      {
+        "code": "C61",
+        "description": "Malignant neoplasm of prostate",
+        "notes": "Common primary for prostate cancer treated with radiation.",
+        "required": false
+      },
+      {
+        "code": "C50.9",
+        "description": "Malignant neoplasm of breast, unspecified",
+        "notes": "Common primary for breast cancer treated with radiation.",
+        "required": false
+      },
+      {
+        "code": "C34.90",
+        "description": "Malignant neoplasm of unspecified part of unspecified bronchus or lung",
+        "notes": "Common primary for lung cancer treated with radiation.",
+        "required": false
+      },
+      {
+        "code": "C04.9",
+        "description": "Malignant neoplasm of unspecified part of tongue",
+        "notes": "Example of a head and neck cancer primary treated with radiation.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered (Medical Necessity)",
+        "overview": "Medicare covers medically necessary radiation oncology services, including IMRT and proton therapy, when provided by qualified professionals in approved facilities. Coverage is subject to national and local coverage determinations (NCDs/LCDs).",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required: No (No Prior Auth (FFS))",
+              "Medicare generally does not require prior authorization for most radiation oncology services, provided medical necessity is met and documented. However, certain advanced therapies or novel techniques may require pre-determination or specific documentation."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - General Criteria",
+            "items": [
+              "Patient has a confirmed malignant neoplasm amenable to radiation therapy.",
+              "Radiation therapy is prescribed by a qualified physician.",
+              "Treatment plan is individualized and medically appropriate for the patient's condition.",
+              "Patient's general health status allows for safe administration of radiation therapy."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - IMRT/Proton Therapy Specific Criteria",
+            "items": [
+              "IMRT/Proton therapy is demonstrated to offer a significant clinical advantage over conventional 3D conformal radiation therapy (e.g., improved tumor control, reduced toxicity to critical organs).",
+              "Documentation supports the medical necessity for the advanced technique, such as proximity to critical structures or re-irradiation scenarios."
+            ]
+          },
+          {
+            "heading": "Required Documentation - Clinical Documentation",
+            "items": [
+              "Physician's order for radiation therapy",
+              "Pathology report confirming malignancy",
+              "Imaging studies (CT, MRI, PET) used for diagnosis and treatment planning",
+              "Consultation notes and history & physical (H&P)",
+              "Radiation oncology treatment plan (dosimetry, dose-volume histograms)"
+            ]
+          },
+          {
+            "heading": "Required Documentation - Billing Documentation",
+            "items": [
+              "CPT codes for simulation, planning, and treatment delivery",
+              "ICD-10 codes supporting medical necessity",
+              "Daily treatment records and physician notes"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims electronically via EDI (837P for professional, 837I for institutional).",
+              "Ensure all required modifiers are appended to CPT codes (e.g., 26 for professional component).",
+              "Adhere to timely filing limits."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of medical necessity documentation for advanced techniques (IMRT/Proton).",
+              "Incorrect coding or missing modifiers.",
+              "Services not covered by NCD/LCD.",
+              "Duplicate billing."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Reimbursement for radiation oncology services is based on the Medicare Physician Fee Schedule (MPFS) for professional components and the Outpatient Prospective Payment System (OPPS) for hospital outpatient departments, or specific payment methodologies for freestanding centers."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Stay updated on NCDs and LCDs for radiation oncology services.",
+              "Ensure thorough documentation of medical necessity, especially for IMRT and proton therapy.",
+              "Utilize Medicare's appeals process if a claim is denied inappropriately."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS (Medicare)",
+            "status": "Covered",
+            "notes": "Subject to NCDs and LCDs for specific services."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Requires Prior Authorization",
+        "overview": "Medicaid covers medically necessary radiation oncology services for eligible beneficiaries. Coverage policies and prior authorization requirements are determined at the state level and can be more restrictive than Medicare.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required: Yes (Prior Auth Required)",
+              "Medicaid programs typically require prior authorization for most radiation oncology services, including IMRT and proton therapy. Requirements vary significantly by state. It is crucial to verify specific state Medicaid policies."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - General Criteria",
+            "items": [
+              "Patient is a Medicaid eligible beneficiary.",
+              "Confirmed diagnosis of malignant neoplasm requiring radiation therapy.",
+              "Treatment plan is approved by the state Medicaid agency or its delegated entity.",
+              "Consideration of less intensive or costly alternatives has been documented."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - IMRT/Proton Therapy Specific Criteria",
+            "items": [
+              "IMRT/Proton therapy is deemed medically necessary and conventional radiation therapy is not appropriate or would result in unacceptable toxicity.",
+              "Detailed clinical justification for the chosen advanced modality, including comparison to alternatives."
+            ]
+          },
+          {
+            "heading": "Required Documentation - Clinical Documentation",
+            "items": [
+              "Prior authorization request form (state-specific)",
+              "Physician's order and detailed treatment plan",
+              "Pathology and imaging reports",
+              "Medical necessity letter from the treating physician",
+              "Documentation of failed conservative management or contraindications to alternatives"
+            ]
+          },
+          {
+            "heading": "Required Documentation - Administrative Documentation",
+            "items": [
+              "Patient's Medicaid eligibility verification",
+              "Referral from primary care provider, if required"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Obtain prior authorization before initiating treatment.",
+              "Submit claims using state-specific electronic or paper claim forms.",
+              "Follow state-specific coding and billing guidelines."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization.",
+              "Insufficient documentation of medical necessity.",
+              "Failure to meet state-specific coverage criteria.",
+              "Ineligible patient status."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicaid reimbursement rates are typically lower than Medicare and private payers, and vary by state. Providers must accept Medicaid reimbursement as payment in full."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify patient eligibility and state-specific prior authorization requirements.",
+              "Submit comprehensive clinical documentation with the initial prior authorization request.",
+              "Be prepared for potential peer-to-peer reviews for complex cases."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (e.g., CA Medi-Cal)",
+            "status": "Requires PA",
+            "notes": "Policies vary by state; always check specific state guidelines."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Requires Prior Authorization",
+        "overview": "Private insurance coverage for radiation oncology services is highly variable, depending on the specific plan benefits, deductibles, co-pays, and out-of-pocket maximums. Many plans follow medical necessity guidelines similar to Medicare but may have additional proprietary criteria.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required: Yes (Prior Auth Required)",
+              "Most private insurance plans require prior authorization for radiation oncology services, especially for IMRT and proton therapy. Requirements and coverage criteria vary widely by plan and carrier. Pre-service review is common."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - General Criteria",
+            "items": [
+              "Confirmed diagnosis of cancer requiring radiation therapy.",
+              "Treatment is considered standard of care for the diagnosed condition.",
+              "Patient meets plan-specific medical necessity criteria.",
+              "Treatment is provided by an in-network provider/facility, if applicable."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - IMRT/Proton Therapy Specific Criteria",
+            "items": [
+              "IMRT/Proton therapy is medically necessary due to tumor location, size, or proximity to critical organs, where conventional therapy would lead to unacceptable morbidity.",
+              "Documentation of potential benefits (e.g., reduced toxicity, improved quality of life) and risks of alternative treatments."
+            ]
+          },
+          {
+            "heading": "Required Documentation - Clinical Documentation",
+            "items": [
+              "Prior authorization request form (payer-specific)",
+              "Physician's order, detailed treatment plan, and simulation reports",
+              "Pathology, surgical, and imaging reports",
+              "Clinical notes, H&P, and consultation reports",
+              "Peer-reviewed literature supporting novel or advanced therapies, if applicable"
+            ]
+          },
+          {
+            "heading": "Required Documentation - Administrative Documentation",
+            "items": [
+              "Patient's insurance card and benefit verification",
+              "Referral from primary care physician or oncologist, if required by plan"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request to the payer's medical management department.",
+              "Follow up regularly on authorization status.",
+              "Submit claims electronically with all necessary documentation and modifiers.",
+              "Be aware of network participation requirements and out-of-network penalties."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization or expired authorization.",
+              "Services deemed not medically necessary or experimental/investigational.",
+              "Incomplete or insufficient clinical documentation.",
+              "Out-of-network services without proper approval.",
+              "Failure to meet specific plan benefit limitations."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Reimbursement rates are negotiated between providers and private insurance companies. Out-of-network services may have significantly lower reimbursement or higher patient responsibility."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify patient benefits and prior authorization requirements with each specific plan.",
+              "Provide comprehensive clinical justification, especially for advanced radiation techniques.",
+              "Utilize the payer's appeals process and consider peer-to-peer reviews for denied cases.",
+              "Document all communications with the payer regarding authorization."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Requires PA",
+            "notes": "Policies vary by state and specific plan."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Requires PA",
+            "notes": "Specific clinical criteria for IMRT and proton therapy."
+          },
+          {
+            "payer": "Aetna",
+            "status": "Requires PA",
+            "notes": "May have specific guidelines for certain cancer types."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Navigation",
+        "kind": "link",
+        "text": "Back to Assessment (links to /radonc)",
+        "href": "/radonc"
+      },
+      {
+        "heading": "Procedure Codes - UI Note",
+        "kind": "prose",
+        "text": "Each CPT code card displays a Badge labeled 'CPT <code>' and an RVU badge ('RVU <rvu>'). The 'Included in this code' list is prefixed with the instruction: 'Included in this code (do NOT bill separately):'. Device/Access is shown as a single 'Device/Access:' field combining the device and access values."
+      }
+    ],
+    "raw": {
+      "markdown": "# RadOnc Clinical Compass\n## Radiation Oncology Insurance Authorization Guide\n\n[Button] Back to Assessment (navigates to /radonc)\n\n---\n\n## Procedure Codes\n\n### CPT 77385 — RVU 15.0\nIntensity Modulated Radiation Therapy (IMRT) delivery, simple, includes guidance and tracking\n- Device/Access: Linear Accelerator, Image-Guided Radiation Therapy (IGRT) | External Beam Radiation Therapy\n- Included in this code (do NOT bill separately):\n  - Daily image guidance (e.g., kV, CBCT)\n  - Setup and positioning verification\n  - Basic treatment planning and dose calculation\n- Note: Typically used for less complex tumor sites or smaller treatment volumes.\n\n### CPT 77386 — RVU 25.0\nIntensity Modulated Radiation Therapy (IMRT) delivery, complex, includes guidance and tracking\n- Device/Access: Linear Accelerator, Image-Guided Radiation Therapy (IGRT) | External Beam Radiation Therapy\n- Included in this code (do NOT bill separately):\n  - Daily image guidance (e.g., kV, CBCT)\n  - Setup and positioning verification\n  - Advanced treatment planning and dose calculation (e.g., inverse planning)\n  - Adaptive radiation therapy components\n- Note: Used for complex tumor sites, re-irradiation, or where critical structures are in close proximity.\n\n### CPT 77520 — RVU 30.0\nProton treatment delivery; simple, without compensation\n- Device/Access: Proton Therapy System | External Beam Radiation Therapy\n- Included in this code (do NOT bill separately):\n  - Daily patient setup and positioning\n  - Basic proton beam delivery and monitoring\n  - Initial treatment planning and dose distribution\n- Note: Proton therapy is often used to spare healthy tissue due to its Bragg peak characteristic.\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **Z51.0** (Primary / required) — Encounter for antineoplastic radiation therapy. Notes: Primary diagnosis for radiation therapy administration.\n- **C61** — Malignant neoplasm of prostate. Notes: Common primary for prostate cancer treated with radiation.\n- **C50.9** — Malignant neoplasm of breast, unspecified. Notes: Common primary for breast cancer treated with radiation.\n- **C34.90** — Malignant neoplasm of unspecified part of unspecified bronchus or lung. Notes: Common primary for lung cancer treated with radiation.\n- **C04.9** — Malignant neoplasm of unspecified part of tongue. Notes: Example of a head and neck cancer primary treated with radiation.\n\n---\n\n## Payer-Specific Authorization Requirements\n\n(Payer tabs: Medicare | Medicaid | Private Insurance)\n\n### Medicare\nBadges: No Prior Auth (FFS) | Covered (Medical Necessity)\n\nPrior Auth Note: Medicare generally does not require prior authorization for most radiation oncology services, provided medical necessity is met and documented. However, certain advanced therapies or novel techniques may require pre-determination or specific documentation.\n\nOverview: Medicare covers medically necessary radiation oncology services, including IMRT and proton therapy, when provided by qualified professionals in approved facilities. Coverage is subject to national and local coverage determinations (NCDs/LCDs).\n\n#### Coverage Criteria\n**General Criteria**\n- Patient has a confirmed malignant neoplasm amenable to radiation therapy.\n- Radiation therapy is prescribed by a qualified physician.\n- Treatment plan is individualized and medically appropriate for the patient's condition.\n- Patient's general health status allows for safe administration of radiation therapy.\n\n**IMRT/Proton Therapy Specific Criteria**\n- IMRT/Proton therapy is demonstrated to offer a significant clinical advantage over conventional 3D conformal radiation therapy (e.g., improved tumor control, reduced toxicity to critical organs).\n- Documentation supports the medical necessity for the advanced technique, such as proximity to critical structures or re-irradiation scenarios.\n\n#### Required Documentation\n**Clinical Documentation**\n- Physician's order for radiation therapy\n- Pathology report confirming malignancy\n- Imaging studies (CT, MRI, PET) used for diagnosis and treatment planning\n- Consultation notes and history & physical (H&P)\n- Radiation oncology treatment plan (dosimetry, dose-volume histograms)\n\n**Billing Documentation**\n- CPT codes for simulation, planning, and treatment delivery\n- ICD-10 codes supporting medical necessity\n- Daily treatment records and physician notes\n\n#### Submission Process\n1. Submit claims electronically via EDI (837P for professional, 837I for institutional).\n2. Ensure all required modifiers are appended to CPT codes (e.g., 26 for professional component).\n3. Adhere to timely filing limits.\n\n#### Common Denial Reasons\n- Lack of medical necessity documentation for advanced techniques (IMRT/Proton).\n- Incorrect coding or missing modifiers.\n- Services not covered by NCD/LCD.\n- Duplicate billing.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS (Medicare) | Covered | Subject to NCDs and LCDs for specific services. |\n\n#### Reimbursement Note\nReimbursement for radiation oncology services is based on the Medicare Physician Fee Schedule (MPFS) for professional components and the Outpatient Prospective Payment System (OPPS) for hospital outpatient departments, or specific payment methodologies for freestanding centers.\n\n#### Authorization Tips\n- Stay updated on NCDs and LCDs for radiation oncology services.\n- Ensure thorough documentation of medical necessity, especially for IMRT and proton therapy.\n- Utilize Medicare's appeals process if a claim is denied inappropriately.\n\n---\n\n### Medicaid\nBadges: Prior Auth Required | Requires Prior Authorization\n\nPrior Auth Note: Medicaid programs typically require prior authorization for most radiation oncology services, including IMRT and proton therapy. Requirements vary significantly by state. It is crucial to verify specific state Medicaid policies.\n\nOverview: Medicaid covers medically necessary radiation oncology services for eligible beneficiaries. Coverage policies and prior authorization requirements are determined at the state level and can be more restrictive than Medicare.\n\n#### Coverage Criteria\n**General Criteria**\n- Patient is a Medicaid eligible beneficiary.\n- Confirmed diagnosis of malignant neoplasm requiring radiation therapy.\n- Treatment plan is approved by the state Medicaid agency or its delegated entity.\n- Consideration of less intensive or costly alternatives has been documented.\n\n**IMRT/Proton Therapy Specific Criteria**\n- IMRT/Proton therapy is deemed medically necessary and conventional radiation therapy is not appropriate or would result in unacceptable toxicity.\n- Detailed clinical justification for the chosen advanced modality, including comparison to alternatives.\n\n#### Required Documentation\n**Clinical Documentation**\n- Prior authorization request form (state-specific)\n- Physician's order and detailed treatment plan\n- Pathology and imaging reports\n- Medical necessity letter from the treating physician\n- Documentation of failed conservative management or contraindications to alternatives\n\n**Administrative Documentation**\n- Patient's Medicaid eligibility verification\n- Referral from primary care provider, if required\n\n#### Submission Process\n1. Obtain prior authorization before initiating treatment.\n2. Submit claims using state-specific electronic or paper claim forms.\n3. Follow state-specific coding and billing guidelines.\n\n#### Common Denial Reasons\n- Lack of prior authorization.\n- Insufficient documentation of medical necessity.\n- Failure to meet state-specific coverage criteria.\n- Ineligible patient status.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (e.g., CA Medi-Cal) | Requires PA | Policies vary by state; always check specific state guidelines. |\n\n#### Reimbursement Note\nMedicaid reimbursement rates are typically lower than Medicare and private payers, and vary by state. Providers must accept Medicaid reimbursement as payment in full.\n\n#### Authorization Tips\n- Always verify patient eligibility and state-specific prior authorization requirements.\n- Submit comprehensive clinical documentation with the initial prior authorization request.\n- Be prepared for potential peer-to-peer reviews for complex cases.\n\n---\n\n### Private Insurance\nBadges: Prior Auth Required | Requires Prior Authorization\n\nPrior Auth Note: Most private insurance plans require prior authorization for radiation oncology services, especially for IMRT and proton therapy. Requirements and coverage criteria vary widely by plan and carrier. Pre-service review is common.\n\nOverview: Private insurance coverage for radiation oncology services is highly variable, depending on the specific plan benefits, deductibles, co-pays, and out-of-pocket maximums. Many plans follow medical necessity guidelines similar to Medicare but may have additional proprietary criteria.\n\n#### Coverage Criteria\n**General Criteria**\n- Confirmed diagnosis of cancer requiring radiation therapy.\n- Treatment is considered standard of care for the diagnosed condition.\n- Patient meets plan-specific medical necessity criteria.\n- Treatment is provided by an in-network provider/facility, if applicable.\n\n**IMRT/Proton Therapy Specific Criteria**\n- IMRT/Proton therapy is medically necessary due to tumor location, size, or proximity to critical organs, where conventional therapy would lead to unacceptable morbidity.\n- Documentation of potential benefits (e.g., reduced toxicity, improved quality of life) and risks of alternative treatments.\n\n#### Required Documentation\n**Clinical Documentation**\n- Prior authorization request form (payer-specific)\n- Physician's order, detailed treatment plan, and simulation reports\n- Pathology, surgical, and imaging reports\n- Clinical notes, H&P, and consultation reports\n- Peer-reviewed literature supporting novel or advanced therapies, if applicable\n\n**Administrative Documentation**\n- Patient's insurance card and benefit verification\n- Referral from primary care physician or oncologist, if required by plan\n\n#### Submission Process\n1. Submit prior authorization request to the payer's medical management department.\n2. Follow up regularly on authorization status.\n3. Submit claims electronically with all necessary documentation and modifiers.\n4. Be aware of network participation requirements and out-of-network penalties.\n\n#### Common Denial Reasons\n- Lack of prior authorization or expired authorization.\n- Services deemed not medically necessary or experimental/investigational.\n- Incomplete or insufficient clinical documentation.\n- Out-of-network services without proper approval.\n- Failure to meet specific plan benefit limitations.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Blue Cross Blue Shield | Requires PA | Policies vary by state and specific plan. |\n| UnitedHealthcare | Requires PA | Specific clinical criteria for IMRT and proton therapy. |\n| Aetna | Requires PA | May have specific guidelines for certain cancer types. |\n\n#### Reimbursement Note\nReimbursement rates are negotiated between providers and private insurance companies. Out-of-network services may have significantly lower reimbursement or higher patient responsibility.\n\n#### Authorization Tips\n- Always verify patient benefits and prior authorization requirements with each specific plan.\n- Provide comprehensive clinical justification, especially for advanced radiation techniques.\n- Utilize the payer's appeals process and consider peer-to-peer reviews for denied cases.\n- Document all communications with the payer regarding authorization.\n",
+      "tables": [
+        {
+          "name": "CPT / Procedure Codes",
+          "header": ["Code", "Description", "Device/Access", "RVU", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            ["77385", "Intensity Modulated Radiation Therapy (IMRT) delivery, simple, includes guidance and tracking", "Linear Accelerator, Image-Guided Radiation Therapy (IGRT) | External Beam Radiation Therapy", "15.0", "Daily image guidance (e.g., kV, CBCT); Setup and positioning verification; Basic treatment planning and dose calculation", "Typically used for less complex tumor sites or smaller treatment volumes."],
+            ["77386", "Intensity Modulated Radiation Therapy (IMRT) delivery, complex, includes guidance and tracking", "Linear Accelerator, Image-Guided Radiation Therapy (IGRT) | External Beam Radiation Therapy", "25.0", "Daily image guidance (e.g., kV, CBCT); Setup and positioning verification; Advanced treatment planning and dose calculation (e.g., inverse planning); Adaptive radiation therapy components", "Used for complex tumor sites, re-irradiation, or where critical structures are in close proximity."],
+            ["77520", "Proton treatment delivery; simple, without compensation", "Proton Therapy System | External Beam Radiation Therapy", "30.0", "Daily patient setup and positioning; Basic proton beam delivery and monitoring; Initial treatment planning and dose distribution", "Proton therapy is often used to spare healthy tissue due to its Bragg peak characteristic."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required (Primary)"],
+          "rows": [
+            ["Z51.0", "Encounter for antineoplastic radiation therapy", "Primary diagnosis for radiation therapy administration.", "true"],
+            ["C61", "Malignant neoplasm of prostate", "Common primary for prostate cancer treated with radiation.", "false"],
+            ["C50.9", "Malignant neoplasm of breast, unspecified", "Common primary for breast cancer treated with radiation.", "false"],
+            ["C34.90", "Malignant neoplasm of unspecified part of unspecified bronchus or lung", "Common primary for lung cancer treated with radiation.", "false"],
+            ["C04.9", "Malignant neoplasm of unspecified part of tongue", "Example of a head and neck cancer primary treated with radiation.", "false"]
+          ]
+        },
+        {
+          "name": "Medicare - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS (Medicare)", "Covered", "Subject to NCDs and LCDs for specific services."]
+          ]
+        },
+        {
+          "name": "Medicaid - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., CA Medi-Cal)", "Requires PA", "Policies vary by state; always check specific state guidelines."]
+          ]
+        },
+        {
+          "name": "Private Insurance - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield", "Requires PA", "Policies vary by state and specific plan."],
+            ["UnitedHealthcare", "Requires PA", "Specific clinical criteria for IMRT and proton therapy."],
+            ["Aetna", "Requires PA", "May have specific guidelines for certain cancer types."]
+          ]
+        }
+      ]
+    }
+  }
+}

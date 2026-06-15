@@ -1,0 +1,349 @@
+{
+  "title": "Pediatric Mental Health Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "PediatricMentalHealthAuthGuide.tsx",
+    "title": "PediatricMentalHealth Clinical Compass",
+    "subtitle": "Pediatric Mental Health Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "90837",
+        "description": "Psychotherapy, 60 minutes with patient and/or family member",
+        "device": "N/A",
+        "access": "In-person or Telehealth",
+        "rvu": "2.50",
+        "includes": [
+          "Assessment of mental status",
+          "Therapeutic interventions",
+          "Care coordination"
+        ],
+        "note": "Often used for individual or family therapy sessions lasting approximately one hour."
+      },
+      {
+        "code": "90847",
+        "description": "Family psychotherapy (conjoint psychotherapy) (with patient present)",
+        "device": "N/A",
+        "access": "In-person or Telehealth",
+        "rvu": "2.20",
+        "includes": [
+          "Family dynamics assessment",
+          "Communication strategies",
+          "Conflict resolution"
+        ],
+        "note": "Focuses on family interactions and relationships impacting the child's mental health."
+      },
+      {
+        "code": "99213",
+        "description": "Established patient office or other outpatient visit, 15 minutes",
+        "device": "N/A",
+        "access": "In-person or Telehealth",
+        "rvu": "0.97",
+        "includes": [
+          "Brief history and exam",
+          "Medical decision making of low complexity",
+          "Medication management"
+        ],
+        "note": "Commonly used for medication management follow-ups or brief therapeutic interventions."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "F90.2",
+        "description": "Attention-deficit hyperactivity disorder, combined type",
+        "notes": "Requires symptoms of both inattention and hyperactivity-impulsivity.",
+        "required": true
+      },
+      {
+        "code": "F32.1",
+        "description": "Major depressive disorder, single episode, moderate",
+        "notes": "Characterized by a distinct period of depressed mood or loss of pleasure, accompanied by other symptoms.",
+        "required": true
+      },
+      {
+        "code": "F41.1",
+        "description": "Generalized anxiety disorder",
+        "notes": "Excessive anxiety and worry, occurring more days than not for at least 6 months, about a number of events or activities.",
+        "required": false
+      },
+      {
+        "code": "F43.21",
+        "description": "Adjustment disorder with depressed mood",
+        "notes": "Emotional or behavioral symptoms in response to an identifiable stressor occurring within 3 months of the onset of the stressor.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Medicare generally does not require prior authorization for outpatient mental health services, but medical necessity must be documented.",
+        "overview": "Medicare Part B covers mental health services including psychotherapy, diagnostic evaluations, and medication management. Services must be provided by a Medicare-approved provider.",
+        "reimbursementNote": "Reimbursement rates are set by Medicare. Patients are responsible for deductibles and coinsurance.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Medical Necessity",
+            "items": [
+              "Diagnosis of a mental health condition that requires active treatment.",
+              "Treatment plan established and regularly reviewed by a qualified mental health professional.",
+              "Services are reasonable and necessary for the diagnosis or treatment of the patient's condition."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Provider Qualifications",
+            "items": [
+              "Services rendered by a psychiatrist, psychologist, clinical social worker, or other licensed mental health professional.",
+              "Provider must be enrolled in Medicare."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Initial psychiatric evaluation or diagnostic assessment.",
+              "Individualized treatment plan with measurable goals.",
+              "Progress notes for each session, detailing interventions, patient response, and plan updates.",
+              "Medication management notes, if applicable."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims electronically using CMS-1500 form.",
+              "Ensure correct CPT and ICD-10 codes are used.",
+              "Maintain thorough clinical documentation for audit purposes."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity.",
+              "Services not provided by a Medicare-approved provider.",
+              "Incorrect coding or incomplete claim submission."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Regularly review Medicare guidelines for mental health services.",
+              "Ensure all documentation clearly supports the medical necessity of services provided.",
+              "Consider using advance beneficiary notice (ABN) for services that may not be covered."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS Medicare",
+            "status": "Covered",
+            "notes": "Outpatient mental health services are covered under Part B."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered with PA",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is often required for certain mental health services, especially for intensive or long-term treatments. Requirements vary by state.",
+        "overview": "Medicaid covers a broad range of mental health services for children and adolescents, including psychotherapy, counseling, and medication management. Coverage details are state-specific.",
+        "reimbursementNote": "Medicaid reimbursement rates are typically lower than commercial payers and vary by state.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Medical Necessity",
+            "items": [
+              "Diagnosis of a mental health condition that impacts daily functioning.",
+              "Treatment plan must address specific functional impairments.",
+              "Services must be clinically appropriate and least restrictive."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Age and Developmental Appropriateness",
+            "items": [
+              "Services tailored to the developmental stage of the child or adolescent.",
+              "Consideration of family involvement in treatment."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Comprehensive diagnostic assessment, including developmental history.",
+              "Individualized treatment plan with specific, measurable, achievable, relevant, and time-bound (SMART) goals.",
+              "Regular progress notes demonstrating active treatment and progress towards goals.",
+              "Prior authorization approval documentation."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify state-specific Medicaid guidelines for prior authorization.",
+              "Submit prior authorization requests with all required clinical documentation.",
+              "Submit claims according to state Medicaid billing procedures."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to obtain prior authorization.",
+              "Lack of documented medical necessity or functional impairment.",
+              "Treatment plan not aligned with state guidelines.",
+              "Services deemed not developmentally appropriate."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state's Medicaid manual for mental health services.",
+              "Document functional impairments clearly and link them to treatment goals.",
+              "Proactively seek prior authorization for all applicable services."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (e.g., California Medi-Cal)",
+            "status": "Covered with PA",
+            "notes": "Specific services and duration may require prior authorization."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Covered with PA",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is frequently required for mental health services, especially for higher levels of care or extended treatment. Benefits vary widely by plan.",
+        "overview": "Private insurance plans offer varying levels of coverage for pediatric mental health services. It is crucial to verify benefits and authorization requirements for each patient's specific plan.",
+        "reimbursementNote": "Reimbursement rates are negotiated with individual payers. Patient responsibility includes deductibles, copayments, and coinsurance.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Medical Necessity",
+            "items": [
+              "Diagnosis of a mental health condition from DSM-5 or ICD-10.",
+              "Evidence-based treatment plan.",
+              "Services must be provided by an in-network or authorized out-of-network provider."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Plan-Specific Requirements",
+            "items": [
+              "Adherence to plan's medical policies for mental health.",
+              "Utilization review may be conducted for ongoing treatment."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Initial diagnostic evaluation.",
+              "Treatment plan outlining goals, modalities, and expected duration.",
+              "Progress notes justifying ongoing medical necessity.",
+              "Prior authorization request forms and supporting clinical documentation."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify patient's eligibility and benefits prior to initiating services.",
+              "Submit prior authorization requests as required by the plan.",
+              "File claims promptly using appropriate CPT and ICD-10 codes.",
+              "Be prepared for potential appeals if services are denied."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization.",
+              "Services deemed not medically necessary or experimental.",
+              "Out-of-network services without proper authorization.",
+              "Insufficient clinical documentation to support treatment."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify benefits and obtain prior authorization before starting treatment.",
+              "Document thoroughly, focusing on medical necessity and functional improvement.",
+              "Be prepared to appeal denials with strong clinical justification.",
+              "Educate families on their benefits and out-of-pocket costs."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Covered with PA",
+            "notes": "Requires prior authorization for certain therapies and extended treatment."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered with PA",
+            "notes": "Behavioral health services often require pre-certification."
+          },
+          {
+            "payer": "Aetna",
+            "status": "Covered with PA",
+            "notes": "Medical necessity review for ongoing psychotherapy."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment button navigating to /pediatricmentalhealth",
+        "href": "/pediatricmentalhealth"
+      },
+      {
+        "heading": "CPT Codes — Included Codes Notice",
+        "kind": "prose",
+        "text": "For each CPT code, the items listed under 'Included in this code' are noted as 'Included in this code (do NOT bill separately)'."
+      }
+    ],
+    "raw": {
+      "markdown": "# PediatricMentalHealth Clinical Compass\n## Pediatric Mental Health Insurance Authorization Guide\n\n[Button] Back to Assessment (navigates to /pediatricmentalhealth)\n\n## Procedure Codes (CPT Codes)\n\n### CPT 90837 — RVU 2.50\nPsychotherapy, 60 minutes with patient and/or family member\nDevice/Access: N/A\nAccess: In-person or Telehealth\nIncluded in this code (do NOT bill separately):\n- Assessment of mental status\n- Therapeutic interventions\n- Care coordination\nNote: Often used for individual or family therapy sessions lasting approximately one hour.\n\n### CPT 90847 — RVU 2.20\nFamily psychotherapy (conjoint psychotherapy) (with patient present)\nDevice/Access: N/A\nAccess: In-person or Telehealth\nIncluded in this code (do NOT bill separately):\n- Family dynamics assessment\n- Communication strategies\n- Conflict resolution\nNote: Focuses on family interactions and relationships impacting the child's mental health.\n\n### CPT 99213 — RVU 0.97\nEstablished patient office or other outpatient visit, 15 minutes\nDevice/Access: N/A\nAccess: In-person or Telehealth\nIncluded in this code (do NOT bill separately):\n- Brief history and exam\n- Medical decision making of low complexity\n- Medication management\nNote: Commonly used for medication management follow-ups or brief therapeutic interventions.\n\n## ICD-10 Diagnosis Codes\n\n- F90.2 (Primary) — Attention-deficit hyperactivity disorder, combined type. Requires symptoms of both inattention and hyperactivity-impulsivity.\n- F32.1 (Primary) — Major depressive disorder, single episode, moderate. Characterized by a distinct period of depressed mood or loss of pleasure, accompanied by other symptoms.\n- F41.1 — Generalized anxiety disorder. Excessive anxiety and worry, occurring more days than not for at least 6 months, about a number of events or activities.\n- F43.21 — Adjustment disorder with depressed mood. Emotional or behavioral symptoms in response to an identifiable stressor occurring within 3 months of the onset of the stressor.\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\nStatus Badges: No Prior Auth (FFS) | Covered\nPrior Auth Note: Medicare generally does not require prior authorization for outpatient mental health services, but medical necessity must be documented.\nOverview: Medicare Part B covers mental health services including psychotherapy, diagnostic evaluations, and medication management. Services must be provided by a Medicare-approved provider.\n\nCoverage Criteria:\nMedical Necessity\n- Diagnosis of a mental health condition that requires active treatment.\n- Treatment plan established and regularly reviewed by a qualified mental health professional.\n- Services are reasonable and necessary for the diagnosis or treatment of the patient's condition.\nProvider Qualifications\n- Services rendered by a psychiatrist, psychologist, clinical social worker, or other licensed mental health professional.\n- Provider must be enrolled in Medicare.\n\nRequired Documentation:\nClinical Documentation\n- Initial psychiatric evaluation or diagnostic assessment.\n- Individualized treatment plan with measurable goals.\n- Progress notes for each session, detailing interventions, patient response, and plan updates.\n- Medication management notes, if applicable.\n\nSubmission Process:\n1. Submit claims electronically using CMS-1500 form.\n2. Ensure correct CPT and ICD-10 codes are used.\n3. Maintain thorough clinical documentation for audit purposes.\n\nCommon Denial Reasons:\n- Lack of documented medical necessity.\n- Services not provided by a Medicare-approved provider.\n- Incorrect coding or incomplete claim submission.\n\nKnown Payer Policies:\n| Payer | Status | Notes |\n| CMS Medicare | Covered | Outpatient mental health services are covered under Part B. |\n\nReimbursement Note: Reimbursement rates are set by Medicare. Patients are responsible for deductibles and coinsurance.\n\nAuthorization Tips:\n- Regularly review Medicare guidelines for mental health services.\n- Ensure all documentation clearly supports the medical necessity of services provided.\n- Consider using advance beneficiary notice (ABN) for services that may not be covered.\n\n### Medicaid\nStatus Badges: Prior Auth Required | Covered with PA\nPrior Auth Note: Prior authorization is often required for certain mental health services, especially for intensive or long-term treatments. Requirements vary by state.\nOverview: Medicaid covers a broad range of mental health services for children and adolescents, including psychotherapy, counseling, and medication management. Coverage details are state-specific.\n\nCoverage Criteria:\nMedical Necessity\n- Diagnosis of a mental health condition that impacts daily functioning.\n- Treatment plan must address specific functional impairments.\n- Services must be clinically appropriate and least restrictive.\nAge and Developmental Appropriateness\n- Services tailored to the developmental stage of the child or adolescent.\n- Consideration of family involvement in treatment.\n\nRequired Documentation:\nClinical Documentation\n- Comprehensive diagnostic assessment, including developmental history.\n- Individualized treatment plan with specific, measurable, achievable, relevant, and time-bound (SMART) goals.\n- Regular progress notes demonstrating active treatment and progress towards goals.\n- Prior authorization approval documentation.\n\nSubmission Process:\n1. Verify state-specific Medicaid guidelines for prior authorization.\n2. Submit prior authorization requests with all required clinical documentation.\n3. Submit claims according to state Medicaid billing procedures.\n\nCommon Denial Reasons:\n- Failure to obtain prior authorization.\n- Lack of documented medical necessity or functional impairment.\n- Treatment plan not aligned with state guidelines.\n- Services deemed not developmentally appropriate.\n\nKnown Payer Policies:\n| Payer | Status | Notes |\n| State Medicaid (e.g., California Medi-Cal) | Covered with PA | Specific services and duration may require prior authorization. |\n\nReimbursement Note: Medicaid reimbursement rates are typically lower than commercial payers and vary by state.\n\nAuthorization Tips:\n- Familiarize yourself with your state's Medicaid manual for mental health services.\n- Document functional impairments clearly and link them to treatment goals.\n- Proactively seek prior authorization for all applicable services.\n\n### Private Insurance\nStatus Badges: Prior Auth Required | Covered with PA\nPrior Auth Note: Prior authorization is frequently required for mental health services, especially for higher levels of care or extended treatment. Benefits vary widely by plan.\nOverview: Private insurance plans offer varying levels of coverage for pediatric mental health services. It is crucial to verify benefits and authorization requirements for each patient's specific plan.\n\nCoverage Criteria:\nMedical Necessity\n- Diagnosis of a mental health condition from DSM-5 or ICD-10.\n- Evidence-based treatment plan.\n- Services must be provided by an in-network or authorized out-of-network provider.\nPlan-Specific Requirements\n- Adherence to plan's medical policies for mental health.\n- Utilization review may be conducted for ongoing treatment.\n\nRequired Documentation:\nClinical Documentation\n- Initial diagnostic evaluation.\n- Treatment plan outlining goals, modalities, and expected duration.\n- Progress notes justifying ongoing medical necessity.\n- Prior authorization request forms and supporting clinical documentation.\n\nSubmission Process:\n1. Verify patient's eligibility and benefits prior to initiating services.\n2. Submit prior authorization requests as required by the plan.\n3. File claims promptly using appropriate CPT and ICD-10 codes.\n4. Be prepared for potential appeals if services are denied.\n\nCommon Denial Reasons:\n- Lack of prior authorization.\n- Services deemed not medically necessary or experimental.\n- Out-of-network services without proper authorization.\n- Insufficient clinical documentation to support treatment.\n\nKnown Payer Policies:\n| Payer | Status | Notes |\n| Blue Cross Blue Shield | Covered with PA | Requires prior authorization for certain therapies and extended treatment. |\n| UnitedHealthcare | Covered with PA | Behavioral health services often require pre-certification. |\n| Aetna | Covered with PA | Medical necessity review for ongoing psychotherapy. |\n\nReimbursement Note: Reimbursement rates are negotiated with individual payers. Patient responsibility includes deductibles, copayments, and coinsurance.\n\nAuthorization Tips:\n- Always verify benefits and obtain prior authorization before starting treatment.\n- Document thoroughly, focusing on medical necessity and functional improvement.\n- Be prepared to appeal denials with strong clinical justification.\n- Educate families on their benefits and out-of-pocket costs.\n",
+      "tables": [
+        {
+          "name": "CPT Procedure Codes",
+          "header": ["Code", "Description", "Device/Access", "Access", "RVU", "Included in this code (do NOT bill separately)", "Note"],
+          "rows": [
+            ["90837", "Psychotherapy, 60 minutes with patient and/or family member", "N/A", "In-person or Telehealth", "2.50", "Assessment of mental status; Therapeutic interventions; Care coordination", "Often used for individual or family therapy sessions lasting approximately one hour."],
+            ["90847", "Family psychotherapy (conjoint psychotherapy) (with patient present)", "N/A", "In-person or Telehealth", "2.20", "Family dynamics assessment; Communication strategies; Conflict resolution", "Focuses on family interactions and relationships impacting the child's mental health."],
+            ["99213", "Established patient office or other outpatient visit, 15 minutes", "N/A", "In-person or Telehealth", "0.97", "Brief history and exam; Medical decision making of low complexity; Medication management", "Commonly used for medication management follow-ups or brief therapeutic interventions."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required (Primary)"],
+          "rows": [
+            ["F90.2", "Attention-deficit hyperactivity disorder, combined type", "Requires symptoms of both inattention and hyperactivity-impulsivity.", "Yes"],
+            ["F32.1", "Major depressive disorder, single episode, moderate", "Characterized by a distinct period of depressed mood or loss of pleasure, accompanied by other symptoms.", "Yes"],
+            ["F41.1", "Generalized anxiety disorder", "Excessive anxiety and worry, occurring more days than not for at least 6 months, about a number of events or activities.", "No"],
+            ["F43.21", "Adjustment disorder with depressed mood", "Emotional or behavioral symptoms in response to an identifiable stressor occurring within 3 months of the onset of the stressor.", "No"]
+          ]
+        },
+        {
+          "name": "Medicare — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS Medicare", "Covered", "Outpatient mental health services are covered under Part B."]
+          ]
+        },
+        {
+          "name": "Medicaid — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., California Medi-Cal)", "Covered with PA", "Specific services and duration may require prior authorization."]
+          ]
+        },
+        {
+          "name": "Private Insurance — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield", "Covered with PA", "Requires prior authorization for certain therapies and extended treatment."],
+            ["UnitedHealthcare", "Covered with PA", "Behavioral health services often require pre-certification."],
+            ["Aetna", "Covered with PA", "Medical necessity review for ongoing psychotherapy."]
+          ]
+        }
+      ]
+    }
+  }
+}

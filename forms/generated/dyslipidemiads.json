@@ -1,0 +1,197 @@
+{
+  "title": "Dyslipidemia Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "single",
+    "submitLabel": "Assess & Generate Plan",
+    "logicKey": "dyslipidemiads",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "demographics",
+        "shortLabel": "Demographics",
+        "title": "Demographics",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "number",
+            "required": true,
+            "defaultValue": 55,
+            "min": 18,
+            "max": 120,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "sex",
+            "name": "sex",
+            "label": "Sex",
+            "type": "select",
+            "required": true,
+            "defaultValue": "male",
+            "options": [
+              { "label": "Male", "value": "male" },
+              { "label": "Female", "value": "female" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "risk-factors",
+        "shortLabel": "Risk Factors",
+        "title": "Risk Factors",
+        "fields": [
+          {
+            "id": "smoker",
+            "name": "smoker",
+            "label": "Current smoker",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "diabetic",
+            "name": "diabetic",
+            "label": "Diabetes mellitus",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "hypertensive",
+            "name": "hypertensive",
+            "label": "Hypertension",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "family-history",
+            "name": "familyHistoryPrematureCAD",
+            "label": "Family history of premature CAD",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "ascvd-history",
+        "shortLabel": "ASCVD History",
+        "title": "ASCVD History",
+        "fields": [
+          {
+            "id": "prior-mi",
+            "name": "priorMI",
+            "label": "Prior myocardial infarction",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-stroke",
+            "name": "priorStroke",
+            "label": "Prior stroke or TIA",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-pad",
+            "name": "priorPAD",
+            "label": "Peripheral arterial disease",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "aortic-aneurysm",
+            "name": "aorticAneurysm",
+            "label": "Aortic aneurysm",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "renal-function",
+        "shortLabel": "Renal Function",
+        "title": "Renal Function (Optional)",
+        "fields": [
+          {
+            "id": "egfr",
+            "name": "eGFR",
+            "label": "eGFR (mL/min/1.73m²)",
+            "type": "number",
+            "defaultValue": "",
+            "min": 0,
+            "max": 200,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "albuminuria",
+            "name": "albuminuria",
+            "label": "Albuminuria present",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "lipid-panel",
+        "shortLabel": "Lipid Panel",
+        "title": "Lipid Panel (mg/dL)",
+        "fields": [
+          {
+            "id": "ldlc",
+            "name": "ldlC",
+            "label": "LDL-C",
+            "type": "number",
+            "required": true,
+            "defaultValue": "",
+            "min": 0,
+            "unit": "mg/dL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "hdlc",
+            "name": "hdlC",
+            "label": "HDL-C",
+            "type": "number",
+            "required": true,
+            "defaultValue": "",
+            "min": 0,
+            "unit": "mg/dL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "triglycerides",
+            "name": "triglycerides",
+            "label": "Triglycerides",
+            "type": "number",
+            "required": true,
+            "defaultValue": "",
+            "min": 0,
+            "unit": "mg/dL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "total-cholesterol",
+            "name": "totalCholesterol",
+            "label": "Total Cholesterol",
+            "type": "number",
+            "required": true,
+            "defaultValue": "",
+            "min": 0,
+            "unit": "mg/dL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "lpa",
+            "name": "lpa",
+            "label": "Lipoprotein(a) (nmol/L) - Optional",
+            "type": "number",
+            "defaultValue": "",
+            "min": 0,
+            "unit": "nmol/L",
+            "keyboardType": "decimal"
+          }
+        ]
+      }
+    ]
+  }
+}

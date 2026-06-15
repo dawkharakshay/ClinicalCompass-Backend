@@ -1,0 +1,316 @@
+{
+  "title": "Acute Myeloid Leukemia Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendations",
+    "logicKey": "aml",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "patient-profile",
+        "shortLabel": "Patient Profile",
+        "title": "Patient Profile & Fitness Assessment",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Patient Age",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "unit": "years",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "ecog-ps",
+            "name": "ecogPS",
+            "label": "ECOG Performance Status",
+            "type": "radio",
+            "required": false,
+            "defaultValue": 0,
+            "options": [
+              { "label": "0 — Fully active, no restriction", "value": 0 },
+              { "label": "1 — Restricted in strenuous activity; ambulatory", "value": 1 },
+              { "label": "2 — Ambulatory >50% of waking hours; self-care", "value": 2 },
+              { "label": "3 — Limited self-care; confined to bed/chair >50%", "value": 3 },
+              { "label": "4 — Completely disabled; no self-care", "value": 4 }
+            ]
+          },
+          {
+            "id": "creatinine",
+            "name": "creatinine",
+            "label": "Creatinine",
+            "type": "radio",
+            "required": false,
+            "defaultValue": "normal",
+            "options": [
+              { "label": "Normal", "value": "normal" },
+              { "label": "1.5× ULN", "value": "elevated_1_5x" },
+              { "label": "≥2× ULN", "value": "elevated_2x_plus" }
+            ]
+          },
+          {
+            "id": "bilirubin",
+            "name": "bilirubin",
+            "label": "Bilirubin",
+            "type": "radio",
+            "required": false,
+            "defaultValue": "normal",
+            "options": [
+              { "label": "Normal", "value": "normal" },
+              { "label": "1.5× ULN", "value": "elevated_1_5x" },
+              { "label": "≥2× ULN", "value": "elevated_2x_plus" }
+            ]
+          },
+          {
+            "id": "ejection-fraction",
+            "name": "ejectionFraction",
+            "label": "Ejection Fraction",
+            "type": "radio",
+            "required": false,
+            "defaultValue": "normal_45plus",
+            "options": [
+              { "label": "≥45% (Normal)", "value": "normal_45plus" },
+              { "label": "35–44% (Reduced)", "value": "reduced_35_44" },
+              { "label": "<35% (Severe)", "value": "severely_reduced" }
+            ]
+          },
+          {
+            "id": "hct-ci",
+            "name": "hctCI",
+            "label": "HCT-CI Score (Hematopoietic Cell Transplantation Comorbidity Index)",
+            "type": "radio",
+            "required": false,
+            "defaultValue": 0,
+            "options": [
+              { "label": "0", "value": 0 },
+              { "label": "1", "value": 1 },
+              { "label": "2", "value": 2 },
+              { "label": "3", "value": 3 },
+              { "label": "4+", "value": 4 }
+            ]
+          },
+          {
+            "id": "patient-preference",
+            "name": "patientPreference",
+            "label": "Patient Treatment Goals",
+            "type": "radio",
+            "required": false,
+            "defaultValue": "aggressive",
+            "options": [
+              { "label": "Aggressive — Maximize disease control, accept hospitalization/toxicity", "value": "aggressive" },
+              { "label": "Moderate — Balance efficacy with quality of life", "value": "moderate" },
+              { "label": "Minimal — Prefer outpatient/low-intensity therapy", "value": "minimal" },
+              { "label": "Best supportive care only — Comfort-focused", "value": "bsc" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "aml-subtype",
+        "shortLabel": "AML Subtype",
+        "title": "AML Subtype Classification",
+        "fields": [
+          {
+            "id": "apl-alert",
+            "type": "alert",
+            "severity": "warning",
+            "text": "If APL (t(15;17)/PML::RARA) is suspected morphologically, initiate ATRA immediately — do not wait for molecular confirmation."
+          },
+          {
+            "id": "is-apl",
+            "name": "isAPL",
+            "label": "APL — t(15;17)/PML::RARA (Acute Promyelocytic Leukemia)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "is-secondary-aml",
+            "name": "isSecondaryAML",
+            "label": "Secondary AML",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "is-relapsed-refractory",
+            "name": "isRelapsedRefractory",
+            "label": "Relapsed / Refractory AML",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "cytogenetics",
+        "shortLabel": "Cytogenetics",
+        "title": "Cytogenetics (Karyotype)",
+        "fields": [
+          {
+            "id": "karyotype",
+            "name": "karyotype",
+            "label": "Select the predominant cytogenetic finding (ELN 2022 classification):",
+            "type": "radio",
+            "required": false,
+            "defaultValue": "normal",
+            "options": [
+              { "label": "Normal karyotype (CN-AML)", "value": "normal" },
+              { "label": "t(8;21)(q22;q22.1) / RUNX1::RUNX1T1", "value": "favorable_t8_21" },
+              { "label": "inv(16)(p13.1q22) or t(16;16) / CBFB::MYH11", "value": "favorable_inv16" },
+              { "label": "t(9;11)(p21.3;q23.3) / MLLT3::KMT2A", "value": "t9_11" },
+              { "label": "t(6;9)(p23;q34.1) / DEK::NUP214", "value": "t6_9" },
+              { "label": "KMT2A rearrangement (other than t(9;11))", "value": "kmt2a_rearranged" },
+              { "label": "-7 / del(7q)", "value": "minus7" },
+              { "label": "-5 / del(5q)", "value": "minus5_del5q" },
+              { "label": "-17 / abn(17p)", "value": "minus17_abn17p" },
+              { "label": "Complex karyotype (≥3 unrelated abnormalities)", "value": "complex_3plus" },
+              { "label": "Monosomal karyotype", "value": "monosomal" },
+              { "label": "Other intermediate cytogenetics", "value": "other_intermediate" },
+              { "label": "Other adverse cytogenetics", "value": "other_adverse" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "molecular-profile",
+        "shortLabel": "Molecular Profile",
+        "title": "Molecular Profile (Next-Gen Sequencing)",
+        "fields": [
+          {
+            "id": "npm1-mutation",
+            "name": "npm1Mutation",
+            "label": "NPM1 mutation",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "cebpa-double-mutation",
+            "name": "cebpaDoubleMutation",
+            "label": "CEBPA biallelic mutation",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "flt3-itd",
+            "name": "flt3ITD",
+            "label": "FLT3-ITD (Internal Tandem Duplication)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "flt3-itd-allelic-ratio",
+            "name": "flt3ITDAllelicRatio",
+            "label": "Allelic Ratio:",
+            "type": "radio",
+            "required": false,
+            "defaultValue": "na",
+            "options": [
+              { "label": "Low (<0.5)", "value": "low" },
+              { "label": "High (≥0.5)", "value": "high" }
+            ],
+            "visibleWhen": { "field": "flt3ITD", "op": "truthy" }
+          },
+          {
+            "id": "flt3-tkd",
+            "name": "flt3TKD",
+            "label": "FLT3-TKD (Tyrosine Kinase Domain)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "idh1-mutation",
+            "name": "idh1Mutation",
+            "label": "IDH1 mutation",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "idh2-mutation",
+            "name": "idh2Mutation",
+            "label": "IDH2 mutation",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "tp53-mutation",
+            "name": "tp53Mutation",
+            "label": "TP53 mutation",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "runx1-mutation",
+            "name": "runx1Mutation",
+            "label": "RUNX1 mutation",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "asxl1-mutation",
+            "name": "asxl1Mutation",
+            "label": "ASXL1 mutation",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "bcor-mutation",
+            "name": "bcorMutation",
+            "label": "BCOR mutation",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "transplant-context",
+        "shortLabel": "Transplant & Context",
+        "title": "Transplant Eligibility & Context",
+        "fields": [
+          {
+            "id": "has-hla-matched-sibling",
+            "name": "hasHLAMatchedSibling",
+            "label": "HLA-matched sibling donor (MSD) available",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-matched-unrelated-donor",
+            "name": "hasMatchedUnrelatedDonor",
+            "label": "Matched unrelated donor (MUD) available or search initiated",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "prior-hct",
+            "name": "priorHCT",
+            "label": "Prior allogeneic HCT",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "mrd-alert",
+            "type": "alert",
+            "severity": "info",
+            "text": "MRD (minimal residual disease) status after induction is the key determinant of transplant timing for intermediate-risk AML. MRD testing should be performed after each cycle."
+          }
+        ]
+      }
+    ]
+  }
+}

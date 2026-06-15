@@ -1,0 +1,399 @@
+{
+  "title": "Biliary Strictures Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "biliarystrictures",
+    "hiddenDefaults": {
+      "hasAbdominalPain": true,
+      "hasBiliaryStenosis": true
+    },
+    "steps": [
+      {
+        "id": "stricture-characteristics",
+        "shortLabel": "Stricture",
+        "title": "Stricture Characteristics",
+        "fields": [
+          {
+            "id": "stricture-location",
+            "name": "strictureLocation",
+            "label": "Stricture Location",
+            "type": "select",
+            "defaultValue": "distal_cbd",
+            "options": [
+              { "label": "Distal CBD (below cystic duct)", "value": "distal_cbd" },
+              { "label": "Hilar — Bismuth I (common hepatic duct)", "value": "hilar_bismuth_I" },
+              { "label": "Hilar — Bismuth II (bifurcation)", "value": "hilar_bismuth_II" },
+              { "label": "Hilar — Bismuth III (unilateral hepatic)", "value": "hilar_bismuth_III" },
+              { "label": "Hilar — Bismuth IV (bilateral hepatic)", "value": "hilar_bismuth_IV" },
+              { "label": "Intrahepatic", "value": "intrahepatic" },
+              { "label": "Cystic Duct", "value": "cystic_duct" },
+              { "label": "Anastomotic (post-transplant)", "value": "anastomotic" }
+            ]
+          },
+          {
+            "id": "suspected-etiology",
+            "name": "suspectedEtiology",
+            "label": "Suspected Etiology",
+            "type": "select",
+            "defaultValue": "unknown_malignant_suspected",
+            "options": [
+              { "label": "Unknown — Malignancy Suspected", "value": "unknown_malignant_suspected" },
+              { "label": "Cholangiocarcinoma Suspected", "value": "cholangiocarcinoma_suspected" },
+              { "label": "Pancreatic Cancer", "value": "pancreatic_cancer" },
+              { "label": "Gallbladder Cancer", "value": "gallbladder_cancer" },
+              { "label": "Ampullary Cancer", "value": "ampullary_cancer" },
+              { "label": "Metastatic Disease", "value": "metastatic_disease" },
+              { "label": "PSC (Primary Sclerosing Cholangitis)", "value": "psc" },
+              { "label": "IgG4 Cholangiopathy", "value": "igg4_cholangiopathy" },
+              { "label": "Post-Surgical (anastomotic)", "value": "post_surgical" },
+              { "label": "Chronic Pancreatitis", "value": "chronic_pancreatitis" },
+              { "label": "Choledocholithiasis-Related", "value": "choledocholithiasis_related" },
+              { "label": "Benign / Idiopathic", "value": "benign_idiopathic" }
+            ]
+          },
+          {
+            "id": "stricture-length-cm",
+            "name": "strictureLengthCm",
+            "label": "Stricture Length (cm)",
+            "type": "number",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "has-proximal-dilation",
+            "name": "hasProximalDilation",
+            "label": "Proximal Ductal Dilation",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "proximal-duct-diameter-mm",
+            "name": "proximalDuctDiameterMm",
+            "label": "Proximal Duct Diameter (mm)",
+            "type": "number",
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "hasProximalDilation", "op": "truthy" }
+          },
+          {
+            "id": "has-jaundice",
+            "name": "hasJaundice",
+            "label": "Jaundice",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "bilirubin-mg-dl",
+            "name": "bilirubinMgDl",
+            "label": "Bilirubin (mg/dL)",
+            "type": "number",
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "hasJaundice", "op": "truthy" }
+          },
+          {
+            "id": "has-fever",
+            "name": "hasFever",
+            "label": "Fever (suggests cholangitis)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-chills",
+            "name": "hasChills",
+            "label": "Chills",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-weight-loss",
+            "name": "hasWeightLoss",
+            "label": "Weight Loss",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "has-pruritus",
+            "name": "hasPruritus",
+            "label": "Pruritus",
+            "type": "switch",
+            "defaultValue": true
+          }
+        ]
+      },
+      {
+        "id": "imaging-tissue",
+        "shortLabel": "Imaging",
+        "title": "Imaging & Tissue Acquisition",
+        "fields": [
+          {
+            "id": "ca199",
+            "name": "ca199",
+            "label": "CA 19-9 (U/mL)",
+            "type": "number",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "cea",
+            "name": "cea",
+            "label": "CEA (ng/mL)",
+            "type": "number",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "igg4",
+            "name": "igg4",
+            "label": "IgG4 (mg/dL)",
+            "type": "number",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "has-ct-scan",
+            "name": "hasCTScan",
+            "label": "CT Scan Performed",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "has-mrcp",
+            "name": "hasMRCP",
+            "label": "MRCP Performed",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-ercp",
+            "name": "hasERCP",
+            "label": "ERCP Performed",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-eus-performed",
+            "name": "hasEUSPerformed",
+            "label": "EUS Performed",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-pet-scan",
+            "name": "hasPETScan",
+            "label": "PET Scan Performed",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "imaging-findings-malignant-features",
+            "name": "imagingFindingsMalignantFeatures",
+            "label": "Imaging Shows Malignant Features (mass, vascular involvement, LN)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "tissue-acquisition-result",
+            "name": "tissueAcquisitionResult",
+            "label": "Tissue Acquisition Result",
+            "type": "select",
+            "defaultValue": "not_performed",
+            "options": [
+              { "label": "Not Yet Performed", "value": "not_performed" },
+              { "label": "Malignant", "value": "malignant" },
+              { "label": "High-Grade Dysplasia", "value": "high_grade_dysplasia" },
+              { "label": "Suspicious", "value": "suspicious" },
+              { "label": "Atypical", "value": "atypical" },
+              { "label": "Benign", "value": "benign" },
+              { "label": "Non-Diagnostic", "value": "non_diagnostic" },
+              { "label": "Pending", "value": "pending" }
+            ]
+          },
+          {
+            "id": "tissue-method",
+            "name": "tissueMethod",
+            "label": "Tissue Method Used",
+            "type": "select",
+            "defaultValue": "ercp_brush_cytology",
+            "options": [
+              { "label": "ERCP Brush Cytology", "value": "ercp_brush_cytology" },
+              { "label": "ERCP Forceps Biopsy", "value": "ercp_forceps_biopsy" },
+              { "label": "EUS-FNB", "value": "eus_fnb" },
+              { "label": "Cholangioscopy-Guided Biopsy", "value": "cholangioscopy_biopsy" },
+              { "label": "Percutaneous Biopsy", "value": "percutaneous" }
+            ],
+            "visibleWhen": {
+              "all": [
+                { "field": "tissueAcquisitionResult", "op": "ne", "value": "not_performed" },
+                { "field": "tissueAcquisitionResult", "op": "ne", "value": "pending" }
+              ]
+            }
+          },
+          {
+            "id": "number-of-prior-biopsy-attempts",
+            "name": "numberOfPriorBiopsyAttempts",
+            "label": "Number of Prior Biopsy Attempts",
+            "type": "number",
+            "keyboardType": "decimal",
+            "visibleWhen": {
+              "all": [
+                { "field": "tissueAcquisitionResult", "op": "ne", "value": "not_performed" },
+                { "field": "tissueAcquisitionResult", "op": "ne", "value": "pending" }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "psc-drainage-resectability",
+        "shortLabel": "PSC & Resectability",
+        "title": "PSC, Drainage & Resectability",
+        "fields": [
+          {
+            "id": "has-psc",
+            "name": "hasPSC",
+            "label": "PSC (Primary Sclerosing Cholangitis)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "psc-type",
+            "name": "pscType",
+            "label": "PSC Type",
+            "type": "select",
+            "defaultValue": "large_duct",
+            "options": [
+              { "label": "Large Duct PSC", "value": "large_duct" },
+              { "label": "Small Duct PSC", "value": "small_duct" }
+            ],
+            "visibleWhen": { "field": "hasPSC", "op": "truthy" }
+          },
+          {
+            "id": "has-ibd-with-psc",
+            "name": "hasIBDWithPSC",
+            "label": "IBD with PSC",
+            "type": "switch",
+            "defaultValue": false,
+            "visibleWhen": { "field": "hasPSC", "op": "truthy" }
+          },
+          {
+            "id": "has-dominant-stricture",
+            "name": "hasDominantStricture",
+            "label": "Dominant Stricture in PSC",
+            "type": "switch",
+            "defaultValue": false,
+            "visibleWhen": { "field": "hasPSC", "op": "truthy" }
+          },
+          {
+            "id": "has-cholangiocarc-in-psc",
+            "name": "hasCholangiocarcInPSC",
+            "label": "Cholangiocarcinoma in PSC",
+            "type": "switch",
+            "defaultValue": false,
+            "visibleWhen": { "field": "hasPSC", "op": "truthy" }
+          },
+          {
+            "id": "has-biliary-stent",
+            "name": "hasBiliaryStent",
+            "label": "Biliary Stent in Place",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "stent-type",
+            "name": "stentType",
+            "label": "Stent Type",
+            "type": "select",
+            "defaultValue": "plastic",
+            "options": [
+              { "label": "Plastic Stent", "value": "plastic" },
+              { "label": "SEMS — Covered", "value": "sems_covered" },
+              { "label": "SEMS — Uncovered", "value": "sems_uncovered" }
+            ],
+            "visibleWhen": { "field": "hasBiliaryStent", "op": "truthy" }
+          },
+          {
+            "id": "has-stent-occlusion",
+            "name": "hasStentOcclusion",
+            "label": "Stent Occlusion",
+            "type": "switch",
+            "defaultValue": false,
+            "visibleWhen": { "field": "hasBiliaryStent", "op": "truthy" }
+          },
+          {
+            "id": "is-resectable",
+            "name": "isResectable",
+            "label": "Resectable",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-vascular-involvement",
+            "name": "hasVascularInvolvement",
+            "label": "Vascular Involvement",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-lymphadenopathy",
+            "name": "hasLymphadenopathy",
+            "label": "Lymphadenopathy",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-distant-metastases",
+            "name": "hasDistantMetastases",
+            "label": "Distant Metastases",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-liver-metastases",
+            "name": "hasLiverMetastases",
+            "label": "Liver Metastases",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "age-years",
+            "name": "ageYears",
+            "label": "Age (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "performance-status",
+            "name": "performanceStatus",
+            "label": "Performance Status",
+            "type": "select",
+            "defaultValue": "good",
+            "options": [
+              { "label": "Good (ECOG 0–1)", "value": "good" },
+              { "label": "Moderate (ECOG 2)", "value": "moderate" },
+              { "label": "Poor (ECOG 3–4)", "value": "poor" }
+            ]
+          },
+          {
+            "id": "is-surgical-candidate",
+            "name": "isSurgicalCandidate",
+            "label": "Surgical Candidate",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "has-coagulopathy",
+            "name": "hasCoagulopathy",
+            "label": "Coagulopathy",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "is-on-anticoagulation",
+            "name": "isOnAnticoagulation",
+            "label": "On Anticoagulation",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

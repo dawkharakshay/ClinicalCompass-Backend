@@ -1,0 +1,379 @@
+{
+  "title": "Aplastic Anemia Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "AplasticAnemiaAuthGuide.tsx",
+    "title": "AplasticAnemia Clinical Compass",
+    "subtitle": "Aplastic Anemia Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "38240",
+        "description": "Hematopoietic progenitor cell (HPC); allogeneic transplantation per donor",
+        "device": "Allogeneic hematopoietic stem cell transplantation (HSCT)",
+        "access": "Intravenous infusion",
+        "rvu": 7.21,
+        "includes": [
+          "Mobilization of hematopoietic stem cells from donor",
+          "Harvesting of hematopoietic stem cells from donor",
+          "Administration of high-dose chemotherapy (if applicable)",
+          "Infusion of hematopoietic progenitor cells (HPCs) into recipient"
+        ],
+        "note": "This code covers the physician work effort for allogeneic transplantation, including donor selection and management."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "D61.9",
+        "description": "Aplastic anemia, unspecified",
+        "notes": "Used when the specific cause of aplastic anemia is not documented.",
+        "required": true
+      },
+      {
+        "code": "D61.0",
+        "description": "Drug-induced aplastic anemia",
+        "notes": "Used for aplastic anemia caused by an adverse effect of a drug.",
+        "required": false
+      },
+      {
+        "code": "D61.3",
+        "description": "Idiopathic aplastic anemia",
+        "notes": "Used for aplastic anemia of unknown cause.",
+        "required": false
+      },
+      {
+        "code": "D61.2",
+        "description": "Aplastic anemia due to other external agents",
+        "notes": "Used for aplastic anemia caused by external agents other than drugs.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Conditional Coverage",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Allogeneic hematopoietic stem cell transplantation (HSCT) is a complex procedure and typically requires extensive prior authorization. Coverage is generally limited to specific diagnoses and clinical criteria.",
+        "overview": "Medicare covers allogeneic HSCT for specific indications, often under Coverage with Evidence Development (CED) or for conditions listed in national or local coverage determinations. Strict criteria apply.",
+        "reimbursementNote": "Reimbursement for allogeneic HSCT is complex and often bundled. Ensure all components of care are appropriately coded and documented to maximize reimbursement.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Patient Eligibility",
+            "items": [
+              "Diagnosis of severe aplastic anemia (SAA) or very severe aplastic anemia (VSAA)",
+              "Age-appropriate for transplant (e.g., typically younger patients for allogeneic HSCT)",
+              "Absence of suitable alternative treatments or failure of conventional therapies",
+              "Good performance status"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Donor Match",
+            "items": [
+              "Availability of a suitable HLA-matched related or unrelated donor"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Facility Requirements",
+            "items": [
+              "Performed in a Medicare-approved transplant center with demonstrated expertise in HSCT."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Records",
+            "items": [
+              "Detailed medical history and physical examination notes",
+              "Results of bone marrow biopsy and aspiration",
+              "Complete blood counts with differential",
+              "Immunosuppressive therapy history and response",
+              "HLA typing results for patient and donor",
+              "Infectious disease screening results"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Treatment Plan",
+            "items": [
+              "Proposed conditioning regimen",
+              "Source of stem cells (e.g., bone marrow, peripheral blood, umbilical cord blood)",
+              "Post-transplant management plan"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit a comprehensive prior authorization request with all supporting clinical documentation.",
+              "Ensure all Medicare-specific forms and checklists are completed accurately.",
+              "Be prepared for potential requests for additional information or peer-to-peer review."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of medical necessity based on Medicare criteria",
+              "Incomplete or insufficient clinical documentation",
+              "Failure to meet specific age or disease stage requirements",
+              "Transplant performed at a non-approved facility."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Thoroughly review the latest Medicare National Coverage Determinations (NCDs) and Local Coverage Determinations (LCDs) for HSCT.",
+              "Document all failed conventional therapies and the rationale for HSCT.",
+              "Ensure all required diagnostic tests and consultations are completed and documented prior to submission."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS",
+            "status": "Covered with specific criteria",
+            "notes": "Refer to NCD 110.23 for Hematopoietic Stem Cell Transplantation."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Varies by State",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid coverage for allogeneic HSCT varies significantly by state. Prior authorization is almost always required and is subject to state-specific medical necessity criteria and guidelines.",
+        "overview": "Medicaid programs generally cover medically necessary allogeneic HSCT, but specific eligibility criteria, covered indications, and authorization processes differ from state to state.",
+        "reimbursementNote": "Medicaid reimbursement rates can be lower than other payers. Verify state-specific reimbursement policies and potential limitations.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Patient Eligibility",
+            "items": [
+              "Diagnosis of severe aplastic anemia (SAA) or very severe aplastic anemia (VSAA)",
+              "Failure of or contraindication to conventional therapies",
+              "Appropriate clinical staging and prognosis"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Donor Match",
+            "items": [
+              "Availability of a suitable HLA-matched donor"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: State-Specific Guidelines",
+            "items": [
+              "Adherence to the specific state Medicaid program’s medical policies for HSCT."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Records",
+            "items": [
+              "Comprehensive medical history and physical",
+              "Bone marrow biopsy reports",
+              "Laboratory results (CBC, LFTs, renal function)",
+              "HLA typing results",
+              "Documentation of previous treatments and their outcomes"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Authorization Request",
+            "items": [
+              "State-specific prior authorization forms",
+              "Letter of medical necessity from the transplant physician",
+              "Transplant center’s accreditation and experience."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Contact the state Medicaid agency for their specific HSCT authorization requirements and forms.",
+              "Submit all required documentation well in advance of the planned procedure.",
+              "Be prepared for a potentially lengthy review process and possible appeals."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet state-specific medical necessity criteria",
+              "Incomplete or non-compliant documentation",
+              "Lack of clear benefit or poor prognosis based on state guidelines."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state’s Medicaid policies for allogeneic HSCT.",
+              "Maintain meticulous records of all patient evaluations and treatment attempts.",
+              "Engage with patient advocates or social workers who specialize in Medicaid transplant coverage."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (e.g., California)",
+            "status": "Covered with specific criteria",
+            "notes": "Refer to Medi-Cal policies for Hematopoietic Stem Cell Transplantation."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Requires Prior Authorization",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Private insurance plans almost universally require prior authorization for allogeneic HSCT. Coverage is determined by the individual plan’s medical policy and may vary significantly.",
+        "overview": "Private insurance plans typically cover allogeneic HSCT for severe aplastic anemia when deemed medically necessary and when specific clinical criteria are met, as outlined in their medical policies.",
+        "reimbursementNote": "Reimbursement for private insurance can vary widely based on the plan and negotiated rates. Verify benefits and out-of-pocket costs with the patient.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Medical Necessity",
+            "items": [
+              "Diagnosis of severe aplastic anemia (SAA) or very severe aplastic anemia (VSAA)",
+              "Failure of or contraindication to standard immunosuppressive therapy",
+              "No other effective treatment options available"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Transplant Center",
+            "items": [
+              "Performed at an accredited transplant center with a proven track record of successful outcomes."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Donor Availability",
+            "items": [
+              "Availability of a suitable HLA-matched donor (related or unrelated)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Information",
+            "items": [
+              "Physician’s order for HSCT",
+              "Patient’s complete medical history, including diagnosis, disease stage, and prognosis",
+              "Bone marrow biopsy and pathology reports",
+              "HLA typing results for patient and donor",
+              "Documentation of prior treatments and response"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Justification",
+            "items": [
+              "Letter of medical necessity detailing why HSCT is the most appropriate treatment",
+              "Expected benefits and potential risks of the procedure."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit a detailed prior authorization request through the insurer’s portal or designated process.",
+              "Include all clinical documentation and a strong letter of medical necessity.",
+              "Be prepared for peer-to-peer discussions and potential appeals if the initial request is denied."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Not meeting specific medical policy criteria",
+              "Insufficient documentation to support medical necessity",
+              "Experimental or investigational status for certain indications",
+              "Lack of suitable donor or patient comorbidities."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Review the specific private insurance plan’s medical policy for HSCT in detail.",
+              "Ensure all documentation clearly addresses each criterion outlined in the policy.",
+              "Maintain open communication with the insurer throughout the authorization process."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Aetna",
+            "status": "Covered with specific criteria",
+            "notes": "Refer to Aetna Clinical Policy Bulletin for Hematopoietic Stem Cell Transplantation."
+          },
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Covered with specific criteria",
+            "notes": "Refer to BCBS medical policies for HSCT, which vary by plan and state."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Navigation",
+        "kind": "link",
+        "text": "Back to Assessment (links to /aplasticanemia)",
+        "href": "/aplasticanemia"
+      },
+      {
+        "heading": "CPT Codes Card UI Note",
+        "kind": "prose",
+        "text": "For each CPT code, the 'Included in this code' list is labeled: 'Included in this code (do NOT bill separately):'. Each CPT card displays badges 'CPT {code}' and 'RVU {rvu}', and a 'Device/Access:' line."
+      },
+      {
+        "heading": "ICD-10 Codes Card UI Note",
+        "kind": "prose",
+        "text": "Required codes are marked with a 'Primary' badge. D61.9 (Aplastic anemia, unspecified) is the required/Primary code; D61.0, D61.3, and D61.2 are not required."
+      }
+    ],
+    "raw": {
+      "markdown": "# AplasticAnemia Clinical Compass\n## Aplastic Anemia Insurance Authorization Guide\n\n[Button] Back to Assessment -> /aplasticanemia\n\n---\n\n## Procedure Codes (CPT Codes)\n\n### CPT 38240 — RVU 7.21\n**Hematopoietic progenitor cell (HPC); allogeneic transplantation per donor**\n\nDevice/Access: Allogeneic hematopoietic stem cell transplantation (HSCT)\n\nIncluded in this code (do NOT bill separately):\n- Mobilization of hematopoietic stem cells from donor\n- Harvesting of hematopoietic stem cells from donor\n- Administration of high-dose chemotherapy (if applicable)\n- Infusion of hematopoietic progenitor cells (HPCs) into recipient\n\n_This code covers the physician work effort for allogeneic transplantation, including donor selection and management._\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **D61.9** (Primary / Required) — Aplastic anemia, unspecified. Used when the specific cause of aplastic anemia is not documented.\n- **D61.0** — Drug-induced aplastic anemia. Used for aplastic anemia caused by an adverse effect of a drug.\n- **D61.3** — Idiopathic aplastic anemia. Used for aplastic anemia of unknown cause.\n- **D61.2** — Aplastic anemia due to other external agents. Used for aplastic anemia caused by external agents other than drugs.\n\n---\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\n- Prior Auth Required\n- Coverage Status: Conditional Coverage\n- Prior Auth Note: Allogeneic hematopoietic stem cell transplantation (HSCT) is a complex procedure and typically requires extensive prior authorization. Coverage is generally limited to specific diagnoses and clinical criteria.\n- Overview: Medicare covers allogeneic HSCT for specific indications, often under Coverage with Evidence Development (CED) or for conditions listed in national or local coverage determinations. Strict criteria apply.\n\n**Coverage Criteria**\n\n_Patient Eligibility_\n- Diagnosis of severe aplastic anemia (SAA) or very severe aplastic anemia (VSAA)\n- Age-appropriate for transplant (e.g., typically younger patients for allogeneic HSCT)\n- Absence of suitable alternative treatments or failure of conventional therapies\n- Good performance status\n\n_Donor Match_\n- Availability of a suitable HLA-matched related or unrelated donor\n\n_Facility Requirements_\n- Performed in a Medicare-approved transplant center with demonstrated expertise in HSCT.\n\n**Required Documentation**\n\n_Clinical Records_\n- Detailed medical history and physical examination notes\n- Results of bone marrow biopsy and aspiration\n- Complete blood counts with differential\n- Immunosuppressive therapy history and response\n- HLA typing results for patient and donor\n- Infectious disease screening results\n\n_Treatment Plan_\n- Proposed conditioning regimen\n- Source of stem cells (e.g., bone marrow, peripheral blood, umbilical cord blood)\n- Post-transplant management plan\n\n**Submission Process**\n1. Submit a comprehensive prior authorization request with all supporting clinical documentation.\n2. Ensure all Medicare-specific forms and checklists are completed accurately.\n3. Be prepared for potential requests for additional information or peer-to-peer review.\n\n**Common Denial Reasons**\n- Lack of medical necessity based on Medicare criteria\n- Incomplete or insufficient clinical documentation\n- Failure to meet specific age or disease stage requirements\n- Transplant performed at a non-approved facility.\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS | Covered with specific criteria | Refer to NCD 110.23 for Hematopoietic Stem Cell Transplantation. |\n\n**Reimbursement Note:** Reimbursement for allogeneic HSCT is complex and often bundled. Ensure all components of care are appropriately coded and documented to maximize reimbursement.\n\n**Authorization Tips**\n- Thoroughly review the latest Medicare National Coverage Determinations (NCDs) and Local Coverage Determinations (LCDs) for HSCT.\n- Document all failed conventional therapies and the rationale for HSCT.\n- Ensure all required diagnostic tests and consultations are completed and documented prior to submission.\n\n### Medicaid\n- Prior Auth Required\n- Coverage Status: Varies by State\n- Prior Auth Note: Medicaid coverage for allogeneic HSCT varies significantly by state. Prior authorization is almost always required and is subject to state-specific medical necessity criteria and guidelines.\n- Overview: Medicaid programs generally cover medically necessary allogeneic HSCT, but specific eligibility criteria, covered indications, and authorization processes differ from state to state.\n\n**Coverage Criteria**\n\n_Patient Eligibility_\n- Diagnosis of severe aplastic anemia (SAA) or very severe aplastic anemia (VSAA)\n- Failure of or contraindication to conventional therapies\n- Appropriate clinical staging and prognosis\n\n_Donor Match_\n- Availability of a suitable HLA-matched donor\n\n_State-Specific Guidelines_\n- Adherence to the specific state Medicaid program’s medical policies for HSCT.\n\n**Required Documentation**\n\n_Clinical Records_\n- Comprehensive medical history and physical\n- Bone marrow biopsy reports\n- Laboratory results (CBC, LFTs, renal function)\n- HLA typing results\n- Documentation of previous treatments and their outcomes\n\n_Authorization Request_\n- State-specific prior authorization forms\n- Letter of medical necessity from the transplant physician\n- Transplant center’s accreditation and experience.\n\n**Submission Process**\n1. Contact the state Medicaid agency for their specific HSCT authorization requirements and forms.\n2. Submit all required documentation well in advance of the planned procedure.\n3. Be prepared for a potentially lengthy review process and possible appeals.\n\n**Common Denial Reasons**\n- Failure to meet state-specific medical necessity criteria\n- Incomplete or non-compliant documentation\n- Lack of clear benefit or poor prognosis based on state guidelines.\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (e.g., California) | Covered with specific criteria | Refer to Medi-Cal policies for Hematopoietic Stem Cell Transplantation. |\n\n**Reimbursement Note:** Medicaid reimbursement rates can be lower than other payers. Verify state-specific reimbursement policies and potential limitations.\n\n**Authorization Tips**\n- Familiarize yourself with your state’s Medicaid policies for allogeneic HSCT.\n- Maintain meticulous records of all patient evaluations and treatment attempts.\n- Engage with patient advocates or social workers who specialize in Medicaid transplant coverage.\n\n### Private Insurance\n- Prior Auth Required\n- Coverage Status: Requires Prior Authorization\n- Prior Auth Note: Private insurance plans almost universally require prior authorization for allogeneic HSCT. Coverage is determined by the individual plan’s medical policy and may vary significantly.\n- Overview: Private insurance plans typically cover allogeneic HSCT for severe aplastic anemia when deemed medically necessary and when specific clinical criteria are met, as outlined in their medical policies.\n\n**Coverage Criteria**\n\n_Medical Necessity_\n- Diagnosis of severe aplastic anemia (SAA) or very severe aplastic anemia (VSAA)\n- Failure of or contraindication to standard immunosuppressive therapy\n- No other effective treatment options available\n\n_Transplant Center_\n- Performed at an accredited transplant center with a proven track record of successful outcomes.\n\n_Donor Availability_\n- Availability of a suitable HLA-matched donor (related or unrelated).\n\n**Required Documentation**\n\n_Clinical Information_\n- Physician’s order for HSCT\n- Patient’s complete medical history, including diagnosis, disease stage, and prognosis\n- Bone marrow biopsy and pathology reports\n- HLA typing results for patient and donor\n- Documentation of prior treatments and response\n\n_Justification_\n- Letter of medical necessity detailing why HSCT is the most appropriate treatment\n- Expected benefits and potential risks of the procedure.\n\n**Submission Process**\n1. Submit a detailed prior authorization request through the insurer’s portal or designated process.\n2. Include all clinical documentation and a strong letter of medical necessity.\n3. Be prepared for peer-to-peer discussions and potential appeals if the initial request is denied.\n\n**Common Denial Reasons**\n- Not meeting specific medical policy criteria\n- Insufficient documentation to support medical necessity\n- Experimental or investigational status for certain indications\n- Lack of suitable donor or patient comorbidities.\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Aetna | Covered with specific criteria | Refer to Aetna Clinical Policy Bulletin for Hematopoietic Stem Cell Transplantation. |\n| Blue Cross Blue Shield | Covered with specific criteria | Refer to BCBS medical policies for HSCT, which vary by plan and state. |\n\n**Reimbursement Note:** Reimbursement for private insurance can vary widely based on the plan and negotiated rates. Verify benefits and out-of-pocket costs with the patient.\n\n**Authorization Tips**\n- Review the specific private insurance plan’s medical policy for HSCT in detail.\n- Ensure all documentation clearly addresses each criterion outlined in the policy.\n- Maintain open communication with the insurer throughout the authorization process.\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "Description", "Device/Access", "Access", "RVU", "Note"],
+          "rows": [
+            [
+              "38240",
+              "Hematopoietic progenitor cell (HPC); allogeneic transplantation per donor",
+              "Allogeneic hematopoietic stem cell transplantation (HSCT)",
+              "Intravenous infusion",
+              "7.21",
+              "This code covers the physician work effort for allogeneic transplantation, including donor selection and management."
+            ]
+          ]
+        },
+        {
+          "name": "CPT 38240 - Included (do NOT bill separately)",
+          "header": ["Included Item"],
+          "rows": [
+            ["Mobilization of hematopoietic stem cells from donor"],
+            ["Harvesting of hematopoietic stem cells from donor"],
+            ["Administration of high-dose chemotherapy (if applicable)"],
+            ["Infusion of hematopoietic progenitor cells (HPCs) into recipient"]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required (Primary)"],
+          "rows": [
+            ["D61.9", "Aplastic anemia, unspecified", "Used when the specific cause of aplastic anemia is not documented.", "Yes"],
+            ["D61.0", "Drug-induced aplastic anemia", "Used for aplastic anemia caused by an adverse effect of a drug.", "No"],
+            ["D61.3", "Idiopathic aplastic anemia", "Used for aplastic anemia of unknown cause.", "No"],
+            ["D61.2", "Aplastic anemia due to other external agents", "Used for aplastic anemia caused by external agents other than drugs.", "No"]
+          ]
+        },
+        {
+          "name": "Medicare - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS", "Covered with specific criteria", "Refer to NCD 110.23 for Hematopoietic Stem Cell Transplantation."]
+          ]
+        },
+        {
+          "name": "Medicaid - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., California)", "Covered with specific criteria", "Refer to Medi-Cal policies for Hematopoietic Stem Cell Transplantation."]
+          ]
+        },
+        {
+          "name": "Private Insurance - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Aetna", "Covered with specific criteria", "Refer to Aetna Clinical Policy Bulletin for Hematopoietic Stem Cell Transplantation."],
+            ["Blue Cross Blue Shield", "Covered with specific criteria", "Refer to BCBS medical policies for HSCT, which vary by plan and state."]
+          ]
+        }
+      ]
+    }
+  }
+}

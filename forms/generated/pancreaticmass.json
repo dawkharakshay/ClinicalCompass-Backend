@@ -1,0 +1,334 @@
+{
+  "title": "Pancreatic Mass Evaluation Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "pancreaticmass",
+    "hiddenDefaults": {
+      "hasERCP": false,
+      "cea": null,
+      "eusFindingsDescription": ""
+    },
+    "steps": [
+      {
+        "id": "mass-characteristics",
+        "shortLabel": "Mass Characteristics",
+        "title": "Mass Characteristics",
+        "fields": [
+          {
+            "id": "mass-type",
+            "name": "massType",
+            "label": "Mass Type",
+            "type": "select",
+            "defaultValue": "solid_mass",
+            "options": [
+              { "label": "Solid Mass", "value": "solid_mass" },
+              { "label": "Cystic Lesion", "value": "cystic_lesion" },
+              { "label": "Mixed Solid-Cystic", "value": "mixed_solid_cystic" },
+              { "label": "Ductal Dilation Only", "value": "ductal_dilation_only" },
+              { "label": "Incidentaloma (asymptomatic)", "value": "incidentaloma" }
+            ]
+          },
+          {
+            "id": "mass-location",
+            "name": "massLocation",
+            "label": "Mass Location",
+            "type": "select",
+            "defaultValue": "head",
+            "options": [
+              { "label": "Head", "value": "head" },
+              { "label": "Body", "value": "body" },
+              { "label": "Tail", "value": "tail" },
+              { "label": "Uncinate Process", "value": "uncinate" },
+              { "label": "Diffuse", "value": "diffuse" },
+              { "label": "Unknown", "value": "unknown" }
+            ]
+          },
+          {
+            "id": "mass-size-cm",
+            "name": "massSizeCm",
+            "label": "Mass Size (cm)",
+            "type": "number",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "cystic-type",
+            "name": "cysticType",
+            "label": "Cystic Lesion Type",
+            "type": "select",
+            "defaultValue": "unknown_cystic",
+            "options": [
+              { "label": "IPMN — Main Duct (high risk)", "value": "ipmn_main_duct" },
+              { "label": "IPMN — Branch Duct", "value": "ipmn_branch_duct" },
+              { "label": "IPMN — Mixed Type", "value": "ipmn_mixed_type" },
+              { "label": "Mucinous Cystic Neoplasm (MCN)", "value": "mucinous_cystic_neoplasm" },
+              { "label": "Serous Cystadenoma (benign)", "value": "serous_cystadenoma" },
+              { "label": "Pseudocyst (post-pancreatitis)", "value": "pseudocyst" },
+              { "label": "Solid Pseudopapillary Neoplasm (SPN)", "value": "solid_pseudopapillary_neoplasm" },
+              { "label": "Unknown Cystic", "value": "unknown_cystic" }
+            ],
+            "visibleWhen": { "field": "massType", "op": "in", "value": ["cystic_lesion", "mixed_solid_cystic"] }
+          },
+          {
+            "id": "cyst-size-cm",
+            "name": "cystSizeCm",
+            "label": "Cyst Size (cm)",
+            "type": "number",
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "massType", "op": "in", "value": ["cystic_lesion", "mixed_solid_cystic"] }
+          },
+          {
+            "id": "has-worrisome-features",
+            "name": "hasWorrisomeFeatures",
+            "label": "Worrisome Features (cyst >3cm, thickened wall, MPD 5–9mm)",
+            "type": "switch",
+            "defaultValue": false,
+            "visibleWhen": { "field": "massType", "op": "in", "value": ["cystic_lesion", "mixed_solid_cystic"] }
+          },
+          {
+            "id": "has-high-risk-stigmata",
+            "name": "hasHighRiskStigmata",
+            "label": "High-Risk Stigmata (jaundice, enhancing nodule, MPD ≥10mm)",
+            "type": "switch",
+            "defaultValue": false,
+            "visibleWhen": { "field": "massType", "op": "in", "value": ["cystic_lesion", "mixed_solid_cystic"] }
+          },
+          {
+            "id": "has-main-pancreatic-duct-dilation",
+            "name": "hasMainPancreaticDuctDilation",
+            "label": "Main Pancreatic Duct Dilation",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "main-pd-diameter-mm",
+            "name": "mainPDDiameterMm",
+            "label": "Main PD Diameter (mm)",
+            "type": "number",
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "hasMainPancreaticDuctDilation", "op": "truthy" }
+          },
+          {
+            "id": "has-solid-component",
+            "name": "hasSolidComponent",
+            "label": "Solid Component",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "has-enhancing-mural-nodule",
+            "name": "hasEnhancingMuralNodule",
+            "label": "Enhancing Mural Nodule",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-bile-duct-dilation",
+            "name": "hasBileDuctDilation",
+            "label": "Bile Duct Dilation",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "clinical-context-markers",
+        "shortLabel": "Clinical Context & Markers",
+        "title": "Clinical Context & Markers",
+        "fields": [
+          {
+            "id": "has-jaundice",
+            "name": "hasJaundice",
+            "label": "Jaundice",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-weight-loss",
+            "name": "hasWeightLoss",
+            "label": "Weight Loss",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "has-abdominal-pain",
+            "name": "hasAbdominalPain",
+            "label": "Abdominal Pain",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "has-new-onset-diabetes",
+            "name": "hasNewOnsetDiabetes",
+            "label": "New-Onset Diabetes (elderly)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-acute-pancreatitis",
+            "name": "hasAcutePancreatitis",
+            "label": "Acute Pancreatitis",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-chronic-pancreatitis",
+            "name": "hasChronicPancreatitis",
+            "label": "Chronic Pancreatitis",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "ca199",
+            "name": "ca199",
+            "label": "CA 19-9 (U/mL)",
+            "type": "number",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "igg4",
+            "name": "igg4",
+            "label": "IgG4 (mg/dL)",
+            "type": "number",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "has-ct-scan",
+            "name": "hasCTScan",
+            "label": "CT Scan Performed",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "has-mri-pancreas",
+            "name": "hasMRIPancreas",
+            "label": "MRI/MRCP Performed",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-eus-performed",
+            "name": "hasEUSPerformed",
+            "label": "EUS Performed",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-tissue-acquired",
+            "name": "hasTissueAcquired",
+            "label": "Tissue Acquired",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "tissue-result",
+            "name": "tissueResult",
+            "label": "Tissue Result",
+            "type": "select",
+            "defaultValue": "pending",
+            "options": [
+              { "label": "Malignant", "value": "malignant" },
+              { "label": "Suspicious", "value": "suspicious" },
+              { "label": "Atypical", "value": "atypical" },
+              { "label": "Benign", "value": "benign" },
+              { "label": "Non-Diagnostic", "value": "non_diagnostic" },
+              { "label": "Pending", "value": "pending" }
+            ],
+            "visibleWhen": { "field": "hasTissueAcquired", "op": "truthy" }
+          }
+        ]
+      },
+      {
+        "id": "resectability-patient-factors",
+        "shortLabel": "Resectability & Patient Factors",
+        "title": "Resectability & Patient Factors",
+        "fields": [
+          {
+            "id": "resectability-status",
+            "name": "resectabilityStatus",
+            "label": "Resectability Status",
+            "type": "select",
+            "defaultValue": "not_assessed",
+            "options": [
+              { "label": "Not Yet Assessed", "value": "not_assessed" },
+              { "label": "Resectable", "value": "resectable" },
+              { "label": "Borderline Resectable", "value": "borderline_resectable" },
+              { "label": "Locally Advanced (unresectable)", "value": "locally_advanced" },
+              { "label": "Metastatic", "value": "metastatic" }
+            ]
+          },
+          {
+            "id": "has-vascular-involvement",
+            "name": "hasVascularInvolvement",
+            "label": "Vascular Involvement",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-sma-involvement",
+            "name": "hasSMAInvolvement",
+            "label": "SMA Involvement",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-celiac-involvement",
+            "name": "hasCeliacInvolvement",
+            "label": "Celiac Artery Involvement",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-smvpv-involvement",
+            "name": "hasSMVPVInvolvement",
+            "label": "SMV/Portal Vein Involvement",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-lymphadenopathy",
+            "name": "hasLymphadenopathy",
+            "label": "Lymphadenopathy",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-distant-metastases",
+            "name": "hasDistantMetastases",
+            "label": "Distant Metastases",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "age-years",
+            "name": "ageYears",
+            "label": "Age (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "performance-status",
+            "name": "performanceStatus",
+            "label": "Performance Status",
+            "type": "select",
+            "defaultValue": "good",
+            "options": [
+              { "label": "Good (ECOG 0–1)", "value": "good" },
+              { "label": "Moderate (ECOG 2)", "value": "moderate" },
+              { "label": "Poor (ECOG 3–4)", "value": "poor" }
+            ]
+          },
+          {
+            "id": "is-surgical-candidate",
+            "name": "isSurgicalCandidate",
+            "label": "Surgical Candidate",
+            "type": "switch",
+            "defaultValue": true
+          }
+        ]
+      }
+    ]
+  }
+}

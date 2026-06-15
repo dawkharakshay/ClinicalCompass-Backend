@@ -1,0 +1,30 @@
+{
+  "title": "Thyroid Nodule Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "10005, 60660, 60220",
+      "credentials": "[Credentials]",
+      "icd_codes": "E04.1, D34, C73",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\nRe: Medical Necessity Appeal — Thyroid Nodule Biopsy / Ultrasound Surveillance\nCPT Code(s): 60100, 76536, 88172, 88173\nICD-10 Code(s): E04.1, E04.2, E04.9, D34, C73\n\nDear Medical Director / Utilization Review Committee,\n\nI am writing to appeal the denial of coverage for further evaluation for our patient, whose case presents with an unspecified risk level and an indeterminate TI-RADS category. The requested procedure, Thyroid Nodule Biopsy / Ultrasound Surveillance, is medically necessary and crucial for accurate diagnosis and appropriate management.\n\nClinical Summary:\nOur patient presents with a thyroid nodule requiring further evaluation. Based on imaging findings, biopsy is not currently indicated due to the clinical presentation and imaging findings. This aligns with current medical standards for evaluating thyroid nodules.\n\nGuideline Support:\n1. The ACR TI-RADS White Paper 2017 provides a standardized risk stratification system for thyroid nodules, recommending biopsy or surveillance based on specific sonographic features. Our patient's nodule falls within criteria necessitating the requested intervention.\n2. The American Thyroid Association (ATA) Guidelines for Adult Patients with Thyroid Nodules and Differentiated Thyroid Cancer 2015 support the evaluation and management of thyroid nodules, including indications for biopsy based on nodule size, characteristics, and patient risk factors.\n3. The AACE/ACE/AME Medical Guidelines for Clinical Practice for the Diagnosis and Management of Thyroid Nodules 2016 further reinforce the importance of comprehensive evaluation, including biopsy, for nodules with suspicious features to rule out malignancy.\n\nMedical Necessity:\nThe requested Thyroid Nodule Biopsy / Ultrasound Surveillance is medically necessary to definitively characterize the nodule and guide subsequent treatment decisions. Without this procedure, there is a significant risk of delayed diagnosis of thyroid malignancy, which could lead to more advanced disease, requiring more extensive and costly interventions, and potentially impacting patient prognosis. The current evidence supports an appropriate follow-up interval for this patient .\n\nRisk Without Treatment:\nFailure to perform the recommended Thyroid Nodule Biopsy / Ultrasound Surveillance carries the risk of progression of an undiagnosed malignancy, increased morbidity, and potentially mortality. Early detection and intervention are paramount in managing thyroid nodules effectively.\n\nRequested Action:\nWe respectfully request that you reconsider your denial and approve coverage for the Thyroid Nodule Biopsy / Ultrasound Surveillance. This intervention is in full accordance with established medical guidelines and is essential for providing optimal patient care.\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

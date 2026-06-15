@@ -1,0 +1,339 @@
+{
+  "title": "Amyloidosis Diagnostic Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "AmyloidosisAuthGuide.tsx",
+    "title": "Amyloidosis Clinical Compass",
+    "subtitle": "Systemic Amyloidosis Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "J0222",
+        "description": "Injection, patisiran, 0.1 mg",
+        "device": "Intravenous infusion",
+        "access": "IV access required",
+        "rvu": 1.5,
+        "includes": [
+          "Drug preparation and waste",
+          "Infusion administration (initial hour)",
+          "Monitoring during infusion"
+        ],
+        "note": "Used for Patisiran (Onpattro) administration for hATTR amyloidosis with polyneuropathy."
+      },
+      {
+        "code": "J3490",
+        "description": "Unclassified drugs (Inotersen)",
+        "device": "Subcutaneous injection",
+        "access": "Self-administered or caregiver administered",
+        "rvu": 0.0,
+        "includes": [
+          "Drug supply for Inotersen (Tegsedi)"
+        ],
+        "note": "HCPCS code for the drug Inotersen (Tegsedi). Administration is typically self-administered or by a caregiver, thus no separate CPT for professional administration is usually billed."
+      },
+      {
+        "code": "J8499",
+        "description": "Prescription drug, oral, non-chemotherapeutic, not otherwise specified (Tafamidis)",
+        "device": "Oral capsule",
+        "access": "Oral administration",
+        "rvu": 0.0,
+        "includes": [
+          "Drug supply for Tafamidis (Vyndaqel/Vyndamax)"
+        ],
+        "note": "HCPCS code for the oral drug Tafamidis (Vyndaqel/Vyndamax). No administration CPT code is applicable for oral medications."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "E85.81",
+        "description": "Light chain (AL) amyloidosis",
+        "notes": "Primary amyloidosis, often associated with plasma cell dyscrasias.",
+        "required": true
+      },
+      {
+        "code": "E85.82",
+        "description": "Wild-type transthyretin-related (ATTR) amyloidosis",
+        "notes": "Previously known as senile systemic amyloidosis, common in older adults.",
+        "required": true
+      },
+      {
+        "code": "E85.89",
+        "description": "Other amyloidosis",
+        "notes": "Includes other specified types of amyloidosis not elsewhere classified.",
+        "required": false
+      },
+      {
+        "code": "E85.9",
+        "description": "Amyloidosis, unspecified",
+        "notes": "Used when the specific type of amyloidosis is not documented.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Conditional Coverage",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is required for all amyloidosis-specific therapies (tafamidis, patisiran, inotersen) due to high cost and specific diagnostic criteria. Coverage is typically under Medicare Part D for oral medications (tafamidis) and Part B for infused/injected medications (patisiran, inotersen) if administered in a physician’s office or outpatient setting.",
+        "overview": "Medicare covers treatments for amyloidosis, including tafamidis, patisiran, and inotersen, when medical necessity criteria are met. Coverage is often tied to specific diagnostic confirmations and disease progression. Part D covers oral drugs, while Part B covers infused/injected drugs administered by a healthcare professional.",
+        "reimbursementNote": "Reimbursement for tafamidis is typically managed under Medicare Part D. Patisiran and inotersen, if administered in a clinic, are covered under Part B with applicable deductibles and coinsurance. Home administration of inotersen may fall under Part D.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Diagnosis Confirmation",
+            "items": [
+              "Definitive diagnosis of ATTR amyloidosis (hereditary or wild-type) confirmed by biopsy or genetic testing.",
+              "Documentation of symptomatic disease progression (e.g., polyneuropathy, cardiomyopathy)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Patient Eligibility",
+            "items": [
+              "Patient must meet specific age and functional status criteria.",
+              "Absence of contraindications to the requested therapy."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Pathology report confirming amyloidosis type.",
+              "Genetic testing results (if hereditary ATTR).",
+              "Neurological or cardiac evaluation reports (e.g., NCS/EMG, echocardiogram, MRI).",
+              "Baseline and recent disease severity scores (e.g., NIS, mNIS+7, NYHA class)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prescribing Information",
+            "items": [
+              "Prescriber attestation of medical necessity and adherence to FDA-approved indications.",
+              "Documentation of patient education and consent."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request through the Medicare Part D plan (for oral drugs) or Medicare Part B contractor (for infused/injected drugs).",
+              "Include all supporting clinical documentation and test results.",
+              "Follow up with the payer within 5-7 business days if no response is received."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of definitive diagnosis or insufficient documentation of amyloidosis type.",
+              "Failure to meet specific disease progression criteria.",
+              "Incomplete or missing clinical documentation.",
+              "Off-label use or contraindications not addressed."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Ensure all diagnostic tests are completed and results are clearly documented.",
+              "Provide detailed clinical notes describing disease progression and impact on patient function.",
+              "Verify the correct billing pathway (Part B vs. Part D) for the specific medication and administration route."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS",
+            "status": "Covered",
+            "notes": "Coverage for FDA-approved indications with medical necessity."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Variable Coverage by State",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid coverage for amyloidosis treatments varies significantly by state. Most states require prior authorization for tafamidis, patisiran, and inotersen, often with strict criteria based on diagnosis, disease severity, and previous treatment failures.",
+        "overview": "Medicaid programs generally cover amyloidosis therapies for eligible beneficiaries, but specific drug formularies, medical necessity criteria, and prior authorization processes are state-dependent. It is crucial to check the specific state Medicaid policy.",
+        "reimbursementNote": "Reimbursement rates and processes are determined by individual state Medicaid programs. Ensure compliance with state-specific billing guidelines to avoid denials.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: State-Specific Requirements",
+            "items": [
+              "Adherence to state Medicaid formulary and preferred drug lists.",
+              "Documentation of diagnosis and disease severity as per state guidelines.",
+              "Trial and failure of alternative therapies (if applicable and required by state)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical and Administrative Documentation",
+            "items": [
+              "State-specific prior authorization forms.",
+              "Comprehensive medical records supporting diagnosis and treatment plan.",
+              "Proof of Medicaid eligibility and enrollment."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request to the state Medicaid agency or managed care organization.",
+              "Ensure all state-specific forms are completed accurately and completely.",
+              "Be prepared for potential appeals if initial authorization is denied."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet state-specific diagnostic or treatment criteria.",
+              "Incomplete or incorrect prior authorization submission.",
+              "Lack of documentation for disease progression or medical necessity.",
+              "Drug not on preferred drug list without documented exception."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Consult the specific state Medicaid website or provider manual for detailed policies.",
+              "Maintain thorough and up-to-date patient records.",
+              "Understand the appeal process and timelines for your state Medicaid program."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Various State Medicaid",
+            "status": "Varies",
+            "notes": "Policies are highly variable; always check state-specific guidelines."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Requires Prior Authorization",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Private insurance plans almost universally require prior authorization for tafamidis, patisiran, and inotersen due to their high cost and specialty drug status. Coverage criteria are often aligned with FDA indications but may include additional step therapy or clinical requirements.",
+        "overview": "Private insurance coverage for amyloidosis treatments is common but subject to plan-specific benefits, deductibles, and co-insurance. Prior authorization is a standard requirement, and plans may have preferred pharmacies or specialty drug programs.",
+        "reimbursementNote": "Reimbursement is subject to the patient’s individual plan benefits, including deductibles, co-insurance, and out-of-pocket maximums. Specialty pharmacies are often involved in dispensing these medications.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Medical Necessity",
+            "items": [
+              "Diagnosis of ATTR amyloidosis (hereditary or wild-type) confirmed by appropriate testing.",
+              "Documentation of symptomatic disease.",
+              "Prescription by a specialist experienced in treating amyloidosis."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Step Therapy/Formulary",
+            "items": [
+              "Adherence to plan formulary and step therapy requirements (if applicable).",
+              "Patient must meet specific criteria for initiation and continuation of therapy."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical and Plan-Specific Forms",
+            "items": [
+              "Completed prior authorization form from the insurance carrier.",
+              "Detailed clinical notes, including diagnostic reports and treatment history.",
+              "Letter of medical necessity from the prescribing physician."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request via the insurer’s online portal, fax, or phone.",
+              "Provide all requested clinical information and supporting documents.",
+              "Track the status of the authorization and be prepared to provide additional information or appeal."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization or expired authorization.",
+              "Failure to meet medical necessity criteria as defined by the plan.",
+              "Incomplete or insufficient clinical documentation.",
+              "Drug not on formulary or failure to complete step therapy."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with the patient’s specific insurance plan benefits and formulary.",
+              "Utilize manufacturer patient assistance programs for co-pay support or free drug programs.",
+              "Document all communications with the insurance company, including reference numbers and dates."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Major Private Insurers",
+            "status": "Requires PA",
+            "notes": "Policies vary; always verify with individual plan."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Navigation",
+        "kind": "link",
+        "text": "Back to Assessment (navigates to /amyloidosis)",
+        "href": "/amyloidosis"
+      },
+      {
+        "heading": "CPT Codes Card Notes",
+        "kind": "prose",
+        "text": "Card title: \"Procedure Codes\". For each CPT code, the included items are listed under the label \"Included in this code (do NOT bill separately):\" and a \"Device/Access\" field is shown."
+      },
+      {
+        "heading": "ICD-10 Codes Card Notes",
+        "kind": "prose",
+        "text": "Card title: \"ICD-10 Diagnosis Codes\". Codes marked required are displayed with a \"Primary\" badge."
+      },
+      {
+        "heading": "Payer Section Notes",
+        "kind": "prose",
+        "text": "Card title: \"Payer-Specific Authorization Requirements\". Tabs: Medicare, Medicaid, Private Insurance. Each payer shows a Prior Auth status badge (\"Prior Auth Required\" or \"No Prior Auth (FFS)\"), a coverage status badge, a prior authorization note callout, an overview, coverage criteria, required documentation, submission process, common denial reasons, known payer policies, a reimbursement note, and authorization tips."
+      }
+    ],
+    "raw": {
+      "markdown": "# Amyloidosis Clinical Compass\n## Systemic Amyloidosis Insurance Authorization Guide\n\n[Back to Assessment] (link: /amyloidosis)\n\n---\n\n## Procedure Codes (CPT Codes)\n\n### CPT J0222 — RVU 1.5\n**Injection, patisiran, 0.1 mg**\nDevice/Access: Intravenous infusion (IV access required)\nIncluded in this code (do NOT bill separately):\n- Drug preparation and waste\n- Infusion administration (initial hour)\n- Monitoring during infusion\nNote: Used for Patisiran (Onpattro) administration for hATTR amyloidosis with polyneuropathy.\n\n### CPT J3490 — RVU 0.0\n**Unclassified drugs (Inotersen)**\nDevice/Access: Subcutaneous injection (Self-administered or caregiver administered)\nIncluded in this code (do NOT bill separately):\n- Drug supply for Inotersen (Tegsedi)\nNote: HCPCS code for the drug Inotersen (Tegsedi). Administration is typically self-administered or by a caregiver, thus no separate CPT for professional administration is usually billed.\n\n### CPT J8499 — RVU 0.0\n**Prescription drug, oral, non-chemotherapeutic, not otherwise specified (Tafamidis)**\nDevice/Access: Oral capsule (Oral administration)\nIncluded in this code (do NOT bill separately):\n- Drug supply for Tafamidis (Vyndaqel/Vyndamax)\nNote: HCPCS code for the oral drug Tafamidis (Vyndaqel/Vyndamax). No administration CPT code is applicable for oral medications.\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **E85.81** (Primary) — Light chain (AL) amyloidosis. Primary amyloidosis, often associated with plasma cell dyscrasias.\n- **E85.82** (Primary) — Wild-type transthyretin-related (ATTR) amyloidosis. Previously known as senile systemic amyloidosis, common in older adults.\n- **E85.89** — Other amyloidosis. Includes other specified types of amyloidosis not elsewhere classified.\n- **E85.9** — Amyloidosis, unspecified. Used when the specific type of amyloidosis is not documented.\n\n---\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\nStatus badges: Prior Auth Required; Conditional Coverage\n\nPrior Auth Note: Prior authorization is required for all amyloidosis-specific therapies (tafamidis, patisiran, inotersen) due to high cost and specific diagnostic criteria. Coverage is typically under Medicare Part D for oral medications (tafamidis) and Part B for infused/injected medications (patisiran, inotersen) if administered in a physician’s office or outpatient setting.\n\nOverview: Medicare covers treatments for amyloidosis, including tafamidis, patisiran, and inotersen, when medical necessity criteria are met. Coverage is often tied to specific diagnostic confirmations and disease progression. Part D covers oral drugs, while Part B covers infused/injected drugs administered by a healthcare professional.\n\n#### Coverage Criteria\n**Diagnosis Confirmation**\n- Definitive diagnosis of ATTR amyloidosis (hereditary or wild-type) confirmed by biopsy or genetic testing.\n- Documentation of symptomatic disease progression (e.g., polyneuropathy, cardiomyopathy).\n**Patient Eligibility**\n- Patient must meet specific age and functional status criteria.\n- Absence of contraindications to the requested therapy.\n\n#### Required Documentation\n**Clinical Documentation**\n- Pathology report confirming amyloidosis type.\n- Genetic testing results (if hereditary ATTR).\n- Neurological or cardiac evaluation reports (e.g., NCS/EMG, echocardiogram, MRI).\n- Baseline and recent disease severity scores (e.g., NIS, mNIS+7, NYHA class).\n**Prescribing Information**\n- Prescriber attestation of medical necessity and adherence to FDA-approved indications.\n- Documentation of patient education and consent.\n\n#### Submission Process\n1. Submit prior authorization request through the Medicare Part D plan (for oral drugs) or Medicare Part B contractor (for infused/injected drugs).\n2. Include all supporting clinical documentation and test results.\n3. Follow up with the payer within 5-7 business days if no response is received.\n\n#### Common Denial Reasons\n- Lack of definitive diagnosis or insufficient documentation of amyloidosis type.\n- Failure to meet specific disease progression criteria.\n- Incomplete or missing clinical documentation.\n- Off-label use or contraindications not addressed.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS | Covered | Coverage for FDA-approved indications with medical necessity. |\n\n#### Reimbursement Note\nReimbursement for tafamidis is typically managed under Medicare Part D. Patisiran and inotersen, if administered in a clinic, are covered under Part B with applicable deductibles and coinsurance. Home administration of inotersen may fall under Part D.\n\n#### Authorization Tips\n- Ensure all diagnostic tests are completed and results are clearly documented.\n- Provide detailed clinical notes describing disease progression and impact on patient function.\n- Verify the correct billing pathway (Part B vs. Part D) for the specific medication and administration route.\n\n### Medicaid\nStatus badges: Prior Auth Required; Variable Coverage by State\n\nPrior Auth Note: Medicaid coverage for amyloidosis treatments varies significantly by state. Most states require prior authorization for tafamidis, patisiran, and inotersen, often with strict criteria based on diagnosis, disease severity, and previous treatment failures.\n\nOverview: Medicaid programs generally cover amyloidosis therapies for eligible beneficiaries, but specific drug formularies, medical necessity criteria, and prior authorization processes are state-dependent. It is crucial to check the specific state Medicaid policy.\n\n#### Coverage Criteria\n**State-Specific Requirements**\n- Adherence to state Medicaid formulary and preferred drug lists.\n- Documentation of diagnosis and disease severity as per state guidelines.\n- Trial and failure of alternative therapies (if applicable and required by state).\n\n#### Required Documentation\n**Clinical and Administrative Documentation**\n- State-specific prior authorization forms.\n- Comprehensive medical records supporting diagnosis and treatment plan.\n- Proof of Medicaid eligibility and enrollment.\n\n#### Submission Process\n1. Submit prior authorization request to the state Medicaid agency or managed care organization.\n2. Ensure all state-specific forms are completed accurately and completely.\n3. Be prepared for potential appeals if initial authorization is denied.\n\n#### Common Denial Reasons\n- Failure to meet state-specific diagnostic or treatment criteria.\n- Incomplete or incorrect prior authorization submission.\n- Lack of documentation for disease progression or medical necessity.\n- Drug not on preferred drug list without documented exception.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Various State Medicaid | Varies | Policies are highly variable; always check state-specific guidelines. |\n\n#### Reimbursement Note\nReimbursement rates and processes are determined by individual state Medicaid programs. Ensure compliance with state-specific billing guidelines to avoid denials.\n\n#### Authorization Tips\n- Consult the specific state Medicaid website or provider manual for detailed policies.\n- Maintain thorough and up-to-date patient records.\n- Understand the appeal process and timelines for your state Medicaid program.\n\n### Private Insurance\nStatus badges: Prior Auth Required; Requires Prior Authorization\n\nPrior Auth Note: Private insurance plans almost universally require prior authorization for tafamidis, patisiran, and inotersen due to their high cost and specialty drug status. Coverage criteria are often aligned with FDA indications but may include additional step therapy or clinical requirements.\n\nOverview: Private insurance coverage for amyloidosis treatments is common but subject to plan-specific benefits, deductibles, and co-insurance. Prior authorization is a standard requirement, and plans may have preferred pharmacies or specialty drug programs.\n\n#### Coverage Criteria\n**Medical Necessity**\n- Diagnosis of ATTR amyloidosis (hereditary or wild-type) confirmed by appropriate testing.\n- Documentation of symptomatic disease.\n- Prescription by a specialist experienced in treating amyloidosis.\n**Step Therapy/Formulary**\n- Adherence to plan formulary and step therapy requirements (if applicable).\n- Patient must meet specific criteria for initiation and continuation of therapy.\n\n#### Required Documentation\n**Clinical and Plan-Specific Forms**\n- Completed prior authorization form from the insurance carrier.\n- Detailed clinical notes, including diagnostic reports and treatment history.\n- Letter of medical necessity from the prescribing physician.\n\n#### Submission Process\n1. Submit prior authorization request via the insurer’s online portal, fax, or phone.\n2. Provide all requested clinical information and supporting documents.\n3. Track the status of the authorization and be prepared to provide additional information or appeal.\n\n#### Common Denial Reasons\n- Lack of prior authorization or expired authorization.\n- Failure to meet medical necessity criteria as defined by the plan.\n- Incomplete or insufficient clinical documentation.\n- Drug not on formulary or failure to complete step therapy.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Major Private Insurers | Requires PA | Policies vary; always verify with individual plan. |\n\n#### Reimbursement Note\nReimbursement is subject to the patient’s individual plan benefits, including deductibles, co-insurance, and out-of-pocket maximums. Specialty pharmacies are often involved in dispensing these medications.\n\n#### Authorization Tips\n- Familiarize yourself with the patient’s specific insurance plan benefits and formulary.\n- Utilize manufacturer patient assistance programs for co-pay support or free drug programs.\n- Document all communications with the insurance company, including reference numbers and dates.\n",
+      "tables": [
+        {
+          "name": "CPT / Procedure Codes",
+          "header": ["Code", "RVU", "Description", "Device/Access", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            ["J0222", "1.5", "Injection, patisiran, 0.1 mg", "Intravenous infusion / IV access required", "Drug preparation and waste; Infusion administration (initial hour); Monitoring during infusion", "Used for Patisiran (Onpattro) administration for hATTR amyloidosis with polyneuropathy."],
+            ["J3490", "0.0", "Unclassified drugs (Inotersen)", "Subcutaneous injection / Self-administered or caregiver administered", "Drug supply for Inotersen (Tegsedi)", "HCPCS code for the drug Inotersen (Tegsedi). Administration is typically self-administered or by a caregiver, thus no separate CPT for professional administration is usually billed."],
+            ["J8499", "0.0", "Prescription drug, oral, non-chemotherapeutic, not otherwise specified (Tafamidis)", "Oral capsule / Oral administration", "Drug supply for Tafamidis (Vyndaqel/Vyndamax)", "HCPCS code for the oral drug Tafamidis (Vyndaqel/Vyndamax). No administration CPT code is applicable for oral medications."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required/Primary"],
+          "rows": [
+            ["E85.81", "Light chain (AL) amyloidosis", "Primary amyloidosis, often associated with plasma cell dyscrasias.", "Primary"],
+            ["E85.82", "Wild-type transthyretin-related (ATTR) amyloidosis", "Previously known as senile systemic amyloidosis, common in older adults.", "Primary"],
+            ["E85.89", "Other amyloidosis", "Includes other specified types of amyloidosis not elsewhere classified.", "No"],
+            ["E85.9", "Amyloidosis, unspecified", "Used when the specific type of amyloidosis is not documented.", "No"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Medicare",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS", "Covered", "Coverage for FDA-approved indications with medical necessity."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Various State Medicaid", "Varies", "Policies are highly variable; always check state-specific guidelines."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Private Insurance",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Major Private Insurers", "Requires PA", "Policies vary; always verify with individual plan."]
+          ]
+        }
+      ]
+    }
+  }
+}

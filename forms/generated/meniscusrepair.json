@@ -1,0 +1,179 @@
+{
+  "title": "Meniscus Repair Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assess",
+    "logicKey": "meniscusrepair",
+    "hiddenDefaults": {
+      "symptomDurationMonths": ""
+    },
+    "steps": [
+      {
+        "id": "patient-info",
+        "shortLabel": "Patient Info",
+        "title": "Patient Information",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "text",
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "pain-score",
+            "name": "painScore",
+            "label": "Pain Score (0-10)",
+            "type": "text",
+            "required": true,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "affected-side",
+            "name": "affectedSide",
+            "label": "Affected Side",
+            "type": "buttongroup",
+            "required": true,
+            "defaultValue": "",
+            "options": [
+              { "label": "right", "value": "right" },
+              { "label": "left", "value": "left" }
+            ]
+          },
+          {
+            "id": "tear-location",
+            "name": "tearLocation",
+            "label": "Tear Location",
+            "type": "buttongroup",
+            "defaultValue": "",
+            "options": [
+              { "label": "medial", "value": "medial" },
+              { "label": "lateral", "value": "lateral" },
+              { "label": "both", "value": "both" }
+            ]
+          },
+          {
+            "id": "acute-tear",
+            "name": "acuteTear",
+            "label": "Acute traumatic tear (onset within 6 weeks)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "active-sports",
+            "name": "activeSports",
+            "label": "Active athlete / high-demand activity",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "osteoarthritis",
+            "name": "osteoarthritis",
+            "label": "Mild-moderate knee osteoarthritis",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "severe-oa",
+            "name": "severeOA",
+            "label": "Severe knee osteoarthritis (bone-on-bone)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "active-infection",
+            "name": "activeInfection",
+            "label": "Active knee infection",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "clinical-assessment",
+        "shortLabel": "Clinical Assessment",
+        "title": "Clinical Assessment",
+        "fields": [
+          {
+            "id": "conservative-therapy-months",
+            "name": "conservativeTherapyMonths",
+            "label": "Conservative Therapy Duration (months)",
+            "type": "text",
+            "required": true,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "symptoms",
+            "name": "symptoms",
+            "label": "Symptoms",
+            "type": "multiselect",
+            "defaultValue": [],
+            "options": [
+              { "label": "Joint line pain (medial or lateral)", "value": "joint-line-pain" },
+              { "label": "Mechanical locking or catching", "value": "locking" },
+              { "label": "Joint effusion / swelling", "value": "swelling" },
+              { "label": "Giving way or instability", "value": "giving-way" },
+              { "label": "Limited range of motion", "value": "limited-rom" },
+              { "label": "Pain with squatting or pivoting", "value": "pain-squatting" }
+            ]
+          },
+          {
+            "id": "conservative-therapies",
+            "name": "conservativeTherapies",
+            "label": "Conservative Therapies Tried",
+            "type": "multiselect",
+            "defaultValue": [],
+            "options": [
+              { "label": "Physical therapy (≥6 weeks)", "value": "pt" },
+              { "label": "NSAIDs / analgesics (≥4 weeks)", "value": "nsaids" },
+              { "label": "Intraarticular corticosteroid injection", "value": "corticosteroid" },
+              { "label": "Activity modification / unloading brace", "value": "activity-mod" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "imaging-tear-characteristics",
+        "shortLabel": "Imaging & Tear Characteristics",
+        "title": "Imaging & Tear Characteristics",
+        "fields": [
+          {
+            "id": "tear-pattern",
+            "name": "tearPattern",
+            "label": "Tear Pattern (MRI)",
+            "type": "buttongroup",
+            "defaultValue": "",
+            "options": [
+              { "label": "longitudinal", "value": "longitudinal" },
+              { "label": "radial", "value": "radial" },
+              { "label": "horizontal", "value": "horizontal" },
+              { "label": "complex", "value": "complex" },
+              { "label": "bucket-handle", "value": "bucket-handle" }
+            ]
+          },
+          {
+            "id": "tear-characteristics",
+            "name": "tearCharacteristics",
+            "label": "Tear Characteristics",
+            "type": "multiselect",
+            "defaultValue": [],
+            "options": [
+              { "label": "Peripheral (red-red) zone tear — highly vascular", "value": "peripheral-zone" },
+              { "label": "Middle (red-white) zone tear", "value": "middle-zone" },
+              { "label": "Central (white-white) zone tear — avascular", "value": "central-zone" },
+              { "label": "Longitudinal tear pattern (repairable)", "value": "longitudinal" },
+              { "label": "Bucket-handle tear", "value": "bucket-handle" },
+              { "label": "Radial tear pattern", "value": "radial" },
+              { "label": "Complex / degenerative tear", "value": "complex" },
+              { "label": "Concurrent ACL tear", "value": "acl-concurrent" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

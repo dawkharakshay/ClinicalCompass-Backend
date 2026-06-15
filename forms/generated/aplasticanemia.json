@@ -1,0 +1,233 @@
+{
+  "title": "Aplastic Anemia Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "aplasticanemia",
+    "hiddenDefaults": {
+      "severity": "severe"
+    },
+    "steps": [
+      {
+        "id": "patient-profile",
+        "shortLabel": "Profile",
+        "title": "Patient Profile",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "ecog-ps",
+            "name": "ecogPS",
+            "label": "ECOG Performance Status",
+            "type": "select",
+            "defaultValue": 0,
+            "options": [
+              { "label": "ECOG 0", "value": 0 },
+              { "label": "ECOG 1", "value": 1 },
+              { "label": "ECOG 2", "value": 2 },
+              { "label": "ECOG 3", "value": 3 },
+              { "label": "ECOG 4", "value": 4 }
+            ]
+          },
+          {
+            "id": "etiology",
+            "name": "etiology",
+            "label": "Etiology",
+            "type": "select",
+            "defaultValue": "idiopathic",
+            "options": [
+              { "label": "Idiopathic / Immune-mediated", "value": "idiopathic" },
+              { "label": "Inherited (Fanconi, DC, DBA)", "value": "inherited" },
+              { "label": "Drug-induced", "value": "drug_induced" },
+              { "label": "Viral (hepatitis, EBV, CMV)", "value": "viral" },
+              { "label": "Pregnancy-related", "value": "pregnancy_related" },
+              { "label": "Unknown", "value": "unknown" }
+            ]
+          },
+          {
+            "id": "patient-preference",
+            "name": "patientPreference",
+            "label": "Patient Preference",
+            "type": "select",
+            "defaultValue": "aggressive",
+            "options": [
+              { "label": "Aggressive / Curative intent", "value": "aggressive" },
+              { "label": "Moderate / Tolerability-focused", "value": "moderate" },
+              { "label": "Best supportive care only", "value": "bsc" }
+            ]
+          },
+          {
+            "id": "inherited-type",
+            "name": "inheritedType",
+            "label": "Inherited Syndrome",
+            "type": "select",
+            "defaultValue": "none",
+            "visibleWhen": { "field": "etiology", "op": "eq", "value": "inherited" },
+            "options": [
+              { "label": "Fanconi Anemia", "value": "fanconi_anemia" },
+              { "label": "Dyskeratosis Congenita / Telomeropathy", "value": "dyskeratosis_congenita" },
+              { "label": "Diamond-Blackfan Anemia", "value": "diamond_blackfan" },
+              { "label": "Shwachman-Diamond Syndrome", "value": "shwachman_diamond" },
+              { "label": "Other inherited syndrome", "value": "other_inherited" },
+              { "label": "Not specified", "value": "none" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cbc-severity",
+        "shortLabel": "CBC",
+        "title": "CBC & Severity Classification",
+        "fields": [
+          {
+            "id": "anc",
+            "name": "anc",
+            "label": "ANC (cells/µL)",
+            "type": "number",
+            "defaultValue": 300,
+            "unit": "cells/µL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "reticulocytes",
+            "name": "reticulocytes",
+            "label": "Absolute Reticulocytes (cells/µL)",
+            "type": "number",
+            "defaultValue": 15000,
+            "unit": "cells/µL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "platelets",
+            "name": "platelets",
+            "label": "Platelets (×10³/µL)",
+            "type": "number",
+            "defaultValue": 0,
+            "unit": "×10³/µL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "hemoglobin",
+            "name": "hemoglobin",
+            "label": "Hemoglobin (g/dL)",
+            "type": "number",
+            "defaultValue": 0,
+            "unit": "g/dL",
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "clonal-markers",
+        "shortLabel": "Clonal",
+        "title": "Clonal Evolution & Special Markers",
+        "fields": [
+          {
+            "id": "has-pnh-clone",
+            "name": "hasPNHClone",
+            "label": "PNH clone detected (flow cytometry)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-mds-features",
+            "name": "hasMDSFeatures",
+            "label": "MDS features on bone marrow biopsy (dysplasia, cytogenetics)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-clonal-cytogenetics",
+            "name": "hasClonalCytogenetics",
+            "label": "Clonal cytogenetics: monosomy 7, del(5q), or complex karyotype",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-sf3b1-or-other-mds-mutation",
+            "name": "hasSF3B1OrOtherMDSMutation",
+            "label": "Somatic mutations: DNMT3A, ASXL1, SF3B1, or other MDS-associated",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-telomere-disease",
+            "name": "hasTelomereDisease",
+            "label": "Short telomeres / telomeropathy confirmed",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "clonal-warning",
+            "type": "alert",
+            "severity": "warning",
+            "text": "Clonal cytogenetics (monosomy 7) or MDS features shift the recommendation toward allo-HCT over IST due to high risk of leukemic transformation."
+          }
+        ]
+      },
+      {
+        "id": "treatment-history-donor",
+        "shortLabel": "History",
+        "title": "Treatment History & Donor Availability",
+        "fields": [
+          {
+            "id": "prior-ist",
+            "name": "priorIST",
+            "label": "Prior IST (hATG + CsA)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-eltrombopag",
+            "name": "priorEltrombopag",
+            "label": "Prior eltrombopag",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-hct",
+            "name": "priorHCT",
+            "label": "Prior allo-HCT",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-ist-response",
+            "name": "priorISTResponse",
+            "label": "Response to Prior IST",
+            "type": "select",
+            "defaultValue": "na",
+            "visibleWhen": { "field": "priorIST", "op": "truthy" },
+            "options": [
+              { "label": "Complete response (CR)", "value": "complete" },
+              { "label": "Partial response (PR)", "value": "partial" },
+              { "label": "No response", "value": "no_response" },
+              { "label": "Relapse after initial response", "value": "relapse" }
+            ]
+          },
+          {
+            "id": "donor-availability",
+            "name": "donorAvailability",
+            "label": "Donor Availability",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "HLA-matched sibling donor (MSD)", "value": "hla_matched_sibling" },
+              { "label": "Matched unrelated donor (MUD 10/10)", "value": "matched_unrelated_10_10" },
+              { "label": "Matched unrelated donor (MUD 8/8)", "value": "matched_unrelated_8_8" },
+              { "label": "Haploidentical donor", "value": "haploidentical" },
+              { "label": "No donor available", "value": "none" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

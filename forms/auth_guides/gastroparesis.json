@@ -1,0 +1,401 @@
+{
+  "title": "Gastroparesis Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "GastroparesisAuthGuide.tsx",
+    "title": "Gastroparesis Clinical Compass",
+    "subtitle": "Gastric Emptying Study & Neurostimulator Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "78264",
+        "description": "Gastric emptying imaging study (eg, solid, liquid, or both)",
+        "device": "Radiopharmaceutical tracer and gamma camera",
+        "access": "Oral administration, non-invasive",
+        "rvu": "8.68",
+        "includes": [
+          "Imaging of the stomach only",
+          "Study duration of 1-4 hours"
+        ],
+        "note": "Used for initial diagnosis and monitoring of gastroparesis. Often requires ICD-10 K31.84."
+      },
+      {
+        "code": "78265",
+        "description": "Gastric emptying imaging study with small bowel transit",
+        "device": "Radiopharmaceutical tracer and gamma camera",
+        "access": "Oral administration, non-invasive",
+        "rvu": "10.41",
+        "includes": [
+          "Imaging of the stomach and small intestine",
+          "Extended study duration to assess small bowel transit"
+        ],
+        "note": "Used when evaluation of small bowel transit is clinically indicated. Documentation should include clinical indications."
+      },
+      {
+        "code": "43647",
+        "description": "Laparoscopy, surgical; implantation or replacement of gastric neurostimulator electrodes, antrum",
+        "device": "Gastric neurostimulator electrodes and pulse generator",
+        "access": "Laparoscopic surgical approach",
+        "rvu": "Not specified, requires verification",
+        "includes": [
+          "Laparoscopic placement of electrodes in the antrum of the stomach",
+          "Connection to a subcutaneously implanted pulse generator"
+        ],
+        "note": "Considered for gastroparesis refractory to medical management. Requires prior authorization and medical necessity documentation."
+      },
+      {
+        "code": "43881",
+        "description": "Implantation or replacement of gastric neurostimulator electrodes, antrum, open",
+        "device": "Gastric neurostimulator electrodes and pulse generator",
+        "access": "Open surgical approach",
+        "rvu": "Not specified, requires verification",
+        "includes": [
+          "Open surgical placement of electrodes in the antrum of the stomach",
+          "Connection to a subcutaneously implanted pulse generator"
+        ],
+        "note": "An alternative to laparoscopic approach for gastric neurostimulator placement. Requires prior authorization and medical necessity documentation."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "K31.84",
+        "description": "Gastroparesis",
+        "notes": "Primary diagnosis for delayed gastric emptying.",
+        "required": true
+      },
+      {
+        "code": "R11.2",
+        "description": "Nausea with vomiting, unspecified",
+        "notes": "May be used as a secondary diagnosis when nausea and vomiting are prominent symptoms.",
+        "required": false
+      },
+      {
+        "code": "R14.0",
+        "description": "Abdominal distension (gaseous)",
+        "notes": "May be used as a secondary diagnosis for patients experiencing bloating and distension.",
+        "required": false
+      },
+      {
+        "code": "E08.40",
+        "description": "Diabetes mellitus due to underlying condition with neurological complications with gastroparesis",
+        "notes": "Use this code when gastroparesis is a documented complication of diabetes mellitus. The diabetes code should be sequenced first.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Conditional Coverage",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Gastric emptying studies (CPT 78264, 78265) typically require medical necessity documentation. Gastric neurostimulator implantation (CPT 43647, 43881) is generally covered only for diabetic gastroparesis refractory to conventional therapy and requires extensive prior authorization.",
+        "overview": "Medicare covers diagnostic gastric emptying studies when medically necessary. Gastric neurostimulators are considered for severe, refractory diabetic gastroparesis under strict criteria.",
+        "reimbursementNote": "Reimbursement for gastric emptying studies is generally straightforward with proper documentation. Gastric neurostimulator reimbursement is complex and highly dependent on meeting strict medical necessity criteria and securing prior authorization.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Gastric Emptying Studies (CPT 78264, 78265)",
+            "items": [
+              "Persistent symptoms suggestive of gastroparesis (e.g., nausea, vomiting, early satiety, abdominal pain) lasting at least 3 months.",
+              "Failure to respond to conservative management (e.g., dietary modifications, prokinetic agents).",
+              "Exclusion of mechanical obstruction by endoscopy or imaging."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Gastric Neurostimulator (CPT 43647, 43881)",
+            "items": [
+              "Diagnosis of chronic, severe diabetic gastroparesis.",
+              "Symptoms (e.g., intractable nausea and vomiting) refractory to pharmacologic treatment for at least 12 months.",
+              "Patient is not a candidate for or has failed other surgical interventions.",
+              "Absence of mechanical obstruction.",
+              "Psychological evaluation demonstrating appropriate patient selection."
+            ]
+          },
+          {
+            "heading": "Required Documentation — General",
+            "items": [
+              "Detailed clinical history and physical examination notes.",
+              "Documentation of symptom severity and duration.",
+              "Records of previous treatments and their outcomes (e.g., dietary changes, medications)."
+            ]
+          },
+          {
+            "heading": "Required Documentation — For Gastric Emptying Studies",
+            "items": [
+              "Order from a physician with clear medical necessity.",
+              "Results of prior diagnostic tests (e.g., endoscopy, imaging to rule out obstruction)."
+            ]
+          },
+          {
+            "heading": "Required Documentation — For Gastric Neurostimulator",
+            "items": [
+              "Documentation of diabetic gastroparesis diagnosis and severity.",
+              "Proof of failure of at least 12 months of conventional medical therapy.",
+              "Psychological assessment report.",
+              "Operative notes for prior surgical interventions, if applicable."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claim with appropriate CPT and ICD-10 codes.",
+              "For neurostimulator, obtain prior authorization before procedure.",
+              "Ensure all supporting medical records are available for review upon request."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity for gastric emptying study.",
+              "Failure to meet all coverage criteria for gastric neurostimulator.",
+              "Insufficient documentation of failed conservative therapies.",
+              "Mechanical obstruction not ruled out prior to study/procedure.",
+              "Incomplete or missing prior authorization for neurostimulator."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Clearly document all symptoms, their duration, and impact on quality of life.",
+              "Maintain thorough records of all conservative and pharmacologic treatments attempted and their efficacy.",
+              "Ensure all required diagnostic work-up (e.g., endoscopy) is completed and documented before requesting advanced studies or procedures.",
+              "For neurostimulator, emphasize the refractory nature of symptoms and the patient's inability to tolerate oral intake."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Medicare National Coverage Determination (NCD)",
+            "status": "Covered with Limitations",
+            "notes": "Gastric electrical stimulation is covered only for diabetic gastroparesis refractory to conventional therapy."
+          },
+          {
+            "payer": "Medicare Local Coverage Determination (LCD)",
+            "status": "Varies by MAC",
+            "notes": "Specific criteria for gastric emptying studies and neurostimulators may vary by Medicare Administrative Contractor (MAC). Check local policies."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Variable Coverage by State",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Coverage for both diagnostic studies and gastric neurostimulators varies significantly by state Medicaid program. Prior authorization is almost always required and can be stringent.",
+        "overview": "Medicaid coverage for gastroparesis diagnostics and treatment is state-specific. Many states follow Medicare guidelines but may have additional restrictions or require more extensive documentation.",
+        "reimbursementNote": "Reimbursement can be challenging due to varying state policies and strict medical necessity reviews. Appeals processes are often necessary.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — General",
+            "items": [
+              "Medical necessity as determined by state-specific guidelines.",
+              "Documentation of severe symptoms and functional impairment.",
+              "Failure of less invasive and less costly treatments."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Gastric Neurostimulator",
+            "items": [
+              "Often considered investigational or experimental by some state Medicaid programs.",
+              "If covered, criteria are similar to Medicare but may be more restrictive, focusing on intractable diabetic gastroparesis."
+            ]
+          },
+          {
+            "heading": "Required Documentation — General",
+            "items": [
+              "Comprehensive medical history and physical.",
+              "Documentation of all failed medical and dietary therapies.",
+              "Proof of functional impairment due to gastroparesis."
+            ]
+          },
+          {
+            "heading": "Required Documentation — For Gastric Neurostimulator",
+            "items": [
+              "Detailed justification for medical necessity, including why other treatments are not suitable.",
+              "Psychiatric evaluation if required by state policy.",
+              "Evidence of severe, intractable symptoms."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify state-specific Medicaid policies and prior authorization requirements.",
+              "Submit prior authorization request with all required clinical documentation.",
+              "Submit claims with appropriate CPT and ICD-10 codes after approval."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization.",
+              "Failure to meet state-specific medical necessity criteria.",
+              "Procedure deemed experimental or investigational.",
+              "Inadequate documentation of failed conservative management.",
+              "Missing or incomplete clinical records."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always check the specific Medicaid policy for the state where the patient resides.",
+              "Be prepared for a potentially lengthy prior authorization process.",
+              "Document all patient education and shared decision-making regarding treatment options.",
+              "Highlight the impact of gastroparesis on the patient's ability to maintain nutrition and hydration."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Various State Medicaid Programs",
+            "status": "Highly Variable",
+            "notes": "Coverage depends on individual state policies, which can range from full coverage to considering gastric neurostimulators investigational."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Variable Coverage",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurers require prior authorization for gastric emptying studies and almost all require it for gastric neurostimulator implantation. Coverage criteria can vary widely.",
+        "overview": "Private insurance coverage for gastroparesis diagnostics and treatment is diverse. Policies often align with Medicare but may have unique requirements, particularly for newer technologies like gastric neurostimulators.",
+        "reimbursementNote": "Reimbursement rates and coverage can vary significantly between private insurance plans. It is crucial to understand each plan's specific medical policies and prior authorization requirements.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Gastric Emptying Studies",
+            "items": [
+              "Symptoms consistent with gastroparesis and failure of initial medical management.",
+              "Exclusion of mechanical obstruction.",
+              "Ordered by a gastroenterologist or other appropriate specialist."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Gastric Neurostimulator",
+            "items": [
+              "Diagnosis of severe, chronic gastroparesis (diabetic or idiopathic) refractory to at least 12 months of medical therapy.",
+              "Significant impact on quality of life due to intractable nausea and vomiting.",
+              "Psychological evaluation.",
+              "Trial of external neurostimulation (if policy requires)."
+            ]
+          },
+          {
+            "heading": "Required Documentation — General",
+            "items": [
+              "Physician's order and clinical notes supporting medical necessity.",
+              "Results of all relevant diagnostic tests.",
+              "Documentation of conservative treatment failures."
+            ]
+          },
+          {
+            "heading": "Required Documentation — For Gastric Neurostimulator",
+            "items": [
+              "Detailed clinical rationale for implantation.",
+              "Documentation of intractable symptoms and failed medical therapies.",
+              "Psychological clearance.",
+              "Any pre-authorization forms specific to the insurer."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Review specific payer policy for gastroparesis and gastric neurostimulators.",
+              "Submit prior authorization request with all required clinical documentation and forms.",
+              "Follow up on authorization status and appeal any denials promptly.",
+              "Submit claims with approved authorization number."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization or incomplete authorization request.",
+              "Failure to meet specific medical policy criteria.",
+              "Insufficient documentation of symptom severity or failed treatments.",
+              "Procedure considered experimental or investigational (especially for idiopathic gastroparesis).",
+              "Incorrect coding or missing modifiers."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Thoroughly review the patient's specific insurance policy for gastroparesis coverage.",
+              "Pre-certify all advanced diagnostic tests and procedures.",
+              "Provide detailed clinical notes emphasizing the severity and chronicity of symptoms and the failure of all other treatment modalities.",
+              "Highlight any co-morbidities that complicate management."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Aetna",
+            "status": "Investigational for Idiopathic Gastroparesis",
+            "notes": "Gastric electrical stimulation is considered investigational for idiopathic gastroparesis. May cover for diabetic gastroparesis under strict criteria."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered with Criteria",
+            "notes": "Covers gastric neurostimulators for diabetic gastroparesis with intractable nausea and vomiting refractory to medical therapy, and specific psychological and medical criteria."
+          },
+          {
+            "payer": "Blue Cross Blue Shield (various plans)",
+            "status": "Variable",
+            "notes": "Coverage varies by plan and state. Many follow Medicare guidelines, some may consider neurostimulators investigational for certain indications."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Navigation",
+        "kind": "link",
+        "text": "Back to Assessment",
+        "href": "/gastroparesis"
+      }
+    ],
+    "raw": {
+      "markdown": "# Gastroparesis Clinical Compass\n\n## Gastric Emptying Study & Neurostimulator Insurance Authorization Guide\n\n[Back to Assessment] (link: /gastroparesis)\n\n---\n\n## Procedure Codes\n\n### CPT 78264 — RVU 8.68\nGastric emptying imaging study (eg, solid, liquid, or both)\n\nDevice/Access: Radiopharmaceutical tracer and gamma camera (Oral administration, non-invasive)\n\nIncluded in this code (do NOT bill separately):\n- Imaging of the stomach only\n- Study duration of 1-4 hours\n\nNote: Used for initial diagnosis and monitoring of gastroparesis. Often requires ICD-10 K31.84.\n\n### CPT 78265 — RVU 10.41\nGastric emptying imaging study with small bowel transit\n\nDevice/Access: Radiopharmaceutical tracer and gamma camera (Oral administration, non-invasive)\n\nIncluded in this code (do NOT bill separately):\n- Imaging of the stomach and small intestine\n- Extended study duration to assess small bowel transit\n\nNote: Used when evaluation of small bowel transit is clinically indicated. Documentation should include clinical indications.\n\n### CPT 43647 — RVU Not specified, requires verification\nLaparoscopy, surgical; implantation or replacement of gastric neurostimulator electrodes, antrum\n\nDevice/Access: Gastric neurostimulator electrodes and pulse generator (Laparoscopic surgical approach)\n\nIncluded in this code (do NOT bill separately):\n- Laparoscopic placement of electrodes in the antrum of the stomach\n- Connection to a subcutaneously implanted pulse generator\n\nNote: Considered for gastroparesis refractory to medical management. Requires prior authorization and medical necessity documentation.\n\n### CPT 43881 — RVU Not specified, requires verification\nImplantation or replacement of gastric neurostimulator electrodes, antrum, open\n\nDevice/Access: Gastric neurostimulator electrodes and pulse generator (Open surgical approach)\n\nIncluded in this code (do NOT bill separately):\n- Open surgical placement of electrodes in the antrum of the stomach\n- Connection to a subcutaneously implanted pulse generator\n\nNote: An alternative to laparoscopic approach for gastric neurostimulator placement. Requires prior authorization and medical necessity documentation.\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- K31.84 (Primary / Required) — Gastroparesis. Notes: Primary diagnosis for delayed gastric emptying.\n- R11.2 — Nausea with vomiting, unspecified. Notes: May be used as a secondary diagnosis when nausea and vomiting are prominent symptoms.\n- R14.0 — Abdominal distension (gaseous). Notes: May be used as a secondary diagnosis for patients experiencing bloating and distension.\n- E08.40 — Diabetes mellitus due to underlying condition with neurological complications with gastroparesis. Notes: Use this code when gastroparesis is a documented complication of diabetes mellitus. The diabetes code should be sequenced first.\n\n---\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\n\nBadges: Prior Auth Required | Conditional Coverage\n\nPrior Auth Note: Gastric emptying studies (CPT 78264, 78265) typically require medical necessity documentation. Gastric neurostimulator implantation (CPT 43647, 43881) is generally covered only for diabetic gastroparesis refractory to conventional therapy and requires extensive prior authorization.\n\nOverview: Medicare covers diagnostic gastric emptying studies when medically necessary. Gastric neurostimulators are considered for severe, refractory diabetic gastroparesis under strict criteria.\n\n#### Coverage Criteria\n\nGastric Emptying Studies (CPT 78264, 78265):\n- Persistent symptoms suggestive of gastroparesis (e.g., nausea, vomiting, early satiety, abdominal pain) lasting at least 3 months.\n- Failure to respond to conservative management (e.g., dietary modifications, prokinetic agents).\n- Exclusion of mechanical obstruction by endoscopy or imaging.\n\nGastric Neurostimulator (CPT 43647, 43881):\n- Diagnosis of chronic, severe diabetic gastroparesis.\n- Symptoms (e.g., intractable nausea and vomiting) refractory to pharmacologic treatment for at least 12 months.\n- Patient is not a candidate for or has failed other surgical interventions.\n- Absence of mechanical obstruction.\n- Psychological evaluation demonstrating appropriate patient selection.\n\n#### Required Documentation\n\nGeneral:\n- Detailed clinical history and physical examination notes.\n- Documentation of symptom severity and duration.\n- Records of previous treatments and their outcomes (e.g., dietary changes, medications).\n\nFor Gastric Emptying Studies:\n- Order from a physician with clear medical necessity.\n- Results of prior diagnostic tests (e.g., endoscopy, imaging to rule out obstruction).\n\nFor Gastric Neurostimulator:\n- Documentation of diabetic gastroparesis diagnosis and severity.\n- Proof of failure of at least 12 months of conventional medical therapy.\n- Psychological assessment report.\n- Operative notes for prior surgical interventions, if applicable.\n\n#### Submission Process\n1. Submit claim with appropriate CPT and ICD-10 codes.\n2. For neurostimulator, obtain prior authorization before procedure.\n3. Ensure all supporting medical records are available for review upon request.\n\n#### Common Denial Reasons\n- Lack of documented medical necessity for gastric emptying study.\n- Failure to meet all coverage criteria for gastric neurostimulator.\n- Insufficient documentation of failed conservative therapies.\n- Mechanical obstruction not ruled out prior to study/procedure.\n- Incomplete or missing prior authorization for neurostimulator.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicare National Coverage Determination (NCD) | Covered with Limitations | Gastric electrical stimulation is covered only for diabetic gastroparesis refractory to conventional therapy. |\n| Medicare Local Coverage Determination (LCD) | Varies by MAC | Specific criteria for gastric emptying studies and neurostimulators may vary by Medicare Administrative Contractor (MAC). Check local policies. |\n\n#### Reimbursement Note\nReimbursement for gastric emptying studies is generally straightforward with proper documentation. Gastric neurostimulator reimbursement is complex and highly dependent on meeting strict medical necessity criteria and securing prior authorization.\n\n#### Authorization Tips\n- Clearly document all symptoms, their duration, and impact on quality of life.\n- Maintain thorough records of all conservative and pharmacologic treatments attempted and their efficacy.\n- Ensure all required diagnostic work-up (e.g., endoscopy) is completed and documented before requesting advanced studies or procedures.\n- For neurostimulator, emphasize the refractory nature of symptoms and the patient's inability to tolerate oral intake.\n\n### Medicaid\n\nBadges: Prior Auth Required | Variable Coverage by State\n\nPrior Auth Note: Coverage for both diagnostic studies and gastric neurostimulators varies significantly by state Medicaid program. Prior authorization is almost always required and can be stringent.\n\nOverview: Medicaid coverage for gastroparesis diagnostics and treatment is state-specific. Many states follow Medicare guidelines but may have additional restrictions or require more extensive documentation.\n\n#### Coverage Criteria\n\nGeneral:\n- Medical necessity as determined by state-specific guidelines.\n- Documentation of severe symptoms and functional impairment.\n- Failure of less invasive and less costly treatments.\n\nGastric Neurostimulator:\n- Often considered investigational or experimental by some state Medicaid programs.\n- If covered, criteria are similar to Medicare but may be more restrictive, focusing on intractable diabetic gastroparesis.\n\n#### Required Documentation\n\nGeneral:\n- Comprehensive medical history and physical.\n- Documentation of all failed medical and dietary therapies.\n- Proof of functional impairment due to gastroparesis.\n\nFor Gastric Neurostimulator:\n- Detailed justification for medical necessity, including why other treatments are not suitable.\n- Psychiatric evaluation if required by state policy.\n- Evidence of severe, intractable symptoms.\n\n#### Submission Process\n1. Verify state-specific Medicaid policies and prior authorization requirements.\n2. Submit prior authorization request with all required clinical documentation.\n3. Submit claims with appropriate CPT and ICD-10 codes after approval.\n\n#### Common Denial Reasons\n- Lack of prior authorization.\n- Failure to meet state-specific medical necessity criteria.\n- Procedure deemed experimental or investigational.\n- Inadequate documentation of failed conservative management.\n- Missing or incomplete clinical records.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Various State Medicaid Programs | Highly Variable | Coverage depends on individual state policies, which can range from full coverage to considering gastric neurostimulators investigational. |\n\n#### Reimbursement Note\nReimbursement can be challenging due to varying state policies and strict medical necessity reviews. Appeals processes are often necessary.\n\n#### Authorization Tips\n- Always check the specific Medicaid policy for the state where the patient resides.\n- Be prepared for a potentially lengthy prior authorization process.\n- Document all patient education and shared decision-making regarding treatment options.\n- Highlight the impact of gastroparesis on the patient's ability to maintain nutrition and hydration.\n\n### Private Insurance\n\nBadges: Prior Auth Required | Variable Coverage\n\nPrior Auth Note: Most private insurers require prior authorization for gastric emptying studies and almost all require it for gastric neurostimulator implantation. Coverage criteria can vary widely.\n\nOverview: Private insurance coverage for gastroparesis diagnostics and treatment is diverse. Policies often align with Medicare but may have unique requirements, particularly for newer technologies like gastric neurostimulators.\n\n#### Coverage Criteria\n\nGastric Emptying Studies:\n- Symptoms consistent with gastroparesis and failure of initial medical management.\n- Exclusion of mechanical obstruction.\n- Ordered by a gastroenterologist or other appropriate specialist.\n\nGastric Neurostimulator:\n- Diagnosis of severe, chronic gastroparesis (diabetic or idiopathic) refractory to at least 12 months of medical therapy.\n- Significant impact on quality of life due to intractable nausea and vomiting.\n- Psychological evaluation.\n- Trial of external neurostimulation (if policy requires).\n\n#### Required Documentation\n\nGeneral:\n- Physician's order and clinical notes supporting medical necessity.\n- Results of all relevant diagnostic tests.\n- Documentation of conservative treatment failures.\n\nFor Gastric Neurostimulator:\n- Detailed clinical rationale for implantation.\n- Documentation of intractable symptoms and failed medical therapies.\n- Psychological clearance.\n- Any pre-authorization forms specific to the insurer.\n\n#### Submission Process\n1. Review specific payer policy for gastroparesis and gastric neurostimulators.\n2. Submit prior authorization request with all required clinical documentation and forms.\n3. Follow up on authorization status and appeal any denials promptly.\n4. Submit claims with approved authorization number.\n\n#### Common Denial Reasons\n- Lack of prior authorization or incomplete authorization request.\n- Failure to meet specific medical policy criteria.\n- Insufficient documentation of symptom severity or failed treatments.\n- Procedure considered experimental or investigational (especially for idiopathic gastroparesis).\n- Incorrect coding or missing modifiers.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Aetna | Investigational for Idiopathic Gastroparesis | Gastric electrical stimulation is considered investigational for idiopathic gastroparesis. May cover for diabetic gastroparesis under strict criteria. |\n| UnitedHealthcare | Covered with Criteria | Covers gastric neurostimulators for diabetic gastroparesis with intractable nausea and vomiting refractory to medical therapy, and specific psychological and medical criteria. |\n| Blue Cross Blue Shield (various plans) | Variable | Coverage varies by plan and state. Many follow Medicare guidelines, some may consider neurostimulators investigational for certain indications. |\n\n#### Reimbursement Note\nReimbursement rates and coverage can vary significantly between private insurance plans. It is crucial to understand each plan's specific medical policies and prior authorization requirements.\n\n#### Authorization Tips\n- Thoroughly review the patient's specific insurance policy for gastroparesis coverage.\n- Pre-certify all advanced diagnostic tests and procedures.\n- Provide detailed clinical notes emphasizing the severity and chronicity of symptoms and the failure of all other treatment modalities.\n- Highlight any co-morbidities that complicate management.\n",
+      "tables": [
+        {
+          "name": "CPT / Procedure Codes",
+          "header": ["CPT Code", "RVU", "Description", "Device/Access", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            ["78264", "8.68", "Gastric emptying imaging study (eg, solid, liquid, or both)", "Radiopharmaceutical tracer and gamma camera; Oral administration, non-invasive", "Imaging of the stomach only; Study duration of 1-4 hours", "Used for initial diagnosis and monitoring of gastroparesis. Often requires ICD-10 K31.84."],
+            ["78265", "10.41", "Gastric emptying imaging study with small bowel transit", "Radiopharmaceutical tracer and gamma camera; Oral administration, non-invasive", "Imaging of the stomach and small intestine; Extended study duration to assess small bowel transit", "Used when evaluation of small bowel transit is clinically indicated. Documentation should include clinical indications."],
+            ["43647", "Not specified, requires verification", "Laparoscopy, surgical; implantation or replacement of gastric neurostimulator electrodes, antrum", "Gastric neurostimulator electrodes and pulse generator; Laparoscopic surgical approach", "Laparoscopic placement of electrodes in the antrum of the stomach; Connection to a subcutaneously implanted pulse generator", "Considered for gastroparesis refractory to medical management. Requires prior authorization and medical necessity documentation."],
+            ["43881", "Not specified, requires verification", "Implantation or replacement of gastric neurostimulator electrodes, antrum, open", "Gastric neurostimulator electrodes and pulse generator; Open surgical approach", "Open surgical placement of electrodes in the antrum of the stomach; Connection to a subcutaneously implanted pulse generator", "An alternative to laparoscopic approach for gastric neurostimulator placement. Requires prior authorization and medical necessity documentation."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["ICD-10 Code", "Description", "Notes", "Primary/Required"],
+          "rows": [
+            ["K31.84", "Gastroparesis", "Primary diagnosis for delayed gastric emptying.", "Yes"],
+            ["R11.2", "Nausea with vomiting, unspecified", "May be used as a secondary diagnosis when nausea and vomiting are prominent symptoms.", "No"],
+            ["R14.0", "Abdominal distension (gaseous)", "May be used as a secondary diagnosis for patients experiencing bloating and distension.", "No"],
+            ["E08.40", "Diabetes mellitus due to underlying condition with neurological complications with gastroparesis", "Use this code when gastroparesis is a documented complication of diabetes mellitus. The diabetes code should be sequenced first.", "No"]
+          ]
+        },
+        {
+          "name": "Medicare — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicare National Coverage Determination (NCD)", "Covered with Limitations", "Gastric electrical stimulation is covered only for diabetic gastroparesis refractory to conventional therapy."],
+            ["Medicare Local Coverage Determination (LCD)", "Varies by MAC", "Specific criteria for gastric emptying studies and neurostimulators may vary by Medicare Administrative Contractor (MAC). Check local policies."]
+          ]
+        },
+        {
+          "name": "Medicaid — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Various State Medicaid Programs", "Highly Variable", "Coverage depends on individual state policies, which can range from full coverage to considering gastric neurostimulators investigational."]
+          ]
+        },
+        {
+          "name": "Private Insurance — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Aetna", "Investigational for Idiopathic Gastroparesis", "Gastric electrical stimulation is considered investigational for idiopathic gastroparesis. May cover for diabetic gastroparesis under strict criteria."],
+            ["UnitedHealthcare", "Covered with Criteria", "Covers gastric neurostimulators for diabetic gastroparesis with intractable nausea and vomiting refractory to medical therapy, and specific psychological and medical criteria."],
+            ["Blue Cross Blue Shield (various plans)", "Variable", "Coverage varies by plan and state. Many follow Medicare guidelines, some may consider neurostimulators investigational for certain indications."]
+          ]
+        }
+      ]
+    }
+  }
+}

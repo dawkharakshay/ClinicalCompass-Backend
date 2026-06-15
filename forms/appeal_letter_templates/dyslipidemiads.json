@@ -1,0 +1,30 @@
+{
+  "title": "Dyslipidemia Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "J1306, J3490, 99213",
+      "credentials": "[Credentials]",
+      "icd_codes": "E78.0, E78.2, E78.5, I25.10, Z83.4",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — Lipid-Lowering Therapy / Statin Initiation\nCPT Code(s): 99213, 99214, 80061, 83721\nICD-10 Code(s): E78.5, E78.00, E78.01, E78.1, Z13.220\nDear Medical Director / Utilization Review Committee,\n\nThis letter serves as an appeal for coverage of lipid-lowering therapy, specifically moderate-to-high intensity statin, for our patient, {{patient_name}}, date of birth {{patient_dob}}. Based on a comprehensive clinical assessment and current evidence-based guidelines, this treatment is medically necessary to mitigate significant cardiovascular risk.\n\nClinical Summary:\n{{patient_name}} presents with dyslipidemia, characterized by [relevant lab values, e.g., LDL-C of XXX mg/dL, non-HDL-C of YYY mg/dL]. The patient's ASCVD risk is calculated at elevated, placing them in a high-risk category. Despite lifestyle modifications, the patient's lipid levels remain suboptimal, necessitating pharmacologic intervention to achieve target goals of LDL-C <70 mg/dL and non-HDL-C <100 mg/dL.\n\nGuideline Support:\n1.  The 2018 ACC/AHA Guideline on the Management of Blood Cholesterol strongly recommends statin therapy for patients with high-risk ASCVD risk, such as {{patient_name}}, to reduce the risk of cardiovascular events.\n2.  The 2013 ACC/AHA Pooled Cohort Equations confirm {{patient_name}}'s elevated ASCVD risk, which mandates aggressive lipid-lowering strategies.\n3.  The 2015 NLA Recommendations for Patient-Centered Management of Dyslipidemia support individualized treatment plans, and in this case, statin initiation is strongly considered given the patient's risk profile.\n4.  The 2019 ESC/EAS Guidelines for the Management of Dyslipidaemias also advocate for statin therapy in patients with similar risk factors to achieve optimal lipid targets.\n\nMedical Necessity:\nInitiation of moderate-to-high intensity statin is medically necessary to prevent progression of atherosclerosis and reduce the risk of myocardial infarction, stroke, and cardiovascular mortality. Delaying or denying this essential therapy would expose {{patient_name}} to preventable adverse health outcomes.\n\nRisk Without Treatment:\nWithout appropriate lipid-lowering therapy, {{patient_name}} faces a significantly increased risk of developing or worsening cardiovascular disease, leading to potential hospitalizations, disability, and reduced quality of life. The long-term costs associated with managing advanced cardiovascular disease far outweigh the cost of preventive statin therapy.\n\nRequested Action:\nWe respectfully request approval for moderate-to-high intensity statin for {{patient_name}} to align with established medical guidelines and ensure optimal patient care. Please refer to the attached clinical documentation for further details. We are available to discuss this case further at your convenience.\n\n{{additional_clinical_notes}}\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Total Hip Arthroplasty Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "27130, 27132, 27134, 27137, 27138",
+      "credentials": "[Credentials]",
+      "icd_codes": "M16.11, M16.12, M16.0, M16.31, M16.32, M87.051, M87.052, M16.21, M05.751",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\n{{insurance_name}}\n{{insurance_address}}\nAttn: Medical Director / Appeals Department\nRe: Prior Authorization Appeal — Total Hip Arthroplasty (THA)\nPatient: {{patient_name}} | DOB: {{patient_dob}} | Member ID: {{member_id}}\nClaim/Auth #: {{claim_number}} | Date of Denial: [DATE OF DENIAL]\nCPT Code(s): 27130 | ICD-10: M16.11 / M16.12\n\nDear Medical Director,\n\nI am writing to formally appeal the denial of prior authorization for Total Hip Arthroplasty (THA) for my patient {{patient_name}}. The Clinical Compass™ THA Decision Support assessment yielded a recommendation of \"[THA Recommendation]\" (Class of Recommendation [COR]) based on the 2023 AAOS Clinical Practice Guideline for Total Hip Arthroplasty.\n\nCLINICAL JUSTIFICATION:\n• Patient presents with severe symptomatic hip osteoarthritis with significant functional impairment\n• Radiographic evidence of advanced OA (Kellgren-Lawrence Grade ≥3)\n• Harris Hip Score indicates substantial disability\n• Failure of ≥3 months of conservative therapy documented\n\nCONSERVATIVE THERAPY DOCUMENTATION:\nThis patient has completed a comprehensive course of conservative management including:\n• Physical therapy: [DURATION, NUMBER OF SESSIONS, OUTCOMES]\n• NSAIDs / analgesic medications: [MEDICATIONS, DURATION, RESPONSE]\n• Intra-articular corticosteroid injections: [NUMBER, DATES, RESPONSE]\n• Activity modification and assistive devices: [DETAILS]\n• Weight management: [DETAILS]\n\nRADIOGRAPHIC FINDINGS:\n• AP pelvis and lateral hip radiographs demonstrate: [DESCRIBE — joint space narrowing, osteophytes, subchondral sclerosis, femoral head deformity]\n• Kellgren-Lawrence Grade: [GRADE]\n• Additional findings: [DESCRIBE — leg length discrepancy, acetabular dysplasia if applicable]\n\nFUNCTIONAL ASSESSMENT:\n• Harris Hip Score: [SCORE] (normal ≥80; severe impairment <70)\n• HOOS Score: [SCORE] (normal ≥75)\n• VAS Pain Score: [SCORE]/10\n• Patient-reported functional limitations: [DESCRIBE — difficulty with ambulation, stair climbing, ADLs, sleep disturbance]\n\nMEDICAL NECESSITY:\nTotal Hip Arthroplasty is medically necessary for this patient based on:\n1. Severe symptomatic hip OA unresponsive to ≥3 months of conservative therapy\n2. Radiographic evidence of advanced OA (KL Grade ≥3) with joint space narrowing\n3. Significant functional impairment documented by validated outcome scores\n4. Patient is medically optimized and appropriate surgical candidate\n5. Meets AAOS Class I (Recommended) criteria per 2023 Clinical Practice Guideline\n\nGUIDELINE SUPPORT:\nThe 2023 AAOS Clinical Practice Guideline for Total Hip Arthroplasty provides a Class I recommendation for THA in patients with symptomatic hip OA with radiographic evidence of moderate-to-severe disease who have failed conservative management. THA is recognized as one of the most successful and cost-effective surgical interventions in medicine (Learmonth et al., Lancet 2007).\n\nWithout surgical intervention, this patient faces continued progressive joint destruction, worsening functional disability, and deteriorating quality of life. Deferral of indicated THA is associated with worse surgical outcomes and increased complication rates.\n\nI respectfully request immediate reconsideration and approval of prior authorization for Total Hip Arthroplasty (CPT 27130). Please contact my office at {{practice_phone}} or {{practice_email}} if additional clinical documentation is required.\n\nSincerely,\n\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\n{{practice_phone}} | {{practice_email}}"
+  }
+}

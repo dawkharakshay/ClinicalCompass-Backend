@@ -1,0 +1,30 @@
+{
+  "title": "Preimplantation Genetic Testing Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "89290, 89291, 88271, 88272, 88273, 88374, 81228, 81229",
+      "credentials": "[Credentials]",
+      "icd_codes": "N96, O09.291, Z84.81, Z13.88, Z31.430, Z31.438, Q95.0, Q95.2, Z31.83",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "To Whom It May Concern,\n\nI am writing to formally appeal the denial of prior authorization for preimplantation genetic testing (PGT) for my patient. PGT is medically necessary and is supported by the American Society for Reproductive Medicine (ASRM) and the American College of Medical Genetics and Genomics (ACMG).\n\nCLINICAL SUMMARY\n\nThe indication for PGT is: [PGT-M for known genetic disorder: specify disorder / PGT-SR for chromosomal translocation / PGT-A for recurrent pregnancy loss / PGT-A for repeated IVF failure].\n\n[For PGT-M]: My patient carries [disorder name], an autosomal [dominant/recessive] condition. Without PGT-M, there is a [25%/50%] risk of transmitting this serious genetic disorder to offspring. Genetic counseling has been completed and the specific molecular probe has been validated.\n\n[For RPL]: My patient has experienced [X] pregnancy losses. Chromosomal aneuploidy is the most common cause of first-trimester pregnancy loss. PGT-A will identify euploid embryos for transfer, reducing the risk of further pregnancy loss.\n\nDENIAL REBUTTAL\n\nIf denied as \"screening\": PGT-M is a diagnostic procedure, not screening. It diagnoses a specific genetic disorder in embryos at risk of a known heritable condition. This is equivalent to prenatal diagnosis (CVS/amniocentesis) performed preimplantation.\n\nIf denied as \"experimental\": PGT has been performed since 1990 (Handyside et al., N Engl J Med. 1990) and is endorsed by ASRM, ACMG, and ESHRE as standard of care for appropriate indications.\n\nEVIDENCE BASE\n\nASRM Practice Committee (Fertil Steril. 2018;109(3):429-436) provides evidence-based guidance on PGT indications. PGT-M and PGT-SR are considered standard of care for couples at risk of transmitting serious genetic disorders or chromosomal rearrangements.\n\nCONCLUSION\n\nI respectfully request reconsideration and approval of PGT as a medically necessary component of this patient's fertility treatment.\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\n{{letter_date}}"
+  }
+}

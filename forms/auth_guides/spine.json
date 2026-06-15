@@ -1,0 +1,425 @@
+{
+  "title": "Spine Surgery Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "SpineAuthGuide.tsx",
+    "title": "Spine Clinical Compass",
+    "subtitle": "Spine Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "22510",
+        "description": "Percutaneous vertebroplasty, 1 vertebral body, thoracic or lumbar, including cavity creation, percutaneous imaging guidance; unilateral or bilateral injection, initial procedure",
+        "device": "Bone cement, needle, imaging guidance",
+        "access": "Percutaneous",
+        "rvu": "7.50",
+        "includes": ["Fluoroscopic guidance", "Injection of bone cement", "Post-procedure imaging"],
+        "note": "Used for vertebral compression fractures due to osteoporosis or malignancy."
+      },
+      {
+        "code": "22513",
+        "description": "Percutaneous vertebral augmentation, including cavity creation (fracture reduction and bone biopsy included when performed) using mechanical device, 1 vertebral body, thoracic or lumbar, including percutaneous imaging guidance; unilateral or bilateral cannulation, initial procedure",
+        "device": "Balloon, bone cement, needle, imaging guidance",
+        "access": "Percutaneous",
+        "rvu": "9.20",
+        "includes": ["Fluoroscopic guidance", "Balloon inflation", "Injection of bone cement", "Post-procedure imaging"],
+        "note": "Kyphoplasty procedure for vertebral compression fractures, often provides better height restoration."
+      },
+      {
+        "code": "63650",
+        "description": "Percutaneous implantation of neurostimulator electrode array, epidural",
+        "device": "Neurostimulator electrode array, lead delivery system",
+        "access": "Percutaneous epidural",
+        "rvu": "12.80",
+        "includes": ["Fluoroscopic guidance", "Trial stimulation lead placement"],
+        "note": "Initial placement of spinal cord stimulator leads for chronic pain management."
+      },
+      {
+        "code": "63655",
+        "description": "Laminectomy for implantation of neurostimulator electrodes, plate/paddle, epidural",
+        "device": "Neurostimulator paddle lead, surgical instruments",
+        "access": "Open surgical approach (laminectomy)",
+        "rvu": "18.50",
+        "includes": ["Laminectomy", "Epidural electrode placement", "Intraoperative neurophysiology monitoring"],
+        "note": "Surgical implantation of paddle leads for spinal cord stimulation, typically for complex cases."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "M47.816",
+        "description": "Spondylosis without myelopathy or radiculopathy, lumbar region",
+        "notes": "Chronic degenerative condition affecting the lumbar spine, often leading to back pain.",
+        "required": true
+      },
+      {
+        "code": "M51.36",
+        "description": "Other intervertebral disc degeneration, lumbar region",
+        "notes": "Degeneration of the intervertebral discs in the lower back, a common cause of back pain.",
+        "required": true
+      },
+      {
+        "code": "M48.06",
+        "description": "Spinal stenosis, lumbar region",
+        "notes": "Narrowing of the spinal canal in the lumbar region, compressing nerves and causing pain, numbness, or weakness.",
+        "required": true
+      },
+      {
+        "code": "M54.5",
+        "description": "Low back pain",
+        "notes": "Non-specific low back pain, often associated with degenerative changes.",
+        "required": false
+      },
+      {
+        "code": "M80.08XA",
+        "description": "Age-related osteoporosis with current pathological fracture, vertebra(e), initial encounter for fracture",
+        "notes": "Vertebral fracture due to osteoporosis, often treated with vertebroplasty or kyphoplasty.",
+        "required": true
+      },
+      {
+        "code": "C79.51",
+        "description": "Secondary malignant neoplasm of bone and bone marrow",
+        "notes": "Metastatic cancer to the spine, which can cause pathological fractures.",
+        "required": true
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with Medical Necessity",
+        "overview": "Medicare covers vertebroplasty and kyphoplasty for vertebral compression fractures due to osteoporosis or malignancy when specific criteria are met. Spinal cord stimulation is covered for chronic intractable pain when conservative treatments have failed and a trial period is successful.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required: No (No Prior Auth (FFS))",
+              "Vertebroplasty and Kyphoplasty generally do not require prior authorization for Medicare beneficiaries when medical necessity criteria are met. Spinal cord stimulators may require prior authorization depending on the MAC and specific policy."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Vertebroplasty/Kyphoplasty",
+            "items": [
+              "Painful osteoporotic or malignant vertebral compression fracture confirmed by imaging (X-ray, MRI, CT).",
+              "Pain unresponsive to conservative medical therapy (e.g., analgesics, bed rest) for at least 2-4 weeks. (Some MACs may allow earlier intervention for severe pain).",
+              "Fracture is acute or subacute (typically less than 3 months old).",
+              "Absence of neurological compromise requiring surgical decompression."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Spinal Cord Stimulation (SCS)",
+            "items": [
+              "Chronic intractable pain of truncal or appendicular origin that has lasted for at least 6 months.",
+              "Failure of conservative management (e.g., pharmacotherapy, physical therapy, injections, psychological counseling).",
+              "Thorough psychological evaluation indicating no contraindications to implantation.",
+              "Successful SCS trial (typically >50% pain relief or significant functional improvement).",
+              "No contraindications to surgery or implantation."
+            ]
+          },
+          {
+            "heading": "Required Documentation — General",
+            "items": [
+              "Detailed clinical notes documenting patient history, physical examination, and pain assessment.",
+              "Documentation of failed conservative management, including types of treatments and duration."
+            ]
+          },
+          {
+            "heading": "Required Documentation — Vertebroplasty/Kyphoplasty",
+            "items": [
+              "Imaging reports (X-ray, MRI, CT) confirming vertebral compression fracture and its acuity.",
+              "Pain scale scores before and after conservative treatment."
+            ]
+          },
+          {
+            "heading": "Required Documentation — Spinal Cord Stimulation",
+            "items": [
+              "Psychological evaluation report.",
+              "Documentation of SCS trial results, including pain relief and functional improvement.",
+              "Operative reports for trial and permanent implant."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify patient eligibility and benefits via Medicare portal.",
+              "For vertebroplasty/kyphoplasty, ensure medical necessity is clearly documented in patient records.",
+              "For SCS, submit prior authorization request with all supporting documentation (psych eval, trial results) to the Medicare Administrative Contractor (MAC) if required by local policy.",
+              "Submit claims with appropriate CPT and ICD-10 codes."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity (e.g., fracture not acute, pain not severe enough).",
+              "Failure to meet conservative treatment requirements for SCS.",
+              "Unsuccessful SCS trial.",
+              "Incomplete or missing documentation."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Reimbursement for vertebroplasty and kyphoplasty is typically bundled. SCS involves separate reimbursement for trial, implant, and programming. Ensure correct modifiers are used."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Clearly document the acuity of vertebral fractures and the duration/failure of conservative therapy.",
+              "For SCS, ensure a comprehensive psychological evaluation is performed and documented.",
+              "Maintain detailed records of SCS trial outcomes."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "CMS National Coverage Determination (NCD) 150.3", "status": "Covered", "notes": "SCS for chronic intractable pain." },
+          { "payer": "Local Coverage Determinations (LCDs)", "status": "Varies", "notes": "Specific criteria for vertebroplasty, kyphoplasty, and SCS may vary by MAC." }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Requires Prior Authorization",
+        "overview": "Medicaid coverage for spine procedures like vertebroplasty, kyphoplasty, and spinal cord stimulation is determined by individual state Medicaid programs. Coverage is generally provided when medically necessary and all state-specific criteria are met, including prior authorization.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required: Yes (Prior Auth Required)",
+              "Prior authorization is typically required for vertebroplasty, kyphoplasty, and spinal cord stimulation procedures for Medicaid beneficiaries. Criteria vary by state."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — General",
+            "items": [
+              "Medical necessity established by clinical evaluation and diagnostic imaging.",
+              "Failure of conservative management for an appropriate duration."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Vertebroplasty/Kyphoplasty",
+            "items": [
+              "Painful vertebral compression fracture (acute/subacute) due to osteoporosis or malignancy.",
+              "Documentation of severe pain and functional impairment."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Spinal Cord Stimulation",
+            "items": [
+              "Chronic intractable pain (typically >6 months).",
+              "Comprehensive psychological evaluation.",
+              "Successful SCS trial.",
+              "Documentation of multidisciplinary pain management efforts."
+            ]
+          },
+          {
+            "heading": "Required Documentation — General",
+            "items": [
+              "Prior authorization request form.",
+              "Clinical notes, history, physical exam.",
+              "Imaging reports.",
+              "Documentation of failed conservative treatments."
+            ]
+          },
+          {
+            "heading": "Required Documentation — Spinal Cord Stimulation",
+            "items": [
+              "Psychological evaluation.",
+              "SCS trial results."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request to the state Medicaid agency with all required documentation.",
+              "Ensure all state-specific medical necessity criteria are addressed in the documentation.",
+              "Await approval before scheduling the procedure.",
+              "Submit claims with appropriate CPT and ICD-10 codes after approval."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization.",
+              "Failure to meet state-specific medical necessity criteria.",
+              "Inadequate documentation of conservative treatment failure or SCS trial success.",
+              "Incomplete or incorrect submission of authorization request."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicaid reimbursement rates and policies vary significantly by state. Verify specific rates and billing guidelines with your state's Medicaid program."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state's specific Medicaid policies for spine procedures.",
+              "Submit prior authorization requests well in advance of the planned procedure date.",
+              "Provide thorough documentation supporting medical necessity and adherence to all criteria."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "State Medicaid Plans", "status": "Varies", "notes": "Coverage policies are state-specific and subject to change." }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Requires Prior Authorization",
+        "overview": "Private insurance coverage for spine procedures is highly variable. Most plans require prior authorization and have specific medical necessity criteria that must be met. It is crucial to verify benefits and obtain authorization before performing these procedures.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required: Yes (Prior Auth Required)",
+              "Most private insurance plans require prior authorization for vertebroplasty, kyphoplasty, and spinal cord stimulation. Coverage criteria and documentation requirements vary widely by plan."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — General",
+            "items": [
+              "Clinical diagnosis supported by objective findings.",
+              "Documentation of significant pain and functional impairment.",
+              "Failure of appropriate conservative management (e.g., physical therapy, medications, injections) for a specified duration (e.g., 3-6 months)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Vertebroplasty/Kyphoplasty",
+            "items": [
+              "Acute or subacute painful vertebral compression fracture confirmed by imaging.",
+              "Pain directly attributable to the fracture."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Spinal Cord Stimulation",
+            "items": [
+              "Chronic intractable pain (typically >6 months).",
+              "Comprehensive psychological evaluation.",
+              "Successful SCS trial (e.g., >50% pain relief).",
+              "No contraindications to the procedure."
+            ]
+          },
+          {
+            "heading": "Required Documentation — General",
+            "items": [
+              "Prior authorization request form.",
+              "Detailed clinical notes, including history, physical exam, and pain assessment.",
+              "Diagnostic imaging reports (MRI, CT, X-ray).",
+              "Documentation of all failed conservative treatments, including dates and outcomes."
+            ]
+          },
+          {
+            "heading": "Required Documentation — Spinal Cord Stimulation",
+            "items": [
+              "Psychological evaluation report.",
+              "SCS trial results."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify patient's insurance benefits and specific plan requirements for spine procedures.",
+              "Submit a comprehensive prior authorization request with all supporting clinical documentation to the insurance carrier.",
+              "Follow up with the insurance company regularly to check the status of the authorization.",
+              "Obtain written authorization before proceeding with the procedure.",
+              "Submit claims with appropriate CPT and ICD-10 codes, ensuring all authorized services are billed correctly."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization.",
+              "Failure to meet medical necessity criteria (e.g., insufficient trial of conservative therapy, fracture not acute).",
+              "Incomplete or insufficient documentation.",
+              "Experimental/investigational determination for certain procedures or technologies."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Reimbursement rates and policies vary significantly among private payers. Contracted rates apply. Be aware of deductibles, co-pays, and out-of-pocket maximums."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify benefits and obtain prior authorization.",
+              "Thoroughly document all conservative treatments and their outcomes.",
+              "Be prepared to appeal denials with additional clinical information and peer-to-peer reviews.",
+              "Understand the specific policy language of each private payer."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Aetna", "status": "Varies", "notes": "Specific clinical policy bulletins for vertebroplasty, kyphoplasty, and SCS." },
+          { "payer": "UnitedHealthcare", "status": "Varies", "notes": "Medical policy for interventional pain procedures and spinal surgery." },
+          { "payer": "Blue Cross Blue Shield", "status": "Varies", "notes": "Policies differ by state and specific plan." }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment (navigates to /spine)",
+        "href": "/spine"
+      },
+      {
+        "heading": "Procedure Codes — Billing Note",
+        "kind": "prose",
+        "text": "Each CPT code card displays the code, RVU, description, Device/Access, an 'Included in this code (do NOT bill separately)' list, and a usage note."
+      }
+    ],
+    "raw": {
+      "markdown": "# Spine Clinical Compass\n## Spine Insurance Authorization Guide\n\n[Button] ChevronLeft — Back to Assessment (onClick navigates to /spine)\n\n---\n\n## Procedure Codes (CPT Codes)\n\nEach card shows: CPT badge, RVU badge, description, Device/Access, 'Included in this code (do NOT bill separately):' list, and an italic note.\n\n### CPT 22510 — RVU 7.50\nPercutaneous vertebroplasty, 1 vertebral body, thoracic or lumbar, including cavity creation, percutaneous imaging guidance; unilateral or bilateral injection, initial procedure\nDevice/Access: Bone cement, needle, imaging guidance — Percutaneous\nIncluded in this code (do NOT bill separately):\n- Fluoroscopic guidance\n- Injection of bone cement\n- Post-procedure imaging\nNote: Used for vertebral compression fractures due to osteoporosis or malignancy.\n\n### CPT 22513 — RVU 9.20\nPercutaneous vertebral augmentation, including cavity creation (fracture reduction and bone biopsy included when performed) using mechanical device, 1 vertebral body, thoracic or lumbar, including percutaneous imaging guidance; unilateral or bilateral cannulation, initial procedure\nDevice/Access: Balloon, bone cement, needle, imaging guidance — Percutaneous\nIncluded in this code (do NOT bill separately):\n- Fluoroscopic guidance\n- Balloon inflation\n- Injection of bone cement\n- Post-procedure imaging\nNote: Kyphoplasty procedure for vertebral compression fractures, often provides better height restoration.\n\n### CPT 63650 — RVU 12.80\nPercutaneous implantation of neurostimulator electrode array, epidural\nDevice/Access: Neurostimulator electrode array, lead delivery system — Percutaneous epidural\nIncluded in this code (do NOT bill separately):\n- Fluoroscopic guidance\n- Trial stimulation lead placement\nNote: Initial placement of spinal cord stimulator leads for chronic pain management.\n\n### CPT 63655 — RVU 18.50\nLaminectomy for implantation of neurostimulator electrodes, plate/paddle, epidural\nDevice/Access: Neurostimulator paddle lead, surgical instruments — Open surgical approach (laminectomy)\nIncluded in this code (do NOT bill separately):\n- Laminectomy\n- Epidural electrode placement\n- Intraoperative neurophysiology monitoring\nNote: Surgical implantation of paddle leads for spinal cord stimulation, typically for complex cases.\n\n---\n\n## ICD-10 Diagnosis Codes\n(Codes marked required=true display a green badge and a 'Primary' badge; required=false display a grey badge.)\n\n- M47.816 [Primary] — Spondylosis without myelopathy or radiculopathy, lumbar region. Notes: Chronic degenerative condition affecting the lumbar spine, often leading to back pain.\n- M51.36 [Primary] — Other intervertebral disc degeneration, lumbar region. Notes: Degeneration of the intervertebral discs in the lower back, a common cause of back pain.\n- M48.06 [Primary] — Spinal stenosis, lumbar region. Notes: Narrowing of the spinal canal in the lumbar region, compressing nerves and causing pain, numbness, or weakness.\n- M54.5 — Low back pain. Notes: Non-specific low back pain, often associated with degenerative changes.\n- M80.08XA [Primary] — Age-related osteoporosis with current pathological fracture, vertebra(e), initial encounter for fracture. Notes: Vertebral fracture due to osteoporosis, often treated with vertebroplasty or kyphoplasty.\n- C79.51 [Primary] — Secondary malignant neoplasm of bone and bone marrow. Notes: Metastatic cancer to the spine, which can cause pathological fractures.\n\n---\n\n## Payer-Specific Authorization Requirements\n(Tabs: Medicare, Medicaid, Private Insurance)\n\n### Medicare\nBadges: No Prior Auth (FFS) | Covered with Medical Necessity\nPrior Auth Note (warning): Vertebroplasty and Kyphoplasty generally do not require prior authorization for Medicare beneficiaries when medical necessity criteria are met. Spinal cord stimulators may require prior authorization depending on the MAC and specific policy.\nOverview: Medicare covers vertebroplasty and kyphoplasty for vertebral compression fractures due to osteoporosis or malignancy when specific criteria are met. Spinal cord stimulation is covered for chronic intractable pain when conservative treatments have failed and a trial period is successful.\n\n#### Coverage Criteria\nVertebroplasty/Kyphoplasty:\n- Painful osteoporotic or malignant vertebral compression fracture confirmed by imaging (X-ray, MRI, CT).\n- Pain unresponsive to conservative medical therapy (e.g., analgesics, bed rest) for at least 2-4 weeks. (Some MACs may allow earlier intervention for severe pain).\n- Fracture is acute or subacute (typically less than 3 months old).\n- Absence of neurological compromise requiring surgical decompression.\nSpinal Cord Stimulation (SCS):\n- Chronic intractable pain of truncal or appendicular origin that has lasted for at least 6 months.\n- Failure of conservative management (e.g., pharmacotherapy, physical therapy, injections, psychological counseling).\n- Thorough psychological evaluation indicating no contraindications to implantation.\n- Successful SCS trial (typically >50% pain relief or significant functional improvement).\n- No contraindications to surgery or implantation.\n\n#### Required Documentation\nGeneral:\n- Detailed clinical notes documenting patient history, physical examination, and pain assessment.\n- Documentation of failed conservative management, including types of treatments and duration.\nVertebroplasty/Kyphoplasty:\n- Imaging reports (X-ray, MRI, CT) confirming vertebral compression fracture and its acuity.\n- Pain scale scores before and after conservative treatment.\nSpinal Cord Stimulation:\n- Psychological evaluation report.\n- Documentation of SCS trial results, including pain relief and functional improvement.\n- Operative reports for trial and permanent implant.\n\n#### Submission Process\n1. Verify patient eligibility and benefits via Medicare portal.\n2. For vertebroplasty/kyphoplasty, ensure medical necessity is clearly documented in patient records.\n3. For SCS, submit prior authorization request with all supporting documentation (psych eval, trial results) to the Medicare Administrative Contractor (MAC) if required by local policy.\n4. Submit claims with appropriate CPT and ICD-10 codes.\n\n#### Common Denial Reasons\n- Lack of documented medical necessity (e.g., fracture not acute, pain not severe enough).\n- Failure to meet conservative treatment requirements for SCS.\n- Unsuccessful SCS trial.\n- Incomplete or missing documentation.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS National Coverage Determination (NCD) 150.3 | Covered | SCS for chronic intractable pain. |\n| Local Coverage Determinations (LCDs) | Varies | Specific criteria for vertebroplasty, kyphoplasty, and SCS may vary by MAC. |\n\n#### Reimbursement Note\nReimbursement for vertebroplasty and kyphoplasty is typically bundled. SCS involves separate reimbursement for trial, implant, and programming. Ensure correct modifiers are used.\n\n#### Authorization Tips\n- Clearly document the acuity of vertebral fractures and the duration/failure of conservative therapy.\n- For SCS, ensure a comprehensive psychological evaluation is performed and documented.\n- Maintain detailed records of SCS trial outcomes.\n\n### Medicaid\nBadges: Prior Auth Required | Requires Prior Authorization\nPrior Auth Note (warning): Prior authorization is typically required for vertebroplasty, kyphoplasty, and spinal cord stimulation procedures for Medicaid beneficiaries. Criteria vary by state.\nOverview: Medicaid coverage for spine procedures like vertebroplasty, kyphoplasty, and spinal cord stimulation is determined by individual state Medicaid programs. Coverage is generally provided when medically necessary and all state-specific criteria are met, including prior authorization.\n\n#### Coverage Criteria\nGeneral:\n- Medical necessity established by clinical evaluation and diagnostic imaging.\n- Failure of conservative management for an appropriate duration.\nVertebroplasty/Kyphoplasty:\n- Painful vertebral compression fracture (acute/subacute) due to osteoporosis or malignancy.\n- Documentation of severe pain and functional impairment.\nSpinal Cord Stimulation:\n- Chronic intractable pain (typically >6 months).\n- Comprehensive psychological evaluation.\n- Successful SCS trial.\n- Documentation of multidisciplinary pain management efforts.\n\n#### Required Documentation\nGeneral:\n- Prior authorization request form.\n- Clinical notes, history, physical exam.\n- Imaging reports.\n- Documentation of failed conservative treatments.\nSpinal Cord Stimulation:\n- Psychological evaluation.\n- SCS trial results.\n\n#### Submission Process\n1. Submit prior authorization request to the state Medicaid agency with all required documentation.\n2. Ensure all state-specific medical necessity criteria are addressed in the documentation.\n3. Await approval before scheduling the procedure.\n4. Submit claims with appropriate CPT and ICD-10 codes after approval.\n\n#### Common Denial Reasons\n- Lack of prior authorization.\n- Failure to meet state-specific medical necessity criteria.\n- Inadequate documentation of conservative treatment failure or SCS trial success.\n- Incomplete or incorrect submission of authorization request.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid Plans | Varies | Coverage policies are state-specific and subject to change. |\n\n#### Reimbursement Note\nMedicaid reimbursement rates and policies vary significantly by state. Verify specific rates and billing guidelines with your state's Medicaid program.\n\n#### Authorization Tips\n- Familiarize yourself with your state's specific Medicaid policies for spine procedures.\n- Submit prior authorization requests well in advance of the planned procedure date.\n- Provide thorough documentation supporting medical necessity and adherence to all criteria.\n\n### Private Insurance\nBadges: Prior Auth Required | Requires Prior Authorization\nPrior Auth Note (warning): Most private insurance plans require prior authorization for vertebroplasty, kyphoplasty, and spinal cord stimulation. Coverage criteria and documentation requirements vary widely by plan.\nOverview: Private insurance coverage for spine procedures is highly variable. Most plans require prior authorization and have specific medical necessity criteria that must be met. It is crucial to verify benefits and obtain authorization before performing these procedures.\n\n#### Coverage Criteria\nGeneral:\n- Clinical diagnosis supported by objective findings.\n- Documentation of significant pain and functional impairment.\n- Failure of appropriate conservative management (e.g., physical therapy, medications, injections) for a specified duration (e.g., 3-6 months).\nVertebroplasty/Kyphoplasty:\n- Acute or subacute painful vertebral compression fracture confirmed by imaging.\n- Pain directly attributable to the fracture.\nSpinal Cord Stimulation:\n- Chronic intractable pain (typically >6 months).\n- Comprehensive psychological evaluation.\n- Successful SCS trial (e.g., >50% pain relief).\n- No contraindications to the procedure.\n\n#### Required Documentation\nGeneral:\n- Prior authorization request form.\n- Detailed clinical notes, including history, physical exam, and pain assessment.\n- Diagnostic imaging reports (MRI, CT, X-ray).\n- Documentation of all failed conservative treatments, including dates and outcomes.\nSpinal Cord Stimulation:\n- Psychological evaluation report.\n- SCS trial results.\n\n#### Submission Process\n1. Verify patient's insurance benefits and specific plan requirements for spine procedures.\n2. Submit a comprehensive prior authorization request with all supporting clinical documentation to the insurance carrier.\n3. Follow up with the insurance company regularly to check the status of the authorization.\n4. Obtain written authorization before proceeding with the procedure.\n5. Submit claims with appropriate CPT and ICD-10 codes, ensuring all authorized services are billed correctly.\n\n#### Common Denial Reasons\n- Lack of prior authorization.\n- Failure to meet medical necessity criteria (e.g., insufficient trial of conservative therapy, fracture not acute).\n- Incomplete or insufficient documentation.\n- Experimental/investigational determination for certain procedures or technologies.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Aetna | Varies | Specific clinical policy bulletins for vertebroplasty, kyphoplasty, and SCS. |\n| UnitedHealthcare | Varies | Medical policy for interventional pain procedures and spinal surgery. |\n| Blue Cross Blue Shield | Varies | Policies differ by state and specific plan. |\n\n#### Reimbursement Note\nReimbursement rates and policies vary significantly among private payers. Contracted rates apply. Be aware of deductibles, co-pays, and out-of-pocket maximums.\n\n#### Authorization Tips\n- Always verify benefits and obtain prior authorization.\n- Thoroughly document all conservative treatments and their outcomes.\n- Be prepared to appeal denials with additional clinical information and peer-to-peer reviews.\n- Understand the specific policy language of each private payer.\n",
+      "tables": [
+        {
+          "name": "CPT Codes (Procedure Codes)",
+          "header": ["Code", "Description", "Device/Access", "Access", "RVU", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            ["22510", "Percutaneous vertebroplasty, 1 vertebral body, thoracic or lumbar, including cavity creation, percutaneous imaging guidance; unilateral or bilateral injection, initial procedure", "Bone cement, needle, imaging guidance", "Percutaneous", "7.50", "Fluoroscopic guidance; Injection of bone cement; Post-procedure imaging", "Used for vertebral compression fractures due to osteoporosis or malignancy."],
+            ["22513", "Percutaneous vertebral augmentation, including cavity creation (fracture reduction and bone biopsy included when performed) using mechanical device, 1 vertebral body, thoracic or lumbar, including percutaneous imaging guidance; unilateral or bilateral cannulation, initial procedure", "Balloon, bone cement, needle, imaging guidance", "Percutaneous", "9.20", "Fluoroscopic guidance; Balloon inflation; Injection of bone cement; Post-procedure imaging", "Kyphoplasty procedure for vertebral compression fractures, often provides better height restoration."],
+            ["63650", "Percutaneous implantation of neurostimulator electrode array, epidural", "Neurostimulator electrode array, lead delivery system", "Percutaneous epidural", "12.80", "Fluoroscopic guidance; Trial stimulation lead placement", "Initial placement of spinal cord stimulator leads for chronic pain management."],
+            ["63655", "Laminectomy for implantation of neurostimulator electrodes, plate/paddle, epidural", "Neurostimulator paddle lead, surgical instruments", "Open surgical approach (laminectomy)", "18.50", "Laminectomy; Epidural electrode placement; Intraoperative neurophysiology monitoring", "Surgical implantation of paddle leads for spinal cord stimulation, typically for complex cases."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required/Primary"],
+          "rows": [
+            ["M47.816", "Spondylosis without myelopathy or radiculopathy, lumbar region", "Chronic degenerative condition affecting the lumbar spine, often leading to back pain.", "Primary"],
+            ["M51.36", "Other intervertebral disc degeneration, lumbar region", "Degeneration of the intervertebral discs in the lower back, a common cause of back pain.", "Primary"],
+            ["M48.06", "Spinal stenosis, lumbar region", "Narrowing of the spinal canal in the lumbar region, compressing nerves and causing pain, numbness, or weakness.", "Primary"],
+            ["M54.5", "Low back pain", "Non-specific low back pain, often associated with degenerative changes.", "No"],
+            ["M80.08XA", "Age-related osteoporosis with current pathological fracture, vertebra(e), initial encounter for fracture", "Vertebral fracture due to osteoporosis, often treated with vertebroplasty or kyphoplasty.", "Primary"],
+            ["C79.51", "Secondary malignant neoplasm of bone and bone marrow", "Metastatic cancer to the spine, which can cause pathological fractures.", "Primary"]
+          ]
+        },
+        {
+          "name": "Medicare — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS National Coverage Determination (NCD) 150.3", "Covered", "SCS for chronic intractable pain."],
+            ["Local Coverage Determinations (LCDs)", "Varies", "Specific criteria for vertebroplasty, kyphoplasty, and SCS may vary by MAC."]
+          ]
+        },
+        {
+          "name": "Medicaid — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid Plans", "Varies", "Coverage policies are state-specific and subject to change."]
+          ]
+        },
+        {
+          "name": "Private Insurance — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Aetna", "Varies", "Specific clinical policy bulletins for vertebroplasty, kyphoplasty, and SCS."],
+            ["UnitedHealthcare", "Varies", "Medical policy for interventional pain procedures and spinal surgery."],
+            ["Blue Cross Blue Shield", "Varies", "Policies differ by state and specific plan."]
+          ]
+        }
+      ]
+    }
+  }
+}

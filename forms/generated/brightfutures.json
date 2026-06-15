@@ -1,0 +1,247 @@
+{
+  "title": "Bright Futures Well-Child Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendations",
+    "logicKey": "brightfutures",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "visit-age-growth",
+        "shortLabel": "Visit Age & Growth",
+        "title": "Visit Age & Growth",
+        "fields": [
+          {
+            "id": "visit-age",
+            "name": "visitAge",
+            "label": "Well-Child Visit Age",
+            "type": "select",
+            "required": false,
+            "defaultValue": "12_months",
+            "options": [
+              { "label": "3–5 Days (Newborn)", "value": "3_5_days" },
+              { "label": "1 Month", "value": "1_month" },
+              { "label": "2 Months", "value": "2_months" },
+              { "label": "4 Months", "value": "4_months" },
+              { "label": "6 Months", "value": "6_months" },
+              { "label": "9 Months", "value": "9_months" },
+              { "label": "12 Months", "value": "12_months" },
+              { "label": "15 Months", "value": "15_months" },
+              { "label": "18 Months", "value": "18_months" },
+              { "label": "24 Months", "value": "24_months" },
+              { "label": "30 Months", "value": "30_months" },
+              { "label": "3 Years", "value": "3_years" },
+              { "label": "4 Years", "value": "4_years" },
+              { "label": "5 Years", "value": "5_years" },
+              { "label": "6 Years", "value": "6_years" },
+              { "label": "7 Years", "value": "7_years" },
+              { "label": "8 Years", "value": "8_years" },
+              { "label": "9 Years", "value": "9_years" },
+              { "label": "10 Years", "value": "10_years" },
+              { "label": "11 Years", "value": "11_years" },
+              { "label": "12 Years", "value": "12_years" },
+              { "label": "13 Years", "value": "13_years" },
+              { "label": "14 Years", "value": "14_years" },
+              { "label": "15 Years", "value": "15_years" },
+              { "label": "16 Years", "value": "16_years" },
+              { "label": "17 Years", "value": "17_years" },
+              { "label": "18 Years", "value": "18_years" },
+              { "label": "19–21 Years", "value": "19_21_years" }
+            ]
+          },
+          {
+            "id": "sex",
+            "name": "sex",
+            "label": "Sex",
+            "type": "select",
+            "required": false,
+            "defaultValue": "male",
+            "options": [
+              { "label": "Male", "value": "male" },
+              { "label": "Female", "value": "female" },
+              { "label": "Other", "value": "other" }
+            ]
+          },
+          {
+            "id": "bmi-percentile",
+            "name": "bmiPercentile",
+            "label": "BMI Percentile (leave blank if <2 years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": null,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "weight-for-length-percentile",
+            "name": "weightForLengthPercentile",
+            "label": "Weight-for-Length Percentile (for <2 years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 50,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "lead-risk-factors",
+            "name": "leadRiskFactors",
+            "label": "Lead risk factors present",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "iron-deficiency-risk",
+            "name": "ironDeficiencyRisk",
+            "label": "Iron deficiency risk factors",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "tb-exposure-risk",
+            "name": "tbExposureRisk",
+            "label": "TB exposure risk",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "dyslipidemia-risk",
+            "name": "dyslipidemiRisk",
+            "label": "Dyslipidemia risk (family history or obesity)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "developmental-behavioral-screening",
+        "shortLabel": "Developmental & Behavioral Screening",
+        "title": "Developmental & Behavioral Screening",
+        "fields": [
+          {
+            "id": "developmental-concerns",
+            "name": "developmentalConcerns",
+            "label": "Developmental concerns (parent or provider)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "asq-score",
+            "name": "asqScore",
+            "label": "ASQ-3 Score (Ages & Stages Questionnaire)",
+            "type": "select",
+            "required": false,
+            "defaultValue": null,
+            "options": [
+              { "label": "Not administered", "value": "not_done" },
+              { "label": "Normal", "value": "normal" },
+              { "label": "Monitor (borderline)", "value": "monitor" },
+              { "label": "Refer (below cutoff)", "value": "refer" }
+            ]
+          },
+          {
+            "id": "m-chat-score",
+            "name": "m_chatScore",
+            "label": "M-CHAT-R/F Score (18–30 months only)",
+            "type": "number",
+            "required": false,
+            "defaultValue": null,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "has-vision-concerns",
+            "name": "hasVisionConcerns",
+            "label": "Vision concerns",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-hearing-concerns",
+            "name": "hasHearingConcerns",
+            "label": "Hearing concerns",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-chronic-condition",
+            "name": "hasChronicCondition",
+            "label": "Chronic medical condition",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "adolescent-social-risk",
+        "shortLabel": "Adolescent & Social Risk Factors",
+        "title": "Adolescent & Social Risk Factors",
+        "fields": [
+          {
+            "id": "phq2-score",
+            "name": "phq2Score",
+            "label": "PHQ-2 Score (adolescents ≥12 years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": null,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "phq9-score",
+            "name": "phq9Score",
+            "label": "PHQ-9 Score (if PHQ-2 positive)",
+            "type": "number",
+            "required": false,
+            "defaultValue": null,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "sexually-active",
+            "name": "sexuallyActive",
+            "label": "Sexually active (adolescents)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "substance-use-screen-positive",
+            "name": "substanceUseScreenPositive",
+            "label": "Substance use screen positive (CRAFFT)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "tobacco-exposure",
+            "name": "tobaccoExposure",
+            "label": "Secondhand tobacco smoke exposure",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "family-social-risks",
+            "name": "familySocialRisks",
+            "label": "Family/social risk factors (food insecurity, housing, DV)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "is-adolescent",
+            "name": "isAdolescent",
+            "label": "Adolescent patient (≥12 years)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

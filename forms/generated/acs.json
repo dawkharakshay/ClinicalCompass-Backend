@@ -1,0 +1,242 @@
+{
+  "title": "Acute Coronary Syndrome Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assess & Generate Recommendations",
+    "logicKey": "acs",
+    "hiddenDefaults": {
+      "recentCocaineUse": false,
+      "bNPLevel": null,
+      "chronicKidneyDisease": false,
+      "onOralAnticoagulant": false,
+      "femurAccess": false,
+      "radialAccess": true,
+      "canAccessCathLab": true,
+      "fibrinolyticContraindication": false
+    },
+    "steps": [
+      {
+        "id": "demographics",
+        "shortLabel": "Demographics",
+        "title": "Patient Demographics & Presentation",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "number",
+            "required": true,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "weight",
+            "name": "weight",
+            "label": "Weight (kg)",
+            "type": "number",
+            "required": true,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "sex",
+            "name": "sex",
+            "label": "Sex",
+            "type": "radio",
+            "defaultValue": "M",
+            "options": [
+              { "label": "Male", "value": "M" },
+              { "label": "Female", "value": "F" }
+            ]
+          },
+          {
+            "id": "acs-type",
+            "name": "acsType",
+            "label": "ACS Type",
+            "type": "radio",
+            "defaultValue": "STEMI",
+            "options": [
+              { "label": "STEMI", "value": "STEMI" },
+              { "label": "NSTEMI", "value": "NSTEMI" }
+            ]
+          },
+          {
+            "id": "systolic-bp",
+            "name": "systolicBP",
+            "label": "Systolic BP (mmHg)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "heart-rate",
+            "name": "heartRate",
+            "label": "Heart Rate (bpm)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "killip-class",
+            "name": "killipClass",
+            "label": "Killip Class",
+            "type": "radio",
+            "defaultValue": 1,
+            "options": [
+              { "label": "I (No heart failure)", "value": 1 },
+              { "label": "II (Pulmonary congestion)", "value": 2 },
+              { "label": "III (Acute pulmonary edema)", "value": 3 },
+              { "label": "IV (Cardiogenic shock)", "value": 4 }
+            ]
+          },
+          {
+            "id": "cardiogenic-shock",
+            "name": "cardiogenicShock",
+            "label": "Cardiogenic Shock",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "risk-labs",
+        "shortLabel": "Risk & Labs",
+        "title": "Risk Factors & Laboratory Values",
+        "fields": [
+          {
+            "id": "prior-mi",
+            "name": "priorMI",
+            "label": "Prior MI",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-pci",
+            "name": "priorPCI",
+            "label": "Prior PCI",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-cabg",
+            "name": "priorCABG",
+            "label": "Prior CABG",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "diabetes",
+            "name": "diabetes",
+            "label": "Diabetes",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "hypertension",
+            "name": "hypertension",
+            "label": "Hypertension",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "smoker",
+            "name": "smoker",
+            "label": "Smoker",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-stroke",
+            "name": "priorStroke",
+            "label": "Prior Stroke",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-tia",
+            "name": "priorTIA",
+            "label": "Prior TIA",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "active-bleed",
+            "name": "activeBleed",
+            "label": "Active Bleeding",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "hemoglobin",
+            "name": "hemoglobin",
+            "label": "Hemoglobin (g/dL)",
+            "type": "number",
+            "required": true,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "creatinine",
+            "name": "creatinine",
+            "label": "Creatinine (mg/dL)",
+            "type": "number",
+            "required": true,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "ecg-biomarkers",
+        "shortLabel": "ECG & Biomarkers",
+        "title": "ECG Findings & Biomarkers",
+        "fields": [
+          {
+            "id": "st-segment-elevation",
+            "name": "stSegmentElevation",
+            "label": "ST-Segment Elevation",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "st-segment-depression",
+            "name": "stSegmentDepression",
+            "label": "ST-Segment Depression",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "t-wave-inversion",
+            "name": "tWaveInversion",
+            "label": "T-Wave Inversion",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "new-lbbb",
+            "name": "newLBBB",
+            "label": "New LBBB",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "troponin-elevated",
+            "name": "troponinElevated",
+            "label": "Troponin Elevated",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "troponin-level",
+            "name": "troponinLevel",
+            "label": "Troponin Level (ng/mL) (high-sensitivity assay)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          }
+        ]
+      }
+    ]
+  }
+}

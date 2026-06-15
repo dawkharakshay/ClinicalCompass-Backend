@@ -1,0 +1,97 @@
+{
+  "title": "Embryo Cryopreservation Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "EmbryoCryoAuthGuide.tsx",
+    "title": "Embryo Cryopreservation — Authorization Guide",
+    "subtitle": "CPT Codes · ICD-10 · Payer Requirements",
+    "cptCodes": [
+      { "code": "89258", "description": "Cryopreservation; embryo(s)", "type": "Embryo freeze" },
+      { "code": "89352", "description": "Thawing of cryopreserved; oocyte(s)", "type": "Oocyte thaw" },
+      { "code": "89353", "description": "Thawing of cryopreserved; embryo(s)", "type": "Embryo thaw" },
+      { "code": "89344", "description": "Storage, per year; embryo(s)", "type": "Annual storage" },
+      { "code": "89346", "description": "Storage, per year; oocyte(s)", "type": "Oocyte storage" },
+      { "code": "58974", "description": "Embryo transfer, intrauterine (FET)", "type": "FET procedure" },
+      { "code": "89253", "description": "Assisted embryo hatching, microtechnique", "type": "Assisted hatching" },
+      { "code": "76830", "description": "Ultrasound, transvaginal (FET monitoring)", "type": "Monitoring US" },
+      { "code": "82670", "description": "Estradiol (FET monitoring)", "type": "Estradiol level" },
+      { "code": "84144", "description": "Progesterone (luteal phase support monitoring)", "type": "Progesterone level" }
+    ],
+    "icd10Codes": [
+      { "code": "Z31.83", "description": "Encounter for assisted reproductive fertility procedure cycle" },
+      { "code": "Z31.62", "description": "Encounter for fertility preservation procedure" },
+      { "code": "N97.9", "description": "Female infertility, unspecified" },
+      { "code": "Z79.899", "description": "Other long-term (current) drug therapy (chemotherapy — oncofertility)" },
+      { "code": "N70.11", "description": "Chronic salpingitis (tubal factor)" },
+      { "code": "N46.01", "description": "Organic azoospermia (male factor requiring ICSI + embryo cryo)" }
+    ],
+    "payers": [],
+    "customSections": [
+      {
+        "heading": "Coverage Landscape — Common Denial Reasons",
+        "kind": "list",
+        "items": [
+          "Annual storage fees (89344) almost universally excluded",
+          "Embryo cryopreservation denied as \"not medically necessary\" (when bundled with IVF)",
+          "FET cycle denied separately from IVF authorization",
+          "Oncofertility embryo cryo denied if oncology diagnosis not linked"
+        ]
+      },
+      {
+        "heading": "Coverage Landscape — Strongest Coverage Arguments",
+        "kind": "list",
+        "items": [
+          "Oncofertility: ASCO 2018 — embryo cryopreservation is standard of care before gonadotoxic therapy",
+          "Freeze-all for OHSS prevention: medically necessary to prevent life-threatening OHSS",
+          "CPT 89258 (embryo freeze) is a distinct service from IVF — not bundled per AMA CPT",
+          "FET (58974) is a separate procedure requiring separate authorization in many plans",
+          "Some state mandates include FET cycles as part of IVF coverage"
+        ]
+      },
+      {
+        "heading": "Prior Authorization Requirements — Required Documentation",
+        "kind": "list",
+        "items": [
+          "IVF authorization (embryo cryopreservation is typically part of IVF cycle authorization)",
+          "For oncofertility: oncology treatment plan with gonadotoxic therapy documentation",
+          "For freeze-all/OHSS: documentation of OHSS risk factors (estradiol level, follicle count)",
+          "For FET: separate authorization may be required — confirm with payer",
+          "Letter of medical necessity from REI specialist",
+          "Note: annual storage fees (89344) are self-pay at most institutions"
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# Embryo Cryopreservation — Authorization Guide\n\n_CPT Codes · ICD-10 · Payer Requirements_\n\n(backHref: /embryo-cryo)\n\n## CPT Codes\n\n| CPT | Description | Type |\n| --- | --- | --- |\n| 89258 | Cryopreservation; embryo(s) | Embryo freeze |\n| 89352 | Thawing of cryopreserved; oocyte(s) | Oocyte thaw |\n| 89353 | Thawing of cryopreserved; embryo(s) | Embryo thaw |\n| 89344 | Storage, per year; embryo(s) | Annual storage |\n| 89346 | Storage, per year; oocyte(s) | Oocyte storage |\n| 58974 | Embryo transfer, intrauterine (FET) | FET procedure |\n| 89253 | Assisted embryo hatching, microtechnique | Assisted hatching |\n| 76830 | Ultrasound, transvaginal (FET monitoring) | Monitoring US |\n| 82670 | Estradiol (FET monitoring) | Estradiol level |\n| 84144 | Progesterone (luteal phase support monitoring) | Progesterone level |\n\n## ICD-10 Diagnoses\n\n| ICD-10 | Description |\n| --- | --- |\n| Z31.83 | Encounter for assisted reproductive fertility procedure cycle |\n| Z31.62 | Encounter for fertility preservation procedure |\n| N97.9 | Female infertility, unspecified |\n| Z79.899 | Other long-term (current) drug therapy (chemotherapy — oncofertility) |\n| N70.11 | Chronic salpingitis (tubal factor) |\n| N46.01 | Organic azoospermia (male factor requiring ICSI + embryo cryo) |\n\n## Coverage Landscape\n\n### Common Denial Reasons\n\n- Annual storage fees (89344) almost universally excluded\n- Embryo cryopreservation denied as \"not medically necessary\" (when bundled with IVF)\n- FET cycle denied separately from IVF authorization\n- Oncofertility embryo cryo denied if oncology diagnosis not linked\n\n### Strongest Coverage Arguments\n\n- Oncofertility: ASCO 2018 — embryo cryopreservation is standard of care before gonadotoxic therapy\n- Freeze-all for OHSS prevention: medically necessary to prevent life-threatening OHSS\n- CPT 89258 (embryo freeze) is a distinct service from IVF — not bundled per AMA CPT\n- FET (58974) is a separate procedure requiring separate authorization in many plans\n- Some state mandates include FET cycles as part of IVF coverage\n\n## Prior Authorization Requirements\n\n### Required Documentation\n\n- IVF authorization (embryo cryopreservation is typically part of IVF cycle authorization)\n- For oncofertility: oncology treatment plan with gonadotoxic therapy documentation\n- For freeze-all/OHSS: documentation of OHSS risk factors (estradiol level, follicle count)\n- For FET: separate authorization may be required — confirm with payer\n- Letter of medical necessity from REI specialist\n- Note: annual storage fees (89344) are self-pay at most institutions\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["CPT", "Description", "Type"],
+          "rows": [
+            ["89258", "Cryopreservation; embryo(s)", "Embryo freeze"],
+            ["89352", "Thawing of cryopreserved; oocyte(s)", "Oocyte thaw"],
+            ["89353", "Thawing of cryopreserved; embryo(s)", "Embryo thaw"],
+            ["89344", "Storage, per year; embryo(s)", "Annual storage"],
+            ["89346", "Storage, per year; oocyte(s)", "Oocyte storage"],
+            ["58974", "Embryo transfer, intrauterine (FET)", "FET procedure"],
+            ["89253", "Assisted embryo hatching, microtechnique", "Assisted hatching"],
+            ["76830", "Ultrasound, transvaginal (FET monitoring)", "Monitoring US"],
+            ["82670", "Estradiol (FET monitoring)", "Estradiol level"],
+            ["84144", "Progesterone (luteal phase support monitoring)", "Progesterone level"]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnoses",
+          "header": ["ICD-10", "Description"],
+          "rows": [
+            ["Z31.83", "Encounter for assisted reproductive fertility procedure cycle"],
+            ["Z31.62", "Encounter for fertility preservation procedure"],
+            ["N97.9", "Female infertility, unspecified"],
+            ["Z79.899", "Other long-term (current) drug therapy (chemotherapy — oncofertility)"],
+            ["N70.11", "Chronic salpingitis (tubal factor)"],
+            ["N46.01", "Organic azoospermia (male factor requiring ICSI + embryo cryo)"]
+          ]
+        }
+      ]
+    }
+  }
+}

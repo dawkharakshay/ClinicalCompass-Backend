@@ -1,0 +1,171 @@
+{
+  "title": "Elective PCI Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "PCIAuthGuide.tsx",
+    "title": "PCI Authorization Guide",
+    "subtitle": null,
+    "cptCodes": [
+      { "code": "92920", "description": "Percutaneous transluminal coronary angioplasty (PTCA); single major coronary artery or branch", "notes": "Balloon angioplasty — single vessel" },
+      { "code": "92921", "description": "PTCA; each additional branch of a major coronary artery", "notes": "Additional vessel — add-on code" },
+      { "code": "92928", "description": "Percutaneous transcatheter placement of intracoronary stent(s), with coronary angioplasty when performed; single major coronary artery or branch", "notes": "PCI with stent — single vessel (most common)" },
+      { "code": "92929", "description": "PCI with stent; each additional branch of a major coronary artery", "notes": "Additional stent — add-on code" },
+      { "code": "92933", "description": "PCI with atherectomy (rotational, orbital, laser) and stent; single major coronary artery or branch", "notes": "Complex PCI with atherectomy" },
+      { "code": "92934", "description": "PCI with atherectomy and stent; each additional branch", "notes": "Atherectomy — add-on code" },
+      { "code": "92941", "description": "PCI for acute MI; single major coronary artery or branch", "notes": "Primary PCI for STEMI — NOT for elective PCI" },
+      { "code": "92943", "description": "PCI for chronic total occlusion; single major coronary artery or branch", "notes": "CTO-PCI — requires specific documentation" },
+      { "code": "93454", "description": "Catheter placement in coronary artery(s) for coronary angiography, including intraprocedural injection(s) for coronary angiography", "notes": "Diagnostic coronary angiography" },
+      { "code": "93571", "description": "Intravascular Doppler velocity and/or pressure derived coronary flow reserve measurement (FFR)", "notes": "FFR/iFR measurement — supports medical necessity" }
+    ],
+    "icd10Codes": [
+      { "code": "I25.10", "description": "Atherosclerotic heart disease of native coronary artery without angina pectoris", "notes": "Stable CAD — requires objective ischemia evidence" },
+      { "code": "I25.110", "description": "Atherosclerotic heart disease of native coronary artery with unstable angina pectoris", "notes": "Unstable angina — higher urgency" },
+      { "code": "I25.119", "description": "Atherosclerotic heart disease of native coronary artery with unspecified angina pectoris", "notes": "Angina — specify CCS class in documentation" },
+      { "code": "I25.5", "description": "Ischemic cardiomyopathy", "notes": "Reduced LVEF from CAD" },
+      { "code": "I25.700", "description": "Atherosclerosis of coronary artery bypass graft(s), unspecified, without angina pectoris", "notes": "SVG or arterial graft disease" },
+      { "code": "I20.0", "description": "Unstable angina", "notes": "ACS spectrum — may not require elective PA" },
+      { "code": "I25.2", "description": "Old myocardial infarction", "notes": "Prior MI with residual ischemia" },
+      { "code": "I25.84", "description": "Coronary artery disease in patient with history of repaired congenital heart disease", "notes": "Complex anatomy" }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "overview": "Medicare covers elective PCI under NCD 20.7. Requires documentation of objective ischemia. ISCHEMIA trial data supports OMT-first approach for stable CAD — document why revascularization is preferred over continued OMT.",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "Objective evidence of myocardial ischemia (stress test, FFR ≤0.80, iFR ≤0.89, or nuclear imaging)",
+              "Coronary anatomy documented by diagnostic catheterization",
+              "Symptoms (angina CCS Class ≥II) or high-risk stress test findings despite optimal medical therapy",
+              "SYNTAX score documentation for multi-vessel or left main disease",
+              "Heart Team discussion documentation for 3-vessel or left main disease",
+              "Informed consent documenting discussion of PCI vs CABG vs OMT",
+              "Operator and facility volume requirements met (≥75 PCIs/year operator, ≥200/year facility)"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Significant coronary stenosis (≥70% by angiography or ≥50% left main) with objective ischemia",
+              "Symptoms refractory to optimal medical therapy",
+              "High-risk stress test findings (≥10% ischemic territory, LVEF <35%, hypotension)",
+              "FFR ≤0.80 confirming hemodynamic significance"
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicare (CMS)", "status": "Covered", "notes": "Covered per NCD 20.7; objective ischemia required; SYNTAX score required for multi-vessel/LM disease" },
+          { "payer": "Medicare Advantage (varies)", "status": "Covered", "notes": "Generally follows CMS NCD; some plans require additional documentation" }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "overview": "Medicaid coverage varies by state. Most states require prior authorization for elective PCI. Some states limit coverage to specific indications. Contact state Medicaid office for current policy.",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "State-specific prior authorization required",
+              "Objective ischemia documentation",
+              "Coronary anatomy by diagnostic catheterization",
+              "Cardiology consultation note",
+              "Failure of or contraindication to optimal medical therapy"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Significant coronary stenosis with objective ischemia",
+              "Symptomatic despite medical therapy",
+              "High-risk anatomy (left main, proximal LAD, 3-vessel disease with reduced LVEF)"
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicaid (state-specific)", "status": "Covered", "notes": "Coverage varies; prior authorization typically required; follow state-specific LCD criteria" }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private",
+        "overview": "Commercial payers frequently deny elective PCI without documented OMT trial. ISCHEMIA trial (2020) showed no mortality benefit of PCI over OMT for stable CAD — document symptom burden and quality-of-life impact. FFR documentation significantly reduces denial rates.",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "Prior authorization required by virtually all commercial payers",
+              "Objective evidence of ischemia (stress test, FFR, nuclear imaging, stress echo)",
+              "Diagnostic coronary angiography report with stenosis measurements",
+              "Documentation of optimal medical therapy trial (typically ≥3 months) unless contraindicated",
+              "SYNTAX score for multi-vessel or left main disease",
+              "Heart Team note for complex anatomy",
+              "Cardiology/interventional cardiology consultation note",
+              "Peer-to-peer review available if denied"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Coronary stenosis ≥70% (≥50% left main) with objective ischemia",
+              "Angina CCS Class ≥II or anginal equivalent despite OMT",
+              "High-risk stress test (large ischemia, LVEF drop, hypotension, ST changes in ≥5 leads)",
+              "FFR ≤0.80 or iFR ≤0.89 confirming hemodynamic significance",
+              "SYNTAX score ≤22 for multi-vessel disease (PCI preferred over CABG)"
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "UnitedHealthcare", "status": "Covered", "notes": "Requires objective ischemia; FFR documentation reduces denials; SYNTAX score required for LM/3VD" },
+          { "payer": "Aetna", "status": "Covered", "notes": "Covers elective PCI with documented ischemia and failed OMT; peer-to-peer available" },
+          { "payer": "Cigna", "status": "Covered", "notes": "Requires OMT documentation; FFR/iFR strongly recommended for intermediate lesions" },
+          { "payer": "Anthem/BCBS", "status": "Covered", "notes": "Prior auth required; SYNTAX score and Heart Team note for complex anatomy" },
+          { "payer": "Humana", "status": "Covered", "notes": "Covers per ACC/AHA appropriateness criteria; may require OMT documentation" }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Wrapper Heading",
+        "kind": "prose",
+        "text": "PCI Authorization Guide"
+      }
+    ],
+    "raw": {
+      "markdown": "# PCI Authorization Guide\n\n## CPT Codes — Elective PCI\n\n| CPT | Description | Notes |\n| --- | --- | --- |\n| 92920 | Percutaneous transluminal coronary angioplasty (PTCA); single major coronary artery or branch | Balloon angioplasty — single vessel |\n| 92921 | PTCA; each additional branch of a major coronary artery | Additional vessel — add-on code |\n| 92928 | Percutaneous transcatheter placement of intracoronary stent(s), with coronary angioplasty when performed; single major coronary artery or branch | PCI with stent — single vessel (most common) |\n| 92929 | PCI with stent; each additional branch of a major coronary artery | Additional stent — add-on code |\n| 92933 | PCI with atherectomy (rotational, orbital, laser) and stent; single major coronary artery or branch | Complex PCI with atherectomy |\n| 92934 | PCI with atherectomy and stent; each additional branch | Atherectomy — add-on code |\n| 92941 | PCI for acute MI; single major coronary artery or branch | Primary PCI for STEMI — NOT for elective PCI |\n| 92943 | PCI for chronic total occlusion; single major coronary artery or branch | CTO-PCI — requires specific documentation |\n| 93454 | Catheter placement in coronary artery(s) for coronary angiography, including intraprocedural injection(s) for coronary angiography | Diagnostic coronary angiography |\n| 93571 | Intravascular Doppler velocity and/or pressure derived coronary flow reserve measurement (FFR) | FFR/iFR measurement — supports medical necessity |\n\n## ICD-10 Codes\n\n| ICD-10 | Description | Notes |\n| --- | --- | --- |\n| I25.10 | Atherosclerotic heart disease of native coronary artery without angina pectoris | Stable CAD — requires objective ischemia evidence |\n| I25.110 | Atherosclerotic heart disease of native coronary artery with unstable angina pectoris | Unstable angina — higher urgency |\n| I25.119 | Atherosclerotic heart disease of native coronary artery with unspecified angina pectoris | Angina — specify CCS class in documentation |\n| I25.5 | Ischemic cardiomyopathy | Reduced LVEF from CAD |\n| I25.700 | Atherosclerosis of coronary artery bypass graft(s), unspecified, without angina pectoris | SVG or arterial graft disease |\n| I20.0 | Unstable angina | ACS spectrum — may not require elective PA |\n| I25.2 | Old myocardial infarction | Prior MI with residual ischemia |\n| I25.84 | Coronary artery disease in patient with history of repaired congenital heart disease | Complex anatomy |\n\n## Payer Requirements\n\nPayer tabs: Medicare, Medicaid, Private.\n\n### Medicare\n\n**Required Documentation**\n- Objective evidence of myocardial ischemia (stress test, FFR ≤0.80, iFR ≤0.89, or nuclear imaging)\n- Coronary anatomy documented by diagnostic catheterization\n- Symptoms (angina CCS Class ≥II) or high-risk stress test findings despite optimal medical therapy\n- SYNTAX score documentation for multi-vessel or left main disease\n- Heart Team discussion documentation for 3-vessel or left main disease\n- Informed consent documenting discussion of PCI vs CABG vs OMT\n- Operator and facility volume requirements met (≥75 PCIs/year operator, ≥200/year facility)\n\n**Medical Necessity Criteria**\n- Significant coronary stenosis (≥70% by angiography or ≥50% left main) with objective ischemia\n- Symptoms refractory to optimal medical therapy\n- High-risk stress test findings (≥10% ischemic territory, LVEF <35%, hypotension)\n- FFR ≤0.80 confirming hemodynamic significance\n\n**Reimbursement Note:** Medicare covers elective PCI under NCD 20.7. Requires documentation of objective ischemia. ISCHEMIA trial data supports OMT-first approach for stable CAD — document why revascularization is preferred over continued OMT.\n\n**Known Payer Policies**\n- [Covered] Medicare (CMS): Covered per NCD 20.7; objective ischemia required; SYNTAX score required for multi-vessel/LM disease\n- [Covered] Medicare Advantage (varies): Generally follows CMS NCD; some plans require additional documentation\n\n### Medicaid\n\n**Required Documentation**\n- State-specific prior authorization required\n- Objective ischemia documentation\n- Coronary anatomy by diagnostic catheterization\n- Cardiology consultation note\n- Failure of or contraindication to optimal medical therapy\n\n**Medical Necessity Criteria**\n- Significant coronary stenosis with objective ischemia\n- Symptomatic despite medical therapy\n- High-risk anatomy (left main, proximal LAD, 3-vessel disease with reduced LVEF)\n\n**Reimbursement Note:** Medicaid coverage varies by state. Most states require prior authorization for elective PCI. Some states limit coverage to specific indications. Contact state Medicaid office for current policy.\n\n**Known Payer Policies**\n- [Covered] Medicaid (state-specific): Coverage varies; prior authorization typically required; follow state-specific LCD criteria\n\n### Private\n\n**Required Documentation**\n- Prior authorization required by virtually all commercial payers\n- Objective evidence of ischemia (stress test, FFR, nuclear imaging, stress echo)\n- Diagnostic coronary angiography report with stenosis measurements\n- Documentation of optimal medical therapy trial (typically ≥3 months) unless contraindicated\n- SYNTAX score for multi-vessel or left main disease\n- Heart Team note for complex anatomy\n- Cardiology/interventional cardiology consultation note\n- Peer-to-peer review available if denied\n\n**Medical Necessity Criteria**\n- Coronary stenosis ≥70% (≥50% left main) with objective ischemia\n- Angina CCS Class ≥II or anginal equivalent despite OMT\n- High-risk stress test (large ischemia, LVEF drop, hypotension, ST changes in ≥5 leads)\n- FFR ≤0.80 or iFR ≤0.89 confirming hemodynamic significance\n- SYNTAX score ≤22 for multi-vessel disease (PCI preferred over CABG)\n\n**Reimbursement Note:** Commercial payers frequently deny elective PCI without documented OMT trial. ISCHEMIA trial (2020) showed no mortality benefit of PCI over OMT for stable CAD — document symptom burden and quality-of-life impact. FFR documentation significantly reduces denial rates.\n\n**Known Payer Policies**\n- [Covered] UnitedHealthcare: Requires objective ischemia; FFR documentation reduces denials; SYNTAX score required for LM/3VD\n- [Covered] Aetna: Covers elective PCI with documented ischemia and failed OMT; peer-to-peer available\n- [Covered] Cigna: Requires OMT documentation; FFR/iFR strongly recommended for intermediate lesions\n- [Covered] Anthem/BCBS: Prior auth required; SYNTAX score and Heart Team note for complex anatomy\n- [Covered] Humana: Covers per ACC/AHA appropriateness criteria; may require OMT documentation\n",
+      "tables": [
+        {
+          "name": "CPT Codes — Elective PCI",
+          "header": ["CPT", "Description", "Notes"],
+          "rows": [
+            ["92920", "Percutaneous transluminal coronary angioplasty (PTCA); single major coronary artery or branch", "Balloon angioplasty — single vessel"],
+            ["92921", "PTCA; each additional branch of a major coronary artery", "Additional vessel — add-on code"],
+            ["92928", "Percutaneous transcatheter placement of intracoronary stent(s), with coronary angioplasty when performed; single major coronary artery or branch", "PCI with stent — single vessel (most common)"],
+            ["92929", "PCI with stent; each additional branch of a major coronary artery", "Additional stent — add-on code"],
+            ["92933", "PCI with atherectomy (rotational, orbital, laser) and stent; single major coronary artery or branch", "Complex PCI with atherectomy"],
+            ["92934", "PCI with atherectomy and stent; each additional branch", "Atherectomy — add-on code"],
+            ["92941", "PCI for acute MI; single major coronary artery or branch", "Primary PCI for STEMI — NOT for elective PCI"],
+            ["92943", "PCI for chronic total occlusion; single major coronary artery or branch", "CTO-PCI — requires specific documentation"],
+            ["93454", "Catheter placement in coronary artery(s) for coronary angiography, including intraprocedural injection(s) for coronary angiography", "Diagnostic coronary angiography"],
+            ["93571", "Intravascular Doppler velocity and/or pressure derived coronary flow reserve measurement (FFR)", "FFR/iFR measurement — supports medical necessity"]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["ICD-10", "Description", "Notes"],
+          "rows": [
+            ["I25.10", "Atherosclerotic heart disease of native coronary artery without angina pectoris", "Stable CAD — requires objective ischemia evidence"],
+            ["I25.110", "Atherosclerotic heart disease of native coronary artery with unstable angina pectoris", "Unstable angina — higher urgency"],
+            ["I25.119", "Atherosclerotic heart disease of native coronary artery with unspecified angina pectoris", "Angina — specify CCS class in documentation"],
+            ["I25.5", "Ischemic cardiomyopathy", "Reduced LVEF from CAD"],
+            ["I25.700", "Atherosclerosis of coronary artery bypass graft(s), unspecified, without angina pectoris", "SVG or arterial graft disease"],
+            ["I20.0", "Unstable angina", "ACS spectrum — may not require elective PA"],
+            ["I25.2", "Old myocardial infarction", "Prior MI with residual ischemia"],
+            ["I25.84", "Coronary artery disease in patient with history of repaired congenital heart disease", "Complex anatomy"]
+          ]
+        }
+      ]
+    }
+  }
+}

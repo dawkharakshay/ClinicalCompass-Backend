@@ -1,0 +1,375 @@
+{
+  "title": "Vestibular Schwannoma Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "VestibularSchwaноmaAuthGuide.tsx",
+    "title": "Vestibular Schwannoma Clinical Compass",
+    "subtitle": "SRS, Microsurgery, Observation Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "77371",
+        "description": "Radiation treatment delivery, stereotactic radiosurgery (SRS), complete course of treatment in one session (brain, spinal cord, or body); includes imaging guidance, medical physics planning, and dosimetry.",
+        "device": "Gamma Knife, CyberKnife, Linear Accelerator",
+        "access": "Non-invasive",
+        "rvu": "35.00",
+        "includes": [
+          "Treatment planning, including dose calculations and treatment volume delineation",
+          "Image guidance for patient positioning and treatment delivery",
+          "Medical physics consultation and dosimetry calculations",
+          "Follow-up imaging for treatment verification"
+        ],
+        "note": "Stereotactic radiosurgery is a highly precise form of radiation therapy used to treat small, well-defined tumors or lesions, often in a single session."
+      },
+      {
+        "code": "69950",
+        "description": "Vestibular nerve section, transcranial approach.",
+        "device": "Surgical instruments",
+        "access": "Invasive (craniotomy)",
+        "rvu": "60.00",
+        "includes": [
+          "Craniotomy and exposure of the vestibular nerve",
+          "Identification and sectioning of the vestibular nerve",
+          "Intraoperative monitoring (e.g., facial nerve monitoring)",
+          "Post-operative care related to the surgical approach"
+        ],
+        "note": "This is an invasive surgical procedure typically reserved for severe, intractable vertigo or Meniere's disease when other treatments have failed."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "D33.3",
+        "description": "Benign neoplasm of cranial nerves",
+        "notes": "Primary diagnosis for vestibular schwannoma (acoustic neuroma).",
+        "required": true
+      },
+      {
+        "code": "C79.31",
+        "description": "Secondary malignant neoplasm of brain",
+        "notes": "Consider if there is suspicion of metastatic disease to the cranial nerves, though less common for primary vestibular schwannoma. This is for illustrative purposes and typically not used for benign schwannomas.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with Medical Necessity",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Medicare generally does not require prior authorization for medically necessary services, but strict medical necessity criteria must be met. Documentation is key.",
+        "overview": "Medicare covers treatment for vestibular schwannoma, including SRS and microsurgery, when deemed medically necessary based on clinical guidelines. Observation may also be covered.",
+        "reimbursementNote": "Reimbursement for vestibular schwannoma treatment is generally good for medically necessary services, but adherence to documentation standards is critical to avoid denials. Appeals processes are available for denied claims.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Stereotactic Radiosurgery (SRS)",
+            "items": [
+              "Diagnosis of vestibular schwannoma confirmed by imaging (MRI with contrast).",
+              "Tumor size typically less than 3 cm in greatest dimension. (Specific size criteria may vary by MAC/LCD).",
+              "Patient is not a candidate for or declines microsurgical resection. (e.g., advanced age, comorbidities).",
+              "Progressive growth of tumor or symptomatic presentation (e.g., hearing loss, vertigo, facial numbness)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Microsurgical Resection",
+            "items": [
+              "Diagnosis of vestibular schwannoma confirmed by imaging. (MRI with contrast).",
+              "Tumor size greater than 3 cm or causing significant brainstem compression. (Specific size criteria may vary).",
+              "Progressive neurological deficits or intractable symptoms despite conservative management. (e.g., severe hearing loss, facial paralysis, hydrocephalus).",
+              "Patient is a suitable surgical candidate. (e.g., good performance status, acceptable anesthetic risk)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Observation (Watch and Wait)",
+            "items": [
+              "Small, asymptomatic tumors with no evidence of growth on serial imaging. (e.g., annual MRI).",
+              "Patient preference after thorough discussion of risks and benefits of all treatment options. (Shared decision-making).",
+              "Advanced age or significant comorbidities precluding active intervention. (e.g., life expectancy limited)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Notes",
+            "items": [
+              "Detailed history and physical examination, including neurological assessment. (e.g., cranial nerve function).",
+              "Audiometry results (e.g., pure tone audiogram, speech discrimination).",
+              "Vestibular function tests (e.g., VNG, VEMPs) if performed. (To document severity of symptoms).",
+              "Consultation notes from neurosurgeon, otolaryngologist, radiation oncologist. (Multidisciplinary evaluation)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Imaging Reports",
+            "items": [
+              "MRI brain with and without contrast, demonstrating the vestibular schwannoma, including size and location. (Most recent and prior studies for comparison).",
+              "CT scan if MRI is contraindicated or for surgical planning. (e.g., bony anatomy)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Other",
+            "items": [
+              "Pathology report if prior biopsy performed. (To confirm diagnosis).",
+              "Documentation of shared decision-making with the patient regarding treatment options. (Patient consent)."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims with appropriate CPT and ICD-10 codes. (Ensure correct modifiers if applicable).",
+              "Ensure all supporting documentation is readily available for review upon request. (Medical records, imaging reports).",
+              "Follow specific Medicare Administrative Contractor (MAC) Local Coverage Determinations (LCDs) for detailed requirements. (Check your regional MAC website)."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity for the chosen treatment. (e.g., asymptomatic tumor treated with SRS without documented growth).",
+              "Insufficient documentation to support the diagnosis or severity of symptoms. (e.g., missing audiometry).",
+              "Treatment deemed experimental or investigational (rare for established treatments like SRS/microsurgery).",
+              "Incorrect coding or billing practices. (e.g., unbundling services)."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Thoroughly document all clinical findings, diagnostic test results, and the rationale for the chosen treatment plan. (Especially for observation).",
+              "Clearly state the patient's symptoms and how the vestibular schwannoma impacts their quality of life. (Functional impairment).",
+              "If observation is chosen, document the discussion with the patient about the risks and benefits of delaying active treatment. (Patient education).",
+              "Stay updated on relevant Medicare LCDs and National Coverage Determinations (NCDs) for specific guidelines. (Regularly review payer policies)."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS (Medicare)",
+            "status": "Covered",
+            "notes": "Coverage based on medical necessity and established clinical guidelines. Refer to MAC LCDs."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Requires Prior Authorization",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid programs often require prior authorization for high-cost procedures like SRS and microsurgery. Criteria can vary significantly by state.",
+        "overview": "Medicaid covers medically necessary treatment for vestibular schwannoma, but coverage criteria and prior authorization processes are state-specific and can be stringent.",
+        "reimbursementNote": "Medicaid reimbursement rates can be lower than Medicare or private insurance. Prior authorization is mandatory, and denials are frequent, requiring diligent follow-up and appeals.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Requirements",
+            "items": [
+              "Diagnosis of vestibular schwannoma confirmed by imaging. (MRI with contrast).",
+              "Documented symptoms or tumor growth necessitating intervention. (e.g., progressive hearing loss, balance issues).",
+              "Failure of conservative management, if applicable. (e.g., observation for small tumors).",
+              "Patient is a resident of the state and meets all Medicaid eligibility requirements."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Specific to SRS/Microsurgery",
+            "items": [
+              "Detailed clinical justification for the chosen modality over alternatives. (e.g., why SRS over observation, or surgery over SRS).",
+              "Multidisciplinary team evaluation and recommendation. (Often required for complex cases).",
+              "Consideration of patient's overall health status and prognosis. (Risk-benefit analysis)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "All clinical notes, including history, physical, and neurological exams. (Comprehensive assessment).",
+              "Diagnostic imaging reports (MRI) with measurements and comparison to previous studies. (Proof of growth/size).",
+              "Audiology and vestibular testing results. (Objective measures of impairment).",
+              "Consultation reports from specialists (neurosurgeon, radiation oncologist, ENT). (Expert opinions)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization Forms",
+            "items": [
+              "Completed state-specific Medicaid prior authorization forms. (Accurate and complete).",
+              "Letter of medical necessity from the treating physician. (Strong justification)."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Obtain prior authorization BEFORE performing any non-emergent procedure. (Crucial for reimbursement).",
+              "Submit all required documentation with the prior authorization request. (Incomplete requests will be denied).",
+              "Follow up on authorization status regularly. (Proactive management).",
+              "Submit claims with the approved authorization number. (Ensure it's correctly linked)."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization or denial of authorization. (Most common reason).",
+              "Failure to meet state-specific medical necessity criteria. (Varies widely).",
+              "Incomplete or insufficient documentation to support the request. (Missing key reports).",
+              "Treatment considered experimental or not covered by the specific state's Medicaid plan. (Rare for these procedures but possible)."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify state-specific Medicaid policies and prior authorization requirements well in advance. (Policies change frequently).",
+              "Provide comprehensive and clear documentation, addressing all criteria outlined in the state's policy. (Leave no room for doubt).",
+              "Highlight the impact of the condition on the patient's functional status and quality of life. (Demonstrate need).",
+              "Be prepared for potential appeals, as Medicaid denials are common. (Have a robust appeals process)."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (e.g., California Medi-Cal)",
+            "status": "Covered with PA",
+            "notes": "Requires prior authorization and adherence to state-specific medical necessity guidelines."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Requires Prior Authorization",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for both SRS and microsurgical resection of vestibular schwannomas due to their high cost and complexity.",
+        "overview": "Private insurance coverage for vestibular schwannoma treatment is generally available, but it is subject to plan-specific medical necessity criteria, deductibles, co-pays, and prior authorization requirements.",
+        "reimbursementNote": "Private insurance reimbursement varies by plan and network status. High deductibles and co-insurance are common. Prior authorization is almost always required, and appeals are a standard part of the process.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Medical Necessity",
+            "items": [
+              "Diagnosis of vestibular schwannoma confirmed by MRI with contrast. (Clear imaging evidence).",
+              "Documented progressive tumor growth or significant, debilitating symptoms. (e.g., severe vertigo, hearing loss, facial nerve dysfunction).",
+              "Consideration of less invasive or conservative treatments, if appropriate, and rationale for proceeding with SRS or surgery. (Step therapy or clinical pathway adherence).",
+              "Patient's overall health status supports the proposed treatment. (Acceptable risk profile)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Specific to Treatment Modality",
+            "items": [
+              "For SRS: Tumor size typically < 3 cm, suitable for single-fraction or hypofractionated radiation. (Specific size limits vary by plan).",
+              "For Microsurgery: Larger tumors, brainstem compression, or failure of SRS/observation. (Justification for invasive approach)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Records",
+            "items": [
+              "Comprehensive physician's notes, including history, physical, and neurological examinations. (Detailed clinical picture).",
+              "All relevant diagnostic test results, including MRI reports (with measurements and comparison to prior studies), audiograms, and vestibular tests. (Objective evidence).",
+              "Consultation reports from all involved specialists (neurosurgeon, radiation oncologist, ENT). (Multidisciplinary input).",
+              "Letter of medical necessity from the referring or treating physician, outlining the diagnosis, symptoms, previous treatments, and rationale for the requested procedure. (Strong advocacy)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Insurance Forms",
+            "items": [
+              "Completed prior authorization request forms specific to the insurance carrier. (Accurate and timely submission)."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Initiate prior authorization request as early as possible. (Allow ample processing time).",
+              "Submit all required clinical documentation and authorization forms. (Ensure completeness).",
+              "Follow up with the insurance company regularly to check the status of the request. (Proactive engagement).",
+              "Obtain a written authorization approval before scheduling the procedure. (Avoid financial risk).",
+              "Be prepared to provide additional information or participate in peer-to-peer reviews. (Justify medical necessity)."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization. (Automatic denial).",
+              "Failure to meet the plan's specific medical necessity criteria. (Often due to insufficient documentation).",
+              "Treatment deemed experimental or investigational (less common for these established procedures, but check policy language).",
+              "Insufficient documentation to support the severity of symptoms or tumor progression. (Need clear evidence).",
+              "Disagreement on the most appropriate treatment modality (e.g., insurer prefers observation over active treatment for small, stable tumors)."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Thoroughly review the patient's specific insurance policy for coverage details, exclusions, and prior authorization requirements. (Each plan is unique).",
+              "Maintain meticulous and comprehensive medical records that clearly justify the medical necessity of the chosen treatment. (Strong evidence).",
+              "Engage in peer-to-peer reviews when a denial occurs, providing additional clinical context and answering questions directly. (Often successful).",
+              "Document all communications with the insurance company, including dates, times, and names of representatives. (For appeals)."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Covered with PA",
+            "notes": "Requires prior authorization; medical necessity criteria apply. Policies vary by state and specific plan."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered with PA",
+            "notes": "Prior authorization required; specific clinical guidelines must be met. May require peer-to-peer review."
+          },
+          {
+            "payer": "Aetna",
+            "status": "Covered with PA",
+            "notes": "Requires prior authorization; medical necessity based on Aetna Clinical Policy Bulletins."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Navigation",
+        "kind": "link",
+        "text": "Back to Assessment (links to /vestibularschwannoma)",
+        "href": "/vestibularschwannoma"
+      },
+      {
+        "heading": "CPT Codes Card Note",
+        "kind": "prose",
+        "text": "Procedure Codes card. For each CPT code, the \"Included in this code (do NOT bill separately):\" list enumerates services bundled into the code. Each CPT displays a Badge \"CPT <code>\" and a Badge \"RVU <rvu>\", description, Device/Access line, included items, and an italic note."
+      },
+      {
+        "heading": "ICD-10 Codes Card Note",
+        "kind": "prose",
+        "text": "ICD-10 Diagnosis Codes card. Required codes are styled green and flagged with a \"Primary\" badge; non-required codes are styled grey."
+      }
+    ],
+    "raw": {
+      "markdown": "# Vestibular Schwannoma Clinical Compass\n## SRS, Microsurgery, Observation Insurance Authorization Guide\n\n[Button] Back to Assessment (navigates to /vestibularschwannoma)\n\n---\n\n## Procedure Codes (CPT Codes)\n\n### CPT 77371 — RVU 35.00\nRadiation treatment delivery, stereotactic radiosurgery (SRS), complete course of treatment in one session (brain, spinal cord, or body); includes imaging guidance, medical physics planning, and dosimetry.\n\n**Device/Access:** Gamma Knife, CyberKnife, Linear Accelerator (Non-invasive)\n\n**Included in this code (do NOT bill separately):**\n- Treatment planning, including dose calculations and treatment volume delineation\n- Image guidance for patient positioning and treatment delivery\n- Medical physics consultation and dosimetry calculations\n- Follow-up imaging for treatment verification\n\n*Note:* Stereotactic radiosurgery is a highly precise form of radiation therapy used to treat small, well-defined tumors or lesions, often in a single session.\n\n### CPT 69950 — RVU 60.00\nVestibular nerve section, transcranial approach.\n\n**Device/Access:** Surgical instruments (Invasive (craniotomy))\n\n**Included in this code (do NOT bill separately):**\n- Craniotomy and exposure of the vestibular nerve\n- Identification and sectioning of the vestibular nerve\n- Intraoperative monitoring (e.g., facial nerve monitoring)\n- Post-operative care related to the surgical approach\n\n*Note:* This is an invasive surgical procedure typically reserved for severe, intractable vertigo or Meniere's disease when other treatments have failed.\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **D33.3** (Primary) — Benign neoplasm of cranial nerves. Primary diagnosis for vestibular schwannoma (acoustic neuroma).\n- **C79.31** — Secondary malignant neoplasm of brain. Consider if there is suspicion of metastatic disease to the cranial nerves, though less common for primary vestibular schwannoma. This is for illustrative purposes and typically not used for benign schwannomas.\n\n---\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\n\nBadges: No Prior Auth (FFS) | Covered with Medical Necessity\n\n**Prior Auth Note:** Medicare generally does not require prior authorization for medically necessary services, but strict medical necessity criteria must be met. Documentation is key.\n\n**Overview:** Medicare covers treatment for vestibular schwannoma, including SRS and microsurgery, when deemed medically necessary based on clinical guidelines. Observation may also be covered.\n\n**Coverage Criteria**\n\n*Stereotactic Radiosurgery (SRS)*\n- Diagnosis of vestibular schwannoma confirmed by imaging (MRI with contrast).\n- Tumor size typically less than 3 cm in greatest dimension. (Specific size criteria may vary by MAC/LCD).\n- Patient is not a candidate for or declines microsurgical resection. (e.g., advanced age, comorbidities).\n- Progressive growth of tumor or symptomatic presentation (e.g., hearing loss, vertigo, facial numbness).\n\n*Microsurgical Resection*\n- Diagnosis of vestibular schwannoma confirmed by imaging. (MRI with contrast).\n- Tumor size greater than 3 cm or causing significant brainstem compression. (Specific size criteria may vary).\n- Progressive neurological deficits or intractable symptoms despite conservative management. (e.g., severe hearing loss, facial paralysis, hydrocephalus).\n- Patient is a suitable surgical candidate. (e.g., good performance status, acceptable anesthetic risk).\n\n*Observation (Watch and Wait)*\n- Small, asymptomatic tumors with no evidence of growth on serial imaging. (e.g., annual MRI).\n- Patient preference after thorough discussion of risks and benefits of all treatment options. (Shared decision-making).\n- Advanced age or significant comorbidities precluding active intervention. (e.g., life expectancy limited).\n\n**Required Documentation**\n\n*Clinical Notes*\n- Detailed history and physical examination, including neurological assessment. (e.g., cranial nerve function).\n- Audiometry results (e.g., pure tone audiogram, speech discrimination).\n- Vestibular function tests (e.g., VNG, VEMPs) if performed. (To document severity of symptoms).\n- Consultation notes from neurosurgeon, otolaryngologist, radiation oncologist. (Multidisciplinary evaluation).\n\n*Imaging Reports*\n- MRI brain with and without contrast, demonstrating the vestibular schwannoma, including size and location. (Most recent and prior studies for comparison).\n- CT scan if MRI is contraindicated or for surgical planning. (e.g., bony anatomy).\n\n*Other*\n- Pathology report if prior biopsy performed. (To confirm diagnosis).\n- Documentation of shared decision-making with the patient regarding treatment options. (Patient consent).\n\n**Submission Process**\n1. Submit claims with appropriate CPT and ICD-10 codes. (Ensure correct modifiers if applicable).\n2. Ensure all supporting documentation is readily available for review upon request. (Medical records, imaging reports).\n3. Follow specific Medicare Administrative Contractor (MAC) Local Coverage Determinations (LCDs) for detailed requirements. (Check your regional MAC website).\n\n**Common Denial Reasons**\n- Lack of documented medical necessity for the chosen treatment. (e.g., asymptomatic tumor treated with SRS without documented growth).\n- Insufficient documentation to support the diagnosis or severity of symptoms. (e.g., missing audiometry).\n- Treatment deemed experimental or investigational (rare for established treatments like SRS/microsurgery).\n- Incorrect coding or billing practices. (e.g., unbundling services).\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS (Medicare) | Covered | Coverage based on medical necessity and established clinical guidelines. Refer to MAC LCDs. |\n\n**Reimbursement Note:** Reimbursement for vestibular schwannoma treatment is generally good for medically necessary services, but adherence to documentation standards is critical to avoid denials. Appeals processes are available for denied claims.\n\n**Authorization Tips**\n- Thoroughly document all clinical findings, diagnostic test results, and the rationale for the chosen treatment plan. (Especially for observation).\n- Clearly state the patient's symptoms and how the vestibular schwannoma impacts their quality of life. (Functional impairment).\n- If observation is chosen, document the discussion with the patient about the risks and benefits of delaying active treatment. (Patient education).\n- Stay updated on relevant Medicare LCDs and National Coverage Determinations (NCDs) for specific guidelines. (Regularly review payer policies).\n\n### Medicaid\n\nBadges: Prior Auth Required | Requires Prior Authorization\n\n**Prior Auth Note:** Medicaid programs often require prior authorization for high-cost procedures like SRS and microsurgery. Criteria can vary significantly by state.\n\n**Overview:** Medicaid covers medically necessary treatment for vestibular schwannoma, but coverage criteria and prior authorization processes are state-specific and can be stringent.\n\n**Coverage Criteria**\n\n*General Requirements*\n- Diagnosis of vestibular schwannoma confirmed by imaging. (MRI with contrast).\n- Documented symptoms or tumor growth necessitating intervention. (e.g., progressive hearing loss, balance issues).\n- Failure of conservative management, if applicable. (e.g., observation for small tumors).\n- Patient is a resident of the state and meets all Medicaid eligibility requirements.\n\n*Specific to SRS/Microsurgery*\n- Detailed clinical justification for the chosen modality over alternatives. (e.g., why SRS over observation, or surgery over SRS).\n- Multidisciplinary team evaluation and recommendation. (Often required for complex cases).\n- Consideration of patient's overall health status and prognosis. (Risk-benefit analysis).\n\n**Required Documentation**\n\n*Clinical Documentation*\n- All clinical notes, including history, physical, and neurological exams. (Comprehensive assessment).\n- Diagnostic imaging reports (MRI) with measurements and comparison to previous studies. (Proof of growth/size).\n- Audiology and vestibular testing results. (Objective measures of impairment).\n- Consultation reports from specialists (neurosurgeon, radiation oncologist, ENT). (Expert opinions).\n\n*Prior Authorization Forms*\n- Completed state-specific Medicaid prior authorization forms. (Accurate and complete).\n- Letter of medical necessity from the treating physician. (Strong justification).\n\n**Submission Process**\n1. Obtain prior authorization BEFORE performing any non-emergent procedure. (Crucial for reimbursement).\n2. Submit all required documentation with the prior authorization request. (Incomplete requests will be denied).\n3. Follow up on authorization status regularly. (Proactive management).\n4. Submit claims with the approved authorization number. (Ensure it's correctly linked).\n\n**Common Denial Reasons**\n- Lack of prior authorization or denial of authorization. (Most common reason).\n- Failure to meet state-specific medical necessity criteria. (Varies widely).\n- Incomplete or insufficient documentation to support the request. (Missing key reports).\n- Treatment considered experimental or not covered by the specific state's Medicaid plan. (Rare for these procedures but possible).\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (e.g., California Medi-Cal) | Covered with PA | Requires prior authorization and adherence to state-specific medical necessity guidelines. |\n\n**Reimbursement Note:** Medicaid reimbursement rates can be lower than Medicare or private insurance. Prior authorization is mandatory, and denials are frequent, requiring diligent follow-up and appeals.\n\n**Authorization Tips**\n- Verify state-specific Medicaid policies and prior authorization requirements well in advance. (Policies change frequently).\n- Provide comprehensive and clear documentation, addressing all criteria outlined in the state's policy. (Leave no room for doubt).\n- Highlight the impact of the condition on the patient's functional status and quality of life. (Demonstrate need).\n- Be prepared for potential appeals, as Medicaid denials are common. (Have a robust appeals process).\n\n### Private Insurance\n\nBadges: Prior Auth Required | Requires Prior Authorization\n\n**Prior Auth Note:** Most private insurance plans require prior authorization for both SRS and microsurgical resection of vestibular schwannomas due to their high cost and complexity.\n\n**Overview:** Private insurance coverage for vestibular schwannoma treatment is generally available, but it is subject to plan-specific medical necessity criteria, deductibles, co-pays, and prior authorization requirements.\n\n**Coverage Criteria**\n\n*General Medical Necessity*\n- Diagnosis of vestibular schwannoma confirmed by MRI with contrast. (Clear imaging evidence).\n- Documented progressive tumor growth or significant, debilitating symptoms. (e.g., severe vertigo, hearing loss, facial nerve dysfunction).\n- Consideration of less invasive or conservative treatments, if appropriate, and rationale for proceeding with SRS or surgery. (Step therapy or clinical pathway adherence).\n- Patient's overall health status supports the proposed treatment. (Acceptable risk profile).\n\n*Specific to Treatment Modality*\n- For SRS: Tumor size typically < 3 cm, suitable for single-fraction or hypofractionated radiation. (Specific size limits vary by plan).\n- For Microsurgery: Larger tumors, brainstem compression, or failure of SRS/observation. (Justification for invasive approach).\n\n**Required Documentation**\n\n*Clinical Records*\n- Comprehensive physician's notes, including history, physical, and neurological examinations. (Detailed clinical picture).\n- All relevant diagnostic test results, including MRI reports (with measurements and comparison to prior studies), audiograms, and vestibular tests. (Objective evidence).\n- Consultation reports from all involved specialists (neurosurgeon, radiation oncologist, ENT). (Multidisciplinary input).\n- Letter of medical necessity from the referring or treating physician, outlining the diagnosis, symptoms, previous treatments, and rationale for the requested procedure. (Strong advocacy).\n\n*Insurance Forms*\n- Completed prior authorization request forms specific to the insurance carrier. (Accurate and timely submission).\n\n**Submission Process**\n1. Initiate prior authorization request as early as possible. (Allow ample processing time).\n2. Submit all required clinical documentation and authorization forms. (Ensure completeness).\n3. Follow up with the insurance company regularly to check the status of the request. (Proactive engagement).\n4. Obtain a written authorization approval before scheduling the procedure. (Avoid financial risk).\n5. Be prepared to provide additional information or participate in peer-to-peer reviews. (Justify medical necessity).\n\n**Common Denial Reasons**\n- Lack of prior authorization. (Automatic denial).\n- Failure to meet the plan's specific medical necessity criteria. (Often due to insufficient documentation).\n- Treatment deemed experimental or investigational (less common for these established procedures, but check policy language).\n- Insufficient documentation to support the severity of symptoms or tumor progression. (Need clear evidence).\n- Disagreement on the most appropriate treatment modality (e.g., insurer prefers observation over active treatment for small, stable tumors).\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Blue Cross Blue Shield | Covered with PA | Requires prior authorization; medical necessity criteria apply. Policies vary by state and specific plan. |\n| UnitedHealthcare | Covered with PA | Prior authorization required; specific clinical guidelines must be met. May require peer-to-peer review. |\n| Aetna | Covered with PA | Requires prior authorization; medical necessity based on Aetna Clinical Policy Bulletins. |\n\n**Reimbursement Note:** Private insurance reimbursement varies by plan and network status. High deductibles and co-insurance are common. Prior authorization is almost always required, and appeals are a standard part of the process.\n\n**Authorization Tips**\n- Thoroughly review the patient's specific insurance policy for coverage details, exclusions, and prior authorization requirements. (Each plan is unique).\n- Maintain meticulous and comprehensive medical records that clearly justify the medical necessity of the chosen treatment. (Strong evidence).\n- Engage in peer-to-peer reviews when a denial occurs, providing additional clinical context and answering questions directly. (Often successful).\n- Document all communications with the insurance company, including dates, times, and names of representatives. (For appeals).\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "Description", "Device", "Access", "RVU"],
+          "rows": [
+            ["77371", "Radiation treatment delivery, stereotactic radiosurgery (SRS), complete course of treatment in one session (brain, spinal cord, or body); includes imaging guidance, medical physics planning, and dosimetry.", "Gamma Knife, CyberKnife, Linear Accelerator", "Non-invasive", "35.00"],
+            ["69950", "Vestibular nerve section, transcranial approach.", "Surgical instruments", "Invasive (craniotomy)", "60.00"]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["Code", "Description", "Notes", "Required"],
+          "rows": [
+            ["D33.3", "Benign neoplasm of cranial nerves", "Primary diagnosis for vestibular schwannoma (acoustic neuroma).", "true"],
+            ["C79.31", "Secondary malignant neoplasm of brain", "Consider if there is suspicion of metastatic disease to the cranial nerves, though less common for primary vestibular schwannoma. This is for illustrative purposes and typically not used for benign schwannomas.", "false"]
+          ]
+        },
+        {
+          "name": "Medicare Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS (Medicare)", "Covered", "Coverage based on medical necessity and established clinical guidelines. Refer to MAC LCDs."]
+          ]
+        },
+        {
+          "name": "Medicaid Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., California Medi-Cal)", "Covered with PA", "Requires prior authorization and adherence to state-specific medical necessity guidelines."]
+          ]
+        },
+        {
+          "name": "Private Insurance Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield", "Covered with PA", "Requires prior authorization; medical necessity criteria apply. Policies vary by state and specific plan."],
+            ["UnitedHealthcare", "Covered with PA", "Prior authorization required; specific clinical guidelines must be met. May require peer-to-peer review."],
+            ["Aetna", "Covered with PA", "Requires prior authorization; medical necessity based on Aetna Clinical Policy Bulletins."]
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,249 @@
+{
+  "title": "Acne Vulgaris Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "acne",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "severity",
+        "shortLabel": "Severity",
+        "title": "Acne Severity & Morphology",
+        "fields": [
+          {
+            "id": "pga-score",
+            "name": "pgaScore",
+            "label": "PGA Score (Physician Global Assessment)",
+            "type": "select",
+            "required": false,
+            "defaultValue": 2,
+            "options": [
+              { "label": "0 — Clear", "value": 0 },
+              { "label": "1 — Almost Clear", "value": 1 },
+              { "label": "2 — Mild", "value": 2 },
+              { "label": "3 — Moderate", "value": 3 },
+              { "label": "4 — Severe", "value": 4 },
+              { "label": "5 — Very Severe", "value": 5 }
+            ]
+          },
+          {
+            "id": "acne-type",
+            "name": "acneType",
+            "label": "Predominant Acne Type",
+            "type": "select",
+            "required": false,
+            "defaultValue": "papulopustular",
+            "options": [
+              { "label": "Comedonal (blackheads/whiteheads)", "value": "comedonal" },
+              { "label": "Papulopustular (papules/pustules)", "value": "papulopustular" },
+              { "label": "Nodulocystic (nodules/cysts)", "value": "nodulocystic" },
+              { "label": "Mixed morphology", "value": "mixed" }
+            ]
+          },
+          {
+            "id": "has-scarring",
+            "name": "hasScarring",
+            "label": "Active scarring or post-inflammatory hyperpigmentation",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-psychosocial-burden",
+            "name": "hasPsychosocialBurden",
+            "label": "Significant psychosocial burden / quality of life impact",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-trunk-involvement",
+            "name": "hasTrunkInvolvement",
+            "label": "Trunk involvement (chest, back, shoulders)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-nodules-cysts",
+            "name": "hasNodulesCysts",
+            "label": "Nodules or cysts present (≥5mm)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "demographics",
+        "shortLabel": "Demographics",
+        "title": "Patient Demographics",
+        "fields": [
+          {
+            "id": "patient-sex",
+            "name": "patientSex",
+            "label": "Patient Sex",
+            "type": "select",
+            "required": false,
+            "defaultValue": "male",
+            "options": [
+              { "label": "Male", "value": "male" },
+              { "label": "Female", "value": "female" },
+              { "label": "Other / Prefer not to say", "value": "other" }
+            ]
+          },
+          {
+            "id": "age-years",
+            "name": "ageYears",
+            "label": "Age (years)",
+            "type": "select",
+            "required": false,
+            "defaultValue": 0,
+            "options": [
+              { "label": "13–17 (Adolescent)", "value": 13 },
+              { "label": "18–35 (Young Adult)", "value": 25 },
+              { "label": "36–50 (Adult)", "value": 40 },
+              { "label": "51+ (Older Adult)", "value": 55 }
+            ]
+          },
+          {
+            "id": "has-pcos",
+            "name": "hasPCOS",
+            "label": "Polycystic ovary syndrome (PCOS) diagnosed",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "patientSex", "op": "in", "value": ["female", "other"] }
+          },
+          {
+            "id": "is-pregnant",
+            "name": "isPregnant",
+            "label": "Currently pregnant",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "patientSex", "op": "in", "value": ["female", "other"] }
+          },
+          {
+            "id": "is-breastfeeding",
+            "name": "isBreastfeeding",
+            "label": "Currently breastfeeding",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "patientSex", "op": "in", "value": ["female", "other"] }
+          },
+          {
+            "id": "desire-contraception",
+            "name": "desireContraception",
+            "label": "Desires contraception (opens hormonal therapy options)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "patientSex", "op": "in", "value": ["female", "other"] }
+          }
+        ]
+      },
+      {
+        "id": "history",
+        "shortLabel": "History",
+        "title": "Prior Treatment History",
+        "fields": [
+          {
+            "id": "prior-treatment",
+            "name": "priorTreatment",
+            "label": "Prior Treatment History",
+            "type": "select",
+            "required": false,
+            "defaultValue": "none",
+            "options": [
+              { "label": "No prior treatment", "value": "none" },
+              { "label": "Failed topicals only (BP, retinoids, antibiotics)", "value": "topicals_only" },
+              { "label": "Failed topicals + oral antibiotics", "value": "topicals_and_oral_antibiotics" },
+              { "label": "Prior isotretinoin course", "value": "prior_isotretinoin" }
+            ]
+          },
+          {
+            "id": "prior-antibiotic-months",
+            "name": "priorAntibioticMonths",
+            "label": "Total months of prior oral antibiotic use",
+            "type": "select",
+            "required": false,
+            "defaultValue": 0,
+            "options": [
+              { "label": "None", "value": 0 },
+              { "label": "1–3 months", "value": 2 },
+              { "label": "4–6 months", "value": 5 },
+              { "label": "7–12 months", "value": 9 },
+              { "label": "More than 12 months", "value": 18 }
+            ]
+          },
+          {
+            "id": "antibiotic-stewardship-alert",
+            "label": "Antibiotic duration warning",
+            "type": "alert",
+            "severity": "warning",
+            "text": "AAD 2024: Limit oral antibiotics to ≤3 months; transition to non-antibiotic maintenance",
+            "visibleWhen": { "field": "priorAntibioticMonths", "op": "gte", "value": 3 }
+          },
+          {
+            "id": "has-drug-induced-acne",
+            "name": "hasDrugInducedAcne",
+            "label": "Drug-induced acne suspected (steroids, lithium, anticonvulsants, anabolic steroids)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "comorbidities",
+        "shortLabel": "Comorbidities",
+        "title": "Comorbidities & Safety Profile",
+        "fields": [
+          {
+            "id": "comorbidities-note",
+            "label": "These conditions affect isotretinoin eligibility and monitoring requirements.",
+            "type": "alert",
+            "severity": "info",
+            "text": "These conditions affect isotretinoin eligibility and monitoring requirements."
+          },
+          {
+            "id": "has-hyperlipidemia",
+            "name": "hasHyperlipidemia",
+            "label": "Hyperlipidemia (isotretinoin monitoring — triglycerides)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-liver-disease",
+            "name": "hasLiverDisease",
+            "label": "Hepatic impairment (isotretinoin / minocycline caution)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-inflammatory-bowel-disease",
+            "name": "hasInflammatoryBowelDisease",
+            "label": "Inflammatory bowel disease (no proven isotretinoin link per AAD 2024, but document)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-hyperkalemia-risk",
+            "name": "hasHyperkalemiaRisk",
+            "label": "Hyperkalemia risk (spironolactone monitoring — renal disease, ACE inhibitor use)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

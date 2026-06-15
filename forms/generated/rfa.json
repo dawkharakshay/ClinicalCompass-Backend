@@ -1,0 +1,161 @@
+{
+  "title": "Radiofrequency Ablation Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assess",
+    "logicKey": "rfa",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "patient-information",
+        "shortLabel": "Patient",
+        "title": "Patient Information",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "pain-score",
+            "name": "painScore",
+            "label": "Pain Score (0-10)",
+            "type": "number",
+            "required": true,
+            "defaultValue": "",
+            "min": 0,
+            "max": 10,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "spine-region",
+            "name": "spineRegion",
+            "label": "Spine Region",
+            "type": "buttongroup",
+            "required": true,
+            "defaultValue": "",
+            "options": [
+              { "label": "Lumbar", "value": "lumbar" },
+              { "label": "Cervical", "value": "cervical" },
+              { "label": "Thoracic", "value": "thoracic" },
+              { "label": "Sacroiliac Joint", "value": "sacroiliac" }
+            ]
+          },
+          {
+            "id": "active-infection",
+            "name": "activeInfection",
+            "label": "Active local or systemic infection",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "coagulopathy",
+            "name": "coagulopathy",
+            "label": "Coagulopathy / anticoagulation (not bridged)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "allergy",
+            "name": "allergy",
+            "label": "Allergy to local anesthetic or contrast",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "pacemaker",
+            "name": "pacemaker",
+            "label": "Pacemaker / implanted cardiac device (relative)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "pregnancy",
+            "name": "pregnancy",
+            "label": "Pregnancy",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "clinical-assessment",
+        "shortLabel": "Clinical",
+        "title": "Clinical Assessment",
+        "fields": [
+          {
+            "id": "symptom-duration-months",
+            "name": "symptomDurationMonths",
+            "label": "Symptom Duration (months)",
+            "type": "number",
+            "required": true,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "symptoms",
+            "name": "symptoms",
+            "label": "Symptoms",
+            "type": "multiselect",
+            "required": false,
+            "defaultValue": [],
+            "options": [
+              { "label": "Axial spine pain (not predominantly radicular)", "value": "axial-pain" },
+              { "label": "Pain worse with extension / rotation", "value": "pain-extension" },
+              { "label": "Referred pain (buttock, groin, or posterior thigh)", "value": "referred-pain" },
+              { "label": "Chronic pain (>3 months duration)", "value": "chronic-pain" },
+              { "label": "Functional impairment affecting daily activities", "value": "functional-impairment" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "diagnostic-block-results",
+        "shortLabel": "Blocks",
+        "title": "Diagnostic Block Results",
+        "fields": [
+          {
+            "id": "rfa-prerequisite-alert",
+            "type": "alert",
+            "severity": "info",
+            "text": "RFA Prerequisite: Two Positive Diagnostic Blocks. Most payers require ≥80% pain relief from two separate medial branch blocks (or one block with ≥80% relief for some payers). Enter the percentage relief achieved from each block."
+          },
+          {
+            "id": "diagnostic-block-1-relief",
+            "name": "diagnosticBlock1Relief",
+            "label": "Diagnostic Block 1 — % Pain Relief",
+            "type": "number",
+            "required": false,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "diagnostic-block-2-relief",
+            "name": "diagnosticBlock2Relief",
+            "label": "Diagnostic Block 2 — % Pain Relief",
+            "type": "number",
+            "required": false,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "frequency-limits-alert",
+            "type": "alert",
+            "severity": "warning",
+            "text": "Frequency Limits: RFA is typically limited to 2 procedures per region per year. Repeat RFA requires documentation of prior successful response (≥50% relief for ≥6 months)."
+          }
+        ]
+      }
+    ]
+  }
+}

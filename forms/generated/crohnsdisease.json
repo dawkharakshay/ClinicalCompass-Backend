@@ -1,0 +1,264 @@
+{
+  "title": "Crohn's Disease Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "crohnsdisease",
+    "hiddenDefaults": {
+      "hasPenetrating": false,
+      "cdaiScore": 0,
+      "hasExtensiveDisease": false
+    },
+    "steps": [
+      {
+        "id": "disease-characteristics",
+        "shortLabel": "Disease Characteristics",
+        "title": "Disease Characteristics",
+        "fields": [
+          {
+            "id": "location",
+            "name": "location",
+            "label": "Disease Location (Montreal)",
+            "type": "select",
+            "defaultValue": "ileocolonic",
+            "options": [
+              { "label": "L1 — Ileal", "value": "ileal" },
+              { "label": "L2 — Colonic", "value": "colonic" },
+              { "label": "L3 — Ileocolonic", "value": "ileocolonic" },
+              { "label": "L4 — Upper GI", "value": "upper_gi" }
+            ]
+          },
+          {
+            "id": "pattern",
+            "name": "pattern",
+            "label": "Disease Pattern (Montreal)",
+            "type": "select",
+            "defaultValue": "inflammatory",
+            "options": [
+              { "label": "B1 — Inflammatory", "value": "inflammatory" },
+              { "label": "B2 — Stricturing", "value": "stricturing" },
+              { "label": "B3 — Penetrating", "value": "penetrating" }
+            ]
+          },
+          {
+            "id": "severity",
+            "name": "severity",
+            "label": "Disease Severity",
+            "type": "select",
+            "defaultValue": "moderate",
+            "options": [
+              { "label": "Mild", "value": "mild" },
+              { "label": "Moderate", "value": "moderate" },
+              { "label": "Severe", "value": "severe" },
+              { "label": "Remission", "value": "remission" }
+            ]
+          },
+          {
+            "id": "crp-status",
+            "name": "crpStatus",
+            "label": "CRP Status",
+            "type": "select",
+            "defaultValue": "elevated",
+            "options": [
+              { "label": "Normal", "value": "normal" },
+              { "label": "Elevated", "value": "elevated" },
+              { "label": "Markedly Elevated", "value": "markedly_elevated" }
+            ]
+          },
+          {
+            "id": "endoscopic-activity",
+            "name": "endoscopicActivity",
+            "label": "Endoscopic Activity",
+            "type": "select",
+            "defaultValue": "moderate",
+            "options": [
+              { "label": "Remission", "value": "remission" },
+              { "label": "Mild", "value": "mild" },
+              { "label": "Moderate", "value": "moderate" },
+              { "label": "Severe", "value": "severe" },
+              { "label": "Not Assessed", "value": "not_assessed" }
+            ]
+          },
+          {
+            "id": "has-perianaldisease",
+            "name": "hasPerianaldisease",
+            "label": "Perianal Disease",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-fistula",
+            "name": "hasFistula",
+            "label": "Fistulizing Disease",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-abscess",
+            "name": "hasAbscess",
+            "label": "Abscess Present",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-stricture",
+            "name": "hasStricture",
+            "label": "Stricture Present",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-deep-ulcers",
+            "name": "hasDeepUlcers",
+            "label": "Deep Ulcers on Endoscopy",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "prior-therapy-activity",
+        "shortLabel": "Prior Therapy & Activity",
+        "title": "Prior Therapy & Activity",
+        "fields": [
+          {
+            "id": "prior-therapy",
+            "name": "priorTherapy",
+            "label": "Prior Therapy",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "Biologic Naive / No Prior Advanced Therapy", "value": "none" },
+              { "label": "On 5-ASA", "value": "on_5asa" },
+              { "label": "On Steroids Only", "value": "on_steroids_only" },
+              { "label": "Failed Immunomodulator (AZA/MTX)", "value": "failed_immunomodulator" },
+              { "label": "Failed Anti-TNF", "value": "failed_anti_tnf" },
+              { "label": "Failed Anti-TNF + Vedolizumab", "value": "failed_anti_tnf_and_vedolizumab" },
+              { "label": "Failed Multiple Biologics", "value": "failed_multiple_biologics" }
+            ]
+          },
+          {
+            "id": "has-lost-response-to-biologic",
+            "name": "hasLostResponseToBiologic",
+            "label": "Lost Response to Current Biologic",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-anti-drug-antibodies",
+            "name": "hasAntiDrugAntibodies",
+            "label": "Anti-Drug Antibodies Detected",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-previous-surgery",
+            "name": "hasPreviousSurgery",
+            "label": "Prior Surgery for CD",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-extraintestinal-manifestations",
+            "name": "hasExtraintestinalManifestations",
+            "label": "Extraintestinal Manifestations",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "risk-factors-preferences",
+        "shortLabel": "Risk Factors & Preferences",
+        "title": "Risk Factors & Preferences",
+        "fields": [
+          {
+            "id": "wants-top-down",
+            "name": "wantsTopDown",
+            "label": "Prefers Top-Down (Early Advanced) Therapy",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "prefers-oral-therapy",
+            "name": "prefersOralTherapy",
+            "label": "Prefers Oral Therapy",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "prefers-subcutaneous",
+            "name": "prefersSubcutaneous",
+            "label": "Prefers Subcutaneous Injection",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-latent-tb",
+            "name": "hasLatentTB",
+            "label": "Latent TB",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-active-tb",
+            "name": "hasActiveTB",
+            "label": "Active TB",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-hepatitis-b",
+            "name": "hasHepatitisB",
+            "label": "Hepatitis B (HBsAg positive)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-malignancy-history",
+            "name": "hasMalignancyHistory",
+            "label": "History of Malignancy",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-congestive-heart-failure",
+            "name": "hasCongestiveHeartFailure",
+            "label": "Congestive Heart Failure (EF <35%)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-demyelinating-disease",
+            "name": "hasDemyelinatingDisease",
+            "label": "Demyelinating Disease (MS)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-jak-contraindication",
+            "name": "hasJAKContraindication",
+            "label": "JAK Inhibitor Contraindication (DVT/PE, CV risk, malignancy)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "is-pregnant-or-planning",
+            "name": "isPregnantOrPlanning",
+            "label": "Pregnant or Planning Pregnancy",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-smoking",
+            "name": "hasSmoking",
+            "label": "Current Smoker",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

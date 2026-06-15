@@ -1,0 +1,111 @@
+{
+  "title": "Oocyte Cryopreservation Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assessment",
+    "logicKey": "oocytefreeze",
+    "hiddenDefaults": {
+      "partnerUnavailable": false,
+      "religiousObjection": false
+    },
+    "steps": [
+      {
+        "id": "indication",
+        "shortLabel": "Indication",
+        "title": "Indication",
+        "fields": [
+          {
+            "id": "indication",
+            "name": "indication",
+            "label": "Primary Indication",
+            "type": "select",
+            "defaultValue": "oncofertility",
+            "options": [
+              { "label": "Oncofertility — before gonadotoxic therapy", "value": "oncofertility" },
+              { "label": "Medical — POI, genetic condition, surgical risk", "value": "medical" },
+              { "label": "Elective (social) — age-related fertility preservation", "value": "elective" },
+              { "label": "Oocyte donor", "value": "donor" }
+            ]
+          },
+          {
+            "id": "female-age",
+            "name": "femaleAge",
+            "label": "Patient Age",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "gonadotoxic-therapy",
+            "name": "gonadotoxicTherapy",
+            "label": "Gonadotoxic therapy planned (chemotherapy, radiation, surgery)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "indication", "op": "eq", "value": "oncofertility" }
+          },
+          {
+            "id": "therapy-timeline",
+            "name": "therapyTimeline",
+            "label": "Treatment Timeline",
+            "type": "text",
+            "defaultValue": "",
+            "visibleWhen": { "field": "indication", "op": "eq", "value": "oncofertility" }
+          },
+          {
+            "id": "premature-ovarian-insufficiency",
+            "name": "prematureOvarianInsufficiency",
+            "label": "Premature ovarian insufficiency (POI) or diminished ovarian reserve",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "indication", "op": "eq", "value": "medical" }
+          },
+          {
+            "id": "genetic-condition",
+            "name": "geneticCondition",
+            "label": "Genetic condition affecting future fertility (Turner mosaic, BRCA, etc.)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "indication", "op": "eq", "value": "medical" }
+          }
+        ]
+      },
+      {
+        "id": "ovarian-reserve",
+        "shortLabel": "Ovarian Reserve",
+        "title": "Ovarian Reserve",
+        "fields": [
+          {
+            "id": "amh-level",
+            "name": "amhLevel",
+            "label": "AMH Level (ng/mL)",
+            "type": "number",
+            "defaultValue": 0,
+            "unit": "ng/mL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "afc-count",
+            "name": "afcCount",
+            "label": "Antral Follicle Count (AFC)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "yield-info",
+            "type": "alert",
+            "severity": "info",
+            "text": "Expected Oocyte Yield (approximate). AFC 10–15: ~8–12 mature oocytes | AFC 5–9: ~4–7 oocytes | AFC <5: <4 oocytes. For age <35: 15–20 mature oocytes recommended for ~70% cumulative live birth rate."
+          }
+        ]
+      },
+      {
+        "id": "assessment",
+        "shortLabel": "Assessment",
+        "title": "Assessment",
+        "fields": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "title": "Peyronie's Disease Surgery Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "PeyroniesAuthGuide.tsx",
+    "title": "Peyronie's Disease Surgery — Authorization Guide",
+    "subtitle": "CPT Codes · ICD-10 · Payer Requirements",
+    "cptCodes": [
+      {"code": "54110", "description": "Excision of penile plaque (Peyronie's disease)", "procedureType": "Plaque excision"},
+      {"code": "54111", "description": "Excision of penile plaque (Peyronie's disease); with graft to 5 sq cm", "procedureType": "Grafting ≤5 cm²"},
+      {"code": "54112", "description": "Excision of penile plaque (Peyronie's disease); with graft greater than 5 sq cm", "procedureType": "Grafting >5 cm²"},
+      {"code": "54360", "description": "Plastic operation on penis to correct angulation", "procedureType": "Plication (Nesbit)"},
+      {"code": "54400", "description": "Insertion of penile prosthesis; non-inflatable (semi-rigid)", "procedureType": "IPP — semi-rigid"},
+      {"code": "54405", "description": "Insertion of multi-component inflatable penile prosthesis", "procedureType": "IPP — inflatable"},
+      {"code": "54406", "description": "Removal of all components of a multi-component inflatable penile prosthesis without replacement", "procedureType": "IPP removal"},
+      {"code": "54408", "description": "Repair of component(s) of a multi-component inflatable penile prosthesis", "procedureType": "IPP repair"},
+      {"code": "J0775", "description": "Collagenase clostridium histolyticum injection, 0.01 mg (Xiaflex)", "procedureType": "Non-surgical injection"}
+    ],
+    "icd10Codes": [
+      {"code": "N48.6", "description": "Induration penis plastica (Peyronie's disease)"},
+      {"code": "N52.01", "description": "Erectile dysfunction due to arterial insufficiency"},
+      {"code": "N52.02", "description": "Corporo-venous occlusive erectile dysfunction"},
+      {"code": "N52.03", "description": "Combined arterial insufficiency and corporo-venous occlusive erectile dysfunction"},
+      {"code": "N52.1", "description": "Erectile dysfunction due to diseases classified elsewhere"},
+      {"code": "N52.9", "description": "Male erectile dysfunction, unspecified"},
+      {"code": "N48.89", "description": "Other specified disorders of penis"}
+    ],
+    "payers": [],
+    "customSections": [
+      {
+        "heading": "Coverage Landscape — Common Denial Reasons",
+        "kind": "list",
+        "items": [
+          "\"Cosmetic procedure\" (incorrect — Peyronie's is a medical condition)",
+          "\"Not medically necessary\" without documentation of functional impairment",
+          "Collagenase (Xiaflex) denied as \"experimental\" or \"not covered\"",
+          "Penile prosthesis denied when ED is the primary indication"
+        ]
+      },
+      {
+        "heading": "Coverage Landscape — Strongest Coverage Arguments",
+        "kind": "list",
+        "items": [
+          "N48.6 (Peyronie's disease) is a distinct medical diagnosis, not cosmetic",
+          "Functional impairment: inability to engage in sexual intercourse (N52.x)",
+          "AUA Guideline (2015) provides evidence-based surgical recommendations",
+          "Collagenase (Xiaflex) is FDA-approved for Peyronie's disease (2013)",
+          "Penile prosthesis for combined PD + severe ED treats two medical conditions simultaneously"
+        ]
+      },
+      {
+        "heading": "Prior Authorization Requirements — Required Documentation",
+        "kind": "list",
+        "items": [
+          "Clinical diagnosis of Peyronie's disease (N48.6) with duration documented",
+          "Curvature angle measurement (pharmacologically induced erection or vacuum device)",
+          "Documentation of stable disease ≥12 months (no change in curvature)",
+          "Erectile function assessment (IIEF-5 score, PDE5i response)",
+          "Penile duplex Doppler ultrasound (if vascular ED suspected)",
+          "Documentation of functional impairment (inability to have intercourse)",
+          "Prior non-surgical treatment attempts (collagenase, traction, oral agents)",
+          "Letter of medical necessity from urologist"
+        ]
+      },
+      {
+        "heading": "Prior Authorization Requirements — AUA Surgical Criteria",
+        "kind": "list",
+        "items": [
+          "Stable disease ≥12 months (no change in curvature, pain resolution)",
+          "Curvature ≥30° causing inability to have intercourse",
+          "Adequate erectile function (or IPP if severe ED)",
+          "Patient desire for surgical correction after counseling",
+          "Partner counseled and involved in decision-making"
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# Peyronie's Disease Surgery — Authorization Guide\n\n_Subtitle: CPT Codes · ICD-10 · Payer Requirements_\n\nbackHref: /peyronies\n\n## CPT Codes\n\n| CPT | Description | Procedure Type |\n| --- | --- | --- |\n| 54110 | Excision of penile plaque (Peyronie's disease) | Plaque excision |\n| 54111 | Excision of penile plaque (Peyronie's disease); with graft to 5 sq cm | Grafting ≤5 cm² |\n| 54112 | Excision of penile plaque (Peyronie's disease); with graft greater than 5 sq cm | Grafting >5 cm² |\n| 54360 | Plastic operation on penis to correct angulation | Plication (Nesbit) |\n| 54400 | Insertion of penile prosthesis; non-inflatable (semi-rigid) | IPP — semi-rigid |\n| 54405 | Insertion of multi-component inflatable penile prosthesis | IPP — inflatable |\n| 54406 | Removal of all components of a multi-component inflatable penile prosthesis without replacement | IPP removal |\n| 54408 | Repair of component(s) of a multi-component inflatable penile prosthesis | IPP repair |\n| J0775 | Collagenase clostridium histolyticum injection, 0.01 mg (Xiaflex) | Non-surgical injection |\n\n## ICD-10 Diagnoses\n\n| ICD-10 | Description |\n| --- | --- |\n| N48.6 | Induration penis plastica (Peyronie's disease) |\n| N52.01 | Erectile dysfunction due to arterial insufficiency |\n| N52.02 | Corporo-venous occlusive erectile dysfunction |\n| N52.03 | Combined arterial insufficiency and corporo-venous occlusive erectile dysfunction |\n| N52.1 | Erectile dysfunction due to diseases classified elsewhere |\n| N52.9 | Male erectile dysfunction, unspecified |\n| N48.89 | Other specified disorders of penis |\n\n## Coverage Landscape\n\n### Common Denial Reasons\n\n- \"Cosmetic procedure\" (incorrect — Peyronie's is a medical condition)\n- \"Not medically necessary\" without documentation of functional impairment\n- Collagenase (Xiaflex) denied as \"experimental\" or \"not covered\"\n- Penile prosthesis denied when ED is the primary indication\n\n### Strongest Coverage Arguments\n\n- N48.6 (Peyronie's disease) is a distinct medical diagnosis, not cosmetic\n- Functional impairment: inability to engage in sexual intercourse (N52.x)\n- AUA Guideline (2015) provides evidence-based surgical recommendations\n- Collagenase (Xiaflex) is FDA-approved for Peyronie's disease (2013)\n- Penile prosthesis for combined PD + severe ED treats two medical conditions simultaneously\n\n## Prior Authorization Requirements\n\n### Required Documentation\n\n- Clinical diagnosis of Peyronie's disease (N48.6) with duration documented\n- Curvature angle measurement (pharmacologically induced erection or vacuum device)\n- Documentation of stable disease ≥12 months (no change in curvature)\n- Erectile function assessment (IIEF-5 score, PDE5i response)\n- Penile duplex Doppler ultrasound (if vascular ED suspected)\n- Documentation of functional impairment (inability to have intercourse)\n- Prior non-surgical treatment attempts (collagenase, traction, oral agents)\n- Letter of medical necessity from urologist\n\n### AUA Surgical Criteria\n\n- Stable disease ≥12 months (no change in curvature, pain resolution)\n- Curvature ≥30° causing inability to have intercourse\n- Adequate erectile function (or IPP if severe ED)\n- Patient desire for surgical correction after counseling\n- Partner counseled and involved in decision-making\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["CPT", "Description", "Procedure Type"],
+          "rows": [
+            ["54110", "Excision of penile plaque (Peyronie's disease)", "Plaque excision"],
+            ["54111", "Excision of penile plaque (Peyronie's disease); with graft to 5 sq cm", "Grafting ≤5 cm²"],
+            ["54112", "Excision of penile plaque (Peyronie's disease); with graft greater than 5 sq cm", "Grafting >5 cm²"],
+            ["54360", "Plastic operation on penis to correct angulation", "Plication (Nesbit)"],
+            ["54400", "Insertion of penile prosthesis; non-inflatable (semi-rigid)", "IPP — semi-rigid"],
+            ["54405", "Insertion of multi-component inflatable penile prosthesis", "IPP — inflatable"],
+            ["54406", "Removal of all components of a multi-component inflatable penile prosthesis without replacement", "IPP removal"],
+            ["54408", "Repair of component(s) of a multi-component inflatable penile prosthesis", "IPP repair"],
+            ["J0775", "Collagenase clostridium histolyticum injection, 0.01 mg (Xiaflex)", "Non-surgical injection"]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnoses",
+          "header": ["ICD-10", "Description"],
+          "rows": [
+            ["N48.6", "Induration penis plastica (Peyronie's disease)"],
+            ["N52.01", "Erectile dysfunction due to arterial insufficiency"],
+            ["N52.02", "Corporo-venous occlusive erectile dysfunction"],
+            ["N52.03", "Combined arterial insufficiency and corporo-venous occlusive erectile dysfunction"],
+            ["N52.1", "Erectile dysfunction due to diseases classified elsewhere"],
+            ["N52.9", "Male erectile dysfunction, unspecified"],
+            ["N48.89", "Other specified disorders of penis"]
+          ]
+        }
+      ]
+    }
+  }
+}

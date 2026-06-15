@@ -1,0 +1,188 @@
+{
+  "title": "High Myopia / Pathologic Myopia",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "highmyopia",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "refraction-axial-length",
+        "shortLabel": "Refraction & Axial Length",
+        "title": "Refraction & Axial Length",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Patient Age (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "spherical-equivalent",
+            "name": "sphericalEquivalent",
+            "label": "Spherical Equivalent (diopters, e.g., -8.5)",
+            "type": "number",
+            "defaultValue": -5.0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "myopia-level",
+            "name": "myopiaLevel",
+            "label": "Myopia Level",
+            "type": "select",
+            "defaultValue": "high",
+            "options": [
+              { "label": "Low — -0.5 to -3.0 D", "value": "low" },
+              { "label": "Moderate — -3.25 to -6.0 D", "value": "moderate" },
+              { "label": "High — -6.25 to -10.0 D", "value": "high" },
+              { "label": "Extreme — > -10.0 D", "value": "extreme" }
+            ]
+          },
+          {
+            "id": "axial-length",
+            "name": "axialLength",
+            "label": "Axial Length",
+            "type": "select",
+            "defaultValue": "long",
+            "options": [
+              { "label": "Normal — <26 mm", "value": "normal" },
+              { "label": "Long — 26–28 mm", "value": "long" },
+              { "label": "Very Long — >28 mm", "value": "very_long" }
+            ]
+          },
+          {
+            "id": "is-progressing",
+            "name": "isProgressing",
+            "label": "Myopia Progressing (>0.5 D/year in children)",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "best-corrected-va",
+            "name": "bestCorrectedVA",
+            "label": "Best-Corrected Visual Acuity",
+            "type": "text",
+            "defaultValue": "20/20"
+          }
+        ]
+      },
+      {
+        "id": "pathologic-complications",
+        "shortLabel": "Pathologic Complications",
+        "title": "Pathologic Complications",
+        "fields": [
+          {
+            "id": "pathologic-complication",
+            "name": "pathologicComplication",
+            "label": "Pathologic Complication",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "None", "value": "none" },
+              { "label": "Myopic CNV (choroidal neovascularization)", "value": "myopic_cnv" },
+              { "label": "Myopic traction maculopathy", "value": "myopic_traction_maculopathy" },
+              { "label": "Retinal detachment", "value": "retinal_detachment" },
+              { "label": "Posterior staphyloma", "value": "posterior_staphyloma" },
+              { "label": "Lacquer cracks", "value": "lacquer_cracks" },
+              { "label": "Dome-shaped macula", "value": "dome_shaped_macula" }
+            ]
+          },
+          {
+            "id": "has-myopic-cnv",
+            "name": "hasMyopicCNV",
+            "label": "Myopic CNV Present",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "cnv-anti-vegf-history",
+            "name": "cnvAntiVEGFHistory",
+            "label": "CNV Anti-VEGF Treatment History",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "No prior anti-VEGF", "value": "none" },
+              { "label": "Currently on anti-VEGF", "value": "on_treatment" },
+              { "label": "Completed treatment course", "value": "completed" }
+            ],
+            "visibleWhen": { "field": "hasMyopicCNV", "op": "truthy" }
+          },
+          {
+            "id": "is-surgical-candidate-for-refractive-surgery",
+            "name": "isSurgicalCandidateForRefractiveSurgery",
+            "label": "Surgical Candidate for Refractive Surgery (LASIK/ICL)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "corneal-thickness",
+            "name": "cornealThickness",
+            "label": "Corneal Thickness (μm)",
+            "type": "number",
+            "defaultValue": 520,
+            "unit": "μm",
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "isSurgicalCandidateForRefractiveSurgery", "op": "truthy" }
+          },
+          {
+            "id": "has-keratoconus",
+            "name": "hasKeratoconus",
+            "label": "Keratoconus",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "control-history-lifestyle",
+        "shortLabel": "Control History & Lifestyle",
+        "title": "Control History & Lifestyle",
+        "fields": [
+          {
+            "id": "myopia-control-history",
+            "name": "myopiaControlHistory",
+            "label": "Current Myopia Control Strategy",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "No myopia control", "value": "none" },
+              { "label": "Low-dose atropine (0.01–0.05%)", "value": "on_atropine_low" },
+              { "label": "High-dose atropine (0.1–1%)", "value": "on_atropine_high" },
+              { "label": "Orthokeratology (OK lenses)", "value": "on_orthokeratology" },
+              { "label": "Multifocal soft contact lenses (DIMS/MiSight)", "value": "on_mf_soft_lens" },
+              { "label": "Combination therapy", "value": "on_combination" }
+            ]
+          },
+          {
+            "id": "has-family-history-myopia",
+            "name": "hasFamilyHistoryMyopia",
+            "label": "Family History of High Myopia",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "time-outdoors-hours-per-day",
+            "name": "timeOutdoorsHoursPerDay",
+            "label": "Time Outdoors (hours/day)",
+            "type": "number",
+            "defaultValue": 1,
+            "unit": "hours/day",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "screen-time-hours-per-day",
+            "name": "screenTimeHoursPerDay",
+            "label": "Screen Time (hours/day)",
+            "type": "number",
+            "defaultValue": 6,
+            "unit": "hours/day",
+            "keyboardType": "decimal"
+          }
+        ]
+      }
+    ]
+  }
+}

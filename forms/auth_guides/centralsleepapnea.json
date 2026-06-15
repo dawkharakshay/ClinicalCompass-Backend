@@ -1,0 +1,184 @@
+{
+  "title": "Central Sleep Apnea Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "CentralSleepApneaAuthGuide.tsx",
+    "title": "Central Sleep Apnea Authorization Guide",
+    "subtitle": "Decision Support",
+    "cptCodes": [
+      {
+        "code": "95810",
+        "description": "Polysomnography (PSG) — in-lab, attended",
+        "authRequired": "Often",
+        "notes": "Required for CSA diagnosis; CAI ≥5 + >50% central events"
+      },
+      {
+        "code": "95811",
+        "description": "PSG with initiation of CPAP/BPAP",
+        "authRequired": "Often",
+        "notes": "PAP titration study"
+      },
+      {
+        "code": "94660",
+        "description": "CPAP initiation and management",
+        "authRequired": "Sometimes",
+        "notes": "First-line PAP therapy"
+      },
+      {
+        "code": "E0601",
+        "description": "CPAP device (DME)",
+        "authRequired": "Often",
+        "notes": "AHI ≥5 with CSA diagnosis required"
+      },
+      {
+        "code": "E0470",
+        "description": "BPAP device without backup rate",
+        "authRequired": "Often",
+        "notes": "CPAP failure documentation required"
+      },
+      {
+        "code": "E0471",
+        "description": "BPAP device with backup rate (BPAP-ST)",
+        "authRequired": "Often",
+        "notes": "Opioid-induced CSA; CPAP/BPAP failure"
+      },
+      {
+        "code": "E0601 + modifier",
+        "description": "ASV device (adaptive servo-ventilation)",
+        "authRequired": "Often",
+        "notes": "Contraindicated in HFrEF EF <45%; strict criteria"
+      },
+      {
+        "code": "99213–99215",
+        "description": "Office visit — sleep specialist E&M",
+        "authRequired": "Rarely",
+        "notes": "Document CAI, etiology, treatment response"
+      },
+      {
+        "code": "94762",
+        "description": "Nocturnal oximetry",
+        "authRequired": "Sometimes",
+        "notes": "Supplemental O2 titration for CSA-CSR in HF"
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "G47.31",
+        "description": "Primary central sleep apnea",
+        "useWhen": "Idiopathic CSA (no identifiable cause)"
+      },
+      {
+        "code": "G47.37",
+        "description": "Central sleep apnea in conditions classified elsewhere",
+        "useWhen": "CSA due to HF, stroke, opioids — code underlying condition first"
+      },
+      {
+        "code": "G47.39",
+        "description": "Other sleep apnea",
+        "useWhen": "Treatment-emergent CSA, complex sleep apnea"
+      },
+      {
+        "code": "R06.3",
+        "description": "Periodic breathing / Cheyne-Stokes respiration",
+        "useWhen": "CSA-CSR pattern on PSG"
+      },
+      {
+        "code": "I50.20–I50.9",
+        "description": "Heart failure (HFrEF, HFpEF, unspecified)",
+        "useWhen": "Code as primary when CSA-CSR is HF-related"
+      },
+      {
+        "code": "F11.20–F11.99",
+        "description": "Opioid use disorder / dependence",
+        "useWhen": "Code with G47.37 for opioid-induced CSA"
+      }
+    ],
+    "payers": [],
+    "customSections": [
+      {
+        "heading": "Critical Contraindication: ASV in HFrEF",
+        "kind": "list",
+        "text": "ASV (Adaptive Servo-Ventilation) is CONTRAINDICATED in patients with:",
+        "items": [
+          "Heart failure with reduced ejection fraction (HFrEF): LVEF <45%",
+          "Predominantly central sleep apnea (CSA-CSR pattern)",
+          "NYHA Class II–IV symptoms",
+          "Evidence: SERVE-HF trial (Cowie MR, et al. N Engl J Med. 2015;373:1095–1105) demonstrated increased all-cause and cardiovascular mortality with ASV in this population. FDA issued a safety communication in 2015.",
+          "AASM 2025 CPG: ASV is conditionally recommended for CSA-CSR in HFpEF (EF ≥45%) only."
+        ]
+      },
+      {
+        "heading": "GLP-1/GIP Agonists — Zepbound (Tirzepatide) for OSA with Obesity",
+        "kind": "prose",
+        "text": "FDA Approval: December 2024 — Tirzepatide (Zepbound) for moderate-to-severe OSA with obesity.\n\nWhile tirzepatide is primarily approved for OSA (not CSA), it may benefit patients with CSA-OSA overlap syndrome and obesity. The SURMOUNT-OSA trial demonstrated:\n- 50.7% mean AHI reduction (vs. 29.3% placebo) in patients not using PAP therapy\n- 29.3% mean AHI reduction in patients continuing PAP therapy\n- Significant improvements in hypoxic burden, sleep architecture, and quality of life\n\nPrior Authorization Requirements for Zepbound (OSA indication):\n- BMI ≥30 kg/m² (or ≥27 with weight-related comorbidity)\n- Moderate-to-severe OSA diagnosis (AHI ≥15 events/hour) on PSG\n- Not solely for weight loss (OSA indication is separate from obesity indication)\n- Step therapy: CPAP trial documentation often required by payers\n\nReference: Malhotra A, et al. \"Tirzepatide for Moderate-to-Severe Obstructive Sleep Apnea and Obesity.\" N Engl J Med. 2024;391:1421–1432."
+      },
+      {
+        "heading": "Documentation Checklist for ASV/BPAP-ST Authorization",
+        "kind": "list",
+        "items": [
+          "In-lab PSG report: Total AHI, CAI (≥5 events/hour), % central events (>50%)",
+          "CSA etiology clearly documented (idiopathic, HF-related, opioid-induced, treatment-emergent)",
+          "LVEF documented if heart failure present — ASV contraindicated if EF <45%",
+          "CPAP trial: dates, compliance data (≥4 hours/night ≥70% of nights), residual AHI on CPAP",
+          "BPAP trial (if applicable): dates, compliance, residual CAI",
+          "Current opioid medications and doses (MME/day) if opioid-induced CSA",
+          "Cardiology notes if CSA-CSR with HF (NYHA class, most recent echo with EF)",
+          "Physician attestation that ASV is not contraindicated per SERVE-HF criteria"
+        ]
+      },
+      {
+        "heading": "References",
+        "kind": "list",
+        "items": [
+          "1. Donovan LM, et al. \"Treatment of Central Sleep Apnea Syndromes in Adults: An AASM Clinical Practice Guideline.\" J Clin Sleep Med. 2025.",
+          "2. Cowie MR, et al. \"Adaptive Servo-Ventilation for Central Sleep Apnea in Systolic Heart Failure.\" SERVE-HF. N Engl J Med. 2015;373:1095–1105.",
+          "3. Malhotra A, et al. \"Tirzepatide for Moderate-to-Severe Obstructive Sleep Apnea and Obesity.\" SURMOUNT-OSA. N Engl J Med. 2024;391:1421–1432.",
+          "4. AASM Practice Guidelines: aasm.org/clinical-resources/practice-standards/practice-guidelines/"
+        ]
+      },
+      {
+        "heading": "AASM Practice Guidelines (link)",
+        "kind": "link",
+        "text": "AASM Practice Guidelines",
+        "href": "https://aasm.org/clinical-resources/practice-standards/practice-guidelines/"
+      },
+      {
+        "heading": "Generate Appeal Letter",
+        "kind": "link",
+        "text": "Generate Appeal Letter button — navigates to /sleep/central-sleep-apnea/appeal-letter",
+        "href": "/sleep/central-sleep-apnea/appeal-letter"
+      }
+    ],
+    "raw": {
+      "markdown": "# Central Sleep Apnea Authorization Guide\nSubtitle: Decision Support\nSpecialty: Sleep Medicine\n\n## CPT Codes — CSA Evaluation & PAP Therapy\n\n| CPT Code | Description | Auth Required | Notes |\n|---|---|---|---|\n| 95810 | Polysomnography (PSG) — in-lab, attended | Often | Required for CSA diagnosis; CAI ≥5 + >50% central events |\n| 95811 | PSG with initiation of CPAP/BPAP | Often | PAP titration study |\n| 94660 | CPAP initiation and management | Sometimes | First-line PAP therapy |\n| E0601 | CPAP device (DME) | Often | AHI ≥5 with CSA diagnosis required |\n| E0470 | BPAP device without backup rate | Often | CPAP failure documentation required |\n| E0471 | BPAP device with backup rate (BPAP-ST) | Often | Opioid-induced CSA; CPAP/BPAP failure |\n| E0601 + modifier | ASV device (adaptive servo-ventilation) | Often | Contraindicated in HFrEF EF <45%; strict criteria |\n| 99213–99215 | Office visit — sleep specialist E&M | Rarely | Document CAI, etiology, treatment response |\n| 94762 | Nocturnal oximetry | Sometimes | Supplemental O2 titration for CSA-CSR in HF |\n\n## ICD-10-CM Diagnosis Codes\n\n| ICD-10 | Description | Use When |\n|---|---|---|\n| G47.31 | Primary central sleep apnea | Idiopathic CSA (no identifiable cause) |\n| G47.37 | Central sleep apnea in conditions classified elsewhere | CSA due to HF, stroke, opioids — code underlying condition first |\n| G47.39 | Other sleep apnea | Treatment-emergent CSA, complex sleep apnea |\n| R06.3 | Periodic breathing / Cheyne-Stokes respiration | CSA-CSR pattern on PSG |\n| I50.20–I50.9 | Heart failure (HFrEF, HFpEF, unspecified) | Code as primary when CSA-CSR is HF-related |\n| F11.20–F11.99 | Opioid use disorder / dependence | Code with G47.37 for opioid-induced CSA |\n\n## Critical Contraindication: ASV in HFrEF\n\nASV (Adaptive Servo-Ventilation) is CONTRAINDICATED in patients with:\n- Heart failure with reduced ejection fraction (HFrEF): LVEF <45%\n- Predominantly central sleep apnea (CSA-CSR pattern)\n- NYHA Class II–IV symptoms\n\nEvidence: SERVE-HF trial (Cowie MR, et al. N Engl J Med. 2015;373:1095–1105) demonstrated increased all-cause and cardiovascular mortality with ASV in this population. FDA issued a safety communication in 2015.\n\nAASM 2025 CPG: ASV is conditionally recommended for CSA-CSR in HFpEF (EF ≥45%) only.\n\n## GLP-1/GIP Agonists — Zepbound (Tirzepatide) for OSA with Obesity\n\nFDA Approval: December 2024 — Tirzepatide (Zepbound) for moderate-to-severe OSA with obesity\n\nWhile tirzepatide is primarily approved for OSA (not CSA), it may benefit patients with CSA-OSA overlap syndrome and obesity. The SURMOUNT-OSA trial demonstrated:\n- 50.7% mean AHI reduction (vs. 29.3% placebo) in patients not using PAP therapy\n- 29.3% mean AHI reduction in patients continuing PAP therapy\n- Significant improvements in hypoxic burden, sleep architecture, and quality of life\n\nPrior Authorization Requirements for Zepbound (OSA indication):\n- BMI ≥30 kg/m² (or ≥27 with weight-related comorbidity)\n- Moderate-to-severe OSA diagnosis (AHI ≥15 events/hour) on PSG\n- Not solely for weight loss (OSA indication is separate from obesity indication)\n- Step therapy: CPAP trial documentation often required by payers\n\nReference: Malhotra A, et al. \"Tirzepatide for Moderate-to-Severe Obstructive Sleep Apnea and Obesity.\" N Engl J Med. 2024;391:1421–1432.\n\n## Documentation Checklist for ASV/BPAP-ST Authorization\n\n- In-lab PSG report: Total AHI, CAI (≥5 events/hour), % central events (>50%)\n- CSA etiology clearly documented (idiopathic, HF-related, opioid-induced, treatment-emergent)\n- LVEF documented if heart failure present — ASV contraindicated if EF <45%\n- CPAP trial: dates, compliance data (≥4 hours/night ≥70% of nights), residual AHI on CPAP\n- BPAP trial (if applicable): dates, compliance, residual CAI\n- Current opioid medications and doses (MME/day) if opioid-induced CSA\n- Cardiology notes if CSA-CSR with HF (NYHA class, most recent echo with EF)\n- Physician attestation that ASV is not contraindicated per SERVE-HF criteria\n\n## References\n\n1. Donovan LM, et al. \"Treatment of Central Sleep Apnea Syndromes in Adults: An AASM Clinical Practice Guideline.\" J Clin Sleep Med. 2025.\n2. Cowie MR, et al. \"Adaptive Servo-Ventilation for Central Sleep Apnea in Systolic Heart Failure.\" SERVE-HF. N Engl J Med. 2015;373:1095–1105.\n3. Malhotra A, et al. \"Tirzepatide for Moderate-to-Severe Obstructive Sleep Apnea and Obesity.\" SURMOUNT-OSA. N Engl J Med. 2024;391:1421–1432.\n4. AASM Practice Guidelines: https://aasm.org/clinical-resources/practice-standards/practice-guidelines/\n\n[Button] Generate Appeal Letter -> /sleep/central-sleep-apnea/appeal-letter",
+      "tables": [
+        {
+          "name": "CPT Codes — CSA Evaluation & PAP Therapy",
+          "header": ["CPT Code", "Description", "Auth Required", "Notes"],
+          "rows": [
+            ["95810", "Polysomnography (PSG) — in-lab, attended", "Often", "Required for CSA diagnosis; CAI ≥5 + >50% central events"],
+            ["95811", "PSG with initiation of CPAP/BPAP", "Often", "PAP titration study"],
+            ["94660", "CPAP initiation and management", "Sometimes", "First-line PAP therapy"],
+            ["E0601", "CPAP device (DME)", "Often", "AHI ≥5 with CSA diagnosis required"],
+            ["E0470", "BPAP device without backup rate", "Often", "CPAP failure documentation required"],
+            ["E0471", "BPAP device with backup rate (BPAP-ST)", "Often", "Opioid-induced CSA; CPAP/BPAP failure"],
+            ["E0601 + modifier", "ASV device (adaptive servo-ventilation)", "Often", "Contraindicated in HFrEF EF <45%; strict criteria"],
+            ["99213–99215", "Office visit — sleep specialist E&M", "Rarely", "Document CAI, etiology, treatment response"],
+            ["94762", "Nocturnal oximetry", "Sometimes", "Supplemental O2 titration for CSA-CSR in HF"]
+          ]
+        },
+        {
+          "name": "ICD-10-CM Diagnosis Codes",
+          "header": ["ICD-10", "Description", "Use When"],
+          "rows": [
+            ["G47.31", "Primary central sleep apnea", "Idiopathic CSA (no identifiable cause)"],
+            ["G47.37", "Central sleep apnea in conditions classified elsewhere", "CSA due to HF, stroke, opioids — code underlying condition first"],
+            ["G47.39", "Other sleep apnea", "Treatment-emergent CSA, complex sleep apnea"],
+            ["R06.3", "Periodic breathing / Cheyne-Stokes respiration", "CSA-CSR pattern on PSG"],
+            ["I50.20–I50.9", "Heart failure (HFrEF, HFpEF, unspecified)", "Code as primary when CSA-CSR is HF-related"],
+            ["F11.20–F11.99", "Opioid use disorder / dependence", "Code with G47.37 for opioid-induced CSA"]
+          ]
+        }
+      ]
+    }
+  }
+}

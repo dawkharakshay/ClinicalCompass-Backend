@@ -1,0 +1,266 @@
+{
+  "title": "Age-Related Macular Degeneration",
+  "auth_guide": {
+    "sourceFile": "AMDAuthGuide.tsx",
+    "title": "AMD Clinical Compass",
+    "subtitle": "Age-Related Macular Degeneration Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "67028",
+        "description": "Intravitreal injection of a pharmacologic agent (separate procedure)",
+        "device": "Anti-VEGF agents (e.g., Aflibercept, Ranibizumab, Bevacizumab)",
+        "access": "Intravitreal",
+        "rvu": "1.44",
+        "includes": [
+          "Preparation of the injection",
+          "Administration of the injection"
+        ],
+        "note": "Typically used for the treatment of wet (exudative) age-related macular degeneration (AMD)."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "H35.321",
+        "description": "Exudative age-related macular degeneration, right eye",
+        "notes": "Wet AMD affecting the right eye. Requires active choroidal neovascularization.",
+        "required": true
+      },
+      {
+        "code": "H35.322",
+        "description": "Exudative age-related macular degeneration, left eye",
+        "notes": "Wet AMD affecting the left eye. Requires active choroidal neovascularization.",
+        "required": true
+      },
+      {
+        "code": "H35.323",
+        "description": "Exudative age-related macular degeneration, bilateral",
+        "notes": "Wet AMD affecting both eyes. Requires active choroidal neovascularization.",
+        "required": true
+      },
+      {
+        "code": "H35.329",
+        "description": "Exudative age-related macular degeneration, unspecified eye",
+        "notes": "Wet AMD affecting an unspecified eye. Use when laterality is not documented.",
+        "required": false
+      },
+      {
+        "code": "H35.31",
+        "description": "Nonexudative age-related macular degeneration",
+        "notes": "Dry AMD. Anti-VEGF injections are generally not indicated for dry AMD.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered for medically necessary treatment of wet AMD",
+        "overview": "Medicare Part B generally covers anti-VEGF injections for wet (exudative) age-related macular degeneration (AMD) when medically necessary and performed in an office or outpatient setting.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization may be required for certain anti-VEGF agents or if specific clinical criteria are not met. Documentation of medical necessity is crucial.",
+        "reimbursementNote": "Medicare Part B typically covers 80% of the Medicare-approved amount for the procedure and drug after the annual deductible is met. Patients are responsible for the remaining 20% coinsurance. ",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Diagnosis Confirmation",
+            "items": [
+              "Diagnosis of wet (exudative) AMD confirmed by comprehensive ophthalmologic examination and imaging (e.g., Optical Coherence Tomography (OCT), Fluorescein Angiography (FA)).",
+              "Evidence of active choroidal neovascularization (CNV)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Clinical Presentation",
+            "items": [
+              "Visual acuity typically better than 20/200 (criteria may vary by specific policy).",
+              "Absence of contraindications to anti-VEGF therapy."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Treatment History (if applicable)",
+            "items": [
+              "Failure or contraindication to alternative treatments (e.g., laser photocoagulation) if specified by policy."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Notes",
+            "items": [
+              "Detailed ophthalmologic examination notes, including visual acuity, intraocular pressure, and slit-lamp examination findings. Consistent documentation of laterality (right, left, or bilateral).",
+              "History of present illness, including symptoms, duration, and previous treatments. "
+            ]
+          },
+          {
+            "heading": "Required Documentation: Imaging Reports",
+            "items": [
+              "OCT reports demonstrating retinal fluid, intraretinal fluid, subretinal fluid, or pigment epithelial detachment (PED) due to CNV. "
+            ]
+          },
+          {
+            "heading": "Required Documentation: Treatment Plan",
+            "items": [
+              "Rationale for anti-VEGF agent selection and dosing regimen. Expected outcomes and potential risks discussed with the patient."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Obtain prior authorization if required by the specific Medicare Advantage plan or for certain drugs.",
+              "Submit claims with CPT code 67028 for the injection procedure and the appropriate HCPCS code for the anti-VEGF drug (e.g., J0178 for Aflibercept, J2778 for Ranibizumab, J9035 for Bevacizumab).",
+              "Use modifiers RT (right eye), LT (left eye), or 50 (bilateral procedure) as appropriate to indicate laterality. "
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity for anti-VEGF therapy. "
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Ensure thorough and consistent documentation of diagnosis, medical necessity, and treatment response in the patient's medical record. "
+            ]
+          }
+        ],
+        "knownPolicies": []
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Coverage varies by state, generally covered for wet AMD with prior authorization",
+        "overview": "Medicaid coverage for anti-VEGF injections for wet AMD is determined by individual state Medicaid programs, which often have specific prior authorization requirements and clinical criteria. ",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid programs often require strict prior authorization for anti-VEGF injections, with specific criteria varying by state. ",
+        "reimbursementNote": "Reimbursement rates and patient cost-sharing vary significantly by state Medicaid program. ",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Diagnosis and Medical Necessity",
+            "items": [
+              "Confirmed diagnosis of wet (exudative) AMD with active CNV. "
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Payer-Specific Guidelines",
+            "items": [
+              "Adherence to state-specific Medicaid clinical guidelines and preferred drug lists. "
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Comprehensive ophthalmologic examination notes, including visual acuity and imaging results (OCT, FA). "
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization Form",
+            "items": [
+              "Completed and approved prior authorization form specific to the state Medicaid program. "
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify state-specific Medicaid policies and obtain prior authorization before initiating treatment. "
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to obtain prior authorization or meet state-specific clinical criteria. "
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state's Medicaid formulary and prior authorization process for anti-VEGF agents. "
+            ]
+          }
+        ],
+        "knownPolicies": []
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Generally covered for wet AMD, subject to plan benefits and prior authorization",
+        "overview": "Private insurance coverage for anti-VEGF injections for wet AMD is common but typically requires prior authorization and adherence to the plan's medical policies, including potential step therapy. ",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for anti-VEGF injections, often with step therapy requirements or preferred drug lists. ",
+        "reimbursementNote": "Coverage is subject to the patient's specific plan benefits, including deductibles, co-pays, and coinsurance. ",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Diagnosis and Clinical Evidence",
+            "items": [
+              "Confirmed diagnosis of wet (exudative) AMD with active CNV, supported by clinical examination and imaging. "
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Plan-Specific Requirements",
+            "items": [
+              "Fulfillment of any step therapy requirements (e.g., trying a less expensive anti-VEGF agent first). "
+            ]
+          },
+          {
+            "heading": "Required Documentation: Medical Records",
+            "items": [
+              "Detailed clinical notes, diagnostic test results (OCT, FA), and a clear treatment plan. "
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization Request",
+            "items": [
+              "Submission of a comprehensive prior authorization request form with all supporting documentation. "
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit a prior authorization request to the insurance company, providing all required clinical documentation. "
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization, failure to meet medical necessity criteria, or not following step therapy protocols. "
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify patient's benefits and eligibility, including any deductibles, co-pays, or coinsurance, before treatment. "
+            ]
+          }
+        ],
+        "knownPolicies": []
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment (navigates to /amd)",
+        "href": "/amd"
+      }
+    ],
+    "raw": {
+      "markdown": "# AMD Clinical Compass\n## Age-Related Macular Degeneration Insurance Authorization Guide\n\n[Button] Back to Assessment (-> /amd)\n\n---\n\n## Procedure Codes (CPT Codes)\n\n### CPT 67028 (RVU 1.44)\nIntravitreal injection of a pharmacologic agent (separate procedure)\n\n- Device/Access: Anti-VEGF agents (e.g., Aflibercept, Ranibizumab, Bevacizumab)\n- Access: Intravitreal\n\nIncluded in this code (do NOT bill separately):\n- Preparation of the injection\n- Administration of the injection\n\n_Typically used for the treatment of wet (exudative) age-related macular degeneration (AMD)._\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **H35.321** (Primary/Required) — Exudative age-related macular degeneration, right eye. Wet AMD affecting the right eye. Requires active choroidal neovascularization.\n- **H35.322** (Primary/Required) — Exudative age-related macular degeneration, left eye. Wet AMD affecting the left eye. Requires active choroidal neovascularization.\n- **H35.323** (Primary/Required) — Exudative age-related macular degeneration, bilateral. Wet AMD affecting both eyes. Requires active choroidal neovascularization.\n- **H35.329** — Exudative age-related macular degeneration, unspecified eye. Wet AMD affecting an unspecified eye. Use when laterality is not documented.\n- **H35.31** — Nonexudative age-related macular degeneration. Dry AMD. Anti-VEGF injections are generally not indicated for dry AMD.\n\n---\n\n## Payer-Specific Authorization Requirements\n\n(Tabs: Medicare, Medicaid, Private Insurance)\n\n### Medicare\n- Prior Auth Required\n- Coverage Status: Covered for medically necessary treatment of wet AMD\n- Prior Auth Note (warning): Prior authorization may be required for certain anti-VEGF agents or if specific clinical criteria are not met. Documentation of medical necessity is crucial.\n- Overview: Medicare Part B generally covers anti-VEGF injections for wet (exudative) age-related macular degeneration (AMD) when medically necessary and performed in an office or outpatient setting.\n\n#### Coverage Criteria\n**Diagnosis Confirmation**\n- Diagnosis of wet (exudative) AMD confirmed by comprehensive ophthalmologic examination and imaging (e.g., Optical Coherence Tomography (OCT), Fluorescein Angiography (FA)).\n- Evidence of active choroidal neovascularization (CNV).\n\n**Clinical Presentation**\n- Visual acuity typically better than 20/200 (criteria may vary by specific policy).\n- Absence of contraindications to anti-VEGF therapy.\n\n**Treatment History (if applicable)**\n- Failure or contraindication to alternative treatments (e.g., laser photocoagulation) if specified by policy.\n\n#### Required Documentation\n**Clinical Notes**\n- Detailed ophthalmologic examination notes, including visual acuity, intraocular pressure, and slit-lamp examination findings. Consistent documentation of laterality (right, left, or bilateral).\n- History of present illness, including symptoms, duration, and previous treatments. \n\n**Imaging Reports**\n- OCT reports demonstrating retinal fluid, intraretinal fluid, subretinal fluid, or pigment epithelial detachment (PED) due to CNV. \n\n**Treatment Plan**\n- Rationale for anti-VEGF agent selection and dosing regimen. Expected outcomes and potential risks discussed with the patient.\n\n#### Submission Process\n1. Obtain prior authorization if required by the specific Medicare Advantage plan or for certain drugs.\n2. Submit claims with CPT code 67028 for the injection procedure and the appropriate HCPCS code for the anti-VEGF drug (e.g., J0178 for Aflibercept, J2778 for Ranibizumab, J9035 for Bevacizumab).\n3. Use modifiers RT (right eye), LT (left eye), or 50 (bilateral procedure) as appropriate to indicate laterality. \n\n#### Common Denial Reasons\n- Lack of documented medical necessity for anti-VEGF therapy. \n\n#### Reimbursement Note\nMedicare Part B typically covers 80% of the Medicare-approved amount for the procedure and drug after the annual deductible is met. Patients are responsible for the remaining 20% coinsurance. \n\n#### Authorization Tips\n- Ensure thorough and consistent documentation of diagnosis, medical necessity, and treatment response in the patient's medical record. \n\n(Known Payer Policies: none)\n\n### Medicaid\n- Prior Auth Required\n- Coverage Status: Coverage varies by state, generally covered for wet AMD with prior authorization\n- Prior Auth Note (warning): Medicaid programs often require strict prior authorization for anti-VEGF injections, with specific criteria varying by state. \n- Overview: Medicaid coverage for anti-VEGF injections for wet AMD is determined by individual state Medicaid programs, which often have specific prior authorization requirements and clinical criteria. \n\n#### Coverage Criteria\n**Diagnosis and Medical Necessity**\n- Confirmed diagnosis of wet (exudative) AMD with active CNV. \n\n**Payer-Specific Guidelines**\n- Adherence to state-specific Medicaid clinical guidelines and preferred drug lists. \n\n#### Required Documentation\n**Clinical Documentation**\n- Comprehensive ophthalmologic examination notes, including visual acuity and imaging results (OCT, FA). \n\n**Prior Authorization Form**\n- Completed and approved prior authorization form specific to the state Medicaid program. \n\n#### Submission Process\n1. Verify state-specific Medicaid policies and obtain prior authorization before initiating treatment. \n\n#### Common Denial Reasons\n- Failure to obtain prior authorization or meet state-specific clinical criteria. \n\n#### Reimbursement Note\nReimbursement rates and patient cost-sharing vary significantly by state Medicaid program. \n\n#### Authorization Tips\n- Familiarize yourself with your state's Medicaid formulary and prior authorization process for anti-VEGF agents. \n\n(Known Payer Policies: none)\n\n### Private Insurance\n- Prior Auth Required\n- Coverage Status: Generally covered for wet AMD, subject to plan benefits and prior authorization\n- Prior Auth Note (warning): Most private insurance plans require prior authorization for anti-VEGF injections, often with step therapy requirements or preferred drug lists. \n- Overview: Private insurance coverage for anti-VEGF injections for wet AMD is common but typically requires prior authorization and adherence to the plan's medical policies, including potential step therapy. \n\n#### Coverage Criteria\n**Diagnosis and Clinical Evidence**\n- Confirmed diagnosis of wet (exudative) AMD with active CNV, supported by clinical examination and imaging. \n\n**Plan-Specific Requirements**\n- Fulfillment of any step therapy requirements (e.g., trying a less expensive anti-VEGF agent first). \n\n#### Required Documentation\n**Medical Records**\n- Detailed clinical notes, diagnostic test results (OCT, FA), and a clear treatment plan. \n\n**Prior Authorization Request**\n- Submission of a comprehensive prior authorization request form with all supporting documentation. \n\n#### Submission Process\n1. Submit a prior authorization request to the insurance company, providing all required clinical documentation. \n\n#### Common Denial Reasons\n- Lack of prior authorization, failure to meet medical necessity criteria, or not following step therapy protocols. \n\n#### Reimbursement Note\nCoverage is subject to the patient's specific plan benefits, including deductibles, co-pays, and coinsurance. \n\n#### Authorization Tips\n- Verify patient's benefits and eligibility, including any deductibles, co-pays, or coinsurance, before treatment. \n\n(Known Payer Policies: none)\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "Description", "Device/Access", "Access", "RVU", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            ["67028", "Intravitreal injection of a pharmacologic agent (separate procedure)", "Anti-VEGF agents (e.g., Aflibercept, Ranibizumab, Bevacizumab)", "Intravitreal", "1.44", "Preparation of the injection; Administration of the injection", "Typically used for the treatment of wet (exudative) age-related macular degeneration (AMD)."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required (Primary)"],
+          "rows": [
+            ["H35.321", "Exudative age-related macular degeneration, right eye", "Wet AMD affecting the right eye. Requires active choroidal neovascularization.", "true"],
+            ["H35.322", "Exudative age-related macular degeneration, left eye", "Wet AMD affecting the left eye. Requires active choroidal neovascularization.", "true"],
+            ["H35.323", "Exudative age-related macular degeneration, bilateral", "Wet AMD affecting both eyes. Requires active choroidal neovascularization.", "true"],
+            ["H35.329", "Exudative age-related macular degeneration, unspecified eye", "Wet AMD affecting an unspecified eye. Use when laterality is not documented.", "false"],
+            ["H35.31", "Nonexudative age-related macular degeneration", "Dry AMD. Anti-VEGF injections are generally not indicated for dry AMD.", "false"]
+          ]
+        }
+      ]
+    }
+  }
+}

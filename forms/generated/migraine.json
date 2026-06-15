@@ -1,0 +1,162 @@
+{
+  "title": "Migraine",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "migraine",
+    "hiddenDefaults": {
+      "frequency": "moderate",
+      "hasBasilarMigraine": false,
+      "hasMOH": false
+    },
+    "steps": [
+      {
+        "id": "migraine-profile",
+        "shortLabel": "Migraine Profile",
+        "title": "Migraine Profile",
+        "fields": [
+          {
+            "id": "migraine-subtype",
+            "name": "migraineSubtype",
+            "label": "Migraine Subtype",
+            "type": "select",
+            "defaultValue": "episodic",
+            "options": [
+              { "label": "Episodic migraine", "value": "episodic" },
+              { "label": "Chronic migraine (≥15 days/month)", "value": "chronic" },
+              { "label": "Menstrual migraine", "value": "menstrual" },
+              { "label": "Hemiplegic migraine", "value": "hemiplegic" },
+              { "label": "Vestibular migraine", "value": "vestibular" }
+            ]
+          },
+          {
+            "id": "headache-days-per-month",
+            "name": "headacheDaysPerMonth",
+            "label": "Headache Days per Month",
+            "type": "number",
+            "defaultValue": 6,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Patient Age (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "acute-medication-days-per-month",
+            "name": "acuteMedicationDaysPerMonth",
+            "label": "Acute Medication Days per Month",
+            "type": "number",
+            "defaultValue": 4,
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "current-therapy",
+        "shortLabel": "Current Therapy",
+        "title": "Current Therapy",
+        "fields": [
+          {
+            "id": "acute-therapy-response",
+            "name": "acuteTherapyResponse",
+            "label": "Acute Therapy Response",
+            "type": "select",
+            "defaultValue": "none_tried",
+            "options": [
+              { "label": "No acute therapy tried", "value": "none_tried" },
+              { "label": "Triptans — effective", "value": "triptan_effective" },
+              { "label": "Triptans — ineffective", "value": "triptan_ineffective" },
+              { "label": "Triptans — contraindicated", "value": "triptan_contraindicated" },
+              { "label": "NSAIDs — effective", "value": "nsaid_effective" },
+              { "label": "NSAIDs only (triptans not tried)", "value": "nsaid_only" }
+            ]
+          },
+          {
+            "id": "preventive-history",
+            "name": "preventiveHistory",
+            "label": "Preventive Therapy History",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "No preventive therapy tried", "value": "none" },
+              { "label": "Failed topiramate", "value": "failed_topiramate" },
+              { "label": "Failed valproate", "value": "failed_valproate" },
+              { "label": "Failed beta-blocker", "value": "failed_beta_blocker" },
+              { "label": "Failed amitriptyline", "value": "failed_amitriptyline" },
+              { "label": "Failed 2+ preventive therapies", "value": "failed_2plus_preventives" },
+              { "label": "Currently on CGRP mAb", "value": "on_cgrp_mab" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "comorbidities-preferences",
+        "shortLabel": "Comorbidities & Preferences",
+        "title": "Comorbidities & Preferences",
+        "fields": [
+          {
+            "id": "has-cardiovascular-disease",
+            "name": "hasCardiovascularDisease",
+            "label": "Cardiovascular Disease",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-uncontrolled-hypertension",
+            "name": "hasUncontrolledHypertension",
+            "label": "Uncontrolled Hypertension",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-hemiplegic-migraine",
+            "name": "hasHemiplegicMigraine",
+            "label": "Hemiplegic Migraine",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "is-pregnant-or-planning",
+            "name": "isPregnantOrPlanning",
+            "label": "Pregnant or Planning Pregnancy",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-depression",
+            "name": "hasDepression",
+            "label": "Comorbid Depression or Anxiety",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-epilepsy",
+            "name": "hasEpilepsy",
+            "label": "Comorbid Epilepsy",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-weight-concerns",
+            "name": "hasWeightConcerns",
+            "label": "Weight Concerns (avoid topiramate/valproate)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "wants-injectable",
+            "name": "wantsInjectable",
+            "label": "Prefers Injectable Preventive Therapy",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

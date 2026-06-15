@@ -1,0 +1,244 @@
+{
+  "title": "Elective PCI Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assess PCI Candidacy",
+    "logicKey": "pci",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "patient-symptoms",
+        "shortLabel": "Patient & Symptoms",
+        "title": "Patient Information & Symptoms",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "sex",
+            "name": "sex",
+            "label": "Sex",
+            "type": "select",
+            "required": false,
+            "defaultValue": "male",
+            "options": [
+              { "label": "Male", "value": "male" },
+              { "label": "Female", "value": "female" }
+            ]
+          },
+          {
+            "id": "ccs-angina",
+            "name": "ccsAngina",
+            "label": "CCS Angina Class",
+            "type": "select",
+            "required": false,
+            "defaultValue": 0,
+            "options": [
+              { "label": "Class 0 — No angina / Silent ischemia", "value": 0 },
+              { "label": "Class I — Angina with strenuous activity", "value": 1 },
+              { "label": "Class II — Angina with moderate activity", "value": 2 },
+              { "label": "Class III — Angina with mild activity", "value": 3 },
+              { "label": "Class IV — Angina at rest", "value": 4 }
+            ]
+          },
+          {
+            "id": "silent-ischemia",
+            "name": "silentIschemia",
+            "label": "Silent ischemia (no symptoms but positive objective test)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "dyspnea",
+            "name": "dyspnea",
+            "label": "Dyspnea on exertion (anginal equivalent)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "diabetes-mellitus",
+            "name": "diabetesMellitus",
+            "label": "Diabetes mellitus",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "dapt-tolerance",
+            "name": "daptTolerance",
+            "label": "Can tolerate dual antiplatelet therapy (DAPT)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": true
+          }
+        ]
+      },
+      {
+        "id": "anatomy-imaging",
+        "shortLabel": "Anatomy & Imaging",
+        "title": "Coronary Anatomy & Functional Assessment",
+        "fields": [
+          {
+            "id": "syntax-score",
+            "name": "syntaxScore",
+            "label": "SYNTAX Score",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "lvef",
+            "name": "lvef",
+            "label": "LVEF (%)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 60,
+            "unit": "%",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "num-vessels-disease",
+            "name": "numVesselsDisease",
+            "label": "Number of Diseased Vessels",
+            "type": "select",
+            "required": false,
+            "defaultValue": 1,
+            "options": [
+              { "label": "1-vessel disease", "value": 1 },
+              { "label": "2-vessel disease", "value": 2 },
+              { "label": "3-vessel disease", "value": 3 }
+            ]
+          },
+          {
+            "id": "left-main-disease",
+            "name": "leftMainDisease",
+            "label": "Left main coronary artery disease (≥50% stenosis)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "proximal-lad-disease",
+            "name": "proximalLadDisease",
+            "label": "Proximal LAD disease",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "chronic-total-occlusion",
+            "name": "chronicTotalOcclusion",
+            "label": "Chronic total occlusion (CTO)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "ffr-positive",
+            "name": "ffrPositive",
+            "label": "Hemodynamically significant lesion (FFR ≤0.80 or iFR ≤0.89)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "stress-test-positive",
+            "name": "stressTestPositive",
+            "label": "Positive stress test (any ischemia)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "stress-test-high-risk",
+            "name": "stressTestHighRisk",
+            "label": "High-risk stress test (≥10% ischemic territory, LVEF drop, hypotension)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "medical-history",
+        "shortLabel": "Medical History",
+        "title": "Medical Therapy & Comorbidities",
+        "fields": [
+          {
+            "id": "optimal-medical-therapy",
+            "name": "optimalMedicalTherapy",
+            "label": "Currently on optimal medical therapy (statin, beta-blocker, RAAS inhibitor, antiplatelet)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "prior-cabg",
+            "name": "priorCABG",
+            "label": "Prior coronary artery bypass grafting (CABG)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "contrast-allergy",
+            "name": "contrastAllergy",
+            "label": "Contrast allergy (requires pre-medication)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "omt-duration",
+            "name": "omtDuration",
+            "label": "Duration on OMT (months)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "optimalMedicalTherapy", "op": "truthy" }
+          },
+          {
+            "id": "ckd-stage",
+            "name": "ckdStage",
+            "label": "CKD Stage",
+            "type": "select",
+            "required": false,
+            "defaultValue": 0,
+            "options": [
+              { "label": "Stage 0 (None)", "value": 0 },
+              { "label": "Stage 1", "value": 1 },
+              { "label": "Stage 2", "value": 2 },
+              { "label": "Stage 3", "value": 3 },
+              { "label": "Stage 4", "value": 4 },
+              { "label": "Stage 5", "value": 5 }
+            ]
+          },
+          {
+            "id": "bleeding-risk",
+            "name": "bleedingRisk",
+            "label": "Bleeding Risk",
+            "type": "select",
+            "required": false,
+            "defaultValue": "low",
+            "options": [
+              { "label": "Low", "value": "low" },
+              { "label": "Moderate", "value": "moderate" },
+              { "label": "High", "value": "high" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

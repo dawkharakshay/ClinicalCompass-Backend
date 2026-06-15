@@ -1,0 +1,452 @@
+{
+  "title": "Crohn's Disease Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "CrohnsDiseaseAuthGuide.tsx",
+    "title": "CrohnsDisease Clinical Compass",
+    "subtitle": "Biologic Therapy for Crohn's Disease Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "96413",
+        "description": "Chemotherapy administration, intravenous infusion technique; up to 1 hour, single or initial substance/drug",
+        "device": "IV Infusion",
+        "access": "Intravenous",
+        "rvu": "1.50",
+        "includes": [
+          "Pre-infusion patient assessment",
+          "Preparation of medication",
+          "Monitoring during the first hour of infusion",
+          "Flushing of IV line"
+        ],
+        "note": "Used for complex biologic infusions, often requiring specific documentation for medical necessity."
+      },
+      {
+        "code": "96365",
+        "description": "Intravenous infusion, for therapy, prophylaxis, or diagnosis (specify substance or drug); initial, up to 1 hour",
+        "device": "IV Infusion",
+        "access": "Intravenous",
+        "rvu": "1.00",
+        "includes": [
+          "Patient assessment prior to infusion",
+          "Drug preparation (non-chemotherapy/complex biologic)",
+          "Monitoring during the first hour of infusion",
+          "IV line maintenance"
+        ],
+        "note": "Appropriate for non-chemotherapy biologic infusions, such as infliximab, adalimumab, ustekinumab, and vedolizumab."
+      },
+      {
+        "code": "J1745",
+        "description": "Injection, infliximab, excludes biosimilar, 10 mg",
+        "device": "Infliximab (Remicade)",
+        "access": "Intravenous",
+        "rvu": "N/A",
+        "includes": [],
+        "note": "HCPCS code for the drug itself, billed in conjunction with administration CPT codes."
+      },
+      {
+        "code": "J0139",
+        "description": "Injection, adalimumab, 1 mg",
+        "device": "Adalimumab (Humira)",
+        "access": "Subcutaneous/Intravenous",
+        "rvu": "N/A",
+        "includes": [],
+        "note": "HCPCS code for the drug itself, billed per mg. May be self-administered or administered in clinic."
+      },
+      {
+        "code": "J3358",
+        "description": "Ustekinumab, for intravenous injection, 1 mg",
+        "device": "Ustekinumab (Stelara)",
+        "access": "Intravenous",
+        "rvu": "N/A",
+        "includes": [],
+        "note": "HCPCS code for the drug itself, for intravenous administration."
+      },
+      {
+        "code": "J3380",
+        "description": "Injection, vedolizumab, intravenous, 1 mg",
+        "device": "Vedolizumab (Entyvio)",
+        "access": "Intravenous",
+        "rvu": "N/A",
+        "includes": [],
+        "note": "HCPCS code for the drug itself, for intravenous administration."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "K50.90",
+        "description": "Crohn's disease, unspecified, without complications",
+        "notes": "Used when the specific site or complications are not documented.",
+        "required": true
+      },
+      {
+        "code": "K50.00",
+        "description": "Crohn's disease of small intestine without complications",
+        "notes": "Specify if the disease is limited to the small intestine.",
+        "required": false
+      },
+      {
+        "code": "K50.10",
+        "description": "Crohn's disease of large intestine without complications",
+        "notes": "Specify if the disease is limited to the large intestine.",
+        "required": false
+      },
+      {
+        "code": "K50.80",
+        "description": "Crohn's disease of both small and large intestine without complications",
+        "notes": "Specify if both small and large intestines are affected.",
+        "required": false
+      },
+      {
+        "code": "K50.91",
+        "description": "Crohn's disease, unspecified, with complications",
+        "notes": "Use an additional code to identify the specific complication, such as K50.911 for rectal bleeding or K50.912 for intestinal obstruction.",
+        "required": true
+      },
+      {
+        "code": "K50.011",
+        "description": "Crohn's disease of small intestine with rectal bleeding",
+        "notes": "Example of a complication-specific code.",
+        "required": false
+      },
+      {
+        "code": "K50.118",
+        "description": "Crohn's disease of large intestine with other complication",
+        "notes": "Example of a complication-specific code.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with Prior Authorization",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is required for most biologic therapies for Crohn's disease under Medicare Part B. Coverage is typically dependent on failure of conventional therapies and specific disease activity criteria.",
+        "overview": "Medicare covers biologic therapies for Crohn's disease when medical necessity is established and specific criteria are met. This often includes documentation of disease severity, previous treatment failures, and absence of contraindications.",
+        "reimbursementNote": "Reimbursement for biologic agents is typically based on Average Sales Price (ASP) plus a percentage, or a fee schedule amount. Administration codes (CPT 96413/96365) are reimbursed separately.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Disease Activity",
+            "items": [
+              "Diagnosis of moderately to severely active Crohn's disease.",
+              "Evidence of active inflammation (e.g., elevated CRP, fecal calprotectin, endoscopic findings)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Prior Therapy",
+            "items": [
+              "Inadequate response to, or intolerance of, conventional therapy (e.g., corticosteroids, immunomodulators like azathioprine or methotrexate).",
+              "Contraindication to conventional therapy."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Patient Status",
+            "items": [
+              "Absence of active infection.",
+              "No history of malignancy within the last 5 years (varies by biologic).",
+              "Tuberculosis screening completed and negative."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Notes",
+            "items": [
+              "Detailed history and physical examination.",
+              "Documentation of Crohn's disease diagnosis, severity, and disease activity.",
+              "Response to previous therapies, including dates and reasons for discontinuation (e.g., lack of efficacy, adverse events)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Laboratory/Imaging",
+            "items": [
+              "Recent inflammatory markers (CRP, ESR).",
+              "Fecal calprotectin levels. (if applicable)",
+              "Endoscopic reports with biopsy results.",
+              "Imaging studies (e.g., MRI enterography, CT enterography).",
+              "Tuberculosis screening results (PPD or IGRA)."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request through the Medicare Administrative Contractor (MAC) portal or fax.",
+              "Include all supporting clinical documentation (chart notes, lab results, imaging reports).",
+              "Await approval or denial; appeals process available for denials."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented failure of conventional therapy.",
+              "Insufficient documentation of disease activity or severity.",
+              "Incomplete or missing prior authorization forms.",
+              "Patient does not meet specific age or weight criteria for certain biologics."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Ensure all sections of the prior authorization form are completed accurately and thoroughly.",
+              "Provide clear and concise documentation of medical necessity, highlighting previous treatment failures and current disease status.",
+              "Keep copies of all submitted documentation and track submission dates.",
+              "Familiarize yourself with the specific coverage policies of your regional MAC."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Noridian Medicare (MAC)",
+            "status": "Covered",
+            "notes": "Requires documentation of active disease and failure of other therapies."
+          },
+          {
+            "payer": "Palmetto GBA (MAC)",
+            "status": "Covered",
+            "notes": "Specific criteria for initiation and continuation of therapy."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered with State-Specific Prior Authorization",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid programs typically require prior authorization for all biologic therapies for Crohn's disease. Policies vary significantly by state.",
+        "overview": "Medicaid coverage for Crohn's disease biologics is highly state-dependent. Most states require prior authorization, often with step therapy protocols, requiring failure of less expensive alternatives first.",
+        "reimbursementNote": "Medicaid reimbursement rates for biologic drugs and administration vary by state. It is crucial to check the state's fee schedule and pharmacy benefits for accurate billing.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Disease Severity",
+            "items": [
+              "Diagnosis of moderately to severely active Crohn's disease.",
+              "Clinical evidence of active disease (e.g., CDAI score, endoscopic findings)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Step Therapy",
+            "items": [
+              "Failure of, or contraindication to, at least one conventional immunomodulator (e.g., azathioprine, 6-mercaptopurine) and corticosteroids.",
+              "Some states may require trial and failure of specific biologics before others."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Monitoring",
+            "items": [
+              "Regular monitoring for efficacy and safety.",
+              "Adherence to treatment plan."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Records",
+            "items": [
+              "Physician's notes detailing diagnosis, disease activity, and impact on daily life.",
+              "Documentation of all previous treatments, dosages, duration, and outcomes.",
+              "Laboratory results supporting active inflammation (CRP, ESR, fecal calprotectin)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization Form",
+            "items": [
+              "Completed state-specific Medicaid prior authorization form.",
+              "Prescription for the requested biologic agent."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request to the state Medicaid agency via their designated portal, fax, or mail.",
+              "Follow state-specific guidelines for documentation and submission deadlines.",
+              "Be prepared for potential requests for additional information (RFAI)."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet step therapy requirements.",
+              "Inadequate documentation of disease severity or previous treatment failures.",
+              "Non-adherence to state-specific formulary guidelines.",
+              "Missing or incomplete prior authorization forms."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify the specific Medicaid policies for biologic coverage in your state, as they can vary widely.",
+              "Document all treatment attempts and patient responses meticulously.",
+              "Clearly articulate the medical necessity and why the chosen biologic is appropriate for the patient.",
+              "Be aware of any preferred drug lists or step therapy requirements."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "California Medi-Cal",
+            "status": "Covered with PA",
+            "notes": "Requires trial and failure of conventional therapies; specific biologics may have preferred status."
+          },
+          {
+            "payer": "New York Medicaid",
+            "status": "Covered with PA",
+            "notes": "Strict step therapy protocols and clinical criteria apply."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Covered with Plan-Specific Prior Authorization",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for biologic therapies for Crohn's disease. Coverage criteria and processes are plan-specific.",
+        "overview": "Private insurance coverage for Crohn's disease biologics is highly variable, depending on the specific plan and formulary. Prior authorization is almost always required, often with step therapy and quantity limits.",
+        "reimbursementNote": "Reimbursement for biologic drugs and administration varies widely by private payer and plan. Contracted rates and patient's benefit design (e.g., deductibles, co-insurance) will impact final payment.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Medical Necessity",
+            "items": [
+              "Diagnosis of moderately to severely active Crohn's disease confirmed by clinical, endoscopic, or radiologic evidence.",
+              "Failure of, or contraindication to, at least one conventional therapy (e.g., immunomodulators, corticosteroids)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Formulary Adherence",
+            "items": [
+              "Patient must meet criteria for preferred biologic agents on the plan's formulary.",
+              "Step therapy may require trying and failing less costly biologics first."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Monitoring & Dosing",
+            "items": [
+              "Adherence to FDA-approved dosing and administration schedules.",
+              "Regular clinical assessment of response to therapy."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Comprehensive physician's notes, including diagnosis, disease activity scores (e.g., CDAI), and treatment history.",
+              "Endoscopy and pathology reports.",
+              "Laboratory results (e.g., CRP, ESR, albumin, fecal calprotectin)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization Form",
+            "items": [
+              "Completed plan-specific prior authorization form.",
+              "Letter of medical necessity from the prescribing physician, if required."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request via the insurer's online portal, fax, or phone.",
+              "Ensure all required fields on the PA form are completed and supporting documentation is attached.",
+              "Follow up regularly on the status of the request and be prepared to provide additional information or participate in peer-to-peer reviews."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet plan's medical necessity criteria.",
+              "Lack of documented trial and failure of preferred formulary agents.",
+              "Incomplete or illegible documentation.",
+              "Request for off-label use without sufficient clinical justification."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always check the patient's specific insurance policy and formulary for Crohn's disease biologics.",
+              "Be proactive in submitting prior authorization requests well in advance of treatment initiation.",
+              "Maintain detailed records of all communications with the insurance company.",
+              "Prepare for peer-to-peer reviews by having all clinical data readily available to discuss with the medical director."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Covered with PA",
+            "notes": "Requires step therapy and medical necessity documentation."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered with PA",
+            "notes": "Specific clinical criteria and formulary adherence."
+          },
+          {
+            "payer": "Aetna",
+            "status": "Covered with PA",
+            "notes": "May require specific disease activity scores and prior treatment history."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Navigation",
+        "kind": "link",
+        "text": "Back to Assessment (navigates to /crohnsdisease)",
+        "href": "/crohnsdisease"
+      },
+      {
+        "heading": "Procedure Codes — Note",
+        "kind": "prose",
+        "text": "Each CPT/HCPCS card shows a 'CPT {code}' badge, an RVU badge (when RVU is not N/A), the description, a 'Device/Access' line, an 'Included in this code (do NOT bill separately)' bullet list, and an italic note."
+      }
+    ],
+    "raw": {
+      "markdown": "# CrohnsDisease Clinical Compass\n\n_Subtitle:_ Biologic Therapy for Crohn's Disease Insurance Authorization Guide\n\n[Button] Back to Assessment (navigates to /crohnsdisease)\n\n---\n\n## Procedure Codes\n\n### CPT 96413 (RVU 1.50)\nChemotherapy administration, intravenous infusion technique; up to 1 hour, single or initial substance/drug\n- Device/Access: IV Infusion (Intravenous)\nIncluded in this code (do NOT bill separately):\n- Pre-infusion patient assessment\n- Preparation of medication\n- Monitoring during the first hour of infusion\n- Flushing of IV line\n_Note:_ Used for complex biologic infusions, often requiring specific documentation for medical necessity.\n\n### CPT 96365 (RVU 1.00)\nIntravenous infusion, for therapy, prophylaxis, or diagnosis (specify substance or drug); initial, up to 1 hour\n- Device/Access: IV Infusion (Intravenous)\nIncluded in this code (do NOT bill separately):\n- Patient assessment prior to infusion\n- Drug preparation (non-chemotherapy/complex biologic)\n- Monitoring during the first hour of infusion\n- IV line maintenance\n_Note:_ Appropriate for non-chemotherapy biologic infusions, such as infliximab, adalimumab, ustekinumab, and vedolizumab.\n\n### CPT J1745\nInjection, infliximab, excludes biosimilar, 10 mg\n- Device/Access: Infliximab (Remicade) (Intravenous)\nIncluded in this code (do NOT bill separately): (none)\n_Note:_ HCPCS code for the drug itself, billed in conjunction with administration CPT codes.\n\n### CPT J0139\nInjection, adalimumab, 1 mg\n- Device/Access: Adalimumab (Humira) (Subcutaneous/Intravenous)\nIncluded in this code (do NOT bill separately): (none)\n_Note:_ HCPCS code for the drug itself, billed per mg. May be self-administered or administered in clinic.\n\n### CPT J3358\nUstekinumab, for intravenous injection, 1 mg\n- Device/Access: Ustekinumab (Stelara) (Intravenous)\nIncluded in this code (do NOT bill separately): (none)\n_Note:_ HCPCS code for the drug itself, for intravenous administration.\n\n### CPT J3380\nInjection, vedolizumab, intravenous, 1 mg\n- Device/Access: Vedolizumab (Entyvio) (Intravenous)\nIncluded in this code (do NOT bill separately): (none)\n_Note:_ HCPCS code for the drug itself, for intravenous administration.\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **K50.90** (Primary) — Crohn's disease, unspecified, without complications. Used when the specific site or complications are not documented.\n- **K50.00** — Crohn's disease of small intestine without complications. Specify if the disease is limited to the small intestine.\n- **K50.10** — Crohn's disease of large intestine without complications. Specify if the disease is limited to the large intestine.\n- **K50.80** — Crohn's disease of both small and large intestine without complications. Specify if both small and large intestines are affected.\n- **K50.91** (Primary) — Crohn's disease, unspecified, with complications. Use an additional code to identify the specific complication, such as K50.911 for rectal bleeding or K50.912 for intestinal obstruction.\n- **K50.011** — Crohn's disease of small intestine with rectal bleeding. Example of a complication-specific code.\n- **K50.118** — Crohn's disease of large intestine with other complication. Example of a complication-specific code.\n\n---\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\n- Prior Auth Required\n- Coverage Status: Covered with Prior Authorization\n- Prior Auth Note: Prior authorization is required for most biologic therapies for Crohn's disease under Medicare Part B. Coverage is typically dependent on failure of conventional therapies and specific disease activity criteria.\n- Overview: Medicare covers biologic therapies for Crohn's disease when medical necessity is established and specific criteria are met. This often includes documentation of disease severity, previous treatment failures, and absence of contraindications.\n\n**Coverage Criteria**\n\n_Disease Activity_\n- Diagnosis of moderately to severely active Crohn's disease.\n- Evidence of active inflammation (e.g., elevated CRP, fecal calprotectin, endoscopic findings).\n\n_Prior Therapy_\n- Inadequate response to, or intolerance of, conventional therapy (e.g., corticosteroids, immunomodulators like azathioprine or methotrexate).\n- Contraindication to conventional therapy.\n\n_Patient Status_\n- Absence of active infection.\n- No history of malignancy within the last 5 years (varies by biologic).\n- Tuberculosis screening completed and negative.\n\n**Required Documentation**\n\n_Clinical Notes_\n- Detailed history and physical examination.\n- Documentation of Crohn's disease diagnosis, severity, and disease activity.\n- Response to previous therapies, including dates and reasons for discontinuation (e.g., lack of efficacy, adverse events).\n\n_Laboratory/Imaging_\n- Recent inflammatory markers (CRP, ESR).\n- Fecal calprotectin levels. (if applicable)\n- Endoscopic reports with biopsy results.\n- Imaging studies (e.g., MRI enterography, CT enterography).\n- Tuberculosis screening results (PPD or IGRA).\n\n**Submission Process**\n1. Submit prior authorization request through the Medicare Administrative Contractor (MAC) portal or fax.\n2. Include all supporting clinical documentation (chart notes, lab results, imaging reports).\n3. Await approval or denial; appeals process available for denials.\n\n**Common Denial Reasons**\n- Lack of documented failure of conventional therapy.\n- Insufficient documentation of disease activity or severity.\n- Incomplete or missing prior authorization forms.\n- Patient does not meet specific age or weight criteria for certain biologics.\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Noridian Medicare (MAC) | Covered | Requires documentation of active disease and failure of other therapies. |\n| Palmetto GBA (MAC) | Covered | Specific criteria for initiation and continuation of therapy. |\n\n**Reimbursement Note:** Reimbursement for biologic agents is typically based on Average Sales Price (ASP) plus a percentage, or a fee schedule amount. Administration codes (CPT 96413/96365) are reimbursed separately.\n\n**Authorization Tips**\n- Ensure all sections of the prior authorization form are completed accurately and thoroughly.\n- Provide clear and concise documentation of medical necessity, highlighting previous treatment failures and current disease status.\n- Keep copies of all submitted documentation and track submission dates.\n- Familiarize yourself with the specific coverage policies of your regional MAC.\n\n### Medicaid\n- Prior Auth Required\n- Coverage Status: Covered with State-Specific Prior Authorization\n- Prior Auth Note: Medicaid programs typically require prior authorization for all biologic therapies for Crohn's disease. Policies vary significantly by state.\n- Overview: Medicaid coverage for Crohn's disease biologics is highly state-dependent. Most states require prior authorization, often with step therapy protocols, requiring failure of less expensive alternatives first.\n\n**Coverage Criteria**\n\n_Disease Severity_\n- Diagnosis of moderately to severely active Crohn's disease.\n- Clinical evidence of active disease (e.g., CDAI score, endoscopic findings).\n\n_Step Therapy_\n- Failure of, or contraindication to, at least one conventional immunomodulator (e.g., azathioprine, 6-mercaptopurine) and corticosteroids.\n- Some states may require trial and failure of specific biologics before others.\n\n_Monitoring_\n- Regular monitoring for efficacy and safety.\n- Adherence to treatment plan.\n\n**Required Documentation**\n\n_Clinical Records_\n- Physician's notes detailing diagnosis, disease activity, and impact on daily life.\n- Documentation of all previous treatments, dosages, duration, and outcomes.\n- Laboratory results supporting active inflammation (CRP, ESR, fecal calprotectin).\n\n_Prior Authorization Form_\n- Completed state-specific Medicaid prior authorization form.\n- Prescription for the requested biologic agent.\n\n**Submission Process**\n1. Submit prior authorization request to the state Medicaid agency via their designated portal, fax, or mail.\n2. Follow state-specific guidelines for documentation and submission deadlines.\n3. Be prepared for potential requests for additional information (RFAI).\n\n**Common Denial Reasons**\n- Failure to meet step therapy requirements.\n- Inadequate documentation of disease severity or previous treatment failures.\n- Non-adherence to state-specific formulary guidelines.\n- Missing or incomplete prior authorization forms.\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| California Medi-Cal | Covered with PA | Requires trial and failure of conventional therapies; specific biologics may have preferred status. |\n| New York Medicaid | Covered with PA | Strict step therapy protocols and clinical criteria apply. |\n\n**Reimbursement Note:** Medicaid reimbursement rates for biologic drugs and administration vary by state. It is crucial to check the state's fee schedule and pharmacy benefits for accurate billing.\n\n**Authorization Tips**\n- Verify the specific Medicaid policies for biologic coverage in your state, as they can vary widely.\n- Document all treatment attempts and patient responses meticulously.\n- Clearly articulate the medical necessity and why the chosen biologic is appropriate for the patient.\n- Be aware of any preferred drug lists or step therapy requirements.\n\n### Private Insurance\n- Prior Auth Required\n- Coverage Status: Covered with Plan-Specific Prior Authorization\n- Prior Auth Note: Most private insurance plans require prior authorization for biologic therapies for Crohn's disease. Coverage criteria and processes are plan-specific.\n- Overview: Private insurance coverage for Crohn's disease biologics is highly variable, depending on the specific plan and formulary. Prior authorization is almost always required, often with step therapy and quantity limits.\n\n**Coverage Criteria**\n\n_Medical Necessity_\n- Diagnosis of moderately to severely active Crohn's disease confirmed by clinical, endoscopic, or radiologic evidence.\n- Failure of, or contraindication to, at least one conventional therapy (e.g., immunomodulators, corticosteroids).\n\n_Formulary Adherence_\n- Patient must meet criteria for preferred biologic agents on the plan's formulary.\n- Step therapy may require trying and failing less costly biologics first.\n\n_Monitoring & Dosing_\n- Adherence to FDA-approved dosing and administration schedules.\n- Regular clinical assessment of response to therapy.\n\n**Required Documentation**\n\n_Clinical Documentation_\n- Comprehensive physician's notes, including diagnosis, disease activity scores (e.g., CDAI), and treatment history.\n- Endoscopy and pathology reports.\n- Laboratory results (e.g., CRP, ESR, albumin, fecal calprotectin).\n\n_Prior Authorization Form_\n- Completed plan-specific prior authorization form.\n- Letter of medical necessity from the prescribing physician, if required.\n\n**Submission Process**\n1. Submit prior authorization request via the insurer's online portal, fax, or phone.\n2. Ensure all required fields on the PA form are completed and supporting documentation is attached.\n3. Follow up regularly on the status of the request and be prepared to provide additional information or participate in peer-to-peer reviews.\n\n**Common Denial Reasons**\n- Failure to meet plan's medical necessity criteria.\n- Lack of documented trial and failure of preferred formulary agents.\n- Incomplete or illegible documentation.\n- Request for off-label use without sufficient clinical justification.\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Blue Cross Blue Shield | Covered with PA | Requires step therapy and medical necessity documentation. |\n| UnitedHealthcare | Covered with PA | Specific clinical criteria and formulary adherence. |\n| Aetna | Covered with PA | May require specific disease activity scores and prior treatment history. |\n\n**Reimbursement Note:** Reimbursement for biologic drugs and administration varies widely by private payer and plan. Contracted rates and patient's benefit design (e.g., deductibles, co-insurance) will impact final payment.\n\n**Authorization Tips**\n- Always check the patient's specific insurance policy and formulary for Crohn's disease biologics.\n- Be proactive in submitting prior authorization requests well in advance of treatment initiation.\n- Maintain detailed records of all communications with the insurance company.\n- Prepare for peer-to-peer reviews by having all clinical data readily available to discuss with the medical director.\n",
+      "tables": [
+        {
+          "name": "CPT/HCPCS Procedure Codes",
+          "header": ["Code", "Description", "Device", "Access", "RVU", "Includes", "Note"],
+          "rows": [
+            ["96413", "Chemotherapy administration, intravenous infusion technique; up to 1 hour, single or initial substance/drug", "IV Infusion", "Intravenous", "1.50", "Pre-infusion patient assessment; Preparation of medication; Monitoring during the first hour of infusion; Flushing of IV line", "Used for complex biologic infusions, often requiring specific documentation for medical necessity."],
+            ["96365", "Intravenous infusion, for therapy, prophylaxis, or diagnosis (specify substance or drug); initial, up to 1 hour", "IV Infusion", "Intravenous", "1.00", "Patient assessment prior to infusion; Drug preparation (non-chemotherapy/complex biologic); Monitoring during the first hour of infusion; IV line maintenance", "Appropriate for non-chemotherapy biologic infusions, such as infliximab, adalimumab, ustekinumab, and vedolizumab."],
+            ["J1745", "Injection, infliximab, excludes biosimilar, 10 mg", "Infliximab (Remicade)", "Intravenous", "N/A", "", "HCPCS code for the drug itself, billed in conjunction with administration CPT codes."],
+            ["J0139", "Injection, adalimumab, 1 mg", "Adalimumab (Humira)", "Subcutaneous/Intravenous", "N/A", "", "HCPCS code for the drug itself, billed per mg. May be self-administered or administered in clinic."],
+            ["J3358", "Ustekinumab, for intravenous injection, 1 mg", "Ustekinumab (Stelara)", "Intravenous", "N/A", "", "HCPCS code for the drug itself, for intravenous administration."],
+            ["J3380", "Injection, vedolizumab, intravenous, 1 mg", "Vedolizumab (Entyvio)", "Intravenous", "N/A", "", "HCPCS code for the drug itself, for intravenous administration."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required (Primary)"],
+          "rows": [
+            ["K50.90", "Crohn's disease, unspecified, without complications", "Used when the specific site or complications are not documented.", "Yes"],
+            ["K50.00", "Crohn's disease of small intestine without complications", "Specify if the disease is limited to the small intestine.", "No"],
+            ["K50.10", "Crohn's disease of large intestine without complications", "Specify if the disease is limited to the large intestine.", "No"],
+            ["K50.80", "Crohn's disease of both small and large intestine without complications", "Specify if both small and large intestines are affected.", "No"],
+            ["K50.91", "Crohn's disease, unspecified, with complications", "Use an additional code to identify the specific complication, such as K50.911 for rectal bleeding or K50.912 for intestinal obstruction.", "Yes"],
+            ["K50.011", "Crohn's disease of small intestine with rectal bleeding", "Example of a complication-specific code.", "No"],
+            ["K50.118", "Crohn's disease of large intestine with other complication", "Example of a complication-specific code.", "No"]
+          ]
+        },
+        {
+          "name": "Medicare — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Noridian Medicare (MAC)", "Covered", "Requires documentation of active disease and failure of other therapies."],
+            ["Palmetto GBA (MAC)", "Covered", "Specific criteria for initiation and continuation of therapy."]
+          ]
+        },
+        {
+          "name": "Medicaid — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["California Medi-Cal", "Covered with PA", "Requires trial and failure of conventional therapies; specific biologics may have preferred status."],
+            ["New York Medicaid", "Covered with PA", "Strict step therapy protocols and clinical criteria apply."]
+          ]
+        },
+        {
+          "name": "Private Insurance — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield", "Covered with PA", "Requires step therapy and medical necessity documentation."],
+            ["UnitedHealthcare", "Covered with PA", "Specific clinical criteria and formulary adherence."],
+            ["Aetna", "Covered with PA", "May require specific disease activity scores and prior treatment history."]
+          ]
+        }
+      ]
+    }
+  }
+}

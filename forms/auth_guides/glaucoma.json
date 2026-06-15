@@ -1,0 +1,423 @@
+{
+  "title": "Glaucoma",
+  "auth_guide": {
+    "sourceFile": "GlaucomaAuthGuide.tsx",
+    "title": "Glaucoma Clinical Compass",
+    "subtitle": "Glaucoma Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "65855",
+        "description": "Trabeculoplasty by laser surgery, one or more sessions (e.g., Selective Laser Trabeculoplasty - SLT)",
+        "device": "Laser",
+        "access": "External",
+        "rvu": "15.00",
+        "includes": [
+          "Pre-operative and post-operative evaluations",
+          "Anesthesia (if applicable)"
+        ],
+        "note": "Used for open-angle glaucoma to improve aqueous outflow."
+      },
+      {
+        "code": "66170",
+        "description": "Fistulization of sclera for glaucoma; trabeculectomy ab externo in absence of previous surgery",
+        "device": "Surgical instruments",
+        "access": "External",
+        "rvu": "30.00",
+        "includes": [
+          "Creation of scleral flap",
+          "Iridectomy",
+          "Conjunctival closure"
+        ],
+        "note": "Standard surgical procedure to create a new drainage pathway for aqueous humor."
+      },
+      {
+        "code": "66174",
+        "description": "Transluminal dilation of aqueous outflow canal; without retention of device or stent (e.g., Canaloplasty)",
+        "device": "Microcatheter",
+        "access": "Internal",
+        "rvu": "25.00",
+        "includes": [
+          "Cannulation of Schlemm's canal",
+          "Viscodilation"
+        ],
+        "note": "Minimally invasive procedure to restore natural outflow pathways."
+      },
+      {
+        "code": "66991",
+        "description": "Complex cataract removal with insertion of intraocular lens prosthesis and concomitant intraocular aqueous drainage device",
+        "device": "IOL, Glaucoma drainage device",
+        "access": "Internal",
+        "rvu": "28.00",
+        "includes": [
+          "Cataract extraction",
+          "IOL insertion",
+          "Drainage device placement"
+        ],
+        "note": "Often performed concurrently with cataract surgery for patients with glaucoma."
+      },
+      {
+        "code": "0449T",
+        "description": "Insertion of aqueous drainage device, without extraocular reservoir, internal approach, into the subconjunctival space; initial device (e.g., XEN Gel Stent)",
+        "device": "XEN Gel Stent",
+        "access": "Internal",
+        "rvu": "20.00",
+        "includes": [
+          "Device implantation",
+          "Conjunctival peritomy"
+        ],
+        "note": "Minimally invasive glaucoma surgery (MIGS) for moderate to severe glaucoma."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "H40.111",
+        "description": "Primary open-angle glaucoma, right eye, mild stage",
+        "notes": "Requires laterality and staging.",
+        "required": true
+      },
+      {
+        "code": "H40.112",
+        "description": "Primary open-angle glaucoma, left eye, mild stage",
+        "notes": "Requires laterality and staging.",
+        "required": true
+      },
+      {
+        "code": "H40.10X",
+        "description": "Unspecified open-angle glaucoma, unspecified stage",
+        "notes": "Use when stage is not documented. Avoid if more specific code is available.",
+        "required": false
+      },
+      {
+        "code": "H40.20X",
+        "description": "Primary angle-closure glaucoma, unspecified",
+        "notes": "Use for angle-closure glaucoma.",
+        "required": false
+      },
+      {
+        "code": "H40.011",
+        "description": "Glaucoma suspect, right eye, low risk",
+        "notes": "For patients with ocular hypertension or suspicious optic disc findings.",
+        "required": false
+      },
+      {
+        "code": "H40.012",
+        "description": "Glaucoma suspect, left eye, low risk",
+        "notes": "For patients with ocular hypertension or suspicious optic disc findings.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with Restrictions",
+        "overview": "Medicare covers medically necessary diagnostic tests and treatments for glaucoma. Coverage for surgical interventions, especially MIGS, is subject to specific criteria and documentation requirements.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is often required for surgical glaucoma procedures and certain advanced diagnostic tests. Documentation must support medical necessity based on Medicare LCDs.",
+        "reimbursementNote": "Reimbursement for glaucoma procedures varies based on the specific CPT code, site of service, and Medicare fee schedule. MIGS procedures may have specific bundling rules.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Diagnostic Criteria",
+            "items": [
+              "Diagnosis of glaucoma or ocular hypertension confirmed by ophthalmologist.",
+              "Evidence of progressive optic nerve damage or visual field loss.",
+              "Intraocular pressure (IOP) consistently elevated or uncontrolled despite maximum tolerated medical therapy."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Treatment History",
+            "items": [
+              "Failure of conventional medical therapy (e.g., eye drops) to control IOP or halt disease progression.",
+              "Intolerance or contraindications to medical therapy."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Surgical Indications (for MIGS/Trabeculectomy)",
+            "items": [
+              "Moderate to severe glaucoma with uncontrolled IOP.",
+              "Need to reduce medication burden due to side effects or compliance issues.",
+              "Co-existing cataract requiring surgery (for combined procedures)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Comprehensive ophthalmologic examination notes (including visual acuity, slit lamp, gonioscopy).",
+              "Optic nerve head evaluation (e.g., OCT, fundus photography).",
+              "Visual field testing (e.g., Humphrey Visual Field).",
+              "IOP measurements over time.",
+              "Previous treatment history and response.",
+              "Medical necessity justification for proposed procedure."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization Forms",
+            "items": [
+              "Completed Medicare prior authorization request form.",
+              "Supporting clinical notes and diagnostic reports."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request with all supporting documentation.",
+              "Await approval before scheduling elective surgical procedures.",
+              "Submit claims with appropriate CPT and ICD-10 codes, ensuring modifiers are used correctly."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity.",
+              "Insufficient trial of conservative therapies.",
+              "Incomplete or missing clinical documentation.",
+              "Incorrect coding or billing."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Ensure all diagnostic tests are performed and documented prior to requesting authorization.",
+              "Clearly articulate the failure of previous treatments and the rationale for the proposed intervention.",
+              "Verify specific Medicare Local Coverage Determinations (LCDs) for your region."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Medicare Part B",
+            "status": "Covered",
+            "notes": "Covers medically necessary diagnostic and treatment services. Specific LCDs apply to MIGS."
+          },
+          {
+            "payer": "Medicare Advantage",
+            "status": "Varies",
+            "notes": "Plans may have additional requirements or preferred providers. Always verify."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered with Prior Authorization",
+        "overview": "Medicaid programs cover essential health benefits, including glaucoma diagnosis and treatment. Coverage criteria and prior authorization processes can vary significantly by state.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is generally required for most glaucoma surgeries and advanced imaging. State-specific Medicaid policies apply.",
+        "reimbursementNote": "Medicaid reimbursement rates are typically lower than Medicare or private insurance and vary by state. Ensure correct coding to maximize eligible reimbursement.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Medical Necessity",
+            "items": [
+              "Documented diagnosis of glaucoma or ocular hypertension.",
+              "Evidence of disease progression or risk of vision loss.",
+              "Conservative management failure or contraindication."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: State-Specific Guidelines",
+            "items": [
+              "Adherence to state Medicaid clinical guidelines for glaucoma management.",
+              "Specific age or severity criteria may apply for certain procedures."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Records",
+            "items": [
+              "Ophthalmologic exam reports, including IOP, optic nerve assessment, and visual fields.",
+              "Documentation of failed medical therapies or reasons for surgical intervention.",
+              "State-specific prior authorization forms."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Complete and submit state Medicaid prior authorization forms with all required clinical documentation.",
+              "Follow up on authorization status and appeal denials if necessary.",
+              "Bill services using appropriate CPT and ICD-10 codes according to state Medicaid guidelines."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization.",
+              "Failure to meet state-specific coverage criteria.",
+              "Incomplete documentation.",
+              "Services deemed not medically necessary by state review board."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state's specific Medicaid policies for glaucoma.",
+              "Maintain thorough and detailed patient records to support medical necessity.",
+              "Be prepared for potential delays in authorization processing."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (e.g., California Medi-Cal)",
+            "status": "Covered with PA",
+            "notes": "Requires strict adherence to medical necessity criteria and prior authorization for most surgeries."
+          },
+          {
+            "payer": "State Medicaid (e.g., New York Medicaid)",
+            "status": "Covered with PA",
+            "notes": "Specific formularies for eye drops and surgical guidelines are in place."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Covered with Prior Authorization",
+        "overview": "Private insurance coverage for glaucoma care is generally comprehensive but is highly dependent on the specific plan benefits, deductibles, co-pays, and prior authorization rules. Patients should verify their benefits.",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for glaucoma surgeries, advanced diagnostic tests, and certain brand-name medications. Policies vary widely by plan.",
+        "reimbursementNote": "Reimbursement rates are negotiated between providers and private insurers. Out-of-network benefits may apply if the provider is not contracted with the plan.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Medical Necessity",
+            "items": [
+              "Confirmed diagnosis of glaucoma or related ocular condition.",
+              "Documented progression of disease or high risk of vision loss.",
+              "Failure of less invasive treatments or medical management."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Plan-Specific Requirements",
+            "items": [
+              "Adherence to the insurer's clinical policies and guidelines.",
+              "May require step therapy for medications or specific diagnostic pathways."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Records",
+            "items": [
+              "Detailed ophthalmologic examination reports.",
+              "Results of diagnostic tests (e.g., OCT, visual fields, pachymetry).",
+              "History of medical and surgical interventions for glaucoma.",
+              "Letter of medical necessity from treating physician."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization Forms",
+            "items": [
+              "Completed private insurer's prior authorization form.",
+              "Relevant clinical notes and diagnostic reports."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request through the insurer's portal or fax.",
+              "Provide all requested clinical documentation and respond to any requests for additional information.",
+              "Obtain approval before rendering services to avoid claim denials.",
+              "Submit claims with accurate CPT and ICD-10 codes, ensuring proper use of modifiers."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization or expired authorization.",
+              "Services deemed experimental or investigational.",
+              "Failure to meet clinical criteria as defined by the plan.",
+              "Incomplete or insufficient documentation."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify patient benefits and prior authorization requirements before appointments or procedures.",
+              "Maintain open communication with the insurer throughout the authorization process.",
+              "Document all communication with the payer, including reference numbers and dates."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Covered with PA",
+            "notes": "Requires prior authorization for most surgical glaucoma procedures and certain diagnostic tests."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered with PA",
+            "notes": "Has specific clinical policies for MIGS and other glaucoma interventions."
+          },
+          {
+            "payer": "Aetna",
+            "status": "Covered with PA",
+            "notes": "Coverage is based on medical necessity and plan benefits; prior authorization is key."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment",
+        "href": "/glaucoma"
+      },
+      {
+        "heading": "Procedure Codes (section title)",
+        "kind": "prose",
+        "text": "Procedure Codes. Each CPT code card displays a 'Included in this code (do NOT bill separately):' list followed by a note."
+      }
+    ],
+    "raw": {
+      "markdown": "# Glaucoma Clinical Compass\n## Glaucoma Insurance Authorization Guide\n\n[Button] Back to Assessment (navigates to /glaucoma)\n\n## Procedure Codes (CPT)\n\n### CPT 65855 — RVU 15.00\nTrabeculoplasty by laser surgery, one or more sessions (e.g., Selective Laser Trabeculoplasty - SLT)\nDevice/Access: Laser / External\nIncluded in this code (do NOT bill separately):\n- Pre-operative and post-operative evaluations\n- Anesthesia (if applicable)\nNote: Used for open-angle glaucoma to improve aqueous outflow.\n\n### CPT 66170 — RVU 30.00\nFistulization of sclera for glaucoma; trabeculectomy ab externo in absence of previous surgery\nDevice/Access: Surgical instruments / External\nIncluded in this code (do NOT bill separately):\n- Creation of scleral flap\n- Iridectomy\n- Conjunctival closure\nNote: Standard surgical procedure to create a new drainage pathway for aqueous humor.\n\n### CPT 66174 — RVU 25.00\nTransluminal dilation of aqueous outflow canal; without retention of device or stent (e.g., Canaloplasty)\nDevice/Access: Microcatheter / Internal\nIncluded in this code (do NOT bill separately):\n- Cannulation of Schlemm's canal\n- Viscodilation\nNote: Minimally invasive procedure to restore natural outflow pathways.\n\n### CPT 66991 — RVU 28.00\nComplex cataract removal with insertion of intraocular lens prosthesis and concomitant intraocular aqueous drainage device\nDevice/Access: IOL, Glaucoma drainage device / Internal\nIncluded in this code (do NOT bill separately):\n- Cataract extraction\n- IOL insertion\n- Drainage device placement\nNote: Often performed concurrently with cataract surgery for patients with glaucoma.\n\n### CPT 0449T — RVU 20.00\nInsertion of aqueous drainage device, without extraocular reservoir, internal approach, into the subconjunctival space; initial device (e.g., XEN Gel Stent)\nDevice/Access: XEN Gel Stent / Internal\nIncluded in this code (do NOT bill separately):\n- Device implantation\n- Conjunctival peritomy\nNote: Minimally invasive glaucoma surgery (MIGS) for moderate to severe glaucoma.\n\n## ICD-10 Diagnosis Codes\n\n- H40.111 (Primary) — Primary open-angle glaucoma, right eye, mild stage. Notes: Requires laterality and staging.\n- H40.112 (Primary) — Primary open-angle glaucoma, left eye, mild stage. Notes: Requires laterality and staging.\n- H40.10X — Unspecified open-angle glaucoma, unspecified stage. Notes: Use when stage is not documented. Avoid if more specific code is available.\n- H40.20X — Primary angle-closure glaucoma, unspecified. Notes: Use for angle-closure glaucoma.\n- H40.011 — Glaucoma suspect, right eye, low risk. Notes: For patients with ocular hypertension or suspicious optic disc findings.\n- H40.012 — Glaucoma suspect, left eye, low risk. Notes: For patients with ocular hypertension or suspicious optic disc findings.\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\nStatus badges: Prior Auth Required; Covered with Restrictions\nPrior Auth Note: Prior authorization is often required for surgical glaucoma procedures and certain advanced diagnostic tests. Documentation must support medical necessity based on Medicare LCDs.\nOverview: Medicare covers medically necessary diagnostic tests and treatments for glaucoma. Coverage for surgical interventions, especially MIGS, is subject to specific criteria and documentation requirements.\n\n#### Coverage Criteria\nDiagnostic Criteria:\n- Diagnosis of glaucoma or ocular hypertension confirmed by ophthalmologist.\n- Evidence of progressive optic nerve damage or visual field loss.\n- Intraocular pressure (IOP) consistently elevated or uncontrolled despite maximum tolerated medical therapy.\nTreatment History:\n- Failure of conventional medical therapy (e.g., eye drops) to control IOP or halt disease progression.\n- Intolerance or contraindications to medical therapy.\nSurgical Indications (for MIGS/Trabeculectomy):\n- Moderate to severe glaucoma with uncontrolled IOP.\n- Need to reduce medication burden due to side effects or compliance issues.\n- Co-existing cataract requiring surgery (for combined procedures).\n\n#### Required Documentation\nClinical Documentation:\n- Comprehensive ophthalmologic examination notes (including visual acuity, slit lamp, gonioscopy).\n- Optic nerve head evaluation (e.g., OCT, fundus photography).\n- Visual field testing (e.g., Humphrey Visual Field).\n- IOP measurements over time.\n- Previous treatment history and response.\n- Medical necessity justification for proposed procedure.\nPrior Authorization Forms:\n- Completed Medicare prior authorization request form.\n- Supporting clinical notes and diagnostic reports.\n\n#### Submission Process\n1. Submit prior authorization request with all supporting documentation.\n2. Await approval before scheduling elective surgical procedures.\n3. Submit claims with appropriate CPT and ICD-10 codes, ensuring modifiers are used correctly.\n\n#### Common Denial Reasons\n- Lack of documented medical necessity.\n- Insufficient trial of conservative therapies.\n- Incomplete or missing clinical documentation.\n- Incorrect coding or billing.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicare Part B | Covered | Covers medically necessary diagnostic and treatment services. Specific LCDs apply to MIGS. |\n| Medicare Advantage | Varies | Plans may have additional requirements or preferred providers. Always verify. |\n\n#### Reimbursement Note\nReimbursement for glaucoma procedures varies based on the specific CPT code, site of service, and Medicare fee schedule. MIGS procedures may have specific bundling rules.\n\n#### Authorization Tips\n- Ensure all diagnostic tests are performed and documented prior to requesting authorization.\n- Clearly articulate the failure of previous treatments and the rationale for the proposed intervention.\n- Verify specific Medicare Local Coverage Determinations (LCDs) for your region.\n\n### Medicaid\nStatus badges: Prior Auth Required; Covered with Prior Authorization\nPrior Auth Note: Prior authorization is generally required for most glaucoma surgeries and advanced imaging. State-specific Medicaid policies apply.\nOverview: Medicaid programs cover essential health benefits, including glaucoma diagnosis and treatment. Coverage criteria and prior authorization processes can vary significantly by state.\n\n#### Coverage Criteria\nMedical Necessity:\n- Documented diagnosis of glaucoma or ocular hypertension.\n- Evidence of disease progression or risk of vision loss.\n- Conservative management failure or contraindication.\nState-Specific Guidelines:\n- Adherence to state Medicaid clinical guidelines for glaucoma management.\n- Specific age or severity criteria may apply for certain procedures.\n\n#### Required Documentation\nClinical Records:\n- Ophthalmologic exam reports, including IOP, optic nerve assessment, and visual fields.\n- Documentation of failed medical therapies or reasons for surgical intervention.\n- State-specific prior authorization forms.\n\n#### Submission Process\n1. Complete and submit state Medicaid prior authorization forms with all required clinical documentation.\n2. Follow up on authorization status and appeal denials if necessary.\n3. Bill services using appropriate CPT and ICD-10 codes according to state Medicaid guidelines.\n\n#### Common Denial Reasons\n- Lack of prior authorization.\n- Failure to meet state-specific coverage criteria.\n- Incomplete documentation.\n- Services deemed not medically necessary by state review board.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (e.g., California Medi-Cal) | Covered with PA | Requires strict adherence to medical necessity criteria and prior authorization for most surgeries. |\n| State Medicaid (e.g., New York Medicaid) | Covered with PA | Specific formularies for eye drops and surgical guidelines are in place. |\n\n#### Reimbursement Note\nMedicaid reimbursement rates are typically lower than Medicare or private insurance and vary by state. Ensure correct coding to maximize eligible reimbursement.\n\n#### Authorization Tips\n- Familiarize yourself with your state's specific Medicaid policies for glaucoma.\n- Maintain thorough and detailed patient records to support medical necessity.\n- Be prepared for potential delays in authorization processing.\n\n### Private Insurance\nStatus badges: Prior Auth Required; Covered with Prior Authorization\nPrior Auth Note: Most private insurance plans require prior authorization for glaucoma surgeries, advanced diagnostic tests, and certain brand-name medications. Policies vary widely by plan.\nOverview: Private insurance coverage for glaucoma care is generally comprehensive but is highly dependent on the specific plan benefits, deductibles, co-pays, and prior authorization rules. Patients should verify their benefits.\n\n#### Coverage Criteria\nMedical Necessity:\n- Confirmed diagnosis of glaucoma or related ocular condition.\n- Documented progression of disease or high risk of vision loss.\n- Failure of less invasive treatments or medical management.\nPlan-Specific Requirements:\n- Adherence to the insurer's clinical policies and guidelines.\n- May require step therapy for medications or specific diagnostic pathways.\n\n#### Required Documentation\nClinical Records:\n- Detailed ophthalmologic examination reports.\n- Results of diagnostic tests (e.g., OCT, visual fields, pachymetry).\n- History of medical and surgical interventions for glaucoma.\n- Letter of medical necessity from treating physician.\nPrior Authorization Forms:\n- Completed private insurer's prior authorization form.\n- Relevant clinical notes and diagnostic reports.\n\n#### Submission Process\n1. Submit prior authorization request through the insurer's portal or fax.\n2. Provide all requested clinical documentation and respond to any requests for additional information.\n3. Obtain approval before rendering services to avoid claim denials.\n4. Submit claims with accurate CPT and ICD-10 codes, ensuring proper use of modifiers.\n\n#### Common Denial Reasons\n- Lack of prior authorization or expired authorization.\n- Services deemed experimental or investigational.\n- Failure to meet clinical criteria as defined by the plan.\n- Incomplete or insufficient documentation.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Blue Cross Blue Shield | Covered with PA | Requires prior authorization for most surgical glaucoma procedures and certain diagnostic tests. |\n| UnitedHealthcare | Covered with PA | Has specific clinical policies for MIGS and other glaucoma interventions. |\n| Aetna | Covered with PA | Coverage is based on medical necessity and plan benefits; prior authorization is key. |\n\n#### Reimbursement Note\nReimbursement rates are negotiated between providers and private insurers. Out-of-network benefits may apply if the provider is not contracted with the plan.\n\n#### Authorization Tips\n- Always verify patient benefits and prior authorization requirements before appointments or procedures.\n- Maintain open communication with the insurer throughout the authorization process.\n- Document all communication with the payer, including reference numbers and dates.\n",
+      "tables": [
+        {
+          "name": "CPT Procedure Codes",
+          "header": ["Code", "Description", "Device", "Access", "RVU", "Included in this code (do NOT bill separately)", "Note"],
+          "rows": [
+            ["65855", "Trabeculoplasty by laser surgery, one or more sessions (e.g., Selective Laser Trabeculoplasty - SLT)", "Laser", "External", "15.00", "Pre-operative and post-operative evaluations; Anesthesia (if applicable)", "Used for open-angle glaucoma to improve aqueous outflow."],
+            ["66170", "Fistulization of sclera for glaucoma; trabeculectomy ab externo in absence of previous surgery", "Surgical instruments", "External", "30.00", "Creation of scleral flap; Iridectomy; Conjunctival closure", "Standard surgical procedure to create a new drainage pathway for aqueous humor."],
+            ["66174", "Transluminal dilation of aqueous outflow canal; without retention of device or stent (e.g., Canaloplasty)", "Microcatheter", "Internal", "25.00", "Cannulation of Schlemm's canal; Viscodilation", "Minimally invasive procedure to restore natural outflow pathways."],
+            ["66991", "Complex cataract removal with insertion of intraocular lens prosthesis and concomitant intraocular aqueous drainage device", "IOL, Glaucoma drainage device", "Internal", "28.00", "Cataract extraction; IOL insertion; Drainage device placement", "Often performed concurrently with cataract surgery for patients with glaucoma."],
+            ["0449T", "Insertion of aqueous drainage device, without extraocular reservoir, internal approach, into the subconjunctival space; initial device (e.g., XEN Gel Stent)", "XEN Gel Stent", "Internal", "20.00", "Device implantation; Conjunctival peritomy", "Minimally invasive glaucoma surgery (MIGS) for moderate to severe glaucoma."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required (Primary)"],
+          "rows": [
+            ["H40.111", "Primary open-angle glaucoma, right eye, mild stage", "Requires laterality and staging.", "true"],
+            ["H40.112", "Primary open-angle glaucoma, left eye, mild stage", "Requires laterality and staging.", "true"],
+            ["H40.10X", "Unspecified open-angle glaucoma, unspecified stage", "Use when stage is not documented. Avoid if more specific code is available.", "false"],
+            ["H40.20X", "Primary angle-closure glaucoma, unspecified", "Use for angle-closure glaucoma.", "false"],
+            ["H40.011", "Glaucoma suspect, right eye, low risk", "For patients with ocular hypertension or suspicious optic disc findings.", "false"],
+            ["H40.012", "Glaucoma suspect, left eye, low risk", "For patients with ocular hypertension or suspicious optic disc findings.", "false"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicare",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicare Part B", "Covered", "Covers medically necessary diagnostic and treatment services. Specific LCDs apply to MIGS."],
+            ["Medicare Advantage", "Varies", "Plans may have additional requirements or preferred providers. Always verify."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., California Medi-Cal)", "Covered with PA", "Requires strict adherence to medical necessity criteria and prior authorization for most surgeries."],
+            ["State Medicaid (e.g., New York Medicaid)", "Covered with PA", "Specific formularies for eye drops and surgical guidelines are in place."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Private Insurance",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield", "Covered with PA", "Requires prior authorization for most surgical glaucoma procedures and certain diagnostic tests."],
+            ["UnitedHealthcare", "Covered with PA", "Has specific clinical policies for MIGS and other glaucoma interventions."],
+            ["Aetna", "Covered with PA", "Coverage is based on medical necessity and plan benefits; prior authorization is key."]
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "title": "Varicocelectomy Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "VaricocelectomyAuthGuide.tsx",
+    "title": "Varicocelectomy — Authorization Guide",
+    "subtitle": "CPT Codes · ICD-10 · Payer Requirements",
+    "cptCodes": [
+      {
+        "code": "55530",
+        "description": "Excision of varicocele or ligation of spermatic veins for varicocele; (separate procedure)",
+        "approach": "Open/Laparoscopic"
+      },
+      {
+        "code": "55535",
+        "description": "Excision of varicocele or ligation of spermatic veins for varicocele; abdominal approach",
+        "approach": "Open abdominal"
+      },
+      {
+        "code": "55540",
+        "description": "Excision of varicocele or ligation of spermatic veins for varicocele; with hernia repair",
+        "approach": "Open + hernia"
+      },
+      {
+        "code": "37241",
+        "description": "Vascular embolization or occlusion, inclusive of all radiological supervision and interpretation, intraprocedural roadmapping, and imaging guidance necessary to complete the intervention; venous, other than hemorrhage (e.g., congenital or acquired venous malformations, venous and capillary hemangiomas, varices, varicoceles)",
+        "approach": "Percutaneous embolization"
+      },
+      {
+        "code": "74185",
+        "description": "Magnetic resonance angiography, abdomen, with or without contrast material(s)",
+        "approach": "Diagnostic MRI"
+      },
+      {
+        "code": "93971",
+        "description": "Duplex scan of extremity veins including responses to compression and other maneuvers; unilateral or limited study",
+        "approach": "Scrotal Doppler"
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "I86.1",
+        "description": "Scrotal varices (varicocele)"
+      },
+      {
+        "code": "N46.11",
+        "description": "Organic oligospermia"
+      },
+      {
+        "code": "N46.121",
+        "description": "Oligospermia due to obstruction of efferent ducts"
+      },
+      {
+        "code": "N46.129",
+        "description": "Oligospermia due to other extratesticular causes"
+      },
+      {
+        "code": "N46.8",
+        "description": "Other male infertility"
+      },
+      {
+        "code": "N46.9",
+        "description": "Male infertility, unspecified"
+      },
+      {
+        "code": "N50.89",
+        "description": "Other specified disorders of male genital organs"
+      },
+      {
+        "code": "Z31.81",
+        "description": "Encounter for male factor infertility in female patient"
+      }
+    ],
+    "payers": [],
+    "customSections": [
+      {
+        "heading": "Coverage Landscape — Common Denial Reasons",
+        "kind": "list",
+        "items": [
+          "\"Infertility treatment\" blanket exclusion",
+          "\"Not medically necessary\" for subclinical varicocele",
+          "Lack of documentation of abnormal semen parameters",
+          "Female partner fertility evaluation not completed"
+        ]
+      },
+      {
+        "heading": "Coverage Landscape — Strongest Coverage Arguments",
+        "kind": "list",
+        "items": [
+          "AUA/ASRM Grade A evidence for palpable varicocele + abnormal semen + infertility",
+          "Varicocele is a diagnosable vascular condition (I86.1), not merely infertility treatment",
+          "Pain indication (N50.89) is a non-infertility medical indication",
+          "Adolescent testicular atrophy prevention is a non-infertility indication",
+          "State infertility mandates in 15+ states"
+        ]
+      },
+      {
+        "heading": "Prior Authorization Requirements — Required Documentation",
+        "kind": "list",
+        "items": [
+          "≥2 semen analyses confirming oligospermia/asthenospermia/teratospermia",
+          "Physical examination confirming palpable varicocele (grade I–III)",
+          "Scrotal Doppler ultrasound report",
+          "Hormonal profile: FSH, LH, testosterone",
+          "Duration of infertility (≥12 months)",
+          "Female partner fertility evaluation results",
+          "Letter of medical necessity from urologist/reproductive specialist"
+        ]
+      },
+      {
+        "heading": "Prior Authorization Requirements — AUA/ASRM Medical Necessity Criteria (Grade A)",
+        "kind": "list",
+        "items": [
+          "All three criteria must be met for Grade A recommendation:",
+          "1. Palpable varicocele (Grade I–III on physical exam)",
+          "2. Abnormal semen parameters (concentration <16M/mL, motility <30%, morphology <4%, or TMC <9M)",
+          "3. ≥12 months of infertility with female partner whose fertility evaluation is normal or treatable"
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# Varicocelectomy — Authorization Guide\n\nCPT Codes · ICD-10 · Payer Requirements\n\n(backHref: /varicocelectomy)\n\n## CPT Codes\n\n| CPT | Description | Approach |\n| --- | --- | --- |\n| 55530 | Excision of varicocele or ligation of spermatic veins for varicocele; (separate procedure) | Open/Laparoscopic |\n| 55535 | Excision of varicocele or ligation of spermatic veins for varicocele; abdominal approach | Open abdominal |\n| 55540 | Excision of varicocele or ligation of spermatic veins for varicocele; with hernia repair | Open + hernia |\n| 37241 | Vascular embolization or occlusion, inclusive of all radiological supervision and interpretation, intraprocedural roadmapping, and imaging guidance necessary to complete the intervention; venous, other than hemorrhage (e.g., congenital or acquired venous malformations, venous and capillary hemangiomas, varices, varicoceles) | Percutaneous embolization |\n| 74185 | Magnetic resonance angiography, abdomen, with or without contrast material(s) | Diagnostic MRI |\n| 93971 | Duplex scan of extremity veins including responses to compression and other maneuvers; unilateral or limited study | Scrotal Doppler |\n\n## ICD-10 Diagnoses\n\n| ICD-10 | Description |\n| --- | --- |\n| I86.1 | Scrotal varices (varicocele) |\n| N46.11 | Organic oligospermia |\n| N46.121 | Oligospermia due to obstruction of efferent ducts |\n| N46.129 | Oligospermia due to other extratesticular causes |\n| N46.8 | Other male infertility |\n| N46.9 | Male infertility, unspecified |\n| N50.89 | Other specified disorders of male genital organs |\n| Z31.81 | Encounter for male factor infertility in female patient |\n\n## Coverage Landscape\n\n### Common Denial Reasons\n\n- \"Infertility treatment\" blanket exclusion\n- \"Not medically necessary\" for subclinical varicocele\n- Lack of documentation of abnormal semen parameters\n- Female partner fertility evaluation not completed\n\n### Strongest Coverage Arguments\n\n- AUA/ASRM Grade A evidence for palpable varicocele + abnormal semen + infertility\n- Varicocele is a diagnosable vascular condition (I86.1), not merely infertility treatment\n- Pain indication (N50.89) is a non-infertility medical indication\n- Adolescent testicular atrophy prevention is a non-infertility indication\n- State infertility mandates in 15+ states\n\n## Prior Authorization Requirements\n\n### Required Documentation\n\n- ≥2 semen analyses confirming oligospermia/asthenospermia/teratospermia\n- Physical examination confirming palpable varicocele (grade I–III)\n- Scrotal Doppler ultrasound report\n- Hormonal profile: FSH, LH, testosterone\n- Duration of infertility (≥12 months)\n- Female partner fertility evaluation results\n- Letter of medical necessity from urologist/reproductive specialist\n\n### AUA/ASRM Medical Necessity Criteria (Grade A)\n\nAll three criteria must be met for Grade A recommendation:\n\n1. Palpable varicocele (Grade I–III on physical exam)\n2. Abnormal semen parameters (concentration <16M/mL, motility <30%, morphology <4%, or TMC <9M)\n3. ≥12 months of infertility with female partner whose fertility evaluation is normal or treatable\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["CPT", "Description", "Approach"],
+          "rows": [
+            ["55530", "Excision of varicocele or ligation of spermatic veins for varicocele; (separate procedure)", "Open/Laparoscopic"],
+            ["55535", "Excision of varicocele or ligation of spermatic veins for varicocele; abdominal approach", "Open abdominal"],
+            ["55540", "Excision of varicocele or ligation of spermatic veins for varicocele; with hernia repair", "Open + hernia"],
+            ["37241", "Vascular embolization or occlusion, inclusive of all radiological supervision and interpretation, intraprocedural roadmapping, and imaging guidance necessary to complete the intervention; venous, other than hemorrhage (e.g., congenital or acquired venous malformations, venous and capillary hemangiomas, varices, varicoceles)", "Percutaneous embolization"],
+            ["74185", "Magnetic resonance angiography, abdomen, with or without contrast material(s)", "Diagnostic MRI"],
+            ["93971", "Duplex scan of extremity veins including responses to compression and other maneuvers; unilateral or limited study", "Scrotal Doppler"]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnoses",
+          "header": ["ICD-10", "Description"],
+          "rows": [
+            ["I86.1", "Scrotal varices (varicocele)"],
+            ["N46.11", "Organic oligospermia"],
+            ["N46.121", "Oligospermia due to obstruction of efferent ducts"],
+            ["N46.129", "Oligospermia due to other extratesticular causes"],
+            ["N46.8", "Other male infertility"],
+            ["N46.9", "Male infertility, unspecified"],
+            ["N50.89", "Other specified disorders of male genital organs"],
+            ["Z31.81", "Encounter for male factor infertility in female patient"]
+          ]
+        }
+      ]
+    }
+  }
+}

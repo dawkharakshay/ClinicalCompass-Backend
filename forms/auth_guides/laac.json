@@ -1,0 +1,157 @@
+{
+  "title": "LAAC / Watchman Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "LAACAuthGuide.tsx",
+    "title": "LAAC Authorization Guide",
+    "subtitle": null,
+    "cptCodes": [
+      { "code": "0052T", "description": "Transcatheter closure of left atrial appendage with endocardial implant, including fluoroscopic guidance, transseptal puncture, catheter placement(s), left atrial angiography, left atrial appendage angiography, when performed, and radiological supervision and interpretation", "notes": "Primary LAAC code — Watchman/Amulet" },
+      { "code": "93462", "description": "Left heart catheterization by transseptal puncture through intact septum", "notes": "Transseptal access — often bundled with 0052T" },
+      { "code": "93312", "description": "Echocardiography, transesophageal, real time with image documentation; including probe placement, image acquisition, interpretation and report", "notes": "Intraprocedural TEE guidance" },
+      { "code": "93313", "description": "Echocardiography, transesophageal; placement of transesophageal probe only", "notes": "TEE probe placement — add-on" },
+      { "code": "93314", "description": "Echocardiography, transesophageal; image acquisition, interpretation and report only", "notes": "TEE interpretation — add-on" },
+      { "code": "93355", "description": "Echocardiography, transesophageal (TEE) for guidance of a transcatheter intracardiac or great vessel(s) structural heart disease procedure", "notes": "Structural heart TEE guidance" }
+    ],
+    "icd10Codes": [
+      { "code": "I48.0", "description": "Paroxysmal atrial fibrillation", "notes": "Most common indication for LAAC" },
+      { "code": "I48.11", "description": "Longstanding persistent atrial fibrillation", "notes": "Persistent AF with OAC contraindication" },
+      { "code": "I48.19", "description": "Other persistent atrial fibrillation", "notes": "Persistent AF" },
+      { "code": "I48.20", "description": "Chronic atrial fibrillation, unspecified", "notes": "Document specific type when possible" },
+      { "code": "Z79.01", "description": "Long-term (current) use of anticoagulants", "notes": "Document anticoagulation history" },
+      { "code": "I61.9", "description": "Nontraumatic intracerebral hemorrhage, unspecified", "notes": "Prior ICH — primary LAAC indication" },
+      { "code": "K92.1", "description": "Melena", "notes": "Prior GI bleeding — LAAC indication" },
+      { "code": "N18.6", "description": "End-stage renal disease", "notes": "ESRD — high bleeding risk on OAC" }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "overview": "Medicare covers LAAC (Watchman) under NCD 20.34 with specific criteria. Coverage requires: (1) non-valvular AF, (2) CHA₂DS₂-VASc ≥2, (3) OAC contraindication or high bleeding risk, (4) structural heart team evaluation, (5) 45-day TEE follow-up. Watchman FLX approved by FDA in 2020; Amulet approved 2021.",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "Non-valvular atrial fibrillation (paroxysmal, persistent, or long-standing persistent)",
+              "CHA₂DS₂-VASc score ≥2 (men) or ≥3 (women) — high stroke risk",
+              "Contraindication to long-term anticoagulation OR high bleeding risk on OAC",
+              "No LAA thrombus on pre-procedure TEE or CTA (within 48 hours)",
+              "Structural heart disease team evaluation (interventional cardiologist + electrophysiologist)",
+              "Operator experience: ≥25 LAAC procedures/year (facility ≥50/year)",
+              "45-day post-procedure TEE to confirm device seal",
+              "Patient able to tolerate short-term DAPT (45 days) and aspirin (indefinitely)"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Non-valvular AF with high stroke risk (CHA₂DS₂-VASc ≥2)",
+              "Documented contraindication or high risk for long-term OAC",
+              "No LAA thrombus on pre-procedure imaging",
+              "Ability to tolerate short-term antiplatelet therapy post-procedure"
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicare (CMS)", "status": "Covered", "notes": "Covered per NCD 20.34; CHA₂DS₂-VASc ≥2 + OAC contraindication required; structural heart team evaluation required" }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "overview": "Medicaid coverage for LAAC varies significantly by state. Many states do not cover LAAC or have very restrictive criteria. Verify state-specific coverage before proceeding.",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "State-specific prior authorization required",
+              "Non-valvular AF with high stroke risk",
+              "OAC contraindication documentation",
+              "Structural heart team evaluation",
+              "Pre-procedure TEE"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Non-valvular AF with CHA₂DS₂-VASc ≥2",
+              "Documented OAC contraindication or high bleeding risk",
+              "No LAA thrombus"
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicaid (state-specific)", "status": "Not Covered", "notes": "Coverage varies widely; many states do not cover LAAC; verify state policy before proceeding" }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private",
+        "overview": "Commercial payers frequently require prior ICH or major bleeding as the primary indication. 'Patient preference' or 'falls risk' alone is often insufficient. Document specific OAC contraindication with clinical detail. PROTECT AF and PREVAIL trial data support non-inferiority to warfarin for stroke prevention.",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "Prior authorization required by all commercial payers",
+              "Non-valvular atrial fibrillation (paroxysmal, persistent, or long-standing persistent)",
+              "CHA₂DS₂-VASc ≥2 (men) or ≥3 (women)",
+              "Documented contraindication to long-term OAC OR prior major bleeding on OAC OR intracranial hemorrhage",
+              "Structural heart disease team evaluation note",
+              "Pre-procedure TEE or CTA confirming no LAA thrombus",
+              "Operator and facility volume requirements (varies by payer)",
+              "Peer-to-peer review typically required"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Non-valvular AF with high stroke risk (CHA₂DS₂-VASc ≥2)",
+              "Prior intracranial hemorrhage — strongest indication (Class IIa per 2023 guidelines)",
+              "Prior major GI bleeding or other major bleeding on OAC",
+              "Absolute contraindication to OAC (thrombocytopenia, malignancy, compliance issues)",
+              "Stroke/TIA on therapeutic anticoagulation"
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "UnitedHealthcare", "status": "Covered", "notes": "Covers with CHA₂DS₂-VASc ≥2 + documented OAC contraindication; prior ICH or major bleeding preferred" },
+          { "payer": "Aetna", "status": "Covered", "notes": "Covers with documented OAC contraindication; prior ICH or major bleeding required for most plans" },
+          { "payer": "Cigna", "status": "Covered", "notes": "Covers per NCD 20.34 criteria; peer-to-peer review typically required" },
+          { "payer": "Anthem/BCBS", "status": "Covered", "notes": "Covers with high stroke risk + OAC contraindication; structural heart team note required" },
+          { "payer": "Humana", "status": "Covered", "notes": "Covers per CMS NCD criteria; operator volume requirements apply" }
+        ]
+      }
+    ],
+    "customSections": [],
+    "raw": {
+      "markdown": "# LAAC Authorization Guide\n\n## CPT Codes — Left Atrial Appendage Closure\n\n| CPT | Description | Notes |\n| --- | --- | --- |\n| 0052T | Transcatheter closure of left atrial appendage with endocardial implant, including fluoroscopic guidance, transseptal puncture, catheter placement(s), left atrial angiography, left atrial appendage angiography, when performed, and radiological supervision and interpretation | Primary LAAC code — Watchman/Amulet |\n| 93462 | Left heart catheterization by transseptal puncture through intact septum | Transseptal access — often bundled with 0052T |\n| 93312 | Echocardiography, transesophageal, real time with image documentation; including probe placement, image acquisition, interpretation and report | Intraprocedural TEE guidance |\n| 93313 | Echocardiography, transesophageal; placement of transesophageal probe only | TEE probe placement — add-on |\n| 93314 | Echocardiography, transesophageal; image acquisition, interpretation and report only | TEE interpretation — add-on |\n| 93355 | Echocardiography, transesophageal (TEE) for guidance of a transcatheter intracardiac or great vessel(s) structural heart disease procedure | Structural heart TEE guidance |\n\n## ICD-10 Codes\n\n| ICD-10 | Description | Notes |\n| --- | --- | --- |\n| I48.0 | Paroxysmal atrial fibrillation | Most common indication for LAAC |\n| I48.11 | Longstanding persistent atrial fibrillation | Persistent AF with OAC contraindication |\n| I48.19 | Other persistent atrial fibrillation | Persistent AF |\n| I48.20 | Chronic atrial fibrillation, unspecified | Document specific type when possible |\n| Z79.01 | Long-term (current) use of anticoagulants | Document anticoagulation history |\n| I61.9 | Nontraumatic intracerebral hemorrhage, unspecified | Prior ICH — primary LAAC indication |\n| K92.1 | Melena | Prior GI bleeding — LAAC indication |\n| N18.6 | End-stage renal disease | ESRD — high bleeding risk on OAC |\n\n## Payer Requirements\n\nTabs: Medicare | Medicaid | Private\n\n### Medicare\n\n**Required Documentation**\n- Non-valvular atrial fibrillation (paroxysmal, persistent, or long-standing persistent)\n- CHA₂DS₂-VASc score ≥2 (men) or ≥3 (women) — high stroke risk\n- Contraindication to long-term anticoagulation OR high bleeding risk on OAC\n- No LAA thrombus on pre-procedure TEE or CTA (within 48 hours)\n- Structural heart disease team evaluation (interventional cardiologist + electrophysiologist)\n- Operator experience: ≥25 LAAC procedures/year (facility ≥50/year)\n- 45-day post-procedure TEE to confirm device seal\n- Patient able to tolerate short-term DAPT (45 days) and aspirin (indefinitely)\n\n**Medical Necessity Criteria**\n- ✓ Non-valvular AF with high stroke risk (CHA₂DS₂-VASc ≥2)\n- ✓ Documented contraindication or high risk for long-term OAC\n- ✓ No LAA thrombus on pre-procedure imaging\n- ✓ Ability to tolerate short-term antiplatelet therapy post-procedure\n\n**Reimbursement Note:** Medicare covers LAAC (Watchman) under NCD 20.34 with specific criteria. Coverage requires: (1) non-valvular AF, (2) CHA₂DS₂-VASc ≥2, (3) OAC contraindication or high bleeding risk, (4) structural heart team evaluation, (5) 45-day TEE follow-up. Watchman FLX approved by FDA in 2020; Amulet approved 2021.\n\n**Known Payer Policies**\n- [Covered] Medicare (CMS): Covered per NCD 20.34; CHA₂DS₂-VASc ≥2 + OAC contraindication required; structural heart team evaluation required\n\n### Medicaid\n\n**Required Documentation**\n- State-specific prior authorization required\n- Non-valvular AF with high stroke risk\n- OAC contraindication documentation\n- Structural heart team evaluation\n- Pre-procedure TEE\n\n**Medical Necessity Criteria**\n- ✓ Non-valvular AF with CHA₂DS₂-VASc ≥2\n- ✓ Documented OAC contraindication or high bleeding risk\n- ✓ No LAA thrombus\n\n**Reimbursement Note:** Medicaid coverage for LAAC varies significantly by state. Many states do not cover LAAC or have very restrictive criteria. Verify state-specific coverage before proceeding.\n\n**Known Payer Policies**\n- [Not Covered] Medicaid (state-specific): Coverage varies widely; many states do not cover LAAC; verify state policy before proceeding\n\n### Private\n\n**Required Documentation**\n- Prior authorization required by all commercial payers\n- Non-valvular atrial fibrillation (paroxysmal, persistent, or long-standing persistent)\n- CHA₂DS₂-VASc ≥2 (men) or ≥3 (women)\n- Documented contraindication to long-term OAC OR prior major bleeding on OAC OR intracranial hemorrhage\n- Structural heart disease team evaluation note\n- Pre-procedure TEE or CTA confirming no LAA thrombus\n- Operator and facility volume requirements (varies by payer)\n- Peer-to-peer review typically required\n\n**Medical Necessity Criteria**\n- ✓ Non-valvular AF with high stroke risk (CHA₂DS₂-VASc ≥2)\n- ✓ Prior intracranial hemorrhage — strongest indication (Class IIa per 2023 guidelines)\n- ✓ Prior major GI bleeding or other major bleeding on OAC\n- ✓ Absolute contraindication to OAC (thrombocytopenia, malignancy, compliance issues)\n- ✓ Stroke/TIA on therapeutic anticoagulation\n\n**Reimbursement Note:** Commercial payers frequently require prior ICH or major bleeding as the primary indication. 'Patient preference' or 'falls risk' alone is often insufficient. Document specific OAC contraindication with clinical detail. PROTECT AF and PREVAIL trial data support non-inferiority to warfarin for stroke prevention.\n\n**Known Payer Policies**\n- [Covered] UnitedHealthcare: Covers with CHA₂DS₂-VASc ≥2 + documented OAC contraindication; prior ICH or major bleeding preferred\n- [Covered] Aetna: Covers with documented OAC contraindication; prior ICH or major bleeding required for most plans\n- [Covered] Cigna: Covers per NCD 20.34 criteria; peer-to-peer review typically required\n- [Covered] Anthem/BCBS: Covers with high stroke risk + OAC contraindication; structural heart team note required\n- [Covered] Humana: Covers per CMS NCD criteria; operator volume requirements apply\n",
+      "tables": [
+        {
+          "name": "CPT Codes — Left Atrial Appendage Closure",
+          "header": ["CPT", "Description", "Notes"],
+          "rows": [
+            ["0052T", "Transcatheter closure of left atrial appendage with endocardial implant, including fluoroscopic guidance, transseptal puncture, catheter placement(s), left atrial angiography, left atrial appendage angiography, when performed, and radiological supervision and interpretation", "Primary LAAC code — Watchman/Amulet"],
+            ["93462", "Left heart catheterization by transseptal puncture through intact septum", "Transseptal access — often bundled with 0052T"],
+            ["93312", "Echocardiography, transesophageal, real time with image documentation; including probe placement, image acquisition, interpretation and report", "Intraprocedural TEE guidance"],
+            ["93313", "Echocardiography, transesophageal; placement of transesophageal probe only", "TEE probe placement — add-on"],
+            ["93314", "Echocardiography, transesophageal; image acquisition, interpretation and report only", "TEE interpretation — add-on"],
+            ["93355", "Echocardiography, transesophageal (TEE) for guidance of a transcatheter intracardiac or great vessel(s) structural heart disease procedure", "Structural heart TEE guidance"]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["ICD-10", "Description", "Notes"],
+          "rows": [
+            ["I48.0", "Paroxysmal atrial fibrillation", "Most common indication for LAAC"],
+            ["I48.11", "Longstanding persistent atrial fibrillation", "Persistent AF with OAC contraindication"],
+            ["I48.19", "Other persistent atrial fibrillation", "Persistent AF"],
+            ["I48.20", "Chronic atrial fibrillation, unspecified", "Document specific type when possible"],
+            ["Z79.01", "Long-term (current) use of anticoagulants", "Document anticoagulation history"],
+            ["I61.9", "Nontraumatic intracerebral hemorrhage, unspecified", "Prior ICH — primary LAAC indication"],
+            ["K92.1", "Melena", "Prior GI bleeding — LAAC indication"],
+            ["N18.6", "End-stage renal disease", "ESRD — high bleeding risk on OAC"]
+          ]
+        }
+      ]
+    }
+  }
+}

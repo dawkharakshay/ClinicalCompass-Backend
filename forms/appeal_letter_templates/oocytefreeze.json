@@ -1,0 +1,30 @@
+{
+  "title": "Oocyte Cryopreservation Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "58970, 89337, 89352, 89353, 89250, 89254, 89280, 96372",
+      "credentials": "[Credentials]",
+      "icd_codes": "Z31.62, E28.31, E28.39, C50.919, C56.9, Z79.899, Z31.83",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "To Whom It May Concern,\n\nI am writing to formally appeal the denial of prior authorization for oocyte cryopreservation (egg freezing) for my patient. This procedure is medically necessary and is supported by the American Society for Reproductive Medicine (ASRM) and the American Society of Clinical Oncology (ASCO).\n\nCLINICAL SUMMARY\n\nMy patient has been diagnosed with [cancer diagnosis / premature ovarian insufficiency / genetic condition]. [For oncofertility]: She is scheduled to begin [chemotherapy/radiation/surgery] on {{letter_date}}, which carries a significant risk of permanent gonadal damage and infertility. Oocyte cryopreservation must be completed before treatment begins.\n\nDENIAL REBUTTAL\n\nIf denied as \"experimental\": The ASRM Practice Committee removed the \"experimental\" label from oocyte cryopreservation in 2013 (Fertil Steril. 2013;99(1):37-43). Vitrification technology achieves survival rates of 80–90% and pregnancy rates comparable to fresh oocytes. This procedure is standard of care.\n\nIf denied as \"elective\": This is not elective fertility preservation. It is medically necessary preservation of fertility before planned gonadotoxic therapy that will cause permanent ovarian damage. Without this procedure, my patient will be rendered permanently infertile by her cancer treatment.\n\nEVIDENCE BASE\n\nASCO Clinical Practice Guideline (Oktay et al., J Clin Oncol. 2018;36(19):1994-2001) states: \"Fertility preservation should be discussed as early as possible with all patients of reproductive age who are diagnosed with cancer.\" Oocyte cryopreservation is specifically recommended as a standard fertility preservation method.\n\nCONCLUSION\n\nI respectfully request immediate reconsideration and approval of oocyte cryopreservation for my patient. Time is critical — treatment must begin within weeks.\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\n{{letter_date}}"
+  }
+}

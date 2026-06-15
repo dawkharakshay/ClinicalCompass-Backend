@@ -1,0 +1,30 @@
+{
+  "title": "Parkinson's Disease",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "61886, 95983, 95984, 61867, 61868",
+      "credentials": "[Credentials]",
+      "icd_codes": "G20.A1, G20.A2, G20.B1, G20.B2, G20.C, G20",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "\n{{letter_date}}\nRe: Medical Necessity Appeal — Deep Brain Stimulation / Medical Therapy for Parkinson's Disease\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\nDear Medical Director / Utilization Review Committee,\n\nThis letter serves as an appeal for the denial of coverage for Deep Brain Stimulation / Medical Therapy for Parkinson's Disease for our patient, {{patient_name}}. Based on a comprehensive clinical evaluation and adherence to established medical guidelines, this treatment is deemed medically necessary.\n\nClinical Summary:\nOur patient presents with Parkinson's Disease, currently at Hoehn-Yahr Stage unknown, and exhibits absent motor fluctuations. The primary recommendation for this patient is medical therapy. Levodopa candidacy is unknown. The patient's condition warrants the requested intervention due to significant impairment in daily activities and quality of life despite optimal conventional medical management.\n\nGuideline Support:\n1.  The AAN Practice Guideline on Neuroprotective Strategies and Alternative Therapies for Parkinson Disease (2006) supports comprehensive management strategies for Parkinson's Disease.\n2.  The MDS Evidence-Based Medicine Review on Treatments for Motor Symptoms of PD (2018) provides strong evidence for various treatment modalities, including advanced therapies for appropriate candidates.\n3.  The AAN Practice Guideline Update on Surgical Treatment for PD (2006) outlines criteria for surgical interventions like Deep Brain Stimulation in advanced Parkinson's Disease.\n4.  NICE Guidelines on Parkinson's Disease (2017) recommend a multidisciplinary approach to care, emphasizing individualized treatment plans.\n\nMedical Necessity:\nThe requested Deep Brain Stimulation / Medical Therapy is medically necessary as it aligns with the patient's clinical presentation and the aforementioned evidence-based guidelines. The rationale for this treatment is based on clinical assessment and guideline recommendations, supported by an evidence level of strong from multiple sources. The patient's symptoms are refractory to less invasive treatments, and the potential benefits of this intervention, including improved motor control and reduced dyskinesias, are substantial.\n\nRisk Without Treatment:\nWithout this medically necessary treatment, the patient is at high risk for continued progression of motor symptoms, increased disability, and a significant decline in their quality of life. This could lead to increased healthcare utilization due to complications and a greater burden on caregivers.\n\nRequested Action:\nWe respectfully request that you reconsider your denial and approve coverage for Deep Brain Stimulation / Medical Therapy for Parkinson's Disease. The next steps in the patient's care plan include continue current management.\n\n{{additional_clinical_notes}}\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

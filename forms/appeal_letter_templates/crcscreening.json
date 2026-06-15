@@ -1,0 +1,30 @@
+{
+  "title": "CRC Screening Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "45378, 45380, 45385, 81528",
+      "credentials": "[Credentials]",
+      "icd_codes": "Z12.11, Z80.0, K63.5, R19.5",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — Colorectal Cancer Screening (Colonoscopy / FIT / Cologuard)\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\nDear Medical Director / Utilization Review Committee,\n\nThis letter serves as an appeal for the denial of coverage for Colorectal Cancer Screening (Colonoscopy / FIT / Cologuard) for our patient. The requested procedure is medically necessary and aligns with established clinical guidelines.\n\nClinical Summary:\nOur patient presents with a primary recommendation of N/A and a risk category of N/A. The recommended screening modality is N/A with a screening interval of N/A. Colonoscopy is indicated: No. The rationale for this recommendation is: N/A. Next steps include: .\n\nGuideline Support:\n1. The U.S. Preventive Services Task Force (USPSTF) recommends screening for colorectal cancer starting at age 45 years and continuing until age 75 years (USPSTF, 2021).\n2. The American College of Gastroenterology (ACG) guidelines recommend colonoscopy as the preferred screening modality for colorectal cancer due to its high sensitivity and ability to remove precancerous lesions (ACG, 2021).\n3. The American Cancer Society (ACS) recommends regular screening for colorectal cancer to detect cancer early, when treatment is most effective (ACS, 2018).\n4. For individuals with a positive non-invasive screening test, a diagnostic colonoscopy is indicated to evaluate for colorectal neoplasia (USMSTF, 2020).\n\nMedical Necessity:\nBased on the patient's clinical profile and the robust evidence from leading medical organizations, the Colorectal Cancer Screening (Colonoscopy / FIT / Cologuard) is medically necessary to ensure early detection and prevention of colorectal cancer. Delay or denial of this essential screening could lead to adverse health outcomes.\n\nRisk Without Treatment:\nWithout appropriate colorectal cancer screening, the patient is at increased risk for delayed diagnosis of colorectal cancer, which can lead to more advanced disease, complex treatments, and poorer prognoses. Early detection through screening is crucial for effective management and improved survival rates.\n\nRequested Action:\nWe respectfully request that you reconsider your decision and approve coverage for the Colorectal Cancer Screening (Colonoscopy / FIT / Cologuard). Please find attached supporting documentation for your review. We are available to provide any further information required.\n\n{{additional_clinical_notes}}\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

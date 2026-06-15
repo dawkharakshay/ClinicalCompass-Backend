@@ -1,0 +1,158 @@
+{
+  "title": "Chronic Insomnia Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "ChronicInsomniaAuthGuide.tsx",
+    "title": "Chronic Insomnia Authorization Guide",
+    "subtitle": "Decision Support",
+    "cptCodes": [
+      {
+        "code": "99213–99215",
+        "description": "Office visit — E&M (sleep specialist)",
+        "authRequired": "Rarely",
+        "notes": "Document ISI score, sleep diary, CBT-I history"
+      },
+      {
+        "code": "95810",
+        "description": "Polysomnography — to rule out OSA or PLMD",
+        "authRequired": "Often",
+        "notes": "Required when comorbid sleep disorder suspected"
+      },
+      {
+        "code": "90837",
+        "description": "Psychotherapy, 60 min (CBT-I)",
+        "authRequired": "Sometimes",
+        "notes": "Prior auth for behavioral health benefits"
+      },
+      {
+        "code": "90834",
+        "description": "Psychotherapy, 45 min (CBT-I)",
+        "authRequired": "Sometimes",
+        "notes": "Most common CBT-I billing code"
+      },
+      {
+        "code": "H0004",
+        "description": "Behavioral health counseling (CBT-I)",
+        "authRequired": "Sometimes",
+        "notes": "Used by some payers for CBT-I"
+      },
+      {
+        "code": "99406–99407",
+        "description": "Smoking cessation counseling",
+        "authRequired": "Rarely",
+        "notes": "If tobacco use contributing to insomnia"
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "G47.00",
+        "description": "Insomnia, unspecified",
+        "useWhen": "Pending full characterization"
+      },
+      {
+        "code": "G47.01",
+        "description": "Insomnia due to medical condition",
+        "useWhen": "Comorbid pain, GERD, nocturia driving insomnia"
+      },
+      {
+        "code": "G47.09",
+        "description": "Other insomnia",
+        "useWhen": "Chronic insomnia disorder (ICSD-3); most commonly used"
+      },
+      {
+        "code": "F51.01",
+        "description": "Primary insomnia",
+        "useWhen": "Idiopathic insomnia without identifiable cause"
+      },
+      {
+        "code": "F51.05",
+        "description": "Insomnia due to other mental disorder",
+        "useWhen": "Insomnia driven by depression, anxiety, PTSD"
+      },
+      {
+        "code": "F51.09",
+        "description": "Other insomnia not due to a substance or known physiological condition",
+        "useWhen": "Psychophysiological insomnia"
+      }
+    ],
+    "payers": [],
+    "customSections": [
+      {
+        "heading": "Medication Prior Authorization Requirements",
+        "kind": "list",
+        "text": "Prior authorization requirements and common denial reasons by medication.",
+        "items": [
+          "Suvorexant (Belsomra) — Requirements: Chronic insomnia diagnosis (≥3 months, ≥3 nights/week); ISI score ≥15 or equivalent documentation; Step therapy: Z-drug or benzodiazepine trial often required; CBT-I documentation or contraindication note. Common denial reason: Step therapy not met, formulary tier restrictions.",
+          "Lemborexant (Dayvigo) — Requirements: Chronic insomnia diagnosis with objective severity documentation; Step therapy: Prior Z-drug or suvorexant trial; CBT-I documentation or contraindication note. Common denial reason: Step therapy not met, non-formulary.",
+          "Low-dose Doxepin (Silenor 3–6 mg) — Requirements: Sleep maintenance insomnia (early morning awakening); Step therapy: Z-drug trial often required; Distinguish from antidepressant doxepin (different dosing). Common denial reason: Confused with antidepressant indication, step therapy.",
+          "Eszopiclone (Lunesta) / Zolpidem (Ambien) — Requirements: Chronic insomnia diagnosis; Often first-line per payer formulary; Quantity limits: typically 30 tablets/30 days. Common denial reason: Quantity limit exceeded, long-term use concerns."
+        ]
+      },
+      {
+        "heading": "Documentation Checklist",
+        "kind": "list",
+        "items": [
+          "ISI (Insomnia Severity Index) score ≥15 documented in clinic note",
+          "Duration ≥3 months, frequency ≥3 nights/week (ICSD-3 chronic insomnia criteria)",
+          "Daytime impairment documented (fatigue, concentration, mood, occupational/social function)",
+          "Sleep diary (2-week minimum) showing sleep onset latency or WASO ≥30 minutes",
+          "CBT-I trial documentation: provider, dates, number of sessions, response",
+          "PSG results if comorbid OSA or PLMD suspected",
+          "Prior pharmacologic trials with dates, doses, and reasons for discontinuation",
+          "Contraindications to avoided agents (e.g., fall risk for benzodiazepines in elderly)"
+        ]
+      },
+      {
+        "heading": "References",
+        "kind": "list",
+        "items": [
+          "1. Sateia MJ, et al. \"Clinical Practice Guideline for the Pharmacologic Treatment of Chronic Insomnia in Adults.\" J Clin Sleep Med. 2017;13(2):307–349.",
+          "2. Edinger JD, et al. \"Behavioral and Psychological Treatments for Chronic Insomnia Disorder in Adults: An AASM Clinical Practice Guideline.\" J Clin Sleep Med. 2021;17(2):255–262.",
+          "3. AASM April 2026 CPG: Combination CBT-I + Pharmacotherapy for Chronic Insomnia. J Clin Sleep Med. 2026.",
+          "4. ICSD-3. American Academy of Sleep Medicine. 2014.",
+          "5. AASM Practice Guidelines: aasm.org/clinical-resources/practice-standards/practice-guidelines/"
+        ]
+      },
+      {
+        "heading": "AASM Practice Guidelines (Reference Link)",
+        "kind": "link",
+        "text": "AASM Practice Guidelines",
+        "href": "https://aasm.org/clinical-resources/practice-standards/practice-guidelines/"
+      },
+      {
+        "heading": "Generate Appeal Letter",
+        "kind": "link",
+        "text": "Generate Appeal Letter (button) — navigates to appeal letter generator.",
+        "href": "/sleep/chronic-insomnia/appeal-letter"
+      }
+    ],
+    "raw": {
+      "markdown": "# Chronic Insomnia Authorization Guide\nSubtitle: Decision Support\nSpecialty: Sleep Medicine\nLogo: /manus-storage/chronic-insomnia-compass-logo_416500fd.png\nAppeal Letter route: /sleep/chronic-insomnia/appeal-letter\n\n## CPT Codes — Insomnia Evaluation & Management\n\n| CPT Code | Description | Auth Required | Notes |\n| --- | --- | --- | --- |\n| 99213–99215 | Office visit — E&M (sleep specialist) | Rarely | Document ISI score, sleep diary, CBT-I history |\n| 95810 | Polysomnography — to rule out OSA or PLMD | Often | Required when comorbid sleep disorder suspected |\n| 90837 | Psychotherapy, 60 min (CBT-I) | Sometimes | Prior auth for behavioral health benefits |\n| 90834 | Psychotherapy, 45 min (CBT-I) | Sometimes | Most common CBT-I billing code |\n| H0004 | Behavioral health counseling (CBT-I) | Sometimes | Used by some payers for CBT-I |\n| 99406–99407 | Smoking cessation counseling | Rarely | If tobacco use contributing to insomnia |\n\n## ICD-10-CM Diagnosis Codes\n\n| ICD-10 | Description | Use When |\n| --- | --- | --- |\n| G47.00 | Insomnia, unspecified | Pending full characterization |\n| G47.01 | Insomnia due to medical condition | Comorbid pain, GERD, nocturia driving insomnia |\n| G47.09 | Other insomnia | Chronic insomnia disorder (ICSD-3); most commonly used |\n| F51.01 | Primary insomnia | Idiopathic insomnia without identifiable cause |\n| F51.05 | Insomnia due to other mental disorder | Insomnia driven by depression, anxiety, PTSD |\n| F51.09 | Other insomnia not due to a substance or known physiological condition | Psychophysiological insomnia |\n\n## Medication Prior Authorization Requirements\n\n### Suvorexant (Belsomra)\n- Chronic insomnia diagnosis (≥3 months, ≥3 nights/week)\n- ISI score ≥15 or equivalent documentation\n- Step therapy: Z-drug or benzodiazepine trial often required\n- CBT-I documentation or contraindication note\n\nCommon denial reason: Step therapy not met, formulary tier restrictions\n\n### Lemborexant (Dayvigo)\n- Chronic insomnia diagnosis with objective severity documentation\n- Step therapy: Prior Z-drug or suvorexant trial\n- CBT-I documentation or contraindication note\n\nCommon denial reason: Step therapy not met, non-formulary\n\n### Low-dose Doxepin (Silenor 3–6 mg)\n- Sleep maintenance insomnia (early morning awakening)\n- Step therapy: Z-drug trial often required\n- Distinguish from antidepressant doxepin (different dosing)\n\nCommon denial reason: Confused with antidepressant indication, step therapy\n\n### Eszopiclone (Lunesta) / Zolpidem (Ambien)\n- Chronic insomnia diagnosis\n- Often first-line per payer formulary\n- Quantity limits: typically 30 tablets/30 days\n\nCommon denial reason: Quantity limit exceeded, long-term use concerns\n\n## Documentation Checklist\n- ISI (Insomnia Severity Index) score ≥15 documented in clinic note\n- Duration ≥3 months, frequency ≥3 nights/week (ICSD-3 chronic insomnia criteria)\n- Daytime impairment documented (fatigue, concentration, mood, occupational/social function)\n- Sleep diary (2-week minimum) showing sleep onset latency or WASO ≥30 minutes\n- CBT-I trial documentation: provider, dates, number of sessions, response\n- PSG results if comorbid OSA or PLMD suspected\n- Prior pharmacologic trials with dates, doses, and reasons for discontinuation\n- Contraindications to avoided agents (e.g., fall risk for benzodiazepines in elderly)\n\n## References\n1. Sateia MJ, et al. \"Clinical Practice Guideline for the Pharmacologic Treatment of Chronic Insomnia in Adults.\" J Clin Sleep Med. 2017;13(2):307–349.\n2. Edinger JD, et al. \"Behavioral and Psychological Treatments for Chronic Insomnia Disorder in Adults: An AASM Clinical Practice Guideline.\" J Clin Sleep Med. 2021;17(2):255–262.\n3. AASM April 2026 CPG: Combination CBT-I + Pharmacotherapy for Chronic Insomnia. J Clin Sleep Med. 2026.\n4. ICSD-3. American Academy of Sleep Medicine. 2014.\n5. AASM Practice Guidelines: https://aasm.org/clinical-resources/practice-standards/practice-guidelines/\n\n[Button] Generate Appeal Letter → /sleep/chronic-insomnia/appeal-letter",
+      "tables": [
+        {
+          "name": "CPT Codes — Insomnia Evaluation & Management",
+          "header": ["CPT Code", "Description", "Auth Required", "Notes"],
+          "rows": [
+            ["99213–99215", "Office visit — E&M (sleep specialist)", "Rarely", "Document ISI score, sleep diary, CBT-I history"],
+            ["95810", "Polysomnography — to rule out OSA or PLMD", "Often", "Required when comorbid sleep disorder suspected"],
+            ["90837", "Psychotherapy, 60 min (CBT-I)", "Sometimes", "Prior auth for behavioral health benefits"],
+            ["90834", "Psychotherapy, 45 min (CBT-I)", "Sometimes", "Most common CBT-I billing code"],
+            ["H0004", "Behavioral health counseling (CBT-I)", "Sometimes", "Used by some payers for CBT-I"],
+            ["99406–99407", "Smoking cessation counseling", "Rarely", "If tobacco use contributing to insomnia"]
+          ]
+        },
+        {
+          "name": "ICD-10-CM Diagnosis Codes",
+          "header": ["ICD-10", "Description", "Use When"],
+          "rows": [
+            ["G47.00", "Insomnia, unspecified", "Pending full characterization"],
+            ["G47.01", "Insomnia due to medical condition", "Comorbid pain, GERD, nocturia driving insomnia"],
+            ["G47.09", "Other insomnia", "Chronic insomnia disorder (ICSD-3); most commonly used"],
+            ["F51.01", "Primary insomnia", "Idiopathic insomnia without identifiable cause"],
+            ["F51.05", "Insomnia due to other mental disorder", "Insomnia driven by depression, anxiety, PTSD"],
+            ["F51.09", "Other insomnia not due to a substance or known physiological condition", "Psychophysiological insomnia"]
+          ]
+        }
+      ]
+    }
+  }
+}

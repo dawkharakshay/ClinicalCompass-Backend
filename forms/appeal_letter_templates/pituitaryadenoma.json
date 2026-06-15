@@ -1,0 +1,30 @@
+{
+  "title": "Pituitary Adenoma Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "61548, 62165, 77371, J2353, J2354",
+      "credentials": "[Credentials]",
+      "icd_codes": "D35.2, E22.0, E24.0, E23.0, G23.0",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — Transsphenoidal Surgery / Medical Therapy / Stereotactic Radiosurgery for Pituitary Adenoma\nCPT Code(s): 61548, 62165, 77371, 77372\nICD-10 Code(s): D35.2, E22.0, E24.0, E22.1\nDear Medical Director / Utilization Review Committee,\n\nThe patient presents with a pituitary adenoma, for which a comprehensive management plan is recommended.\n\nGuideline Support:\n1. Endocrine Society Clinical Practice Guideline on Acromegaly 2014\n2. Endocrine Society Clinical Practice Guideline on Cushing's Syndrome 2015\n3. Endocrine Society Clinical Practice Guideline on Pituitary Incidentaloma 2011\n4. NCCN Neuroendocrine and Adrenal Tumors Guidelines 2024\n\nThese guidelines, supported by strong evidence, recommend a comprehensive management plan for patients with pituitary adenoma based on based on clinical evidence and patient-specific factors.\n\n\nMedical Necessity Statement:\nBased on the patient's clinical presentation and current medical guidelines, the requested procedure/therapy, Transsphenoidal Surgery / Medical Therapy / Stereotactic Radiosurgery for Pituitary Adenoma, is medically necessary to address the patient's condition and prevent further complications.\n\nRisk Without Treatment:\nWithout appropriate intervention, the patient is at significant risk for progressive neurological deficits, visual impairment, endocrine dysfunction, and decreased quality of life.\n\nRequested Action:\nWe request immediate approval for the recommended Transsphenoidal Surgery / Medical Therapy / Stereotactic Radiosurgery for Pituitary Adenoma to ensure optimal patient outcomes. The next steps in the patient's care involve further evaluation and treatment.\n\n{{additional_clinical_notes}}\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

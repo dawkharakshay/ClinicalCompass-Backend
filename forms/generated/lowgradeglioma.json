@@ -1,0 +1,244 @@
+{
+  "title": "Low-Grade Glioma Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "lowgradeglioma",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "molecular-profile-tumor",
+        "shortLabel": "Molecular Profile & Tumor",
+        "title": "Molecular Profile & Tumor Characteristics",
+        "fields": [
+          {
+            "id": "idh-status",
+            "name": "idhStatus",
+            "label": "IDH Status & Molecular Profile",
+            "type": "select",
+            "required": false,
+            "defaultValue": "idh_mutant_1p19q_codeleted",
+            "options": [
+              { "label": "IDH-mutant, 1p/19q codeleted (Oligodendroglioma)", "value": "idh_mutant_1p19q_codeleted" },
+              { "label": "IDH-mutant, non-codeleted (Astrocytoma)", "value": "idh_mutant_non_codeleted" },
+              { "label": "IDH-wildtype (Presumed GBM behavior)", "value": "idh_wildtype" },
+              { "label": "Unknown / Pending molecular testing", "value": "unknown" }
+            ]
+          },
+          {
+            "id": "risk-category",
+            "name": "riskCategory",
+            "label": "Risk Category",
+            "type": "select",
+            "required": false,
+            "defaultValue": "low_risk",
+            "options": [
+              { "label": "Low risk (Age <40, GTR achieved)", "value": "low_risk" },
+              { "label": "High risk (Age ≥40 OR subtotal resection/biopsy)", "value": "high_risk" }
+            ]
+          },
+          {
+            "id": "tumor-size-cm",
+            "name": "tumorSizeCm",
+            "label": "Tumor Size (cm)",
+            "type": "slider",
+            "required": false,
+            "defaultValue": 4.2,
+            "unit": "cm"
+          },
+          {
+            "id": "tumor-crosses-midline",
+            "name": "tumorCrossesMidline",
+            "label": "Crosses Midline (Butterfly Glioma)",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "eloquent-cortex-involvement",
+            "name": "eloquentCortexInvolvement",
+            "label": "Eloquent Cortex Involvement (Motor, Language, Vision)",
+            "type": "radio",
+            "required": false,
+            "defaultValue": true,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "contrast-enhancement",
+            "name": "contrastEnhancement",
+            "label": "Contrast Enhancement on MRI",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "tp53-mutation",
+            "name": "tp53Mutation",
+            "label": "TP53 Mutation (if known)",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "tert-promoter-mutation",
+            "name": "tertPromoterMutation",
+            "label": "TERT Promoter Mutation (if known)",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "surgical-clinical-status",
+        "shortLabel": "Surgical & Clinical Status",
+        "title": "Surgical & Clinical Status",
+        "fields": [
+          {
+            "id": "age-years",
+            "name": "ageYears",
+            "label": "Age (years)",
+            "type": "slider",
+            "required": false,
+            "defaultValue": 0,
+            "unit": "years"
+          },
+          {
+            "id": "kps-score",
+            "name": "kpsScore",
+            "label": "KPS Score",
+            "type": "slider",
+            "required": false,
+            "defaultValue": 90
+          },
+          {
+            "id": "extent-of-resection",
+            "name": "extentOfResection",
+            "label": "Extent of Resection",
+            "type": "select",
+            "required": false,
+            "defaultValue": "gross_total",
+            "options": [
+              { "label": "Gross Total Resection (GTR, > 95%)", "value": "gross_total" },
+              { "label": "Near-Total Resection (90–95%)", "value": "near_total" },
+              { "label": "Subtotal Resection (< 90%)", "value": "subtotal" },
+              { "label": "Biopsy Only", "value": "biopsy_only" },
+              { "label": "Not yet resected (Planning)", "value": "not_yet_resected" }
+            ]
+          },
+          {
+            "id": "neurologic-deficit",
+            "name": "neurologicDeficit",
+            "label": "Neurologic Deficit at Presentation",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "seizure-at-presentation",
+            "name": "seizureAtPresentation",
+            "label": "Seizure at Presentation",
+            "type": "radio",
+            "required": false,
+            "defaultValue": true,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "egfr-amplification",
+            "name": "egfrAmplification",
+            "label": "EGFR Amplification (if known)",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "chromosome7-gain10-loss",
+            "name": "chromosome7Gain10Loss",
+            "label": "+7/-10 Chromosomal Pattern (if known)",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "treatment-history",
+        "shortLabel": "Treatment History",
+        "title": "Treatment History",
+        "fields": [
+          {
+            "id": "prior-radiotherapy",
+            "name": "priorRadiotherapy",
+            "label": "Prior Radiotherapy",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "prior-chemotherapy",
+            "name": "priorChemotherapy",
+            "label": "Prior Chemotherapy (TMZ or PCV)",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          },
+          {
+            "id": "atrx-loss",
+            "name": "atrxLoss",
+            "label": "ATRX Loss (if known)",
+            "type": "radio",
+            "required": false,
+            "defaultValue": false,
+            "options": [
+              { "label": "No", "value": false },
+              { "label": "Yes", "value": true }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

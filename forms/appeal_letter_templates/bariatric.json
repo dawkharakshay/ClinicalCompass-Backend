@@ -1,0 +1,30 @@
+{
+  "title": "Bariatric Surgery Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "43775, 43644, 43645, 43770, 43843, 43846, 43659",
+      "credentials": "[Credentials]",
+      "icd_codes": "E66.01, E66.09, E66.9, Z68.41, Z68.42, Z68.43, E11.9, I10, G47.33",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\nRe: Medical Necessity Appeal — Bariatric / Metabolic Surgery\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\n\nDear Medical Director / Utilization Review Committee,\n\nI am writing to formally appeal the denial of prior authorization for bariatric / metabolic surgery for my patient. This procedure is medically necessary and is supported by the 2022 American Society for Metabolic and Bariatric Surgery (ASMBS) / International Federation for the Surgery of Obesity and Metabolic Disorders (IFSO) Indications for Metabolic and Bariatric Surgery, multiple randomized controlled trials, and your plan's stated coverage criteria.\n\nCLINICAL ASSESSMENT SUMMARY:\nOur Clinical Compass Bariatric Surgery Decision Support tool assessed this patient as: [Bariatric Surgery Recommendation]\nBMI Classification: [BMI Category]\nRecommended Procedure: [Procedure]\nExpected Metabolic Benefit: [Expected Benefit]\n\n\n\nCLINICAL INDICATION:\nThis patient has a BMI of [BMI] kg/m² ([WEIGHT] lbs, height [HEIGHT]), meeting criteria for [Class III / Class II] obesity. The patient has the following obesity-related comorbidities:\n• [LIST COMORBIDITIES: T2DM, HTN, OSA, dyslipidemia, GERD, osteoarthritis, etc.]\n\nThese comorbidities are directly attributable to obesity and are expected to improve significantly or resolve following bariatric surgery.\n\nSUPERVISED WEIGHT LOSS PROGRAM:\nThe patient has completed [DURATION] months of a physician-supervised weight loss program, including:\n• Monthly visits with [PHYSICIAN/PROVIDER NAME] from [START DATE] to [END DATE]\n• Dietary counseling with [DIETITIAN NAME]\n• Exercise program: [DESCRIBE]\n• Medications tried: [LIST ANY WEIGHT LOSS MEDICATIONS]\n• Weight change during program: [START WEIGHT] → [END WEIGHT] ([CHANGE] lbs)\n\nDespite adherence to this program, the patient has been unable to achieve or sustain clinically meaningful weight loss sufficient to resolve obesity-related comorbidities.\n\nPRE-OPERATIVE WORKUP COMPLETED:\n• Psychological evaluation: {{letter_date}} — cleared for surgery by [PSYCHOLOGIST/PSYCHIATRIST]\n• Nutrition consultation: {{letter_date}} — completed with [DIETITIAN]\n• Medical clearance: {{letter_date}} — cleared by [PCP/INTERNIST]\n• Cardiology clearance: [DATE if applicable]\n• Endocrinology consultation: [DATE if applicable — for T2DM]\n• Sleep study: [DATE if applicable — for OSA]\n\nEVIDENCE-BASED JUSTIFICATION:\n\n1. 2022 ASMBS/IFSO GUIDELINE SUPPORT:\nPer the 2022 ASMBS/IFSO Indications for Metabolic and Bariatric Surgery (Eisenberg D, et al., Surg Obes Relat Dis 2022;18:1345-1356), bariatric surgery is indicated for:\n• BMI ≥40 kg/m² regardless of comorbidities (Class I recommendation)\n• BMI ≥35 kg/m² with at least one obesity-related comorbidity (Class I recommendation)\n• BMI ≥30 kg/m² with metabolic disease (T2DM, metabolic syndrome) — expanded 2022 indication\n\nThis patient meets criteria [SPECIFY WHICH CRITERION].\n\n2. RANDOMIZED CONTROLLED TRIAL EVIDENCE:\nThe STAMPEDE trial (Schauer PR, et al., NEJM 2017;376:641-651) demonstrated that bariatric surgery was significantly superior to intensive medical therapy for glycemic control in T2DM patients with BMI ≥27, with 29% achieving T2DM remission at 5 years vs 5% with medical therapy.\n\nThe Swedish Obese Subjects (SOS) study (Sjöström L, et al., JAMA 2012;307:56-65) demonstrated a 40% reduction in cardiovascular events and significant reduction in all-cause mortality in patients who underwent bariatric surgery compared to matched controls.\n\n3. LONG-TERM OUTCOMES:\nAdams et al. (NEJM 2007;357:753-761) demonstrated a 40% reduction in all-cause mortality at 7 years following gastric bypass surgery compared to non-surgical controls, with significant reductions in cancer-related and cardiovascular mortality.\n\nRISK OF DENIAL:\nWithout bariatric surgery, this patient will continue to experience progressive obesity-related complications including [DESCRIBE: worsening T2DM, cardiovascular risk, OSA, joint deterioration, etc.]. The long-term costs of untreated morbid obesity — including hospitalizations, medications, and disability — significantly exceed the one-time cost of bariatric surgery.\n\nADDITIONAL CLINICAL NOTES:\n{{additional_clinical_notes}}\n\nIn summary, bariatric surgery is medically necessary, guideline-directed, and supported by robust long-term clinical trial evidence. I respectfully request approval and am available for peer-to-peer review.\n\nSincerely,\n\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

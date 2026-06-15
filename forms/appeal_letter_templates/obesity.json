@@ -1,0 +1,30 @@
+{
+  "title": "Obesity Treatment Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "43644, 43645, 43770",
+      "credentials": "[Credentials]",
+      "icd_codes": "E66.01, E66.9, Z68.37, Z68.41",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — Bariatric Surgery / Anti-Obesity Pharmacotherapy\nCPT Code(s): 43644, 43645, 43770, 43775, 99213, 99214\nICD-10 Code(s): E66.01, E66.09, E66.1, E66.9, Z68.41, Z68.42, Z68.43\nDear Medical Director / Utilization Review Committee,\n\nThis letter serves as an appeal for coverage of medical management for our patient, {{patient_name}}, born {{patient_dob}}, policy number {{policy_number}}.\n\nClinical Summary:\n{{patient_name}} presents with a BMI in the not specified category. Based on a comprehensive evaluation, the patient has been determined to be a candidate for medical management. This recommendation is supported by the following key findings: clinical necessity.\n\nGuideline Support:\n1. ASMBS/IFSO Indications for Metabolic and Bariatric Surgery 2022: These guidelines provide evidence-based criteria for metabolic and bariatric surgery, which are met by the patient's clinical profile.\n2. AHA/ACC/TOS Guideline for the Management of Overweight and Obesity 2013: This guideline supports comprehensive approaches to obesity management, including surgical and pharmacotherapeutic interventions when indicated.\n3. AACE/ACE Clinical Practice Guidelines for Comprehensive Medical Care of Patients with Obesity 2016: These guidelines advocate for individualized treatment plans for obesity, which in this case, includes medical management.\n4. FDA Guidance on Anti-Obesity Medications 2023: For patients where pharmacotherapy is indicated, this guidance supports the use of approved anti-obesity medications.\n\nMedical Necessity:\nGiven the patient's not specified and associated comorbidities, medical management is medically necessary to prevent further progression of obesity-related complications and improve overall health outcomes. The patient has either failed or is not a candidate for less intensive interventions.\n\nRisk Without Treatment:\nWithout appropriate intervention, the patient is at high risk for developing or exacerbating severe health conditions associated with obesity, including but not limited to cardiovascular disease, type 2 diabetes, sleep apnea, and certain cancers. Delaying or denying this treatment would lead to significant adverse health consequences and increased healthcare costs in the long term.\n\nRequested Action:\nWe request immediate approval for medical management for {{patient_name}}. We are confident that this intervention is in line with current medical guidelines and best practices for the management of obesity.\n\nSincerely,\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

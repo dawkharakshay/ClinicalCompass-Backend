@@ -1,0 +1,281 @@
+{
+  "title": "Spinal Cord Stimulator Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "SCSAuthGuide.tsx",
+    "title": null,
+    "subtitle": null,
+    "cptCodes": [
+      { "code": "63650", "description": "Percutaneous implantation of neurostimulator electrode array, epidural", "rvu": "14.22", "notes": "SCS trial electrode placement — percutaneous" },
+      { "code": "63655", "description": "Laminectomy for implantation of neurostimulator electrodes, plate/paddle, epidural", "rvu": "22.44", "notes": "SCS trial — surgical paddle electrode" },
+      { "code": "63685", "description": "Insertion or replacement of spinal neurostimulator pulse generator or receiver, direct or inductive coupling", "rvu": "8.92", "notes": "Permanent IPG implantation" },
+      { "code": "63688", "description": "Revision or removal of implanted spinal neurostimulator electrode array", "rvu": "10.12", "notes": "Electrode revision or removal" },
+      { "code": "63663", "description": "Revision including replacement, when performed, of spinal neurostimulator electrode percutaneous array(s), including fluoroscopy, when performed", "rvu": "9.44", "notes": "Percutaneous electrode revision" },
+      { "code": "95970", "description": "Electronic analysis of implanted neurostimulator pulse generator/transmitter", "rvu": "0.62", "notes": "Programming — initial" },
+      { "code": "95971", "description": "Electronic analysis of implanted neurostimulator pulse generator/transmitter; with simple programming", "rvu": "0.92", "notes": "Programming — simple" }
+    ],
+    "icd10Codes": [
+      { "code": "G89.29", "description": "Other chronic pain", "notes": "Chronic pain — primary indication" },
+      { "code": "G89.21", "description": "Chronic pain due to trauma", "notes": "Post-traumatic chronic pain" },
+      { "code": "M54.4", "description": "Lumbago with sciatica", "notes": "Failed back surgery syndrome with radiculopathy" },
+      { "code": "M96.1", "description": "Postlaminectomy syndrome, not elsewhere classified", "notes": "Failed back surgery syndrome (FBSS)" },
+      { "code": "G57.10", "description": "Meralgia paresthetica, unspecified lower limb", "notes": "Peripheral neuropathy" },
+      { "code": "I73.9", "description": "Peripheral vascular disease, unspecified", "notes": "Critical limb ischemia indication" },
+      { "code": "G54.2", "description": "Cervical root disorders, not elsewhere classified", "notes": "Cervical radiculopathy" },
+      { "code": "G89.28", "description": "Other chronic postprocedural pain", "notes": "Post-surgical chronic pain" }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "overview": "Medicare covers SCS under NCD 160.7. Trial (63650) and permanent implant (63685) are separately covered. Device costs are included in the facility fee. Psychological evaluation is a required prerequisite.",
+        "sections": [
+          {
+            "heading": "Prior Authorization Requirements",
+            "items": [
+              "Diagnosis of chronic intractable pain of neuropathic origin (≥6 months duration)",
+              "Failed conservative therapy: ≥6 months PT, medications (opioids, anticonvulsants, antidepressants)",
+              "Psychological evaluation clearing patient for implant (no untreated psychiatric contraindications)",
+              "No active substance use disorder or drug-seeking behavior",
+              "No surgical contraindications (coagulopathy, active infection, cardiac pacemaker incompatibility)",
+              "Trial stimulation (≥50% pain relief) required before permanent implant",
+              "Multidisciplinary pain evaluation documentation"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Chronic neuropathic pain ≥6 months (FBSS, CRPS, peripheral neuropathy, radiculopathy)",
+              "Failed conservative therapy including medications and PT",
+              "Positive psychological evaluation",
+              "Successful trial stimulation (≥50% pain relief)"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Medicare covers SCS under NCD 160.7. Trial (63650) and permanent implant (63685) are separately covered. Device costs are included in the facility fee. Psychological evaluation is a required prerequisite."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicare (CMS)", "status": "Covered", "notes": "Covered per NCD 160.7; psychological eval required; ≥50% trial relief required for permanent implant" }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "overview": "Medicaid coverage varies significantly by state. Many states require prior authorization and follow Medicare NCD criteria. Some states have additional restrictions.",
+        "sections": [
+          {
+            "heading": "Prior Authorization Requirements",
+            "items": [
+              "State-specific prior authorization required",
+              "Chronic intractable pain documentation",
+              "Failed conservative therapy documentation",
+              "Psychological evaluation",
+              "Trial stimulation results"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Chronic neuropathic pain with failed conservative therapy",
+              "Positive psychological evaluation",
+              "Successful trial stimulation"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Medicaid coverage varies significantly by state. Many states require prior authorization and follow Medicare NCD criteria. Some states have additional restrictions."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicaid (state-specific)", "status": "Covered", "notes": "Coverage varies; most states follow Medicare NCD 160.7 criteria" }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "overview": "Commercial payers typically cover SCS with prior authorization and positive trial. Device costs may be subject to separate authorization. High denial rates — peer-to-peer review is almost always required.",
+        "sections": [
+          {
+            "heading": "Prior Authorization Requirements",
+            "items": [
+              "Prior authorization required by all commercial payers",
+              "Chronic intractable pain ≥6 months with neuropathic etiology",
+              "Failed conservative therapy: ≥6 months PT, medications (≥2 drug classes), interventional procedures",
+              "Psychological evaluation clearing patient for implant",
+              "No active substance use disorder",
+              "Trial stimulation results (≥50% pain relief required for permanent implant)",
+              "Multidisciplinary pain program evaluation",
+              "Peer-to-peer review typically required"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Chronic neuropathic pain ≥6 months (FBSS, CRPS, peripheral neuropathy)",
+              "Failed conservative therapy including medications and PT",
+              "Positive psychological evaluation",
+              "Successful trial stimulation (≥50% relief)"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Commercial payers typically cover SCS with prior authorization and positive trial. Device costs may be subject to separate authorization. High denial rates — peer-to-peer review is almost always required."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Aetna", "status": "Covered", "notes": "Covered; requires psychological eval, 6-month conservative therapy failure, and ≥50% trial relief" },
+          { "payer": "UnitedHealthcare", "status": "Covered", "notes": "Covered with prior auth; multidisciplinary evaluation and trial required" },
+          { "payer": "BCBS (most plans)", "status": "Covered", "notes": "Covered; psychological eval and positive trial required; peer-to-peer often needed" },
+          { "payer": "Cigna", "status": "Covered", "notes": "Covered with prior auth; strict criteria — psychological eval and trial mandatory" },
+          { "payer": "Humana", "status": "Covered", "notes": "Covered; prior auth required; psychological eval and trial documentation mandatory" }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Required Documentation — Pain History",
+        "kind": "list",
+        "items": [
+          "H&P documenting chronic pain diagnosis, duration (≥6 months), and neuropathic etiology",
+          "Pain scores at multiple visits (NRS or VAS)",
+          "Functional impairment documentation (ODI, PDI, or similar)",
+          "Prior surgical history (for FBSS patients)"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Failed Conservative Therapy",
+        "kind": "list",
+        "items": [
+          "PT notes documenting ≥6 months of comprehensive pain rehabilitation",
+          "Medication trial documentation (opioids, anticonvulsants, antidepressants — ≥2 drug classes)",
+          "Prior interventional procedure documentation (ESI, facet injections, etc.)",
+          "Documentation of inadequate response or intolerance to each treatment"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Psychological Evaluation",
+        "kind": "list",
+        "items": [
+          "Formal psychological evaluation by licensed psychologist or psychiatrist",
+          "Clearance for implant (no untreated psychiatric contraindications)",
+          "Absence of active substance use disorder",
+          "Coping skills and support system assessment"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Trial Documentation",
+        "kind": "list",
+        "items": [
+          "Trial procedure note (63650) with electrode placement confirmation",
+          "Pain diary during trial period (minimum 3–7 days)",
+          "≥50% pain relief documented during trial",
+          "Functional improvement during trial",
+          "Patient satisfaction with trial stimulation"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Medical Clearance",
+        "kind": "list",
+        "items": [
+          "Absence of coagulopathy or anticoagulation contraindication",
+          "Absence of active infection",
+          "Cardiac device compatibility check (if pacemaker/ICD present)",
+          "Surgical clearance if comorbidities present"
+        ]
+      },
+      {
+        "heading": "Submission Process",
+        "kind": "list",
+        "items": [
+          "Establish chronic neuropathic pain diagnosis with ≥6 months duration documentation",
+          "Document failed conservative therapy (≥6 months PT, ≥2 medication classes, prior interventions)",
+          "Obtain psychological evaluation clearing patient for implant",
+          "Submit prior authorization for trial (63650) with full clinical documentation",
+          "Perform trial stimulation and document ≥50% pain relief in pain diary",
+          "Submit prior authorization for permanent implant (63685) with trial results",
+          "Include all documentation: pain history, failed therapy, psychological eval, trial diary",
+          "Request peer-to-peer review — almost always required for commercial payers",
+          "For device authorization: submit separately if payer requires device-specific approval"
+        ]
+      },
+      {
+        "heading": "Common Denial Reasons",
+        "kind": "list",
+        "items": [
+          "Insufficient conservative therapy documentation — most common denial; document ≥6 months PT and ≥2 medication classes explicitly",
+          "Missing psychological evaluation — required by all payers; must be from licensed psychologist/psychiatrist",
+          "Trial relief <50% — document pain diary with specific % relief at each time point",
+          "Active substance use disorder not addressed — document substance use evaluation and treatment",
+          "Diagnosis not meeting neuropathic criteria — specify FBSS, CRPS, peripheral neuropathy, or radiculopathy",
+          "Missing peer-to-peer review — proactively request for all commercial payer submissions",
+          "Device authorization not separately obtained — verify if payer requires separate device approval",
+          "Prior authorization not obtained before trial procedure"
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# Spinal Cord Stimulator Clinical Compass\n\n## CPT Codes\n\n| CPT | Description | RVU | Notes |\n| --- | --- | --- | --- |\n| 63650 | Percutaneous implantation of neurostimulator electrode array, epidural | 14.22 | SCS trial electrode placement — percutaneous |\n| 63655 | Laminectomy for implantation of neurostimulator electrodes, plate/paddle, epidural | 22.44 | SCS trial — surgical paddle electrode |\n| 63685 | Insertion or replacement of spinal neurostimulator pulse generator or receiver, direct or inductive coupling | 8.92 | Permanent IPG implantation |\n| 63688 | Revision or removal of implanted spinal neurostimulator electrode array | 10.12 | Electrode revision or removal |\n| 63663 | Revision including replacement, when performed, of spinal neurostimulator electrode percutaneous array(s), including fluoroscopy, when performed | 9.44 | Percutaneous electrode revision |\n| 95970 | Electronic analysis of implanted neurostimulator pulse generator/transmitter | 0.62 | Programming — initial |\n| 95971 | Electronic analysis of implanted neurostimulator pulse generator/transmitter; with simple programming | 0.92 | Programming — simple |\n\n## ICD-10 Codes\n\n| ICD-10 | Description | Notes |\n| --- | --- | --- |\n| G89.29 | Other chronic pain | Chronic pain — primary indication |\n| G89.21 | Chronic pain due to trauma | Post-traumatic chronic pain |\n| M54.4 | Lumbago with sciatica | Failed back surgery syndrome with radiculopathy |\n| M96.1 | Postlaminectomy syndrome, not elsewhere classified | Failed back surgery syndrome (FBSS) |\n| G57.10 | Meralgia paresthetica, unspecified lower limb | Peripheral neuropathy |\n| I73.9 | Peripheral vascular disease, unspecified | Critical limb ischemia indication |\n| G54.2 | Cervical root disorders, not elsewhere classified | Cervical radiculopathy |\n| G89.28 | Other chronic postprocedural pain | Post-surgical chronic pain |\n\n## Payer Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\n\n**Prior Authorization Requirements**\n- Diagnosis of chronic intractable pain of neuropathic origin (≥6 months duration)\n- Failed conservative therapy: ≥6 months PT, medications (opioids, anticonvulsants, antidepressants)\n- Psychological evaluation clearing patient for implant (no untreated psychiatric contraindications)\n- No active substance use disorder or drug-seeking behavior\n- No surgical contraindications (coagulopathy, active infection, cardiac pacemaker incompatibility)\n- Trial stimulation (≥50% pain relief) required before permanent implant\n- Multidisciplinary pain evaluation documentation\n\n**Medical Necessity Criteria**\n- Chronic neuropathic pain ≥6 months (FBSS, CRPS, peripheral neuropathy, radiculopathy)\n- Failed conservative therapy including medications and PT\n- Positive psychological evaluation\n- Successful trial stimulation (≥50% pain relief)\n\n**Reimbursement:** Medicare covers SCS under NCD 160.7. Trial (63650) and permanent implant (63685) are separately covered. Device costs are included in the facility fee. Psychological evaluation is a required prerequisite.\n\n**Known Payer Policies**\n\n| Payer | Policy | Covered |\n| --- | --- | --- |\n| Medicare (CMS) | Covered per NCD 160.7; psychological eval required; ≥50% trial relief required for permanent implant | Yes |\n\n### Medicaid\n\n**Prior Authorization Requirements**\n- State-specific prior authorization required\n- Chronic intractable pain documentation\n- Failed conservative therapy documentation\n- Psychological evaluation\n- Trial stimulation results\n\n**Medical Necessity Criteria**\n- Chronic neuropathic pain with failed conservative therapy\n- Positive psychological evaluation\n- Successful trial stimulation\n\n**Reimbursement:** Medicaid coverage varies significantly by state. Many states require prior authorization and follow Medicare NCD criteria. Some states have additional restrictions.\n\n**Known Payer Policies**\n\n| Payer | Policy | Covered |\n| --- | --- | --- |\n| Medicaid (state-specific) | Coverage varies; most states follow Medicare NCD 160.7 criteria | Yes |\n\n### Private Insurance\n\n**Prior Authorization Requirements**\n- Prior authorization required by all commercial payers\n- Chronic intractable pain ≥6 months with neuropathic etiology\n- Failed conservative therapy: ≥6 months PT, medications (≥2 drug classes), interventional procedures\n- Psychological evaluation clearing patient for implant\n- No active substance use disorder\n- Trial stimulation results (≥50% pain relief required for permanent implant)\n- Multidisciplinary pain program evaluation\n- Peer-to-peer review typically required\n\n**Medical Necessity Criteria**\n- Chronic neuropathic pain ≥6 months (FBSS, CRPS, peripheral neuropathy)\n- Failed conservative therapy including medications and PT\n- Positive psychological evaluation\n- Successful trial stimulation (≥50% relief)\n\n**Reimbursement:** Commercial payers typically cover SCS with prior authorization and positive trial. Device costs may be subject to separate authorization. High denial rates — peer-to-peer review is almost always required.\n\n**Known Payer Policies**\n\n| Payer | Policy | Covered |\n| --- | --- | --- |\n| Aetna | Covered; requires psychological eval, 6-month conservative therapy failure, and ≥50% trial relief | Yes |\n| UnitedHealthcare | Covered with prior auth; multidisciplinary evaluation and trial required | Yes |\n| BCBS (most plans) | Covered; psychological eval and positive trial required; peer-to-peer often needed | Yes |\n| Cigna | Covered with prior auth; strict criteria — psychological eval and trial mandatory | Yes |\n| Humana | Covered; prior auth required; psychological eval and trial documentation mandatory | Yes |\n\n## Required Documentation\n\n### Pain History\n- H&P documenting chronic pain diagnosis, duration (≥6 months), and neuropathic etiology\n- Pain scores at multiple visits (NRS or VAS)\n- Functional impairment documentation (ODI, PDI, or similar)\n- Prior surgical history (for FBSS patients)\n\n### Failed Conservative Therapy\n- PT notes documenting ≥6 months of comprehensive pain rehabilitation\n- Medication trial documentation (opioids, anticonvulsants, antidepressants — ≥2 drug classes)\n- Prior interventional procedure documentation (ESI, facet injections, etc.)\n- Documentation of inadequate response or intolerance to each treatment\n\n### Psychological Evaluation\n- Formal psychological evaluation by licensed psychologist or psychiatrist\n- Clearance for implant (no untreated psychiatric contraindications)\n- Absence of active substance use disorder\n- Coping skills and support system assessment\n\n### Trial Documentation\n- Trial procedure note (63650) with electrode placement confirmation\n- Pain diary during trial period (minimum 3–7 days)\n- ≥50% pain relief documented during trial\n- Functional improvement during trial\n- Patient satisfaction with trial stimulation\n\n### Medical Clearance\n- Absence of coagulopathy or anticoagulation contraindication\n- Absence of active infection\n- Cardiac device compatibility check (if pacemaker/ICD present)\n- Surgical clearance if comorbidities present\n\n## Submission Process\n\n1. Establish chronic neuropathic pain diagnosis with ≥6 months duration documentation\n2. Document failed conservative therapy (≥6 months PT, ≥2 medication classes, prior interventions)\n3. Obtain psychological evaluation clearing patient for implant\n4. Submit prior authorization for trial (63650) with full clinical documentation\n5. Perform trial stimulation and document ≥50% pain relief in pain diary\n6. Submit prior authorization for permanent implant (63685) with trial results\n7. Include all documentation: pain history, failed therapy, psychological eval, trial diary\n8. Request peer-to-peer review — almost always required for commercial payers\n9. For device authorization: submit separately if payer requires device-specific approval\n\n## Common Denial Reasons\n\n- ⚠ Insufficient conservative therapy documentation — most common denial; document ≥6 months PT and ≥2 medication classes explicitly\n- ⚠ Missing psychological evaluation — required by all payers; must be from licensed psychologist/psychiatrist\n- ⚠ Trial relief <50% — document pain diary with specific % relief at each time point\n- ⚠ Active substance use disorder not addressed — document substance use evaluation and treatment\n- ⚠ Diagnosis not meeting neuropathic criteria — specify FBSS, CRPS, peripheral neuropathy, or radiculopathy\n- ⚠ Missing peer-to-peer review — proactively request for all commercial payer submissions\n- ⚠ Device authorization not separately obtained — verify if payer requires separate device approval\n- ⚠ Prior authorization not obtained before trial procedure\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["CPT", "Description", "RVU", "Notes"],
+          "rows": [
+            ["63650", "Percutaneous implantation of neurostimulator electrode array, epidural", "14.22", "SCS trial electrode placement — percutaneous"],
+            ["63655", "Laminectomy for implantation of neurostimulator electrodes, plate/paddle, epidural", "22.44", "SCS trial — surgical paddle electrode"],
+            ["63685", "Insertion or replacement of spinal neurostimulator pulse generator or receiver, direct or inductive coupling", "8.92", "Permanent IPG implantation"],
+            ["63688", "Revision or removal of implanted spinal neurostimulator electrode array", "10.12", "Electrode revision or removal"],
+            ["63663", "Revision including replacement, when performed, of spinal neurostimulator electrode percutaneous array(s), including fluoroscopy, when performed", "9.44", "Percutaneous electrode revision"],
+            ["95970", "Electronic analysis of implanted neurostimulator pulse generator/transmitter", "0.62", "Programming — initial"],
+            ["95971", "Electronic analysis of implanted neurostimulator pulse generator/transmitter; with simple programming", "0.92", "Programming — simple"]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["ICD-10", "Description", "Notes"],
+          "rows": [
+            ["G89.29", "Other chronic pain", "Chronic pain — primary indication"],
+            ["G89.21", "Chronic pain due to trauma", "Post-traumatic chronic pain"],
+            ["M54.4", "Lumbago with sciatica", "Failed back surgery syndrome with radiculopathy"],
+            ["M96.1", "Postlaminectomy syndrome, not elsewhere classified", "Failed back surgery syndrome (FBSS)"],
+            ["G57.10", "Meralgia paresthetica, unspecified lower limb", "Peripheral neuropathy"],
+            ["I73.9", "Peripheral vascular disease, unspecified", "Critical limb ischemia indication"],
+            ["G54.2", "Cervical root disorders, not elsewhere classified", "Cervical radiculopathy"],
+            ["G89.28", "Other chronic postprocedural pain", "Post-surgical chronic pain"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicare",
+          "header": ["Payer", "Policy", "Covered"],
+          "rows": [
+            ["Medicare (CMS)", "Covered per NCD 160.7; psychological eval required; ≥50% trial relief required for permanent implant", "Yes"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicaid",
+          "header": ["Payer", "Policy", "Covered"],
+          "rows": [
+            ["Medicaid (state-specific)", "Coverage varies; most states follow Medicare NCD 160.7 criteria", "Yes"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Private Insurance",
+          "header": ["Payer", "Policy", "Covered"],
+          "rows": [
+            ["Aetna", "Covered; requires psychological eval, 6-month conservative therapy failure, and ≥50% trial relief", "Yes"],
+            ["UnitedHealthcare", "Covered with prior auth; multidisciplinary evaluation and trial required", "Yes"],
+            ["BCBS (most plans)", "Covered; psychological eval and positive trial required; peer-to-peer often needed", "Yes"],
+            ["Cigna", "Covered with prior auth; strict criteria — psychological eval and trial mandatory", "Yes"],
+            ["Humana", "Covered; prior auth required; psychological eval and trial documentation mandatory", "Yes"]
+          ]
+        }
+      ]
+    }
+  }
+}

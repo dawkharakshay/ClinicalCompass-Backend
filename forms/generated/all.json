@@ -1,0 +1,220 @@
+{
+  "title": "Acute Lymphoblastic Leukemia & CAR-T Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "all",
+    "hiddenDefaults": {
+      "ecogPS": 0,
+      "hasT315IMutation": false,
+      "hasIGH_CRLF2": false,
+      "hasHyperdiploidy": false,
+      "hasERG_deletion": false
+    },
+    "steps": [
+      {
+        "id": "patient-profile",
+        "shortLabel": "Profile",
+        "title": "Step 1 — Patient Profile",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "fitness-status",
+            "name": "fitnessStatus",
+            "label": "Fitness Status",
+            "type": "select",
+            "defaultValue": "fit",
+            "options": [
+              { "label": "Fit (ECOG 0–1)", "value": "fit" },
+              { "label": "Unfit (ECOG 2–3)", "value": "unfit" },
+              { "label": "Frail (ECOG 4)", "value": "frail" }
+            ]
+          },
+          {
+            "id": "lineage",
+            "name": "lineage",
+            "label": "ALL Lineage",
+            "type": "select",
+            "defaultValue": "b_all",
+            "options": [
+              { "label": "B-ALL", "value": "b_all" },
+              { "label": "T-ALL", "value": "t_all" },
+              { "label": "Unknown / Pending", "value": "unknown" }
+            ]
+          },
+          {
+            "id": "ph-status",
+            "name": "phStatus",
+            "label": "Ph Chromosome / BCR-ABL1",
+            "type": "select",
+            "defaultValue": "negative",
+            "options": [
+              { "label": "Ph-negative", "value": "negative" },
+              { "label": "Ph-positive (BCR-ABL1+)", "value": "positive" },
+              { "label": "Unknown / Pending", "value": "unknown" }
+            ]
+          },
+          {
+            "id": "patient-preference",
+            "name": "patientPreference",
+            "label": "Patient Preference",
+            "type": "select",
+            "defaultValue": "aggressive",
+            "options": [
+              { "label": "Aggressive / Curative intent", "value": "aggressive" },
+              { "label": "Moderate / Tolerability-focused", "value": "moderate" },
+              { "label": "Best supportive care only", "value": "bsc" }
+            ]
+          },
+          {
+            "id": "cns-status",
+            "name": "cnsStatus",
+            "label": "CNS Status",
+            "type": "select",
+            "defaultValue": "cns1",
+            "options": [
+              { "label": "CNS-1 (No blasts in CSF)", "value": "cns1" },
+              { "label": "CNS-2 (<5 WBC/µL with blasts)", "value": "cns2" },
+              { "label": "CNS-3 (≥5 WBC/µL with blasts or cranial nerve palsy)", "value": "cns3" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "phase-mrd",
+        "shortLabel": "Phase & MRD",
+        "title": "Step 2 — Disease Phase & MRD Status",
+        "fields": [
+          {
+            "id": "phase",
+            "name": "phase",
+            "label": "Disease Phase",
+            "type": "select",
+            "defaultValue": "newly_diagnosed",
+            "options": [
+              { "label": "Newly Diagnosed", "value": "newly_diagnosed" },
+              { "label": "MRD-Positive (CR but MRD+)", "value": "mrd_positive" },
+              { "label": "Relapsed / Refractory", "value": "relapsed_refractory" }
+            ]
+          },
+          {
+            "id": "mrd-status",
+            "name": "mrdStatus",
+            "label": "MRD Status",
+            "type": "select",
+            "defaultValue": "unknown",
+            "visibleWhen": { "field": "phase", "op": "in", "value": ["mrd_positive", "relapsed_refractory"] },
+            "options": [
+              { "label": "MRD-Negative", "value": "negative" },
+              { "label": "MRD-Positive (Low: 10⁻⁴ to 10⁻³)", "value": "positive_low" },
+              { "label": "MRD-Positive (High: >10⁻³)", "value": "positive_high" },
+              { "label": "Unknown / Not Tested", "value": "unknown" }
+            ]
+          },
+          {
+            "id": "prior-lines",
+            "name": "priorLines",
+            "label": "Prior Lines of Therapy",
+            "type": "select",
+            "defaultValue": 0,
+            "visibleWhen": { "field": "phase", "op": "in", "value": ["mrd_positive", "relapsed_refractory"] },
+            "options": [
+              { "label": "0 (Newly diagnosed)", "value": 0 },
+              { "label": "1 prior line", "value": 1 },
+              { "label": "2 prior lines", "value": 2 },
+              { "label": "≥3 prior lines", "value": 3 }
+            ]
+          },
+          {
+            "id": "prior-blinatumomab",
+            "name": "priorBlinatumomab",
+            "label": "Blinatumomab (Blincyto)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "phase", "op": "in", "value": ["mrd_positive", "relapsed_refractory"] }
+          },
+          {
+            "id": "prior-inotuzumab",
+            "name": "priorInotuzumab",
+            "label": "Inotuzumab Ozogamicin (Besylsa)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "phase", "op": "in", "value": ["mrd_positive", "relapsed_refractory"] }
+          },
+          {
+            "id": "prior-cart-cell",
+            "name": "priorCARTCell",
+            "label": "Prior CAR-T cell therapy",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "phase", "op": "in", "value": ["mrd_positive", "relapsed_refractory"] }
+          },
+          {
+            "id": "prior-hct",
+            "name": "priorHCT",
+            "label": "Prior allo-HCT",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "phase", "op": "in", "value": ["mrd_positive", "relapsed_refractory"] }
+          }
+        ]
+      },
+      {
+        "id": "biomarkers-transplant",
+        "shortLabel": "Biomarkers",
+        "title": "Step 3 — Biomarkers & Transplant Availability",
+        "fields": [
+          {
+            "id": "has-hla-matched-donor",
+            "name": "hasHLAMatchedDonor",
+            "label": "HLA-matched donor available (MSD or MUD)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-kmt2a-rearrangement",
+            "name": "hasKMT2ARearrangement",
+            "label": "KMT2A (MLL) rearrangement",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-bcrabl1-like",
+            "name": "hasBCRABL1Like",
+            "label": "Ph-like ALL (CRLF2, JAK, ABL-class)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-hypodiploidy",
+            "name": "hasHypodiploidy",
+            "label": "Hypodiploidy (<44 chromosomes)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "has-tp53-mutation",
+            "name": "hasTP53Mutation",
+            "label": "TP53 mutation",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "cd-expression-note",
+            "type": "alert",
+            "severity": "info",
+            "text": "CD19 expression is required for tisagenlecleucel and brexucabtagene autoleucel eligibility. CD22 expression is required for inotuzumab ozogamicin eligibility."
+          }
+        ]
+      }
+    ]
+  }
+}

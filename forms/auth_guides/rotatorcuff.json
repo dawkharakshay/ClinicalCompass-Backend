@@ -1,0 +1,253 @@
+{
+  "title": "Rotator Cuff Repair Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "RotatorCuffAuthGuide.tsx",
+    "title": null,
+    "subtitle": null,
+    "cptCodes": [
+      { "code": "29827", "description": "Arthroscopy, shoulder, surgical; with rotator cuff repair", "rvu": "23.18", "notes": "Primary repair code — full or partial thickness" },
+      { "code": "29826", "description": "Arthroscopy, shoulder, surgical; decompression of subacromial space with partial acromioplasty", "rvu": "8.42", "notes": "Often performed with repair; may be bundled" },
+      { "code": "29823", "description": "Arthroscopy, shoulder, surgical; debridement, extensive", "rvu": "7.12", "notes": "For irreparable tears or partial debridement" },
+      { "code": "29819", "description": "Arthroscopy, shoulder, surgical; with removal of loose body or foreign body", "rvu": "6.85", "notes": "If loose bodies present" },
+      { "code": "23412", "description": "Repair of ruptured musculotendinous cuff (rotator cuff), chronic", "rvu": "18.44", "notes": "Open repair — chronic tear" },
+      { "code": "23410", "description": "Repair of ruptured musculotendinous cuff (rotator cuff), acute", "rvu": "17.92", "notes": "Open repair — acute tear" }
+    ],
+    "icd10Codes": [
+      { "code": "M75.100", "description": "Unspecified rotator cuff syndrome, unspecified shoulder", "notes": "Use when tear type not specified" },
+      { "code": "M75.101", "description": "Unspecified rotator cuff syndrome, right shoulder", "notes": "" },
+      { "code": "M75.102", "description": "Unspecified rotator cuff syndrome, left shoulder", "notes": "" },
+      { "code": "M75.110", "description": "Incomplete rotator cuff tear or rupture, not specified as traumatic", "notes": "Partial thickness tear" },
+      { "code": "M75.120", "description": "Complete rotator cuff tear or rupture, not specified as traumatic", "notes": "Full thickness tear" },
+      { "code": "S46.011A", "description": "Strain of muscle(s) and tendon(s) of the rotator cuff of right shoulder, initial encounter", "notes": "Acute traumatic tear" },
+      { "code": "M75.50", "description": "Bursitis of unspecified shoulder", "notes": "Subacromial bursitis — may be co-billed" }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "overview": "Medicare reimburses arthroscopic rotator cuff repair under the ASC or HOPD fee schedule. Acromioplasty (29826) may be bundled with 29827 under CCI edits — verify modifier requirements.",
+        "sections": [
+          {
+            "heading": "Prior Authorization Requirements",
+            "items": [
+              "MRI confirming rotator cuff tear (full or partial thickness)",
+              "Documentation of conservative therapy failure: ≥6 weeks PT and NSAIDs",
+              "Functional assessment documenting impairment (e.g., ASES, DASH, WORC scores)",
+              "Physician attestation of medical necessity",
+              "For acute tears: documentation of traumatic event and early surgical consultation"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Full-thickness tear with persistent pain and functional limitation despite conservative therapy",
+              "Acute traumatic full-thickness tear in active patient",
+              "Large or massive tear at risk of progression",
+              "Partial-thickness tear >50% depth with failed conservative management"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Medicare reimburses arthroscopic rotator cuff repair under the ASC or HOPD fee schedule. Acromioplasty (29826) may be bundled with 29827 under CCI edits — verify modifier requirements."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicare (CMS)", "status": "Yes", "notes": "Covered with medical necessity documentation; CCI bundles 29826 with 29827" }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "overview": "Medicaid reimbursement varies significantly by state. Many states require prior authorization for all shoulder arthroscopy procedures. Rates are typically lower than Medicare.",
+        "sections": [
+          {
+            "heading": "Prior Authorization Requirements",
+            "items": [
+              "State-specific prior authorization required in most states",
+              "MRI confirming tear",
+              "Documentation of ≥6 weeks conservative therapy failure",
+              "Physician attestation of medical necessity",
+              "Some states require peer-to-peer review for large/massive tears"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Full-thickness tear with significant functional impairment",
+              "Acute traumatic tear",
+              "Failed conservative therapy (PT, NSAIDs, corticosteroid injection)"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Medicaid reimbursement varies significantly by state. Many states require prior authorization for all shoulder arthroscopy procedures. Rates are typically lower than Medicare."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicaid (state-specific)", "status": "Yes", "notes": "Prior auth required in most states; rates vary" }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "overview": "Commercial payers typically cover arthroscopic rotator cuff repair with prior authorization. Bundling rules vary — verify CCI edits for 29826/29827 combination.",
+        "sections": [
+          {
+            "heading": "Prior Authorization Requirements",
+            "items": [
+              "Prior authorization required by most commercial payers",
+              "MRI report confirming rotator cuff tear with size and thickness characterization",
+              "Documentation of conservative therapy failure: ≥6–12 weeks PT",
+              "Functional outcome scores (ASES, DASH, or WORC)",
+              "Operative report from prior procedures if revision",
+              "Peer-to-peer review may be required for massive tears or revision surgery"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Full-thickness tear with functional impairment and failed conservative therapy",
+              "Acute traumatic tear in active patient",
+              "Partial-thickness tear >50% depth with failed conservative management",
+              "Large/massive tear with risk of irreparable progression"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Commercial payers typically cover arthroscopic rotator cuff repair with prior authorization. Bundling rules vary — verify CCI edits for 29826/29827 combination."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Aetna", "status": "Yes", "notes": "Covered; requires MRI and 6-week PT failure documentation" },
+          { "payer": "UnitedHealthcare", "status": "Yes", "notes": "Covered with prior auth; functional scores required" },
+          { "payer": "BCBS (most plans)", "status": "Yes", "notes": "Covered with prior auth; 6–12 weeks PT required" },
+          { "payer": "Cigna", "status": "Yes", "notes": "Covered; requires MRI confirmation and PT failure" },
+          { "payer": "Humana", "status": "Yes", "notes": "Covered with prior auth and medical necessity documentation" }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Required Documentation — Imaging",
+        "kind": "list",
+        "items": [
+          "MRI shoulder with tear characterization (size, thickness, retraction, muscle atrophy)",
+          "X-rays (AP, axillary, outlet views) to rule out arthritis"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Clinical Documentation",
+        "kind": "list",
+        "items": [
+          "H&P documenting symptom duration, mechanism (acute vs. chronic), and functional limitations",
+          "Functional outcome scores (ASES, DASH, WORC, or PENN)",
+          "Pain scores at multiple visits",
+          "Documentation of dominant arm involvement"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Conservative Therapy",
+        "kind": "list",
+        "items": [
+          "PT notes documenting ≥6 weeks of rotator cuff strengthening program",
+          "NSAIDs trial documentation",
+          "Subacromial corticosteroid injection record (if performed)"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Surgical Planning",
+        "kind": "list",
+        "items": [
+          "Operative plan documenting approach (arthroscopic vs. open), repair technique, and anchors",
+          "Anesthesia clearance if comorbidities present"
+        ]
+      },
+      {
+        "heading": "Submission Process",
+        "kind": "list",
+        "items": [
+          "Obtain MRI confirming rotator cuff tear with radiologist report",
+          "Document conservative therapy failure (≥6 weeks PT, NSAIDs, and/or injection)",
+          "Complete functional outcome assessment (ASES or DASH score)",
+          "Submit prior authorization with CPT codes (29827 ± 29826), ICD-10 codes, and clinical documentation",
+          "Include MRI report, PT notes, and functional scores in submission",
+          "If denied, request peer-to-peer review with the payer's medical director",
+          "For acute traumatic tears, document urgency and request expedited review"
+        ]
+      },
+      {
+        "heading": "Common Denial Reasons",
+        "kind": "list",
+        "items": [
+          "Insufficient conservative therapy documentation (most common — document ≥6 weeks PT explicitly)",
+          "MRI not confirming full-thickness tear (partial tears require >50% depth documentation)",
+          "Lack of functional outcome scores (ASES, DASH, or WORC required by many payers)",
+          "Acromioplasty (29826) bundled with repair (29827) — use modifier 59 if separately indicated",
+          "Missing peer-to-peer review for massive or irreparable tears",
+          "Incorrect ICD-10 code laterality (ensure right/left specified)"
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# Rotator Cuff Repair Clinical Compass\n\n## CPT Codes\n\n| CPT | Description | RVU | Notes |\n| --- | --- | --- | --- |\n| 29827 | Arthroscopy, shoulder, surgical; with rotator cuff repair | 23.18 | Primary repair code — full or partial thickness |\n| 29826 | Arthroscopy, shoulder, surgical; decompression of subacromial space with partial acromioplasty | 8.42 | Often performed with repair; may be bundled |\n| 29823 | Arthroscopy, shoulder, surgical; debridement, extensive | 7.12 | For irreparable tears or partial debridement |\n| 29819 | Arthroscopy, shoulder, surgical; with removal of loose body or foreign body | 6.85 | If loose bodies present |\n| 23412 | Repair of ruptured musculotendinous cuff (rotator cuff), chronic | 18.44 | Open repair — chronic tear |\n| 23410 | Repair of ruptured musculotendinous cuff (rotator cuff), acute | 17.92 | Open repair — acute tear |\n\n## ICD-10 Codes\n\n| ICD-10 | Description | Notes |\n| --- | --- | --- |\n| M75.100 | Unspecified rotator cuff syndrome, unspecified shoulder | Use when tear type not specified |\n| M75.101 | Unspecified rotator cuff syndrome, right shoulder |  |\n| M75.102 | Unspecified rotator cuff syndrome, left shoulder |  |\n| M75.110 | Incomplete rotator cuff tear or rupture, not specified as traumatic | Partial thickness tear |\n| M75.120 | Complete rotator cuff tear or rupture, not specified as traumatic | Full thickness tear |\n| S46.011A | Strain of muscle(s) and tendon(s) of the rotator cuff of right shoulder, initial encounter | Acute traumatic tear |\n| M75.50 | Bursitis of unspecified shoulder | Subacromial bursitis — may be co-billed |\n\n## Payer Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\n\n**Prior Authorization Requirements**\n- MRI confirming rotator cuff tear (full or partial thickness)\n- Documentation of conservative therapy failure: ≥6 weeks PT and NSAIDs\n- Functional assessment documenting impairment (e.g., ASES, DASH, WORC scores)\n- Physician attestation of medical necessity\n- For acute tears: documentation of traumatic event and early surgical consultation\n\n**Medical Necessity Criteria**\n- Full-thickness tear with persistent pain and functional limitation despite conservative therapy\n- Acute traumatic full-thickness tear in active patient\n- Large or massive tear at risk of progression\n- Partial-thickness tear >50% depth with failed conservative management\n\n**Reimbursement:** Medicare reimburses arthroscopic rotator cuff repair under the ASC or HOPD fee schedule. Acromioplasty (29826) may be bundled with 29827 under CCI edits — verify modifier requirements.\n\n**Known Payer Policies**\n\n| Payer | Policy | Covered |\n| --- | --- | --- |\n| Medicare (CMS) | Covered with medical necessity documentation; CCI bundles 29826 with 29827 | Yes |\n\n### Medicaid\n\n**Prior Authorization Requirements**\n- State-specific prior authorization required in most states\n- MRI confirming tear\n- Documentation of ≥6 weeks conservative therapy failure\n- Physician attestation of medical necessity\n- Some states require peer-to-peer review for large/massive tears\n\n**Medical Necessity Criteria**\n- Full-thickness tear with significant functional impairment\n- Acute traumatic tear\n- Failed conservative therapy (PT, NSAIDs, corticosteroid injection)\n\n**Reimbursement:** Medicaid reimbursement varies significantly by state. Many states require prior authorization for all shoulder arthroscopy procedures. Rates are typically lower than Medicare.\n\n**Known Payer Policies**\n\n| Payer | Policy | Covered |\n| --- | --- | --- |\n| Medicaid (state-specific) | Prior auth required in most states; rates vary | Yes |\n\n### Private Insurance\n\n**Prior Authorization Requirements**\n- Prior authorization required by most commercial payers\n- MRI report confirming rotator cuff tear with size and thickness characterization\n- Documentation of conservative therapy failure: ≥6–12 weeks PT\n- Functional outcome scores (ASES, DASH, or WORC)\n- Operative report from prior procedures if revision\n- Peer-to-peer review may be required for massive tears or revision surgery\n\n**Medical Necessity Criteria**\n- Full-thickness tear with functional impairment and failed conservative therapy\n- Acute traumatic tear in active patient\n- Partial-thickness tear >50% depth with failed conservative management\n- Large/massive tear with risk of irreparable progression\n\n**Reimbursement:** Commercial payers typically cover arthroscopic rotator cuff repair with prior authorization. Bundling rules vary — verify CCI edits for 29826/29827 combination.\n\n**Known Payer Policies**\n\n| Payer | Policy | Covered |\n| --- | --- | --- |\n| Aetna | Covered; requires MRI and 6-week PT failure documentation | Yes |\n| UnitedHealthcare | Covered with prior auth; functional scores required | Yes |\n| BCBS (most plans) | Covered with prior auth; 6–12 weeks PT required | Yes |\n| Cigna | Covered; requires MRI confirmation and PT failure | Yes |\n| Humana | Covered with prior auth and medical necessity documentation | Yes |\n\n## Required Documentation\n\n**Imaging**\n- MRI shoulder with tear characterization (size, thickness, retraction, muscle atrophy)\n- X-rays (AP, axillary, outlet views) to rule out arthritis\n\n**Clinical Documentation**\n- H&P documenting symptom duration, mechanism (acute vs. chronic), and functional limitations\n- Functional outcome scores (ASES, DASH, WORC, or PENN)\n- Pain scores at multiple visits\n- Documentation of dominant arm involvement\n\n**Conservative Therapy**\n- PT notes documenting ≥6 weeks of rotator cuff strengthening program\n- NSAIDs trial documentation\n- Subacromial corticosteroid injection record (if performed)\n\n**Surgical Planning**\n- Operative plan documenting approach (arthroscopic vs. open), repair technique, and anchors\n- Anesthesia clearance if comorbidities present\n\n## Submission Process\n\n1. Obtain MRI confirming rotator cuff tear with radiologist report\n2. Document conservative therapy failure (≥6 weeks PT, NSAIDs, and/or injection)\n3. Complete functional outcome assessment (ASES or DASH score)\n4. Submit prior authorization with CPT codes (29827 ± 29826), ICD-10 codes, and clinical documentation\n5. Include MRI report, PT notes, and functional scores in submission\n6. If denied, request peer-to-peer review with the payer's medical director\n7. For acute traumatic tears, document urgency and request expedited review\n\n## Common Denial Reasons\n\n- ⚠ Insufficient conservative therapy documentation (most common — document ≥6 weeks PT explicitly)\n- ⚠ MRI not confirming full-thickness tear (partial tears require >50% depth documentation)\n- ⚠ Lack of functional outcome scores (ASES, DASH, or WORC required by many payers)\n- ⚠ Acromioplasty (29826) bundled with repair (29827) — use modifier 59 if separately indicated\n- ⚠ Missing peer-to-peer review for massive or irreparable tears\n- ⚠ Incorrect ICD-10 code laterality (ensure right/left specified)\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["CPT", "Description", "RVU", "Notes"],
+          "rows": [
+            ["29827", "Arthroscopy, shoulder, surgical; with rotator cuff repair", "23.18", "Primary repair code — full or partial thickness"],
+            ["29826", "Arthroscopy, shoulder, surgical; decompression of subacromial space with partial acromioplasty", "8.42", "Often performed with repair; may be bundled"],
+            ["29823", "Arthroscopy, shoulder, surgical; debridement, extensive", "7.12", "For irreparable tears or partial debridement"],
+            ["29819", "Arthroscopy, shoulder, surgical; with removal of loose body or foreign body", "6.85", "If loose bodies present"],
+            ["23412", "Repair of ruptured musculotendinous cuff (rotator cuff), chronic", "18.44", "Open repair — chronic tear"],
+            ["23410", "Repair of ruptured musculotendinous cuff (rotator cuff), acute", "17.92", "Open repair — acute tear"]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["ICD-10", "Description", "Notes"],
+          "rows": [
+            ["M75.100", "Unspecified rotator cuff syndrome, unspecified shoulder", "Use when tear type not specified"],
+            ["M75.101", "Unspecified rotator cuff syndrome, right shoulder", ""],
+            ["M75.102", "Unspecified rotator cuff syndrome, left shoulder", ""],
+            ["M75.110", "Incomplete rotator cuff tear or rupture, not specified as traumatic", "Partial thickness tear"],
+            ["M75.120", "Complete rotator cuff tear or rupture, not specified as traumatic", "Full thickness tear"],
+            ["S46.011A", "Strain of muscle(s) and tendon(s) of the rotator cuff of right shoulder, initial encounter", "Acute traumatic tear"],
+            ["M75.50", "Bursitis of unspecified shoulder", "Subacromial bursitis — may be co-billed"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicare",
+          "header": ["Payer", "Policy", "Covered"],
+          "rows": [
+            ["Medicare (CMS)", "Covered with medical necessity documentation; CCI bundles 29826 with 29827", "Yes"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicaid",
+          "header": ["Payer", "Policy", "Covered"],
+          "rows": [
+            ["Medicaid (state-specific)", "Prior auth required in most states; rates vary", "Yes"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Private Insurance",
+          "header": ["Payer", "Policy", "Covered"],
+          "rows": [
+            ["Aetna", "Covered; requires MRI and 6-week PT failure documentation", "Yes"],
+            ["UnitedHealthcare", "Covered with prior auth; functional scores required", "Yes"],
+            ["BCBS (most plans)", "Covered with prior auth; 6–12 weeks PT required", "Yes"],
+            ["Cigna", "Covered; requires MRI confirmation and PT failure", "Yes"],
+            ["Humana", "Covered with prior auth and medical necessity documentation", "Yes"]
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "PAD Clinical Performance & Quality Measures Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "[CPT Code(s)]",
+      "credentials": "[Credentials]",
+      "icd_codes": "[ICD-10 Code(s)]",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — Peripheral Artery Disease Revascularization / Quality Measures\nCPT Code(s): 93922, 93923, 93924, 37228, 37229, 37230, 37231\nICD-10 Code(s): I73.9, I70.201, I70.211, I70.221\nDear Medical Director / Utilization Review Committee,\n\nThis letter serves as an appeal for the denial of coverage for Peripheral Artery Disease Revascularization / Quality Measures for our patient. We believe this procedure is medically necessary and appropriate based on the patient's clinical presentation and established medical guidelines.\n\nClinical Summary:\nOur patient presents with [patient's clinical details, e.g., severe claudication, critical limb ischemia, non-healing ulcer] and has been thoroughly evaluated. The assessment indicates a clear need for Peripheral Artery Disease Revascularization / Quality Measures. The patient's condition is characterized by: N/A. The quality measure relevant to this case is: N/A. The rationale for the recommended intervention is: N/A.\n\nGuideline Support:\n1. AHA/ACC Guidelines on Peripheral Artery Disease 2024: These guidelines strongly support revascularization for symptomatic PAD to improve limb function and prevent adverse outcomes.\n2. SVS Clinical Practice Guidelines on PAD 2022: The SVS guidelines recommend revascularization for patients with critical limb ischemia to achieve limb salvage and improve quality of life.\n3. TASC II Inter-Society Consensus for PAD: This consensus document provides a framework for decision-making in PAD, advocating for revascularization based on the severity of symptoms and anatomical findings.\n4. CMS Quality Measures for PAD: CMS emphasizes the importance of appropriate and timely interventions for PAD to ensure optimal patient care and outcomes.\n\nMedical Necessity:\nThe Peripheral Artery Disease Revascularization / Quality Measures is medically necessary to address the patient's severe symptoms, prevent disease progression, and mitigate the risk of limb loss. Without this intervention, the patient faces significant morbidity, including worsening pain, functional impairment, and potential amputation. The procedure is expected to improve blood flow, alleviate symptoms, and enhance the patient's overall quality of life.\n\nRisk Without Treatment:\nDelaying or denying this medically indicated procedure poses substantial risks to the patient, including irreversible tissue damage, increased risk of infection, progression to critical limb ischemia, and ultimately, the need for major amputation. These outcomes would lead to a significant decrease in the patient's quality of life and increased healthcare costs associated with managing advanced disease.\n\nRequested Action:\nWe respectfully request that you reconsider your denial and approve coverage for the Peripheral Artery Disease Revascularization / Quality Measures. We are confident that this procedure is in the best interest of the patient and aligns with current medical standards and guidelines. Please contact us if you require any further information or documentation.\n\n{{additional_clinical_notes}}\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

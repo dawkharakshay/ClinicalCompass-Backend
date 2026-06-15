@@ -1,0 +1,285 @@
+{
+  "title": "Pediatric Immunization Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "PediatricImmunizationAuthGuide.tsx",
+    "title": "Pediatric Immunization Clinical Compass",
+    "subtitle": "Pediatric Immunization Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "90460",
+        "description": "Immunization administration through 18 years of age via any route of administration, with counseling by physician or other qualified health care professional; first or only component of each vaccine or toxoid administered",
+        "device": "N/A",
+        "access": "N/A",
+        "rvu": "0.24",
+        "includes": [
+          "Counseling by physician or qualified healthcare professional",
+          "Administration of the first or only vaccine/toxoid component"
+        ],
+        "note": "This code is reported per vaccine/toxoid component for patients 18 years and younger when counseling is provided."
+      },
+      {
+        "code": "90461",
+        "description": "Immunization administration through 18 years of age via any route of administration, with counseling by physician or other qualified health care professional; each additional vaccine/toxoid component administered (list separately in addition to code for primary procedure)",
+        "device": "N/A",
+        "access": "N/A",
+        "rvu": "0.12",
+        "includes": [
+          "Administration of each additional vaccine/toxoid component"
+        ],
+        "note": "This is an add-on code used for each additional component after the first, for patients 18 years and younger when counseling is provided."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "Z23",
+        "description": "Encounter for immunization",
+        "notes": "Used for encounters when a patient receives a vaccination. This code is appropriate for all routine immunizations.",
+        "required": true
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered for Administration (Product may vary)",
+        "overview": "Medicare Part B covers certain vaccines (e.g., influenza, pneumococcal, hepatitis B for at-risk individuals). For pediatric patients, vaccine administration may be covered, but vaccine products are often billed separately or covered under other programs like Vaccines for Children (VFC).",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Medicare generally covers routine immunizations for adults. For pediatric patients, coverage may be limited to specific circumstances or through other programs. Administration is typically covered without prior authorization.",
+        "reimbursementNote": "Reimbursement for vaccine administration is generally straightforward when criteria are met. However, vaccine product reimbursement can be complex and often falls under different programs or parts of Medicare.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Coverage",
+            "items": [
+              "Patient is 18 years of age or younger (for specific covered pediatric scenarios).",
+              "Immunization administered by a physician or qualified healthcare professional.",
+              "Counseling provided by physician or qualified healthcare professional."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Vaccine Product Coverage",
+            "items": [
+              "Vaccine product must be covered under Medicare Part B or D, or obtained through programs like VFC."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Documentation of counseling provided to patient/caregiver.",
+              "Vaccine lot number, expiration date, and administration site.",
+              "Patient's immunization history."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Billing Documentation",
+            "items": [
+              "Separate billing for vaccine product (if applicable) and administration.",
+              "Inclusion of NDC codes for vaccine products when required."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit CPT 90460 for the first component and 90461 for additional components.",
+              "Use ICD-10 Z23 as the primary diagnosis code.",
+              "Ensure NDC codes are included for vaccine products if required by payer."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented counseling.",
+              "Incorrect billing for vaccine product vs. administration.",
+              "Patient age outside of specific Medicare pediatric coverage criteria.",
+              "Vaccine product not covered by Medicare Part B or D."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify specific Medicare guidelines for pediatric vaccine coverage, as it is primarily an adult program.",
+              "Ensure proper documentation of counseling for CPT 90460/90461.",
+              "Utilize Vaccines for Children (VFC) program for eligible pediatric patients to cover vaccine product costs."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicare Part B", "status": "Covered", "notes": "Influenza, Pneumococcal, Hepatitis B (for at-risk)" },
+          { "payer": "Medicare Part D", "status": "Covered", "notes": "Other ACIP-recommended vaccines (product only)" }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Fully Covered",
+        "overview": "Medicaid programs generally provide comprehensive coverage for pediatric immunizations, including both vaccine products (often via VFC) and administration fees, for eligible children and adolescents.",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Medicaid typically covers all ACIP-recommended pediatric immunizations without prior authorization for administration. Vaccine products are often covered through the Vaccines for Children (VFC) program.",
+        "reimbursementNote": "Medicaid reimbursement for pediatric immunizations is generally robust, especially when utilizing the VFC program for vaccine products. Proper coding and documentation are key to avoiding denials.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Eligibility",
+            "items": [
+              "Patient is enrolled in Medicaid and meets age requirements (typically up to 18 or 20 years, depending on state).",
+              "Immunization is recommended by the Advisory Committee on Immunization Practices (ACIP)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Administration",
+            "items": [
+              "Administered by a qualified healthcare professional.",
+              "Counseling provided to patient/caregiver."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Documentation of counseling.",
+              "Vaccine lot number, expiration date, and administration site.",
+              "Patient's immunization record."
+            ]
+          },
+          {
+            "heading": "Required Documentation: VFC Documentation",
+            "items": [
+              "VFC eligibility screening (if applicable).",
+              "Documentation of VFC vaccine usage."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit CPT 90460 for the first component and 90461 for additional components.",
+              "Use ICD-10 Z23 as the primary diagnosis code.",
+              "Follow state-specific Medicaid billing guidelines for VFC vaccines (e.g., using specific modifiers)."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented counseling.",
+              "Incorrect VFC billing (e.g., not using appropriate modifiers).",
+              "Patient not eligible for Medicaid or VFC program.",
+              "Vaccine not on the state's covered immunization schedule."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with state-specific Medicaid and VFC billing rules.",
+              "Ensure all ACIP-recommended vaccines are covered and administered according to schedule.",
+              "Maintain thorough documentation of patient eligibility and counseling."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "State Medicaid", "status": "Covered", "notes": "All ACIP-recommended pediatric vaccines and administration." },
+          { "payer": "VFC Program", "status": "Covered", "notes": "Vaccine products for eligible children." }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Generally Covered",
+        "overview": "Private insurance plans typically cover all routine pediatric immunizations recommended by the ACIP, often as a preventive benefit with no out-of-pocket costs for the patient. Coverage for administration and vaccine products is usually included.",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Most private insurance plans cover ACIP-recommended pediatric immunizations as a preventive service, often without cost-sharing or prior authorization. However, specific plan benefits can vary.",
+        "reimbursementNote": "Private insurance typically offers good reimbursement for pediatric immunizations as they are considered essential preventive care. Ensure all codes (administration and product) are submitted correctly.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Preventive Services",
+            "items": [
+              "Immunization is an ACIP-recommended vaccine.",
+              "Administered according to the recommended schedule for the patient's age."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Administration",
+            "items": [
+              "Administered by a qualified healthcare professional.",
+              "Counseling provided to patient/caregiver (may be required for specific codes like 90460/90461)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Documentation of counseling.",
+              "Vaccine lot number, expiration date, and administration site.",
+              "Patient's immunization record."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Billing Documentation",
+            "items": [
+              "Submission of CPT codes for administration and vaccine products.",
+              "Use of ICD-10 Z23 as the primary diagnosis code."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit CPT 90460 for the first component and 90461 for additional components.",
+              "Submit appropriate CPT/HCPCS codes for the vaccine product itself.",
+              "Use ICD-10 Z23 as the primary diagnosis code."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented counseling (if required by plan).",
+              "Vaccine not on the plan's covered formulary or not ACIP-recommended.",
+              "Patient not eligible or plan benefits exhausted.",
+              "Incorrect coding for vaccine product or administration."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify patient's specific plan benefits for immunization coverage, including any age limits or specific vaccine requirements.",
+              "Ensure proper coding for both vaccine administration and the vaccine product.",
+              "Document counseling thoroughly to support billing for 90460/90461."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Most Commercial Plans", "status": "Covered", "notes": "ACIP-recommended vaccines and administration, often without cost-sharing." }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment (navigates to /pediatricimmunization)",
+        "href": "/pediatricimmunization"
+      }
+    ],
+    "raw": {
+      "markdown": "# Pediatric Immunization Clinical Compass\n## Pediatric Immunization Insurance Authorization Guide\n\n[Button: Back to Assessment] (navigates to /pediatricimmunization)\n\n---\n\n## Procedure Codes (CPT)\n\n### CPT 90460 — RVU 0.24\nImmunization administration through 18 years of age via any route of administration, with counseling by physician or other qualified health care professional; first or only component of each vaccine or toxoid administered\n\nDevice/Access: N/A\n\nIncluded in this code (do NOT bill separately):\n- Counseling by physician or qualified healthcare professional\n- Administration of the first or only vaccine/toxoid component\n\n*This code is reported per vaccine/toxoid component for patients 18 years and younger when counseling is provided.*\n\n### CPT 90461 — RVU 0.12\nImmunization administration through 18 years of age via any route of administration, with counseling by physician or other qualified health care professional; each additional vaccine/toxoid component administered (list separately in addition to code for primary procedure)\n\nDevice/Access: N/A\n\nIncluded in this code (do NOT bill separately):\n- Administration of each additional vaccine/toxoid component\n\n*This is an add-on code used for each additional component after the first, for patients 18 years and younger when counseling is provided.*\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **Z23** (Primary) — Encounter for immunization\n  - Used for encounters when a patient receives a vaccination. This code is appropriate for all routine immunizations.\n\n---\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\n\nStatus: No Prior Auth (FFS) | Covered for Administration (Product may vary)\n\n> Medicare generally covers routine immunizations for adults. For pediatric patients, coverage may be limited to specific circumstances or through other programs. Administration is typically covered without prior authorization.\n\nMedicare Part B covers certain vaccines (e.g., influenza, pneumococcal, hepatitis B for at-risk individuals). For pediatric patients, vaccine administration may be covered, but vaccine products are often billed separately or covered under other programs like Vaccines for Children (VFC).\n\n#### Coverage Criteria\n\n**General Coverage**\n- Patient is 18 years of age or younger (for specific covered pediatric scenarios).\n- Immunization administered by a physician or qualified healthcare professional.\n- Counseling provided by physician or qualified healthcare professional.\n\n**Vaccine Product Coverage**\n- Vaccine product must be covered under Medicare Part B or D, or obtained through programs like VFC.\n\n#### Required Documentation\n\n**Clinical Documentation**\n- Documentation of counseling provided to patient/caregiver.\n- Vaccine lot number, expiration date, and administration site.\n- Patient's immunization history.\n\n**Billing Documentation**\n- Separate billing for vaccine product (if applicable) and administration.\n- Inclusion of NDC codes for vaccine products when required.\n\n#### Submission Process\n1. Submit CPT 90460 for the first component and 90461 for additional components.\n2. Use ICD-10 Z23 as the primary diagnosis code.\n3. Ensure NDC codes are included for vaccine products if required by payer.\n\n#### Common Denial Reasons\n- Lack of documented counseling.\n- Incorrect billing for vaccine product vs. administration.\n- Patient age outside of specific Medicare pediatric coverage criteria.\n- Vaccine product not covered by Medicare Part B or D.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicare Part B | Covered | Influenza, Pneumococcal, Hepatitis B (for at-risk) |\n| Medicare Part D | Covered | Other ACIP-recommended vaccines (product only) |\n\n#### Reimbursement Note\nReimbursement for vaccine administration is generally straightforward when criteria are met. However, vaccine product reimbursement can be complex and often falls under different programs or parts of Medicare.\n\n#### Authorization Tips\n- Verify specific Medicare guidelines for pediatric vaccine coverage, as it is primarily an adult program.\n- Ensure proper documentation of counseling for CPT 90460/90461.\n- Utilize Vaccines for Children (VFC) program for eligible pediatric patients to cover vaccine product costs.\n\n### Medicaid\n\nStatus: No Prior Auth (FFS) | Fully Covered\n\n> Medicaid typically covers all ACIP-recommended pediatric immunizations without prior authorization for administration. Vaccine products are often covered through the Vaccines for Children (VFC) program.\n\nMedicaid programs generally provide comprehensive coverage for pediatric immunizations, including both vaccine products (often via VFC) and administration fees, for eligible children and adolescents.\n\n#### Coverage Criteria\n\n**Eligibility**\n- Patient is enrolled in Medicaid and meets age requirements (typically up to 18 or 20 years, depending on state).\n- Immunization is recommended by the Advisory Committee on Immunization Practices (ACIP).\n\n**Administration**\n- Administered by a qualified healthcare professional.\n- Counseling provided to patient/caregiver.\n\n#### Required Documentation\n\n**Clinical Documentation**\n- Documentation of counseling.\n- Vaccine lot number, expiration date, and administration site.\n- Patient's immunization record.\n\n**VFC Documentation**\n- VFC eligibility screening (if applicable).\n- Documentation of VFC vaccine usage.\n\n#### Submission Process\n1. Submit CPT 90460 for the first component and 90461 for additional components.\n2. Use ICD-10 Z23 as the primary diagnosis code.\n3. Follow state-specific Medicaid billing guidelines for VFC vaccines (e.g., using specific modifiers).\n\n#### Common Denial Reasons\n- Lack of documented counseling.\n- Incorrect VFC billing (e.g., not using appropriate modifiers).\n- Patient not eligible for Medicaid or VFC program.\n- Vaccine not on the state's covered immunization schedule.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid | Covered | All ACIP-recommended pediatric vaccines and administration. |\n| VFC Program | Covered | Vaccine products for eligible children. |\n\n#### Reimbursement Note\nMedicaid reimbursement for pediatric immunizations is generally robust, especially when utilizing the VFC program for vaccine products. Proper coding and documentation are key to avoiding denials.\n\n#### Authorization Tips\n- Familiarize yourself with state-specific Medicaid and VFC billing rules.\n- Ensure all ACIP-recommended vaccines are covered and administered according to schedule.\n- Maintain thorough documentation of patient eligibility and counseling.\n\n### Private Insurance\n\nStatus: No Prior Auth (FFS) | Generally Covered\n\n> Most private insurance plans cover ACIP-recommended pediatric immunizations as a preventive service, often without cost-sharing or prior authorization. However, specific plan benefits can vary.\n\nPrivate insurance plans typically cover all routine pediatric immunizations recommended by the ACIP, often as a preventive benefit with no out-of-pocket costs for the patient. Coverage for administration and vaccine products is usually included.\n\n#### Coverage Criteria\n\n**Preventive Services**\n- Immunization is an ACIP-recommended vaccine.\n- Administered according to the recommended schedule for the patient's age.\n\n**Administration**\n- Administered by a qualified healthcare professional.\n- Counseling provided to patient/caregiver (may be required for specific codes like 90460/90461).\n\n#### Required Documentation\n\n**Clinical Documentation**\n- Documentation of counseling.\n- Vaccine lot number, expiration date, and administration site.\n- Patient's immunization record.\n\n**Billing Documentation**\n- Submission of CPT codes for administration and vaccine products.\n- Use of ICD-10 Z23 as the primary diagnosis code.\n\n#### Submission Process\n1. Submit CPT 90460 for the first component and 90461 for additional components.\n2. Submit appropriate CPT/HCPCS codes for the vaccine product itself.\n3. Use ICD-10 Z23 as the primary diagnosis code.\n\n#### Common Denial Reasons\n- Lack of documented counseling (if required by plan).\n- Vaccine not on the plan's covered formulary or not ACIP-recommended.\n- Patient not eligible or plan benefits exhausted.\n- Incorrect coding for vaccine product or administration.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Most Commercial Plans | Covered | ACIP-recommended vaccines and administration, often without cost-sharing. |\n\n#### Reimbursement Note\nPrivate insurance typically offers good reimbursement for pediatric immunizations as they are considered essential preventive care. Ensure all codes (administration and product) are submitted correctly.\n\n#### Authorization Tips\n- Verify patient's specific plan benefits for immunization coverage, including any age limits or specific vaccine requirements.\n- Ensure proper coding for both vaccine administration and the vaccine product.\n- Document counseling thoroughly to support billing for 90460/90461.\n",
+      "tables": [
+        {
+          "name": "Medicare - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicare Part B", "Covered", "Influenza, Pneumococcal, Hepatitis B (for at-risk)"],
+            ["Medicare Part D", "Covered", "Other ACIP-recommended vaccines (product only)"]
+          ]
+        },
+        {
+          "name": "Medicaid - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid", "Covered", "All ACIP-recommended pediatric vaccines and administration."],
+            ["VFC Program", "Covered", "Vaccine products for eligible children."]
+          ]
+        },
+        {
+          "name": "Private Insurance - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Most Commercial Plans", "Covered", "ACIP-recommended vaccines and administration, often without cost-sharing."]
+          ]
+        }
+      ]
+    }
+  }
+}

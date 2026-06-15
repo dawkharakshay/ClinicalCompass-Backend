@@ -1,0 +1,329 @@
+{
+  "title": "Liver Tumor Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "LiverTumorAuthGuide.tsx",
+    "title": "LiverTumor Clinical Compass",
+    "subtitle": "Liver Tumor Ablation Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "47382",
+        "description": "Ablation, 1 or more liver tumor(s), percutaneous, radiofrequency",
+        "device": "Radiofrequency ablation system",
+        "access": "Percutaneous",
+        "rvu": "102.7",
+        "includes": [
+          "Imaging guidance (e.g., CT, ultrasound) for needle placement",
+          "Local anesthesia",
+          "Pre- and post-procedure care related to the ablation"
+        ],
+        "note": "Used for percutaneous radiofrequency ablation of liver tumors."
+      },
+      {
+        "code": "47383",
+        "description": "Ablation, 1 or more liver tumor(s), percutaneous, cryoablation",
+        "device": "Cryoablation system",
+        "access": "Percutaneous",
+        "rvu": "Unknown",
+        "includes": [
+          "Imaging guidance (e.g., CT, ultrasound) for probe placement",
+          "Local anesthesia",
+          "Pre- and post-procedure care related to the ablation"
+        ],
+        "note": "Used for percutaneous cryoablation of liver tumors."
+      },
+      {
+        "code": "47381",
+        "description": "Ablation, open, of 1 or more liver tumor(s)",
+        "device": "Cryoablation system",
+        "access": "Open surgical approach",
+        "rvu": "Unknown",
+        "includes": [
+          "Open surgical exposure of the liver",
+          "Placement of ablation probes",
+          "Pre- and post-procedure care related to the ablation"
+        ],
+        "note": "Used for open surgical cryoablation of liver tumors."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "C22.0",
+        "description": "Liver cell carcinoma",
+        "notes": "Primary malignant neoplasm of liver, including hepatocellular carcinoma.",
+        "required": true
+      },
+      {
+        "code": "C78.7",
+        "description": "Secondary malignant neoplasm of liver and intrahepatic bile duct",
+        "notes": "Metastatic cancer to the liver.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with Restrictions",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is generally required for liver tumor ablation procedures. Coverage is typically limited to specific indications and patient criteria.",
+        "overview": "Medicare covers liver tumor ablation (RFA, microwave, cryoablation) for primary and secondary liver tumors when specific medical necessity criteria are met. This often includes tumor size, number, location, and patient’s overall health status. Documentation of failed or contraindicated alternative treatments may be required.",
+        "reimbursementNote": "Reimbursement for liver tumor ablation procedures varies based on the specific CPT code, place of service (inpatient vs. outpatient), and geographic location. Modifiers may be required for multiple lesions or distinct procedural services.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Primary Liver Tumors (Hepatocellular Carcinoma - HCC)",
+            "items": [
+              "Single HCC lesion ≤ 5 cm in diameter, or up to 3 lesions each ≤ 3 cm in diameter.",
+              "Child-Pugh Class A or B liver function.",
+              "Performance status (ECOG 0-1).",
+              "Not a candidate for surgical resection or liver transplantation, or patient refusal of surgery.",
+              "Absence of extrahepatic metastasis."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Secondary Liver Tumors (Metastatic)",
+            "items": [
+              "Limited number of metastatic lesions (typically ≤ 3-5 lesions).",
+              "Largest lesion ≤ 3-5 cm in diameter.",
+              "Primary tumor controlled or resected.",
+              "No evidence of widespread extrahepatic disease.",
+              "Not a candidate for surgical resection or chemotherapy, or patient refusal."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Detailed history and physical examination.",
+              "Pathology report confirming diagnosis of liver tumor.",
+              "Imaging reports (CT, MRI, ultrasound) with measurements and location of all liver lesions.",
+              "Liver function tests (LFTs), complete blood count (CBC), coagulation studies.",
+              "Oncology consultation notes and treatment plan.",
+              "Documentation of multidisciplinary tumor board discussion, if applicable."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Procedure-Specific Documentation",
+            "items": [
+              "Operative report detailing the ablation procedure, including type of ablation (RFA, microwave, cryoablation), number and size of lesions treated, and any complications.",
+              "Pre- and post-procedure imaging for comparison."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request with all supporting clinical documentation.",
+              "Ensure all CPT and ICD-10 codes are accurate and reflect the services provided.",
+              "Follow up on authorization status regularly.",
+              "Appeal any denials with additional medical records and a letter of medical necessity."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of medical necessity based on Medicare coverage criteria.",
+              "Insufficient documentation to support the procedure.",
+              "Failure to obtain prior authorization.",
+              "Experimental or investigational status for certain indications or technologies.",
+              "Presence of widespread metastatic disease."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify patient eligibility and benefits prior to scheduling the procedure.",
+              "Maintain thorough and accurate medical records, especially imaging reports and pathology results.",
+              "Clearly document the rationale for ablation over other treatment modalities.",
+              "Stay updated on Medicare Local Coverage Determinations (LCDs) and National Coverage Determinations (NCDs) for liver ablation."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS",
+            "status": "Covered with Restrictions",
+            "notes": "Coverage subject to LCDs/NCDs and medical necessity criteria."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered with Strict Restrictions",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is almost always required for liver tumor ablation procedures under Medicaid. Coverage policies vary significantly by state.",
+        "overview": "Medicaid coverage for liver tumor ablation is highly state-dependent. Most states follow Medicare guidelines but may have additional restrictions, stricter medical necessity criteria, or require step therapy. It is crucial to check the specific state Medicaid policy.",
+        "reimbursementNote": "Medicaid reimbursement rates are generally lower than Medicare or private insurance. Providers should be aware of state-specific fee schedules and billing regulations.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Criteria (State-Specific)",
+            "items": [
+              "Patient must meet state-specific eligibility requirements.",
+              "Medical necessity must be clearly documented and align with state guidelines.",
+              "Often mirrors Medicare criteria for tumor characteristics and patient status, but may be more stringent."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "All documentation required by Medicare, plus any additional state-specific forms or reports.",
+              "Proof of Medicaid eligibility and enrollment.",
+              "Referral from primary care physician or specialist, if required by state plan."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request through the state Medicaid portal or designated system.",
+              "Adhere strictly to state-specific submission deadlines and documentation requirements.",
+              "Be prepared for potential delays and requests for additional information.",
+              "Utilize state-specific appeal processes for denials."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet state-specific medical necessity criteria.",
+              "Incomplete or incorrect prior authorization submission.",
+              "Lack of documentation demonstrating conservative treatment failure or contraindication.",
+              "Procedure deemed experimental or not covered by the state plan."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Thoroughly review the specific Medicaid policy for the patient’s state of residence.",
+              "Contact the state Medicaid program directly for clarification on coverage and authorization requirements.",
+              "Document all communications with Medicaid regarding authorization requests.",
+              "Advocate strongly for patients, especially in cases of complex medical needs."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (varies)",
+            "status": "Covered with Strict Restrictions",
+            "notes": "Policies are highly state-dependent; always verify current state guidelines."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Covered with Varying Restrictions",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is almost universally required by private insurance companies for liver tumor ablation. Policies vary widely by insurer and plan.",
+        "overview": "Private insurance coverage for liver tumor ablation is common but subject to the specific policy terms, deductibles, co-pays, and medical necessity criteria of each insurer. Many private payers align their policies with Medicare guidelines but may have their own unique requirements or preferred providers.",
+        "reimbursementNote": "Reimbursement rates vary significantly among private insurance plans. Negotiated rates with in-network providers will apply. Out-of-network services may have higher patient out-of-pocket costs.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Criteria (Insurer-Specific)",
+            "items": [
+              "Medical necessity as defined by the individual insurance plan.",
+              "Often similar to Medicare criteria regarding tumor size, number, and location, and patient’s overall health.",
+              "Some plans may require a trial of other therapies or a specific waiting period."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "All clinical documentation, imaging, and pathology reports as required by Medicare.",
+              "Specific forms or questionnaires mandated by the private insurer.",
+              "Referral from an in-network specialist, if required by the plan.",
+              "Documentation of previous treatments and their outcomes."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request through the insurer’s online portal or fax.",
+              "Provide comprehensive clinical notes and supporting evidence.",
+              "Be prepared for peer-to-peer reviews and provide additional information as requested.",
+              "Understand the insurer’s appeal process and timelines for denials."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of medical necessity or failure to meet specific plan criteria.",
+              "Incomplete or untimely submission of prior authorization.",
+              "Out-of-network provider or facility.",
+              "Procedure deemed experimental or investigational by the insurer.",
+              "Lack of documentation for failed conservative management."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify patient’s specific plan benefits and prior authorization requirements with the insurer directly.",
+              "Maintain clear and concise documentation that directly addresses the insurer’s medical policy criteria.",
+              "Utilize the insurer’s provider portal for efficient submission and tracking of authorizations.",
+              "Be persistent with appeals, providing strong clinical justification and supporting literature."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Various Private Insurers",
+            "status": "Covered with Varying Restrictions",
+            "notes": "Policies are plan-specific; always confirm with the individual insurer."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Navigation",
+        "kind": "link",
+        "text": "Back to Assessment (links to /livertumor)",
+        "href": "/livertumor"
+      },
+      {
+        "heading": "Procedure Codes - Billing Note",
+        "kind": "prose",
+        "text": "For each CPT code, the listed items under \"Included in this code (do NOT bill separately)\" represent services bundled into the procedure code and must not be billed separately."
+      }
+    ],
+    "raw": {
+      "markdown": "# LiverTumor Clinical Compass\n\n_Liver Tumor Ablation Insurance Authorization Guide_\n\n[Back to Assessment] (button, links to /livertumor)\n\n---\n\n## Procedure Codes (CPT)\n\n### CPT 47382  (RVU 102.7)\nAblation, 1 or more liver tumor(s), percutaneous, radiofrequency\n\n**Device/Access:** Radiofrequency ablation system (Percutaneous)\n\n**Included in this code (do NOT bill separately):**\n- Imaging guidance (e.g., CT, ultrasound) for needle placement\n- Local anesthesia\n- Pre- and post-procedure care related to the ablation\n\n_Used for percutaneous radiofrequency ablation of liver tumors._\n\n### CPT 47383  (RVU Unknown)\nAblation, 1 or more liver tumor(s), percutaneous, cryoablation\n\n**Device/Access:** Cryoablation system (Percutaneous)\n\n**Included in this code (do NOT bill separately):**\n- Imaging guidance (e.g., CT, ultrasound) for probe placement\n- Local anesthesia\n- Pre- and post-procedure care related to the ablation\n\n_Used for percutaneous cryoablation of liver tumors._\n\n### CPT 47381  (RVU Unknown)\nAblation, open, of 1 or more liver tumor(s)\n\n**Device/Access:** Cryoablation system (Open surgical approach)\n\n**Included in this code (do NOT bill separately):**\n- Open surgical exposure of the liver\n- Placement of ablation probes\n- Pre- and post-procedure care related to the ablation\n\n_Used for open surgical cryoablation of liver tumors._\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **C22.0** (Primary) — Liver cell carcinoma. Primary malignant neoplasm of liver, including hepatocellular carcinoma.\n- **C78.7** — Secondary malignant neoplasm of liver and intrahepatic bile duct. Metastatic cancer to the liver.\n\n---\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\n\n**Prior Auth Required** | **Covered with Restrictions**\n\n> Prior authorization is generally required for liver tumor ablation procedures. Coverage is typically limited to specific indications and patient criteria.\n\nMedicare covers liver tumor ablation (RFA, microwave, cryoablation) for primary and secondary liver tumors when specific medical necessity criteria are met. This often includes tumor size, number, location, and patient’s overall health status. Documentation of failed or contraindicated alternative treatments may be required.\n\n**Coverage Criteria**\n\n_Primary Liver Tumors (Hepatocellular Carcinoma - HCC)_\n- Single HCC lesion ≤ 5 cm in diameter, or up to 3 lesions each ≤ 3 cm in diameter.\n- Child-Pugh Class A or B liver function.\n- Performance status (ECOG 0-1).\n- Not a candidate for surgical resection or liver transplantation, or patient refusal of surgery.\n- Absence of extrahepatic metastasis.\n\n_Secondary Liver Tumors (Metastatic)_\n- Limited number of metastatic lesions (typically ≤ 3-5 lesions).\n- Largest lesion ≤ 3-5 cm in diameter.\n- Primary tumor controlled or resected.\n- No evidence of widespread extrahepatic disease.\n- Not a candidate for surgical resection or chemotherapy, or patient refusal.\n\n**Required Documentation**\n\n_Clinical Documentation_\n- Detailed history and physical examination.\n- Pathology report confirming diagnosis of liver tumor.\n- Imaging reports (CT, MRI, ultrasound) with measurements and location of all liver lesions.\n- Liver function tests (LFTs), complete blood count (CBC), coagulation studies.\n- Oncology consultation notes and treatment plan.\n- Documentation of multidisciplinary tumor board discussion, if applicable.\n\n_Procedure-Specific Documentation_\n- Operative report detailing the ablation procedure, including type of ablation (RFA, microwave, cryoablation), number and size of lesions treated, and any complications.\n- Pre- and post-procedure imaging for comparison.\n\n**Submission Process**\n1. Submit prior authorization request with all supporting clinical documentation.\n2. Ensure all CPT and ICD-10 codes are accurate and reflect the services provided.\n3. Follow up on authorization status regularly.\n4. Appeal any denials with additional medical records and a letter of medical necessity.\n\n**Common Denial Reasons**\n- Lack of medical necessity based on Medicare coverage criteria.\n- Insufficient documentation to support the procedure.\n- Failure to obtain prior authorization.\n- Experimental or investigational status for certain indications or technologies.\n- Presence of widespread metastatic disease.\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS | Covered with Restrictions | Coverage subject to LCDs/NCDs and medical necessity criteria. |\n\n**Reimbursement Note**\nReimbursement for liver tumor ablation procedures varies based on the specific CPT code, place of service (inpatient vs. outpatient), and geographic location. Modifiers may be required for multiple lesions or distinct procedural services.\n\n**Authorization Tips**\n- Verify patient eligibility and benefits prior to scheduling the procedure.\n- Maintain thorough and accurate medical records, especially imaging reports and pathology results.\n- Clearly document the rationale for ablation over other treatment modalities.\n- Stay updated on Medicare Local Coverage Determinations (LCDs) and National Coverage Determinations (NCDs) for liver ablation.\n\n### Medicaid\n\n**Prior Auth Required** | **Covered with Strict Restrictions**\n\n> Prior authorization is almost always required for liver tumor ablation procedures under Medicaid. Coverage policies vary significantly by state.\n\nMedicaid coverage for liver tumor ablation is highly state-dependent. Most states follow Medicare guidelines but may have additional restrictions, stricter medical necessity criteria, or require step therapy. It is crucial to check the specific state Medicaid policy.\n\n**Coverage Criteria**\n\n_General Criteria (State-Specific)_\n- Patient must meet state-specific eligibility requirements.\n- Medical necessity must be clearly documented and align with state guidelines.\n- Often mirrors Medicare criteria for tumor characteristics and patient status, but may be more stringent.\n\n**Required Documentation**\n\n_Clinical Documentation_\n- All documentation required by Medicare, plus any additional state-specific forms or reports.\n- Proof of Medicaid eligibility and enrollment.\n- Referral from primary care physician or specialist, if required by state plan.\n\n**Submission Process**\n1. Submit prior authorization request through the state Medicaid portal or designated system.\n2. Adhere strictly to state-specific submission deadlines and documentation requirements.\n3. Be prepared for potential delays and requests for additional information.\n4. Utilize state-specific appeal processes for denials.\n\n**Common Denial Reasons**\n- Failure to meet state-specific medical necessity criteria.\n- Incomplete or incorrect prior authorization submission.\n- Lack of documentation demonstrating conservative treatment failure or contraindication.\n- Procedure deemed experimental or not covered by the state plan.\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (varies) | Covered with Strict Restrictions | Policies are highly state-dependent; always verify current state guidelines. |\n\n**Reimbursement Note**\nMedicaid reimbursement rates are generally lower than Medicare or private insurance. Providers should be aware of state-specific fee schedules and billing regulations.\n\n**Authorization Tips**\n- Thoroughly review the specific Medicaid policy for the patient’s state of residence.\n- Contact the state Medicaid program directly for clarification on coverage and authorization requirements.\n- Document all communications with Medicaid regarding authorization requests.\n- Advocate strongly for patients, especially in cases of complex medical needs.\n\n### Private Insurance\n\n**Prior Auth Required** | **Covered with Varying Restrictions**\n\n> Prior authorization is almost universally required by private insurance companies for liver tumor ablation. Policies vary widely by insurer and plan.\n\nPrivate insurance coverage for liver tumor ablation is common but subject to the specific policy terms, deductibles, co-pays, and medical necessity criteria of each insurer. Many private payers align their policies with Medicare guidelines but may have their own unique requirements or preferred providers.\n\n**Coverage Criteria**\n\n_General Criteria (Insurer-Specific)_\n- Medical necessity as defined by the individual insurance plan.\n- Often similar to Medicare criteria regarding tumor size, number, and location, and patient’s overall health.\n- Some plans may require a trial of other therapies or a specific waiting period.\n\n**Required Documentation**\n\n_Clinical Documentation_\n- All clinical documentation, imaging, and pathology reports as required by Medicare.\n- Specific forms or questionnaires mandated by the private insurer.\n- Referral from an in-network specialist, if required by the plan.\n- Documentation of previous treatments and their outcomes.\n\n**Submission Process**\n1. Submit prior authorization request through the insurer’s online portal or fax.\n2. Provide comprehensive clinical notes and supporting evidence.\n3. Be prepared for peer-to-peer reviews and provide additional information as requested.\n4. Understand the insurer’s appeal process and timelines for denials.\n\n**Common Denial Reasons**\n- Lack of medical necessity or failure to meet specific plan criteria.\n- Incomplete or untimely submission of prior authorization.\n- Out-of-network provider or facility.\n- Procedure deemed experimental or investigational by the insurer.\n- Lack of documentation for failed conservative management.\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Various Private Insurers | Covered with Varying Restrictions | Policies are plan-specific; always confirm with the individual insurer. |\n\n**Reimbursement Note**\nReimbursement rates vary significantly among private insurance plans. Negotiated rates with in-network providers will apply. Out-of-network services may have higher patient out-of-pocket costs.\n\n**Authorization Tips**\n- Verify patient’s specific plan benefits and prior authorization requirements with the insurer directly.\n- Maintain clear and concise documentation that directly addresses the insurer’s medical policy criteria.\n- Utilize the insurer’s provider portal for efficient submission and tracking of authorizations.\n- Be persistent with appeals, providing strong clinical justification and supporting literature.\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "Description", "Device/Access", "RVU", "Note"],
+          "rows": [
+            ["47382", "Ablation, 1 or more liver tumor(s), percutaneous, radiofrequency", "Radiofrequency ablation system (Percutaneous)", "102.7", "Used for percutaneous radiofrequency ablation of liver tumors."],
+            ["47383", "Ablation, 1 or more liver tumor(s), percutaneous, cryoablation", "Cryoablation system (Percutaneous)", "Unknown", "Used for percutaneous cryoablation of liver tumors."],
+            ["47381", "Ablation, open, of 1 or more liver tumor(s)", "Cryoablation system (Open surgical approach)", "Unknown", "Used for open surgical cryoablation of liver tumors."]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["Code", "Description", "Notes", "Primary"],
+          "rows": [
+            ["C22.0", "Liver cell carcinoma", "Primary malignant neoplasm of liver, including hepatocellular carcinoma.", "Yes"],
+            ["C78.7", "Secondary malignant neoplasm of liver and intrahepatic bile duct", "Metastatic cancer to the liver.", "No"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Medicare",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS", "Covered with Restrictions", "Coverage subject to LCDs/NCDs and medical necessity criteria."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (varies)", "Covered with Strict Restrictions", "Policies are highly state-dependent; always verify current state guidelines."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Private Insurance",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Various Private Insurers", "Covered with Varying Restrictions", "Policies are plan-specific; always confirm with the individual insurer."]
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "title": "Sclerotherapy Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "SclerotherapyAuthGuide.tsx",
+    "title": "Sclerotherapy — Authorization Guide",
+    "subtitle": null,
+    "cptCodes": [
+      {
+        "code": "36468",
+        "description": "Single or multiple injections of sclerosing solutions, spider veins (telangiectasia); limb or trunk"
+      },
+      {
+        "code": "36470",
+        "description": "Injection of sclerosing solution; single vein"
+      },
+      {
+        "code": "36471",
+        "description": "Injection of sclerosing solution; multiple veins, same leg"
+      },
+      {
+        "code": "36465",
+        "description": "Injection of non-compounded foam sclerosant with ultrasound compression maneuvers to guide dispersion of the injectate, inclusive of all imaging guidance and monitoring; single incompetent extremity truncal vein (e.g., great saphenous vein, accessory saphenous vein)"
+      },
+      {
+        "code": "36466",
+        "description": "Injection of non-compounded foam sclerosant; multiple incompetent truncal veins, same leg, each additional"
+      },
+      {
+        "code": "93971",
+        "description": "Duplex scan of extremity veins, unilateral (pre-procedure)"
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "I83.811",
+        "description": "Varicose veins of right lower extremity with pain"
+      },
+      {
+        "code": "I83.812",
+        "description": "Varicose veins of left lower extremity with pain"
+      },
+      {
+        "code": "I83.10",
+        "description": "Varicose veins with inflammation, unspecified lower extremity"
+      },
+      {
+        "code": "I83.001",
+        "description": "Varicose veins of right lower extremity with ulcer of thigh"
+      },
+      {
+        "code": "I87.2",
+        "description": "Venous insufficiency (chronic) (peripheral)"
+      },
+      {
+        "code": "I78.1",
+        "description": "Nevus, non-neoplastic (spider angioma — for telangiectasias)"
+      },
+      {
+        "code": "I83.90",
+        "description": "Asymptomatic varicose veins of unspecified lower extremity"
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare (CMS)",
+        "sections": [
+          {
+            "heading": "Medicare (CMS)",
+            "items": [
+              "CPT 36468 (spider veins): Not covered — cosmetic",
+              "CPT 36470/36471: Covered for symptomatic varicose veins with medical necessity",
+              "CPT 36465/36466: Covered for truncal vein foam sclerotherapy with duplex guidance",
+              "Requires documentation of symptoms, duplex findings, and failed conservative therapy"
+            ]
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "CPT Codes — Sclerotherapy (Note)",
+        "kind": "prose",
+        "text": "Note: CPT 36468 is typically not covered by most insurance plans (considered cosmetic for telangiectasias). Coverage is more likely for 36470/36471 (varicose veins) and 36465/36466 (foam for truncal veins)."
+      },
+      {
+        "heading": "Coverage Considerations by Vessel Type — Telangiectasias / Spider Veins (C1) — Generally NOT Covered",
+        "kind": "list",
+        "items": [
+          "Most payers consider sclerotherapy of telangiectasias cosmetic (CEAP C1)",
+          "Medicare does not cover CPT 36468 for spider veins",
+          "Some payers may cover if associated with symptomatic venous insufficiency (C2+)",
+          "Document any associated symptoms (bleeding, thrombophlebitis) to support medical necessity"
+        ]
+      },
+      {
+        "heading": "Coverage Considerations by Vessel Type — Varicose Veins (C2+) — Covered with Medical Necessity",
+        "kind": "list",
+        "items": [
+          "CEAP C2 or higher with symptomatic venous insufficiency",
+          "Duplex ultrasound confirming reflux (required by most payers)",
+          "Compression stocking trial ≥3–6 weeks with documented failure",
+          "Foam sclerotherapy (CPT 36465/36466) requires ultrasound guidance documentation"
+        ]
+      },
+      {
+        "heading": "Coverage Considerations by Vessel Type — Documentation Checklist",
+        "kind": "list",
+        "items": [
+          "CEAP classification documented in office note",
+          "Duplex ultrasound report (for varicose veins and foam sclerotherapy)",
+          "Compression stocking prescription and compliance record",
+          "Symptom documentation (pain, swelling, skin changes)",
+          "Photographs of varicosities"
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# Sclerotherapy — Authorization Guide\n\n## CPT Codes — Sclerotherapy\n\n| CPT | Description |\n| --- | --- |\n| 36468 | Single or multiple injections of sclerosing solutions, spider veins (telangiectasia); limb or trunk |\n| 36470 | Injection of sclerosing solution; single vein |\n| 36471 | Injection of sclerosing solution; multiple veins, same leg |\n| 36465 | Injection of non-compounded foam sclerosant with ultrasound compression maneuvers to guide dispersion of the injectate, inclusive of all imaging guidance and monitoring; single incompetent extremity truncal vein (e.g., great saphenous vein, accessory saphenous vein) |\n| 36466 | Injection of non-compounded foam sclerosant; multiple incompetent truncal veins, same leg, each additional |\n| 93971 | Duplex scan of extremity veins, unilateral (pre-procedure) |\n\nNote: CPT 36468 is typically not covered by most insurance plans (considered cosmetic for telangiectasias). Coverage is more likely for 36470/36471 (varicose veins) and 36465/36466 (foam for truncal veins).\n\n## ICD-10 Diagnosis Codes\n\n| ICD-10 | Description |\n| --- | --- |\n| I83.811 | Varicose veins of right lower extremity with pain |\n| I83.812 | Varicose veins of left lower extremity with pain |\n| I83.10 | Varicose veins with inflammation, unspecified lower extremity |\n| I83.001 | Varicose veins of right lower extremity with ulcer of thigh |\n| I87.2 | Venous insufficiency (chronic) (peripheral) |\n| I78.1 | Nevus, non-neoplastic (spider angioma — for telangiectasias) |\n| I83.90 | Asymptomatic varicose veins of unspecified lower extremity |\n\n## Coverage Considerations by Vessel Type\n\n### Telangiectasias / Spider Veins (C1) — Generally NOT Covered\n\n- Most payers consider sclerotherapy of telangiectasias cosmetic (CEAP C1)\n- Medicare does not cover CPT 36468 for spider veins\n- Some payers may cover if associated with symptomatic venous insufficiency (C2+)\n- Document any associated symptoms (bleeding, thrombophlebitis) to support medical necessity\n\n### Varicose Veins (C2+) — Covered with Medical Necessity\n\n- CEAP C2 or higher with symptomatic venous insufficiency\n- Duplex ultrasound confirming reflux (required by most payers)\n- Compression stocking trial ≥3–6 weeks with documented failure\n- Foam sclerotherapy (CPT 36465/36466) requires ultrasound guidance documentation\n\n### Medicare (CMS)\n\n- CPT 36468 (spider veins): Not covered — cosmetic\n- CPT 36470/36471: Covered for symptomatic varicose veins with medical necessity\n- CPT 36465/36466: Covered for truncal vein foam sclerotherapy with duplex guidance\n- Requires documentation of symptoms, duplex findings, and failed conservative therapy\n\n### Documentation Checklist\n\n- CEAP classification documented in office note\n- Duplex ultrasound report (for varicose veins and foam sclerotherapy)\n- Compression stocking prescription and compliance record\n- Symptom documentation (pain, swelling, skin changes)\n- Photographs of varicosities\n",
+      "tables": [
+        {
+          "name": "CPT Codes — Sclerotherapy",
+          "header": ["CPT", "Description"],
+          "rows": [
+            ["36468", "Single or multiple injections of sclerosing solutions, spider veins (telangiectasia); limb or trunk"],
+            ["36470", "Injection of sclerosing solution; single vein"],
+            ["36471", "Injection of sclerosing solution; multiple veins, same leg"],
+            ["36465", "Injection of non-compounded foam sclerosant with ultrasound compression maneuvers to guide dispersion of the injectate, inclusive of all imaging guidance and monitoring; single incompetent extremity truncal vein (e.g., great saphenous vein, accessory saphenous vein)"],
+            ["36466", "Injection of non-compounded foam sclerosant; multiple incompetent truncal veins, same leg, each additional"],
+            ["93971", "Duplex scan of extremity veins, unilateral (pre-procedure)"]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["ICD-10", "Description"],
+          "rows": [
+            ["I83.811", "Varicose veins of right lower extremity with pain"],
+            ["I83.812", "Varicose veins of left lower extremity with pain"],
+            ["I83.10", "Varicose veins with inflammation, unspecified lower extremity"],
+            ["I83.001", "Varicose veins of right lower extremity with ulcer of thigh"],
+            ["I87.2", "Venous insufficiency (chronic) (peripheral)"],
+            ["I78.1", "Nevus, non-neoplastic (spider angioma — for telangiectasias)"],
+            ["I83.90", "Asymptomatic varicose veins of unspecified lower extremity"]
+          ]
+        }
+      ]
+    }
+  }
+}

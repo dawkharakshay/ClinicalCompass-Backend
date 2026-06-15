@@ -1,0 +1,280 @@
+{
+  "title": "OSA + Obesity Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "OSAObesityAuthGuide.tsx",
+    "title": "OSA + Obesity Authorization Guide",
+    "subtitle": "Prior Authorization Support",
+    "cptCodes": [
+      {
+        "code": "95810",
+        "description": "Polysomnography (PSG); age 6 years or older, sleep staging with 4 or more additional parameters of sleep, attended by a technologist",
+        "notes": "Required for OSA diagnosis confirmation. Must document AHI ≥15 for Zepbound OSA indication.",
+        "category": "Diagnostic"
+      },
+      {
+        "code": "95811",
+        "description": "Polysomnography; sleep staging with 4 or more additional parameters of sleep, with initiation of CPAP therapy or BiPAP, attended by a technologist",
+        "notes": "PAP titration study. Documents PAP therapy initiation or failure to tolerate.",
+        "category": "Diagnostic"
+      },
+      {
+        "code": "95800",
+        "description": "Sleep study, unattended, simultaneous recording; heart rate, oxygen saturation, respiratory analysis (e.g., by airflow or peripheral arterial tone), and sleep time",
+        "notes": "Home sleep apnea test (HSAT). Acceptable for uncomplicated OSA diagnosis; PSG preferred for complex cases.",
+        "category": "Diagnostic"
+      },
+      {
+        "code": "94660",
+        "description": "Continuous positive airway pressure ventilation (CPAP), initiation and management",
+        "notes": "Documents PAP therapy initiation. Required for payers requiring PAP trial before Zepbound approval.",
+        "category": "PAP Therapy"
+      },
+      {
+        "code": "99213",
+        "description": "Office or other outpatient visit, established patient; low medical decision making (15 min typical)",
+        "notes": "Follow-up visit for OSA/obesity management, medication monitoring.",
+        "category": "E/M"
+      },
+      {
+        "code": "99214",
+        "description": "Office or other outpatient visit, established patient; moderate medical decision making (25 min typical)",
+        "notes": "Preferred for complex OSA + obesity management visits with medication titration.",
+        "category": "E/M"
+      },
+      {
+        "code": "99215",
+        "description": "Office or other outpatient visit, established patient; high medical decision making (40 min typical)",
+        "notes": "Use for complex patients with multiple comorbidities (cardiovascular disease, T2DM, hypertension).",
+        "category": "E/M"
+      },
+      {
+        "code": "J3490",
+        "description": "Unclassified drugs — used for tirzepatide (Zepbound) billing when no specific J-code assigned",
+        "notes": "Current billing code for Zepbound as of 2025. Include NDC number on claim. Some payers use J3590 (unclassified biologics). Verify with individual payer.",
+        "category": "Drug Administration"
+      },
+      {
+        "code": "J3590",
+        "description": "Unclassified biologics — alternative billing code for tirzepatide (Zepbound)",
+        "notes": "Alternative to J3490 for some payers. Always include NDC and drug name on claim.",
+        "category": "Drug Administration"
+      },
+      {
+        "code": "99401",
+        "description": "Preventive medicine counseling, approximately 15 minutes",
+        "notes": "Dietary and lifestyle counseling — required per FDA labeling as adjunct to Zepbound.",
+        "category": "Counseling"
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "G47.33",
+        "description": "Obstructive sleep apnea (adult) (pediatric)",
+        "notes": "Primary diagnosis for OSA. Required on all claims for Zepbound OSA indication.",
+        "category": "Sleep Disorder"
+      },
+      {
+        "code": "E66.01",
+        "description": "Morbid (severe) obesity due to excess calories",
+        "notes": "Use for BMI ≥40 kg/m². Required comorbidity for Zepbound OSA indication.",
+        "category": "Obesity"
+      },
+      {
+        "code": "E66.09",
+        "description": "Other obesity due to excess calories",
+        "notes": "Use for BMI 30–39.9 kg/m².",
+        "category": "Obesity"
+      },
+      {
+        "code": "E66.9",
+        "description": "Obesity, unspecified",
+        "notes": "Use when specific obesity type not documented.",
+        "category": "Obesity"
+      },
+      {
+        "code": "Z68.35",
+        "description": "Body mass index (BMI) 35.0–35.9, adult",
+        "notes": "BMI specificity codes — include to strengthen medical necessity documentation.",
+        "category": "BMI"
+      },
+      {
+        "code": "Z68.36",
+        "description": "Body mass index (BMI) 36.0–36.9, adult",
+        "notes": "BMI specificity codes.",
+        "category": "BMI"
+      },
+      {
+        "code": "Z68.37",
+        "description": "Body mass index (BMI) 37.0–37.9, adult",
+        "notes": "BMI specificity codes.",
+        "category": "BMI"
+      },
+      {
+        "code": "Z68.38",
+        "description": "Body mass index (BMI) 38.0–38.9, adult",
+        "notes": "BMI specificity codes. Mean BMI in SURMOUNT-OSA was 38.8 kg/m².",
+        "category": "BMI"
+      },
+      {
+        "code": "Z68.39",
+        "description": "Body mass index (BMI) 39.0–39.9, adult",
+        "notes": "BMI specificity codes.",
+        "category": "BMI"
+      },
+      {
+        "code": "Z68.41",
+        "description": "Body mass index (BMI) 40.0–44.9, adult",
+        "notes": "BMI specificity codes for severe obesity.",
+        "category": "BMI"
+      },
+      {
+        "code": "I10",
+        "description": "Essential (primary) hypertension",
+        "notes": "Common OSA comorbidity. SURMOUNT-OSA showed -7.6 mmHg systolic BP reduction with tirzepatide.",
+        "category": "Comorbidity"
+      },
+      {
+        "code": "I25.10",
+        "description": "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+        "notes": "Relevant for patients with cardiovascular comorbidities — supports SELECT trial data for semaglutide.",
+        "category": "Comorbidity"
+      },
+      {
+        "code": "G47.30",
+        "description": "Sleep apnea, unspecified",
+        "notes": "Use only if OSA type not yet confirmed by PSG.",
+        "category": "Sleep Disorder"
+      }
+    ],
+    "payers": [],
+    "customSections": [
+      {
+        "heading": "FDA Approval Context — December 20, 2024",
+        "kind": "prose",
+        "text": "Zepbound (tirzepatide) received FDA approval on December 20, 2024 as the first and only prescription medication for moderate-to-severe obstructive sleep apnea in adults with obesity. The approval was based on two Phase 3 SURMOUNT-OSA trials (N=469) demonstrating 47.7–56.2% AHI reduction vs placebo at 52 weeks (N Engl J Med. 2024;391:1193-205).\n\nSemaglutide (Wegovy) is NOT FDA-approved for OSA. It may be considered off-label for weight management in OSA patients who cannot tolerate tirzepatide, but payer coverage for the OSA indication specifically requires the Zepbound/tirzepatide FDA approval.\n\nIndication specifics: Zepbound for OSA is indicated for adults with obesity (BMI ≥30 kg/m²) and moderate-to-severe OSA, WITHOUT type 2 diabetes. Patients with T2DM should use Mounjaro (tirzepatide for T2DM) or Ozempic/Wegovy (semaglutide)."
+      },
+      {
+        "heading": "Prior Authorization Requirements — Zepbound (OSA Indication)",
+        "kind": "list",
+        "items": [
+          "[Required] Confirmed moderate-to-severe OSA — PSG or HSAT documenting AHI ≥15 events/hr. PSG report must be attached. Most payers require PSG (not HSAT) for Zepbound PA.",
+          "[Required] Obesity (BMI ≥30 kg/m²) — Current BMI documented in medical record. SURMOUNT-OSA mean BMI was 38.8 kg/m². Some payers may require BMI ≥35.",
+          "[Required] No type 2 diabetes mellitus — Zepbound OSA indication is specifically for patients without T2DM. Document A1c or fasting glucose confirming no T2DM.",
+          "[Required] No contraindications — No personal or family history of medullary thyroid carcinoma (MTC) or Multiple Endocrine Neoplasia type 2 (MEN2). No prior acute/chronic pancreatitis.",
+          "[Required] PAP therapy status documentation — Document either: (a) current PAP therapy use ≥3 months (adjunct indication), or (b) documented PAP intolerance/failure with reason (standalone indication).",
+          "[Required] Prior dietary/lifestyle weight loss attempt — ≥1 documented unsuccessful dietary attempt to lose weight. SURMOUNT-OSA inclusion criterion. Required by most commercial payers.",
+          "[Often Required] Prescriber specialty — Sleep medicine specialist, pulmonologist, or obesity medicine specialist. Some payers require specialist prescriber for Zepbound OSA indication.",
+          "[Required] Lifestyle modification program enrollment — Documentation of enrollment in or referral to structured dietary counseling and physical activity program. Required per FDA labeling.",
+          "[Required] Baseline AHI and weight documentation — Baseline AHI (from PSG/HSAT) and baseline weight/BMI must be documented for monitoring response and continued authorization.",
+          "[Often Required] Continued authorization criteria — Most payers require repeat PSG/HSAT at 12 months showing AHI improvement, and ≥5% body weight reduction from baseline."
+        ]
+      },
+      {
+        "heading": "Common Denial Reasons & Response Language",
+        "kind": "list",
+        "items": [
+          "Denial: \"Not medically necessary\" — Cite SURMOUNT-OSA Phase 3 RCT (NEJM 2024;391:1193-205): tirzepatide reduced AHI by 47.7–56.2% vs placebo (p<0.001), with 61–70% reduction in OSA-specific hypoxia burden. FDA granted Priority Review, Breakthrough Therapy, and Fast Track designations, approving Zepbound December 20, 2024 as the first and only pharmacologic treatment for OSA.",
+          "Denial: \"Experimental/investigational\" — Zepbound received full FDA approval on December 20, 2024 for moderate-to-severe OSA in adults with obesity. This is not an investigational use. The approval was based on two Phase 3 RCTs (SURMOUNT-OSA) enrolling 469 patients. Reference: FDA Press Release, December 20, 2024.",
+          "Denial: \"Step therapy required — PAP not tried first\" — SURMOUNT-OSA Trial 1 specifically enrolled patients unable or unwilling to use PAP therapy and demonstrated significant AHI reduction (-47.7% vs placebo, p<0.001). FDA approval does not require prior PAP failure. Document clinical reasons for PAP intolerance/non-use and cite FDA labeling which approves Zepbound as standalone therapy.",
+          "Denial: \"BMI does not meet threshold\" — Patient BMI is [X] kg/m², meeting the FDA-approved threshold of ≥30 kg/m² for the Zepbound OSA indication. SURMOUNT-OSA enrolled patients with BMI ≥30 (mean 38.8 kg/m²). Attach current weight documentation.",
+          "Denial: \"No prior weight loss attempts documented\" — Patient has documented [X] prior dietary/lifestyle weight loss attempts: [describe attempts with dates]. This meets the SURMOUNT-OSA inclusion criterion of ≥1 unsuccessful dietary attempt. Attach medical records documenting prior attempts.",
+          "Denial: \"Preferred agent not tried (semaglutide step therapy)\" — Semaglutide (Wegovy) is NOT FDA-approved for OSA. Only tirzepatide (Zepbound) has an FDA-approved indication for moderate-to-severe OSA in adults with obesity. Requiring step therapy with a non-approved agent for this indication is clinically inappropriate. Cite FDA approval December 20, 2024."
+        ]
+      },
+      {
+        "heading": "Tirzepatide (Zepbound) Dosing — OSA Indication",
+        "kind": "comparison",
+        "text": "Administer subcutaneously in abdomen, thigh, or upper arm. Rotate injection sites. Titrate every 4 weeks to maximum tolerated dose. Reduce dose if GI side effects are intolerable.",
+        "items": [
+          "Weeks 1–4: 2.5 mg SC weekly — Starting dose — titration phase",
+          "Weeks 5–8: 5 mg SC weekly — Titrate if tolerated",
+          "Weeks 9–12: 7.5 mg SC weekly — Titrate if tolerated",
+          "Weeks 13–16: 10 mg SC weekly — Titrate if tolerated",
+          "Weeks 17–20: 12.5 mg SC weekly — Titrate if tolerated",
+          "Week 20+: 15 mg SC weekly (max) — Maximum tolerated dose; baseline AHI obtained at week 20 in SURMOUNT-OSA"
+        ]
+      },
+      {
+        "heading": "References",
+        "kind": "list",
+        "items": [
+          "1. Malhotra A, et al. (SURMOUNT-OSA Investigators). Tirzepatide for the Treatment of Obstructive Sleep Apnea and Obesity. N Engl J Med. 2024;391:1193-205.",
+          "2. Patel SR. Entering a New Era in Sleep-Apnea Treatment (Editorial). N Engl J Med. 2024;391:1248-9.",
+          "3. FDA Press Release. FDA Approves First Medication for Obstructive Sleep Apnea. December 20, 2024. fda.gov.",
+          "4. Eli Lilly. Zepbound (tirzepatide) Prescribing Information. December 2024. pi.lilly.com.",
+          "5. AASM. Obesity Management Resources for Sleep Medicine. Updated March 2026. aasm.org.",
+          "6. Lincoff AM, et al. (SELECT Trial). Semaglutide and Cardiovascular Outcomes in Obesity without Diabetes. N Engl J Med. 2023;389:2221-32."
+        ]
+      },
+      {
+        "heading": "Page Metadata (ModulePageLayout)",
+        "kind": "prose",
+        "text": "description: Prior authorization criteria, CPT and ICD-10 codes, and payer-specific appeal language for tirzepatide (Zepbound) and semaglutide in obstructive sleep apnea with obesity.\nlogoUrl: https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/osa-obesity-compass-logo-N55A2VT3VcNAsLtxrMFMqY.webp\ncompassHref: /osa-obesity-compass\nappealLetterHref: /osa-obesity-appeal-letter\nguidelineSource: FDA Dec 2024 · SURMOUNT-OSA NEJM 2024 · AASM 2025"
+      },
+      {
+        "heading": "Appeal Letter Link",
+        "kind": "link",
+        "text": "Appeal letter generator for OSA + Obesity (from ModulePageLayout appealLetterHref)",
+        "href": "/osa-obesity-appeal-letter"
+      },
+      {
+        "heading": "Clinical Compass Link",
+        "kind": "link",
+        "text": "OSA + Obesity Clinical Compass (from ModulePageLayout compassHref)",
+        "href": "/osa-obesity-compass"
+      }
+    ],
+    "raw": {
+      "markdown": "# OSA + Obesity Authorization Guide\n\n**Subtitle:** Prior Authorization Support\n\n**Description:** Prior authorization criteria, CPT and ICD-10 codes, and payer-specific appeal language for tirzepatide (Zepbound) and semaglutide in obstructive sleep apnea with obesity.\n\n**Logo URL:** https://d2xsxph8kpxj0f.cloudfront.net/310519663337677270/YV697raiZLNdvDJAKcbMqZ/osa-obesity-compass-logo-N55A2VT3VcNAsLtxrMFMqY.webp\n\n**Compass Href:** /osa-obesity-compass\n\n**Appeal Letter Href:** /osa-obesity-appeal-letter\n\n**Guideline Source:** FDA Dec 2024 · SURMOUNT-OSA NEJM 2024 · AASM 2025\n\n---\n\n## FDA Approval Context — December 20, 2024\n\n**Zepbound (tirzepatide)** received FDA approval on December 20, 2024 as the **first and only prescription medication** for moderate-to-severe obstructive sleep apnea in adults with obesity. The approval was based on two Phase 3 SURMOUNT-OSA trials (N=469) demonstrating 47.7–56.2% AHI reduction vs placebo at 52 weeks (*N Engl J Med.* 2024;391:1193-205).\n\n**Semaglutide (Wegovy)** is NOT FDA-approved for OSA. It may be considered off-label for weight management in OSA patients who cannot tolerate tirzepatide, but payer coverage for the OSA indication specifically requires the Zepbound/tirzepatide FDA approval.\n\n**Indication specifics**: Zepbound for OSA is indicated for adults with obesity (BMI ≥30 kg/m²) and moderate-to-severe OSA, WITHOUT type 2 diabetes. Patients with T2DM should use Mounjaro (tirzepatide for T2DM) or Ozempic/Wegovy (semaglutide).\n\n---\n\n## Prior Authorization Requirements — Zepbound (OSA Indication)\n\n- **[Required] Confirmed moderate-to-severe OSA** — PSG or HSAT documenting AHI ≥15 events/hr. PSG report must be attached. Most payers require PSG (not HSAT) for Zepbound PA.\n- **[Required] Obesity (BMI ≥30 kg/m²)** — Current BMI documented in medical record. SURMOUNT-OSA mean BMI was 38.8 kg/m². Some payers may require BMI ≥35.\n- **[Required] No type 2 diabetes mellitus** — Zepbound OSA indication is specifically for patients without T2DM. Document A1c or fasting glucose confirming no T2DM.\n- **[Required] No contraindications** — No personal or family history of medullary thyroid carcinoma (MTC) or Multiple Endocrine Neoplasia type 2 (MEN2). No prior acute/chronic pancreatitis.\n- **[Required] PAP therapy status documentation** — Document either: (a) current PAP therapy use ≥3 months (adjunct indication), or (b) documented PAP intolerance/failure with reason (standalone indication).\n- **[Required] Prior dietary/lifestyle weight loss attempt** — ≥1 documented unsuccessful dietary attempt to lose weight. SURMOUNT-OSA inclusion criterion. Required by most commercial payers.\n- **[Often Required] Prescriber specialty** — Sleep medicine specialist, pulmonologist, or obesity medicine specialist. Some payers require specialist prescriber for Zepbound OSA indication.\n- **[Required] Lifestyle modification program enrollment** — Documentation of enrollment in or referral to structured dietary counseling and physical activity program. Required per FDA labeling.\n- **[Required] Baseline AHI and weight documentation** — Baseline AHI (from PSG/HSAT) and baseline weight/BMI must be documented for monitoring response and continued authorization.\n- **[Often Required] Continued authorization criteria** — Most payers require repeat PSG/HSAT at 12 months showing AHI improvement, and ≥5% body weight reduction from baseline.\n\n---\n\n## CPT Codes\n\n_(Searchable table — placeholder: \"Search CPT codes...\")_\n\n| Code | Description | Category |\n|------|-------------|----------|\n| 95810 | Polysomnography (PSG); age 6 years or older, sleep staging with 4 or more additional parameters of sleep, attended by a technologist. _Notes: Required for OSA diagnosis confirmation. Must document AHI ≥15 for Zepbound OSA indication._ | Diagnostic |\n| 95811 | Polysomnography; sleep staging with 4 or more additional parameters of sleep, with initiation of CPAP therapy or BiPAP, attended by a technologist. _Notes: PAP titration study. Documents PAP therapy initiation or failure to tolerate._ | Diagnostic |\n| 95800 | Sleep study, unattended, simultaneous recording; heart rate, oxygen saturation, respiratory analysis (e.g., by airflow or peripheral arterial tone), and sleep time. _Notes: Home sleep apnea test (HSAT). Acceptable for uncomplicated OSA diagnosis; PSG preferred for complex cases._ | Diagnostic |\n| 94660 | Continuous positive airway pressure ventilation (CPAP), initiation and management. _Notes: Documents PAP therapy initiation. Required for payers requiring PAP trial before Zepbound approval._ | PAP Therapy |\n| 99213 | Office or other outpatient visit, established patient; low medical decision making (15 min typical). _Notes: Follow-up visit for OSA/obesity management, medication monitoring._ | E/M |\n| 99214 | Office or other outpatient visit, established patient; moderate medical decision making (25 min typical). _Notes: Preferred for complex OSA + obesity management visits with medication titration._ | E/M |\n| 99215 | Office or other outpatient visit, established patient; high medical decision making (40 min typical). _Notes: Use for complex patients with multiple comorbidities (cardiovascular disease, T2DM, hypertension)._ | E/M |\n| J3490 | Unclassified drugs — used for tirzepatide (Zepbound) billing when no specific J-code assigned. _Notes: Current billing code for Zepbound as of 2025. Include NDC number on claim. Some payers use J3590 (unclassified biologics). Verify with individual payer._ | Drug Administration |\n| J3590 | Unclassified biologics — alternative billing code for tirzepatide (Zepbound). _Notes: Alternative to J3490 for some payers. Always include NDC and drug name on claim._ | Drug Administration |\n| 99401 | Preventive medicine counseling, approximately 15 minutes. _Notes: Dietary and lifestyle counseling — required per FDA labeling as adjunct to Zepbound._ | Counseling |\n\n---\n\n## ICD-10 Codes\n\n_(Searchable table — placeholder: \"Search ICD-10 codes...\")_\n\n| Code | Description | Category |\n|------|-------------|----------|\n| G47.33 | Obstructive sleep apnea (adult) (pediatric). _Notes: Primary diagnosis for OSA. Required on all claims for Zepbound OSA indication._ | Sleep Disorder |\n| E66.01 | Morbid (severe) obesity due to excess calories. _Notes: Use for BMI ≥40 kg/m². Required comorbidity for Zepbound OSA indication._ | Obesity |\n| E66.09 | Other obesity due to excess calories. _Notes: Use for BMI 30–39.9 kg/m²._ | Obesity |\n| E66.9 | Obesity, unspecified. _Notes: Use when specific obesity type not documented._ | Obesity |\n| Z68.35 | Body mass index (BMI) 35.0–35.9, adult. _Notes: BMI specificity codes — include to strengthen medical necessity documentation._ | BMI |\n| Z68.36 | Body mass index (BMI) 36.0–36.9, adult. _Notes: BMI specificity codes._ | BMI |\n| Z68.37 | Body mass index (BMI) 37.0–37.9, adult. _Notes: BMI specificity codes._ | BMI |\n| Z68.38 | Body mass index (BMI) 38.0–38.9, adult. _Notes: BMI specificity codes. Mean BMI in SURMOUNT-OSA was 38.8 kg/m²._ | BMI |\n| Z68.39 | Body mass index (BMI) 39.0–39.9, adult. _Notes: BMI specificity codes._ | BMI |\n| Z68.41 | Body mass index (BMI) 40.0–44.9, adult. _Notes: BMI specificity codes for severe obesity._ | BMI |\n| I10 | Essential (primary) hypertension. _Notes: Common OSA comorbidity. SURMOUNT-OSA showed -7.6 mmHg systolic BP reduction with tirzepatide._ | Comorbidity |\n| I25.10 | Atherosclerotic heart disease of native coronary artery without angina pectoris. _Notes: Relevant for patients with cardiovascular comorbidities — supports SELECT trial data for semaglutide._ | Comorbidity |\n| G47.30 | Sleep apnea, unspecified. _Notes: Use only if OSA type not yet confirmed by PSG._ | Sleep Disorder |\n\n---\n\n## Common Denial Reasons & Response Language\n\n**Denial: \"Not medically necessary\"**\nCite SURMOUNT-OSA Phase 3 RCT (NEJM 2024;391:1193-205): tirzepatide reduced AHI by 47.7–56.2% vs placebo (p<0.001), with 61–70% reduction in OSA-specific hypoxia burden. FDA granted Priority Review, Breakthrough Therapy, and Fast Track designations, approving Zepbound December 20, 2024 as the first and only pharmacologic treatment for OSA.\n\n**Denial: \"Experimental/investigational\"**\nZepbound received full FDA approval on December 20, 2024 for moderate-to-severe OSA in adults with obesity. This is not an investigational use. The approval was based on two Phase 3 RCTs (SURMOUNT-OSA) enrolling 469 patients. Reference: FDA Press Release, December 20, 2024.\n\n**Denial: \"Step therapy required — PAP not tried first\"**\nSURMOUNT-OSA Trial 1 specifically enrolled patients unable or unwilling to use PAP therapy and demonstrated significant AHI reduction (-47.7% vs placebo, p<0.001). FDA approval does not require prior PAP failure. Document clinical reasons for PAP intolerance/non-use and cite FDA labeling which approves Zepbound as standalone therapy.\n\n**Denial: \"BMI does not meet threshold\"**\nPatient BMI is [X] kg/m², meeting the FDA-approved threshold of ≥30 kg/m² for the Zepbound OSA indication. SURMOUNT-OSA enrolled patients with BMI ≥30 (mean 38.8 kg/m²). Attach current weight documentation.\n\n**Denial: \"No prior weight loss attempts documented\"**\nPatient has documented [X] prior dietary/lifestyle weight loss attempts: [describe attempts with dates]. This meets the SURMOUNT-OSA inclusion criterion of ≥1 unsuccessful dietary attempt. Attach medical records documenting prior attempts.\n\n**Denial: \"Preferred agent not tried (semaglutide step therapy)\"**\nSemaglutide (Wegovy) is NOT FDA-approved for OSA. Only tirzepatide (Zepbound) has an FDA-approved indication for moderate-to-severe OSA in adults with obesity. Requiring step therapy with a non-approved agent for this indication is clinically inappropriate. Cite FDA approval December 20, 2024.\n\n---\n\n## Tirzepatide (Zepbound) Dosing — OSA Indication\n\n| Week | Dose | Notes |\n|------|------|-------|\n| Weeks 1–4 | 2.5 mg SC weekly | Starting dose — titration phase |\n| Weeks 5–8 | 5 mg SC weekly | Titrate if tolerated |\n| Weeks 9–12 | 7.5 mg SC weekly | Titrate if tolerated |\n| Weeks 13–16 | 10 mg SC weekly | Titrate if tolerated |\n| Weeks 17–20 | 12.5 mg SC weekly | Titrate if tolerated |\n| Week 20+ | 15 mg SC weekly (max) | Maximum tolerated dose; baseline AHI obtained at week 20 in SURMOUNT-OSA |\n\nAdminister subcutaneously in abdomen, thigh, or upper arm. Rotate injection sites. Titrate every 4 weeks to maximum tolerated dose. Reduce dose if GI side effects are intolerable.\n\n---\n\n## References\n\n1. Malhotra A, et al. (SURMOUNT-OSA Investigators). Tirzepatide for the Treatment of Obstructive Sleep Apnea and Obesity. *N Engl J Med.* 2024;391:1193-205.\n2. Patel SR. Entering a New Era in Sleep-Apnea Treatment (Editorial). *N Engl J Med.* 2024;391:1248-9.\n3. FDA Press Release. FDA Approves First Medication for Obstructive Sleep Apnea. December 20, 2024. fda.gov.\n4. Eli Lilly. Zepbound (tirzepatide) Prescribing Information. December 2024. pi.lilly.com.\n5. AASM. Obesity Management Resources for Sleep Medicine. Updated March 2026. aasm.org.\n6. Lincoff AM, et al. (SELECT Trial). Semaglutide and Cardiovascular Outcomes in Obesity without Diabetes. *N Engl J Med.* 2023;389:2221-32.\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "Description", "Notes", "Category"],
+          "rows": [
+            ["95810", "Polysomnography (PSG); age 6 years or older, sleep staging with 4 or more additional parameters of sleep, attended by a technologist", "Required for OSA diagnosis confirmation. Must document AHI ≥15 for Zepbound OSA indication.", "Diagnostic"],
+            ["95811", "Polysomnography; sleep staging with 4 or more additional parameters of sleep, with initiation of CPAP therapy or BiPAP, attended by a technologist", "PAP titration study. Documents PAP therapy initiation or failure to tolerate.", "Diagnostic"],
+            ["95800", "Sleep study, unattended, simultaneous recording; heart rate, oxygen saturation, respiratory analysis (e.g., by airflow or peripheral arterial tone), and sleep time", "Home sleep apnea test (HSAT). Acceptable for uncomplicated OSA diagnosis; PSG preferred for complex cases.", "Diagnostic"],
+            ["94660", "Continuous positive airway pressure ventilation (CPAP), initiation and management", "Documents PAP therapy initiation. Required for payers requiring PAP trial before Zepbound approval.", "PAP Therapy"],
+            ["99213", "Office or other outpatient visit, established patient; low medical decision making (15 min typical)", "Follow-up visit for OSA/obesity management, medication monitoring.", "E/M"],
+            ["99214", "Office or other outpatient visit, established patient; moderate medical decision making (25 min typical)", "Preferred for complex OSA + obesity management visits with medication titration.", "E/M"],
+            ["99215", "Office or other outpatient visit, established patient; high medical decision making (40 min typical)", "Use for complex patients with multiple comorbidities (cardiovascular disease, T2DM, hypertension).", "E/M"],
+            ["J3490", "Unclassified drugs — used for tirzepatide (Zepbound) billing when no specific J-code assigned", "Current billing code for Zepbound as of 2025. Include NDC number on claim. Some payers use J3590 (unclassified biologics). Verify with individual payer.", "Drug Administration"],
+            ["J3590", "Unclassified biologics — alternative billing code for tirzepatide (Zepbound)", "Alternative to J3490 for some payers. Always include NDC and drug name on claim.", "Drug Administration"],
+            ["99401", "Preventive medicine counseling, approximately 15 minutes", "Dietary and lifestyle counseling — required per FDA labeling as adjunct to Zepbound.", "Counseling"]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["Code", "Description", "Notes", "Category"],
+          "rows": [
+            ["G47.33", "Obstructive sleep apnea (adult) (pediatric)", "Primary diagnosis for OSA. Required on all claims for Zepbound OSA indication.", "Sleep Disorder"],
+            ["E66.01", "Morbid (severe) obesity due to excess calories", "Use for BMI ≥40 kg/m². Required comorbidity for Zepbound OSA indication.", "Obesity"],
+            ["E66.09", "Other obesity due to excess calories", "Use for BMI 30–39.9 kg/m².", "Obesity"],
+            ["E66.9", "Obesity, unspecified", "Use when specific obesity type not documented.", "Obesity"],
+            ["Z68.35", "Body mass index (BMI) 35.0–35.9, adult", "BMI specificity codes — include to strengthen medical necessity documentation.", "BMI"],
+            ["Z68.36", "Body mass index (BMI) 36.0–36.9, adult", "BMI specificity codes.", "BMI"],
+            ["Z68.37", "Body mass index (BMI) 37.0–37.9, adult", "BMI specificity codes.", "BMI"],
+            ["Z68.38", "Body mass index (BMI) 38.0–38.9, adult", "BMI specificity codes. Mean BMI in SURMOUNT-OSA was 38.8 kg/m².", "BMI"],
+            ["Z68.39", "Body mass index (BMI) 39.0–39.9, adult", "BMI specificity codes.", "BMI"],
+            ["Z68.41", "Body mass index (BMI) 40.0–44.9, adult", "BMI specificity codes for severe obesity.", "BMI"],
+            ["I10", "Essential (primary) hypertension", "Common OSA comorbidity. SURMOUNT-OSA showed -7.6 mmHg systolic BP reduction with tirzepatide.", "Comorbidity"],
+            ["I25.10", "Atherosclerotic heart disease of native coronary artery without angina pectoris", "Relevant for patients with cardiovascular comorbidities — supports SELECT trial data for semaglutide.", "Comorbidity"],
+            ["G47.30", "Sleep apnea, unspecified", "Use only if OSA type not yet confirmed by PSG.", "Sleep Disorder"]
+          ]
+        },
+        {
+          "name": "Tirzepatide (Zepbound) Dosing — OSA Indication",
+          "header": ["Week", "Dose", "Notes"],
+          "rows": [
+            ["Weeks 1–4", "2.5 mg SC weekly", "Starting dose — titration phase"],
+            ["Weeks 5–8", "5 mg SC weekly", "Titrate if tolerated"],
+            ["Weeks 9–12", "7.5 mg SC weekly", "Titrate if tolerated"],
+            ["Weeks 13–16", "10 mg SC weekly", "Titrate if tolerated"],
+            ["Weeks 17–20", "12.5 mg SC weekly", "Titrate if tolerated"],
+            ["Week 20+", "15 mg SC weekly (max)", "Maximum tolerated dose; baseline AHI obtained at week 20 in SURMOUNT-OSA"]
+          ]
+        }
+      ]
+    }
+  }
+}

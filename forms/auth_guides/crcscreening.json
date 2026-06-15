@@ -1,0 +1,395 @@
+{
+  "title": "CRC Screening Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "CRCScreeningAuthGuide.tsx",
+    "title": "CRCScreening Clinical Compass",
+    "subtitle": "Colorectal Cancer Screening Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "45378",
+        "description": "Colonoscopy, flexible; diagnostic, including collection of specimen(s) by brushing or washing, when performed (separate procedure)",
+        "device": "Flexible colonoscope",
+        "access": "Rectal",
+        "rvu": "3.18",
+        "includes": [
+          "Visual examination of the entire colon, from rectum to cecum",
+          "Collection of specimens by brushing or washing, if performed"
+        ],
+        "note": "Used for diagnostic purposes or when screening colonoscopy converts to diagnostic due to findings."
+      },
+      {
+        "code": "45380",
+        "description": "Colonoscopy, flexible; with biopsy, single or multiple",
+        "device": "Flexible colonoscope with biopsy forceps",
+        "access": "Rectal",
+        "rvu": "3.47",
+        "includes": [
+          "Visual examination of the entire colon, from rectum to cecum",
+          "Biopsy of single or multiple lesions"
+        ],
+        "note": "Report when tissue sampling is performed during a colonoscopy."
+      },
+      {
+        "code": "45385",
+        "description": "Colonoscopy, flexible; with removal of tumor(s), polyp(s), or other lesion(s) by snare technique",
+        "device": "Flexible colonoscope with snare",
+        "access": "Rectal",
+        "rvu": "4.46",
+        "includes": [
+          "Visual examination of the entire colon, from rectum to cecum",
+          "Removal of polyps or lesions by snare technique"
+        ],
+        "note": "Used when polyps or lesions are removed during the procedure."
+      },
+      {
+        "code": "81528",
+        "description": "Oncology (colorectal) screening, quantitative real-time target and signal amplification of 10 DNA markers (KRAS mutations, promoter methylation of NDRG4 and BMP3, and fecal hemoglobin) with algorithmic analysis, for colorectal cancer",
+        "device": "Stool sample analysis (Cologuard)",
+        "access": "Non-invasive stool collection",
+        "rvu": "N/A",
+        "includes": [
+          "Analysis of 10 DNA markers and fecal hemoglobin",
+          "Algorithmic analysis for colorectal cancer risk"
+        ],
+        "note": "Non-invasive screening test for average-risk individuals, typically every 3 years."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "Z12.11",
+        "description": "Encounter for screening for malignant neoplasm of colon",
+        "notes": "Primary code for routine colorectal cancer screening in asymptomatic individuals.",
+        "required": true
+      },
+      {
+        "code": "Z80.0",
+        "description": "Family history of malignant neoplasm of digestive organs",
+        "notes": "Use if there is a family history of colorectal cancer, indicating increased risk.",
+        "required": false
+      },
+      {
+        "code": "K63.5",
+        "description": "Polyp of colon",
+        "notes": "Use if a polyp is found during screening and requires follow-up or removal.",
+        "required": false
+      },
+      {
+        "code": "R19.5",
+        "description": "Other fecal abnormalities",
+        "notes": "May be used for positive FIT/FOBT results prior to colonoscopy.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered for Screening",
+        "overview": "Medicare covers various colorectal cancer screening tests for beneficiaries aged 45 and older. This includes screening colonoscopies, fecal occult blood tests (FOBT), fecal immunochemical tests (FIT), and Cologuard (multi-target stool DNA test). Frequency of screening depends on the test and patient risk factors.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required: No (No Prior Auth (FFS))",
+              "Medicare generally covers colorectal cancer screening tests without prior authorization for eligible beneficiaries. However, if a screening colonoscopy results in a diagnostic procedure (e.g., polyp removal), the diagnostic portion may be subject to different coverage rules and patient cost-sharing."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Screening Colonoscopy",
+            "items": [
+              "Average risk: once every 10 years (or 2 years if high risk)",
+              "Beneficiary must be 45 years or older"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Cologuard (CPT 81528)",
+            "items": [
+              "Average risk: once every 3 years",
+              "Beneficiary must be 45 years or older",
+              "No signs or symptoms of colorectal cancer",
+              "No personal history of adenomatous polyps, colorectal cancer, or inflammatory bowel disease",
+              "No family history of colorectal cancer syndromes"
+            ]
+          },
+          {
+            "heading": "Required Documentation: For all screening tests",
+            "items": [
+              "Patient demographics and insurance information",
+              "Physician order for screening",
+              "Documentation of patient age and risk factors"
+            ]
+          },
+          {
+            "heading": "Required Documentation: For colonoscopy",
+            "items": [
+              "Procedure notes, including findings and interventions",
+              "Pathology report for any biopsies or resections"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims with appropriate CPT code (e.g., 45378, 45380, 45385, 81528) and primary diagnosis code Z12.11.",
+              "If screening colonoscopy converts to diagnostic, use appropriate CPT code with modifier PT (for Medicare) and diagnostic ICD-10 codes for findings.",
+              "Ensure all supporting documentation is readily available for audit."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of medical necessity for diagnostic procedures (if billed as screening)",
+              "Incorrect coding or modifiers",
+              "Exceeding frequency limits for screening tests",
+              "Incomplete documentation"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicare reimbursement for screening colonoscopies is generally 100% of the Medicare-approved amount. If a polyp is removed, the procedure may be reclassified as diagnostic, and patient cost-sharing (deductible and coinsurance) may apply to the diagnostic portion."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Educate patients on the difference between screening and diagnostic procedures and potential cost-sharing.",
+              "Verify patient eligibility and benefits prior to scheduling.",
+              "Properly document all findings and medical necessity for any interventions."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS",
+            "status": "Covered",
+            "notes": "National Coverage Determination (NCD) for Colorectal Cancer Screening."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered for Screening",
+        "overview": "Medicaid covers colorectal cancer screening for eligible beneficiaries, often following guidelines similar to Medicare. Coverage usually includes colonoscopies, FOBT, FIT, and Cologuard, with specific age and frequency criteria.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required: No (No Prior Auth (FFS))",
+              "Medicaid programs typically cover colorectal cancer screening without prior authorization, aligning with preventive care guidelines. However, specific state Medicaid policies may vary regarding frequency and eligible tests."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Screening Colonoscopy",
+            "items": [
+              "Average risk: once every 10 years (or more frequently if high risk)",
+              "Beneficiary must meet state-specific age criteria (often 45 years or older)"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Cologuard (CPT 81528)",
+            "items": [
+              "Average risk: once every 3 years",
+              "Beneficiary must meet state-specific age criteria (often 45 years or older)"
+            ]
+          },
+          {
+            "heading": "Required Documentation: For all screening tests",
+            "items": [
+              "Patient demographics and Medicaid ID",
+              "Physician order",
+              "Documentation of patient age and risk factors"
+            ]
+          },
+          {
+            "heading": "Required Documentation: For colonoscopy",
+            "items": [
+              "Procedure notes and pathology reports"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims with appropriate CPT and ICD-10 codes (Z12.11 for screening).",
+              "Adhere to state-specific Medicaid billing guidelines and modifiers.",
+              "Maintain thorough documentation for medical necessity and services rendered."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet age or frequency guidelines",
+              "Incorrect coding",
+              "Lack of documentation for medical necessity (if diagnostic)"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicaid reimbursement rates and patient cost-sharing can vary significantly by state. Screening services are generally covered with minimal or no patient cost-sharing."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state's specific Medicaid guidelines for CRC screening.",
+              "Ensure proper documentation of screening vs. diagnostic intent.",
+              "Utilize state Medicaid provider portals for eligibility and policy updates."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (e.g., NC Medicaid)",
+            "status": "Covered",
+            "notes": "Covers Cologuard (CPT 81528) for average-risk individuals aged 45-85 every 3 years."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Varies by Plan",
+        "overview": "Private insurance coverage for colorectal cancer screening is mandated by the Affordable Care Act (ACA) to be covered without cost-sharing for average-risk individuals. However, specific coverage criteria, frequency, and prior authorization rules can vary widely by plan and insurer.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required: Yes (Prior Auth Required)",
+              "Prior authorization may be required for certain colorectal cancer screening procedures, especially for colonoscopies or Cologuard, depending on the patient's plan and risk factors. Always verify benefits and authorization requirements."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Screening Colonoscopy",
+            "items": [
+              "Average risk: typically once every 10 years (or more frequently if high risk)",
+              "Age 45 years or older",
+              "May require prior authorization based on plan"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Cologuard (CPT 81528)",
+            "items": [
+              "Average risk: typically once every 3 years",
+              "Age 45 years or older",
+              "May require prior authorization based on plan",
+              "No personal or family history of CRC or advanced adenoma"
+            ]
+          },
+          {
+            "heading": "Required Documentation: For all screening tests",
+            "items": [
+              "Patient insurance details",
+              "Physician order",
+              "Documentation of medical necessity and risk factors"
+            ]
+          },
+          {
+            "heading": "Required Documentation: For prior authorization",
+            "items": [
+              "Clinical notes supporting screening or diagnostic intent",
+              "Previous screening results (if applicable)"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify benefits and obtain prior authorization if required.",
+              "Submit claims with appropriate CPT and ICD-10 codes (Z12.11 for screening).",
+              "Be prepared to provide additional clinical documentation upon request."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization",
+              "Failure to meet plan-specific age or frequency guidelines",
+              "Incorrect coding",
+              "Insufficient documentation of medical necessity"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "While ACA mandates coverage without cost-sharing for preventive screening, if a screening colonoscopy becomes diagnostic, patient cost-sharing may apply. Reimbursement rates are negotiated between providers and insurers."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify patient benefits and prior authorization requirements with each private insurer.",
+              "Clearly document the intent of the procedure (screening vs. diagnostic).",
+              "Appeal denials with comprehensive clinical documentation."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Various Private Insurers",
+            "status": "Varies",
+            "notes": "Coverage and prior authorization rules differ significantly by plan. Always check individual policy details."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Navigation",
+        "kind": "link",
+        "text": "Back to Assessment (links to /crcscreening)",
+        "href": "/crcscreening"
+      },
+      {
+        "heading": "Procedure Codes — Section Note",
+        "kind": "prose",
+        "text": "Each CPT code card lists items 'Included in this code (do NOT bill separately)'."
+      }
+    ],
+    "raw": {
+      "markdown": "# CRCScreening Clinical Compass\n## Colorectal Cancer Screening Insurance Authorization Guide\n\n[Button: Back to Assessment] (navigates to /crcscreening)\n\n---\n\n## Procedure Codes\n\n### CPT 45378 (RVU 3.18)\nColonoscopy, flexible; diagnostic, including collection of specimen(s) by brushing or washing, when performed (separate procedure)\nDevice/Access: Flexible colonoscope\nIncluded in this code (do NOT bill separately):\n- Visual examination of the entire colon, from rectum to cecum\n- Collection of specimens by brushing or washing, if performed\nNote: Used for diagnostic purposes or when screening colonoscopy converts to diagnostic due to findings.\n\n### CPT 45380 (RVU 3.47)\nColonoscopy, flexible; with biopsy, single or multiple\nDevice/Access: Flexible colonoscope with biopsy forceps\nIncluded in this code (do NOT bill separately):\n- Visual examination of the entire colon, from rectum to cecum\n- Biopsy of single or multiple lesions\nNote: Report when tissue sampling is performed during a colonoscopy.\n\n### CPT 45385 (RVU 4.46)\nColonoscopy, flexible; with removal of tumor(s), polyp(s), or other lesion(s) by snare technique\nDevice/Access: Flexible colonoscope with snare\nIncluded in this code (do NOT bill separately):\n- Visual examination of the entire colon, from rectum to cecum\n- Removal of polyps or lesions by snare technique\nNote: Used when polyps or lesions are removed during the procedure.\n\n### CPT 81528 (RVU N/A)\nOncology (colorectal) screening, quantitative real-time target and signal amplification of 10 DNA markers (KRAS mutations, promoter methylation of NDRG4 and BMP3, and fecal hemoglobin) with algorithmic analysis, for colorectal cancer\nDevice/Access: Stool sample analysis (Cologuard) — Non-invasive stool collection\nIncluded in this code (do NOT bill separately):\n- Analysis of 10 DNA markers and fecal hemoglobin\n- Algorithmic analysis for colorectal cancer risk\nNote: Non-invasive screening test for average-risk individuals, typically every 3 years.\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **Z12.11** (Primary / required): Encounter for screening for malignant neoplasm of colon. Notes: Primary code for routine colorectal cancer screening in asymptomatic individuals.\n- **Z80.0**: Family history of malignant neoplasm of digestive organs. Notes: Use if there is a family history of colorectal cancer, indicating increased risk.\n- **K63.5**: Polyp of colon. Notes: Use if a polyp is found during screening and requires follow-up or removal.\n- **R19.5**: Other fecal abnormalities. Notes: May be used for positive FIT/FOBT results prior to colonoscopy.\n\n---\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\nStatus badges: No Prior Auth (FFS) | Covered for Screening\nPrior Auth Note: Medicare generally covers colorectal cancer screening tests without prior authorization for eligible beneficiaries. However, if a screening colonoscopy results in a diagnostic procedure (e.g., polyp removal), the diagnostic portion may be subject to different coverage rules and patient cost-sharing.\nOverview: Medicare covers various colorectal cancer screening tests for beneficiaries aged 45 and older. This includes screening colonoscopies, fecal occult blood tests (FOBT), fecal immunochemical tests (FIT), and Cologuard (multi-target stool DNA test). Frequency of screening depends on the test and patient risk factors.\n\n#### Coverage Criteria\nScreening Colonoscopy:\n- Average risk: once every 10 years (or 2 years if high risk)\n- Beneficiary must be 45 years or older\nCologuard (CPT 81528):\n- Average risk: once every 3 years\n- Beneficiary must be 45 years or older\n- No signs or symptoms of colorectal cancer\n- No personal history of adenomatous polyps, colorectal cancer, or inflammatory bowel disease\n- No family history of colorectal cancer syndromes\n\n#### Required Documentation\nFor all screening tests:\n- Patient demographics and insurance information\n- Physician order for screening\n- Documentation of patient age and risk factors\nFor colonoscopy:\n- Procedure notes, including findings and interventions\n- Pathology report for any biopsies or resections\n\n#### Submission Process\n1. Submit claims with appropriate CPT code (e.g., 45378, 45380, 45385, 81528) and primary diagnosis code Z12.11.\n2. If screening colonoscopy converts to diagnostic, use appropriate CPT code with modifier PT (for Medicare) and diagnostic ICD-10 codes for findings.\n3. Ensure all supporting documentation is readily available for audit.\n\n#### Common Denial Reasons\n- Lack of medical necessity for diagnostic procedures (if billed as screening)\n- Incorrect coding or modifiers\n- Exceeding frequency limits for screening tests\n- Incomplete documentation\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS | Covered | National Coverage Determination (NCD) for Colorectal Cancer Screening. |\n\n#### Reimbursement Note\nMedicare reimbursement for screening colonoscopies is generally 100% of the Medicare-approved amount. If a polyp is removed, the procedure may be reclassified as diagnostic, and patient cost-sharing (deductible and coinsurance) may apply to the diagnostic portion.\n\n#### Authorization Tips\n- Educate patients on the difference between screening and diagnostic procedures and potential cost-sharing.\n- Verify patient eligibility and benefits prior to scheduling.\n- Properly document all findings and medical necessity for any interventions.\n\n### Medicaid\nStatus badges: No Prior Auth (FFS) | Covered for Screening\nPrior Auth Note: Medicaid programs typically cover colorectal cancer screening without prior authorization, aligning with preventive care guidelines. However, specific state Medicaid policies may vary regarding frequency and eligible tests.\nOverview: Medicaid covers colorectal cancer screening for eligible beneficiaries, often following guidelines similar to Medicare. Coverage usually includes colonoscopies, FOBT, FIT, and Cologuard, with specific age and frequency criteria.\n\n#### Coverage Criteria\nScreening Colonoscopy:\n- Average risk: once every 10 years (or more frequently if high risk)\n- Beneficiary must meet state-specific age criteria (often 45 years or older)\nCologuard (CPT 81528):\n- Average risk: once every 3 years\n- Beneficiary must meet state-specific age criteria (often 45 years or older)\n\n#### Required Documentation\nFor all screening tests:\n- Patient demographics and Medicaid ID\n- Physician order\n- Documentation of patient age and risk factors\nFor colonoscopy:\n- Procedure notes and pathology reports\n\n#### Submission Process\n1. Submit claims with appropriate CPT and ICD-10 codes (Z12.11 for screening).\n2. Adhere to state-specific Medicaid billing guidelines and modifiers.\n3. Maintain thorough documentation for medical necessity and services rendered.\n\n#### Common Denial Reasons\n- Failure to meet age or frequency guidelines\n- Incorrect coding\n- Lack of documentation for medical necessity (if diagnostic)\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (e.g., NC Medicaid) | Covered | Covers Cologuard (CPT 81528) for average-risk individuals aged 45-85 every 3 years. |\n\n#### Reimbursement Note\nMedicaid reimbursement rates and patient cost-sharing can vary significantly by state. Screening services are generally covered with minimal or no patient cost-sharing.\n\n#### Authorization Tips\n- Familiarize yourself with your state's specific Medicaid guidelines for CRC screening.\n- Ensure proper documentation of screening vs. diagnostic intent.\n- Utilize state Medicaid provider portals for eligibility and policy updates.\n\n### Private Insurance\nStatus badges: Prior Auth Required | Varies by Plan\nPrior Auth Note: Prior authorization may be required for certain colorectal cancer screening procedures, especially for colonoscopies or Cologuard, depending on the patient's plan and risk factors. Always verify benefits and authorization requirements.\nOverview: Private insurance coverage for colorectal cancer screening is mandated by the Affordable Care Act (ACA) to be covered without cost-sharing for average-risk individuals. However, specific coverage criteria, frequency, and prior authorization rules can vary widely by plan and insurer.\n\n#### Coverage Criteria\nScreening Colonoscopy:\n- Average risk: typically once every 10 years (or more frequently if high risk)\n- Age 45 years or older\n- May require prior authorization based on plan\nCologuard (CPT 81528):\n- Average risk: typically once every 3 years\n- Age 45 years or older\n- May require prior authorization based on plan\n- No personal or family history of CRC or advanced adenoma\n\n#### Required Documentation\nFor all screening tests:\n- Patient insurance details\n- Physician order\n- Documentation of medical necessity and risk factors\nFor prior authorization:\n- Clinical notes supporting screening or diagnostic intent\n- Previous screening results (if applicable)\n\n#### Submission Process\n1. Verify benefits and obtain prior authorization if required.\n2. Submit claims with appropriate CPT and ICD-10 codes (Z12.11 for screening).\n3. Be prepared to provide additional clinical documentation upon request.\n\n#### Common Denial Reasons\n- Lack of prior authorization\n- Failure to meet plan-specific age or frequency guidelines\n- Incorrect coding\n- Insufficient documentation of medical necessity\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Various Private Insurers | Varies | Coverage and prior authorization rules differ significantly by plan. Always check individual policy details. |\n\n#### Reimbursement Note\nWhile ACA mandates coverage without cost-sharing for preventive screening, if a screening colonoscopy becomes diagnostic, patient cost-sharing may apply. Reimbursement rates are negotiated between providers and insurers.\n\n#### Authorization Tips\n- Always verify patient benefits and prior authorization requirements with each private insurer.\n- Clearly document the intent of the procedure (screening vs. diagnostic).\n- Appeal denials with comprehensive clinical documentation.\n",
+      "tables": [
+        {
+          "name": "CPT Procedure Codes",
+          "header": ["Code", "Description", "Device/Access", "RVU", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            ["45378", "Colonoscopy, flexible; diagnostic, including collection of specimen(s) by brushing or washing, when performed (separate procedure)", "Flexible colonoscope / Rectal", "3.18", "Visual examination of the entire colon, from rectum to cecum; Collection of specimens by brushing or washing, if performed", "Used for diagnostic purposes or when screening colonoscopy converts to diagnostic due to findings."],
+            ["45380", "Colonoscopy, flexible; with biopsy, single or multiple", "Flexible colonoscope with biopsy forceps / Rectal", "3.47", "Visual examination of the entire colon, from rectum to cecum; Biopsy of single or multiple lesions", "Report when tissue sampling is performed during a colonoscopy."],
+            ["45385", "Colonoscopy, flexible; with removal of tumor(s), polyp(s), or other lesion(s) by snare technique", "Flexible colonoscope with snare / Rectal", "4.46", "Visual examination of the entire colon, from rectum to cecum; Removal of polyps or lesions by snare technique", "Used when polyps or lesions are removed during the procedure."],
+            ["81528", "Oncology (colorectal) screening, quantitative real-time target and signal amplification of 10 DNA markers (KRAS mutations, promoter methylation of NDRG4 and BMP3, and fecal hemoglobin) with algorithmic analysis, for colorectal cancer", "Stool sample analysis (Cologuard) / Non-invasive stool collection", "N/A", "Analysis of 10 DNA markers and fecal hemoglobin; Algorithmic analysis for colorectal cancer risk", "Non-invasive screening test for average-risk individuals, typically every 3 years."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required (Primary)"],
+          "rows": [
+            ["Z12.11", "Encounter for screening for malignant neoplasm of colon", "Primary code for routine colorectal cancer screening in asymptomatic individuals.", "Yes"],
+            ["Z80.0", "Family history of malignant neoplasm of digestive organs", "Use if there is a family history of colorectal cancer, indicating increased risk.", "No"],
+            ["K63.5", "Polyp of colon", "Use if a polyp is found during screening and requires follow-up or removal.", "No"],
+            ["R19.5", "Other fecal abnormalities", "May be used for positive FIT/FOBT results prior to colonoscopy.", "No"]
+          ]
+        },
+        {
+          "name": "Medicare — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS", "Covered", "National Coverage Determination (NCD) for Colorectal Cancer Screening."]
+          ]
+        },
+        {
+          "name": "Medicaid — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., NC Medicaid)", "Covered", "Covers Cologuard (CPT 81528) for average-risk individuals aged 45-85 every 3 years."]
+          ]
+        },
+        {
+          "name": "Private Insurance — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Various Private Insurers", "Varies", "Coverage and prior authorization rules differ significantly by plan. Always check individual policy details."]
+          ]
+        }
+      ]
+    }
+  }
+}

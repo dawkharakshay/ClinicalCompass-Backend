@@ -1,0 +1,30 @@
+{
+  "title": "Cerebral Cavernous Malformation Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "61510, 77371",
+      "credentials": "[Credentials]",
+      "icd_codes": "Q28.3, I67.89, G40.909, R29.898",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — Cerebral Cavernous Malformation Treatment (Surgery / Stereotactic Radiosurgery / Observation)\nCPT Code(s): 61510, 61512, 61518, 77371, 77372\nICD-10 Code(s): D18.02, Q28.3\nDear Medical Director / Utilization Review Committee,\n\nThis letter serves as an appeal for coverage of Cerebral Cavernous Malformation Treatment for our patient. Based on a comprehensive evaluation, the recommended treatment is medically necessary and aligns with established clinical guidelines.\n\nClinical Summary:\nPatient presents with a cerebral cavernous malformation. The primary recommendation is N/A. The surgical indication is N/A. The patient is considered a surgical candidate: No, and an SRS candidate: No. Observation is appropriate: No. The estimated bleed risk is N/A.\n\nGuideline Support:\n1. AANS/CNS Guidelines on Cavernous Malformations 2017: Surgical resection is indicated for symptomatic, accessible CCMs.\n2. AHA/ASA Scientific Statement on Cavernous Malformations 2017: Management strategies include observation, surgical resection, and stereotactic radiosurgery.\n3. ISRS Radiosurgery Practice Guidelines 2022: Stereotactic radiosurgery may be considered for select inoperable CCMs.\n4. Evidence suggests that rebleeding risk is significant for certain CCMs, necessitating intervention.\n5. Clinical presentation, such as seizures or focal neurological deficits, often dictates the need for active treatment.\n6. Observation is appropriate for asymptomatic CCMs without high-risk features.\n7. The decision for intervention is individualized based on patient symptoms, lesion characteristics, and bleeding history.\n\nMedical Necessity Statement:\nThe proposed Cerebral Cavernous Malformation Treatment is medically necessary given the patient's clinical presentation and the high risk of neurological deterioration without intervention. The rationale for this recommendation is: N/A. This recommendation is supported by an evidence level of N/A from N/A.\n\nRisk Without Treatment:\nWithout the recommended treatment, the patient faces significant risks including recurrent hemorrhage, progressive neurological deficits, and diminished quality of life. The potential for severe and irreversible complications underscores the urgency and medical necessity of the proposed intervention.\n\nRequested Action:\nWe request immediate approval for Cerebral Cavernous Malformation Treatment. The next steps in the patient's care plan are: N/A. Please contact my office if additional information is required.\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

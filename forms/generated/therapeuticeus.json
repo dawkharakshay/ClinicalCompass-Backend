@@ -1,0 +1,303 @@
+{
+  "title": "Therapeutic EUS Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "therapeuticeus",
+    "hiddenDefaults": {
+      "hasPancreaticDuctStricture": false,
+      "hasPancreaticFistula": false,
+      "pdDiameterMm": null,
+      "plateletCount": null
+    },
+    "steps": [
+      {
+        "id": "indication-anatomy",
+        "shortLabel": "Indication & Anatomy",
+        "title": "Indication & Anatomy",
+        "fields": [
+          {
+            "id": "indication",
+            "name": "indication",
+            "label": "Indication for EUS-BD",
+            "type": "select",
+            "defaultValue": "ercp_failure",
+            "options": [
+              { "label": "Failed ERCP", "value": "ercp_failure" },
+              { "label": "Altered Anatomy (Roux-en-Y, Whipple)", "value": "altered_anatomy" },
+              { "label": "Malignant Biliary Obstruction", "value": "malignant_biliary_obstruction" },
+              { "label": "Benign Biliary Stricture", "value": "benign_biliary_stricture" },
+              { "label": "Choledocholithiasis — ERCP Failed", "value": "choledocholithiasis_ercp_failed" },
+              { "label": "Gallbladder Drainage (acute cholecystitis)", "value": "gallbladder_drainage" }
+            ]
+          },
+          {
+            "id": "erp-failure-reason",
+            "name": "erpFailureReason",
+            "label": "ERCP Failure Reason",
+            "type": "select",
+            "defaultValue": "failed_cannulation",
+            "options": [
+              { "label": "Failed Cannulation", "value": "failed_cannulation" },
+              { "label": "Failed Stone Clearance", "value": "failed_stone_clearance" },
+              { "label": "Altered Anatomy — Cannot Reach Papilla", "value": "altered_anatomy_access" },
+              { "label": "Duodenal Obstruction (tumor)", "value": "duodenal_obstruction" },
+              { "label": "Not Attempted (EUS-BD first-line)", "value": "not_attempted" }
+            ]
+          },
+          {
+            "id": "obstruction-level",
+            "name": "obstructionLevel",
+            "label": "Obstruction Level",
+            "type": "select",
+            "defaultValue": "distal_cbd",
+            "options": [
+              { "label": "Distal CBD (pancreatic head)", "value": "distal_cbd" },
+              { "label": "Mid CBD", "value": "mid_cbd" },
+              { "label": "Hilar (Klatskin)", "value": "hilar" },
+              { "label": "Intrahepatic", "value": "intrahepatic" },
+              { "label": "Cystic Duct (gallbladder)", "value": "cystic_duct" }
+            ]
+          },
+          {
+            "id": "cbd-diameter-mm",
+            "name": "cbdDiameterMm",
+            "label": "CBD Diameter (mm)",
+            "type": "number",
+            "keyboardType": "decimal",
+            "unit": "mm"
+          },
+          {
+            "id": "has-altered-anatomy",
+            "name": "hasAlteredAnatomy",
+            "label": "Altered Anatomy (Roux-en-Y, Whipple, Billroth II)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "altered-anatomy-type",
+            "name": "alteredAnatomyType",
+            "label": "Altered Anatomy Type",
+            "type": "select",
+            "defaultValue": "roux_en_y",
+            "visibleWhen": { "field": "hasAlteredAnatomy", "op": "truthy" },
+            "options": [
+              { "label": "Roux-en-Y Gastric Bypass", "value": "roux_en_y" },
+              { "label": "Whipple (Pancreaticoduodenectomy)", "value": "whipple" },
+              { "label": "Billroth II", "value": "billroth_ii" },
+              { "label": "Sleeve Gastrectomy", "value": "gastric_bypass" },
+              { "label": "Other", "value": "other" }
+            ]
+          },
+          {
+            "id": "has-intrahepatic-dilation",
+            "name": "hasIntrahepticDilation",
+            "label": "Intrahepatic Ductal Dilation",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-ascites",
+            "name": "hasAscites",
+            "label": "Ascites (relative contraindication for EUS-HGS)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-pancreatic-duct-dilation",
+            "name": "hasPancreaticDuctDilation",
+            "label": "Pancreatic Duct Dilation",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-disconnected-pancreatic-duct-syndrome",
+            "name": "hasDisconnectedPancreaticDuctSyndrome",
+            "label": "Disconnected Pancreatic Duct Syndrome",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "malignancy-gallbladder",
+        "shortLabel": "Malignancy & Gallbladder",
+        "title": "Malignancy & Gallbladder",
+        "fields": [
+          {
+            "id": "has-malignant-obstruction",
+            "name": "hasMalignantObstruction",
+            "label": "Malignant Obstruction",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "malignancy-type",
+            "name": "malignancyType",
+            "label": "Malignancy Type",
+            "type": "select",
+            "defaultValue": "pancreatic_cancer",
+            "visibleWhen": { "field": "hasMalignantObstruction", "op": "truthy" },
+            "options": [
+              { "label": "Pancreatic Adenocarcinoma", "value": "pancreatic_cancer" },
+              { "label": "Cholangiocarcinoma", "value": "cholangiocarcinoma" },
+              { "label": "Ampullary Cancer", "value": "ampullary" },
+              { "label": "Gallbladder Cancer", "value": "gallbladder" },
+              { "label": "Metastatic (other primary)", "value": "metastatic" },
+              { "label": "Other", "value": "other" }
+            ]
+          },
+          {
+            "id": "is-resectable",
+            "name": "isResectable",
+            "label": "Resectable",
+            "type": "switch",
+            "defaultValue": false,
+            "visibleWhen": { "field": "hasMalignantObstruction", "op": "truthy" }
+          },
+          {
+            "id": "expected-survival-months",
+            "name": "expectedSurvivalMonths",
+            "label": "Expected Survival (months)",
+            "type": "number",
+            "keyboardType": "decimal",
+            "unit": "months",
+            "visibleWhen": { "field": "hasMalignantObstruction", "op": "truthy" }
+          },
+          {
+            "id": "has-acute-cholecystitis",
+            "name": "hasAcuteCholecystitis",
+            "label": "Acute Cholecystitis",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "is-surgical-high-risk",
+            "name": "isSurgicalHighRisk",
+            "label": "High Surgical Risk (frail, comorbid)",
+            "type": "switch",
+            "defaultValue": false,
+            "visibleWhen": { "field": "hasAcuteCholecystitis", "op": "truthy" }
+          },
+          {
+            "id": "has-cystic-duct-obstruction",
+            "name": "hasCysticDuctObstruction",
+            "label": "Cystic Duct Obstruction",
+            "type": "switch",
+            "defaultValue": false,
+            "visibleWhen": { "field": "hasAcuteCholecystitis", "op": "truthy" }
+          },
+          {
+            "id": "gallbladder-accessible-by-eus",
+            "name": "gallbladderAccessibleByEUS",
+            "label": "Gallbladder Accessible by EUS",
+            "type": "switch",
+            "defaultValue": false,
+            "visibleWhen": { "field": "hasAcuteCholecystitis", "op": "truthy" }
+          },
+          {
+            "id": "has-prior-biliary-stent",
+            "name": "hasPriorBiliaryStent",
+            "label": "Prior Biliary Stent",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-stent-type",
+            "name": "priorStentType",
+            "label": "Prior Stent Type",
+            "type": "select",
+            "defaultValue": "plastic",
+            "visibleWhen": { "field": "hasPriorBiliaryStent", "op": "truthy" },
+            "options": [
+              { "label": "Plastic Stent", "value": "plastic" },
+              { "label": "SEMS — Covered", "value": "sems_covered" },
+              { "label": "SEMS — Uncovered", "value": "sems_uncovered" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "patient-factors",
+        "shortLabel": "Patient Factors & Prior Interventions",
+        "title": "Patient Factors & Prior Interventions",
+        "fields": [
+          {
+            "id": "age-years",
+            "name": "ageYears",
+            "label": "Age (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal",
+            "unit": "years"
+          },
+          {
+            "id": "performance-status",
+            "name": "performanceStatus",
+            "label": "Performance Status",
+            "type": "select",
+            "defaultValue": "good",
+            "options": [
+              { "label": "Good (ECOG 0–1)", "value": "good" },
+              { "label": "Moderate (ECOG 2)", "value": "moderate" },
+              { "label": "Poor (ECOG 3–4)", "value": "poor" }
+            ]
+          },
+          {
+            "id": "has-coagulopathy",
+            "name": "hasCoagulopathy",
+            "label": "Coagulopathy",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "inr-value",
+            "name": "inrValue",
+            "label": "INR Value",
+            "type": "number",
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "hasCoagulopathy", "op": "truthy" }
+          },
+          {
+            "id": "is-on-anticoagulation",
+            "name": "isOnAnticoagulation",
+            "label": "On Anticoagulation",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-prior-ercp",
+            "name": "hasPriorERCP",
+            "label": "Prior ERCP Attempted",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "number-of-prior-ercp-attempts",
+            "name": "numberOfPriorERCPAttempts",
+            "label": "Number of Prior ERCP Attempts",
+            "type": "number",
+            "defaultValue": 1,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "hasPriorERCP", "op": "truthy" }
+          },
+          {
+            "id": "has-prior-eusbd",
+            "name": "hasPriorEUSBD",
+            "label": "Prior EUS-BD Performed",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-prior-percutaneous-drainage",
+            "name": "hasPriorPercutaneousDrainage",
+            "label": "Prior Percutaneous Drainage",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

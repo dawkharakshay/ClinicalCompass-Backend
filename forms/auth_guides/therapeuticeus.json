@@ -1,0 +1,376 @@
+{
+  "title": "Therapeutic EUS Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "TherapeuticEUSAuthGuide.tsx",
+    "title": "TherapeuticEUS Clinical Compass",
+    "subtitle": "Therapeutic EUS Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "43231",
+        "description": "Esophagoscopy, flexible, transoral; with endoscopic ultrasound examination",
+        "device": "Endoscope with ultrasound transducer",
+        "access": "Transoral",
+        "rvu": "3.00",
+        "includes": ["Endoscopic ultrasound examination of the esophagus"],
+        "note": "Used for diagnostic purposes or initial staging."
+      },
+      {
+        "code": "43240",
+        "description": "Esophagogastroduodenoscopy, flexible, transoral; with transmural drainage of pseudocyst(s) (includes placement of transmural drainage catheter(s)/stent(s), when performed, and endoscopic ultrasound examination, when performed)",
+        "device": "Endoscope with drainage catheter/stent",
+        "access": "Transoral",
+        "rvu": "6.50",
+        "includes": ["Endoscopic ultrasound examination", "Placement of drainage catheter/stent"],
+        "note": "Therapeutic procedure for pseudocyst drainage."
+      },
+      {
+        "code": "43242",
+        "description": "Esophagogastroduodenoscopy, flexible, transoral; with transendoscopic ultrasound-guided intramural or transmural fine needle aspiration/biopsy(s) (includes endoscopic ultrasound examination of the esophagus, stomach, and either the duodenum or a surgically altered stomach)",
+        "device": "Endoscope with FNA/biopsy needle",
+        "access": "Transoral",
+        "rvu": "5.80",
+        "includes": ["Endoscopic ultrasound examination", "Fine needle aspiration/biopsy"],
+        "note": "Used for tissue sampling of lesions or masses."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "K86.1",
+        "description": "Other chronic pancreatitis",
+        "notes": "Includes chronic pancreatitis NOS, infectious chronic pancreatitis, recurrent chronic pancreatitis, relapsing chronic pancreatitis.",
+        "required": true
+      },
+      {
+        "code": "K85.00",
+        "description": "Idiopathic acute pancreatitis without necrosis or infection",
+        "notes": "Acute inflammatory process of the pancreas without necrosis or infection, cause unknown.",
+        "required": false
+      },
+      {
+        "code": "K85.10",
+        "description": "Biliary acute pancreatitis without necrosis or infection",
+        "notes": "Acute inflammatory process of the pancreas due to gallstones, without necrosis or infection.",
+        "required": false
+      },
+      {
+        "code": "K85.20",
+        "description": "Alcohol induced acute pancreatitis without necrosis or infection",
+        "notes": "Acute inflammatory process of the pancreas due to alcohol, without necrosis or infection.",
+        "required": false
+      },
+      {
+        "code": "K85.30",
+        "description": "Drug induced acute pancreatitis without necrosis or infection",
+        "notes": "Acute inflammatory process of the pancreas due to drugs, without necrosis or infection.",
+        "required": false
+      },
+      {
+        "code": "K85.80",
+        "description": "Other acute pancreatitis without necrosis or infection",
+        "notes": "Acute inflammatory process of the pancreas due to other specified causes, without necrosis or infection.",
+        "required": false
+      },
+      {
+        "code": "K85.90",
+        "description": "Acute pancreatitis without necrosis or infection, unspecified",
+        "notes": "Acute inflammatory process of the pancreas, unspecified cause, without necrosis or infection.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with medical necessity",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is generally required for therapeutic EUS procedures, especially for complex interventions like pseudocyst drainage or FNA of certain lesions. Documentation must clearly support medical necessity.",
+        "overview": "Medicare covers medically necessary therapeutic EUS procedures. Coverage often depends on specific indications and appropriate documentation of failed conservative management or diagnostic findings.",
+        "reimbursementNote": "Reimbursement for therapeutic EUS procedures is generally good when medical necessity is clearly established and all coding guidelines are followed. Specific payment rates vary by geographic location and facility type.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Pseudocyst Drainage",
+            "items": [
+              "Symptomatic pseudocyst (e.g., pain, obstruction, infection).",
+              "Pseudocyst size > 6 cm or rapidly enlarging.",
+              "Failure of conservative management for at least 4-6 weeks.",
+              "Absence of spontaneous resolution.",
+              "EUS-guided drainage is technically feasible and safe."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: FNA/Biopsy",
+            "items": [
+              "Presence of a suspicious lesion (e.g., pancreatic mass, lymphadenopathy) identified by other imaging modalities (CT, MRI).",
+              "Need for tissue diagnosis for staging or treatment planning.",
+              "EUS-guided FNA/biopsy is the least invasive and most accurate method to obtain tissue."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Celiac Plexus Block/Neurolysis",
+            "items": [
+              "Severe, intractable abdominal pain due to chronic pancreatitis or pancreatic cancer.",
+              "Failure of conventional pain management.",
+              "EUS-guided approach is indicated for precise delivery of neurolytic agents."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Notes",
+            "items": [
+              "Detailed history and physical examination.",
+              "Documentation of symptoms and their duration.",
+              "Prior treatment attempts and their outcomes."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Imaging Reports",
+            "items": [
+              "CT, MRI, or prior EUS reports demonstrating the lesion or pseudocyst.",
+              "Size, location, and characteristics of the lesion/pseudocyst."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Pathology/Cytology Reports",
+            "items": [
+              "If applicable, previous biopsy results."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request with clinical documentation.",
+              "Ensure all CPT and ICD-10 codes are accurately linked to medical necessity.",
+              "Follow up with Medicare for approval status."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity.",
+              "Insufficient clinical information to support the procedure.",
+              "Failure to obtain prior authorization.",
+              "Procedure considered experimental or investigational for the given indication."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Clearly document the rationale for therapeutic EUS, including failed conservative treatments.",
+              "Provide detailed imaging reports and clinical findings.",
+              "Verify Medicare local coverage determinations (LCDs) for specific requirements."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicare National", "status": "Covered", "notes": "General coverage for medically necessary EUS procedures." },
+          { "payer": "Medicare LCD (varies by MAC)", "status": "Covered with specific criteria", "notes": "Local policies may have additional requirements for specific indications." }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered with prior authorization",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid programs typically require prior authorization for all advanced endoscopic procedures, including therapeutic EUS. Criteria can vary significantly by state.",
+        "overview": "Medicaid coverage for therapeutic EUS is state-specific and usually requires strict adherence to medical necessity criteria and prior authorization processes.",
+        "reimbursementNote": "Medicaid reimbursement rates are generally lower than Medicare or private insurance. Timely and accurate submission is crucial for payment.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General",
+            "items": [
+              "Procedure must be medically necessary and appropriate for the patient's condition.",
+              "Documentation of conservative treatment failure or clear diagnostic indication.",
+              "EUS is considered the most appropriate and effective treatment option."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Records",
+            "items": [
+              "Physician orders and progress notes.",
+              "Results of diagnostic tests (e.g., labs, imaging).",
+              "Consultation reports from specialists."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization Form",
+            "items": [
+              "Completed state-specific prior authorization form.",
+              "Supporting clinical documentation attached."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Check state-specific Medicaid guidelines for prior authorization.",
+              "Submit comprehensive documentation supporting medical necessity.",
+              "Anticipate potential delays due to review processes."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization.",
+              "Failure to meet state-specific coverage criteria.",
+              "Incomplete or insufficient documentation.",
+              "Procedure deemed not medically necessary by state review board."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state's Medicaid manual for endoscopic procedures.",
+              "Ensure all documentation is thorough and clearly justifies the procedure.",
+              "Consider peer-to-peer review if initial authorization is denied."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "State Medicaid (e.g., California Medi-Cal)", "status": "Covered with PA", "notes": "Specific guidelines and forms apply; often requires detailed justification." }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Varies by plan, typically covered with PA",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for therapeutic EUS procedures. Coverage criteria can vary widely between plans and payers.",
+        "overview": "Private insurance coverage for therapeutic EUS depends on the individual's plan benefits, medical necessity, and adherence to the insurer's specific policies and prior authorization requirements.",
+        "reimbursementNote": "Reimbursement rates vary significantly by private payer and negotiated contracts. Out-of-network benefits may apply if the provider is not contracted.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Medical Necessity",
+            "items": [
+              "Diagnosis requiring therapeutic EUS.",
+              "Procedure is proven safe and effective for the condition.",
+              "Less invasive or conservative treatments have failed or are contraindicated."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Specific Indications",
+            "items": [
+              "As per FDA approval and established medical literature for pseudocyst drainage, FNA, or celiac plexus block."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Physician's Order",
+            "items": [
+              "Clearly stating the therapeutic EUS procedure and indication."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Summary",
+            "items": [
+              "Patient's medical history, physical exam, and relevant diagnostic findings.",
+              "Rationale for therapeutic EUS over other treatment options."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization Request",
+            "items": [
+              "Completed insurer-specific prior authorization form.",
+              "Supporting clinical documentation."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Contact the patient's insurance provider to verify benefits and prior authorization requirements.",
+              "Submit all required documentation through the insurer's portal or fax.",
+              "Track the authorization status and appeal if necessary."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization.",
+              "Procedure considered experimental or investigational.",
+              "Not meeting specific plan's medical necessity criteria.",
+              "Inadequate documentation to support the request."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify benefits and obtain prior authorization before scheduling the procedure.",
+              "Maintain detailed records of all communications with the insurance company.",
+              "Be prepared to provide peer-to-peer review if authorization is initially denied."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Aetna", "status": "Covered with PA", "notes": "Requires clinical documentation supporting medical necessity as per their EUS policy." },
+          { "payer": "UnitedHealthcare", "status": "Covered with PA", "notes": "Specific criteria for therapeutic EUS, often requiring advanced imaging and specialist consultation." },
+          { "payer": "Blue Cross Blue Shield", "status": "Varies by plan", "notes": "Coverage depends on the specific BCBS plan and local medical policies." }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment (navigation button linking to /therapeuticeus)",
+        "href": "/therapeuticeus"
+      },
+      {
+        "heading": "Procedure Codes — note",
+        "kind": "prose",
+        "text": "Each CPT code lists items 'Included in this code (do NOT bill separately)'."
+      },
+      {
+        "heading": "ICD-10 Diagnosis Codes — note",
+        "kind": "prose",
+        "text": "K86.1 (Other chronic pancreatitis) is marked as required/Primary. All other listed ICD-10 codes are non-required."
+      }
+    ],
+    "raw": {
+      "markdown": "# TherapeuticEUS Clinical Compass\n## Therapeutic EUS Insurance Authorization Guide\n\n[Button] Back to Assessment (links to /therapeuticeus)\n\n## Procedure Codes (CPT)\n\n### CPT 43231 — RVU 3.00\nEsophagoscopy, flexible, transoral; with endoscopic ultrasound examination\nDevice/Access: Endoscope with ultrasound transducer (Transoral)\nIncluded in this code (do NOT bill separately):\n- Endoscopic ultrasound examination of the esophagus\nNote: Used for diagnostic purposes or initial staging.\n\n### CPT 43240 — RVU 6.50\nEsophagogastroduodenoscopy, flexible, transoral; with transmural drainage of pseudocyst(s) (includes placement of transmural drainage catheter(s)/stent(s), when performed, and endoscopic ultrasound examination, when performed)\nDevice/Access: Endoscope with drainage catheter/stent (Transoral)\nIncluded in this code (do NOT bill separately):\n- Endoscopic ultrasound examination\n- Placement of drainage catheter/stent\nNote: Therapeutic procedure for pseudocyst drainage.\n\n### CPT 43242 — RVU 5.80\nEsophagogastroduodenoscopy, flexible, transoral; with transendoscopic ultrasound-guided intramural or transmural fine needle aspiration/biopsy(s) (includes endoscopic ultrasound examination of the esophagus, stomach, and either the duodenum or a surgically altered stomach)\nDevice/Access: Endoscope with FNA/biopsy needle (Transoral)\nIncluded in this code (do NOT bill separately):\n- Endoscopic ultrasound examination\n- Fine needle aspiration/biopsy\nNote: Used for tissue sampling of lesions or masses.\n\n## ICD-10 Diagnosis Codes\n\n- K86.1 (Primary/Required) — Other chronic pancreatitis. Includes chronic pancreatitis NOS, infectious chronic pancreatitis, recurrent chronic pancreatitis, relapsing chronic pancreatitis.\n- K85.00 — Idiopathic acute pancreatitis without necrosis or infection. Acute inflammatory process of the pancreas without necrosis or infection, cause unknown.\n- K85.10 — Biliary acute pancreatitis without necrosis or infection. Acute inflammatory process of the pancreas due to gallstones, without necrosis or infection.\n- K85.20 — Alcohol induced acute pancreatitis without necrosis or infection. Acute inflammatory process of the pancreas due to alcohol, without necrosis or infection.\n- K85.30 — Drug induced acute pancreatitis without necrosis or infection. Acute inflammatory process of the pancreas due to drugs, without necrosis or infection.\n- K85.80 — Other acute pancreatitis without necrosis or infection. Acute inflammatory process of the pancreas due to other specified causes, without necrosis or infection.\n- K85.90 — Acute pancreatitis without necrosis or infection, unspecified. Acute inflammatory process of the pancreas, unspecified cause, without necrosis or infection.\n\n## Payer-Specific Authorization Requirements\n\n### Medicare\nStatus: Prior Auth Required | Covered with medical necessity\nPrior Auth Note: Prior authorization is generally required for therapeutic EUS procedures, especially for complex interventions like pseudocyst drainage or FNA of certain lesions. Documentation must clearly support medical necessity.\nOverview: Medicare covers medically necessary therapeutic EUS procedures. Coverage often depends on specific indications and appropriate documentation of failed conservative management or diagnostic findings.\n\n#### Coverage Criteria\n**Pseudocyst Drainage**\n- Symptomatic pseudocyst (e.g., pain, obstruction, infection).\n- Pseudocyst size > 6 cm or rapidly enlarging.\n- Failure of conservative management for at least 4-6 weeks.\n- Absence of spontaneous resolution.\n- EUS-guided drainage is technically feasible and safe.\n**FNA/Biopsy**\n- Presence of a suspicious lesion (e.g., pancreatic mass, lymphadenopathy) identified by other imaging modalities (CT, MRI).\n- Need for tissue diagnosis for staging or treatment planning.\n- EUS-guided FNA/biopsy is the least invasive and most accurate method to obtain tissue.\n**Celiac Plexus Block/Neurolysis**\n- Severe, intractable abdominal pain due to chronic pancreatitis or pancreatic cancer.\n- Failure of conventional pain management.\n- EUS-guided approach is indicated for precise delivery of neurolytic agents.\n\n#### Required Documentation\n**Clinical Notes**\n- Detailed history and physical examination.\n- Documentation of symptoms and their duration.\n- Prior treatment attempts and their outcomes.\n**Imaging Reports**\n- CT, MRI, or prior EUS reports demonstrating the lesion or pseudocyst.\n- Size, location, and characteristics of the lesion/pseudocyst.\n**Pathology/Cytology Reports**\n- If applicable, previous biopsy results.\n\n#### Submission Process\n1. Submit prior authorization request with clinical documentation.\n2. Ensure all CPT and ICD-10 codes are accurately linked to medical necessity.\n3. Follow up with Medicare for approval status.\n\n#### Common Denial Reasons\n- Lack of documented medical necessity.\n- Insufficient clinical information to support the procedure.\n- Failure to obtain prior authorization.\n- Procedure considered experimental or investigational for the given indication.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicare National | Covered | General coverage for medically necessary EUS procedures. |\n| Medicare LCD (varies by MAC) | Covered with specific criteria | Local policies may have additional requirements for specific indications. |\n\n#### Reimbursement Note\nReimbursement for therapeutic EUS procedures is generally good when medical necessity is clearly established and all coding guidelines are followed. Specific payment rates vary by geographic location and facility type.\n\n#### Authorization Tips\n- Clearly document the rationale for therapeutic EUS, including failed conservative treatments.\n- Provide detailed imaging reports and clinical findings.\n- Verify Medicare local coverage determinations (LCDs) for specific requirements.\n\n### Medicaid\nStatus: Prior Auth Required | Covered with prior authorization\nPrior Auth Note: Medicaid programs typically require prior authorization for all advanced endoscopic procedures, including therapeutic EUS. Criteria can vary significantly by state.\nOverview: Medicaid coverage for therapeutic EUS is state-specific and usually requires strict adherence to medical necessity criteria and prior authorization processes.\n\n#### Coverage Criteria\n**General**\n- Procedure must be medically necessary and appropriate for the patient's condition.\n- Documentation of conservative treatment failure or clear diagnostic indication.\n- EUS is considered the most appropriate and effective treatment option.\n\n#### Required Documentation\n**Clinical Records**\n- Physician orders and progress notes.\n- Results of diagnostic tests (e.g., labs, imaging).\n- Consultation reports from specialists.\n**Prior Authorization Form**\n- Completed state-specific prior authorization form.\n- Supporting clinical documentation attached.\n\n#### Submission Process\n1. Check state-specific Medicaid guidelines for prior authorization.\n2. Submit comprehensive documentation supporting medical necessity.\n3. Anticipate potential delays due to review processes.\n\n#### Common Denial Reasons\n- Lack of prior authorization.\n- Failure to meet state-specific coverage criteria.\n- Incomplete or insufficient documentation.\n- Procedure deemed not medically necessary by state review board.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (e.g., California Medi-Cal) | Covered with PA | Specific guidelines and forms apply; often requires detailed justification. |\n\n#### Reimbursement Note\nMedicaid reimbursement rates are generally lower than Medicare or private insurance. Timely and accurate submission is crucial for payment.\n\n#### Authorization Tips\n- Familiarize yourself with your state's Medicaid manual for endoscopic procedures.\n- Ensure all documentation is thorough and clearly justifies the procedure.\n- Consider peer-to-peer review if initial authorization is denied.\n\n### Private Insurance\nStatus: Prior Auth Required | Varies by plan, typically covered with PA\nPrior Auth Note: Most private insurance plans require prior authorization for therapeutic EUS procedures. Coverage criteria can vary widely between plans and payers.\nOverview: Private insurance coverage for therapeutic EUS depends on the individual's plan benefits, medical necessity, and adherence to the insurer's specific policies and prior authorization requirements.\n\n#### Coverage Criteria\n**General Medical Necessity**\n- Diagnosis requiring therapeutic EUS.\n- Procedure is proven safe and effective for the condition.\n- Less invasive or conservative treatments have failed or are contraindicated.\n**Specific Indications**\n- As per FDA approval and established medical literature for pseudocyst drainage, FNA, or celiac plexus block.\n\n#### Required Documentation\n**Physician's Order**\n- Clearly stating the therapeutic EUS procedure and indication.\n**Clinical Summary**\n- Patient's medical history, physical exam, and relevant diagnostic findings.\n- Rationale for therapeutic EUS over other treatment options.\n**Prior Authorization Request**\n- Completed insurer-specific prior authorization form.\n- Supporting clinical documentation.\n\n#### Submission Process\n1. Contact the patient's insurance provider to verify benefits and prior authorization requirements.\n2. Submit all required documentation through the insurer's portal or fax.\n3. Track the authorization status and appeal if necessary.\n\n#### Common Denial Reasons\n- Lack of prior authorization.\n- Procedure considered experimental or investigational.\n- Not meeting specific plan's medical necessity criteria.\n- Inadequate documentation to support the request.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Aetna | Covered with PA | Requires clinical documentation supporting medical necessity as per their EUS policy. |\n| UnitedHealthcare | Covered with PA | Specific criteria for therapeutic EUS, often requiring advanced imaging and specialist consultation. |\n| Blue Cross Blue Shield | Varies by plan | Coverage depends on the specific BCBS plan and local medical policies. |\n\n#### Reimbursement Note\nReimbursement rates vary significantly by private payer and negotiated contracts. Out-of-network benefits may apply if the provider is not contracted.\n\n#### Authorization Tips\n- Always verify benefits and obtain prior authorization before scheduling the procedure.\n- Maintain detailed records of all communications with the insurance company.\n- Be prepared to provide peer-to-peer review if authorization is initially denied.\n",
+      "tables": [
+        {
+          "name": "CPT Procedure Codes",
+          "header": ["Code", "RVU", "Description", "Device/Access", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            ["43231", "3.00", "Esophagoscopy, flexible, transoral; with endoscopic ultrasound examination", "Endoscope with ultrasound transducer / Transoral", "Endoscopic ultrasound examination of the esophagus", "Used for diagnostic purposes or initial staging."],
+            ["43240", "6.50", "Esophagogastroduodenoscopy, flexible, transoral; with transmural drainage of pseudocyst(s) (includes placement of transmural drainage catheter(s)/stent(s), when performed, and endoscopic ultrasound examination, when performed)", "Endoscope with drainage catheter/stent / Transoral", "Endoscopic ultrasound examination; Placement of drainage catheter/stent", "Therapeutic procedure for pseudocyst drainage."],
+            ["43242", "5.80", "Esophagogastroduodenoscopy, flexible, transoral; with transendoscopic ultrasound-guided intramural or transmural fine needle aspiration/biopsy(s) (includes endoscopic ultrasound examination of the esophagus, stomach, and either the duodenum or a surgically altered stomach)", "Endoscope with FNA/biopsy needle / Transoral", "Endoscopic ultrasound examination; Fine needle aspiration/biopsy", "Used for tissue sampling of lesions or masses."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required (Primary)"],
+          "rows": [
+            ["K86.1", "Other chronic pancreatitis", "Includes chronic pancreatitis NOS, infectious chronic pancreatitis, recurrent chronic pancreatitis, relapsing chronic pancreatitis.", "Yes"],
+            ["K85.00", "Idiopathic acute pancreatitis without necrosis or infection", "Acute inflammatory process of the pancreas without necrosis or infection, cause unknown.", "No"],
+            ["K85.10", "Biliary acute pancreatitis without necrosis or infection", "Acute inflammatory process of the pancreas due to gallstones, without necrosis or infection.", "No"],
+            ["K85.20", "Alcohol induced acute pancreatitis without necrosis or infection", "Acute inflammatory process of the pancreas due to alcohol, without necrosis or infection.", "No"],
+            ["K85.30", "Drug induced acute pancreatitis without necrosis or infection", "Acute inflammatory process of the pancreas due to drugs, without necrosis or infection.", "No"],
+            ["K85.80", "Other acute pancreatitis without necrosis or infection", "Acute inflammatory process of the pancreas due to other specified causes, without necrosis or infection.", "No"],
+            ["K85.90", "Acute pancreatitis without necrosis or infection, unspecified", "Acute inflammatory process of the pancreas, unspecified cause, without necrosis or infection.", "No"]
+          ]
+        },
+        {
+          "name": "Medicare Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicare National", "Covered", "General coverage for medically necessary EUS procedures."],
+            ["Medicare LCD (varies by MAC)", "Covered with specific criteria", "Local policies may have additional requirements for specific indications."]
+          ]
+        },
+        {
+          "name": "Medicaid Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., California Medi-Cal)", "Covered with PA", "Specific guidelines and forms apply; often requires detailed justification."]
+          ]
+        },
+        {
+          "name": "Private Insurance Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Aetna", "Covered with PA", "Requires clinical documentation supporting medical necessity as per their EUS policy."],
+            ["UnitedHealthcare", "Covered with PA", "Specific criteria for therapeutic EUS, often requiring advanced imaging and specialist consultation."],
+            ["Blue Cross Blue Shield", "Varies by plan", "Coverage depends on the specific BCBS plan and local medical policies."]
+          ]
+        }
+      ]
+    }
+  }
+}

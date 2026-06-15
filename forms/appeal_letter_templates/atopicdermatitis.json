@@ -1,0 +1,30 @@
+{
+  "title": "Atopic Dermatitis Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "96372",
+      "credentials": "[Credentials]",
+      "icd_codes": "L20.84, L20.89, L20.9",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — Biologic Therapy / JAK Inhibitor Therapy for Moderate-to-Severe Atopic Dermatitis\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\nDear Medical Director / Utilization Review Committee,\n\nThis letter serves as an urgent appeal for coverage of advanced therapy for our patient, {{patient_name}}, who suffers from moderate-to-severe atopic dermatitis. Despite optimized conventional treatments, including the fact that topical therapy has not been optimized, the patient's condition remains uncontrolled, significantly impacting their quality of life.\n\nClinical Summary:\n{{patient_name}} presents with widespread, chronic, and debilitating atopic dermatitis, characterized by severe pruritus, erythema, lichenification, and excoriations. The patient has experienced multiple flares requiring systemic corticosteroids and has failed to achieve adequate disease control with topical therapies and other conventional systemic agents. The patient's Eczema Area and Severity Index (EASI) score is [EASI_SCORE] and Investigator Global Assessment (IGA) is [IGA_SCORE], indicating severe disease activity. The persistent symptoms have led to sleep disturbance, psychological distress, and impaired daily functioning.\n\nGuideline Support:\n1. AAD Clinical Practice Guidelines for Atopic Dermatitis 2023: These guidelines recommend systemic therapies, including biologics and JAK inhibitors, for patients with moderate-to-severe atopic dermatitis who have not responded to topical treatments.\n2. EADV Guidelines on Atopic Eczema 2022: These guidelines support the use of advanced systemic treatments when conventional therapies are insufficient.\n3. JTF Atopic Dermatitis Practice Parameter 2023: This parameter emphasizes the need for individualized treatment plans and the role of targeted therapies for patients with severe disease.\n4. FDA Prescribing Information for Dupilumab (Dupixent) 2023: Dupilumab is FDA-approved for the treatment of moderate-to-severe atopic dermatitis in adults and pediatric patients.\n\nMedical Necessity:\nGiven the patient's severe and refractory atopic dermatitis, the proposed  is medically necessary to achieve disease control, reduce symptom burden, and improve quality of life. The decision is supported by strong evidence and aligns with multiple clinical guidelines. The rationale for this treatment is due to persistent and severe symptoms impacting quality of life.\n\nRisk Without Treatment:\nWithout access to effective systemic therapy, {{patient_name}} is at high risk for continued disease progression, increased frequency and severity of flares, secondary infections, and significant psychosocial morbidity. Delaying or denying appropriate treatment will lead to further deterioration of the patient's health and increased healthcare utilization.\n\nRequested Action:\nWe respectfully request your approval for coverage of advanced therapy for {{patient_name}}. Please find attached supporting documentation, including clinical notes, laboratory results, and previous treatment failures. We are available to provide any additional information required for your review. The recommended next steps for this patient include further evaluation and treatment escalation.\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "title": "Gestational Carrier Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "GestationalCarrierAuthGuide.tsx",
+    "title": "Gestational Carrier — Authorization Guide",
+    "subtitle": "CPT Codes · ICD-10 · Payer Requirements",
+    "cptCodes": [
+      { "code": "58970", "description": "Follicle puncture for oocyte retrieval (intended mother)", "party": "Intended Mother" },
+      { "code": "58974", "description": "Embryo transfer, intrauterine (gestational carrier)", "party": "Carrier" },
+      { "code": "58976", "description": "Gamete, zygote, or embryo intrafallopian transfer", "party": "Carrier" },
+      { "code": "89250", "description": "Culture of oocyte(s)/embryo(s), less than 4 days", "party": "Lab" },
+      { "code": "89253", "description": "Assisted embryo hatching, microtechnique", "party": "Lab" },
+      { "code": "89280", "description": "Assisted oocyte fertilization (ICSI), microtechnique; ≤10 oocytes", "party": "Lab" },
+      { "code": "89337", "description": "Cryopreservation, mature oocyte(s)", "party": "Lab" },
+      { "code": "89352", "description": "Thawing of cryopreserved; oocyte(s)", "party": "Lab" },
+      { "code": "89353", "description": "Thawing of cryopreserved; embryo(s)", "party": "Lab" },
+      { "code": "76830", "description": "Ultrasound, transvaginal (carrier monitoring)", "party": "Carrier" }
+    ],
+    "icd10Codes": [
+      { "code": "Q51.0", "description": "Agenesis and aplasia of uterus (MRKH syndrome)" },
+      { "code": "Q51.810", "description": "Arcuate uterus" },
+      { "code": "N85.6", "description": "Intrauterine synechiae (Asherman syndrome)" },
+      { "code": "Z90.710", "description": "Acquired absence of uterus with remaining cervical stump" },
+      { "code": "Z90.711", "description": "Acquired absence of uterus with remaining cervical stump" },
+      { "code": "Z90.712", "description": "Acquired absence of both uterus and cervix" },
+      { "code": "N97.2", "description": "Female infertility of uterine origin" },
+      { "code": "Z31.83", "description": "Encounter for assisted reproductive fertility procedure cycle" }
+    ],
+    "payers": [],
+    "customSections": [
+      {
+        "heading": "Billing Note",
+        "kind": "prose",
+        "text": "Services for the intended mother (egg retrieval, stimulation) are billed under her insurance. Services for the gestational carrier (embryo transfer, monitoring) are billed under the carrier's insurance or self-pay. Confirm coverage for each party separately."
+      },
+      {
+        "heading": "Coverage Landscape — Coverage Reality",
+        "kind": "list",
+        "items": [
+          "Gestational carrier procedures are almost universally excluded from commercial insurance",
+          "Most plans explicitly exclude \"surrogacy\" in benefit language",
+          "Even in states with fertility mandates, gestational carrier is often excluded",
+          "Self-pay is the norm; average cost $50,000–$150,000 total"
+        ]
+      },
+      {
+        "heading": "Coverage Landscape — When Appeals May Succeed",
+        "kind": "list",
+        "items": [
+          "Absolute uterine factor (MRKH, surgical absence): strongest medical necessity argument",
+          "Medical contraindication to pregnancy (e.g., pulmonary hypertension, cardiac disease)",
+          "Some self-insured employer plans (ERISA) may cover gestational carrier",
+          "Intended mother's IVF services (egg retrieval, stimulation) may be covered separately"
+        ]
+      },
+      {
+        "heading": "Prior Authorization Requirements — Required Documentation",
+        "kind": "list",
+        "items": [
+          "Documentation of uterine factor (surgical report, imaging, pathology)",
+          "For MRKH: karyotype, pelvic MRI or ultrasound confirming uterine absence",
+          "For medical contraindication: specialist documentation (cardiology, pulmonology)",
+          "ASRM-compliant gestational carrier screening documentation",
+          "Legal agreement between intended parents and carrier",
+          "Letter of medical necessity from REI specialist",
+          "Separate authorization for intended mother's IVF services"
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# Gestational Carrier — Authorization Guide\n\n_CPT Codes · ICD-10 · Payer Requirements_\n\n(backHref: /gestational-carrier)\n\n## CPT Codes\n\n| CPT | Description | Party |\n| --- | --- | --- |\n| 58970 | Follicle puncture for oocyte retrieval (intended mother) | Intended Mother |\n| 58974 | Embryo transfer, intrauterine (gestational carrier) | Carrier |\n| 58976 | Gamete, zygote, or embryo intrafallopian transfer | Carrier |\n| 89250 | Culture of oocyte(s)/embryo(s), less than 4 days | Lab |\n| 89253 | Assisted embryo hatching, microtechnique | Lab |\n| 89280 | Assisted oocyte fertilization (ICSI), microtechnique; ≤10 oocytes | Lab |\n| 89337 | Cryopreservation, mature oocyte(s) | Lab |\n| 89352 | Thawing of cryopreserved; oocyte(s) | Lab |\n| 89353 | Thawing of cryopreserved; embryo(s) | Lab |\n| 76830 | Ultrasound, transvaginal (carrier monitoring) | Carrier |\n\n**Billing Note**\n\nServices for the intended mother (egg retrieval, stimulation) are billed under her insurance. Services for the gestational carrier (embryo transfer, monitoring) are billed under the carrier's insurance or self-pay. Confirm coverage for each party separately.\n\n## ICD-10 Diagnoses\n\n| ICD-10 | Description |\n| --- | --- |\n| Q51.0 | Agenesis and aplasia of uterus (MRKH syndrome) |\n| Q51.810 | Arcuate uterus |\n| N85.6 | Intrauterine synechiae (Asherman syndrome) |\n| Z90.710 | Acquired absence of uterus with remaining cervical stump |\n| Z90.711 | Acquired absence of uterus with remaining cervical stump |\n| Z90.712 | Acquired absence of both uterus and cervix |\n| N97.2 | Female infertility of uterine origin |\n| Z31.83 | Encounter for assisted reproductive fertility procedure cycle |\n\n## Coverage Landscape\n\n**Coverage Reality**\n\n- Gestational carrier procedures are almost universally excluded from commercial insurance\n- Most plans explicitly exclude \"surrogacy\" in benefit language\n- Even in states with fertility mandates, gestational carrier is often excluded\n- Self-pay is the norm; average cost $50,000–$150,000 total\n\n**When Appeals May Succeed**\n\n- Absolute uterine factor (MRKH, surgical absence): strongest medical necessity argument\n- Medical contraindication to pregnancy (e.g., pulmonary hypertension, cardiac disease)\n- Some self-insured employer plans (ERISA) may cover gestational carrier\n- Intended mother's IVF services (egg retrieval, stimulation) may be covered separately\n\n## Prior Authorization Requirements\n\n### Required Documentation\n\n- Documentation of uterine factor (surgical report, imaging, pathology)\n- For MRKH: karyotype, pelvic MRI or ultrasound confirming uterine absence\n- For medical contraindication: specialist documentation (cardiology, pulmonology)\n- ASRM-compliant gestational carrier screening documentation\n- Legal agreement between intended parents and carrier\n- Letter of medical necessity from REI specialist\n- Separate authorization for intended mother's IVF services\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["CPT", "Description", "Party"],
+          "rows": [
+            ["58970", "Follicle puncture for oocyte retrieval (intended mother)", "Intended Mother"],
+            ["58974", "Embryo transfer, intrauterine (gestational carrier)", "Carrier"],
+            ["58976", "Gamete, zygote, or embryo intrafallopian transfer", "Carrier"],
+            ["89250", "Culture of oocyte(s)/embryo(s), less than 4 days", "Lab"],
+            ["89253", "Assisted embryo hatching, microtechnique", "Lab"],
+            ["89280", "Assisted oocyte fertilization (ICSI), microtechnique; ≤10 oocytes", "Lab"],
+            ["89337", "Cryopreservation, mature oocyte(s)", "Lab"],
+            ["89352", "Thawing of cryopreserved; oocyte(s)", "Lab"],
+            ["89353", "Thawing of cryopreserved; embryo(s)", "Lab"],
+            ["76830", "Ultrasound, transvaginal (carrier monitoring)", "Carrier"]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnoses",
+          "header": ["ICD-10", "Description"],
+          "rows": [
+            ["Q51.0", "Agenesis and aplasia of uterus (MRKH syndrome)"],
+            ["Q51.810", "Arcuate uterus"],
+            ["N85.6", "Intrauterine synechiae (Asherman syndrome)"],
+            ["Z90.710", "Acquired absence of uterus with remaining cervical stump"],
+            ["Z90.711", "Acquired absence of uterus with remaining cervical stump"],
+            ["Z90.712", "Acquired absence of both uterus and cervix"],
+            ["N97.2", "Female infertility of uterine origin"],
+            ["Z31.83", "Encounter for assisted reproductive fertility procedure cycle"]
+          ]
+        }
+      ]
+    }
+  }
+}

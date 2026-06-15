@@ -1,0 +1,119 @@
+{
+  "title": "TESE / Micro-TESE Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "TESEAuthGuide.tsx",
+    "title": "TESE / Micro-TESE — Authorization Guide",
+    "subtitle": "CPT Codes · ICD-10 · Payer Requirements",
+    "cptCodes": [
+      { "code": "54500", "description": "Biopsy of testis, needle (separate procedure)", "type": "Diagnostic" },
+      { "code": "54505", "description": "Biopsy of testis, incisional (separate procedure)", "type": "Diagnostic/TESE" },
+      { "code": "54512", "description": "Excision of extraparenchymal lesion of testis", "type": "Surgical" },
+      { "code": "54520", "description": "Orchiectomy, simple (not used for TESE but related)", "type": "Related" },
+      { "code": "89264", "description": "Sperm identification from testis tissue, fresh or cryopreserved", "type": "Lab — sperm ID" },
+      { "code": "89337", "description": "Cryopreservation, sperm", "type": "Cryopreservation" },
+      { "code": "89352", "description": "Thawing of cryopreserved; sperm/semen", "type": "Thaw for IVF" },
+      { "code": "58321", "description": "Artificial insemination; intra-uterine", "type": "Related ART" }
+    ],
+    "icd10Codes": [
+      { "code": "N46.01", "description": "Organic azoospermia" },
+      { "code": "N46.021", "description": "Azoospermia due to obstructive causes" },
+      { "code": "N46.029", "description": "Azoospermia due to other obstructive causes" },
+      { "code": "N46.11", "description": "Organic oligospermia" },
+      { "code": "Q98.0", "description": "Klinefelter syndrome with karyotype 47,XXY" },
+      { "code": "Q98.4", "description": "Klinefelter syndrome, unspecified" },
+      { "code": "Q96.9", "description": "Turner syndrome, unspecified (female partner)" },
+      { "code": "Z31.41", "description": "Encounter for fertility testing" },
+      { "code": "Z31.81", "description": "Encounter for male factor infertility in female patient" },
+      { "code": "C62.90", "description": "Malignant neoplasm of testis, unspecified (oncofertility)" }
+    ],
+    "payers": [],
+    "customSections": [
+      {
+        "heading": "CPT Codes — Note",
+        "kind": "prose",
+        "text": "Note: Micro-TESE is typically billed as 54505 (incisional testis biopsy). Some payers recognize 54512. Always verify with individual payer policy."
+      },
+      {
+        "heading": "Coverage Landscape — Common Denial Reasons",
+        "kind": "list",
+        "items": [
+          "\"Infertility treatment\" blanket exclusion",
+          "\"Experimental\" claim for micro-TESE (incorrect — well-established since 1999)",
+          "Sperm cryopreservation (89337) denied as \"storage\"",
+          "Lab code 89264 denied as \"not medically necessary\""
+        ]
+      },
+      {
+        "heading": "Coverage Landscape — Strongest Coverage Arguments",
+        "kind": "list",
+        "items": [
+          "Azoospermia is a diagnosable medical condition (N46.01), not merely infertility",
+          "Micro-TESE is standard of care per AUA/ASRM — not experimental",
+          "Oncofertility: ASCO guidelines mandate fertility preservation counseling before gonadotoxic therapy",
+          "State infertility mandates cover diagnostic and surgical procedures",
+          "Klinefelter syndrome (Q98.0) is a chromosomal disorder — coverage may fall under genetic/chromosomal benefit"
+        ]
+      },
+      {
+        "heading": "Prior Authorization Requirements — Required Documentation",
+        "kind": "list",
+        "items": [
+          "≥2 semen analyses confirming azoospermia (performed ≥4 weeks apart)",
+          "Hormonal profile: FSH, LH, total testosterone, inhibin B",
+          "Scrotal ultrasound",
+          "Karyotype and Y-chromosome microdeletion analysis",
+          "CFTR mutation testing (if CBAVD suspected)",
+          "Testicular biopsy report (if available)",
+          "Letter of medical necessity from fellowship-trained urologist/andrologist",
+          "For oncofertility: oncology treatment plan documenting gonadotoxic therapy"
+        ]
+      },
+      {
+        "heading": "Prior Authorization Requirements — Medical Necessity Criteria",
+        "kind": "list",
+        "items": [
+          "Confirmed azoospermia on ≥2 semen analyses",
+          "Hormonal and genetic evaluation completed",
+          "No absolute contraindication (complete AZFa/AZFb deletion)",
+          "Microsurgical expertise available (fellowship-trained andrologist)",
+          "Female partner evaluation completed or oncofertility indication"
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# TESE / Micro-TESE — Authorization Guide\nSubtitle: CPT Codes · ICD-10 · Payer Requirements\nbackHref: /tese\n\n## CPT Codes\n\n| CPT | Description | Type |\n| --- | --- | --- |\n| 54500 | Biopsy of testis, needle (separate procedure) | Diagnostic |\n| 54505 | Biopsy of testis, incisional (separate procedure) | Diagnostic/TESE |\n| 54512 | Excision of extraparenchymal lesion of testis | Surgical |\n| 54520 | Orchiectomy, simple (not used for TESE but related) | Related |\n| 89264 | Sperm identification from testis tissue, fresh or cryopreserved | Lab — sperm ID |\n| 89337 | Cryopreservation, sperm | Cryopreservation |\n| 89352 | Thawing of cryopreserved; sperm/semen | Thaw for IVF |\n| 58321 | Artificial insemination; intra-uterine | Related ART |\n\nNote: Micro-TESE is typically billed as 54505 (incisional testis biopsy). Some payers recognize 54512. Always verify with individual payer policy.\n\n## ICD-10 Diagnoses\n\n| ICD-10 | Description |\n| --- | --- |\n| N46.01 | Organic azoospermia |\n| N46.021 | Azoospermia due to obstructive causes |\n| N46.029 | Azoospermia due to other obstructive causes |\n| N46.11 | Organic oligospermia |\n| Q98.0 | Klinefelter syndrome with karyotype 47,XXY |\n| Q98.4 | Klinefelter syndrome, unspecified |\n| Q96.9 | Turner syndrome, unspecified (female partner) |\n| Z31.41 | Encounter for fertility testing |\n| Z31.81 | Encounter for male factor infertility in female patient |\n| C62.90 | Malignant neoplasm of testis, unspecified (oncofertility) |\n\n## Coverage Landscape\n\n### Common Denial Reasons\n- \"Infertility treatment\" blanket exclusion\n- \"Experimental\" claim for micro-TESE (incorrect — well-established since 1999)\n- Sperm cryopreservation (89337) denied as \"storage\"\n- Lab code 89264 denied as \"not medically necessary\"\n\n### Strongest Coverage Arguments\n- Azoospermia is a diagnosable medical condition (N46.01), not merely infertility\n- Micro-TESE is standard of care per AUA/ASRM — not experimental\n- Oncofertility: ASCO guidelines mandate fertility preservation counseling before gonadotoxic therapy\n- State infertility mandates cover diagnostic and surgical procedures\n- Klinefelter syndrome (Q98.0) is a chromosomal disorder — coverage may fall under genetic/chromosomal benefit\n\n## Prior Authorization Requirements\n\n### Required Documentation\n- ≥2 semen analyses confirming azoospermia (performed ≥4 weeks apart)\n- Hormonal profile: FSH, LH, total testosterone, inhibin B\n- Scrotal ultrasound\n- Karyotype and Y-chromosome microdeletion analysis\n- CFTR mutation testing (if CBAVD suspected)\n- Testicular biopsy report (if available)\n- Letter of medical necessity from fellowship-trained urologist/andrologist\n- For oncofertility: oncology treatment plan documenting gonadotoxic therapy\n\n### Medical Necessity Criteria\n- Confirmed azoospermia on ≥2 semen analyses\n- Hormonal and genetic evaluation completed\n- No absolute contraindication (complete AZFa/AZFb deletion)\n- Microsurgical expertise available (fellowship-trained andrologist)\n- Female partner evaluation completed or oncofertility indication\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["CPT", "Description", "Type"],
+          "rows": [
+            ["54500", "Biopsy of testis, needle (separate procedure)", "Diagnostic"],
+            ["54505", "Biopsy of testis, incisional (separate procedure)", "Diagnostic/TESE"],
+            ["54512", "Excision of extraparenchymal lesion of testis", "Surgical"],
+            ["54520", "Orchiectomy, simple (not used for TESE but related)", "Related"],
+            ["89264", "Sperm identification from testis tissue, fresh or cryopreserved", "Lab — sperm ID"],
+            ["89337", "Cryopreservation, sperm", "Cryopreservation"],
+            ["89352", "Thawing of cryopreserved; sperm/semen", "Thaw for IVF"],
+            ["58321", "Artificial insemination; intra-uterine", "Related ART"]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnoses",
+          "header": ["ICD-10", "Description"],
+          "rows": [
+            ["N46.01", "Organic azoospermia"],
+            ["N46.021", "Azoospermia due to obstructive causes"],
+            ["N46.029", "Azoospermia due to other obstructive causes"],
+            ["N46.11", "Organic oligospermia"],
+            ["Q98.0", "Klinefelter syndrome with karyotype 47,XXY"],
+            ["Q98.4", "Klinefelter syndrome, unspecified"],
+            ["Q96.9", "Turner syndrome, unspecified (female partner)"],
+            ["Z31.41", "Encounter for fertility testing"],
+            ["Z31.81", "Encounter for male factor infertility in female patient"],
+            ["C62.90", "Malignant neoplasm of testis, unspecified (oncofertility)"]
+          ]
+        }
+      ]
+    }
+  }
+}

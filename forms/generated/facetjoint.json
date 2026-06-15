@@ -1,0 +1,188 @@
+{
+  "title": "Facet Joint Injection Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assess",
+    "logicKey": "facetjoint",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "patient-information",
+        "shortLabel": "Patient Info",
+        "title": "Patient Information",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "pain-score",
+            "name": "painScore",
+            "label": "Pain Score (0-10)",
+            "type": "number",
+            "required": true,
+            "defaultValue": "",
+            "min": 0,
+            "max": 10,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "spine-region",
+            "name": "spineRegion",
+            "label": "Spine Region",
+            "type": "buttongroup",
+            "required": true,
+            "defaultValue": "",
+            "options": [
+              { "label": "Lumbar", "value": "lumbar" },
+              { "label": "Cervical", "value": "cervical" },
+              { "label": "Thoracic", "value": "thoracic" }
+            ]
+          },
+          {
+            "id": "procedure-type",
+            "name": "procedureType",
+            "label": "Procedure Type",
+            "type": "buttongroup",
+            "required": false,
+            "defaultValue": "",
+            "options": [
+              { "label": "Facet Joint Injection", "value": "facet-injection" },
+              { "label": "Medial Branch Block", "value": "medial-branch-block" },
+              { "label": "Diagnostic Block (pre-RFA)", "value": "rfa-diagnostic" }
+            ]
+          },
+          {
+            "id": "active-infection",
+            "name": "activeInfection",
+            "label": "Active local or systemic infection",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "coagulopathy",
+            "name": "coagulopathy",
+            "label": "Coagulopathy / anticoagulation (not bridged)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "allergy",
+            "name": "allergy",
+            "label": "Allergy to steroids or contrast",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "diagnostic-block-positive",
+            "name": "diagnosticBlockPositive",
+            "label": "Prior diagnostic medial branch block positive (≥80% relief)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "clinical-assessment",
+        "shortLabel": "Clinical",
+        "title": "Clinical Assessment",
+        "fields": [
+          {
+            "id": "symptom-duration-months",
+            "name": "symptomDurationMonths",
+            "label": "Symptom Duration (months)",
+            "type": "number",
+            "required": false,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "conservative-therapy-months",
+            "name": "conservativeTherapyMonths",
+            "label": "Conservative Therapy Duration (months)",
+            "type": "number",
+            "required": true,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "symptoms",
+            "name": "symptoms",
+            "label": "Symptoms",
+            "type": "multiselect",
+            "required": false,
+            "defaultValue": [],
+            "options": [
+              { "label": "Axial spine pain (not predominantly radicular)", "value": "axial-pain" },
+              { "label": "Pain worse with extension / rotation", "value": "pain-extension" },
+              { "label": "Morning stiffness / pain", "value": "pain-morning" },
+              { "label": "Referred pain (buttock, groin, or posterior thigh)", "value": "referred-pain" },
+              { "label": "No significant neurologic deficit", "value": "no-neurologic" },
+              { "label": "Paraspinal tenderness on palpation", "value": "pain-palpation" }
+            ]
+          },
+          {
+            "id": "conservative-therapies",
+            "name": "conservativeTherapies",
+            "label": "Conservative Therapies Tried",
+            "type": "multiselect",
+            "required": false,
+            "defaultValue": [],
+            "options": [
+              { "label": "Physical therapy (≥4 weeks)", "value": "pt" },
+              { "label": "NSAIDs / analgesics (≥4 weeks)", "value": "nsaids" },
+              { "label": "Activity modification", "value": "activity-mod" },
+              { "label": "Chiropractic / manual therapy", "value": "chiro" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "prior-procedure-history",
+        "shortLabel": "Prior History",
+        "title": "Prior Procedure History",
+        "fields": [
+          {
+            "id": "prior-facet-count",
+            "name": "priorFacetCount",
+            "label": "Prior Facet Injections (this region)",
+            "type": "number",
+            "required": false,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "prior-facet-response",
+            "name": "priorFacetResponse",
+            "label": "Prior Facet Injection Response",
+            "type": "buttongroup",
+            "required": false,
+            "defaultValue": "",
+            "options": [
+              { "label": "None", "value": "none" },
+              { "label": "Partial", "value": "partial" },
+              { "label": "Good", "value": "good" }
+            ]
+          },
+          {
+            "id": "frequency-limit-note",
+            "label": "Note on Frequency Limits",
+            "type": "alert",
+            "severity": "info",
+            "text": "Most payers limit facet injections to 3 per region per year. Medial branch blocks are typically limited to 2 diagnostic blocks before RFA authorization."
+          }
+        ]
+      }
+    ]
+  }
+}

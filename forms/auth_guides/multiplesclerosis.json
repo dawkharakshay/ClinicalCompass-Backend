@@ -1,0 +1,360 @@
+{
+  "title": "Multiple Sclerosis",
+  "auth_guide": {
+    "sourceFile": "MultipleSclerosisAuthGuide.tsx",
+    "title": "MultipleSclerosis Clinical Compass",
+    "subtitle": "Disease-Modifying Therapies Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "96365",
+        "description": "Intravenous infusion, for therapy, prophylaxis, or diagnosis (specify substance or drug); initial, up to 1 hour",
+        "device": "N/A",
+        "access": "IV",
+        "rvu": "1.98",
+        "includes": [
+          "Initial setup of infusion",
+          "Drug preparation",
+          "First hour of infusion administration"
+        ],
+        "note": "Used for administration of various MS disease-modifying therapies."
+      },
+      {
+        "code": "96413",
+        "description": "Chemotherapy administration, intravenous infusion technique; up to 1 hour, single or initial substance/drug",
+        "device": "N/A",
+        "access": "IV",
+        "rvu": "1.98",
+        "includes": [
+          "Initial setup of infusion",
+          "Drug preparation",
+          "First hour of infusion administration",
+          "Monitoring during infusion"
+        ],
+        "note": "Often used for complex biologic agents like Ocrevus and Tysabri due to their classification and administration protocols."
+      },
+      {
+        "code": "J2323",
+        "description": "Injection, natalizumab, 1 mg",
+        "device": "N/A",
+        "access": "IV",
+        "rvu": "N/A",
+        "includes": [
+          "Drug cost for natalizumab (Tysabri)"
+        ],
+        "note": "HCPCS code for the drug natalizumab (Tysabri). Billed in conjunction with administration CPT codes."
+      },
+      {
+        "code": "J2350",
+        "description": "Injection, ocrelizumab, 1 mg",
+        "device": "N/A",
+        "access": "IV",
+        "rvu": "N/A",
+        "includes": [
+          "Drug cost for ocrelizumab (Ocrevus)"
+        ],
+        "note": "HCPCS code for the drug ocrelizumab (Ocrevus). Billed in conjunction with administration CPT codes."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "G35",
+        "description": "Multiple sclerosis, unspecified",
+        "notes": "Primary code for Multiple Sclerosis.",
+        "required": true
+      },
+      {
+        "code": "G35.A",
+        "description": "Relapsing-remitting multiple sclerosis",
+        "notes": "Specific type of MS, often used for initial diagnosis and treatment.",
+        "required": false
+      },
+      {
+        "code": "G35.B0",
+        "description": "Primary progressive multiple sclerosis, unspecified",
+        "notes": "Specific type of MS, used when disease progression is primary.",
+        "required": false
+      },
+      {
+        "code": "G35.C",
+        "description": "Secondary progressive multiple sclerosis",
+        "notes": "Specific type of MS, used when relapsing-remitting MS transitions to progressive.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with specific criteria",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is generally required for natalizumab (Tysabri). Ocrelizumab (Ocrevus) is a preferred agent and may not require prior authorization. Siponimod (Mayzent) is an oral agent and typically falls under Medicare Part D.",
+        "overview": "Medicare Part B covers intravenous disease-modifying therapies (DMTs) for Multiple Sclerosis when administered in an outpatient setting. Oral DMTs are typically covered under Medicare Part D. Coverage is subject to medical necessity criteria and prior authorization for certain agents.",
+        "reimbursementNote": "Reimbursement for infused DMTs is typically under Medicare Part B. Oral DMTs are covered under Medicare Part D, which may have different cost-sharing and coverage rules. Always check the specific plan formulary.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Criteria for DMTs",
+            "items": [
+              "Diagnosis of Multiple Sclerosis (G35, G35.A, G35.B0, G35.C)",
+              "Prescribed by a neurologist",
+              "Patient is 18 years or older",
+              "Monitoring and REMS requirements are met per prescribing information"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Specific Criteria for Natalizumab (Tysabri)",
+            "items": [
+              "Used as monotherapy for relapsing forms of MS",
+              "Inadequate response to, or inability to tolerate, other MS therapies",
+              "Baseline MRI obtained prior to initiation",
+              "Evaluations at 3 and 6 months after first infusion, and every 6 months thereafter"
+            ]
+          },
+          {
+            "heading": "Required Documentation: General Documentation",
+            "items": [
+              "Neurology chart notes (past 2 years) substantiating MS diagnosis and previous treatments",
+              "Radiologic reports (MRI) demonstrating lesion progression or stability",
+              "Documentation of patient age and prescriber specialty"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Specific Documentation for Natalizumab",
+            "items": [
+              "Documentation of failure or significant adverse effects to preferred agents",
+              "MRI reports for baseline and follow-up evaluations"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request with all supporting clinical documentation",
+              "Ensure all medical necessity criteria are clearly addressed",
+              "Follow up with Medicare or plan administrator for status updates"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity",
+              "Failure to meet specific coverage criteria (e.g., prior therapy failure)",
+              "Incomplete or insufficient clinical documentation",
+              "Incorrect coding for drug or administration"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify patient eligibility and benefits prior to treatment initiation.",
+              "Maintain thorough and accurate medical records, including MRI reports and neurologist notes.",
+              "Be aware of specific plan formularies and any step therapy requirements."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "MVP Health Care (Medicare Part B)",
+            "status": "Prior Auth Required for Tysabri",
+            "notes": "Ocrevus does not require prior authorization per policy dated 10/01/2025."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered with strict criteria",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is almost always required for all disease-modifying therapies for Multiple Sclerosis. Coverage criteria and specific policies vary significantly by state Medicaid program.",
+        "overview": "Medicaid coverage for MS DMTs varies by state. Most states require prior authorization and have specific clinical criteria that must be met, often including documented diagnosis, disease activity, and sometimes step therapy requirements.",
+        "reimbursementNote": "Reimbursement rates and processes are determined by each state's Medicaid program. It is crucial to verify specific billing and coding requirements for your state.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Criteria (State-Specific)",
+            "items": [
+              "Confirmed diagnosis of Multiple Sclerosis (G35, G35.A, G35.B0, G35.C)",
+              "Prescribed by or in consultation with a neurologist",
+              "Documentation of disease activity or progression",
+              "Patient meets age and weight requirements (if applicable)"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Common Requirements",
+            "items": [
+              "Failure or contraindication to preferred or less costly agents (step therapy)",
+              "Absence of contraindications to the requested therapy",
+              "Adherence to monitoring guidelines for the specific drug"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Detailed neurologist notes, including diagnosis, disease course, and rationale for chosen DMT",
+              "MRI reports demonstrating lesions or disease activity",
+              "Documentation of previous MS treatments and patient response/intolerance",
+              "Laboratory results (e.g., JCV antibody status for natalizumab)"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request through the state Medicaid portal or designated fax/mail",
+              "Include all required clinical documentation and attestations",
+              "Be prepared for potential appeals if initial request is denied"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet state-specific clinical criteria",
+              "Lack of documented step therapy adherence",
+              "Incomplete or insufficient medical records",
+              "Off-label use or lack of documented disease activity"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state's specific Medicaid formulary and prior authorization guidelines.",
+              "Document all clinical findings, treatment history, and rationale thoroughly.",
+              "Utilize patient assistance programs if available to help with medication costs."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Michigan Medicaid (CareSource)",
+            "status": "Prior Auth Required for Tysabri",
+            "notes": "Requires specific criteria for relapsing forms of MS."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Covered with plan-specific criteria",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is typically required for all disease-modifying therapies for Multiple Sclerosis. Coverage criteria vary widely by individual insurance plan and may include step therapy.",
+        "overview": "Private insurance plans generally cover FDA-approved DMTs for MS, but almost always require prior authorization. Coverage criteria often include documented diagnosis, medical necessity, and may involve step therapy or specific formulary preferences.",
+        "reimbursementNote": "Reimbursement for MS DMTs under private insurance is subject to the specific plan's benefits, deductibles, co-pays, and co-insurance. Verify patient-specific out-of-pocket costs.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Criteria (Plan-Specific)",
+            "items": [
+              "Confirmed diagnosis of Multiple Sclerosis (G35, G35.A, G35.B0, G35.C)",
+              "Prescribed by a neurologist",
+              "Documentation of medical necessity and appropriateness of therapy",
+              "Patient meets age and other demographic requirements"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Common Requirements",
+            "items": [
+              "Completion of step therapy (failure of preferred agents) or documented contraindication",
+              "Absence of contraindications to the requested therapy",
+              "Adherence to monitoring guidelines and risk evaluation and mitigation strategies (REMS)"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Detailed clinical notes from neurologist, including diagnosis, disease course, and treatment plan",
+              "MRI reports (brain and spinal cord) demonstrating MS lesions or activity",
+              "Documentation of prior MS treatments, response, and any adverse events",
+              "Laboratory results (e.g., JCV antibody status for natalizumab, liver function tests for siponimod)"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request through the insurer's online portal, fax, or phone",
+              "Provide comprehensive clinical documentation to support medical necessity",
+              "Be prepared to appeal denials with additional clinical information or peer-to-peer review"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity",
+              "Failure to complete step therapy requirements",
+              "Insufficient clinical documentation to support diagnosis or disease activity",
+              "Off-formulary medication without documented exception criteria"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Understand the patient's specific insurance plan benefits, formulary, and prior authorization requirements.",
+              "Maintain clear and concise documentation of all clinical findings, treatment history, and rationale.",
+              "Utilize manufacturer patient support programs for assistance with prior authorizations and financial aid."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Cigna",
+            "status": "Prior Auth Required for Ocrevus",
+            "notes": "Requires specific criteria for relapsing forms of MS and primary progressive MS."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Navigation",
+        "kind": "link",
+        "text": "Back to Assessment (links to /multiplesclerosis)",
+        "href": "/multiplesclerosis"
+      },
+      {
+        "heading": "Procedure Codes — Card Note",
+        "kind": "prose",
+        "text": "For each CPT code, the included components are listed under the heading \"Included in this code (do NOT bill separately):\". Each code also displays an RVU badge and a Device/Access field."
+      }
+    ],
+    "raw": {
+      "markdown": "# MultipleSclerosis Clinical Compass\n## Disease-Modifying Therapies Insurance Authorization Guide\n\n[Button] Back to Assessment (navigates to /multiplesclerosis)\n\n---\n\n## Procedure Codes\n\n### CPT 96365 (RVU 1.98)\nIntravenous infusion, for therapy, prophylaxis, or diagnosis (specify substance or drug); initial, up to 1 hour\nDevice/Access: N/A\nIncluded in this code (do NOT bill separately):\n- Initial setup of infusion\n- Drug preparation\n- First hour of infusion administration\nNote: Used for administration of various MS disease-modifying therapies.\n\n### CPT 96413 (RVU 1.98)\nChemotherapy administration, intravenous infusion technique; up to 1 hour, single or initial substance/drug\nDevice/Access: N/A\nIncluded in this code (do NOT bill separately):\n- Initial setup of infusion\n- Drug preparation\n- First hour of infusion administration\n- Monitoring during infusion\nNote: Often used for complex biologic agents like Ocrevus and Tysabri due to their classification and administration protocols.\n\n### CPT J2323 (RVU N/A)\nInjection, natalizumab, 1 mg\nDevice/Access: N/A\nIncluded in this code (do NOT bill separately):\n- Drug cost for natalizumab (Tysabri)\nNote: HCPCS code for the drug natalizumab (Tysabri). Billed in conjunction with administration CPT codes.\n\n### CPT J2350 (RVU N/A)\nInjection, ocrelizumab, 1 mg\nDevice/Access: N/A\nIncluded in this code (do NOT bill separately):\n- Drug cost for ocrelizumab (Ocrevus)\nNote: HCPCS code for the drug ocrelizumab (Ocrevus). Billed in conjunction with administration CPT codes.\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **G35** (Primary) — Multiple sclerosis, unspecified. Primary code for Multiple Sclerosis.\n- **G35.A** — Relapsing-remitting multiple sclerosis. Specific type of MS, often used for initial diagnosis and treatment.\n- **G35.B0** — Primary progressive multiple sclerosis, unspecified. Specific type of MS, used when disease progression is primary.\n- **G35.C** — Secondary progressive multiple sclerosis. Specific type of MS, used when relapsing-remitting MS transitions to progressive.\n\n---\n\n## Payer-Specific Authorization Requirements\n\n### Medicare\nStatus badges: Prior Auth Required | Covered with specific criteria\nPrior Auth Note (alert): Prior authorization is generally required for natalizumab (Tysabri). Ocrelizumab (Ocrevus) is a preferred agent and may not require prior authorization. Siponimod (Mayzent) is an oral agent and typically falls under Medicare Part D.\nOverview: Medicare Part B covers intravenous disease-modifying therapies (DMTs) for Multiple Sclerosis when administered in an outpatient setting. Oral DMTs are typically covered under Medicare Part D. Coverage is subject to medical necessity criteria and prior authorization for certain agents.\n\n#### Coverage Criteria\n**General Criteria for DMTs**\n- Diagnosis of Multiple Sclerosis (G35, G35.A, G35.B0, G35.C)\n- Prescribed by a neurologist\n- Patient is 18 years or older\n- Monitoring and REMS requirements are met per prescribing information\n**Specific Criteria for Natalizumab (Tysabri)**\n- Used as monotherapy for relapsing forms of MS\n- Inadequate response to, or inability to tolerate, other MS therapies\n- Baseline MRI obtained prior to initiation\n- Evaluations at 3 and 6 months after first infusion, and every 6 months thereafter\n\n#### Required Documentation\n**General Documentation**\n- Neurology chart notes (past 2 years) substantiating MS diagnosis and previous treatments\n- Radiologic reports (MRI) demonstrating lesion progression or stability\n- Documentation of patient age and prescriber specialty\n**Specific Documentation for Natalizumab**\n- Documentation of failure or significant adverse effects to preferred agents\n- MRI reports for baseline and follow-up evaluations\n\n#### Submission Process\n1. Submit prior authorization request with all supporting clinical documentation\n2. Ensure all medical necessity criteria are clearly addressed\n3. Follow up with Medicare or plan administrator for status updates\n\n#### Common Denial Reasons\n- Lack of documented medical necessity\n- Failure to meet specific coverage criteria (e.g., prior therapy failure)\n- Incomplete or insufficient clinical documentation\n- Incorrect coding for drug or administration\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| MVP Health Care (Medicare Part B) | Prior Auth Required for Tysabri | Ocrevus does not require prior authorization per policy dated 10/01/2025. |\n\n#### Reimbursement Note\nReimbursement for infused DMTs is typically under Medicare Part B. Oral DMTs are covered under Medicare Part D, which may have different cost-sharing and coverage rules. Always check the specific plan formulary.\n\n#### Authorization Tips\n- Verify patient eligibility and benefits prior to treatment initiation.\n- Maintain thorough and accurate medical records, including MRI reports and neurologist notes.\n- Be aware of specific plan formularies and any step therapy requirements.\n\n### Medicaid\nStatus badges: Prior Auth Required | Covered with strict criteria\nPrior Auth Note (alert): Prior authorization is almost always required for all disease-modifying therapies for Multiple Sclerosis. Coverage criteria and specific policies vary significantly by state Medicaid program.\nOverview: Medicaid coverage for MS DMTs varies by state. Most states require prior authorization and have specific clinical criteria that must be met, often including documented diagnosis, disease activity, and sometimes step therapy requirements.\n\n#### Coverage Criteria\n**General Criteria (State-Specific)**\n- Confirmed diagnosis of Multiple Sclerosis (G35, G35.A, G35.B0, G35.C)\n- Prescribed by or in consultation with a neurologist\n- Documentation of disease activity or progression\n- Patient meets age and weight requirements (if applicable)\n**Common Requirements**\n- Failure or contraindication to preferred or less costly agents (step therapy)\n- Absence of contraindications to the requested therapy\n- Adherence to monitoring guidelines for the specific drug\n\n#### Required Documentation\n**Clinical Documentation**\n- Detailed neurologist notes, including diagnosis, disease course, and rationale for chosen DMT\n- MRI reports demonstrating lesions or disease activity\n- Documentation of previous MS treatments and patient response/intolerance\n- Laboratory results (e.g., JCV antibody status for natalizumab)\n\n#### Submission Process\n1. Submit prior authorization request through the state Medicaid portal or designated fax/mail\n2. Include all required clinical documentation and attestations\n3. Be prepared for potential appeals if initial request is denied\n\n#### Common Denial Reasons\n- Failure to meet state-specific clinical criteria\n- Lack of documented step therapy adherence\n- Incomplete or insufficient medical records\n- Off-label use or lack of documented disease activity\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Michigan Medicaid (CareSource) | Prior Auth Required for Tysabri | Requires specific criteria for relapsing forms of MS. |\n\n#### Reimbursement Note\nReimbursement rates and processes are determined by each state's Medicaid program. It is crucial to verify specific billing and coding requirements for your state.\n\n#### Authorization Tips\n- Familiarize yourself with your state's specific Medicaid formulary and prior authorization guidelines.\n- Document all clinical findings, treatment history, and rationale thoroughly.\n- Utilize patient assistance programs if available to help with medication costs.\n\n### Private Insurance\nStatus badges: Prior Auth Required | Covered with plan-specific criteria\nPrior Auth Note (alert): Prior authorization is typically required for all disease-modifying therapies for Multiple Sclerosis. Coverage criteria vary widely by individual insurance plan and may include step therapy.\nOverview: Private insurance plans generally cover FDA-approved DMTs for MS, but almost always require prior authorization. Coverage criteria often include documented diagnosis, medical necessity, and may involve step therapy or specific formulary preferences.\n\n#### Coverage Criteria\n**General Criteria (Plan-Specific)**\n- Confirmed diagnosis of Multiple Sclerosis (G35, G35.A, G35.B0, G35.C)\n- Prescribed by a neurologist\n- Documentation of medical necessity and appropriateness of therapy\n- Patient meets age and other demographic requirements\n**Common Requirements**\n- Completion of step therapy (failure of preferred agents) or documented contraindication\n- Absence of contraindications to the requested therapy\n- Adherence to monitoring guidelines and risk evaluation and mitigation strategies (REMS)\n\n#### Required Documentation\n**Clinical Documentation**\n- Detailed clinical notes from neurologist, including diagnosis, disease course, and treatment plan\n- MRI reports (brain and spinal cord) demonstrating MS lesions or activity\n- Documentation of prior MS treatments, response, and any adverse events\n- Laboratory results (e.g., JCV antibody status for natalizumab, liver function tests for siponimod)\n\n#### Submission Process\n1. Submit prior authorization request through the insurer's online portal, fax, or phone\n2. Provide comprehensive clinical documentation to support medical necessity\n3. Be prepared to appeal denials with additional clinical information or peer-to-peer review\n\n#### Common Denial Reasons\n- Lack of documented medical necessity\n- Failure to complete step therapy requirements\n- Insufficient clinical documentation to support diagnosis or disease activity\n- Off-formulary medication without documented exception criteria\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Cigna | Prior Auth Required for Ocrevus | Requires specific criteria for relapsing forms of MS and primary progressive MS. |\n\n#### Reimbursement Note\nReimbursement for MS DMTs under private insurance is subject to the specific plan's benefits, deductibles, co-pays, and co-insurance. Verify patient-specific out-of-pocket costs.\n\n#### Authorization Tips\n- Understand the patient's specific insurance plan benefits, formulary, and prior authorization requirements.\n- Maintain clear and concise documentation of all clinical findings, treatment history, and rationale.\n- Utilize manufacturer patient support programs for assistance with prior authorizations and financial aid.\n",
+      "tables": [
+        {
+          "name": "CPT / Procedure Codes",
+          "header": ["CPT Code", "RVU", "Description", "Device/Access", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            ["96365", "1.98", "Intravenous infusion, for therapy, prophylaxis, or diagnosis (specify substance or drug); initial, up to 1 hour", "N/A (IV)", "Initial setup of infusion; Drug preparation; First hour of infusion administration", "Used for administration of various MS disease-modifying therapies."],
+            ["96413", "1.98", "Chemotherapy administration, intravenous infusion technique; up to 1 hour, single or initial substance/drug", "N/A (IV)", "Initial setup of infusion; Drug preparation; First hour of infusion administration; Monitoring during infusion", "Often used for complex biologic agents like Ocrevus and Tysabri due to their classification and administration protocols."],
+            ["J2323", "N/A", "Injection, natalizumab, 1 mg", "N/A (IV)", "Drug cost for natalizumab (Tysabri)", "HCPCS code for the drug natalizumab (Tysabri). Billed in conjunction with administration CPT codes."],
+            ["J2350", "N/A", "Injection, ocrelizumab, 1 mg", "N/A (IV)", "Drug cost for ocrelizumab (Ocrevus)", "HCPCS code for the drug ocrelizumab (Ocrevus). Billed in conjunction with administration CPT codes."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required/Primary"],
+          "rows": [
+            ["G35", "Multiple sclerosis, unspecified", "Primary code for Multiple Sclerosis.", "Primary"],
+            ["G35.A", "Relapsing-remitting multiple sclerosis", "Specific type of MS, often used for initial diagnosis and treatment.", "No"],
+            ["G35.B0", "Primary progressive multiple sclerosis, unspecified", "Specific type of MS, used when disease progression is primary.", "No"],
+            ["G35.C", "Secondary progressive multiple sclerosis", "Specific type of MS, used when relapsing-remitting MS transitions to progressive.", "No"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicare",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["MVP Health Care (Medicare Part B)", "Prior Auth Required for Tysabri", "Ocrevus does not require prior authorization per policy dated 10/01/2025."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Michigan Medicaid (CareSource)", "Prior Auth Required for Tysabri", "Requires specific criteria for relapsing forms of MS."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Private Insurance",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Cigna", "Prior Auth Required for Ocrevus", "Requires specific criteria for relapsing forms of MS and primary progressive MS."]
+          ]
+        }
+      ]
+    }
+  }
+}

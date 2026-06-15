@@ -1,0 +1,30 @@
+{
+  "title": "Elective PCI Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "92920, 92921, 92928, 92929, 92933, 92934, 92941, 92943, 93454, 93571",
+      "credentials": "[Credentials]",
+      "icd_codes": "I25.10, I25.110, I25.119, I25.5, I25.700, I20.0, I25.2, I25.84",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\nRe: Medical Necessity Appeal — Elective Percutaneous Coronary Intervention (PCI)\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\n\nDear Medical Director / Utilization Review Committee,\n\nI am writing to formally appeal the denial of prior authorization for elective Percutaneous Coronary Intervention (PCI) for my patient. This procedure is medically necessary and is fully supported by the 2021 ACC/AHA/SCAI Guideline for Coronary Artery Revascularization, objective ischemia testing, and coronary anatomy assessment.\n\nCLINICAL ASSESSMENT SUMMARY:\nOur Clinical Compass PCI Decision Support tool assessed this patient as: [PCI Recommendation]\nSYNTAX Score Category: [SYNTAX Category]\nRecommended Strategy: [Strategy]\n\n\n\nCLINICAL INDICATION:\nThis patient presents with [DESCRIBE SYMPTOMS — angina class, duration, functional limitation] that has persisted despite [DURATION] of optimal medical therapy including [LIST MEDICATIONS: statin, beta-blocker, RAAS inhibitor, antiplatelet therapy]. Diagnostic coronary angiography demonstrated [DESCRIBE LESION(S): vessel, percent stenosis, location]. Objective ischemia was confirmed by [DESCRIBE: stress test findings, FFR value, nuclear imaging results].\n\nEVIDENCE-BASED JUSTIFICATION:\n\n1. 2021 ACC/AHA/SCAI GUIDELINE SUPPORT:\nPer the 2021 ACC/AHA/SCAI Guideline for Coronary Artery Revascularization (Lawton JS, et al., J Am Coll Cardiol 2022;79:e21-e129), elective PCI is a Class I indication for patients with:\n• Significant coronary stenosis (≥70% by angiography or ≥50% left main) with objective evidence of ischemia\n• Symptoms (CCS Class ≥II angina) refractory to optimal medical therapy\n• High-risk stress test findings (≥10% ischemic territory, LVEF drop, ST changes in multiple leads)\n• FFR ≤0.80 or iFR ≤0.89 confirming hemodynamic significance of the lesion\n\nThis patient meets [SPECIFY WHICH CRITERIA APPLY] of these guideline criteria.\n\n2. FUNCTIONAL ASSESSMENT:\n[IF FFR/iFR PERFORMED]: Fractional flow reserve (FFR) measurement confirmed hemodynamic significance of the target lesion (FFR = [VALUE]), consistent with the FAME trial (Pijls NH, et al., NEJM 2009;360:213-224) and FAME 2 trial (De Bruyne B, et al., NEJM 2012;367:991-1001), which demonstrated that FFR-guided PCI significantly reduces major adverse cardiovascular events compared to medical therapy alone for hemodynamically significant lesions.\n\n3. ISCHEMIA BURDEN:\n[IF STRESS TEST HIGH-RISK]: The ISCHEMIA trial (Maron DJ, et al., NEJM 2020;382:1395-1407) demonstrated that an invasive strategy with PCI reduces spontaneous myocardial infarction and significantly improves angina-related quality of life in patients with moderate-to-severe ischemia. This patient's stress test demonstrated [DESCRIBE HIGH-RISK FEATURES], placing them in the high-risk category where revascularization provides clear clinical benefit.\n\n4. ANATOMICAL APPROPRIATENESS:\nThe SYNTAX score for this patient is [SYNTAX SCORE], categorized as [SYNTAX Category] complexity. Per the SYNTAX Score II analysis (Farooq V, et al., Lancet 2013;381:639-650), PCI is the preferred revascularization strategy for patients with low to intermediate SYNTAX scores, with outcomes equivalent to CABG.\n\nRISK OF DENIAL:\nWithout timely PCI, this patient faces continued [DESCRIBE: angina burden, functional limitation, risk of MI, worsening ischemic cardiomyopathy]. Deferral of indicated revascularization in the setting of documented significant ischemia and hemodynamically significant coronary stenosis is associated with increased risk of myocardial infarction and cardiovascular death.\n\nADDITIONAL CLINICAL NOTES:\n{{additional_clinical_notes}}\n\nIn summary, elective PCI for this patient is medically necessary, guideline-directed, and supported by objective evidence of hemodynamically significant coronary artery disease with documented ischemia. I respectfully request approval of this procedure and am available for peer-to-peer review at your convenience.\n\nSincerely,\n\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

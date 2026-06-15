@@ -1,0 +1,30 @@
+{
+  "title": "Hernia Repair Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "49650, 49651, 49505, 49507, 49560, 49565, 49652, 49653, 49585",
+      "credentials": "[Credentials]",
+      "icd_codes": "K40.90, K40.91, K40.30, K41.90, K43.9, K43.0, K42.9",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\nRe: Medical Necessity Appeal — Hernia Repair\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\n\nDear Medical Director / Utilization Review Committee,\n\nI am writing to formally appeal the denial of prior authorization for hernia repair for my patient. This procedure is medically necessary and is supported by the HerniaSurge International Guidelines for Groin Hernia Management (2018), the European Hernia Society Guidelines, and established standards of care for symptomatic abdominal wall hernias.\n\nCLINICAL ASSESSMENT SUMMARY:\nOur Clinical Compass Hernia Repair Decision Support tool assessed this patient as: [Recommendation]\nUrgency: [Urgency]\nRecommended Approach: [Approach]\nMesh Recommendation: [Mesh Recommendation]\n\n\n\nCLINICAL INDICATION:\nThis patient presents with a [HERNIA TYPE] hernia [LOCATION], confirmed on physical examination on {{letter_date}}. [IF IMAGING: Imaging (ultrasound / CT) performed on {{letter_date}} confirmed [DESCRIBE FINDINGS].]\n\nSYMPTOM HISTORY:\nThe patient has experienced [DESCRIBE SYMPTOMS: pain, discomfort, bulge, limitation of activity] for [DURATION]. Pain level is [PAIN LEVEL]/10. Symptoms are worsened by [DESCRIBE: physical activity, lifting, prolonged standing]. The hernia is [reducible / incarcerated].\n\nIMPACT ON DAILY ACTIVITIES:\nThe hernia has limited the patient's ability to [DESCRIBE: perform work duties, exercise, lift objects, perform activities of daily living]. [DESCRIBE IMPACT ON QUALITY OF LIFE].\n\nEVIDENCE-BASED JUSTIFICATION:\n\n1. HERNIASURGE INTERNATIONAL GUIDELINES 2018:\nPer the HerniaSurge International Guidelines for Groin Hernia Management (2018), surgical repair is recommended for symptomatic inguinal hernias. The guidelines state that watchful waiting is only appropriate for asymptomatic or minimally symptomatic inguinal hernias in patients who prefer to avoid surgery. This patient has [DESCRIBE SYMPTOMS] that exceed the threshold for watchful waiting.\n\n[IF FEMORAL HERNIA]: The HerniaSurge Guidelines specifically recommend repair of femoral hernias regardless of symptoms due to the high risk of incarceration and strangulation (up to 40% within 2 years of diagnosis). Denial of repair for a femoral hernia is not consistent with evidence-based guidelines.\n\n2. MESH REPAIR EVIDENCE:\nMesh repair reduces hernia recurrence from 15–20% (primary repair) to less than 5% (mesh repair) for inguinal and ventral hernias (Kokotovic D, et al., JAMA 2016;316:1575-1582). The planned [LAPAROSCOPIC / OPEN] approach with mesh is the evidence-based standard of care.\n\n3. RISK OF DENIAL:\nWithout surgical repair, this patient faces:\n• Progressive worsening of symptoms and functional limitation\n• Risk of hernia incarceration (bowel trapped in hernia sac)\n• Risk of hernia strangulation (bowel ischemia) — a surgical emergency with significantly higher morbidity, mortality, and cost than elective repair\n• Increasing defect size making future repair more complex\n\nElective repair is safer, less costly, and associated with better outcomes than emergency repair of an incarcerated or strangulated hernia.\n\nCONSERVATIVE TREATMENT:\n[DESCRIBE CONSERVATIVE MANAGEMENT ATTEMPTED: truss, activity modification, watchful waiting period]. Despite these measures, the patient continues to experience [DESCRIBE ONGOING SYMPTOMS].\n\nADDITIONAL CLINICAL NOTES:\n{{additional_clinical_notes}}\n\nIn summary, hernia repair is medically necessary, guideline-directed, and the appropriate treatment for this patient's symptomatic hernia. I respectfully request approval and am available for peer-to-peer review.\n\nSincerely,\n\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

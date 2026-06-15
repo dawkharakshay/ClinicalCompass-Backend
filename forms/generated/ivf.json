@@ -1,0 +1,186 @@
+{
+  "title": "In Vitro Fertilization Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assessment",
+    "logicKey": "ivf",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "infertility-history",
+        "shortLabel": "Infertility History",
+        "title": "Infertility History",
+        "fields": [
+          {
+            "id": "female-age",
+            "name": "femaleAge",
+            "label": "Female Patient Age (years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "infertility-duration",
+            "name": "infertilityDuration",
+            "label": "Duration of Infertility",
+            "type": "select",
+            "required": false,
+            "defaultValue": "gt12",
+            "options": [
+              { "label": "Less than 6 months", "value": "lt6" },
+              { "label": "6–12 months", "value": "6to12" },
+              { "label": "More than 12 months (ASRM infertility definition)", "value": "gt12" },
+              { "label": "More than 24 months", "value": "gt24" }
+            ]
+          },
+          {
+            "id": "oncology-indication",
+            "name": "oncologyIndication",
+            "label": "Oncofertility indication (pre-chemotherapy/radiation fertility preservation)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "state-mandate",
+            "name": "stateMandate",
+            "label": "State infertility mandate applies (15+ states require IVF coverage)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "ovarian-reserve",
+        "shortLabel": "Ovarian Reserve",
+        "title": "Ovarian Reserve",
+        "fields": [
+          {
+            "id": "ovarian-reserve",
+            "name": "ovarianReserve",
+            "label": "Ovarian Reserve Assessment",
+            "type": "select",
+            "required": false,
+            "defaultValue": "normal",
+            "options": [
+              { "label": "Normal ovarian reserve", "value": "normal" },
+              { "label": "Diminished ovarian reserve (DOR)", "value": "diminished" },
+              { "label": "Poor ovarian reserve (POR) — Bologna criteria", "value": "poor" },
+              { "label": "Premature ovarian insufficiency (POI)", "value": "premature_failure" }
+            ]
+          },
+          {
+            "id": "amh-level",
+            "name": "amhLevel",
+            "label": "AMH Level (ng/mL)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "unit": "ng/mL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "afc-count",
+            "name": "afcCount",
+            "label": "Antral Follicle Count (AFC)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "uterine-factor",
+            "name": "uterineFactor",
+            "label": "Uterine factor infertility (fibroids, polyps, Asherman's, müllerian anomaly)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "endometriosis",
+            "name": "endometriosis",
+            "label": "Endometriosis (stage III–IV)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "male-factor",
+        "shortLabel": "Male Factor",
+        "title": "Male Factor",
+        "fields": [
+          {
+            "id": "male-factor",
+            "name": "maleFactor",
+            "label": "Male Factor Severity",
+            "type": "select",
+            "required": false,
+            "defaultValue": "none",
+            "options": [
+              { "label": "None — normal semen analysis", "value": "none" },
+              { "label": "Mild — borderline parameters", "value": "mild" },
+              { "label": "Moderate — oligospermia/asthenospermia", "value": "moderate" },
+              { "label": "Severe — severe oligospermia/teratospermia (TMC <1M)", "value": "severe" },
+              { "label": "Azoospermia (no sperm in ejaculate)", "value": "azoospermia" }
+            ]
+          },
+          {
+            "id": "tubal-factor",
+            "name": "tubalFactor",
+            "label": "Tubal factor infertility (bilateral occlusion, hydrosalpinx, prior ectopic)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "unexplained",
+            "name": "unexplained",
+            "label": "Unexplained infertility (all standard tests normal)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "prior-treatment",
+        "shortLabel": "Prior Treatment",
+        "title": "Prior Treatment",
+        "fields": [
+          {
+            "id": "prior-iui-attempts",
+            "name": "priorIUIAttempts",
+            "label": "Prior IUI Attempts",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "prior-ivf-attempts",
+            "name": "priorIVFAttempts",
+            "label": "Prior IVF Cycles",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "prior-ivf-success",
+            "name": "priorIVFSuccess",
+            "label": "Prior IVF resulted in live birth",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "priorIVFAttempts", "op": "gt", "value": 0 }
+          }
+        ]
+      }
+    ]
+  }
+}

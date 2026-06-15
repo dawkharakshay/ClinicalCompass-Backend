@@ -1,0 +1,30 @@
+{
+  "title": "OSA Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "95810, 64582",
+      "credentials": "[Credentials]",
+      "icd_codes": "G47.33, R06.83, I27.2, E66.9",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — CPAP Therapy / Surgical Treatment for Obstructive Sleep Apnea\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\nDear Medical Director / Utilization Review Committee,\n\nThis letter serves as an appeal for coverage of treatment for Obstructive Sleep Apnea for our patient, {{patient_name}}, born {{patient_dob}}. The patient has been diagnosed with Obstructive Sleep Apnea (OSA), a serious medical condition requiring immediate and effective intervention.\n\nClinical Summary:\n{{patient_name}} presents with symptoms consistent with OSA, including [SYMPTOMS_HERE, e.g., excessive daytime sleepiness, loud snoring, observed apneas]. Diagnostic studies confirm the presence of OSA, necessitating therapeutic intervention.   \n\nGuideline Support:\n1. The AASM Clinical Practice Guidelines for the Treatment of OSA 2019 strongly recommend CPAP as the first-line treatment for most adults with OSA, citing its efficacy in reducing AHI, improving sleep quality, and mitigating cardiovascular risks.\n2. The AASM Hypopnea Scoring Rules 2012 provide the diagnostic framework used to accurately assess the severity of OSA in this patient.\n3. The AHA/ACCF Scientific Statement on Sleep Apnea and Cardiovascular Disease 2008 underscores the critical link between untreated OSA and increased risk of cardiovascular morbidity and mortality.\n4. For patients who cannot tolerate or are not effectively treated by CPAP, the AASM Surgical Treatment of OSA 2010 guidelines support surgical options to alleviate upper airway obstruction.\n\nMedical Necessity Statement:\nBased on the patient's clinical presentation, diagnostic findings, and adherence to established medical guidelines, treatment for Obstructive Sleep Apnea is medically necessary to manage their OSA. The proposed treatment aims to restore normal breathing patterns during sleep, improve oxygenation, and alleviate the debilitating symptoms associated with OSA. \n\nRisk Without Treatment:\nWithout appropriate treatment, {{patient_name}} is at significant risk for severe health complications, including but not limited to, uncontrolled hypertension, increased risk of myocardial infarction, stroke, diabetes, and impaired cognitive function, as well as a diminished quality of life. The rationale for treatment is clear: Based on clinical assessment and diagnostic findings, the patient exhibits clear indications for intervention.\n\nRequested Action:\nWe request immediate approval for the prescribed treatment for Obstructive Sleep Apnea to prevent further deterioration of {{patient_name}}'s health and improve their overall well-being. Please refer to the attached medical records for comprehensive documentation supporting this appeal.\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

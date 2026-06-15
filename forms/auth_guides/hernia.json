@@ -1,0 +1,155 @@
+{
+  "title": "Hernia Repair Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "HerniaAuthGuide.tsx",
+    "title": "Hernia Repair Authorization Guide",
+    "subtitle": null,
+    "cptCodes": [
+      { "code": "49650", "description": "Laparoscopic repair of initial inguinal hernia", "notes": "Laparoscopic inguinal hernia repair — TEP or TAPP" },
+      { "code": "49651", "description": "Laparoscopic repair of recurrent inguinal hernia", "notes": "Laparoscopic recurrent inguinal hernia repair" },
+      { "code": "49505", "description": "Repair initial inguinal hernia, age 5 years or older; reducible", "notes": "Open inguinal hernia repair — Lichtenstein or other" },
+      { "code": "49507", "description": "Repair initial inguinal hernia, age 5 years or older; incarcerated or strangulated", "notes": "Open inguinal hernia — incarcerated/strangulated" },
+      { "code": "49560", "description": "Repair initial incisional or ventral hernia; reducible", "notes": "Open ventral/incisional hernia repair" },
+      { "code": "49565", "description": "Repair recurrent incisional or ventral hernia; reducible", "notes": "Open recurrent ventral hernia" },
+      { "code": "49652", "description": "Laparoscopic repair, ventral, umbilical, spigelian or epigastric hernia (includes mesh insertion when performed); reducible", "notes": "Laparoscopic ventral hernia repair" },
+      { "code": "49653", "description": "Laparoscopic repair, ventral, umbilical, spigelian or epigastric hernia; incarcerated or strangulated", "notes": "Laparoscopic ventral hernia — incarcerated/strangulated" },
+      { "code": "49585", "description": "Repair umbilical hernia, age 5 years or older; reducible", "notes": "Open umbilical hernia repair" }
+    ],
+    "icd10Codes": [
+      { "code": "K40.90", "description": "Unilateral inguinal hernia, without obstruction or gangrene, not specified as recurrent", "notes": "Unilateral inguinal hernia — primary" },
+      { "code": "K40.91", "description": "Unilateral inguinal hernia, without obstruction or gangrene, recurrent", "notes": "Recurrent inguinal hernia" },
+      { "code": "K40.30", "description": "Unilateral inguinal hernia, with obstruction, without gangrene, not specified as recurrent", "notes": "Incarcerated inguinal hernia" },
+      { "code": "K41.90", "description": "Unilateral femoral hernia, without obstruction or gangrene, not specified as recurrent", "notes": "Femoral hernia — high incarceration risk" },
+      { "code": "K43.9", "description": "Ventral hernia without obstruction or gangrene", "notes": "Ventral hernia" },
+      { "code": "K43.0", "description": "Incisional hernia with obstruction, without gangrene", "notes": "Incisional hernia with obstruction" },
+      { "code": "K42.9", "description": "Umbilical hernia without obstruction or gangrene", "notes": "Umbilical hernia" }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "overview": "Medicare covers hernia repair for symptomatic hernias without requiring a mandatory conservative treatment period. Asymptomatic inguinal hernias may be managed with watchful waiting per HerniaSurge Guidelines 2018, but surgery is covered when patient and surgeon elect repair. Femoral hernias are covered regardless of symptoms due to high incarceration risk.",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "Clinical documentation of hernia (physical exam findings, imaging if needed)",
+              "Symptom documentation (pain, discomfort, limitation of activity)",
+              "Hernia type, location, and reducibility",
+              "Surgeon documentation of surgical indication",
+              "ASA classification and surgical risk assessment"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Symptomatic inguinal, femoral, umbilical, ventral, or incisional hernia",
+              "Incarcerated or strangulated hernia (urgent/emergent)",
+              "Femoral hernia (high incarceration risk — surgery recommended even if asymptomatic)",
+              "Recurrent hernia with symptoms"
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicare (CMS)", "status": "Covered", "notes": "Covered for symptomatic hernia; femoral hernia covered regardless of symptoms; no mandatory conservative treatment period" }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "overview": "Medicaid coverage for elective hernia repair varies by state. Most states cover symptomatic hernias. Incarcerated/strangulated hernias are covered as urgent/emergent without prior authorization.",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "Clinical documentation of hernia",
+              "Symptom documentation",
+              "Prior authorization may be required for elective cases"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Symptomatic hernia with documented pain or functional limitation",
+              "Incarcerated or strangulated hernia",
+              "Femoral hernia"
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicaid (state-specific)", "status": "Covered", "notes": "Generally covered for symptomatic hernias; prior auth requirements vary by state" }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private",
+        "overview": "Commercial payers typically require documentation of symptomatic hernia. For inguinal hernias, document pain level, functional limitation, and impact on daily activities. Some payers require documentation of failed truss/conservative management. Femoral hernias are generally approved without conservative treatment requirement due to high incarceration risk.",
+        "sections": [
+          {
+            "heading": "Required Documentation",
+            "items": [
+              "Prior authorization required for elective hernia repair by most commercial payers",
+              "Clinical documentation of hernia (physical exam, imaging if needed)",
+              "Symptom documentation: pain level, functional limitation, duration",
+              "Hernia type, location, reducibility",
+              "Documentation of failed conservative management (truss, activity modification) — some payers require",
+              "Surgeon documentation of surgical indication and approach"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Symptomatic inguinal hernia with pain ≥4/10 or functional limitation",
+              "Incarcerated or strangulated hernia (urgent — no prior auth required)",
+              "Femoral hernia (high incarceration risk)",
+              "Recurrent hernia with symptoms",
+              "Incisional/ventral hernia with symptoms or enlarging defect",
+              "Umbilical hernia with symptoms or defect >2cm"
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "UnitedHealthcare", "status": "Covered", "notes": "Covers symptomatic hernia; pain and functional limitation documentation required; prior auth for elective cases" },
+          { "payer": "Aetna", "status": "Covered", "notes": "Covers symptomatic hernia; femoral hernia covered regardless of symptoms; prior auth required" },
+          { "payer": "Cigna", "status": "Covered", "notes": "Covers symptomatic hernia with documentation of pain and functional limitation" },
+          { "payer": "Anthem/BCBS", "status": "Covered", "notes": "Covers symptomatic hernia; prior auth required; document symptom burden and functional impact" },
+          { "payer": "Humana", "status": "Covered", "notes": "Covers per standard surgical criteria; symptom documentation required" }
+        ]
+      }
+    ],
+    "customSections": [],
+    "raw": {
+      "markdown": "# Hernia Repair Authorization Guide\n\n## CPT Codes — Hernia Repair\n\n| CPT | Description | Notes |\n| --- | --- | --- |\n| 49650 | Laparoscopic repair of initial inguinal hernia | Laparoscopic inguinal hernia repair — TEP or TAPP |\n| 49651 | Laparoscopic repair of recurrent inguinal hernia | Laparoscopic recurrent inguinal hernia repair |\n| 49505 | Repair initial inguinal hernia, age 5 years or older; reducible | Open inguinal hernia repair — Lichtenstein or other |\n| 49507 | Repair initial inguinal hernia, age 5 years or older; incarcerated or strangulated | Open inguinal hernia — incarcerated/strangulated |\n| 49560 | Repair initial incisional or ventral hernia; reducible | Open ventral/incisional hernia repair |\n| 49565 | Repair recurrent incisional or ventral hernia; reducible | Open recurrent ventral hernia |\n| 49652 | Laparoscopic repair, ventral, umbilical, spigelian or epigastric hernia (includes mesh insertion when performed); reducible | Laparoscopic ventral hernia repair |\n| 49653 | Laparoscopic repair, ventral, umbilical, spigelian or epigastric hernia; incarcerated or strangulated | Laparoscopic ventral hernia — incarcerated/strangulated |\n| 49585 | Repair umbilical hernia, age 5 years or older; reducible | Open umbilical hernia repair |\n\n## ICD-10 Codes\n\n| ICD-10 | Description | Notes |\n| --- | --- | --- |\n| K40.90 | Unilateral inguinal hernia, without obstruction or gangrene, not specified as recurrent | Unilateral inguinal hernia — primary |\n| K40.91 | Unilateral inguinal hernia, without obstruction or gangrene, recurrent | Recurrent inguinal hernia |\n| K40.30 | Unilateral inguinal hernia, with obstruction, without gangrene, not specified as recurrent | Incarcerated inguinal hernia |\n| K41.90 | Unilateral femoral hernia, without obstruction or gangrene, not specified as recurrent | Femoral hernia — high incarceration risk |\n| K43.9 | Ventral hernia without obstruction or gangrene | Ventral hernia |\n| K43.0 | Incisional hernia with obstruction, without gangrene | Incisional hernia with obstruction |\n| K42.9 | Umbilical hernia without obstruction or gangrene | Umbilical hernia |\n\n## Payer Requirements\n\nTabs: Medicare | Medicaid | Private\n\n### Medicare\n\n**Required Documentation**\n- Clinical documentation of hernia (physical exam findings, imaging if needed)\n- Symptom documentation (pain, discomfort, limitation of activity)\n- Hernia type, location, and reducibility\n- Surgeon documentation of surgical indication\n- ASA classification and surgical risk assessment\n\n**Medical Necessity Criteria**\n- ✓ Symptomatic inguinal, femoral, umbilical, ventral, or incisional hernia\n- ✓ Incarcerated or strangulated hernia (urgent/emergent)\n- ✓ Femoral hernia (high incarceration risk — surgery recommended even if asymptomatic)\n- ✓ Recurrent hernia with symptoms\n\n**Reimbursement Note:** Medicare covers hernia repair for symptomatic hernias without requiring a mandatory conservative treatment period. Asymptomatic inguinal hernias may be managed with watchful waiting per HerniaSurge Guidelines 2018, but surgery is covered when patient and surgeon elect repair. Femoral hernias are covered regardless of symptoms due to high incarceration risk.\n\n**Known Payer Policies**\n- [Covered] Medicare (CMS): Covered for symptomatic hernia; femoral hernia covered regardless of symptoms; no mandatory conservative treatment period\n\n### Medicaid\n\n**Required Documentation**\n- Clinical documentation of hernia\n- Symptom documentation\n- Prior authorization may be required for elective cases\n\n**Medical Necessity Criteria**\n- ✓ Symptomatic hernia with documented pain or functional limitation\n- ✓ Incarcerated or strangulated hernia\n- ✓ Femoral hernia\n\n**Reimbursement Note:** Medicaid coverage for elective hernia repair varies by state. Most states cover symptomatic hernias. Incarcerated/strangulated hernias are covered as urgent/emergent without prior authorization.\n\n**Known Payer Policies**\n- [Covered] Medicaid (state-specific): Generally covered for symptomatic hernias; prior auth requirements vary by state\n\n### Private\n\n**Required Documentation**\n- Prior authorization required for elective hernia repair by most commercial payers\n- Clinical documentation of hernia (physical exam, imaging if needed)\n- Symptom documentation: pain level, functional limitation, duration\n- Hernia type, location, reducibility\n- Documentation of failed conservative management (truss, activity modification) — some payers require\n- Surgeon documentation of surgical indication and approach\n\n**Medical Necessity Criteria**\n- ✓ Symptomatic inguinal hernia with pain ≥4/10 or functional limitation\n- ✓ Incarcerated or strangulated hernia (urgent — no prior auth required)\n- ✓ Femoral hernia (high incarceration risk)\n- ✓ Recurrent hernia with symptoms\n- ✓ Incisional/ventral hernia with symptoms or enlarging defect\n- ✓ Umbilical hernia with symptoms or defect >2cm\n\n**Reimbursement Note:** Commercial payers typically require documentation of symptomatic hernia. For inguinal hernias, document pain level, functional limitation, and impact on daily activities. Some payers require documentation of failed truss/conservative management. Femoral hernias are generally approved without conservative treatment requirement due to high incarceration risk.\n\n**Known Payer Policies**\n- [Covered] UnitedHealthcare: Covers symptomatic hernia; pain and functional limitation documentation required; prior auth for elective cases\n- [Covered] Aetna: Covers symptomatic hernia; femoral hernia covered regardless of symptoms; prior auth required\n- [Covered] Cigna: Covers symptomatic hernia with documentation of pain and functional limitation\n- [Covered] Anthem/BCBS: Covers symptomatic hernia; prior auth required; document symptom burden and functional impact\n- [Covered] Humana: Covers per standard surgical criteria; symptom documentation required\n",
+      "tables": [
+        {
+          "name": "CPT Codes — Hernia Repair",
+          "header": ["CPT", "Description", "Notes"],
+          "rows": [
+            ["49650", "Laparoscopic repair of initial inguinal hernia", "Laparoscopic inguinal hernia repair — TEP or TAPP"],
+            ["49651", "Laparoscopic repair of recurrent inguinal hernia", "Laparoscopic recurrent inguinal hernia repair"],
+            ["49505", "Repair initial inguinal hernia, age 5 years or older; reducible", "Open inguinal hernia repair — Lichtenstein or other"],
+            ["49507", "Repair initial inguinal hernia, age 5 years or older; incarcerated or strangulated", "Open inguinal hernia — incarcerated/strangulated"],
+            ["49560", "Repair initial incisional or ventral hernia; reducible", "Open ventral/incisional hernia repair"],
+            ["49565", "Repair recurrent incisional or ventral hernia; reducible", "Open recurrent ventral hernia"],
+            ["49652", "Laparoscopic repair, ventral, umbilical, spigelian or epigastric hernia (includes mesh insertion when performed); reducible", "Laparoscopic ventral hernia repair"],
+            ["49653", "Laparoscopic repair, ventral, umbilical, spigelian or epigastric hernia; incarcerated or strangulated", "Laparoscopic ventral hernia — incarcerated/strangulated"],
+            ["49585", "Repair umbilical hernia, age 5 years or older; reducible", "Open umbilical hernia repair"]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["ICD-10", "Description", "Notes"],
+          "rows": [
+            ["K40.90", "Unilateral inguinal hernia, without obstruction or gangrene, not specified as recurrent", "Unilateral inguinal hernia — primary"],
+            ["K40.91", "Unilateral inguinal hernia, without obstruction or gangrene, recurrent", "Recurrent inguinal hernia"],
+            ["K40.30", "Unilateral inguinal hernia, with obstruction, without gangrene, not specified as recurrent", "Incarcerated inguinal hernia"],
+            ["K41.90", "Unilateral femoral hernia, without obstruction or gangrene, not specified as recurrent", "Femoral hernia — high incarceration risk"],
+            ["K43.9", "Ventral hernia without obstruction or gangrene", "Ventral hernia"],
+            ["K43.0", "Incisional hernia with obstruction, without gangrene", "Incisional hernia with obstruction"],
+            ["K42.9", "Umbilical hernia without obstruction or gangrene", "Umbilical hernia"]
+          ]
+        }
+      ]
+    }
+  }
+}

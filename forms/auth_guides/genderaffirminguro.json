@@ -1,0 +1,120 @@
+{
+  "title": "Gender-Affirming Urologic Procedures Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "GenderAffirmingUroAuthGuide.tsx",
+    "title": "Gender-Affirming Urologic Procedures — Authorization Guide",
+    "subtitle": "CPT Codes · ICD-10 · WPATH SOC-8 · Payer Requirements",
+    "cptCodes": [
+      { "code": "57291", "description": "Construction of artificial vagina; without graft", "procedure": "Vaginoplasty" },
+      { "code": "57292", "description": "Construction of artificial vagina; with graft", "procedure": "Vaginoplasty + graft" },
+      { "code": "55175", "description": "Scrotoplasty; simple", "procedure": "Scrotoplasty" },
+      { "code": "55180", "description": "Scrotoplasty; complicated", "procedure": "Complex scrotoplasty" },
+      { "code": "55970", "description": "Intersex surgery; male to female", "procedure": "MTF genital surgery" },
+      { "code": "55980", "description": "Intersex surgery; female to male", "procedure": "FTM genital surgery" },
+      { "code": "54520", "description": "Orchiectomy, simple", "procedure": "Bilateral orchiectomy" },
+      { "code": "58150", "description": "Total abdominal hysterectomy (corpus and cervix), with or without removal of tube(s), with or without removal of ovary(s)", "procedure": "Hysterectomy" },
+      { "code": "58661", "description": "Laparoscopy, surgical; with removal of adnexal structures (partial or total oophorectomy and/or salpingectomy)", "procedure": "Oophorectomy" },
+      { "code": "53410", "description": "Urethroplasty; 1-stage reconstruction of male anterior urethra", "procedure": "Urethroplasty" }
+    ],
+    "icd10Codes": [
+      { "code": "F64.0", "description": "Transsexualism (gender dysphoria in adults)" },
+      { "code": "F64.8", "description": "Other gender identity disorders" },
+      { "code": "F64.9", "description": "Gender identity disorder, unspecified" },
+      { "code": "Z87.890", "description": "Personal history of sex reassignment" },
+      { "code": "Z76.89", "description": "Encounter for other specified circumstances" },
+      { "code": "Q56.4", "description": "Indeterminate sex, unspecified" }
+    ],
+    "payers": [],
+    "customSections": [
+      {
+        "heading": "ICD-10 Note",
+        "kind": "prose",
+        "text": "Note: ICD-11 uses HA60 (Gender incongruence of adolescence or adulthood) — not yet widely adopted in US billing. Use DSM-5 F64.0 for most US payers."
+      },
+      {
+        "heading": "Coverage Landscape — Common Denial Reasons",
+        "kind": "list",
+        "items": [
+          "\"Cosmetic procedure\" (incorrect per AMA, AUA, WPATH)",
+          "\"Experimental\" (incorrect — established procedures with long-term outcomes data)",
+          "Blanket plan exclusion for \"sex transformation surgery\"",
+          "Insufficient documentation of WPATH criteria",
+          "Missing second mental health letter (legacy SOC-7 requirement)"
+        ]
+      },
+      {
+        "heading": "Coverage Landscape — Strongest Coverage Arguments",
+        "kind": "list",
+        "items": [
+          "ACA Section 1557 prohibits sex discrimination in health coverage (includes gender identity)",
+          "AMA, AUA, WPATH, Endocrine Society all classify gender-affirming surgery as medically necessary",
+          "WPATH SOC-8 (2022) is the current international standard of care",
+          "Blanket exclusions for \"sex transformation\" are increasingly found to violate federal non-discrimination law",
+          "Mental health outcomes data: surgery significantly reduces gender dysphoria and improves quality of life"
+        ]
+      },
+      {
+        "heading": "Coverage Landscape — Federal and State Protections",
+        "kind": "list",
+        "items": [
+          "ACA Section 1557: prohibits sex discrimination (includes gender identity) in federally funded health programs",
+          "22+ states have explicit state laws requiring coverage of gender-affirming care",
+          "Medicare: covers gender-affirming surgery when medically necessary (CMS 2014)",
+          "Medicaid: coverage varies by state; many states now cover gender-affirming care"
+        ]
+      },
+      {
+        "heading": "Prior Authorization — Required Documentation (WPATH SOC-8 / Payer Standard)",
+        "kind": "list",
+        "items": [
+          "DSM-5 diagnosis of gender dysphoria (F64.0) from qualified mental health provider",
+          "Documentation of persistent, well-documented gender dysphoria",
+          "Mental health evaluation and surgical clearance letter(s)",
+          "Documentation of ≥12 months of hormone therapy (for genital surgery)",
+          "Real-life experience documentation (some payers still require)",
+          "Medical clearance from primary care or endocrinologist",
+          "Two letters of support (legacy SOC-7 — still required by many payers)",
+          "Surgeon's letter of medical necessity with WPATH criteria documentation"
+        ]
+      },
+      {
+        "heading": "Prior Authorization — WPATH SOC-8 vs SOC-7 Key Changes",
+        "kind": "prose",
+        "text": "SOC-8 (2022) — Current Standard:\n• Removed mandatory 12-month real-life experience requirement\n• Replaced two-letter requirement with individualized assessment\n• Affirms informed consent model for many procedures\n• Removed minimum age requirements for many procedures (case-by-case)\n\nSOC-7 (Legacy — still used by many payers):\n• Required 2 letters from qualified mental health professionals\n• Required 12 months of real-life experience in affirmed gender\n• Required 12 months of continuous hormone therapy\n\n⚠ Many payers still use SOC-7 criteria. Obtain both SOC-7 and SOC-8 documentation to maximize approval chances."
+      }
+    ],
+    "raw": {
+      "markdown": "# Gender-Affirming Urologic Procedures — Authorization Guide\n\nCPT Codes · ICD-10 · WPATH SOC-8 · Payer Requirements\n\n(backHref: /gender-affirming-uro)\n\n## CPT Codes\n\n| CPT | Description | Procedure |\n| --- | --- | --- |\n| 57291 | Construction of artificial vagina; without graft | Vaginoplasty |\n| 57292 | Construction of artificial vagina; with graft | Vaginoplasty + graft |\n| 55175 | Scrotoplasty; simple | Scrotoplasty |\n| 55180 | Scrotoplasty; complicated | Complex scrotoplasty |\n| 55970 | Intersex surgery; male to female | MTF genital surgery |\n| 55980 | Intersex surgery; female to male | FTM genital surgery |\n| 54520 | Orchiectomy, simple | Bilateral orchiectomy |\n| 58150 | Total abdominal hysterectomy (corpus and cervix), with or without removal of tube(s), with or without removal of ovary(s) | Hysterectomy |\n| 58661 | Laparoscopy, surgical; with removal of adnexal structures (partial or total oophorectomy and/or salpingectomy) | Oophorectomy |\n| 53410 | Urethroplasty; 1-stage reconstruction of male anterior urethra | Urethroplasty |\n\n## ICD-10 Diagnoses\n\n| ICD-10 | Description |\n| --- | --- |\n| F64.0 | Transsexualism (gender dysphoria in adults) |\n| F64.8 | Other gender identity disorders |\n| F64.9 | Gender identity disorder, unspecified |\n| Z87.890 | Personal history of sex reassignment |\n| Z76.89 | Encounter for other specified circumstances |\n| Q56.4 | Indeterminate sex, unspecified |\n\nNote: ICD-11 uses HA60 (Gender incongruence of adolescence or adulthood) — not yet widely adopted in US billing. Use DSM-5 F64.0 for most US payers.\n\n## Coverage Landscape\n\n### Common Denial Reasons\n• \"Cosmetic procedure\" (incorrect per AMA, AUA, WPATH)\n• \"Experimental\" (incorrect — established procedures with long-term outcomes data)\n• Blanket plan exclusion for \"sex transformation surgery\"\n• Insufficient documentation of WPATH criteria\n• Missing second mental health letter (legacy SOC-7 requirement)\n\n### Strongest Coverage Arguments\n• ACA Section 1557 prohibits sex discrimination in health coverage (includes gender identity)\n• AMA, AUA, WPATH, Endocrine Society all classify gender-affirming surgery as medically necessary\n• WPATH SOC-8 (2022) is the current international standard of care\n• Blanket exclusions for \"sex transformation\" are increasingly found to violate federal non-discrimination law\n• Mental health outcomes data: surgery significantly reduces gender dysphoria and improves quality of life\n\n### Federal and State Protections\n• ACA Section 1557: prohibits sex discrimination (includes gender identity) in federally funded health programs\n• 22+ states have explicit state laws requiring coverage of gender-affirming care\n• Medicare: covers gender-affirming surgery when medically necessary (CMS 2014)\n• Medicaid: coverage varies by state; many states now cover gender-affirming care\n\n## Prior Authorization Requirements\n\n### Required Documentation (WPATH SOC-8 / Payer Standard)\n• DSM-5 diagnosis of gender dysphoria (F64.0) from qualified mental health provider\n• Documentation of persistent, well-documented gender dysphoria\n• Mental health evaluation and surgical clearance letter(s)\n• Documentation of ≥12 months of hormone therapy (for genital surgery)\n• Real-life experience documentation (some payers still require)\n• Medical clearance from primary care or endocrinologist\n• Two letters of support (legacy SOC-7 — still required by many payers)\n• Surgeon's letter of medical necessity with WPATH criteria documentation\n\n### WPATH SOC-8 vs SOC-7 Key Changes\n**SOC-8 (2022) — Current Standard:**\n• Removed mandatory 12-month real-life experience requirement\n• Replaced two-letter requirement with individualized assessment\n• Affirms informed consent model for many procedures\n• Removed minimum age requirements for many procedures (case-by-case)\n\n**SOC-7 (Legacy — still used by many payers):**\n• Required 2 letters from qualified mental health professionals\n• Required 12 months of real-life experience in affirmed gender\n• Required 12 months of continuous hormone therapy\n\n⚠ Many payers still use SOC-7 criteria. Obtain both SOC-7 and SOC-8 documentation to maximize approval chances.",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["CPT", "Description", "Procedure"],
+          "rows": [
+            ["57291", "Construction of artificial vagina; without graft", "Vaginoplasty"],
+            ["57292", "Construction of artificial vagina; with graft", "Vaginoplasty + graft"],
+            ["55175", "Scrotoplasty; simple", "Scrotoplasty"],
+            ["55180", "Scrotoplasty; complicated", "Complex scrotoplasty"],
+            ["55970", "Intersex surgery; male to female", "MTF genital surgery"],
+            ["55980", "Intersex surgery; female to male", "FTM genital surgery"],
+            ["54520", "Orchiectomy, simple", "Bilateral orchiectomy"],
+            ["58150", "Total abdominal hysterectomy (corpus and cervix), with or without removal of tube(s), with or without removal of ovary(s)", "Hysterectomy"],
+            ["58661", "Laparoscopy, surgical; with removal of adnexal structures (partial or total oophorectomy and/or salpingectomy)", "Oophorectomy"],
+            ["53410", "Urethroplasty; 1-stage reconstruction of male anterior urethra", "Urethroplasty"]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnoses",
+          "header": ["ICD-10", "Description"],
+          "rows": [
+            ["F64.0", "Transsexualism (gender dysphoria in adults)"],
+            ["F64.8", "Other gender identity disorders"],
+            ["F64.9", "Gender identity disorder, unspecified"],
+            ["Z87.890", "Personal history of sex reassignment"],
+            ["Z76.89", "Encounter for other specified circumstances"],
+            ["Q56.4", "Indeterminate sex, unspecified"]
+          ]
+        }
+      ]
+    }
+  }
+}

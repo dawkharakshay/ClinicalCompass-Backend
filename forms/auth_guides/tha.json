@@ -1,0 +1,239 @@
+{
+  "title": "Total Hip Arthroplasty Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "THAAuthGuide.tsx",
+    "title": null,
+    "subtitle": null,
+    "cptCodes": [
+      { "code": "27130", "description": "Total hip arthroplasty (primary)", "rvu": "22.18", "notes": "Includes femoral and acetabular components" },
+      { "code": "27132", "description": "Conversion of previous hip surgery to total hip arthroplasty", "rvu": "24.50", "notes": "Conversion from prior ORIF, hemiarthroplasty, or resurfacing" },
+      { "code": "27134", "description": "Revision total hip arthroplasty — both components", "rvu": "30.20", "notes": "Full revision — acetabular and femoral components" },
+      { "code": "27137", "description": "Revision total hip arthroplasty — acetabular component only", "rvu": "24.10", "notes": "Isolated acetabular revision" },
+      { "code": "27138", "description": "Revision total hip arthroplasty — femoral component only", "rvu": "22.80", "notes": "Isolated femoral revision" }
+    ],
+    "icd10Codes": [
+      { "code": "M16.11", "description": "Unilateral primary osteoarthritis, right hip", "notes": "Most common indication" },
+      { "code": "M16.12", "description": "Unilateral primary osteoarthritis, left hip", "notes": "Most common indication" },
+      { "code": "M16.0", "description": "Bilateral primary osteoarthritis of hip", "notes": "Bilateral disease" },
+      { "code": "M16.31", "description": "Unilateral post-traumatic osteoarthritis, right hip", "notes": "Post-traumatic OA" },
+      { "code": "M16.32", "description": "Unilateral post-traumatic osteoarthritis, left hip", "notes": "Post-traumatic OA" },
+      { "code": "M87.051", "description": "Idiopathic aseptic necrosis of bone, right femur", "notes": "AVN indication" },
+      { "code": "M87.052", "description": "Idiopathic aseptic necrosis of bone, left femur", "notes": "AVN indication" },
+      { "code": "M16.21", "description": "Unilateral osteoarthritis resulting from hip dysplasia, right hip", "notes": "Dysplasia-related OA" },
+      { "code": "M05.751", "description": "Rheumatoid arthritis with rheumatoid factor, right hip", "notes": "RA indication" }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Prior Auth Required",
+        "overview": "Reimbursement: Medicare pays ~$1,400-2,200 surgeon fee; facility fee varies. CJR bundled payment model may apply.",
+        "sections": [
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Documented hip OA or AVN with radiographic evidence",
+              "Failure of ≥3 months conservative therapy (PT, NSAIDs, assistive devices)",
+              "Functional impairment documented (Harris Hip Score, HOOS, or VAS)",
+              "BMI <40 preferred; BMI 40-50 requires additional documentation",
+              "No active infection or absolute contraindications",
+              "Prior auth required for most Medicare Advantage plans"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Medicare pays ~$1,400-2,200 surgeon fee; facility fee varies. CJR bundled payment model may apply."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicare FFS", "status": "Covered", "notes": "No prior auth for traditional Medicare; required for most MA plans" },
+          { "payer": "Medicare Advantage (UHC)", "status": "Prior Auth Required", "notes": "eviCore criteria; clinical notes and imaging required" },
+          { "payer": "Medicare Advantage (Humana)", "status": "Prior Auth Required", "notes": "Peer-to-peer available if denied" }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Prior Auth Required",
+        "overview": "Reimbursement: Medicaid reimbursement typically 40-60% of Medicare rates.",
+        "sections": [
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "State-specific criteria; most require documented OA with radiographic evidence",
+              "Conservative therapy failure (typically ≥6 months)",
+              "Age ≥18; some states restrict for patients <50",
+              "Prior authorization universally required"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Medicaid reimbursement typically 40-60% of Medicare rates."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicaid MCO", "status": "Prior Auth Required", "notes": "Criteria vary by state; conservative therapy documentation critical" }
+        ]
+      },
+      {
+        "key": "private_insurance",
+        "label": "Private Insurance",
+        "coverageStatus": "Prior Auth Required",
+        "overview": "Reimbursement: Commercial rates typically 120-180% of Medicare. eviCore, Carelon, or MCG criteria commonly used.",
+        "sections": [
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Radiographic evidence of hip OA or AVN",
+              "Documented failure of ≥3-6 months conservative treatment",
+              "Functional assessment scores (HOOS, Harris Hip Score, SF-36)",
+              "Pain score documentation (NRS ≥7 or VAS ≥70mm)",
+              "BMI <40 (most plans); BMI 40-50 requires bariatric consultation note",
+              "No active infection, malignancy, or severe comorbidities"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Commercial rates typically 120-180% of Medicare. eviCore, Carelon, or MCG criteria commonly used."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Aetna", "status": "Prior Auth Required", "notes": "Clinical Policy Bulletin; eviCore criteria; 3-month conservative therapy" },
+          { "payer": "UnitedHealthcare", "status": "Prior Auth Required", "notes": "Optum criteria; functional assessment required" },
+          { "payer": "BCBS", "status": "Prior Auth Required", "notes": "Medical Policy; radiographic OA required; conservative therapy documentation" },
+          { "payer": "Cigna", "status": "Prior Auth Required", "notes": "eviCore criteria; BMI <40 preferred" }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Documentation — Clinical Documentation",
+        "kind": "list",
+        "items": [
+          "Office notes documenting hip OA/AVN diagnosis and symptom duration",
+          "Pain score documentation at multiple visits",
+          "Functional assessment (HOOS or Harris Hip Score)",
+          "BMI and weight history"
+        ]
+      },
+      {
+        "heading": "Documentation — Imaging",
+        "kind": "list",
+        "items": [
+          "Weight-bearing AP pelvis and lateral hip X-rays",
+          "MRI if AVN or labral pathology suspected",
+          "CT scan if complex anatomy or revision planning"
+        ]
+      },
+      {
+        "heading": "Documentation — Conservative Therapy",
+        "kind": "list",
+        "items": [
+          "Physical therapy records (≥6 weeks)",
+          "Medication trial documentation (NSAIDs, acetaminophen)",
+          "Intraarticular injection records",
+          "Assistive device trial if applicable"
+        ]
+      },
+      {
+        "heading": "Documentation — Pre-operative Clearance",
+        "kind": "list",
+        "items": [
+          "Medical clearance from PCP or internist",
+          "Cardiac risk assessment if indicated",
+          "HbA1c <8% for diabetic patients",
+          "BMI optimization plan if BMI >35"
+        ]
+      },
+      {
+        "heading": "Submission",
+        "kind": "list",
+        "items": [
+          "Obtain weight-bearing AP pelvis and lateral hip X-rays with radiologist report.",
+          "Document ≥3 months conservative therapy with specific modalities and duration.",
+          "Complete functional assessment (HOOS or Harris Hip Score) and document pain scores.",
+          "Obtain pre-operative medical clearance and optimize modifiable risk factors.",
+          "Submit prior authorization request with CPT 27130 and primary ICD-10.",
+          "Include all supporting documentation: imaging reports, PT records, office notes.",
+          "If denied, request peer-to-peer review with the plan's medical director within 72 hours."
+        ]
+      },
+      {
+        "heading": "Denial Reasons",
+        "kind": "list",
+        "items": [
+          "Insufficient conservative therapy documentation (most common denial reason)",
+          "Inadequate radiographic evidence of hip OA severity",
+          "BMI >40 without documented weight loss program or bariatric consultation",
+          "Missing functional assessment scores (HOOS/Harris Hip Score not documented)",
+          "Uncontrolled diabetes (HbA1c >8%) without optimization plan",
+          "Active infection not addressed",
+          "Incomplete pre-operative clearance documentation"
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# THA Authorization Guide\n\nCPT codes, ICD-10 codes, payer requirements, and documentation checklist for Total Hip Arthroplasty (THA)\n\nTabs: CPT Codes | ICD-10 | Payer Requirements | Documentation | Submission | Denial Reasons\n\n## CPT Codes\n\n- **27130** — Total hip arthroplasty (primary) — RVU: 22.18 — Includes femoral and acetabular components\n- **27132** — Conversion of previous hip surgery to total hip arthroplasty — RVU: 24.50 — Conversion from prior ORIF, hemiarthroplasty, or resurfacing\n- **27134** — Revision total hip arthroplasty — both components — RVU: 30.20 — Full revision — acetabular and femoral components\n- **27137** — Revision total hip arthroplasty — acetabular component only — RVU: 24.10 — Isolated acetabular revision\n- **27138** — Revision total hip arthroplasty — femoral component only — RVU: 22.80 — Isolated femoral revision\n\n## ICD-10 Codes\n\n- **M16.11** — Unilateral primary osteoarthritis, right hip — Most common indication\n- **M16.12** — Unilateral primary osteoarthritis, left hip — Most common indication\n- **M16.0** — Bilateral primary osteoarthritis of hip — Bilateral disease\n- **M16.31** — Unilateral post-traumatic osteoarthritis, right hip — Post-traumatic OA\n- **M16.32** — Unilateral post-traumatic osteoarthritis, left hip — Post-traumatic OA\n- **M87.051** — Idiopathic aseptic necrosis of bone, right femur — AVN indication\n- **M87.052** — Idiopathic aseptic necrosis of bone, left femur — AVN indication\n- **M16.21** — Unilateral osteoarthritis resulting from hip dysplasia, right hip — Dysplasia-related OA\n- **M05.751** — Rheumatoid arthritis with rheumatoid factor, right hip — RA indication\n\n## Payer Requirements\n\n### Medicare — Prior Auth Required\n\n**Medical Necessity Criteria:**\n- Documented hip OA or AVN with radiographic evidence\n- Failure of ≥3 months conservative therapy (PT, NSAIDs, assistive devices)\n- Functional impairment documented (Harris Hip Score, HOOS, or VAS)\n- BMI <40 preferred; BMI 40-50 requires additional documentation\n- No active infection or absolute contraindications\n- Prior auth required for most Medicare Advantage plans\n\n**Reimbursement:** Medicare pays ~$1,400-2,200 surgeon fee; facility fee varies. CJR bundled payment model may apply.\n\n**Known Payer Policies:**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicare FFS | Covered | No prior auth for traditional Medicare; required for most MA plans |\n| Medicare Advantage (UHC) | Prior Auth Required | eviCore criteria; clinical notes and imaging required |\n| Medicare Advantage (Humana) | Prior Auth Required | Peer-to-peer available if denied |\n\n### Medicaid — Prior Auth Required\n\n**Medical Necessity Criteria:**\n- State-specific criteria; most require documented OA with radiographic evidence\n- Conservative therapy failure (typically ≥6 months)\n- Age ≥18; some states restrict for patients <50\n- Prior authorization universally required\n\n**Reimbursement:** Medicaid reimbursement typically 40-60% of Medicare rates.\n\n**Known Payer Policies:**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicaid MCO | Prior Auth Required | Criteria vary by state; conservative therapy documentation critical |\n\n### Private Insurance — Prior Auth Required\n\n**Medical Necessity Criteria:**\n- Radiographic evidence of hip OA or AVN\n- Documented failure of ≥3-6 months conservative treatment\n- Functional assessment scores (HOOS, Harris Hip Score, SF-36)\n- Pain score documentation (NRS ≥7 or VAS ≥70mm)\n- BMI <40 (most plans); BMI 40-50 requires bariatric consultation note\n- No active infection, malignancy, or severe comorbidities\n\n**Reimbursement:** Commercial rates typically 120-180% of Medicare. eviCore, Carelon, or MCG criteria commonly used.\n\n**Known Payer Policies:**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Aetna | Prior Auth Required | Clinical Policy Bulletin; eviCore criteria; 3-month conservative therapy |\n| UnitedHealthcare | Prior Auth Required | Optum criteria; functional assessment required |\n| BCBS | Prior Auth Required | Medical Policy; radiographic OA required; conservative therapy documentation |\n| Cigna | Prior Auth Required | eviCore criteria; BMI <40 preferred |\n\n## Documentation\n\n### Clinical Documentation\n- ✓ Office notes documenting hip OA/AVN diagnosis and symptom duration\n- ✓ Pain score documentation at multiple visits\n- ✓ Functional assessment (HOOS or Harris Hip Score)\n- ✓ BMI and weight history\n\n### Imaging\n- ✓ Weight-bearing AP pelvis and lateral hip X-rays\n- ✓ MRI if AVN or labral pathology suspected\n- ✓ CT scan if complex anatomy or revision planning\n\n### Conservative Therapy\n- ✓ Physical therapy records (≥6 weeks)\n- ✓ Medication trial documentation (NSAIDs, acetaminophen)\n- ✓ Intraarticular injection records\n- ✓ Assistive device trial if applicable\n\n### Pre-operative Clearance\n- ✓ Medical clearance from PCP or internist\n- ✓ Cardiac risk assessment if indicated\n- ✓ HbA1c <8% for diabetic patients\n- ✓ BMI optimization plan if BMI >35\n\n## Submission\n\n1. Obtain weight-bearing AP pelvis and lateral hip X-rays with radiologist report.\n2. Document ≥3 months conservative therapy with specific modalities and duration.\n3. Complete functional assessment (HOOS or Harris Hip Score) and document pain scores.\n4. Obtain pre-operative medical clearance and optimize modifiable risk factors.\n5. Submit prior authorization request with CPT 27130 and primary ICD-10.\n6. Include all supporting documentation: imaging reports, PT records, office notes.\n7. If denied, request peer-to-peer review with the plan's medical director within 72 hours.\n\n## Denial Reasons\n\n- ⚠ Insufficient conservative therapy documentation (most common denial reason)\n- ⚠ Inadequate radiographic evidence of hip OA severity\n- ⚠ BMI >40 without documented weight loss program or bariatric consultation\n- ⚠ Missing functional assessment scores (HOOS/Harris Hip Score not documented)\n- ⚠ Uncontrolled diabetes (HbA1c >8%) without optimization plan\n- ⚠ Active infection not addressed\n- ⚠ Incomplete pre-operative clearance documentation\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "Description", "RVU", "Notes"],
+          "rows": [
+            ["27130", "Total hip arthroplasty (primary)", "22.18", "Includes femoral and acetabular components"],
+            ["27132", "Conversion of previous hip surgery to total hip arthroplasty", "24.50", "Conversion from prior ORIF, hemiarthroplasty, or resurfacing"],
+            ["27134", "Revision total hip arthroplasty — both components", "30.20", "Full revision — acetabular and femoral components"],
+            ["27137", "Revision total hip arthroplasty — acetabular component only", "24.10", "Isolated acetabular revision"],
+            ["27138", "Revision total hip arthroplasty — femoral component only", "22.80", "Isolated femoral revision"]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["Code", "Description", "Notes"],
+          "rows": [
+            ["M16.11", "Unilateral primary osteoarthritis, right hip", "Most common indication"],
+            ["M16.12", "Unilateral primary osteoarthritis, left hip", "Most common indication"],
+            ["M16.0", "Bilateral primary osteoarthritis of hip", "Bilateral disease"],
+            ["M16.31", "Unilateral post-traumatic osteoarthritis, right hip", "Post-traumatic OA"],
+            ["M16.32", "Unilateral post-traumatic osteoarthritis, left hip", "Post-traumatic OA"],
+            ["M87.051", "Idiopathic aseptic necrosis of bone, right femur", "AVN indication"],
+            ["M87.052", "Idiopathic aseptic necrosis of bone, left femur", "AVN indication"],
+            ["M16.21", "Unilateral osteoarthritis resulting from hip dysplasia, right hip", "Dysplasia-related OA"],
+            ["M05.751", "Rheumatoid arthritis with rheumatoid factor, right hip", "RA indication"]
+          ]
+        },
+        {
+          "name": "Medicare — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicare FFS", "Covered", "No prior auth for traditional Medicare; required for most MA plans"],
+            ["Medicare Advantage (UHC)", "Prior Auth Required", "eviCore criteria; clinical notes and imaging required"],
+            ["Medicare Advantage (Humana)", "Prior Auth Required", "Peer-to-peer available if denied"]
+          ]
+        },
+        {
+          "name": "Medicaid — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicaid MCO", "Prior Auth Required", "Criteria vary by state; conservative therapy documentation critical"]
+          ]
+        },
+        {
+          "name": "Private Insurance — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Aetna", "Prior Auth Required", "Clinical Policy Bulletin; eviCore criteria; 3-month conservative therapy"],
+            ["UnitedHealthcare", "Prior Auth Required", "Optum criteria; functional assessment required"],
+            ["BCBS", "Prior Auth Required", "Medical Policy; radiographic OA required; conservative therapy documentation"],
+            ["Cigna", "Prior Auth Required", "eviCore criteria; BMI <40 preferred"]
+          ]
+        }
+      ]
+    }
+  }
+}

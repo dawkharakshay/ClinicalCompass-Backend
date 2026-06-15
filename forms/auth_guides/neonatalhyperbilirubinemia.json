@@ -1,0 +1,318 @@
+{
+  "title": "Neonatal Hyperbilirubinemia Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "NeonatalHyperbilirubinemiaAuthGuide.tsx",
+    "title": "NeonatalHyperbilirubinemia Clinical Compass",
+    "subtitle": "Neonatal Hyperbilirubinemia Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "99477",
+        "description": "Initial hospital care, per day, for the evaluation and management of the neonate, 28 days of age or younger, who requires intensive observation, frequent interventions, and other intensive care services.",
+        "device": "Phototherapy unit, intensive care monitoring",
+        "access": "Inpatient hospital stay",
+        "rvu": "3.50",
+        "includes": [
+          "Daily evaluation and management of the neonate",
+          "Coordination of care with specialists",
+          "Interpretation of laboratory results",
+          "Parent counseling"
+        ],
+        "note": "This code is for neonates 28 days or younger requiring intensive observation but not critical care."
+      },
+      {
+        "code": "36430",
+        "description": "Transfusion, blood or blood components (e.g., exchange transfusion for severe hyperbilirubinemia).",
+        "device": "Blood transfusion equipment, central or peripheral venous access",
+        "access": "Inpatient or outpatient hospital setting",
+        "rvu": "1.80",
+        "includes": [
+          "Venipuncture for access",
+          "Administration of blood or blood components",
+          "Monitoring during transfusion",
+          "Post-transfusion care"
+        ],
+        "note": "Used for exchange transfusions in severe cases of hyperbilirubinemia when phototherapy is insufficient."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "P59.9",
+        "description": "Neonatal jaundice, unspecified",
+        "notes": "Used when the specific cause of neonatal jaundice is not documented.",
+        "required": true
+      },
+      {
+        "code": "P59.0",
+        "description": "Neonatal jaundice associated with preterm delivery",
+        "notes": "Used for jaundice in infants born prematurely.",
+        "required": false
+      },
+      {
+        "code": "P58.8",
+        "description": "Neonatal jaundice due to other specified excessive hemolysis",
+        "notes": "Used when jaundice is caused by other hemolytic conditions, such as G6PD deficiency.",
+        "required": false
+      },
+      {
+        "code": "P59.1",
+        "description": "Inspissated bile syndrome",
+        "notes": "A rare cause of conjugated hyperbilirubinemia in neonates.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Limited Coverage",
+        "overview": "Medicare typically does not directly cover neonatal hyperbilirubinemia treatment for newborns. Coverage may be indirect through other programs or if the infant is dual-eligible for Medicaid.",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Generally, Medicare does not cover routine neonatal care as it primarily covers individuals 65 and older or with certain disabilities. However, specific services for neonates may be covered under certain circumstances, often through state Medicaid programs or private insurance for dual-eligible beneficiaries.",
+        "reimbursementNote": "Reimbursement for neonatal services under Medicare is rare and typically only occurs in specific, complex scenarios or for dual-eligible patients where Medicare acts as a secondary payer.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Policy",
+            "items": [
+              "Not applicable for primary neonatal care.",
+              "Coverage may exist for services rendered to the mother during pregnancy or delivery that impact neonatal health."
+            ]
+          },
+          {
+            "heading": "Required Documentation: General Documentation",
+            "items": [
+              "Proof of dual eligibility (if applicable)",
+              "Medical necessity documentation for any covered services"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify patient eligibility and primary payer status.",
+              "Submit claims to the primary payer first (usually Medicaid or private insurance).",
+              "If applicable, submit secondary claims to Medicare with appropriate documentation."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of patient eligibility (newborns not typically covered by Medicare).",
+              "Services not deemed medically necessary under Medicare guidelines for adults."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify primary insurance for newborns.",
+              "Understand dual eligibility rules for potential secondary Medicare coverage."
+            ]
+          }
+        ],
+        "knownPolicies": []
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Comprehensive Coverage",
+        "overview": "Medicaid provides comprehensive coverage for neonatal hyperbilirubinemia, including phototherapy, laboratory tests, and exchange transfusions, based on medical necessity guidelines.",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Medicaid programs generally cover medically necessary services for newborns, including treatment for hyperbilirubinemia. Prior authorization is typically not required for standard phototherapy or exchange transfusions when clinically indicated.",
+        "reimbursementNote": "Medicaid reimbursement rates vary by state but generally cover the costs associated with medically necessary treatment for neonatal hyperbilirubinemia.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Phototherapy",
+            "items": [
+              "Total serum bilirubin (TSB) levels exceeding age-specific nomogram thresholds.",
+              "Clinical signs of jaundice requiring intervention.",
+              "Failure of less intensive measures (e.g., increased feeding) to reduce TSB."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Exchange Transfusion",
+            "items": [
+              "TSB levels approaching or exceeding exchange transfusion thresholds despite intensive phototherapy.",
+              "Signs of acute bilirubin encephalopathy.",
+              "Rapid rise in TSB levels."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Detailed history and physical examination findings.",
+              "Serial TSB measurements and age-specific nomogram plotting.",
+              "Documentation of phototherapy initiation, type, and duration.",
+              "Response to treatment and any adverse events.",
+              "Justification for exchange transfusion, if performed."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify newborn enrollment in state Medicaid program.",
+              "Submit claims with appropriate CPT and ICD-10 codes.",
+              "Ensure all medical necessity criteria are clearly documented in the patient record."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of clear medical necessity documentation.",
+              "Incorrect coding or billing.",
+              "Patient not enrolled in Medicaid at the time of service."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with state-specific Medicaid guidelines for neonatal care.",
+              "Ensure timely enrollment of newborns in Medicaid.",
+              "Maintain thorough and accurate clinical records."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (e.g., California Medi-Cal)",
+            "status": "Covered",
+            "notes": "Covers phototherapy and exchange transfusions per clinical guidelines."
+          },
+          {
+            "payer": "State Medicaid (e.g., Texas Medicaid)",
+            "status": "Covered",
+            "notes": "Follows AAP guidelines for hyperbilirubinemia management."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Good Coverage",
+        "overview": "Private insurance plans typically offer good coverage for neonatal hyperbilirubinemia, adhering to established clinical guidelines for diagnosis and treatment.",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Most private insurance plans cover medically necessary treatment for neonatal hyperbilirubinemia, including phototherapy and exchange transfusions. Prior authorization is generally not required for these acute, essential services, but always verify with the specific plan.",
+        "reimbursementNote": "Reimbursement for private insurance is generally good for medically necessary neonatal hyperbilirubinemia treatment, but rates and specific coverage details vary by plan.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Phototherapy",
+            "items": [
+              "TSB levels requiring intervention based on American Academy of Pediatrics (AAP) guidelines.",
+              "Clinical assessment indicating significant jaundice.",
+              "Documentation of home phototherapy if applicable and ordered by a physician."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Exchange Transfusion",
+            "items": [
+              "TSB levels at or above exchange transfusion thresholds as per AAP guidelines.",
+              "Evidence of acute bilirubin encephalopathy or risk factors.",
+              "Failure of maximal phototherapy."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Physician orders for all treatments and tests.",
+              "Serial TSB levels and interpretation relative to AAP nomograms.",
+              "Detailed notes on patient condition, treatment response, and any complications.",
+              "Discharge planning and follow-up instructions."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify patient insurance eligibility and benefits prior to or at admission.",
+              "Submit claims with appropriate CPT and ICD-10 codes.",
+              "Provide all requested medical records to support medical necessity."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of medical necessity as per plan guidelines.",
+              "Incomplete or insufficient clinical documentation.",
+              "Out-of-network provider (if applicable and not an emergency).",
+              "Failure to follow plan-specific guidelines for home phototherapy."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always confirm benefits and any specific requirements with the patient's private insurance plan.",
+              "Ensure all documentation aligns with AAP guidelines for hyperbilirubinemia.",
+              "For home phototherapy, confirm coverage and preferred vendors with the insurer."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Covered",
+            "notes": "Follows AAP guidelines for management of hyperbilirubinemia in newborns."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered",
+            "notes": "Covers phototherapy and exchange transfusion when medically necessary."
+          },
+          {
+            "payer": "Aetna",
+            "status": "Covered",
+            "notes": "Requires medical necessity documentation based on clinical guidelines."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment (navigates to /neonatalhyperbilirubinemia)",
+        "href": "/neonatalhyperbilirubinemia"
+      },
+      {
+        "heading": "Procedure Codes (section note)",
+        "kind": "prose",
+        "text": "For each CPT code, the included services are listed under the note 'Included in this code (do NOT bill separately):'."
+      }
+    ],
+    "raw": {
+      "markdown": "# NeonatalHyperbilirubinemia Clinical Compass\n## Neonatal Hyperbilirubinemia Insurance Authorization Guide\n\n[Button] Back to Assessment (navigates to /neonatalhyperbilirubinemia)\n\n## Procedure Codes\n\n### CPT 99477 | RVU 3.50\nInitial hospital care, per day, for the evaluation and management of the neonate, 28 days of age or younger, who requires intensive observation, frequent interventions, and other intensive care services.\n\nDevice/Access: Phototherapy unit, intensive care monitoring\nAccess: Inpatient hospital stay\n\nIncluded in this code (do NOT bill separately):\n- Daily evaluation and management of the neonate\n- Coordination of care with specialists\n- Interpretation of laboratory results\n- Parent counseling\n\nNote: This code is for neonates 28 days or younger requiring intensive observation but not critical care.\n\n### CPT 36430 | RVU 1.80\nTransfusion, blood or blood components (e.g., exchange transfusion for severe hyperbilirubinemia).\n\nDevice/Access: Blood transfusion equipment, central or peripheral venous access\nAccess: Inpatient or outpatient hospital setting\n\nIncluded in this code (do NOT bill separately):\n- Venipuncture for access\n- Administration of blood or blood components\n- Monitoring during transfusion\n- Post-transfusion care\n\nNote: Used for exchange transfusions in severe cases of hyperbilirubinemia when phototherapy is insufficient.\n\n## ICD-10 Diagnosis Codes\n\n- P59.9 (Primary / Required) — Neonatal jaundice, unspecified. Used when the specific cause of neonatal jaundice is not documented.\n- P59.0 — Neonatal jaundice associated with preterm delivery. Used for jaundice in infants born prematurely.\n- P58.8 — Neonatal jaundice due to other specified excessive hemolysis. Used when jaundice is caused by other hemolytic conditions, such as G6PD deficiency.\n- P59.1 — Inspissated bile syndrome. A rare cause of conjugated hyperbilirubinemia in neonates.\n\n## Payer-Specific Authorization Requirements\n\n### Medicare\nStatus badges: No Prior Auth (FFS) | Limited Coverage\n\nPrior Auth Note: Generally, Medicare does not cover routine neonatal care as it primarily covers individuals 65 and older or with certain disabilities. However, specific services for neonates may be covered under certain circumstances, often through state Medicaid programs or private insurance for dual-eligible beneficiaries.\n\nOverview: Medicare typically does not directly cover neonatal hyperbilirubinemia treatment for newborns. Coverage may be indirect through other programs or if the infant is dual-eligible for Medicaid.\n\n#### Coverage Criteria\nGeneral Policy:\n- Not applicable for primary neonatal care.\n- Coverage may exist for services rendered to the mother during pregnancy or delivery that impact neonatal health.\n\n#### Required Documentation\nGeneral Documentation:\n- Proof of dual eligibility (if applicable)\n- Medical necessity documentation for any covered services\n\n#### Submission Process\n1. Verify patient eligibility and primary payer status.\n2. Submit claims to the primary payer first (usually Medicaid or private insurance).\n3. If applicable, submit secondary claims to Medicare with appropriate documentation.\n\n#### Common Denial Reasons\n- Lack of patient eligibility (newborns not typically covered by Medicare).\n- Services not deemed medically necessary under Medicare guidelines for adults.\n\n#### Known Payer Policies\n(none)\n\n#### Reimbursement Note\nReimbursement for neonatal services under Medicare is rare and typically only occurs in specific, complex scenarios or for dual-eligible patients where Medicare acts as a secondary payer.\n\n#### Authorization Tips\n- Always verify primary insurance for newborns.\n- Understand dual eligibility rules for potential secondary Medicare coverage.\n\n### Medicaid\nStatus badges: No Prior Auth (FFS) | Comprehensive Coverage\n\nPrior Auth Note: Medicaid programs generally cover medically necessary services for newborns, including treatment for hyperbilirubinemia. Prior authorization is typically not required for standard phototherapy or exchange transfusions when clinically indicated.\n\nOverview: Medicaid provides comprehensive coverage for neonatal hyperbilirubinemia, including phototherapy, laboratory tests, and exchange transfusions, based on medical necessity guidelines.\n\n#### Coverage Criteria\nPhototherapy:\n- Total serum bilirubin (TSB) levels exceeding age-specific nomogram thresholds.\n- Clinical signs of jaundice requiring intervention.\n- Failure of less intensive measures (e.g., increased feeding) to reduce TSB.\nExchange Transfusion:\n- TSB levels approaching or exceeding exchange transfusion thresholds despite intensive phototherapy.\n- Signs of acute bilirubin encephalopathy.\n- Rapid rise in TSB levels.\n\n#### Required Documentation\nClinical Documentation:\n- Detailed history and physical examination findings.\n- Serial TSB measurements and age-specific nomogram plotting.\n- Documentation of phototherapy initiation, type, and duration.\n- Response to treatment and any adverse events.\n- Justification for exchange transfusion, if performed.\n\n#### Submission Process\n1. Verify newborn enrollment in state Medicaid program.\n2. Submit claims with appropriate CPT and ICD-10 codes.\n3. Ensure all medical necessity criteria are clearly documented in the patient record.\n\n#### Common Denial Reasons\n- Lack of clear medical necessity documentation.\n- Incorrect coding or billing.\n- Patient not enrolled in Medicaid at the time of service.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| State Medicaid (e.g., California Medi-Cal) | Covered | Covers phototherapy and exchange transfusions per clinical guidelines. |\n| State Medicaid (e.g., Texas Medicaid) | Covered | Follows AAP guidelines for hyperbilirubinemia management. |\n\n#### Reimbursement Note\nMedicaid reimbursement rates vary by state but generally cover the costs associated with medically necessary treatment for neonatal hyperbilirubinemia.\n\n#### Authorization Tips\n- Familiarize yourself with state-specific Medicaid guidelines for neonatal care.\n- Ensure timely enrollment of newborns in Medicaid.\n- Maintain thorough and accurate clinical records.\n\n### Private Insurance\nStatus badges: No Prior Auth (FFS) | Good Coverage\n\nPrior Auth Note: Most private insurance plans cover medically necessary treatment for neonatal hyperbilirubinemia, including phototherapy and exchange transfusions. Prior authorization is generally not required for these acute, essential services, but always verify with the specific plan.\n\nOverview: Private insurance plans typically offer good coverage for neonatal hyperbilirubinemia, adhering to established clinical guidelines for diagnosis and treatment.\n\n#### Coverage Criteria\nPhototherapy:\n- TSB levels requiring intervention based on American Academy of Pediatrics (AAP) guidelines.\n- Clinical assessment indicating significant jaundice.\n- Documentation of home phototherapy if applicable and ordered by a physician.\nExchange Transfusion:\n- TSB levels at or above exchange transfusion thresholds as per AAP guidelines.\n- Evidence of acute bilirubin encephalopathy or risk factors.\n- Failure of maximal phototherapy.\n\n#### Required Documentation\nClinical Documentation:\n- Physician orders for all treatments and tests.\n- Serial TSB levels and interpretation relative to AAP nomograms.\n- Detailed notes on patient condition, treatment response, and any complications.\n- Discharge planning and follow-up instructions.\n\n#### Submission Process\n1. Verify patient insurance eligibility and benefits prior to or at admission.\n2. Submit claims with appropriate CPT and ICD-10 codes.\n3. Provide all requested medical records to support medical necessity.\n\n#### Common Denial Reasons\n- Lack of medical necessity as per plan guidelines.\n- Incomplete or insufficient clinical documentation.\n- Out-of-network provider (if applicable and not an emergency).\n- Failure to follow plan-specific guidelines for home phototherapy.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| Blue Cross Blue Shield | Covered | Follows AAP guidelines for management of hyperbilirubinemia in newborns. |\n| UnitedHealthcare | Covered | Covers phototherapy and exchange transfusion when medically necessary. |\n| Aetna | Covered | Requires medical necessity documentation based on clinical guidelines. |\n\n#### Reimbursement Note\nReimbursement for private insurance is generally good for medically necessary neonatal hyperbilirubinemia treatment, but rates and specific coverage details vary by plan.\n\n#### Authorization Tips\n- Always confirm benefits and any specific requirements with the patient's private insurance plan.\n- Ensure all documentation aligns with AAP guidelines for hyperbilirubinemia.\n- For home phototherapy, confirm coverage and preferred vendors with the insurer.\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "Description", "Device/Access", "Access", "RVU", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            ["99477", "Initial hospital care, per day, for the evaluation and management of the neonate, 28 days of age or younger, who requires intensive observation, frequent interventions, and other intensive care services.", "Phototherapy unit, intensive care monitoring", "Inpatient hospital stay", "3.50", "Daily evaluation and management of the neonate; Coordination of care with specialists; Interpretation of laboratory results; Parent counseling", "This code is for neonates 28 days or younger requiring intensive observation but not critical care."],
+            ["36430", "Transfusion, blood or blood components (e.g., exchange transfusion for severe hyperbilirubinemia).", "Blood transfusion equipment, central or peripheral venous access", "Inpatient or outpatient hospital setting", "1.80", "Venipuncture for access; Administration of blood or blood components; Monitoring during transfusion; Post-transfusion care", "Used for exchange transfusions in severe cases of hyperbilirubinemia when phototherapy is insufficient."]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["Code", "Description", "Notes", "Required/Primary"],
+          "rows": [
+            ["P59.9", "Neonatal jaundice, unspecified", "Used when the specific cause of neonatal jaundice is not documented.", "Primary"],
+            ["P59.0", "Neonatal jaundice associated with preterm delivery", "Used for jaundice in infants born prematurely.", "No"],
+            ["P58.8", "Neonatal jaundice due to other specified excessive hemolysis", "Used when jaundice is caused by other hemolytic conditions, such as G6PD deficiency.", "No"],
+            ["P59.1", "Inspissated bile syndrome", "A rare cause of conjugated hyperbilirubinemia in neonates.", "No"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., California Medi-Cal)", "Covered", "Covers phototherapy and exchange transfusions per clinical guidelines."],
+            ["State Medicaid (e.g., Texas Medicaid)", "Covered", "Follows AAP guidelines for hyperbilirubinemia management."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Private Insurance",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield", "Covered", "Follows AAP guidelines for management of hyperbilirubinemia in newborns."],
+            ["UnitedHealthcare", "Covered", "Covers phototherapy and exchange transfusion when medically necessary."],
+            ["Aetna", "Covered", "Requires medical necessity documentation based on clinical guidelines."]
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Percutaneous AV Fistula Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "36837, 36836",
+      "credentials": "[Credentials]",
+      "icd_codes": "N18.6, Z99.2, N18.5, T82.49XA, Z87.39, I10, E11.65",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\nRe: Medical Necessity Appeal — Percutaneous Arteriovenous Fistula (pAVF) Creation for Hemodialysis Access\n\nDear Medical Director / Utilization Review Committee,\n\nI am writing to formally appeal the denial of prior authorization for percutaneous arteriovenous fistula (pAVF) creation for my patient, who requires permanent hemodialysis vascular access. This procedure is medically necessary and is supported by current societal practice guidelines and published clinical evidence.\n\nCLINICAL SUMMARY\n\n[Clinical assessment summary]\n\npAVF Eligibility Assessment: [pAVF Eligibility Status]\nRecommended Device: WavelinQ system\nVessel Mapping: Adequate — perforator vein patent, superficial vein accessible, central veins patent.\n\nGUIDELINE SUPPORT\n\nThis recommendation is based on the SIR Practice Guidance Document on Percutaneous Arteriovenous Fistulae for Dialysis Access (Dolmatch BL et al., J Vasc Interv Radiol. 2025;36(12):1945-1957), the most current multisociety guidance on pAVF creation, as well as the KDOQI Clinical Practice Guidelines for Vascular Access (2019 Update, Am J Kidney Dis. 2020;75(4 Suppl 2):S1-S164).\n\nThe procedure (CPT: {{cpt_codes}}, ICD-10: {{icd_codes}}) is indicated for this patient based on the following evidence:\n\n1. SIR Practice Guidance (Dolmatch et al., JVIR 2025): Supports pAVF creation as a safe and effective native fistula option for patients with end-stage renal disease (ESRD) requiring hemodialysis access, with technical success rates >95% and cannulation success approximately 80%.\n\n2. KDOQI 2019 Vascular Access Guidelines (Lok CE et al., AJKD 2020): Recommends native arteriovenous fistula — including percutaneous approaches — as the preferred long-term dialysis access modality over central venous catheters, which carry significantly higher rates of infection, hospitalization, and mortality.\n\n3. NEAT Trial (Lok CE et al., JASN 2017): Demonstrated technical success >95% for pAVF creation with favorable safety profile and successful cannulation in approximately 80% of patients.\n\n4. EASE Trial (Rajan DK et al., CJASN 2021): Confirmed high technical success rates for pAVF using the WavelinQ system with low rates of serious adverse events.\n\n5. Fistula First Catheter Last (FFCL) Initiative: Native AV fistulas, including percutaneous fistulae, are associated with significantly lower mortality, infection rates, and hospitalizations compared to central venous catheters.\n\nMEDICAL NECESSITY\n\nWithout timely creation of a permanent hemodialysis access (pAVF), this patient faces significant risk of:\n- Continued or new dependence on a tunneled central venous catheter (CVC), which carries a 2-3x higher risk of bloodstream infection, sepsis, and death compared to native fistulae\n- Catheter-related bloodstream infection (CRBSI), a leading cause of morbidity and mortality in dialysis patients\n- Inadequate dialysis delivery due to catheter dysfunction or thrombosis\n- Repeated hospitalizations for catheter-related complications\n- Permanent loss of upper extremity venous access due to progressive venous stenosis from catheter use\n\nA percutaneous arteriovenous fistula is the least invasive method to create a native fistula and avoids the morbidity of open surgical access creation. The procedure is performed under ultrasound and fluoroscopic guidance in an outpatient interventional suite, with same-day discharge in the vast majority of cases.\n\nThis patient has been evaluated and determined to be a candidate for pAVF creation ([pAVF Eligibility Status]). Vessel mapping has been performed and confirms adequate anatomy for the procedure.\n\nREQUESTED ACTION\n\nI respectfully request that you overturn the denial and authorize the requested percutaneous arteriovenous fistula creation (CPT {{cpt_codes}}). I am available to discuss this case in detail and can provide additional clinical documentation, vessel mapping reports, or imaging upon request.\n\n{{additional_clinical_notes}}\n\nSincerely,\n\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

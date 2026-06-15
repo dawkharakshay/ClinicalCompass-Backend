@@ -1,0 +1,352 @@
+{
+  "title": "Dyslipidemia Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "DyslipidemiaDSAuthGuide.tsx",
+    "title": "DyslipidemiaDS Clinical Compass",
+    "subtitle": "Dyslipidemia Decision Support Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "J1306",
+        "description": "Injection, inclisiran, 1 mg (for Leqvio)",
+        "device": "Subcutaneous injection",
+        "access": "Professional (HCPCS)",
+        "rvu": "N/A",
+        "includes": ["Drug cost", "Administration"],
+        "note": "HCPCS code for Inclisiran (Leqvio) administration. Prior authorization typically required."
+      },
+      {
+        "code": "J3490",
+        "description": "Unclassified drugs (for other PCSK9 inhibitors like Repatha, Praluent)",
+        "device": "Subcutaneous injection",
+        "access": "Professional (HCPCS)",
+        "rvu": "N/A",
+        "includes": ["Drug cost", "Administration"],
+        "note": "HCPCS code for unclassified drugs, often used for PCSK9 inhibitors. Specific J-codes may exist for individual drugs."
+      },
+      {
+        "code": "99213",
+        "description": "Office or other outpatient visit for the evaluation and management of an established patient, 15-29 minutes",
+        "device": "N/A",
+        "access": "Professional (CPT)",
+        "rvu": "0.97",
+        "includes": ["Medication management", "Patient counseling on lifestyle modifications"],
+        "note": "Used for evaluation and management services related to dyslipidemia, including statin therapy management."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "E78.0",
+        "description": "Pure hypercholesterolemia",
+        "notes": "Elevated LDL-C levels.",
+        "required": true
+      },
+      {
+        "code": "E78.2",
+        "description": "Mixed hyperlipidemia",
+        "notes": "Elevated LDL-C and triglycerides.",
+        "required": true
+      },
+      {
+        "code": "E78.5",
+        "description": "Hyperlipidemia, unspecified",
+        "notes": "General code for elevated lipid levels.",
+        "required": false
+      },
+      {
+        "code": "I25.10",
+        "description": "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+        "notes": "Often co-occurs with dyslipidemia, indicating ASCVD risk.",
+        "required": false
+      },
+      {
+        "code": "Z83.4",
+        "description": "Family history of other lipidemia",
+        "notes": "Relevant for familial hypercholesterolemia.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with Prior Authorization",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is generally required for PCSK9 inhibitors. Statin therapy typically does not require prior authorization.",
+        "overview": "Medicare Part D covers PCSK9 inhibitors under strict criteria, primarily for patients with established atherosclerotic cardiovascular disease (ASCVD) or familial hypercholesterolemia who have not achieved LDL-C goals on maximally tolerated statin therapy. Statins are generally covered without significant restrictions.",
+        "reimbursementNote": "Reimbursement for PCSK9 inhibitors can be complex due to high drug costs and strict prior authorization requirements. Statins are generally well-reimbursed.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: PCSK9 Inhibitors (e.g., Repatha, Praluent, Leqvio)",
+            "items": [
+              "Patient has established ASCVD (e.g., history of MI, stroke, PAD, coronary revascularization) or Heterozygous/Homozygous Familial Hypercholesterolemia (HeFH/HoFH).",
+              "LDL-C ≥ 70 mg/dL (or ≥ 100 mg/dL for HeFH/HoFH) despite maximally tolerated statin therapy (e.g., atorvastatin 40-80mg, rosuvastatin 20-40mg for at least 8 weeks).",
+              "Documentation of statin intolerance (e.g., rhabdomyolysis, severe myalgia with creatine kinase elevation) if applicable.",
+              "Patient is ≥ 18 years of age (or ≥ 10 years for HeFH/HoFH)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Statins",
+            "items": [
+              "Diagnosis of dyslipidemia or conditions increasing ASCVD risk.",
+              "Prescribed according to clinical guidelines (e.g., ACC/AHA)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: For PCSK9 Inhibitors",
+            "items": [
+              "Medical records supporting ASCVD diagnosis or genetic testing/clinical criteria for FH.",
+              "Lipid panel results (LDL-C, HDL-C, triglycerides) demonstrating failure to achieve goals on statin therapy.",
+              "Documentation of maximally tolerated statin therapy and duration.",
+              "If statin intolerant, detailed notes on adverse effects and attempts with different statins."
+            ]
+          },
+          {
+            "heading": "Required Documentation: For Statins",
+            "items": [
+              "Diagnosis of dyslipidemia or related conditions.",
+              "Prescription details."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request form with supporting clinical documentation.",
+              "Await approval or denial from Medicare Part D plan.",
+              "Appeals process available for denied requests."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet LDL-C thresholds on maximally tolerated statin therapy.",
+              "Insufficient documentation of ASCVD or FH diagnosis.",
+              "Inadequate trial or documentation of statin intolerance.",
+              "Off-label use without strong clinical evidence."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Ensure comprehensive documentation of all prior lipid-lowering therapies, including dosages and duration.",
+              "Clearly articulate the patient's ASCVD risk factors or FH diagnosis.",
+              "For statin intolerance, provide detailed notes on symptoms, creatine kinase levels, and attempts with alternative statins."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS (Medicare Part D)",
+            "status": "Covered with PA",
+            "notes": "Strict criteria for PCSK9 inhibitors, generally covers statins."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered with Prior Authorization",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is typically required for PCSK9 inhibitors. Statin therapy usually does not require prior authorization.",
+        "overview": "Medicaid coverage for PCSK9 inhibitors varies by state, but generally follows similar strict criteria as Medicare, focusing on high-risk patients with ASCVD or FH who have failed other therapies. Statins are widely covered.",
+        "reimbursementNote": "Medicaid reimbursement for PCSK9 inhibitors is subject to state-specific formularies and prior authorization. Statins are generally covered.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: PCSK9 Inhibitors",
+            "items": [
+              "Patient has established ASCVD or documented Familial Hypercholesterolemia.",
+              "LDL-C remains elevated despite maximally tolerated statin therapy and/or ezetimibe.",
+              "Documentation of statin intolerance if applicable.",
+              "Age restrictions may apply based on state-specific policies."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Statins",
+            "items": [
+              "Diagnosis of dyslipidemia.",
+              "Prescribed according to evidence-based guidelines."
+            ]
+          },
+          {
+            "heading": "Required Documentation: For PCSK9 Inhibitors",
+            "items": [
+              "Clinical notes confirming ASCVD or FH diagnosis.",
+              "Lipid panel results.",
+              "History of statin therapy and/or ezetimibe, including adherence and response.",
+              "Documentation of statin intolerance."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit state-specific Medicaid prior authorization form.",
+              "Provide all required clinical documentation.",
+              "Follow state-specific appeals process if denied."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet state-specific clinical criteria.",
+              "Incomplete documentation.",
+              "Lack of trial with preferred formulary alternatives."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state's specific Medicaid formulary and prior authorization criteria for PCSK9 inhibitors.",
+              "Ensure all required fields on the PA form are completed accurately and thoroughly."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (varies)",
+            "status": "Covered with PA",
+            "notes": "Coverage and criteria vary by state. Generally covers statins."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Covered with Prior Authorization",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is almost always required for PCSK9 inhibitors. Statin therapy is typically covered without prior authorization.",
+        "overview": "Private insurance plans generally cover PCSK9 inhibitors for patients with high ASCVD risk or FH who have not achieved LDL-C goals on maximally tolerated statin therapy, often with additional step-therapy requirements. Statins are usually covered as preferred generics.",
+        "reimbursementNote": "Private insurance coverage for PCSK9 inhibitors is highly variable and often requires extensive prior authorization and step-therapy. Statins are typically covered with low co-pays.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: PCSK9 Inhibitors",
+            "items": [
+              "Diagnosis of established ASCVD or genetic/clinical diagnosis of FH.",
+              "LDL-C ≥ 70 mg/dL (or higher, depending on plan) despite optimal statin therapy (maximally tolerated dose for adequate duration) and/or ezetimibe.",
+              "Documentation of statin intolerance (e.g., myalgia, rhabdomyolysis) if applicable.",
+              "Patient meets age and other demographic criteria specified by the plan."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Statins",
+            "items": [
+              "Diagnosis of dyslipidemia.",
+              "Prescribed according to medical necessity and clinical guidelines."
+            ]
+          },
+          {
+            "heading": "Required Documentation: For PCSK9 Inhibitors",
+            "items": [
+              "Detailed patient history, including ASCVD events or FH diagnosis.",
+              "Serial lipid panels demonstrating persistent elevated LDL-C.",
+              "Documentation of trials and failures of statins and ezetimibe, including dosages and duration.",
+              "Physician's attestation of medical necessity."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Complete and submit the plan-specific prior authorization form.",
+              "Attach all supporting clinical documentation.",
+              "Follow up with the insurer for status updates and be prepared for peer-to-peer review.",
+              "Utilize appeals process if initial request is denied."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet step-therapy requirements (e.g., inadequate trial of statins/ezetimibe).",
+              "LDL-C levels not meeting plan-specific thresholds.",
+              "Insufficient clinical documentation to support medical necessity.",
+              "Lack of clear diagnosis for ASCVD or FH."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Be thorough in documenting all previous treatments and patient responses.",
+              "Highlight the patient's high-risk status and the potential benefits of PCSK9 inhibitor therapy.",
+              "Be prepared for a peer-to-peer discussion with the medical director of the insurance company."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Cigna",
+            "status": "Covered with PA",
+            "notes": "Specific criteria for Repatha (evolocumab) outlined in their policy."
+          },
+          {
+            "payer": "Anthem",
+            "status": "Covered with PA",
+            "notes": "Similar criteria to Cigna, focusing on ASCVD and FH."
+          },
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Covered with PA",
+            "notes": "Policies vary by state plan, but generally require PA for PCSK9 inhibitors."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment (navigates to /dyslipidemiaDS)",
+        "href": "/dyslipidemiaDS"
+      },
+      {
+        "heading": "Procedure Codes Note",
+        "kind": "prose",
+        "text": "For each procedure code, the page notes items that are 'Included in this code (do NOT bill separately).'"
+      }
+    ],
+    "raw": {
+      "markdown": "# DyslipidemiaDS Clinical Compass\n## Dyslipidemia Decision Support Insurance Authorization Guide\n\n[Button] Back to Assessment (navigates to /dyslipidemiaDS)\n\n## Procedure Codes\n\n### HCPCS J1306 (RVU N/A)\nInjection, inclisiran, 1 mg (for Leqvio)\nDevice/Access: Subcutaneous injection\nIncluded in this code (do NOT bill separately):\n- Drug cost\n- Administration\nNote: HCPCS code for Inclisiran (Leqvio) administration. Prior authorization typically required.\n\n### HCPCS J3490 (RVU N/A)\nUnclassified drugs (for other PCSK9 inhibitors like Repatha, Praluent)\nDevice/Access: Subcutaneous injection\nIncluded in this code (do NOT bill separately):\n- Drug cost\n- Administration\nNote: HCPCS code for unclassified drugs, often used for PCSK9 inhibitors. Specific J-codes may exist for individual drugs.\n\n### CPT 99213 (RVU 0.97)\nOffice or other outpatient visit for the evaluation and management of an established patient, 15-29 minutes\nDevice/Access: N/A\nIncluded in this code (do NOT bill separately):\n- Medication management\n- Patient counseling on lifestyle modifications\nNote: Used for evaluation and management services related to dyslipidemia, including statin therapy management.\n\n## ICD-10 Diagnosis Codes\n\n- E78.0 (Primary) - Pure hypercholesterolemia. Elevated LDL-C levels.\n- E78.2 (Primary) - Mixed hyperlipidemia. Elevated LDL-C and triglycerides.\n- E78.5 - Hyperlipidemia, unspecified. General code for elevated lipid levels.\n- I25.10 - Atherosclerotic heart disease of native coronary artery without angina pectoris. Often co-occurs with dyslipidemia, indicating ASCVD risk.\n- Z83.4 - Family history of other lipidemia. Relevant for familial hypercholesterolemia.\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\nBadges: Prior Auth Required; Covered with Prior Authorization\nPrior Auth Note: Prior authorization is generally required for PCSK9 inhibitors. Statin therapy typically does not require prior authorization.\nOverview: Medicare Part D covers PCSK9 inhibitors under strict criteria, primarily for patients with established atherosclerotic cardiovascular disease (ASCVD) or familial hypercholesterolemia who have not achieved LDL-C goals on maximally tolerated statin therapy. Statins are generally covered without significant restrictions.\n\n#### Coverage Criteria\n**PCSK9 Inhibitors (e.g., Repatha, Praluent, Leqvio)**\n- Patient has established ASCVD (e.g., history of MI, stroke, PAD, coronary revascularization) or Heterozygous/Homozygous Familial Hypercholesterolemia (HeFH/HoFH).\n- LDL-C ≥ 70 mg/dL (or ≥ 100 mg/dL for HeFH/HoFH) despite maximally tolerated statin therapy (e.g., atorvastatin 40-80mg, rosuvastatin 20-40mg for at least 8 weeks).\n- Documentation of statin intolerance (e.g., rhabdomyolysis, severe myalgia with creatine kinase elevation) if applicable.\n- Patient is ≥ 18 years of age (or ≥ 10 years for HeFH/HoFH).\n**Statins**\n- Diagnosis of dyslipidemia or conditions increasing ASCVD risk.\n- Prescribed according to clinical guidelines (e.g., ACC/AHA).\n\n#### Required Documentation\n**For PCSK9 Inhibitors**\n- Medical records supporting ASCVD diagnosis or genetic testing/clinical criteria for FH.\n- Lipid panel results (LDL-C, HDL-C, triglycerides) demonstrating failure to achieve goals on statin therapy.\n- Documentation of maximally tolerated statin therapy and duration.\n- If statin intolerant, detailed notes on adverse effects and attempts with different statins.\n**For Statins**\n- Diagnosis of dyslipidemia or related conditions.\n- Prescription details.\n\n#### Submission Process\n1. Submit prior authorization request form with supporting clinical documentation.\n2. Await approval or denial from Medicare Part D plan.\n3. Appeals process available for denied requests.\n\n#### Common Denial Reasons\n- Failure to meet LDL-C thresholds on maximally tolerated statin therapy.\n- Insufficient documentation of ASCVD or FH diagnosis.\n- Inadequate trial or documentation of statin intolerance.\n- Off-label use without strong clinical evidence.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS (Medicare Part D) | Covered with PA | Strict criteria for PCSK9 inhibitors, generally covers statins. |\n\n#### Reimbursement Note\nReimbursement for PCSK9 inhibitors can be complex due to high drug costs and strict prior authorization requirements. Statins are generally well-reimbursed.\n\n#### Authorization Tips\n- Ensure comprehensive documentation of all prior lipid-lowering therapies, including dosages and duration.\n- Clearly articulate the patient's ASCVD risk factors or FH diagnosis.\n- For statin intolerance, provide detailed notes on symptoms, creatine kinase levels, and attempts with alternative statins.\n\n### Medicaid\nBadges: Prior Auth Required; Covered with Prior Authorization\nPrior Auth Note: Prior authorization is typically required for PCSK9 inhibitors. Statin therapy usually does not require prior authorization.\nOverview: Medicaid coverage for PCSK9 inhibitors varies by state, but generally follows similar strict criteria as Medicare, focusing on high-risk patients with ASCVD or FH who have failed other therapies. Statins are widely covered.\n\n#### Coverage Criteria\n**PCSK9 Inhibitors**\n- Patient has established ASCVD or documented Familial Hypercholesterolemia.\n- LDL-C remains elevated despite maximally tolerated statin therapy and/or ezetimibe.\n- Documentation of statin intolerance if applicable.\n- Age restrictions may apply based on state-specific policies.\n**Statins**\n- Diagnosis of dyslipidemia.\n- Prescribed according to evidence-based guidelines.\n\n#### Required Documentation\n**For PCSK9 Inhibitors**\n- Clinical notes confirming ASCVD or FH diagnosis.\n- Lipid panel results.\n- History of statin therapy and/or ezetimibe, including adherence and response.\n- Documentation of statin intolerance.\n\n#### Submission Process\n1. Submit state-specific Medicaid prior authorization form.\n2. Provide all required clinical documentation.\n3. Follow state-specific appeals process if denied.\n\n#### Common Denial Reasons\n- Failure to meet state-specific clinical criteria.\n- Incomplete documentation.\n- Lack of trial with preferred formulary alternatives.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (varies) | Covered with PA | Coverage and criteria vary by state. Generally covers statins. |\n\n#### Reimbursement Note\nMedicaid reimbursement for PCSK9 inhibitors is subject to state-specific formularies and prior authorization. Statins are generally covered.\n\n#### Authorization Tips\n- Familiarize yourself with your state's specific Medicaid formulary and prior authorization criteria for PCSK9 inhibitors.\n- Ensure all required fields on the PA form are completed accurately and thoroughly.\n\n### Private Insurance\nBadges: Prior Auth Required; Covered with Prior Authorization\nPrior Auth Note: Prior authorization is almost always required for PCSK9 inhibitors. Statin therapy is typically covered without prior authorization.\nOverview: Private insurance plans generally cover PCSK9 inhibitors for patients with high ASCVD risk or FH who have not achieved LDL-C goals on maximally tolerated statin therapy, often with additional step-therapy requirements. Statins are usually covered as preferred generics.\n\n#### Coverage Criteria\n**PCSK9 Inhibitors**\n- Diagnosis of established ASCVD or genetic/clinical diagnosis of FH.\n- LDL-C ≥ 70 mg/dL (or higher, depending on plan) despite optimal statin therapy (maximally tolerated dose for adequate duration) and/or ezetimibe.\n- Documentation of statin intolerance (e.g., myalgia, rhabdomyolysis) if applicable.\n- Patient meets age and other demographic criteria specified by the plan.\n**Statins**\n- Diagnosis of dyslipidemia.\n- Prescribed according to medical necessity and clinical guidelines.\n\n#### Required Documentation\n**For PCSK9 Inhibitors**\n- Detailed patient history, including ASCVD events or FH diagnosis.\n- Serial lipid panels demonstrating persistent elevated LDL-C.\n- Documentation of trials and failures of statins and ezetimibe, including dosages and duration.\n- Physician's attestation of medical necessity.\n\n#### Submission Process\n1. Complete and submit the plan-specific prior authorization form.\n2. Attach all supporting clinical documentation.\n3. Follow up with the insurer for status updates and be prepared for peer-to-peer review.\n4. Utilize appeals process if initial request is denied.\n\n#### Common Denial Reasons\n- Failure to meet step-therapy requirements (e.g., inadequate trial of statins/ezetimibe).\n- LDL-C levels not meeting plan-specific thresholds.\n- Insufficient clinical documentation to support medical necessity.\n- Lack of clear diagnosis for ASCVD or FH.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Cigna | Covered with PA | Specific criteria for Repatha (evolocumab) outlined in their policy. |\n| Anthem | Covered with PA | Similar criteria to Cigna, focusing on ASCVD and FH. |\n| Blue Cross Blue Shield | Covered with PA | Policies vary by state plan, but generally require PA for PCSK9 inhibitors. |\n\n#### Reimbursement Note\nPrivate insurance coverage for PCSK9 inhibitors is highly variable and often requires extensive prior authorization and step-therapy. Statins are typically covered with low co-pays.\n\n#### Authorization Tips\n- Be thorough in documenting all previous treatments and patient responses.\n- Highlight the patient's high-risk status and the potential benefits of PCSK9 inhibitor therapy.\n- Be prepared for a peer-to-peer discussion with the medical director of the insurance company.\n",
+      "tables": [
+        {
+          "name": "CPT/HCPCS Procedure Codes",
+          "header": ["Code", "Description", "Device/Access", "Access Type", "RVU", "Included", "Note"],
+          "rows": [
+            ["J1306", "Injection, inclisiran, 1 mg (for Leqvio)", "Subcutaneous injection", "Professional (HCPCS)", "N/A", "Drug cost; Administration", "HCPCS code for Inclisiran (Leqvio) administration. Prior authorization typically required."],
+            ["J3490", "Unclassified drugs (for other PCSK9 inhibitors like Repatha, Praluent)", "Subcutaneous injection", "Professional (HCPCS)", "N/A", "Drug cost; Administration", "HCPCS code for unclassified drugs, often used for PCSK9 inhibitors. Specific J-codes may exist for individual drugs."],
+            ["99213", "Office or other outpatient visit for the evaluation and management of an established patient, 15-29 minutes", "N/A", "Professional (CPT)", "0.97", "Medication management; Patient counseling on lifestyle modifications", "Used for evaluation and management services related to dyslipidemia, including statin therapy management."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required (Primary)"],
+          "rows": [
+            ["E78.0", "Pure hypercholesterolemia", "Elevated LDL-C levels.", "true"],
+            ["E78.2", "Mixed hyperlipidemia", "Elevated LDL-C and triglycerides.", "true"],
+            ["E78.5", "Hyperlipidemia, unspecified", "General code for elevated lipid levels.", "false"],
+            ["I25.10", "Atherosclerotic heart disease of native coronary artery without angina pectoris", "Often co-occurs with dyslipidemia, indicating ASCVD risk.", "false"],
+            ["Z83.4", "Family history of other lipidemia", "Relevant for familial hypercholesterolemia.", "false"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Medicare",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS (Medicare Part D)", "Covered with PA", "Strict criteria for PCSK9 inhibitors, generally covers statins."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (varies)", "Covered with PA", "Coverage and criteria vary by state. Generally covers statins."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies - Private Insurance",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Cigna", "Covered with PA", "Specific criteria for Repatha (evolocumab) outlined in their policy."],
+            ["Anthem", "Covered with PA", "Similar criteria to Cigna, focusing on ASCVD and FH."],
+            ["Blue Cross Blue Shield", "Covered with PA", "Policies vary by state plan, but generally require PA for PCSK9 inhibitors."]
+          ]
+        }
+      ]
+    }
+  }
+}

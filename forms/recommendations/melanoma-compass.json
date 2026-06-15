@@ -1,0 +1,13 @@
+{
+  "title": "Melanoma Clinical Compass",
+  "recommendation": {
+    "sourceFiles": [
+      "melanomaLogic.ts",
+      "brainMetastasesLogic.ts"
+    ],
+    "hasLogic": false,
+    "raw": {
+      "markdown": "## 3. Result-Generation Logic (form data → recommendation)\n\n_No logic exists in the old code for this module._ There is no `melanomaLogic.ts` in `client/src/lib` and no inline result-generation function anywhere (the only \"melanoma\" hits in `lib/` are histology options inside the unrelated `brainMetastasesLogic.ts`).\n\n---"
+    }
+  }
+}

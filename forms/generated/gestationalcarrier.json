@@ -1,0 +1,107 @@
+{
+  "title": "Gestational Carrier Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assessment",
+    "logicKey": "gestationalcarrier",
+    "hiddenDefaults": {
+      "medicalContraindicationDetail": "",
+      "priorIVFFailure": false,
+      "singleIntendedParent": false,
+      "sameGenderCouple": false
+    },
+    "steps": [
+      {
+        "id": "uterine-factor",
+        "shortLabel": "Uterine Factor",
+        "title": "Uterine Factor",
+        "fields": [
+          {
+            "id": "congenital-absence-uterus",
+            "name": "congenitalAbsenceUterus",
+            "label": "Congenital absence of uterus (MRKH syndrome / Mullerian agenesis)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "surgical-absence-uterus",
+            "name": "surgicalAbsenceUterus",
+            "label": "Surgical absence of uterus (hysterectomy for cancer, hemorrhage, fibroids)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "ashermans-syndrome",
+            "name": "ashermansSyndrome",
+            "label": "Severe Asherman syndrome — failed hysteroscopic treatment",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "uterine-malformation",
+            "name": "uterineMalformation",
+            "label": "Severe uterine malformation incompatible with pregnancy (unicornuate, bicornuate, septate with failed correction)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "recurrent-implantation-failure",
+            "name": "recurrentImplantationFailure",
+            "label": "Recurrent implantation failure (3+ failed IVF transfers with euploid embryos)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "recurrent-pregnancy-loss",
+            "name": "recurrentPregnancyLoss",
+            "label": "Recurrent pregnancy loss with suspected uterine factor",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "medical-history",
+        "shortLabel": "Medical History",
+        "title": "Medical History",
+        "fields": [
+          {
+            "id": "medical-contraindication",
+            "name": "medicalContraindication",
+            "label": "Medical contraindication to pregnancy (cardiac, pulmonary, renal, oncologic)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "carrier-identified",
+            "name": "carrierIdentified",
+            "label": "Gestational carrier identified and screened",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "carrier-screening-complete",
+            "name": "carrierScreeningComplete",
+            "label": "Carrier medical and psychological screening complete (ASRM guidelines)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "legal-agreement-complete",
+            "name": "legalAgreementComplete",
+            "label": "Legal agreement between intended parents and carrier complete",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "asrm-screening-info",
+            "type": "alert",
+            "severity": "info",
+            "text": "ASRM Carrier Screening Requirements. Medical: physical exam, PAP, STI screening, uterine evaluation, genetic carrier screening, drug/alcohol screening. Psychological: evaluation by mental health professional experienced in third-party reproduction. Legal: independent legal counsel for both parties"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,739 @@
+{
+  "written": 104,
+  "stubs_without_logic": [
+    "Hidradenitis Suppurativa Clinical Compass",
+    "Melanoma Clinical Compass"
+  ],
+  "files_without_h1": [],
+  "files_without_section3": [],
+  "guides": [
+    {
+      "slug": "acne-compass",
+      "title": "Acne Vulgaris Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 14249
+    },
+    {
+      "slug": "acs-compass",
+      "title": "Acute Coronary Syndrome Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 10043
+    },
+    {
+      "slug": "af-ablation-compass",
+      "title": "AF Ablation Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 9704
+    },
+    {
+      "slug": "all-compass",
+      "title": "Acute Lymphoblastic Leukemia & CAR-T Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 27736
+    },
+    {
+      "slug": "amd",
+      "title": "Age-Related Macular Degeneration",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 13632
+    },
+    {
+      "slug": "aml-compass",
+      "title": "Acute Myeloid Leukemia Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 20796
+    },
+    {
+      "slug": "amyloidosis-compass",
+      "title": "Amyloidosis Diagnostic Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 19598
+    },
+    {
+      "slug": "aplastic-anemia-compass",
+      "title": "Aplastic Anemia Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 19989
+    },
+    {
+      "slug": "artificial-disc-compass",
+      "title": "Artificial Disc Replacement Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 3922
+    },
+    {
+      "slug": "atherectomy-compass",
+      "title": "Peripheral Atherectomy Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 2,
+      "chars": 19370
+    },
+    {
+      "slug": "atopic-dermatitis-compass",
+      "title": "Atopic Dermatitis Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 14427
+    },
+    {
+      "slug": "bariatric-compass",
+      "title": "Bariatric Surgery Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 9787
+    },
+    {
+      "slug": "biliary-strictures",
+      "title": "Biliary Strictures Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 20512
+    },
+    {
+      "slug": "blepharoplasty-compass",
+      "title": "Blepharoplasty / Ptosis Repair Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 9712
+    },
+    {
+      "slug": "bone-cancer",
+      "title": "Bone Cancer Interventional Oncology Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 3,
+      "chars": 22429
+    },
+    {
+      "slug": "brain-metastases-compass",
+      "title": "Brain Metastases Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 22724
+    },
+    {
+      "slug": "breast-reduction-compass",
+      "title": "Breast Reduction Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 9420
+    },
+    {
+      "slug": "bright-futures",
+      "title": "Bright Futures Well-Child Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 21053
+    },
+    {
+      "slug": "ccm-compass",
+      "title": "Cerebral Cavernous Malformation Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 24548
+    },
+    {
+      "slug": "central-sleep-apnea-compass",
+      "title": "Central Sleep Apnea Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 0,
+      "chars": 5364
+    },
+    {
+      "slug": "cholecystectomy-compass",
+      "title": "Cholecystectomy Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 7579
+    },
+    {
+      "slug": "chronic-insomnia-compass",
+      "title": "Chronic Insomnia Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 0,
+      "chars": 5623
+    },
+    {
+      "slug": "chronic-pancreatitis",
+      "title": "Chronic Pancreatitis Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 18965
+    },
+    {
+      "slug": "crc-screening",
+      "title": "CRC Screening Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 18124
+    },
+    {
+      "slug": "crohns-disease",
+      "title": "Crohn's Disease Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 22425
+    },
+    {
+      "slug": "dyslipidemia-ds",
+      "title": "Dyslipidemia Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 2,
+      "chars": 16477
+    },
+    {
+      "slug": "embryo-cryo-compass",
+      "title": "Embryo Cryopreservation Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 12940
+    },
+    {
+      "slug": "endovenous-ablation-compass",
+      "title": "Endovenous Ablation Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 7720
+    },
+    {
+      "slug": "epidural-steroid-compass",
+      "title": "Epidural Steroid Injection Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 5083
+    },
+    {
+      "slug": "facet-joint-compass",
+      "title": "Facet Joint Injection Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 4316
+    },
+    {
+      "slug": "febrile-infant",
+      "title": "Febrile Infant Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 11785
+    },
+    {
+      "slug": "functional-seizures",
+      "title": "Functional Seizures (PNES)",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 15960
+    },
+    {
+      "slug": "gae-compass",
+      "title": "Geniculate Artery Embolization Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 5089
+    },
+    {
+      "slug": "gastroparesis",
+      "title": "Gastroparesis Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 15808
+    },
+    {
+      "slug": "gender-affirming-uro-compass",
+      "title": "Gender-Affirming Urologic Procedures Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 12755
+    },
+    {
+      "slug": "gestational-carrier-compass",
+      "title": "Gestational Carrier Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 12167
+    },
+    {
+      "slug": "glaucoma",
+      "title": "Glaucoma",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 17330
+    },
+    {
+      "slug": "hernia-compass",
+      "title": "Hernia Repair Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 8482
+    },
+    {
+      "slug": "high-myopia",
+      "title": "High Myopia / Pathologic Myopia",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 13960
+    },
+    {
+      "slug": "hs-compass",
+      "title": "Hidradenitis Suppurativa Clinical Compass",
+      "hasLogic": false,
+      "sourceFiles": 1,
+      "chars": 330
+    },
+    {
+      "slug": "ibd-preventive-care",
+      "title": "IBD Preventive Care Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 16105
+    },
+    {
+      "slug": "icsi-compass",
+      "title": "Intracytoplasmic Sperm Injection Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 12028
+    },
+    {
+      "slug": "influenza-prevention",
+      "title": "Influenza Prevention Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 10463
+    },
+    {
+      "slug": "ivf-compass",
+      "title": "In Vitro Fertilization Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 13729
+    },
+    {
+      "slug": "laac-compass",
+      "title": "LAAC / Watchman Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 9555
+    },
+    {
+      "slug": "liver-tumor-compass",
+      "title": "Liver Tumor Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 19001
+    },
+    {
+      "slug": "low-grade-glioma-compass",
+      "title": "Low-Grade Glioma Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 19626
+    },
+    {
+      "slug": "masld",
+      "title": "MASLD / MASH Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 17857
+    },
+    {
+      "slug": "melanoma-compass",
+      "title": "Melanoma Clinical Compass",
+      "hasLogic": false,
+      "sourceFiles": 2,
+      "chars": 323
+    },
+    {
+      "slug": "meniscus-repair-compass",
+      "title": "Meniscus Repair Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 4508
+    },
+    {
+      "slug": "mens-health",
+      "title": "Prostatic Artery Embolization Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 4,
+      "chars": 12740
+    },
+    {
+      "slug": "migraine",
+      "title": "Migraine",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 14640
+    },
+    {
+      "slug": "multiple-sclerosis",
+      "title": "Multiple Sclerosis",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 15597
+    },
+    {
+      "slug": "narcolepsy-compass",
+      "title": "Narcolepsy Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 0,
+      "chars": 4693
+    },
+    {
+      "slug": "neonatal-hyperbilirubinemia",
+      "title": "Neonatal Hyperbilirubinemia Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 13597
+    },
+    {
+      "slug": "obesity-compass",
+      "title": "Obesity Treatment Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 19622
+    },
+    {
+      "slug": "oocyte-freeze-compass",
+      "title": "Oocyte Cryopreservation Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 11666
+    },
+    {
+      "slug": "osa-compass",
+      "title": "OSA Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 22336
+    },
+    {
+      "slug": "osa-obesity-compass",
+      "title": "OSA + Obesity Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 0,
+      "chars": 12737
+    },
+    {
+      "slug": "ovulation-induction-compass",
+      "title": "Ovulation Induction Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 12720
+    },
+    {
+      "slug": "pad-quality-measures",
+      "title": "PAD Clinical Performance & Quality Measures Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 42001
+    },
+    {
+      "slug": "pad-revascularization",
+      "title": "PAD Revascularization Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 37377
+    },
+    {
+      "slug": "pancreatic-mass",
+      "title": "Pancreatic Mass Evaluation Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 20403
+    },
+    {
+      "slug": "parkinsons",
+      "title": "Parkinson's Disease",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 14955
+    },
+    {
+      "slug": "pavf-compass",
+      "title": "Percutaneous AV Fistula Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 3,
+      "chars": 31639
+    },
+    {
+      "slug": "pci-compass",
+      "title": "Elective PCI Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 7479
+    },
+    {
+      "slug": "pe-compass",
+      "title": "Pulmonary Embolism Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 2,
+      "chars": 55697
+    },
+    {
+      "slug": "pediatric-immunization",
+      "title": "Pediatric Immunization Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 22327
+    },
+    {
+      "slug": "pediatric-mental-health",
+      "title": "Pediatric Mental Health Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 16256
+    },
+    {
+      "slug": "pediatric-obesity",
+      "title": "Pediatric Obesity Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 14980
+    },
+    {
+      "slug": "peyronies-compass",
+      "title": "Peyronie's Disease Surgery Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 2,
+      "chars": 13088
+    },
+    {
+      "slug": "pgt-compass",
+      "title": "Preimplantation Genetic Testing Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 12276
+    },
+    {
+      "slug": "pituitary-adenoma-compass",
+      "title": "Pituitary Adenoma Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 22769
+    },
+    {
+      "slug": "portal-hypertension-compass",
+      "title": "Portal Hypertension Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 41156
+    },
+    {
+      "slug": "psoriasis-compass",
+      "title": "Psoriasis Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 18368
+    },
+    {
+      "slug": "psychiatry",
+      "title": "Psychiatry Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 65766
+    },
+    {
+      "slug": "rad-onc",
+      "title": "Radiation Oncology Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 66018
+    },
+    {
+      "slug": "rectal-cancer-compass",
+      "title": "Rectal Cancer Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 18182
+    },
+    {
+      "slug": "renal-cryoablation-compass",
+      "title": "Renal Cryoablation Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 2,
+      "chars": 19975
+    },
+    {
+      "slug": "rfa-compass",
+      "title": "Radiofrequency Ablation Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 4614
+    },
+    {
+      "slug": "rls-plmd-compass",
+      "title": "RLS / PLMD Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 0,
+      "chars": 5762
+    },
+    {
+      "slug": "rotator-cuff-compass",
+      "title": "Rotator Cuff Repair Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 4210
+    },
+    {
+      "slug": "rsv-prevention",
+      "title": "RSV Prevention Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 11072
+    },
+    {
+      "slug": "sacroplasty-compass",
+      "title": "Sacroplasty Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 8987
+    },
+    {
+      "slug": "sclerotherapy-compass",
+      "title": "Sclerotherapy Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 8406
+    },
+    {
+      "slug": "scs-compass",
+      "title": "Spinal Cord Stimulator Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 6139
+    },
+    {
+      "slug": "spinal-fusion-compass",
+      "title": "Spinal Fusion Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 4602
+    },
+    {
+      "slug": "spine-antithrombotic-compass",
+      "title": "Spine Antithrombotic Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 20843
+    },
+    {
+      "slug": "spine-compass",
+      "title": "Spine Surgery Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 23648
+    },
+    {
+      "slug": "stroke",
+      "title": "Acute Ischemic Stroke",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 17292
+    },
+    {
+      "slug": "tese-compass",
+      "title": "TESE / Micro-TESE Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 13955
+    },
+    {
+      "slug": "tha-compass",
+      "title": "Total Hip Arthroplasty Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 4367
+    },
+    {
+      "slug": "therapeutic-eus",
+      "title": "Therapeutic EUS Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 15829
+    },
+    {
+      "slug": "thyroid-nodule-compass",
+      "title": "Thyroid Nodule Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 22317
+    },
+    {
+      "slug": "tka-compass",
+      "title": "Total Knee Arthroplasty Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 5077
+    },
+    {
+      "slug": "ulcerative-colitis",
+      "title": "Ulcerative Colitis Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 20684
+    },
+    {
+      "slug": "varicocele-compass",
+      "title": "Varicocele Embolization Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 23672
+    },
+    {
+      "slug": "varicocelectomy-compass",
+      "title": "Varicocelectomy Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 12716
+    },
+    {
+      "slug": "vasectomy-reversal-compass",
+      "title": "Vasectomy Reversal Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 13886
+    },
+    {
+      "slug": "vertebroplasty-compass",
+      "title": "Vertebroplasty / Kyphoplasty Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 9539
+    },
+    {
+      "slug": "vestibular-schwannoma-compass",
+      "title": "Vestibular Schwannoma Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 24083
+    },
+    {
+      "slug": "vte-compass",
+      "title": "Venous Thromboembolism Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 53201
+    },
+    {
+      "slug": "womens-health",
+      "title": "Women's Health Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 1,
+      "chars": 7336
+    },
+    {
+      "slug": "y90-compass",
+      "title": "Y-90 Radioembolization Clinical Compass",
+      "hasLogic": true,
+      "sourceFiles": 3,
+      "chars": 17270
+    }
+  ]
+}

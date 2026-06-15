@@ -1,0 +1,30 @@
+{
+  "title": "Migraine",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "64615, 99213",
+      "credentials": "[Credentials]",
+      "icd_codes": "G43.709, G43.719, G43.009, G43.109, G43.801, G43.909",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — CGRP Inhibitor / Preventive Therapy for Chronic or Episodic Migraine\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\nDear Medical Director / Utilization Review Committee,\n\nThis letter serves as an urgent appeal for coverage of treatment for our patient, {{patient_name}}, who suffers from episodic migraine with frequent attacks. The patient's condition significantly impacts their quality of life and daily functioning, necessitating the recommended acute therapy including a other recommended treatment.\n\nClinical Summary:\n{{patient_name}} has been diagnosed with episodic migraine according to ICHD-3 Diagnostic Criteria 2018. Despite trials of conventional therapies, the patient continues to experience debilitating migraine attacks. The current treatment plan, including treatment, is essential to manage their symptoms and prevent further disability.\n\nGuideline Support:\n1.  The AHS Consensus Statement on Integrating New Migraine Treatments 2021 supports the use of novel therapies, such as CGRP inhibitors, for patients with inadequate response to traditional treatments.\n2.  The AAN/AHS Guideline on Pharmacological Treatment for Episodic Migraine Prevention 2012 provides evidence-based recommendations for preventive strategies, which are applicable given the patient's migraine frequency.\n3.  The AHS Position Statement on CGRP Inhibitors 2019 highlights the efficacy and safety of CGRP inhibitors in reducing migraine frequency and severity, particularly in patients with chronic migraine.\n4.  The patient's clinical presentation and the recommended treatment align with established medical guidelines at an strong level of evidence, supporting the medical necessity of this intervention.\n\nMedical Necessity Statement:\nThe requested treatment is medically necessary as it is the most appropriate and effective treatment for {{patient_name}}'s severe and refractory episodic migraine. Delaying or denying this treatment would result in continued suffering, increased healthcare utilization, and significant impairment of the patient's daily life. The rationale for this treatment is based on medical necessity based on patient clinical presentation and guideline recommendations.\n\nRisk Without Treatment:\nWithout the recommended treatment, {{patient_name}} is at high risk for continued severe migraine attacks, potential for medication overuse headache, and a decline in overall health and well-being. This would lead to further disability and increased burden on the healthcare system.\n\nRequested Action:\nWe urge you to approve coverage for treatment immediately. Please find attached supporting documentation, including clinical notes, diagnostic reports, and relevant guideline excerpts. We are available to discuss this case further at your convenience.\n\n{{additional_clinical_notes}}\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

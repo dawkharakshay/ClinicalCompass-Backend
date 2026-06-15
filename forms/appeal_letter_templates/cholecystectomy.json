@@ -1,0 +1,30 @@
+{
+  "title": "Cholecystectomy Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "47562, 47563, 47564, 47600, 47605, 47610, 43239",
+      "credentials": "[Credentials]",
+      "icd_codes": "K80.20, K80.21, K81.0, K81.1, K82.0, K82.8, K80.40, K85.10",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\nRe: Medical Necessity Appeal — Laparoscopic Cholecystectomy\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\n\nDear Medical Director / Utilization Review Committee,\n\nI am writing to formally appeal the denial of prior authorization for laparoscopic cholecystectomy for my patient. This procedure is medically necessary and is supported by the SAGES Clinical Spotlight Review on Cholecystectomy (2022), the Tokyo Guidelines 2018, and established standards of care for symptomatic biliary disease.\n\nCLINICAL ASSESSMENT SUMMARY:\nOur Clinical Compass Cholecystectomy Decision Support tool assessed this patient as: [Recommendation]\nUrgency: [Urgency]\nRecommended Approach: [Approach]\n\n\n\nCLINICAL INDICATION:\nThis patient presents with [DESCRIBE INDICATION: symptomatic cholelithiasis / acute cholecystitis / biliary dyskinesia / gallstone pancreatitis], confirmed by [DESCRIBE IMAGING: ultrasound / CT / HIDA scan] on {{letter_date}}.\n\nSYMPTOM HISTORY:\nThe patient has experienced [DESCRIBE SYMPTOMS: biliary colic, nausea, fatty food intolerance, right upper quadrant pain] for [DURATION]. Episodes occur [FREQUENCY]. The most recent episode occurred on {{letter_date}} and was [DESCRIBE SEVERITY].\n\n[IF BILIARY DYSKINESIA]: HIDA scan performed on {{letter_date}} demonstrated a gallbladder ejection fraction of [EF]%, consistent with biliary dyskinesia (normal >35%). The patient has experienced [DESCRIBE SYMPTOMS] that are temporally correlated with meals and have significantly impacted quality of life.\n\n[IF ACUTE CHOLECYSTITIS]: The patient presented with acute cholecystitis on {{letter_date}}, meeting Tokyo Guidelines 2018 diagnostic criteria: fever [TEMP], right upper quadrant tenderness, Murphy's sign [POSITIVE/NEGATIVE], and ultrasound findings of [DESCRIBE]. Per Tokyo Guidelines 2018, early laparoscopic cholecystectomy within 72 hours is the standard of care and reduces complications, hospital stay, and cost compared to delayed surgery.\n\nEVIDENCE-BASED JUSTIFICATION:\n\n1. STANDARD OF CARE:\nPer the SAGES Clinical Spotlight Review on Cholecystectomy (2022), laparoscopic cholecystectomy is the gold standard treatment for symptomatic cholelithiasis and biliary complications. There is no evidence-based requirement for a mandatory period of conservative treatment before cholecystectomy in symptomatic patients.\n\n2. CONSERVATIVE TREATMENT LIMITATIONS:\nDietary modification and medications (ursodiol) are not effective for symptomatic cholelithiasis. Ursodiol is only appropriate for small cholesterol stones in patients who are poor surgical candidates, has a high recurrence rate after discontinuation (>50% at 5 years), and does not address the underlying gallbladder dysfunction. This patient [HAS / HAS NOT] attempted dietary modification with [DESCRIBE OUTCOME].\n\n3. RISK OF DENIAL:\nWithout cholecystectomy, this patient faces ongoing risk of:\n• Recurrent biliary colic and emergency department visits\n• Progression to acute cholecystitis, choledocholithiasis, or gallstone pancreatitis\n• Increased surgical complexity and risk if surgery is delayed until emergency presentation\n\nThe SAGES guidelines and Tokyo Guidelines 2018 support elective cholecystectomy for symptomatic cholelithiasis to prevent these complications.\n\nADDITIONAL CLINICAL NOTES:\n{{additional_clinical_notes}}\n\nIn summary, laparoscopic cholecystectomy is medically necessary, guideline-directed, and the definitive treatment for this patient's symptomatic biliary disease. I respectfully request approval and am available for peer-to-peer review.\n\nSincerely,\n\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

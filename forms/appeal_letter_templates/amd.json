@@ -1,0 +1,30 @@
+{
+  "title": "Age-Related Macular Degeneration",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "67028",
+      "credentials": "[Credentials]",
+      "icd_codes": "H35.321, H35.322, H35.323, H35.329, H35.31",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "\n{{letter_date}}\n\nRe: Medical Necessity Appeal — Anti-VEGF Intravitreal Injection for Neovascular AMD\nCPT Code(s): 67028, 67036, 67039, 67040, 67041, 67042\nICD-10 Code(s): H35.31, H35.32, H35.3110, H35.3120, H35.3130, H35.3190\n\nDear Medical Director / Utilization Review Committee,\n\nI am writing to appeal the denial of coverage for Anti-VEGF Intravitreal Injection for our patient, {{patient_name}}, born {{patient_dob}}. This treatment is medically necessary and critical for preserving the patient's vision due to their diagnosis of Neovascular AMD, specifically advanced stage, with a clear indication for Anti-VEGF Intravitreal Injection therapy.\n\nClinical Summary:\n{{patient_name}} presents with [SYMPTOMS] and diagnostic imaging (e.g., OCT, fluorescein angiography) confirms active choroidal neovascularization, consistent with Neovascular AMD. Without immediate and sustained treatment, the patient faces a high risk of irreversible vision loss and severe functional impairment. The current condition necessitates urgent intervention to prevent further progression.\n\nGuideline Support:\n1. The AAO Preferred Practice Pattern for Age-Related Macular Degeneration 2019 unequivocally supports anti-VEGF therapy as the standard of care for neovascular AMD. This guideline emphasizes the importance of timely treatment to achieve optimal visual outcomes.\n2. The VIEW 1 and VIEW 2 Trials (Heier 2012, Ophthalmology) provide robust evidence for the efficacy and safety of aflibercept in treating neovascular AMD, demonstrating significant improvements in visual acuity and anatomical outcomes.\n3. The CATT Research Group 2011 study further validates the effectiveness of anti-VEGF agents like ranibizumab in managing neovascular AMD, highlighting their role in preventing vision decline.\n4. The AREDS2 Research Group 2013 study, while focused on supplementation, underscores the complex pathology of AMD and the need for comprehensive management strategies, including proven therapies like anti-VEGF injections for advanced stages.\n\nMedical Necessity:\nThe patient's condition, characterized by Neovascular AMD and advanced stage, meets the criteria for medical necessity for Anti-VEGF Intravitreal Injection based on established clinical guidelines and evidence-based medicine. The rationale for this treatment is clear: due to active choroidal neovascularization and risk of severe vision loss. This recommendation is supported by AAO Preferred Practice Pattern and has an evidence level of high.\n\nRisk Without Treatment:\nDelay or denial of this medically necessary treatment will result in progressive and irreversible vision loss, significantly impacting the patient's quality of life and independence. The natural history of untreated neovascular AMD is severe vision impairment or blindness, making prompt treatment essential.\n\nRequested Action:\nI urge you to reconsider your denial and approve coverage for Anti-VEGF Intravitreal Injection for {{patient_name}}. We are prepared to proceed with the recommended treatment plan, which includes [TREATMENT_PLAN_DETAILS]. The next steps in patient care include: .\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}\n"
+  }
+}

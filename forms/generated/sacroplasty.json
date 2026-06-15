@@ -1,0 +1,221 @@
+{
+  "title": "Sacroplasty Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Run Assessment",
+    "logicKey": "sacroplasty",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "patient-fracture-info",
+        "shortLabel": "Patient & Fracture Info",
+        "title": "Patient & Fracture Info",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Patient Age",
+            "type": "text",
+            "required": false,
+            "defaultValue": ""
+          },
+          {
+            "id": "fracture-age-weeks",
+            "name": "fractureAgeWeeks",
+            "label": "Fracture Age (weeks) *",
+            "type": "text",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "id": "denis-zone",
+            "name": "denisZone",
+            "label": "Denis Zone Classification",
+            "type": "select",
+            "required": false,
+            "defaultValue": "",
+            "options": [
+              { "label": "Select Denis zone...", "value": "" },
+              { "label": "Zone 1 — Sacral ala (lateral to foramina) — most common", "value": "zone1" },
+              { "label": "Zone 2 — Sacral foramina — moderate risk", "value": "zone2" },
+              { "label": "Zone 3 — Central sacral canal — highest risk", "value": "zone3" }
+            ]
+          },
+          {
+            "id": "osteoporosis",
+            "name": "osteoporosis",
+            "label": "Osteoporotic insufficiency fracture",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "malignancy",
+            "name": "malignancy",
+            "label": "Pathologic fracture (malignancy / metastasis)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "radiation",
+            "name": "radiation",
+            "label": "Radiation-induced insufficiency fracture",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "bilateral",
+            "name": "bilateral",
+            "label": "Bilateral sacral fractures",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "h-shape-fracture",
+            "name": "hShapeFracture",
+            "label": "H-shaped fracture pattern (Honda sign on bone scan / MRI)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "pain-conservative-tx",
+        "shortLabel": "Pain & Conservative Tx",
+        "title": "Pain & Conservative Tx",
+        "fields": [
+          {
+            "id": "vas-score",
+            "name": "vasScore",
+            "label": "VAS Pain Score (0–10) *",
+            "type": "text",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "id": "functional-impairment",
+            "name": "functionalImpairment",
+            "label": "Functional Impairment",
+            "type": "select",
+            "required": false,
+            "defaultValue": "",
+            "options": [
+              { "label": "Select...", "value": "" },
+              { "label": "Mild — ambulatory with minimal assistance", "value": "mild" },
+              { "label": "Moderate — requires walker or cane", "value": "moderate" },
+              { "label": "Severe — non-ambulatory / bed-bound", "value": "severe" }
+            ]
+          },
+          {
+            "id": "analgesics-used",
+            "name": "analgesicsUsed",
+            "label": "Analgesics (NSAIDs, opioids, acetaminophen)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "pt-used",
+            "name": "ptUsed",
+            "label": "Physical therapy",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "mobility-aids",
+            "name": "mobilityAids",
+            "label": "Mobility aids (walker, cane, wheelchair)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "conservative-weeks",
+            "name": "conservativeWeeks",
+            "label": "Conservative Therapy Duration (weeks)",
+            "type": "text",
+            "required": false,
+            "defaultValue": ""
+          }
+        ]
+      },
+      {
+        "id": "imaging-contraindications",
+        "shortLabel": "Imaging & Contraindications",
+        "title": "Imaging & Contraindications",
+        "fields": [
+          {
+            "id": "mri-edema",
+            "name": "mriEdema",
+            "label": "MRI bone marrow edema (STIR sequences) confirming fracture acuity",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "ct-fracture-line",
+            "name": "ctFractureLine",
+            "label": "CT fracture line confirmed in sacrum",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "active-infection",
+            "name": "activeInfection",
+            "label": "Active systemic or local infection",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "coagulopathy",
+            "name": "coagulopathy",
+            "label": "Uncorrected coagulopathy / anticoagulation",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "sacral-nerve-compression",
+            "name": "sacralNerveCompression",
+            "label": "Sacral nerve root compression with neurologic deficit",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "bowel-bladder-dysfunction",
+            "name": "bowelBladderDysfunction",
+            "label": "Bowel or bladder dysfunction",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "allergy",
+            "name": "allergy",
+            "label": "Known allergy to bone cement (PMMA) or contrast",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "pregnancy",
+            "name": "pregnancy",
+            "label": "Pregnancy",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

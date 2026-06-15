@@ -1,0 +1,242 @@
+{
+  "title": "Influenza Prevention Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendations",
+    "logicKey": "influenzaprevention",
+    "hiddenDefaults": {
+      "isResidentLongTermCareFacility": false
+    },
+    "steps": [
+      {
+        "id": "demographics-season",
+        "shortLabel": "Demographics",
+        "title": "Patient Demographics & Season",
+        "fields": [
+          {
+            "id": "age-months",
+            "name": "ageMonths",
+            "label": "Age (months)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "is-first-influenza-season",
+            "name": "isFirstInfluenzaSeason",
+            "label": "First influenza season (never vaccinated before)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "influenza-test-positive",
+            "name": "influenzaTestPositive",
+            "label": "Influenza test positive",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "influenza-test-type",
+            "name": "influenzaTestType",
+            "label": "Test Type",
+            "type": "select",
+            "required": false,
+            "defaultValue": "none",
+            "options": [
+              { "label": "Rapid Antigen Test", "value": "rapid_antigen" },
+              { "label": "PCR", "value": "PCR" },
+              { "label": "None", "value": "none" }
+            ],
+            "visibleWhen": { "field": "influenzaTestPositive", "op": "truthy" }
+          },
+          {
+            "id": "symptoms-onset-hours",
+            "name": "symptomsOnsetHours",
+            "label": "Symptom onset (hours ago)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "influenzaTestPositive", "op": "truthy" }
+          },
+          {
+            "id": "household-contact-high-risk",
+            "name": "householdContactHighRisk",
+            "label": "Household contact at high risk for complications",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "risk-factors",
+        "shortLabel": "Risk Factors",
+        "title": "Risk Factors",
+        "fields": [
+          {
+            "id": "has-chronic-lung-disease",
+            "name": "hasChronicLungDisease",
+            "label": "Chronic lung disease (asthma, BPD, CF)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-asthma",
+            "name": "hasAsthma",
+            "label": "Asthma",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-wheezing",
+            "name": "hasWheezing",
+            "label": "Active wheezing",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-chronic-heart-disease",
+            "name": "hasChronicHeartDisease",
+            "label": "Chronic heart disease",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-immunosuppression",
+            "name": "hasImmunosuppression",
+            "label": "Immunosuppression",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-hiv",
+            "name": "hasHIV",
+            "label": "HIV positive",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-neurologic-disorder",
+            "name": "hasNeurologicDisorder",
+            "label": "Neurologic disorder affecting airway",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-hemoglobinopathy",
+            "name": "hasHemoglobinopathy",
+            "label": "Hemoglobinopathy (sickle cell)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-diabetes",
+            "name": "hasDiabetes",
+            "label": "Diabetes",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-chronic-kidney-disease",
+            "name": "hasChronicKidneyDisease",
+            "label": "Chronic kidney disease",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-obesity",
+            "name": "hasObesity",
+            "label": "Obesity (BMI ≥95th %ile)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "is-pregnant-adolescent",
+            "name": "isPregnantAdolescent",
+            "label": "Pregnant adolescent",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "vaccination-antiviral",
+        "shortLabel": "Vaccination",
+        "title": "Vaccination & Antiviral Status",
+        "fields": [
+          {
+            "id": "received-influenza-vaccine-prior-season",
+            "name": "receivedInfluenzaVaccinePriorSeason",
+            "label": "Received influenza vaccine prior season",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "current-season-vaccine-received",
+            "name": "currentSeasonVaccineReceived",
+            "label": "Current season vaccine already received",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "antiviral-indication-present",
+            "name": "antiviralIndicationPresent",
+            "label": "Antiviral indication present",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-egg-allergy",
+            "name": "hasEggAllergy",
+            "label": "Egg allergy",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "egg-allergy-type",
+            "name": "eggAllergyType",
+            "label": "Egg Allergy Severity",
+            "type": "select",
+            "required": false,
+            "defaultValue": "none",
+            "options": [
+              { "label": "Hives only", "value": "hives_only" },
+              { "label": "Anaphylaxis", "value": "anaphylaxis" },
+              { "label": "None", "value": "none" }
+            ],
+            "visibleWhen": { "field": "hasEggAllergy", "op": "truthy" }
+          },
+          {
+            "id": "is-immunocompromised",
+            "name": "isImmunocompromised",
+            "label": "Immunocompromised",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

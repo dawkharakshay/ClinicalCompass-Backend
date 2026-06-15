@@ -1,0 +1,298 @@
+{
+  "title": "LAAC / Watchman Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assess LAAC Candidacy",
+    "logicKey": "laac",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "af-stroke-risk",
+        "shortLabel": "AF & Stroke Risk",
+        "title": "AF Type & Stroke Risk (CHA₂DS₂-VASc)",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "sex",
+            "name": "sex",
+            "label": "Sex",
+            "type": "select",
+            "defaultValue": "male",
+            "options": [
+              { "label": "Male", "value": "male" },
+              { "label": "Female", "value": "female" }
+            ]
+          },
+          {
+            "id": "af-type",
+            "name": "afType",
+            "label": "AF Type",
+            "type": "select",
+            "defaultValue": "paroxysmal",
+            "options": [
+              { "label": "Paroxysmal", "value": "paroxysmal" },
+              { "label": "Persistent", "value": "persistent" },
+              { "label": "Long-standing Persistent", "value": "longstanding-persistent" },
+              { "label": "Permanent", "value": "permanent" }
+            ]
+          },
+          {
+            "id": "chf",
+            "name": "chf",
+            "label": "Congestive heart failure / LV dysfunction (+1)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "hypertension",
+            "name": "hypertension",
+            "label": "Hypertension (+1)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "age75-or-older",
+            "name": "age75orOlder",
+            "label": "Age ≥75 years (+2)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "diabetes",
+            "name": "diabetes",
+            "label": "Diabetes mellitus (+1)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "stroke",
+            "name": "stroke",
+            "label": "Prior stroke, TIA, or thromboembolism (+2)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "vascular-disease",
+            "name": "vascularDisease",
+            "label": "Vascular disease — MI, PAD, aortic plaque (+1)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "age65-to-74",
+            "name": "age65to74",
+            "label": "Age 65–74 years (+1)",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "bleeding-oac",
+        "shortLabel": "Bleeding & OAC",
+        "title": "Bleeding Risk & OAC Status (HAS-BLED)",
+        "fields": [
+          {
+            "id": "ac-contradicated",
+            "name": "acContradicated",
+            "label": "Absolute contraindication to oral anticoagulation",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "intracranial-hemorrhage",
+            "name": "intracranialHemorrhage",
+            "label": "Prior intracranial hemorrhage (ICH)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "ac-failed",
+            "name": "acFailed",
+            "label": "Stroke/TIA on therapeutic anticoagulation",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "ac-intolerant",
+            "name": "acIntolerant",
+            "label": "OAC intolerance (falls, compliance, patient preference)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "ac-high-risk",
+            "name": "acHighRisk",
+            "label": "High bleeding risk on OAC",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "gi-bleeding",
+            "name": "gi_bleeding",
+            "label": "Prior GI bleeding",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "fall-risk",
+            "name": "fallRisk",
+            "label": "High fall risk",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "uncontrolled-hypertension",
+            "name": "uncontrolledHypertension",
+            "label": "Uncontrolled hypertension (SBP >160 mmHg)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "renal-disease",
+            "name": "renalDisease",
+            "label": "Renal disease (dialysis, transplant, Cr >2.26)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "liver-disease",
+            "name": "liverDisease",
+            "label": "Liver disease (cirrhosis, bilirubin >2x normal)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-stroke-history",
+            "name": "priorStrokeHistory",
+            "label": "Prior stroke history",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-major-bleeding",
+            "name": "priorMajorBleeding",
+            "label": "Prior major bleeding or predisposition",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "labile-inr",
+            "name": "labileINR",
+            "label": "Labile INR (if on warfarin)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "elderly-age65",
+            "name": "elderlyAge65",
+            "label": "Age ≥65 years",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "drugs-alcohol",
+            "name": "drugsAlcohol",
+            "label": "Antiplatelet drugs or alcohol use",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "anatomy",
+        "shortLabel": "Anatomy",
+        "title": "LAA Anatomy & Contraindications",
+        "fields": [
+          {
+            "id": "laa-size-ostium",
+            "name": "laaSizeOstium",
+            "label": "LAA Ostium Diameter (mm)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "laa-morphology",
+            "name": "laaMorphology",
+            "label": "LAA Morphology",
+            "type": "select",
+            "defaultValue": "unknown",
+            "options": [
+              { "label": "Chicken Wing", "value": "chicken-wing" },
+              { "label": "Windsock", "value": "windsock" },
+              { "label": "Cactus", "value": "cactus" },
+              { "label": "Cauliflower", "value": "cauliflower" },
+              { "label": "Unknown / Not assessed", "value": "unknown" }
+            ]
+          },
+          {
+            "id": "ckd-stage",
+            "name": "ckdStage",
+            "label": "CKD Stage",
+            "type": "select",
+            "defaultValue": 0,
+            "options": [
+              { "label": "Stage 0 (None)", "value": 0 },
+              { "label": "Stage 1", "value": 1 },
+              { "label": "Stage 2", "value": 2 },
+              { "label": "Stage 3", "value": 3 },
+              { "label": "Stage 4", "value": 4 },
+              { "label": "Stage 5", "value": 5 }
+            ]
+          },
+          {
+            "id": "laa-thrombus",
+            "name": "laaThrombus",
+            "label": "LAA thrombus on TEE/CTA (ABSOLUTE CONTRAINDICATION)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "esrd",
+            "name": "esrd",
+            "label": "End-stage renal disease (ESRD) on dialysis",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "pericardial-disease",
+            "name": "pericardialDisease",
+            "label": "Pericardial disease (effusion, constrictive pericarditis)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-cardiac-surgery",
+            "name": "priorCardiacSurgery",
+            "label": "Prior cardiac surgery (pericardial adhesions)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "atrial-septal-aneurysm",
+            "name": "atrialSeptalAneurysm",
+            "label": "Atrial septal aneurysm",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "pfo",
+            "name": "pfo",
+            "label": "Patent foramen ovale (PFO)",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

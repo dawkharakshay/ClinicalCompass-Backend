@@ -1,0 +1,30 @@
+{
+  "title": "Vestibular Schwannoma Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "[CPT Code(s)]",
+      "credentials": "[Credentials]",
+      "icd_codes": "[ICD-10 Code(s)]",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — Vestibular Schwannoma Treatment (Surgery / Stereotactic Radiosurgery / Observation)\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\nDear Medical Director / Utilization Review Committee,\n\nThis letter serves as an appeal for the denial of coverage for Vestibular Schwannoma Treatment for our patient. Based on a comprehensive evaluation and adherence to established clinical guidelines, the recommended treatment is medically necessary.\n\nClinical Summary:\nOur patient presents with a vestibular schwannoma. The primary recommendation is not specified, with a treatment approach of not specified. The patient is considered not a surgical candidate and not a candidate for stereotactic radiosurgery. Currently, observation is not appropriate. The rationale for this recommendation is: No specific rationale provided.\n\nGuideline Support:\n1.  The AAO-HNS Clinical Practice Guideline on Acoustic Neuroma (2012, updated 2018) supports individualized management strategies for vestibular schwannomas, considering tumor characteristics and patient factors.\n2.  The NCCN CNS Tumors Guidelines (2024) provide comprehensive recommendations for the diagnosis and treatment of CNS tumors, including vestibular schwannomas, emphasizing multidisciplinary care.\n3.  The ISRS Radiosurgery Practice Guidelines (2022) outline the appropriate use of stereotactic radiosurgery for vestibular schwannomas, highlighting its efficacy and safety in selected patients.\n\nMedical Necessity:\nThe recommended Vestibular Schwannoma Treatment is medically necessary to address the patient's condition, prevent further neurological deterioration, and improve quality of life. This treatment aligns with current evidence-based guidelines and is crucial for optimal patient outcomes.\n\nRisk Without Treatment:\nWithout the recommended treatment, the patient faces significant risks, including progressive hearing loss, facial nerve dysfunction, balance disturbances, and potential brainstem compression, leading to irreversible neurological deficits.\n\nRequested Action:\nWe respectfully request a reconsideration and approval of coverage for the recommended Vestibular Schwannoma Treatment. Prompt authorization will allow our patient to receive timely and appropriate care. Please refer to the attached clinical documentation for further details.\n\n{{additional_clinical_notes}}\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

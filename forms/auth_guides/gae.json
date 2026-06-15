@@ -1,0 +1,468 @@
+{
+  "title": "Geniculate Artery Embolization Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "GAEAuthGuide.tsx",
+    "title": "GAE Clinical Compass™",
+    "subtitle": "Insurance Authorization Guide — Decision Support",
+    "cptCodes": [
+      {
+        "code": "37242",
+        "description": "Vascular embolization or occlusion, inclusive of all radiological supervision and interpretation, intraprocedural roadmapping, and imaging guidance necessary to complete the intervention — arterial, other than hemorrhage or tumor",
+        "indication": "Primary code for GAE in knee osteoarthritis or chronic knee pain",
+        "rvu": "~8.5",
+        "includes": [
+          "All vascular access for the procedure",
+          "Fluoroscopic guidance and roadmapping (bundled — do NOT bill separately)",
+          "Radiologic supervision and interpretation",
+          "Selective catheter placement to geniculate arteries",
+          "Embolization of all targeted geniculate vessels in the same session"
+        ],
+        "note": "This is the correct primary embolization code for GAE when performed for OA or knee pain. Some payers (Anthem, certain BCBS plans) classify this as experimental for musculoskeletal indications."
+      },
+      {
+        "code": "36245",
+        "description": "Selective catheter placement, arterial system; each first-order abdominal, pelvic, or lower extremity artery branch",
+        "indication": "Selective catheterization to geniculate artery branches (when separately billable)",
+        "rvu": "~5.2",
+        "includes": [
+          "Initial selective catheter placement to the first-order vessel"
+        ],
+        "note": "Bundled with 37242 under NCCI edits in many payer systems. Bill only when payer policy explicitly allows separate billing. Medicare typically does not reimburse for OA/knee pain diagnoses with this code."
+      },
+      {
+        "code": "36246",
+        "description": "Selective catheter placement, arterial system; initial second-order abdominal, pelvic, or lower extremity artery branch",
+        "indication": "Second-order selective catheterization (e.g., descending genicular artery)",
+        "rvu": "~2.5",
+        "includes": [
+          "Additional selective catheter advancement to second-order vessel"
+        ],
+        "note": "Subject to same bundling restrictions as 36245. Verify payer policy before billing."
+      },
+      {
+        "code": "37244",
+        "description": "Vascular embolization or occlusion — for hemorrhage",
+        "indication": "GAE for hemarthrosis (e.g., post-amputation bleed, traumatic hemarthrosis)",
+        "rvu": "~9.0",
+        "includes": [
+          "All embolization services for hemorrhagic indication",
+          "Selective catheterization codes separately billable in hemorrhage setting"
+        ],
+        "note": "Use ONLY when indication is hemorrhage (M25.061–M25.069). Most payers reimburse 37244 + selective catheter codes for hemorrhagic indications without experimental designation."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "M17.11",
+        "description": "Primary osteoarthritis, right knee",
+        "notes": "Primary diagnosis for right knee OA — most commonly used for GAE authorization.",
+        "required": true
+      },
+      {
+        "code": "M17.12",
+        "description": "Primary osteoarthritis, left knee",
+        "notes": "Primary diagnosis for left knee OA.",
+        "required": true
+      },
+      {
+        "code": "M17.31",
+        "description": "Unilateral post-traumatic osteoarthritis, right knee",
+        "notes": "Use when OA is secondary to prior trauma.",
+        "required": false
+      },
+      {
+        "code": "M17.32",
+        "description": "Unilateral post-traumatic osteoarthritis, left knee",
+        "notes": "Use when OA is secondary to prior trauma.",
+        "required": false
+      },
+      {
+        "code": "M25.361",
+        "description": "Stiffness of right knee, not elsewhere classified",
+        "notes": "Secondary diagnosis when functional limitation is a key clinical feature.",
+        "required": false
+      },
+      {
+        "code": "M25.362",
+        "description": "Stiffness of left knee, not elsewhere classified",
+        "notes": "Secondary diagnosis when functional limitation is a key clinical feature.",
+        "required": false
+      },
+      {
+        "code": "M25.561",
+        "description": "Pain in right knee",
+        "notes": "Use as secondary code to document pain severity and laterality.",
+        "required": false
+      },
+      {
+        "code": "M25.562",
+        "description": "Pain in left knee",
+        "notes": "Use as secondary code to document pain severity and laterality.",
+        "required": false
+      },
+      {
+        "code": "M25.061",
+        "description": "Hemarthrosis, right knee",
+        "notes": "Use ONLY when indication is hemorrhagic — triggers 37244 instead of 37242.",
+        "required": false
+      },
+      {
+        "code": "M25.062",
+        "description": "Hemarthrosis, left knee",
+        "notes": "Use ONLY when indication is hemorrhagic.",
+        "required": false
+      },
+      {
+        "code": "Z96.651",
+        "description": "Presence of right artificial knee joint",
+        "notes": "Secondary code when patient has prior TKA on contralateral side.",
+        "required": false
+      },
+      {
+        "code": "Z96.652",
+        "description": "Presence of left artificial knee joint",
+        "notes": "Secondary code when patient has prior TKA on contralateral side.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare-traditional",
+        "label": "Medicare (Traditional)",
+        "coverageStatus": "partial (Partial Coverage); Denial Risk: medium (Moderate Denial Risk); Payer Type: medicare",
+        "overview": "No National Coverage Determination (NCD) or Local Coverage Determination (LCD) specific to GAE for OA. CMS reimburses 37242 under the general therapeutic embolization NCD (20.28) when medically reasonable and necessary. Selective catheter codes (36245–36248) are typically denied for MSK diagnoses.",
+        "sections": [
+          {
+            "heading": "PA Requirement",
+            "items": [
+              "No formal PA required — but verify coverage before scheduling"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria",
+            "items": [
+              "Moderate-to-severe knee OA (KL Grade II–IV) documented on weight-bearing radiograph",
+              "Failure of ≥6 months of conservative therapy (PT, NSAIDs, corticosteroid injections)",
+              "Not a surgical candidate OR patient declines TKA",
+              "VAS pain score ≥5/10 at baseline",
+              "Absence of active joint infection or severe vascular disease"
+            ]
+          },
+          {
+            "heading": "Practice Tip",
+            "items": [
+              "Use ABN (Advanced Beneficiary Notice) form for Medicare patients before the procedure. Document medical necessity thoroughly in the operative note. Avoid billing 36245/36246 with OA diagnosis codes — high denial risk."
+            ]
+          }
+        ]
+      },
+      {
+        "key": "medicare-advantage",
+        "label": "Medicare Advantage",
+        "coverageStatus": "variable (Variable — Verify); Denial Risk: high (High Denial Risk); Payer Type: medicare",
+        "overview": "Coverage varies significantly by plan. Some MA plans follow traditional Medicare policy; others apply commercial payer criteria (e.g., UHC MA, Humana MA may require additional documentation or deny as experimental).",
+        "sections": [
+          {
+            "heading": "PA Requirement",
+            "items": [
+              "Prior authorization required by most MA plans"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria",
+            "items": [
+              "All traditional Medicare criteria apply",
+              "Additional plan-specific documentation may be required",
+              "Some plans require peer-to-peer review before approval"
+            ]
+          },
+          {
+            "heading": "Practice Tip",
+            "items": [
+              "Always call the MA plan to verify coverage before scheduling. Request the specific coverage policy in writing. Peer-to-peer review is highly effective for MA plan denials."
+            ]
+          }
+        ]
+      },
+      {
+        "key": "anthem-bcbs",
+        "label": "Anthem / BCBS (most plans)",
+        "coverageStatus": "denied (Experimental — Denied); Denial Risk: very-high (Very High Denial Risk); Payer Type: private",
+        "overview": "Anthem explicitly classifies GAE as experimental, investigational, and not medically necessary for knee pain or osteoarthritis. Coverage is denied under most Anthem and affiliated BCBS plans.",
+        "sections": [
+          {
+            "heading": "PA Requirement",
+            "items": [
+              "N/A — procedure classified as experimental/investigational"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria",
+            "items": []
+          },
+          {
+            "heading": "Practice Tip",
+            "items": [
+              "Obtain a signed patient financial responsibility waiver before the procedure. Submit a formal appeal citing RCT data (Landers 2021) and the AOSSM/AAOS position statement. Some plans have overturned denials after peer-to-peer review with an IR physician."
+            ]
+          }
+        ]
+      },
+      {
+        "key": "aetna",
+        "label": "Aetna",
+        "coverageStatus": "partial (Partial Coverage); Denial Risk: medium (Moderate Denial Risk); Payer Type: private",
+        "overview": "Aetna includes OA knee diagnoses (M17.0–M17.9) and hemarthrosis (M25.061–M25.069) as covered diagnoses for embolization. No specific GAE policy exists — coverage is determined under general therapeutic embolization criteria. Verify with individual plan.",
+        "sections": [
+          {
+            "heading": "PA Requirement",
+            "items": [
+              "Prior authorization required"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria",
+            "items": [
+              "Documented moderate-to-severe knee OA with radiographic evidence",
+              "Failure of conservative therapy (minimum 3–6 months)",
+              "Clinical documentation of functional impairment",
+              "Not a surgical candidate or patient declines surgery"
+            ]
+          },
+          {
+            "heading": "Practice Tip",
+            "items": [
+              "Ask Aetna specifically whether \"no PA required\" means the service is covered or simply not tracked. Some Aetna plans may deny at claim level even without a PA requirement. Confirm coverage in writing."
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unitedhealthcare",
+        "label": "UnitedHealthcare",
+        "coverageStatus": "variable (Variable — Verify); Denial Risk: high (High Denial Risk); Payer Type: private",
+        "overview": "UHC does not have a specific GAE policy. Coverage is adjudicated under general therapeutic embolization criteria. Vetting the PA request meticulously before the procedure is essential — do not assume coverage.",
+        "sections": [
+          {
+            "heading": "PA Requirement",
+            "items": [
+              "Prior authorization required — verify per plan"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria",
+            "items": [
+              "Documented clinical indication with imaging support",
+              "Failure of conservative management",
+              "Procedure performed by qualified interventional radiologist",
+              "Outpatient or ambulatory surgical center setting"
+            ]
+          },
+          {
+            "heading": "Practice Tip",
+            "items": [
+              "Submit a detailed PA request with clinical notes, imaging reports, and conservative treatment records. Request peer-to-peer review if initial PA is denied. Document that the procedure is being performed by a board-certified IR physician."
+            ]
+          }
+        ]
+      },
+      {
+        "key": "cigna",
+        "label": "Cigna",
+        "coverageStatus": "variable (Variable — Verify); Denial Risk: high (High Denial Risk); Payer Type: private",
+        "overview": "Cigna coverage for GAE varies by plan and region. Some Cigna plans follow Anthem criteria (experimental designation); others may cover under general embolization policy. Verify individual plan policy.",
+        "sections": [
+          {
+            "heading": "PA Requirement",
+            "items": [
+              "Prior authorization required"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria",
+            "items": [
+              "Clinical documentation of OA severity and functional limitation",
+              "Failure of conservative therapy",
+              "Appropriate patient selection per published criteria"
+            ]
+          },
+          {
+            "heading": "Practice Tip",
+            "items": [
+              "Contact Cigna medical policy department directly for the most current coverage determination. Peer-to-peer review is recommended for any initial denial."
+            ]
+          }
+        ]
+      },
+      {
+        "key": "medicaid-state-specific",
+        "label": "Medicaid (State-specific)",
+        "coverageStatus": "variable (Variable — Verify); Denial Risk: high (High Denial Risk); Payer Type: medicaid",
+        "overview": "Medicaid coverage for GAE varies significantly by state. Most state Medicaid programs do not have a specific GAE policy and adjudicate under general therapeutic embolization criteria. Some states (e.g., California Medi-Cal) may classify as experimental.",
+        "sections": [
+          {
+            "heading": "PA Requirement",
+            "items": [
+              "Prior authorization required in most states"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria",
+            "items": [
+              "State-specific medical necessity criteria apply",
+              "Documentation of conservative treatment failure",
+              "Procedure must be performed at a Medicaid-enrolled facility"
+            ]
+          },
+          {
+            "heading": "Practice Tip",
+            "items": [
+              "Contact your state Medicaid program directly for coverage determination. Obtain written authorization before scheduling."
+            ]
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Important: GAE Reimbursement Landscape",
+        "kind": "prose",
+        "text": "GAE reimbursement is highly variable across payers. Several major commercial insurers (notably Anthem/BCBS) classify GAE as experimental for musculoskeletal indications. Always verify coverage and obtain written authorization before scheduling. Use an ABN for Medicare patients and a financial responsibility waiver for commercial patients when coverage is uncertain."
+      },
+      {
+        "heading": "Payer Type Filter (UI)",
+        "kind": "list",
+        "items": [
+          "Medicare",
+          "Commercial (filter value: private)",
+          "Medicaid"
+        ]
+      },
+      {
+        "heading": "Required Documentation Checklist — Clinical Documentation",
+        "kind": "list",
+        "items": [
+          "Office visit notes documenting knee pain severity (VAS ≥5/10), duration (≥6 months), and functional limitation",
+          "Orthopedic or primary care physician notes confirming OA diagnosis and conservative treatment history",
+          "Documentation of failed conservative therapies: physical therapy (≥6 weeks), NSAIDs, corticosteroid injections, viscosupplementation",
+          "Functional assessment scores: KOOS, WOMAC, or Oxford Knee Score at baseline",
+          "Documentation that patient is not a surgical candidate OR has declined TKA after informed discussion"
+        ]
+      },
+      {
+        "heading": "Required Documentation Checklist — Imaging",
+        "kind": "list",
+        "items": [
+          "Weight-bearing AP and lateral knee radiographs (within 12 months) — Kellgren-Lawrence Grade II–IV required",
+          "MRI of the knee (within 12 months) — documenting cartilage loss, synovitis, or bone marrow edema",
+          "Radiology reports for all imaging studies"
+        ]
+      },
+      {
+        "heading": "Required Documentation Checklist — Procedure-Specific",
+        "kind": "list",
+        "items": [
+          "Procedure request letter from referring physician or interventional radiologist",
+          "Signed informed consent documenting patient understanding of experimental status with some payers",
+          "Patient financial responsibility waiver (for Medicare patients — ABN form; for commercial payers — plan-specific waiver)",
+          "Facility accreditation documentation (if required by payer)"
+        ]
+      },
+      {
+        "heading": "Required Documentation Checklist — Supporting Evidence (for appeals)",
+        "kind": "list",
+        "items": [
+          "Okuno Y et al., Cardiovasc Intervent Radiol 2017 — foundational prospective study",
+          "Bagla S et al., J Vasc Interv Radiol 2020 — multicenter prospective trial (70% responder rate)",
+          "Landers S et al., Cardiovasc Intervent Radiol 2021 — RCT demonstrating superiority over sham",
+          "AOSSM/AAOS Position Statement 2023 — recognizes GAE as emerging minimally invasive option",
+          "ACR Appropriateness Criteria 2022 — appropriate for moderate-to-severe OA refractory to conservative treatment",
+          "SIR Standards of Practice 2022 — safety profile and technical success rates"
+        ]
+      },
+      {
+        "heading": "Denial Response Strategies",
+        "kind": "list",
+        "items": [
+          "Denial: Experimental / Investigational — Strategy: Submit Level 1 appeal with full RCT data (Landers 2021), multicenter prospective trial data (Bagla 2020), and AOSSM/AAOS 2023 position statement. Request peer-to-peer review with an interventional radiologist. Cite ACR Appropriateness Criteria 2022. — Expected outcome: Moderate — ~30–50% overturn rate with complete evidence package",
+          "Denial: Not Medically Necessary — Strategy: Provide complete conservative treatment failure documentation (PT records, injection dates, medication trials). Include functional assessment scores (KOOS/WOMAC) demonstrating significant impairment. Document that surgical alternatives were considered and declined or contraindicated. — Expected outcome: Moderate-to-High — ~50–70% overturn rate with complete documentation",
+          "Denial: Diagnosis-CPT Code Mismatch — Strategy: Confirm 37242 is the correct code for OA indication. Provide a detailed operative note explaining the clinical rationale. Consider requesting a predetermination letter from the payer before the procedure. — Expected outcome: High — ~70–80% resolution with correct coding and documentation",
+          "Denial: No Prior Authorization — Strategy: Submit retroactive PA request with full clinical documentation. If denied retroactively, file a formal appeal citing medical urgency if applicable. Document that the procedure was performed in good faith based on payer guidance. — Expected outcome: Low-to-Moderate — retroactive PA approvals are difficult; prevention is key"
+        ]
+      },
+      {
+        "heading": "Patient Financial Responsibility Waivers (intro)",
+        "kind": "prose",
+        "text": "Because many payers classify GAE as experimental, a signed financial responsibility waiver is essential before the procedure. Use the Medicare ABN for traditional Medicare patients and the commercial waiver for all other payers."
+      },
+      {
+        "heading": "Medicare — Advance Beneficiary Notice (ABN)",
+        "kind": "prose",
+        "text": "ADVANCE BENEFICIARY NOTICE OF NONCOVERAGE (ABN). CMS Form CMS-R-131 — Adapted for GAE Procedure. Patient Name: ________________________________. Medicare Number: ________________________________. Date: ________________________________. NOTE: Medicare may not pay for the item(s) or service(s) listed below. [Table — Item/Service: Geniculate Artery Embolization (CPT 37242); Reason Medicare May Not Pay: No NCD/LCD specific to GAE for knee OA. Medicare may determine this service is not medically reasonable and necessary for the stated diagnosis.; Estimated Cost: $_____________]. OPTIONS — Check one box: ☐ Option 1: I want the item(s)/service(s) listed above. I understand Medicare may not pay, and I agree to be personally and fully responsible for payment. ☐ Option 2: I want the item(s)/service(s) listed above, but do NOT submit a claim to Medicare. I will be responsible for payment and understand I cannot appeal. ☐ Option 3: I do NOT want the item(s)/service(s) listed above. I understand that I will not be charged, and I will not receive the service. Patient Signature: ________________________________. Date: ________________________________. This notice gives our opinion, not an official Medicare decision. If you have questions, call 1-800-MEDICARE (1-800-633-4227). [Print ABN button available]"
+      },
+      {
+        "heading": "Commercial Payer — Financial Responsibility Waiver",
+        "kind": "prose",
+        "text": "PATIENT FINANCIAL RESPONSIBILITY WAIVER. Geniculate Artery Embolization (GAE) — Commercial Insurance. Patient Name: ________________________________. Date of Birth: ________________________________. Insurance Plan: ________________________________. Date: ________________________________. ACKNOWLEDGMENT OF POTENTIAL NON-COVERAGE. I, the undersigned patient, acknowledge and understand the following regarding the planned Geniculate Artery Embolization (GAE) procedure: 1. Experimental/Investigational Classification: Some insurance carriers classify GAE as experimental, investigational, or not medically necessary for knee osteoarthritis. My insurance plan may deny coverage for this procedure. 2. Prior Authorization Status: My provider has [☐ obtained prior authorization / ☐ been denied prior authorization / ☐ been unable to obtain a coverage determination] from my insurance plan for this procedure. 3. Financial Responsibility: If my insurance plan denies coverage, I understand that I will be personally responsible for the full cost of the procedure, including facility fees, physician fees, and any associated costs. The estimated total out-of-pocket cost is: $____________. 4. Appeal Rights: I understand that if my claim is denied, I have the right to appeal the decision. My provider will assist with the appeal process, but approval is not guaranteed. 5. Alternative Treatments: I have been informed of alternative treatment options, including continued conservative management, corticosteroid injections, viscosupplementation, and total knee arthroplasty (TKA). I have chosen to proceed with GAE after informed discussion. 6. Voluntary Consent: I am proceeding with this procedure voluntarily and have had the opportunity to ask questions about coverage, costs, and alternatives. Patient Signature: ________________________________. Date: ________________________________. Witness Signature: ________________________________. Date: ________________________________. This waiver does not constitute a guarantee of non-coverage. Final coverage determination is made by the insurance plan after claim submission. [Print Waiver button available]"
+      },
+      {
+        "heading": "References",
+        "kind": "list",
+        "items": [
+          "Okuno Y et al. Transcatheter arterial embolization as a treatment for medial knee pain in patients with mild to moderate osteoarthritis. Cardiovasc Intervent Radiol. 2017;40(8):1814–1821.",
+          "Bagla S et al. Genicular artery embolization for the treatment of knee pain secondary to osteoarthritis. J Vasc Interv Radiol. 2020;31(7):1453–1460.",
+          "Landers S et al. Genicular artery embolisation for knee osteoarthritis (GENESIS): a randomised, sham-controlled trial. Cardiovasc Intervent Radiol. 2021;44(10):1530–1540.",
+          "AOSSM/AAOS Position Statement on Genicular Artery Embolization. 2023.",
+          "ACR Appropriateness Criteria: Chronic Hip Pain. American College of Radiology. 2022.",
+          "SIR Standards of Practice Committee. Quality Improvement Guidelines for Genicular Artery Embolization. J Vasc Interv Radiol. 2022.",
+          "CMS. National Coverage Determination: Therapeutic Embolization (NCD 20.28). Centers for Medicare & Medicaid Services.",
+          "StreamlineMD. Genicular Artery Embolization — Reimbursement Challenges. February 2025."
+        ]
+      },
+      {
+        "heading": "Navigation Links",
+        "kind": "link",
+        "items": [
+          "Back to GAE Compass → /gae",
+          "Appeal Letter → /gae/appeal"
+        ],
+        "href": "/gae/appeal"
+      },
+      {
+        "heading": "Footer / Disclaimer",
+        "kind": "prose",
+        "text": "GAE Clinical Compass™ — Insurance Authorization Guide. For clinical decision support only. Verify current payer policies before submission. Not a guarantee of coverage or reimbursement."
+      }
+    ],
+    "raw": {
+      "markdown": "# GAE Clinical Compass™\n## Insurance Authorization Guide — Decision Support\n\nRoute: /gae/auth-guide\n\n## Navigation\n- Back to GAE Compass (→ /gae)\n- Appeal Letter (→ /gae/appeal)\n\n## Important: GAE Reimbursement Landscape\nGAE reimbursement is highly variable across payers. Several major commercial insurers (notably Anthem/BCBS) classify GAE as experimental for musculoskeletal indications. Always verify coverage and obtain written authorization before scheduling. Use an ABN for Medicare patients and a financial responsibility waiver for commercial patients when coverage is uncertain.\n\n## CPT Codes for GAE\n\n### 37242 (RVU: ~8.5) — Primary code for GAE in knee osteoarthritis or chronic knee pain\nVascular embolization or occlusion, inclusive of all radiological supervision and interpretation, intraprocedural roadmapping, and imaging guidance necessary to complete the intervention — arterial, other than hemorrhage or tumor\nIncludes:\n- All vascular access for the procedure\n- Fluoroscopic guidance and roadmapping (bundled — do NOT bill separately)\n- Radiologic supervision and interpretation\n- Selective catheter placement to geniculate arteries\n- Embolization of all targeted geniculate vessels in the same session\nNote: This is the correct primary embolization code for GAE when performed for OA or knee pain. Some payers (Anthem, certain BCBS plans) classify this as experimental for musculoskeletal indications.\n\n### 36245 (RVU: ~5.2) — Selective catheterization to geniculate artery branches (when separately billable)\nSelective catheter placement, arterial system; each first-order abdominal, pelvic, or lower extremity artery branch\nIncludes:\n- Initial selective catheter placement to the first-order vessel\nNote: Bundled with 37242 under NCCI edits in many payer systems. Bill only when payer policy explicitly allows separate billing. Medicare typically does not reimburse for OA/knee pain diagnoses with this code.\n\n### 36246 (RVU: ~2.5) — Second-order selective catheterization (e.g., descending genicular artery)\nSelective catheter placement, arterial system; initial second-order abdominal, pelvic, or lower extremity artery branch\nIncludes:\n- Additional selective catheter advancement to second-order vessel\nNote: Subject to same bundling restrictions as 36245. Verify payer policy before billing.\n\n### 37244 (RVU: ~9.0) — GAE for hemarthrosis (e.g., post-amputation bleed, traumatic hemarthrosis)\nVascular embolization or occlusion — for hemorrhage\nIncludes:\n- All embolization services for hemorrhagic indication\n- Selective catheterization codes separately billable in hemorrhage setting\nNote: Use ONLY when indication is hemorrhage (M25.061–M25.069). Most payers reimburse 37244 + selective catheter codes for hemorrhagic indications without experimental designation.\n\n## ICD-10 Diagnosis Codes\n| Code | Description | Notes | Required |\n| --- | --- | --- | --- |\n| M17.11 | Primary osteoarthritis, right knee | Primary diagnosis for right knee OA — most commonly used for GAE authorization. | Primary |\n| M17.12 | Primary osteoarthritis, left knee | Primary diagnosis for left knee OA. | Primary |\n| M17.31 | Unilateral post-traumatic osteoarthritis, right knee | Use when OA is secondary to prior trauma. | Secondary |\n| M17.32 | Unilateral post-traumatic osteoarthritis, left knee | Use when OA is secondary to prior trauma. | Secondary |\n| M25.361 | Stiffness of right knee, not elsewhere classified | Secondary diagnosis when functional limitation is a key clinical feature. | Secondary |\n| M25.362 | Stiffness of left knee, not elsewhere classified | Secondary diagnosis when functional limitation is a key clinical feature. | Secondary |\n| M25.561 | Pain in right knee | Use as secondary code to document pain severity and laterality. | Secondary |\n| M25.562 | Pain in left knee | Use as secondary code to document pain severity and laterality. | Secondary |\n| M25.061 | Hemarthrosis, right knee | Use ONLY when indication is hemorrhagic — triggers 37244 instead of 37242. | Secondary |\n| M25.062 | Hemarthrosis, left knee | Use ONLY when indication is hemorrhagic. | Secondary |\n| Z96.651 | Presence of right artificial knee joint | Secondary code when patient has prior TKA on contralateral side. | Secondary |\n| Z96.652 | Presence of left artificial knee joint | Secondary code when patient has prior TKA on contralateral side. | Secondary |\n\n## Payer Coverage Policies\nPayer type filter (UI tabs): Medicare | Commercial | Medicaid\n\n### Medicare (Traditional) — Partial Coverage — Moderate Denial Risk\nPA REQUIREMENT: No formal PA required — but verify coverage before scheduling\nCOVERAGE SUMMARY: No National Coverage Determination (NCD) or Local Coverage Determination (LCD) specific to GAE for OA. CMS reimburses 37242 under the general therapeutic embolization NCD (20.28) when medically reasonable and necessary. Selective catheter codes (36245–36248) are typically denied for MSK diagnoses.\nCOVERAGE CRITERIA:\n- Moderate-to-severe knee OA (KL Grade II–IV) documented on weight-bearing radiograph\n- Failure of ≥6 months of conservative therapy (PT, NSAIDs, corticosteroid injections)\n- Not a surgical candidate OR patient declines TKA\n- VAS pain score ≥5/10 at baseline\n- Absence of active joint infection or severe vascular disease\nPRACTICE TIP: Use ABN (Advanced Beneficiary Notice) form for Medicare patients before the procedure. Document medical necessity thoroughly in the operative note. Avoid billing 36245/36246 with OA diagnosis codes — high denial risk.\n\n### Medicare Advantage — Variable — Verify — High Denial Risk\nPA REQUIREMENT: Prior authorization required by most MA plans\nCOVERAGE SUMMARY: Coverage varies significantly by plan. Some MA plans follow traditional Medicare policy; others apply commercial payer criteria (e.g., UHC MA, Humana MA may require additional documentation or deny as experimental).\nCOVERAGE CRITERIA:\n- All traditional Medicare criteria apply\n- Additional plan-specific documentation may be required\n- Some plans require peer-to-peer review before approval\nPRACTICE TIP: Always call the MA plan to verify coverage before scheduling. Request the specific coverage policy in writing. Peer-to-peer review is highly effective for MA plan denials.\n\n### Anthem / BCBS (most plans) — Experimental — Denied — Very High Denial Risk\nPA REQUIREMENT: N/A — procedure classified as experimental/investigational\nCOVERAGE SUMMARY: Anthem explicitly classifies GAE as experimental, investigational, and not medically necessary for knee pain or osteoarthritis. Coverage is denied under most Anthem and affiliated BCBS plans.\nCOVERAGE CRITERIA: (none listed)\nPRACTICE TIP: Obtain a signed patient financial responsibility waiver before the procedure. Submit a formal appeal citing RCT data (Landers 2021) and the AOSSM/AAOS position statement. Some plans have overturned denials after peer-to-peer review with an IR physician.\n\n### Aetna — Partial Coverage — Moderate Denial Risk\nPA REQUIREMENT: Prior authorization required\nCOVERAGE SUMMARY: Aetna includes OA knee diagnoses (M17.0–M17.9) and hemarthrosis (M25.061–M25.069) as covered diagnoses for embolization. No specific GAE policy exists — coverage is determined under general therapeutic embolization criteria. Verify with individual plan.\nCOVERAGE CRITERIA:\n- Documented moderate-to-severe knee OA with radiographic evidence\n- Failure of conservative therapy (minimum 3–6 months)\n- Clinical documentation of functional impairment\n- Not a surgical candidate or patient declines surgery\nPRACTICE TIP: Ask Aetna specifically whether \"no PA required\" means the service is covered or simply not tracked. Some Aetna plans may deny at claim level even without a PA requirement. Confirm coverage in writing.\n\n### UnitedHealthcare — Variable — Verify — High Denial Risk\nPA REQUIREMENT: Prior authorization required — verify per plan\nCOVERAGE SUMMARY: UHC does not have a specific GAE policy. Coverage is adjudicated under general therapeutic embolization criteria. Vetting the PA request meticulously before the procedure is essential — do not assume coverage.\nCOVERAGE CRITERIA:\n- Documented clinical indication with imaging support\n- Failure of conservative management\n- Procedure performed by qualified interventional radiologist\n- Outpatient or ambulatory surgical center setting\nPRACTICE TIP: Submit a detailed PA request with clinical notes, imaging reports, and conservative treatment records. Request peer-to-peer review if initial PA is denied. Document that the procedure is being performed by a board-certified IR physician.\n\n### Cigna — Variable — Verify — High Denial Risk\nPA REQUIREMENT: Prior authorization required\nCOVERAGE SUMMARY: Cigna coverage for GAE varies by plan and region. Some Cigna plans follow Anthem criteria (experimental designation); others may cover under general embolization policy. Verify individual plan policy.\nCOVERAGE CRITERIA:\n- Clinical documentation of OA severity and functional limitation\n- Failure of conservative therapy\n- Appropriate patient selection per published criteria\nPRACTICE TIP: Contact Cigna medical policy department directly for the most current coverage determination. Peer-to-peer review is recommended for any initial denial.\n\n### Medicaid (State-specific) — Variable — Verify — High Denial Risk\nPA REQUIREMENT: Prior authorization required in most states\nCOVERAGE SUMMARY: Medicaid coverage for GAE varies significantly by state. Most state Medicaid programs do not have a specific GAE policy and adjudicate under general therapeutic embolization criteria. Some states (e.g., California Medi-Cal) may classify as experimental.\nCOVERAGE CRITERIA:\n- State-specific medical necessity criteria apply\n- Documentation of conservative treatment failure\n- Procedure must be performed at a Medicaid-enrolled facility\nPRACTICE TIP: Contact your state Medicaid program directly for coverage determination. Obtain written authorization before scheduling.\n\n## Required Documentation Checklist\n\n### Clinical Documentation\n- Office visit notes documenting knee pain severity (VAS ≥5/10), duration (≥6 months), and functional limitation\n- Orthopedic or primary care physician notes confirming OA diagnosis and conservative treatment history\n- Documentation of failed conservative therapies: physical therapy (≥6 weeks), NSAIDs, corticosteroid injections, viscosupplementation\n- Functional assessment scores: KOOS, WOMAC, or Oxford Knee Score at baseline\n- Documentation that patient is not a surgical candidate OR has declined TKA after informed discussion\n\n### Imaging\n- Weight-bearing AP and lateral knee radiographs (within 12 months) — Kellgren-Lawrence Grade II–IV required\n- MRI of the knee (within 12 months) — documenting cartilage loss, synovitis, or bone marrow edema\n- Radiology reports for all imaging studies\n\n### Procedure-Specific\n- Procedure request letter from referring physician or interventional radiologist\n- Signed informed consent documenting patient understanding of experimental status with some payers\n- Patient financial responsibility waiver (for Medicare patients — ABN form; for commercial payers — plan-specific waiver)\n- Facility accreditation documentation (if required by payer)\n\n### Supporting Evidence (for appeals)\n- Okuno Y et al., Cardiovasc Intervent Radiol 2017 — foundational prospective study\n- Bagla S et al., J Vasc Interv Radiol 2020 — multicenter prospective trial (70% responder rate)\n- Landers S et al., Cardiovasc Intervent Radiol 2021 — RCT demonstrating superiority over sham\n- AOSSM/AAOS Position Statement 2023 — recognizes GAE as emerging minimally invasive option\n- ACR Appropriateness Criteria 2022 — appropriate for moderate-to-severe OA refractory to conservative treatment\n- SIR Standards of Practice 2022 — safety profile and technical success rates\n\n## Denial Response Strategies\n\n### Denial: Experimental / Investigational\nStrategy: Submit Level 1 appeal with full RCT data (Landers 2021), multicenter prospective trial data (Bagla 2020), and AOSSM/AAOS 2023 position statement. Request peer-to-peer review with an interventional radiologist. Cite ACR Appropriateness Criteria 2022.\nExpected outcome: Moderate — ~30–50% overturn rate with complete evidence package\n\n### Denial: Not Medically Necessary\nStrategy: Provide complete conservative treatment failure documentation (PT records, injection dates, medication trials). Include functional assessment scores (KOOS/WOMAC) demonstrating significant impairment. Document that surgical alternatives were considered and declined or contraindicated.\nExpected outcome: Moderate-to-High — ~50–70% overturn rate with complete documentation\n\n### Denial: Diagnosis-CPT Code Mismatch\nStrategy: Confirm 37242 is the correct code for OA indication. Provide a detailed operative note explaining the clinical rationale. Consider requesting a predetermination letter from the payer before the procedure.\nExpected outcome: High — ~70–80% resolution with correct coding and documentation\n\n### Denial: No Prior Authorization\nStrategy: Submit retroactive PA request with full clinical documentation. If denied retroactively, file a formal appeal citing medical urgency if applicable. Document that the procedure was performed in good faith based on payer guidance.\nExpected outcome: Low-to-Moderate — retroactive PA approvals are difficult; prevention is key\n\n## Patient Financial Responsibility Waivers\nBecause many payers classify GAE as experimental, a signed financial responsibility waiver is essential before the procedure. Use the Medicare ABN for traditional Medicare patients and the commercial waiver for all other payers.\n\n### Medicare — Advance Beneficiary Notice (ABN) [Print ABN button]\nADVANCE BENEFICIARY NOTICE OF NONCOVERAGE (ABN)\nCMS Form CMS-R-131 — Adapted for GAE Procedure\nPatient Name: ________________________________\nMedicare Number: ________________________________\nDate: ________________________________\nNOTE: Medicare may not pay for the item(s) or service(s) listed below.\n\n| Item/Service | Reason Medicare May Not Pay | Estimated Cost |\n| --- | --- | --- |\n| Geniculate Artery Embolization (CPT 37242) | No NCD/LCD specific to GAE for knee OA. Medicare may determine this service is not medically reasonable and necessary for the stated diagnosis. | $_____________ |\n\nOPTIONS — Check one box:\n☐ Option 1: I want the item(s)/service(s) listed above. I understand Medicare may not pay, and I agree to be personally and fully responsible for payment.\n☐ Option 2: I want the item(s)/service(s) listed above, but do NOT submit a claim to Medicare. I will be responsible for payment and understand I cannot appeal.\n☐ Option 3: I do NOT want the item(s)/service(s) listed above. I understand that I will not be charged, and I will not receive the service.\nPatient Signature: ________________________________\nDate: ________________________________\nThis notice gives our opinion, not an official Medicare decision. If you have questions, call 1-800-MEDICARE (1-800-633-4227).\n\n### Commercial Payer — Financial Responsibility Waiver [Print Waiver button]\nPATIENT FINANCIAL RESPONSIBILITY WAIVER\nGeniculate Artery Embolization (GAE) — Commercial Insurance\nPatient Name: ________________________________\nDate of Birth: ________________________________\nInsurance Plan: ________________________________\nDate: ________________________________\nACKNOWLEDGMENT OF POTENTIAL NON-COVERAGE\nI, the undersigned patient, acknowledge and understand the following regarding the planned Geniculate Artery Embolization (GAE) procedure:\n1. Experimental/Investigational Classification: Some insurance carriers classify GAE as experimental, investigational, or not medically necessary for knee osteoarthritis. My insurance plan may deny coverage for this procedure.\n2. Prior Authorization Status: My provider has [☐ obtained prior authorization / ☐ been denied prior authorization / ☐ been unable to obtain a coverage determination] from my insurance plan for this procedure.\n3. Financial Responsibility: If my insurance plan denies coverage, I understand that I will be personally responsible for the full cost of the procedure, including facility fees, physician fees, and any associated costs. The estimated total out-of-pocket cost is: $____________.\n4. Appeal Rights: I understand that if my claim is denied, I have the right to appeal the decision. My provider will assist with the appeal process, but approval is not guaranteed.\n5. Alternative Treatments: I have been informed of alternative treatment options, including continued conservative management, corticosteroid injections, viscosupplementation, and total knee arthroplasty (TKA). I have chosen to proceed with GAE after informed discussion.\n6. Voluntary Consent: I am proceeding with this procedure voluntarily and have had the opportunity to ask questions about coverage, costs, and alternatives.\nPatient Signature: ________________________________\nDate: ________________________________\nWitness Signature: ________________________________\nDate: ________________________________\nThis waiver does not constitute a guarantee of non-coverage. Final coverage determination is made by the insurance plan after claim submission.\n\n## References\n1. Okuno Y et al. Transcatheter arterial embolization as a treatment for medial knee pain in patients with mild to moderate osteoarthritis. Cardiovasc Intervent Radiol. 2017;40(8):1814–1821.\n2. Bagla S et al. Genicular artery embolization for the treatment of knee pain secondary to osteoarthritis. J Vasc Interv Radiol. 2020;31(7):1453–1460.\n3. Landers S et al. Genicular artery embolisation for knee osteoarthritis (GENESIS): a randomised, sham-controlled trial. Cardiovasc Intervent Radiol. 2021;44(10):1530–1540.\n4. AOSSM/AAOS Position Statement on Genicular Artery Embolization. 2023.\n5. ACR Appropriateness Criteria: Chronic Hip Pain. American College of Radiology. 2022.\n6. SIR Standards of Practice Committee. Quality Improvement Guidelines for Genicular Artery Embolization. J Vasc Interv Radiol. 2022.\n7. CMS. National Coverage Determination: Therapeutic Embolization (NCD 20.28). Centers for Medicare & Medicaid Services.\n8. StreamlineMD. Genicular Artery Embolization — Reimbursement Challenges. February 2025.\n\n## Footer\nGAE Clinical Compass™ — Insurance Authorization Guide\nFor clinical decision support only. Verify current payer policies before submission. Not a guarantee of coverage or reimbursement.",
+      "tables": [
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required"],
+          "rows": [
+            ["M17.11", "Primary osteoarthritis, right knee", "Primary diagnosis for right knee OA — most commonly used for GAE authorization.", "Primary"],
+            ["M17.12", "Primary osteoarthritis, left knee", "Primary diagnosis for left knee OA.", "Primary"],
+            ["M17.31", "Unilateral post-traumatic osteoarthritis, right knee", "Use when OA is secondary to prior trauma.", "Secondary"],
+            ["M17.32", "Unilateral post-traumatic osteoarthritis, left knee", "Use when OA is secondary to prior trauma.", "Secondary"],
+            ["M25.361", "Stiffness of right knee, not elsewhere classified", "Secondary diagnosis when functional limitation is a key clinical feature.", "Secondary"],
+            ["M25.362", "Stiffness of left knee, not elsewhere classified", "Secondary diagnosis when functional limitation is a key clinical feature.", "Secondary"],
+            ["M25.561", "Pain in right knee", "Use as secondary code to document pain severity and laterality.", "Secondary"],
+            ["M25.562", "Pain in left knee", "Use as secondary code to document pain severity and laterality.", "Secondary"],
+            ["M25.061", "Hemarthrosis, right knee", "Use ONLY when indication is hemorrhagic — triggers 37244 instead of 37242.", "Secondary"],
+            ["M25.062", "Hemarthrosis, left knee", "Use ONLY when indication is hemorrhagic.", "Secondary"],
+            ["Z96.651", "Presence of right artificial knee joint", "Secondary code when patient has prior TKA on contralateral side.", "Secondary"],
+            ["Z96.652", "Presence of left artificial knee joint", "Secondary code when patient has prior TKA on contralateral side.", "Secondary"]
+          ]
+        },
+        {
+          "name": "Medicare ABN — Item/Service Table",
+          "header": ["Item/Service", "Reason Medicare May Not Pay", "Estimated Cost"],
+          "rows": [
+            ["Geniculate Artery Embolization (CPT 37242)", "No NCD/LCD specific to GAE for knee OA. Medicare may determine this service is not medically reasonable and necessary for the stated diagnosis.", "$_____________"]
+          ]
+        }
+      ]
+    }
+  }
+}

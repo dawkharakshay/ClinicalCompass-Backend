@@ -1,0 +1,422 @@
+{
+  "source": "live postgres (modules.form)",
+  "forms": 126,
+  "fields": 2355,
+  "distinctTypes": 10,
+  "types": [
+    {
+      "type": "checkbox",
+      "count": 610,
+      "isInput": true,
+      "submits": "boolean",
+      "commonAttributes": [
+        "id",
+        "label",
+        "name",
+        "defaultValue?",
+        "required?",
+        "visibleWhen?"
+      ],
+      "typeSpecificAttributes": [],
+      "example": {
+        "id": "multiple-ipsilateral-tumors",
+        "name": "multipleIpsilateralTumors",
+        "type": "checkbox",
+        "label": "Multiple ipsilateral renal tumors",
+        "required": false,
+        "defaultValue": false
+      }
+    },
+    {
+      "type": "switch",
+      "count": 492,
+      "isInput": true,
+      "submits": "boolean",
+      "commonAttributes": [
+        "id",
+        "label",
+        "name",
+        "defaultValue?",
+        "required?",
+        "visibleWhen?"
+      ],
+      "typeSpecificAttributes": [],
+      "example": {
+        "id": "symptomatic",
+        "name": "symptomatic",
+        "type": "switch",
+        "label": "Symptomatic PE",
+        "defaultValue": true
+      }
+    },
+    {
+      "type": "select",
+      "count": 426,
+      "isInput": true,
+      "submits": "option value",
+      "commonAttributes": [
+        "id",
+        "label",
+        "name",
+        "defaultValue?",
+        "required?",
+        "visibleWhen?"
+      ],
+      "typeSpecificAttributes": [
+        "options"
+      ],
+      "example": {
+        "id": "t-stage",
+        "name": "tStage",
+        "type": "select",
+        "label": "T Stage",
+        "options": [
+          {
+            "label": "T1",
+            "value": "T1"
+          },
+          {
+            "label": "T2",
+            "value": "T2"
+          },
+          {
+            "label": "T3",
+            "value": "T3"
+          },
+          {
+            "label": "T4",
+            "value": "T4"
+          }
+        ],
+        "required": true,
+        "defaultValue": "T3"
+      }
+    },
+    {
+      "type": "number",
+      "count": 356,
+      "isInput": true,
+      "submits": "number",
+      "commonAttributes": [
+        "id",
+        "label",
+        "name",
+        "defaultValue?",
+        "required?",
+        "visibleWhen?"
+      ],
+      "typeSpecificAttributes": [
+        "keyboardType",
+        "max",
+        "min",
+        "placeholder",
+        "step",
+        "unit"
+      ],
+      "example": {
+        "id": "cea",
+        "name": "cea",
+        "type": "number",
+        "label": "CEA (ng/mL)",
+        "placeholder": "Enter CEA",
+        "keyboardType": "numeric"
+      }
+    },
+    {
+      "type": "radio",
+      "count": 239,
+      "isInput": true,
+      "submits": "option value",
+      "commonAttributes": [
+        "id",
+        "label",
+        "name",
+        "defaultValue?",
+        "required?",
+        "visibleWhen?"
+      ],
+      "typeSpecificAttributes": [
+        "optionLayout",
+        "options"
+      ],
+      "example": {
+        "id": "m-stage",
+        "name": "mStage",
+        "type": "radio",
+        "label": "M Stage",
+        "options": [
+          {
+            "label": "M0 - none",
+            "value": "M0"
+          },
+          {
+            "label": "M1 - distant",
+            "value": "M1"
+          }
+        ],
+        "required": true,
+        "defaultValue": "M0",
+        "optionLayout": "row"
+      }
+    },
+    {
+      "type": "slider",
+      "count": 62,
+      "isInput": true,
+      "submits": "number",
+      "commonAttributes": [
+        "id",
+        "label",
+        "name",
+        "defaultValue?",
+        "required?",
+        "visibleWhen?"
+      ],
+      "typeSpecificAttributes": [
+        "max",
+        "min",
+        "step",
+        "unit"
+      ],
+      "example": {
+        "id": "vein-diameter",
+        "max": 10,
+        "min": 1,
+        "name": "veinDiameter",
+        "type": "slider",
+        "unit": "mm",
+        "label": "Max Vein Diameter on Doppler US (mm)",
+        "defaultValue": 3.5
+      }
+    },
+    {
+      "type": "text",
+      "count": 55,
+      "isInput": true,
+      "submits": "string",
+      "commonAttributes": [
+        "id",
+        "label",
+        "name",
+        "defaultValue?",
+        "required?",
+        "visibleWhen?"
+      ],
+      "typeSpecificAttributes": [
+        "keyboardType",
+        "multiline",
+        "placeholder",
+        "unit"
+      ],
+      "example": {
+        "id": "loc",
+        "name": "location",
+        "type": "text",
+        "label": "Anatomic Location",
+        "multiline": false,
+        "placeholder": "e.g. left forearm"
+      }
+    },
+    {
+      "type": "alert",
+      "count": 49,
+      "isInput": false,
+      "submits": null,
+      "commonAttributes": [
+        "id",
+        "label",
+        "defaultValue?",
+        "required?",
+        "visibleWhen?"
+      ],
+      "typeSpecificAttributes": [
+        "severity",
+        "text"
+      ],
+      "example": {
+        "id": "grade-subclinical-alert",
+        "text": "AUA/ASRM (Strong, Grade C) and EAU 2024 do not recommend treatment for subclinical varicoceles.",
+        "type": "alert",
+        "severity": "warning",
+        "visibleWhen": {
+          "op": "eq",
+          "field": "grade",
+          "value": "subclinical"
+        }
+      }
+    },
+    {
+      "type": "multiselect",
+      "count": 36,
+      "isInput": true,
+      "submits": "array of option values",
+      "commonAttributes": [
+        "id",
+        "label",
+        "name",
+        "defaultValue?",
+        "required?",
+        "visibleWhen?"
+      ],
+      "typeSpecificAttributes": [
+        "options"
+      ],
+      "example": {
+        "id": "combination-therapy",
+        "name": "combinationTherapy",
+        "type": "multiselect",
+        "label": "Combination Therapies",
+        "options": [
+          {
+            "label": "Augmentation",
+            "value": "augmentation"
+          },
+          {
+            "label": "Embolization",
+            "value": "embolization"
+          },
+          {
+            "label": "Radiation",
+            "value": "radiation"
+          }
+        ],
+        "defaultValue": []
+      }
+    },
+    {
+      "type": "buttongroup",
+      "count": 30,
+      "isInput": true,
+      "submits": "option value",
+      "commonAttributes": [
+        "id",
+        "label",
+        "name",
+        "defaultValue?",
+        "required?",
+        "visibleWhen?"
+      ],
+      "typeSpecificAttributes": [
+        "options"
+      ],
+      "example": {
+        "id": "diagnosis",
+        "name": "diagnosis",
+        "type": "buttongroup",
+        "label": "Primary Diagnosis",
+        "options": [
+          {
+            "label": "Hepatocellular Carcinoma (HCC)",
+            "value": "hcc"
+          },
+          {
+            "label": "Intrahepatic Cholangiocarcinoma (iCCA)",
+            "value": "icca"
+          },
+          {
+            "label": "Other Primary Liver Malignancy",
+            "value": "other"
+          }
+        ],
+        "required": true,
+        "defaultValue": "hcc"
+      }
+    }
+  ],
+  "optionValue": {
+    "shape": {
+      "label": "string",
+      "value": "string|number|boolean|null"
+    },
+    "valueTypeCounts": {
+      "str": 2290,
+      "bool": 340,
+      "NoneType": 3,
+      "int": 142
+    },
+    "note": "Preserve option.value's native JSON type; do not stringify."
+  },
+  "visibleWhen": {
+    "leaf": {
+      "field": "string",
+      "op": "eq|ne|in|gt|gte|truthy",
+      "value": "required except for truthy; array for 'in'"
+    },
+    "combinators": [
+      "all: [cond,...]",
+      "any: [cond,...]"
+    ],
+    "opsObserved": {
+      "eq": 127,
+      "truthy": 117,
+      "gt": 8,
+      "in": 27,
+      "ne": 1,
+      "gte": 1
+    },
+    "note": "Conditional field/alert visibility, evaluated client-side; nestable."
+  },
+  "enums": {
+    "keyboardType": {
+      "numeric": 53,
+      "decimal": 320
+    },
+    "optionLayout": {
+      "row": 26,
+      "column": 2
+    },
+    "alertSeverity": {
+      "warning": 16,
+      "error": 6,
+      "info": 27
+    }
+  },
+  "units": [
+    "%",
+    "/10",
+    "/min",
+    "Gy",
+    "bpm",
+    "cells/µL",
+    "cells/μL",
+    "cm",
+    "dB",
+    "days",
+    "degrees",
+    "events/hour",
+    "g/24h",
+    "g/dL",
+    "g/day",
+    "hours/day",
+    "kPa",
+    "kg",
+    "kg/m²",
+    "mIU/L",
+    "mIU/mL",
+    "mL",
+    "mL/min/1.73m²",
+    "mL/s",
+    "mg",
+    "mg/L",
+    "mg/dL",
+    "million",
+    "million/mL",
+    "minutes",
+    "mm",
+    "mmHg",
+    "mmol/L",
+    "months",
+    "ng/L",
+    "ng/dL",
+    "ng/mL",
+    "nmol/L",
+    "pg/mL",
+    "sec",
+    "seconds",
+    "weeks",
+    "years",
+    "°C",
+    "×10³/µL",
+    "μm"
+  ]
+}

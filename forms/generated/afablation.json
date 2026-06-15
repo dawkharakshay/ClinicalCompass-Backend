@@ -1,0 +1,264 @@
+{
+  "title": "AF Ablation Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assess Ablation Candidacy",
+    "logicKey": "afablation",
+    "hiddenDefaults": {
+      "afDuration": 0,
+      "femaleSex": false,
+      "structuralHeartDisease": false,
+      "ckdStage": 0,
+      "anticoagulantType": "none",
+      "uncontrolledHF": false
+    },
+    "steps": [
+      {
+        "id": "af-profile",
+        "shortLabel": "AF Profile",
+        "title": "AF Profile & Symptoms",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "sex",
+            "name": "sex",
+            "label": "Sex",
+            "type": "select",
+            "defaultValue": "male",
+            "options": [
+              { "label": "Male", "value": "male" },
+              { "label": "Female", "value": "female" }
+            ]
+          },
+          {
+            "id": "af-type",
+            "name": "afType",
+            "label": "AF Type",
+            "type": "select",
+            "defaultValue": "paroxysmal",
+            "options": [
+              { "label": "Paroxysmal (self-terminating ≤7 days)", "value": "paroxysmal" },
+              { "label": "Persistent (>7 days, cardioverted)", "value": "persistent" },
+              { "label": "Long-standing Persistent (>12 months)", "value": "longstanding-persistent" },
+              { "label": "Permanent (rate control only)", "value": "permanent" }
+            ]
+          },
+          {
+            "id": "symptom-burden",
+            "name": "symptomBurden",
+            "label": "Symptom Burden (EHRA/AFEQT)",
+            "type": "select",
+            "defaultValue": "moderate",
+            "options": [
+              { "label": "None — Asymptomatic", "value": "none" },
+              { "label": "Mild — Symptoms not affecting daily activities", "value": "mild" },
+              { "label": "Moderate — Symptoms affecting daily activities", "value": "moderate" },
+              { "label": "Severe — Symptoms preventing normal activities", "value": "severe" }
+            ]
+          },
+          {
+            "id": "la-size",
+            "name": "laSize",
+            "label": "LA Diameter (mm)",
+            "type": "number",
+            "defaultValue": 40,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "lvef",
+            "name": "lvef",
+            "label": "LVEF (%)",
+            "type": "number",
+            "defaultValue": 60,
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "rhythm-history",
+        "shortLabel": "Rhythm History",
+        "title": "Antiarrhythmic Drug History",
+        "fields": [
+          {
+            "id": "aad-failed",
+            "name": "aadFailed",
+            "label": "Failed ≥1 Class I or III antiarrhythmic drug (AAD)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "aad-intolerant",
+            "name": "aadIntolerant",
+            "label": "Intolerant to antiarrhythmic drugs",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "aad-trialed",
+            "name": "aadTrialed",
+            "label": "AADs Trialed (select all that apply)",
+            "type": "multiselect",
+            "defaultValue": [],
+            "options": [
+              { "label": "Flecainide", "value": "Flecainide" },
+              { "label": "Propafenone", "value": "Propafenone" },
+              { "label": "Amiodarone", "value": "Amiodarone" },
+              { "label": "Sotalol", "value": "Sotalol" },
+              { "label": "Dofetilide", "value": "Dofetilide" },
+              { "label": "Dronedarone", "value": "Dronedarone" }
+            ],
+            "visibleWhen": {
+              "any": [
+                { "field": "aadFailed", "op": "truthy" },
+                { "field": "aadIntolerant", "op": "truthy" }
+              ]
+            }
+          },
+          {
+            "id": "chf",
+            "name": "chf",
+            "label": "Congestive heart failure / LV dysfunction",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "hypertension",
+            "name": "hypertension",
+            "label": "Hypertension",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "age75orolder",
+            "name": "age75orOlder",
+            "label": "Age ≥75 years",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "diabetes",
+            "name": "diabetes",
+            "label": "Diabetes mellitus",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "stroke",
+            "name": "stroke",
+            "label": "Prior stroke, TIA, or thromboembolism",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "vascular-disease",
+            "name": "vascularDisease",
+            "label": "Vascular disease (MI, PAD, aortic plaque)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "age65to74",
+            "name": "age65to74",
+            "label": "Age 65–74 years",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "comorbidities",
+        "shortLabel": "Comorbidities",
+        "title": "Comorbidities & Contraindications",
+        "fields": [
+          {
+            "id": "hcm",
+            "name": "hcm",
+            "label": "Hypertrophic cardiomyopathy (HCM)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "sleep-apnea",
+            "name": "sleepApnea",
+            "label": "Obstructive sleep apnea",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "sleep-apnea-treated",
+            "name": "sleepApneaTreated",
+            "label": "Sleep apnea treated (CPAP/BiPAP)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "obesity",
+            "name": "obesity",
+            "label": "Obesity (BMI ≥30)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "thyroid-disease",
+            "name": "thyroidDisease",
+            "label": "Thyroid disease",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "thyroid-treated",
+            "name": "thyroidTreated",
+            "label": "Thyroid disease treated/controlled",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "on-anticoagulation",
+            "name": "onAnticoagulation",
+            "label": "Currently on anticoagulation",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "recent-thrombus",
+            "name": "recentThrombus",
+            "label": "LAA thrombus on TEE (CONTRAINDICATION)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "active-infection",
+            "name": "activeInfection",
+            "label": "Active infection (CONTRAINDICATION)",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "severe-mitral-stenosis",
+            "name": "severeMitralStenosis",
+            "label": "Severe mitral stenosis",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "bmi",
+            "name": "bmi",
+            "label": "BMI",
+            "type": "number",
+            "defaultValue": 25,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "obesity", "op": "truthy" }
+          }
+        ]
+      }
+    ]
+  }
+}

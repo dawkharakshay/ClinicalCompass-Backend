@@ -1,0 +1,30 @@
+{
+  "title": "Rotator Cuff Repair Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "29827, 29826, 29823, 29819, 23412, 23410",
+      "credentials": "[Credentials]",
+      "icd_codes": "M75.100, M75.101, M75.102, M75.110, M75.120, S46.011A, M75.50",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\n{{insurance_name}}\n{{insurance_address}}\nAttn: Medical Director / Appeals Department\nRe: Prior Authorization Appeal — Rotator Cuff Repair (Arthroscopic)\nPatient: {{patient_name}} | DOB: {{patient_dob}} | Member ID: {{member_id}}\nClaim/Auth #: {{claim_number}} | Date of Denial: [DATE OF DENIAL]\nCPT Code(s): 29827 | ICD-10: M75.121 / M75.122\n\nDear Medical Director,\n\nI am writing to formally appeal the denial of prior authorization for Arthroscopic Rotator Cuff Repair for my patient {{patient_name}}. The Clinical Compass™ Rotator Cuff Decision Support assessment yielded a recommendation of \"[Rotator Cuff Repair Recommendation]\" (Class of Recommendation [COR]) based on the 2019 AAOS Clinical Practice Guideline for Rotator Cuff Tears.\n\nCLINICAL JUSTIFICATION:\n• Patient presents with symptomatic full-thickness rotator cuff tear with significant pain and functional impairment\n• MRI-confirmed full-thickness tear of the [supraspinatus / infraspinatus / subscapularis]\n• Failure of ≥6 weeks of conservative therapy documented\n• Tear size and patient factors favor surgical repair to prevent progression\n\nDIAGNOSIS:\n• Tear type: Full-thickness rotator cuff tear — [DESCRIBE: supraspinatus, infraspinatus, subscapularis involvement]\n• Tear size: [SMALL <1cm / MEDIUM 1-3cm / LARGE 3-5cm / MASSIVE >5cm]\n• Affected side: [Right / Left]\n• Chronicity: [Acute / Chronic — DURATION of symptoms]\n• Fatty infiltration (Goutallier grade): [0-4]\n• Muscle atrophy: [Present / Absent]\n\nCONSERVATIVE THERAPY DOCUMENTATION:\nThis patient has completed a comprehensive course of conservative management including:\n• Physical therapy / rotator cuff strengthening: [DURATION — minimum 6 weeks, OUTCOMES]\n• NSAIDs / analgesic medications: [MEDICATIONS, DURATION, RESPONSE]\n• Subacromial corticosteroid injections: [NUMBER, DATES, RESPONSE]\n• Activity modification: [DETAILS]\n\nIMAGING FINDINGS:\n• MRI shoulder ({{letter_date}}): Full-thickness tear of [TENDON(S)], [SIZE] cm, [DESCRIBE — retraction, fatty infiltration, muscle atrophy, associated pathology]\n• Tendon retraction: [DESCRIBE — to level of humeral head / glenoid]\n• Additional findings: [DESCRIBE — AC joint arthritis, biceps pathology, labral tear if applicable]\n\nFUNCTIONAL ASSESSMENT:\n• ASES Score: [SCORE] (normal ≥70; severe impairment <50)\n• DASH Score: [SCORE] (higher = more disability)\n• VAS Pain Score: [SCORE]/10\n• Active ROM: Forward flexion [DEGREES], Abduction [DEGREES], External rotation [DEGREES]\n• Strength testing: [DESCRIBE — weakness with abduction, external rotation, lift-off test]\n\nMEDICAL NECESSITY:\nArthroscopic Rotator Cuff Repair is medically necessary for this patient based on:\n1. MRI-confirmed full-thickness rotator cuff tear with significant functional impairment\n2. Failure of ≥6 weeks of comprehensive conservative therapy\n3. Risk of tear progression, fatty infiltration, and muscle atrophy without surgical repair\n4. Patient age and activity level favor surgical repair for optimal long-term outcome\n5. Meets AAOS Class [I/IIa] criteria per 2019 Clinical Practice Guideline\n\nGUIDELINE SUPPORT:\nThe 2019 AAOS Clinical Practice Guideline for Rotator Cuff Tears recommends surgical repair for full-thickness tears with persistent symptoms after conservative management. Evidence demonstrates that early repair prevents tear progression and preserves muscle quality (Moosmayer et al., JBJS 2014). Surgical repair is superior to physical therapy alone at 2-year follow-up (Kuhn et al., JSES 2013).\n\nWithout surgical repair, this patient faces progressive tear enlargement, fatty infiltration, and irreversible muscle atrophy — all of which significantly worsen surgical outcomes and may render the tear irreparable.\n\nI respectfully request immediate reconsideration and approval of prior authorization for Arthroscopic Rotator Cuff Repair (CPT 29827). Please contact my office at {{practice_phone}} or {{practice_email}} if additional clinical documentation is required.\n\nSincerely,\n\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\n{{practice_phone}} | {{practice_email}}"
+  }
+}

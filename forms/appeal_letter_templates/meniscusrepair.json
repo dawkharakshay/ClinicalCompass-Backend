@@ -1,0 +1,30 @@
+{
+  "title": "Meniscus Repair Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "29882, 29883, 29880, 29881, 29879, 29876",
+      "credentials": "[Credentials]",
+      "icd_codes": "M23.200, M23.201, M23.202, S83.200A, M23.000, M23.400",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\n{{insurance_name}}\n{{insurance_address}}\nAttn: Medical Director / Appeals Department\nRe: Prior Authorization Appeal — Arthroscopic Meniscal Repair\nPatient: {{patient_name}} | DOB: {{patient_dob}} | Member ID: {{member_id}}\nClaim/Auth #: {{claim_number}} | Date of Denial: [DATE OF DENIAL]\nCPT Code(s): 29882 | ICD-10: S83.201A / M23.201\n\nDear Medical Director,\n\nI am writing to formally appeal the denial of prior authorization for Arthroscopic Meniscal Repair for my patient {{patient_name}}. The Clinical Compass™ Meniscal Repair Decision Support assessment yielded a recommendation of \"[Meniscal Repair Recommendation]\" (Class of Recommendation [COR]) based on the 2019 AAOS Clinical Practice Guideline for Meniscal and Articular Cartilage Lesions.\n\nCLINICAL JUSTIFICATION:\n• Patient presents with symptomatic meniscal tear with mechanical symptoms and functional impairment\n• MRI-confirmed meniscal tear with favorable morphology for repair\n• Patient age and activity level favor repair over meniscectomy\n• Repair preserves meniscal function and prevents accelerated OA development\n\nDIAGNOSIS:\n• Tear type: [DESCRIBE — vertical longitudinal, bucket-handle, radial, horizontal, complex]\n• Location: [Medial / Lateral] meniscus, [posterior horn / body / anterior horn]\n• Vascular zone: [Red-red zone / Red-white zone / White-white zone]\n• Tear length: [LENGTH] mm\n• Affected side: [Right / Left]\n• Acuity: [Acute (<3 months) / Chronic]\n\nCLINICAL PRESENTATION:\n• Mechanical symptoms: [DESCRIBE — locking, clicking, catching, giving way]\n• Pain location: [Medial / Lateral] joint line tenderness\n• Special tests: McMurray [Positive / Negative], Thessaly [Positive / Negative], Apley [Positive / Negative]\n• Effusion: [Present / Absent]\n• ROM: [DESCRIBE — any extension deficit, flexion limitation]\n\nIMAGING FINDINGS:\n• MRI knee ({{letter_date}}): [DESCRIBE — tear location, morphology, signal characteristics, associated findings]\n• Tear characteristics favorable for repair: [DESCRIBE — peripheral location, vertical orientation, adequate tissue quality]\n• Associated findings: [DESCRIBE — ACL status, chondral status, other meniscal pathology]\n\nFUNCTIONAL ASSESSMENT:\n• IKDC Score: [SCORE] (normal ≥75)\n• KOOS Symptoms Score: [SCORE] (normal ≥75)\n• VAS Pain Score: [SCORE]/10\n• Activity level: [DESCRIBE — Tegner activity scale, occupational demands, sports participation]\n\nMEDICAL NECESSITY AND RATIONALE FOR REPAIR OVER MENISCECTOMY:\nArthroscopic Meniscal Repair is medically necessary and preferred over meniscectomy for this patient because:\n1. Tear morphology (peripheral, vertical, adequate vascularity) is favorable for healing\n2. Patient age [AGE] and activity level favor long-term meniscal preservation\n3. Meniscectomy is associated with accelerated knee OA development (Salata et al., Sports Health 2010)\n4. Repair preserves meniscal function — shock absorption, load distribution, joint stability\n5. Meets AAOS criteria for repair over meniscectomy per 2019 Clinical Practice Guideline\n\nGUIDELINE SUPPORT:\nThe 2019 AAOS Clinical Practice Guideline recommends meniscal repair over meniscectomy when tear morphology and patient factors are favorable for healing. Vertical longitudinal tears in the peripheral vascular zone have high healing rates (Pujol et al., AJSM 2008). Long-term outcomes are superior with repair compared to meniscectomy for preservation of knee function and prevention of OA (Nepple et al., AJSM 2012).\n\nWithout meniscal repair, this patient faces progressive meniscal deficiency, accelerated knee OA, and long-term functional decline. Meniscectomy, while technically simpler, sacrifices meniscal tissue and is associated with significantly higher rates of knee OA at 10-20 year follow-up.\n\nI respectfully request immediate reconsideration and approval of prior authorization for Arthroscopic Meniscal Repair (CPT 29882). Please contact my office at {{practice_phone}} or {{practice_email}} if additional clinical documentation is required.\n\nSincerely,\n\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\n{{practice_phone}} | {{practice_email}}"
+  }
+}

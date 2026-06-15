@@ -1,0 +1,156 @@
+{
+  "title": "Spinal Cord Stimulator Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assess",
+    "logicKey": "scs",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "patient-information",
+        "shortLabel": "Patient",
+        "title": "Patient Information",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "pain-score",
+            "name": "painScore",
+            "label": "Pain Score (0-10)",
+            "type": "text",
+            "required": true,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "phase",
+            "name": "phase",
+            "label": "Procedure Phase",
+            "type": "buttongroup",
+            "required": true,
+            "defaultValue": "",
+            "options": [
+              { "label": "Trial (temporary)", "value": "trial" },
+              { "label": "Permanent Implant", "value": "implant" },
+              { "label": "Revision / Replacement", "value": "revision" }
+            ]
+          },
+          {
+            "id": "symptom-duration-months",
+            "name": "symptomDurationMonths",
+            "label": "Symptom Duration (months)",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "psychological-clearance",
+            "name": "psychologicalClearance",
+            "label": "Psychological evaluation completed and cleared",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "prior-trial-success",
+            "name": "priorTrialSuccess",
+            "label": "Prior SCS trial was successful (≥50% pain relief)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "phase", "op": "eq", "value": "implant" }
+          },
+          {
+            "id": "trial-relief-percent",
+            "name": "trialReliefPercent",
+            "label": "Trial Relief Achieved (%)",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "phase", "op": "eq", "value": "implant" }
+          }
+        ]
+      },
+      {
+        "id": "indications-conservative",
+        "shortLabel": "Indications",
+        "title": "Indications & Conservative Therapy",
+        "fields": [
+          {
+            "id": "indications",
+            "name": "indications",
+            "label": "Indications (select all that apply)",
+            "type": "multiselect",
+            "required": true,
+            "defaultValue": [],
+            "options": [
+              { "label": "Failed back surgery syndrome (FBSS)", "value": "fbss" },
+              { "label": "Complex regional pain syndrome (CRPS Type I or II)", "value": "crps" },
+              { "label": "Refractory radiculopathy / neuropathic leg pain", "value": "radiculopathy" },
+              { "label": "Painful diabetic neuropathy", "value": "diabetic-neuropathy" },
+              { "label": "Peripheral vascular disease / ischemic limb pain", "value": "peripheral-vascular" },
+              { "label": "Refractory angina (not amenable to revascularization)", "value": "angina" },
+              { "label": "Postherpetic neuralgia", "value": "postherpetic" }
+            ]
+          },
+          {
+            "id": "conservative-therapies",
+            "name": "conservativeTherapies",
+            "label": "Conservative Therapies Tried (≥6 months total)",
+            "type": "multiselect",
+            "required": false,
+            "defaultValue": [],
+            "options": [
+              { "label": "Physical therapy (≥6 months)", "value": "pt" },
+              { "label": "Multimodal pharmacotherapy (opioids, neuropathic agents)", "value": "medications" },
+              { "label": "Spinal injections (ESI, nerve blocks)", "value": "injections" },
+              { "label": "Psychological evaluation and treatment", "value": "psychology" },
+              { "label": "Prior spine surgery (for FBSS)", "value": "surgery" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "contraindications",
+        "shortLabel": "Contraindications",
+        "title": "Contraindications",
+        "fields": [
+          {
+            "id": "contraindications-note",
+            "label": "Check all that apply. Absolute contraindications will prevent implant authorization.",
+            "type": "alert",
+            "severity": "warning",
+            "text": "Check all that apply. Absolute contraindications will prevent implant authorization."
+          },
+          {
+            "id": "contraindications",
+            "name": "contraindications",
+            "label": "Contraindications",
+            "type": "multiselect",
+            "required": false,
+            "defaultValue": [],
+            "options": [
+              { "label": "Active systemic or local infection", "value": "active-infection" },
+              { "label": "Uncorrectable coagulopathy", "value": "coagulopathy" },
+              { "label": "Demand cardiac pacemaker (absolute)", "value": "demand-pacemaker" },
+              { "label": "Untreated psychiatric disorder (psychosis, active suicidality)", "value": "psychosis" },
+              { "label": "Active drug-seeking behavior / substance abuse", "value": "drug-seeking" },
+              { "label": "Pregnancy", "value": "pregnancy" },
+              { "label": "MRI-dependent condition (non-MRI-compatible device)", "value": "mri-dependent" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "title": "Sacroplasty Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "SacroplastyAuthGuide.tsx",
+    "title": "Sacroplasty — Authorization Guide",
+    "subtitle": null,
+    "cptCodes": [
+      {
+        "code": "0200T",
+        "description": "Percutaneous sacral augmentation (sacroplasty), unilateral injection(s), including the use of a balloon or mechanical device, when used, 1 or more needles"
+      },
+      {
+        "code": "0201T",
+        "description": "Percutaneous sacral augmentation (sacroplasty), bilateral injections, including the use of a balloon or mechanical device, when used, 2 or more needles"
+      },
+      {
+        "code": "72291",
+        "description": "Radiological supervision and interpretation, percutaneous vertebroplasty or vertebral augmentation; under fluoroscopic guidance"
+      },
+      {
+        "code": "72292",
+        "description": "Radiological supervision and interpretation; under CT guidance"
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "M80.08XA",
+        "description": "Age-related osteoporosis with current pathological fracture, vertebra(e), initial encounter (use for sacral insufficiency fracture)"
+      },
+      {
+        "code": "M84.452A",
+        "description": "Pathological fracture, left femur, initial encounter (use M84.58XA for sacral pathologic fracture in malignancy)"
+      },
+      {
+        "code": "M84.58XA",
+        "description": "Pathological fracture in neoplastic disease, other specified site, initial encounter"
+      },
+      {
+        "code": "S32.10XA",
+        "description": "Unspecified fracture of sacrum, initial encounter for closed fracture"
+      },
+      {
+        "code": "S32.19XA",
+        "description": "Other fracture of sacrum, initial encounter"
+      },
+      {
+        "code": "M48.50XA",
+        "description": "Collapsed vertebra, not elsewhere classified (can be used for sacral insufficiency fracture)"
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare (CMS)",
+        "sections": [
+          {
+            "heading": "Coverage Considerations",
+            "items": [
+              "No specific national coverage determination (NCD) for sacroplasty",
+              "Coverage determined by local MAC policies — many MACs cover with medical necessity documentation",
+              "Category III CPT codes (0200T/0201T) may require additional documentation",
+              "MRI confirmation of sacral insufficiency fracture with bone marrow edema required",
+              "Conservative therapy trial ≥6 weeks with documented failure"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "commercial",
+        "label": "Commercial Payers",
+        "sections": [
+          {
+            "heading": "Coverage Considerations",
+            "items": [
+              "Coverage is inconsistent — many payers consider sacroplasty investigational",
+              "Prior authorization almost universally required",
+              "Peer-to-peer review often necessary for approval",
+              "Pathologic fractures from malignancy have higher approval rates",
+              "Document functional impairment, pain scores, and failed conservative therapy"
+            ]
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Note (CPT Codes — Sacroplasty)",
+        "kind": "prose",
+        "text": "CPT 0200T and 0201T are Category III codes. Coverage varies significantly by payer. Some payers may use unlisted procedure codes (e.g., 27299) if Category III codes are not recognized."
+      },
+      {
+        "heading": "Documentation Checklist",
+        "kind": "list",
+        "items": [
+          "MRI pelvis with STIR sequences confirming sacral bone marrow edema",
+          "Denis zone classification documented",
+          "VAS pain score and functional impairment documented",
+          "Conservative therapy documentation (dates, medications, PT)",
+          "Bone density (DXA) if osteoporotic etiology",
+          "Oncology records if pathologic fracture",
+          "Absence of sacral nerve compression on MRI"
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# Sacroplasty — Authorization Guide\n\n## CPT Codes — Sacroplasty\n\n| CPT | Description |\n| --- | --- |\n| 0200T | Percutaneous sacral augmentation (sacroplasty), unilateral injection(s), including the use of a balloon or mechanical device, when used, 1 or more needles |\n| 0201T | Percutaneous sacral augmentation (sacroplasty), bilateral injections, including the use of a balloon or mechanical device, when used, 2 or more needles |\n| 72291 | Radiological supervision and interpretation, percutaneous vertebroplasty or vertebral augmentation; under fluoroscopic guidance |\n| 72292 | Radiological supervision and interpretation; under CT guidance |\n\nNote: CPT 0200T and 0201T are Category III codes. Coverage varies significantly by payer. Some payers may use unlisted procedure codes (e.g., 27299) if Category III codes are not recognized.\n\n## ICD-10 Diagnosis Codes\n\n| ICD-10 | Description |\n| --- | --- |\n| M80.08XA | Age-related osteoporosis with current pathological fracture, vertebra(e), initial encounter (use for sacral insufficiency fracture) |\n| M84.452A | Pathological fracture, left femur, initial encounter (use M84.58XA for sacral pathologic fracture in malignancy) |\n| M84.58XA | Pathological fracture in neoplastic disease, other specified site, initial encounter |\n| S32.10XA | Unspecified fracture of sacrum, initial encounter for closed fracture |\n| S32.19XA | Other fracture of sacrum, initial encounter |\n| M48.50XA | Collapsed vertebra, not elsewhere classified (can be used for sacral insufficiency fracture) |\n\n## Coverage Considerations\n\n### Medicare (CMS)\n\n- No specific national coverage determination (NCD) for sacroplasty\n- Coverage determined by local MAC policies — many MACs cover with medical necessity documentation\n- Category III CPT codes (0200T/0201T) may require additional documentation\n- MRI confirmation of sacral insufficiency fracture with bone marrow edema required\n- Conservative therapy trial ≥6 weeks with documented failure\n\n### Commercial Payers\n\n- Coverage is inconsistent — many payers consider sacroplasty investigational\n- Prior authorization almost universally required\n- Peer-to-peer review often necessary for approval\n- Pathologic fractures from malignancy have higher approval rates\n- Document functional impairment, pain scores, and failed conservative therapy\n\n### Documentation Checklist\n\n- MRI pelvis with STIR sequences confirming sacral bone marrow edema\n- Denis zone classification documented\n- VAS pain score and functional impairment documented\n- Conservative therapy documentation (dates, medications, PT)\n- Bone density (DXA) if osteoporotic etiology\n- Oncology records if pathologic fracture\n- Absence of sacral nerve compression on MRI",
+      "tables": [
+        {
+          "name": "CPT Codes — Sacroplasty",
+          "header": ["CPT", "Description"],
+          "rows": [
+            ["0200T", "Percutaneous sacral augmentation (sacroplasty), unilateral injection(s), including the use of a balloon or mechanical device, when used, 1 or more needles"],
+            ["0201T", "Percutaneous sacral augmentation (sacroplasty), bilateral injections, including the use of a balloon or mechanical device, when used, 2 or more needles"],
+            ["72291", "Radiological supervision and interpretation, percutaneous vertebroplasty or vertebral augmentation; under fluoroscopic guidance"],
+            ["72292", "Radiological supervision and interpretation; under CT guidance"]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["ICD-10", "Description"],
+          "rows": [
+            ["M80.08XA", "Age-related osteoporosis with current pathological fracture, vertebra(e), initial encounter (use for sacral insufficiency fracture)"],
+            ["M84.452A", "Pathological fracture, left femur, initial encounter (use M84.58XA for sacral pathologic fracture in malignancy)"],
+            ["M84.58XA", "Pathological fracture in neoplastic disease, other specified site, initial encounter"],
+            ["S32.10XA", "Unspecified fracture of sacrum, initial encounter for closed fracture"],
+            ["S32.19XA", "Other fracture of sacrum, initial encounter"],
+            ["M48.50XA", "Collapsed vertebra, not elsewhere classified (can be used for sacral insufficiency fracture)"]
+          ]
+        }
+      ]
+    }
+  }
+}

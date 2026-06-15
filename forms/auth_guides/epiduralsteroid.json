@@ -1,0 +1,254 @@
+{
+  "title": "Epidural Steroid Injection Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "EpiduralSteroidAuthGuide.tsx",
+    "title": null,
+    "subtitle": null,
+    "cptCodes": [
+      { "code": "62321", "description": "Injection(s), of diagnostic or therapeutic substance(s) (eg, anesthetic, antispasmodic, opioid, steroid, other solution), not including neurolytic substances; cervical or thoracic, interlaminar epidural", "rvu": "3.82", "notes": "Cervical/thoracic interlaminar ESI" },
+      { "code": "62323", "description": "Injection(s), of diagnostic or therapeutic substance(s); lumbar or sacral, interlaminar epidural", "rvu": "3.62", "notes": "Lumbar/sacral interlaminar ESI" },
+      { "code": "64479", "description": "Injection(s), anesthetic agent and/or steroid, transforaminal epidural; cervical or thoracic, single level", "rvu": "4.12", "notes": "Cervical/thoracic TFESI — single level" },
+      { "code": "64480", "description": "Injection(s), anesthetic agent and/or steroid, transforaminal epidural; cervical or thoracic, each additional level", "rvu": "2.18", "notes": "Additional level — add-on code" },
+      { "code": "64483", "description": "Injection(s), anesthetic agent and/or steroid, transforaminal epidural; lumbar or sacral, single level", "rvu": "3.92", "notes": "Lumbar/sacral TFESI — single level" },
+      { "code": "64484", "description": "Injection(s), anesthetic agent and/or steroid, transforaminal epidural; lumbar or sacral, each additional level", "rvu": "2.08", "notes": "Additional level — add-on code" },
+      { "code": "62311", "description": "Injection(s), of diagnostic or therapeutic substance(s); lumbar or sacral, caudal epidural", "rvu": "3.44", "notes": "Caudal ESI" }
+    ],
+    "icd10Codes": [
+      { "code": "M54.4", "description": "Lumbago with sciatica", "notes": "Lumbar radiculopathy — most common indication" },
+      { "code": "M54.42", "description": "Lumbago with sciatica, left side", "notes": "" },
+      { "code": "M54.41", "description": "Lumbago with sciatica, right side", "notes": "" },
+      { "code": "M54.12", "description": "Radiculopathy, cervical region", "notes": "Cervical radiculopathy" },
+      { "code": "M54.13", "description": "Radiculopathy, cervicothoracic region", "notes": "" },
+      { "code": "M48.061", "description": "Spinal stenosis, lumbar region with neurogenic claudication", "notes": "Lumbar stenosis with claudication" },
+      { "code": "M51.16", "description": "Intervertebral disc degeneration, lumbar region", "notes": "Lumbar DDD" },
+      { "code": "M51.17", "description": "Intervertebral disc degeneration, lumbosacral region", "notes": "" }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "sections": [
+          {
+            "heading": "Prior Authorization Requirements",
+            "items": [
+              "MRI or CT confirming nerve root compression or stenosis correlating with symptoms",
+              "Documentation of conservative therapy failure: ≥4–6 weeks PT and/or NSAIDs",
+              "Dermatomal distribution of radicular symptoms documented",
+              "Physician attestation of medical necessity",
+              "Frequency limit: typically 3 injections per region per year (Medicare LCD)"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Radicular pain with imaging-confirmed nerve root compression",
+              "Neurogenic claudication from lumbar spinal stenosis",
+              "Acute disc herniation with severe radiculopathy",
+              "Failed conservative therapy (PT, NSAIDs) for ≥4 weeks"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Medicare covers ESI under LCD L35090 (or applicable regional LCD). Fluoroscopic guidance (77003) is separately billable. Frequency limits apply — document each injection date and response."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicare (CMS)", "status": "Yes", "notes": "Covered per LCD; 3 injections/region/year; fluoroscopy separately billable (77003)" }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "sections": [
+          {
+            "heading": "Prior Authorization Requirements",
+            "items": [
+              "State-specific prior authorization required in most states",
+              "MRI or CT confirming pathology",
+              "Documentation of conservative therapy failure",
+              "Physician attestation"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Radicular pain with imaging correlation",
+              "Failed conservative therapy"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Medicaid coverage and frequency limits vary significantly by state. Many states require prior authorization for ESI. Rates are typically lower than Medicare."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Medicaid (state-specific)", "status": "Yes", "notes": "Prior auth required in most states; frequency limits vary" }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "sections": [
+          {
+            "heading": "Prior Authorization Requirements",
+            "items": [
+              "Prior authorization required by most commercial payers",
+              "MRI or CT report confirming nerve root compression or stenosis",
+              "Documentation of conservative therapy failure: ≥4–6 weeks PT",
+              "Dermatomal symptom documentation",
+              "Frequency limit: typically 3 injections per region per year",
+              "Peer-to-peer review may be required after 2+ injections"
+            ]
+          },
+          {
+            "heading": "Medical Necessity Criteria",
+            "items": [
+              "Radicular pain with imaging-confirmed nerve root compression",
+              "Neurogenic claudication from stenosis",
+              "Failed conservative therapy (PT, NSAIDs, oral steroids)"
+            ]
+          },
+          {
+            "heading": "Reimbursement",
+            "items": [
+              "Commercial payers typically cover ESI with prior authorization. Bundling rules for fluoroscopy (77003) vary — verify payer-specific policies. Some payers require step therapy (oral steroids before ESI)."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Aetna", "status": "Yes", "notes": "Covered; requires MRI and 4-week PT failure; 3/region/year limit" },
+          { "payer": "UnitedHealthcare", "status": "Yes", "notes": "Covered with prior auth; MRI and PT documentation required" },
+          { "payer": "BCBS (most plans)", "status": "Yes", "notes": "Covered; 3 injections/region/year; prior auth required" },
+          { "payer": "Cigna", "status": "Yes", "notes": "Covered with prior auth; imaging correlation required" },
+          { "payer": "Humana", "status": "Yes", "notes": "Covered; prior auth and conservative therapy documentation required" }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Required Documentation — Imaging",
+        "kind": "list",
+        "items": [
+          "MRI or CT spine with radiologist report confirming disc herniation, stenosis, or nerve root compression",
+          "Correlation between imaging level and dermatomal symptoms documented"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Clinical Documentation",
+        "kind": "list",
+        "items": [
+          "H&P documenting radicular symptom distribution (dermatomal pattern)",
+          "Pain scores at multiple visits (NRS or VAS)",
+          "Functional impairment documentation",
+          "Prior injection dates and response (if repeat injection)"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Conservative Therapy",
+        "kind": "list",
+        "items": [
+          "PT notes documenting ≥4–6 weeks of lumbar/cervical stabilization program",
+          "NSAIDs or oral steroid trial documentation",
+          "Activity modification documentation"
+        ]
+      },
+      {
+        "heading": "Required Documentation — Procedure Documentation",
+        "kind": "list",
+        "items": [
+          "Fluoroscopy confirmation of needle placement (77003)",
+          "Contrast injection confirming epidural spread",
+          "Steroid agent, dose, and volume documentation"
+        ]
+      },
+      {
+        "heading": "Submission Process",
+        "kind": "list",
+        "items": [
+          "Obtain MRI or CT confirming nerve root compression or stenosis at symptomatic level",
+          "Document dermatomal distribution of radicular symptoms correlating with imaging",
+          "Document conservative therapy failure (≥4–6 weeks PT and NSAIDs)",
+          "Submit prior authorization with CPT codes (62323 or 64483 for lumbar), ICD-10 codes, and clinical documentation",
+          "Include MRI report, PT notes, and pain scores",
+          "Document prior injection dates and response for repeat injections",
+          "If denied, request peer-to-peer review citing imaging correlation and PT failure",
+          "For frequency limit denials, document medical necessity for additional injection"
+        ]
+      },
+      {
+        "heading": "Common Denial Reasons",
+        "kind": "list",
+        "items": [
+          "Frequency limit exceeded (3/region/year) — document exceptional circumstances for additional injections",
+          "Imaging not confirming nerve root compression at symptomatic level — ensure MRI/CT correlates with dermatomal symptoms",
+          "Insufficient conservative therapy documentation (document ≥4–6 weeks PT explicitly)",
+          "Missing dermatomal symptom distribution documentation",
+          "Fluoroscopy (77003) not separately authorized — verify payer bundling rules",
+          "Wrong CPT code for approach (interlaminar vs. transforaminal vs. caudal)",
+          "Prior authorization not obtained before procedure"
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# Epidural Steroid Injection Clinical Compass\n\n## CPT Codes\n\n| CPT | Description | RVU | Notes |\n| --- | --- | --- | --- |\n| 62321 | Injection(s), of diagnostic or therapeutic substance(s) (eg, anesthetic, antispasmodic, opioid, steroid, other solution), not including neurolytic substances; cervical or thoracic, interlaminar epidural | 3.82 | Cervical/thoracic interlaminar ESI |\n| 62323 | Injection(s), of diagnostic or therapeutic substance(s); lumbar or sacral, interlaminar epidural | 3.62 | Lumbar/sacral interlaminar ESI |\n| 64479 | Injection(s), anesthetic agent and/or steroid, transforaminal epidural; cervical or thoracic, single level | 4.12 | Cervical/thoracic TFESI — single level |\n| 64480 | Injection(s), anesthetic agent and/or steroid, transforaminal epidural; cervical or thoracic, each additional level | 2.18 | Additional level — add-on code |\n| 64483 | Injection(s), anesthetic agent and/or steroid, transforaminal epidural; lumbar or sacral, single level | 3.92 | Lumbar/sacral TFESI — single level |\n| 64484 | Injection(s), anesthetic agent and/or steroid, transforaminal epidural; lumbar or sacral, each additional level | 2.08 | Additional level — add-on code |\n| 62311 | Injection(s), of diagnostic or therapeutic substance(s); lumbar or sacral, caudal epidural | 3.44 | Caudal ESI |\n\n## ICD-10 Codes\n\n| ICD-10 | Description | Notes |\n| --- | --- | --- |\n| M54.4 | Lumbago with sciatica | Lumbar radiculopathy — most common indication |\n| M54.42 | Lumbago with sciatica, left side |  |\n| M54.41 | Lumbago with sciatica, right side |  |\n| M54.12 | Radiculopathy, cervical region | Cervical radiculopathy |\n| M54.13 | Radiculopathy, cervicothoracic region |  |\n| M48.061 | Spinal stenosis, lumbar region with neurogenic claudication | Lumbar stenosis with claudication |\n| M51.16 | Intervertebral disc degeneration, lumbar region | Lumbar DDD |\n| M51.17 | Intervertebral disc degeneration, lumbosacral region |  |\n\n## Payer Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\n\n**Prior Authorization Requirements**\n- MRI or CT confirming nerve root compression or stenosis correlating with symptoms\n- Documentation of conservative therapy failure: ≥4–6 weeks PT and/or NSAIDs\n- Dermatomal distribution of radicular symptoms documented\n- Physician attestation of medical necessity\n- Frequency limit: typically 3 injections per region per year (Medicare LCD)\n\n**Medical Necessity Criteria**\n- ✓ Radicular pain with imaging-confirmed nerve root compression\n- ✓ Neurogenic claudication from lumbar spinal stenosis\n- ✓ Acute disc herniation with severe radiculopathy\n- ✓ Failed conservative therapy (PT, NSAIDs) for ≥4 weeks\n\n**Reimbursement:** Medicare covers ESI under LCD L35090 (or applicable regional LCD). Fluoroscopic guidance (77003) is separately billable. Frequency limits apply — document each injection date and response.\n\n**Known Payer Policies**\n\n| Payer | Policy | Covered |\n| --- | --- | --- |\n| Medicare (CMS) | Covered per LCD; 3 injections/region/year; fluoroscopy separately billable (77003) | Yes |\n\n### Medicaid\n\n**Prior Authorization Requirements**\n- State-specific prior authorization required in most states\n- MRI or CT confirming pathology\n- Documentation of conservative therapy failure\n- Physician attestation\n\n**Medical Necessity Criteria**\n- ✓ Radicular pain with imaging correlation\n- ✓ Failed conservative therapy\n\n**Reimbursement:** Medicaid coverage and frequency limits vary significantly by state. Many states require prior authorization for ESI. Rates are typically lower than Medicare.\n\n**Known Payer Policies**\n\n| Payer | Policy | Covered |\n| --- | --- | --- |\n| Medicaid (state-specific) | Prior auth required in most states; frequency limits vary | Yes |\n\n### Private Insurance\n\n**Prior Authorization Requirements**\n- Prior authorization required by most commercial payers\n- MRI or CT report confirming nerve root compression or stenosis\n- Documentation of conservative therapy failure: ≥4–6 weeks PT\n- Dermatomal symptom documentation\n- Frequency limit: typically 3 injections per region per year\n- Peer-to-peer review may be required after 2+ injections\n\n**Medical Necessity Criteria**\n- ✓ Radicular pain with imaging-confirmed nerve root compression\n- ✓ Neurogenic claudication from stenosis\n- ✓ Failed conservative therapy (PT, NSAIDs, oral steroids)\n\n**Reimbursement:** Commercial payers typically cover ESI with prior authorization. Bundling rules for fluoroscopy (77003) vary — verify payer-specific policies. Some payers require step therapy (oral steroids before ESI).\n\n**Known Payer Policies**\n\n| Payer | Policy | Covered |\n| --- | --- | --- |\n| Aetna | Covered; requires MRI and 4-week PT failure; 3/region/year limit | Yes |\n| UnitedHealthcare | Covered with prior auth; MRI and PT documentation required | Yes |\n| BCBS (most plans) | Covered; 3 injections/region/year; prior auth required | Yes |\n| Cigna | Covered with prior auth; imaging correlation required | Yes |\n| Humana | Covered; prior auth and conservative therapy documentation required | Yes |\n\n## Required Documentation\n\n### Imaging\n- □ MRI or CT spine with radiologist report confirming disc herniation, stenosis, or nerve root compression\n- □ Correlation between imaging level and dermatomal symptoms documented\n\n### Clinical Documentation\n- □ H&P documenting radicular symptom distribution (dermatomal pattern)\n- □ Pain scores at multiple visits (NRS or VAS)\n- □ Functional impairment documentation\n- □ Prior injection dates and response (if repeat injection)\n\n### Conservative Therapy\n- □ PT notes documenting ≥4–6 weeks of lumbar/cervical stabilization program\n- □ NSAIDs or oral steroid trial documentation\n- □ Activity modification documentation\n\n### Procedure Documentation\n- □ Fluoroscopy confirmation of needle placement (77003)\n- □ Contrast injection confirming epidural spread\n- □ Steroid agent, dose, and volume documentation\n\n## Submission Process\n\n1. Obtain MRI or CT confirming nerve root compression or stenosis at symptomatic level\n2. Document dermatomal distribution of radicular symptoms correlating with imaging\n3. Document conservative therapy failure (≥4–6 weeks PT and NSAIDs)\n4. Submit prior authorization with CPT codes (62323 or 64483 for lumbar), ICD-10 codes, and clinical documentation\n5. Include MRI report, PT notes, and pain scores\n6. Document prior injection dates and response for repeat injections\n7. If denied, request peer-to-peer review citing imaging correlation and PT failure\n8. For frequency limit denials, document medical necessity for additional injection\n\n## Common Denial Reasons\n\n- ⚠ Frequency limit exceeded (3/region/year) — document exceptional circumstances for additional injections\n- ⚠ Imaging not confirming nerve root compression at symptomatic level — ensure MRI/CT correlates with dermatomal symptoms\n- ⚠ Insufficient conservative therapy documentation (document ≥4–6 weeks PT explicitly)\n- ⚠ Missing dermatomal symptom distribution documentation\n- ⚠ Fluoroscopy (77003) not separately authorized — verify payer bundling rules\n- ⚠ Wrong CPT code for approach (interlaminar vs. transforaminal vs. caudal)\n- ⚠ Prior authorization not obtained before procedure\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["CPT", "Description", "RVU", "Notes"],
+          "rows": [
+            ["62321", "Injection(s), of diagnostic or therapeutic substance(s) (eg, anesthetic, antispasmodic, opioid, steroid, other solution), not including neurolytic substances; cervical or thoracic, interlaminar epidural", "3.82", "Cervical/thoracic interlaminar ESI"],
+            ["62323", "Injection(s), of diagnostic or therapeutic substance(s); lumbar or sacral, interlaminar epidural", "3.62", "Lumbar/sacral interlaminar ESI"],
+            ["64479", "Injection(s), anesthetic agent and/or steroid, transforaminal epidural; cervical or thoracic, single level", "4.12", "Cervical/thoracic TFESI — single level"],
+            ["64480", "Injection(s), anesthetic agent and/or steroid, transforaminal epidural; cervical or thoracic, each additional level", "2.18", "Additional level — add-on code"],
+            ["64483", "Injection(s), anesthetic agent and/or steroid, transforaminal epidural; lumbar or sacral, single level", "3.92", "Lumbar/sacral TFESI — single level"],
+            ["64484", "Injection(s), anesthetic agent and/or steroid, transforaminal epidural; lumbar or sacral, each additional level", "2.08", "Additional level — add-on code"],
+            ["62311", "Injection(s), of diagnostic or therapeutic substance(s); lumbar or sacral, caudal epidural", "3.44", "Caudal ESI"]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["ICD-10", "Description", "Notes"],
+          "rows": [
+            ["M54.4", "Lumbago with sciatica", "Lumbar radiculopathy — most common indication"],
+            ["M54.42", "Lumbago with sciatica, left side", ""],
+            ["M54.41", "Lumbago with sciatica, right side", ""],
+            ["M54.12", "Radiculopathy, cervical region", "Cervical radiculopathy"],
+            ["M54.13", "Radiculopathy, cervicothoracic region", ""],
+            ["M48.061", "Spinal stenosis, lumbar region with neurogenic claudication", "Lumbar stenosis with claudication"],
+            ["M51.16", "Intervertebral disc degeneration, lumbar region", "Lumbar DDD"],
+            ["M51.17", "Intervertebral disc degeneration, lumbosacral region", ""]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicare",
+          "header": ["Payer", "Policy", "Covered"],
+          "rows": [
+            ["Medicare (CMS)", "Covered per LCD; 3 injections/region/year; fluoroscopy separately billable (77003)", "Yes"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicaid",
+          "header": ["Payer", "Policy", "Covered"],
+          "rows": [
+            ["Medicaid (state-specific)", "Prior auth required in most states; frequency limits vary", "Yes"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Private Insurance",
+          "header": ["Payer", "Policy", "Covered"],
+          "rows": [
+            ["Aetna", "Covered; requires MRI and 4-week PT failure; 3/region/year limit", "Yes"],
+            ["UnitedHealthcare", "Covered with prior auth; MRI and PT documentation required", "Yes"],
+            ["BCBS (most plans)", "Covered; 3 injections/region/year; prior auth required", "Yes"],
+            ["Cigna", "Covered with prior auth; imaging correlation required", "Yes"],
+            ["Humana", "Covered; prior auth and conservative therapy documentation required", "Yes"]
+          ]
+        }
+      ]
+    }
+  }
+}

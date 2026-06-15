@@ -1,0 +1,30 @@
+{
+  "title": "Rectal Cancer Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "45110, 45113, 45395, 77407, 99213",
+      "credentials": "[Credentials]",
+      "icd_codes": "C20, C78.5, Z12.11, Z08",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\nRe: Medical Necessity Appeal — Rectal Cancer Treatment\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\n\nDear Medical Director / Utilization Review Committee,\n\nI am writing to formally appeal the denial of prior authorization for rectal cancer treatment for my patient. This intervention is medically necessary and is supported by the highest level of evidence from current NCCN guidelines, ESMO consensus statements, and landmark randomized controlled trials.\n\nCLINICAL SUMMARY\nMy patient has been diagnosed with rectal cancer requiring treatment. Following comprehensive clinical evaluation using the Rectal Cancer Compass™ clinical decision support tool (based on NCCN V2.2024 and ESMO 2017 guidelines), the recommended treatment plan is: [Rectal Cancer Treatment Recommendation].\n\nGUIDELINE SUPPORT\nThis recommendation is based on the following evidence-based guidelines and peer-reviewed literature:\n\n1. NCCN Clinical Practice Guidelines — Rectal Cancer V2.2024: Neoadjuvant chemoradiation followed by total mesorectal excision (TME) is the standard of care for locally advanced rectal cancer (T3/T4 or N+) — Category 1 recommendation, the highest level of NCCN evidence.\n\n2. ESMO Consensus Guidelines for Rectal Cancer 2017: Multimodal treatment with neoadjuvant therapy and TME surgery is recommended for all stages II-III rectal cancer to reduce local recurrence and improve overall survival.\n\n3. German Rectal Cancer Study Group (NEJM 2004;351:1731-1740): Preoperative chemoradiotherapy significantly reduced local recurrence (6% vs 13%) and improved sphincter preservation compared to postoperative therapy — this landmark RCT established the current standard of care.\n\n4. RAPIDO Trial (Lancet Oncol 2021;22:29-42): Short-course radiotherapy followed by consolidation chemotherapy and surgery demonstrated superior disease-free survival — represents current evidence for total neoadjuvant therapy approaches.\n\n5. PRODIGE 23 Trial (Lancet Oncol 2021;22:702-715): Total neoadjuvant therapy (TNT) with FOLFIRINOX improved pathologic complete response rates and disease-free survival in locally advanced rectal cancer.\n\nMEDICAL NECESSITY\nWithout this intervention, my patient faces:\n• Disease progression with potential for metastatic spread\n• Increased local recurrence rates without appropriate neoadjuvant therapy\n• Loss of sphincter preservation opportunity\n• Significantly reduced overall survival and disease-free survival\n• Reduced quality of life from uncontrolled disease\n\nThe requested treatment follows the standard of care as defined by NCCN, ESMO, and ASCRS guidelines and is medically necessary for optimal oncologic outcomes.\n\nREQUESTED ACTION\nI respectfully request that you overturn the denial and authorize the requested rectal cancer treatment. I am available to discuss this case further and can provide comprehensive documentation including pathology reports, staging imaging, multidisciplinary tumor board recommendations, and complete clinical records upon request.\n\n{{additional_clinical_notes}}\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

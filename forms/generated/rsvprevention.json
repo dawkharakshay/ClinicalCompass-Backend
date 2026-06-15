@@ -1,0 +1,194 @@
+{
+  "title": "RSV Prevention Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendations",
+    "logicKey": "rsvprevention",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "demographics",
+        "shortLabel": "Demographics",
+        "title": "Infant Demographics & Season",
+        "fields": [
+          {
+            "id": "age-months",
+            "name": "ageMonths",
+            "label": "Infant Age (months)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "gestational-age-weeks",
+            "name": "gestationalAgeWeeks",
+            "label": "Gestational Age at Birth (weeks)",
+            "type": "number",
+            "defaultValue": 39,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "is-current-rsv-season",
+            "name": "isCurrentRSVSeason",
+            "label": "Currently RSV season (Oct–Mar)",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "is-premature",
+            "name": "isPremature",
+            "label": "Premature birth (<35 weeks)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-active-rsv-infection",
+            "name": "hasActiveRSVInfection",
+            "label": "Active RSV infection",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "currently-hospitalized",
+            "name": "currentlyHospitalized",
+            "label": "Currently hospitalized",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "risk-factors",
+        "shortLabel": "Risk Factors",
+        "title": "Risk Factors",
+        "fields": [
+          {
+            "id": "has-congenital-heart-disease",
+            "name": "hasCongenitalHeartDisease",
+            "label": "Congenital heart disease",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "chd-requires-medication",
+            "name": "chdRequiresMedication",
+            "label": "CHD requires cardiac medication (hemodynamically significant)",
+            "type": "switch",
+            "defaultValue": false,
+            "visibleWhen": { "field": "hasCongenitalHeartDisease", "op": "truthy" }
+          },
+          {
+            "id": "has-chronic-lung-disease",
+            "name": "hasChronicLungDisease",
+            "label": "Chronic lung disease / BPD",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "requires-supplemental-o2",
+            "name": "requiresSupplementalO2",
+            "label": "Requires supplemental O₂",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "is-immunocompromised",
+            "name": "isImmunocompromised",
+            "label": "Immunocompromised",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-down-syndrome",
+            "name": "hasDownSyndrome",
+            "label": "Down syndrome",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-cystic-fibrosis",
+            "name": "hasCysticFibrosis",
+            "label": "Cystic fibrosis",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-neuromuscular-disease",
+            "name": "hasNeuromuscularDisease",
+            "label": "Neuromuscular disease (affects airway clearance)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "is-native-alaskan",
+            "name": "isNativeAlaskan",
+            "label": "Native Alaskan / American Indian",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "is-in-day-care",
+            "name": "isInDayCare",
+            "label": "In daycare",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-school-age-siblings",
+            "name": "hasSchoolAgeSimlings",
+            "label": "School-age siblings at home",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "prophylaxis",
+        "shortLabel": "Prophylaxis",
+        "title": "Prior Prophylaxis & Maternal Vaccination",
+        "fields": [
+          {
+            "id": "received-nirsevimab-this-season",
+            "name": "receivedNirsevimabThisSeason",
+            "label": "Nirsevimab received this season",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "nirsevimab-doses-received",
+            "name": "nirsevimabDosesReceived",
+            "label": "Nirsevimab doses received this season",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "receivedNirsevimabThisSeason", "op": "truthy" }
+          },
+          {
+            "id": "received-palivizumab-this-season",
+            "name": "receivedPalivizumabThisSeason",
+            "label": "Palivizumab received this season",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "mother-received-rsv-vaccine",
+            "name": "motherReceivedRSVVaccine",
+            "label": "Mother received RSV vaccine (Abrysvo) during pregnancy",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "mother-vaccination-weeks-before-birth",
+            "name": "motherVaccinationWeeksBeforeBirth",
+            "label": "Weeks before birth maternal vaccine was given",
+            "type": "number",
+            "defaultValue": null,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "motherReceivedRSVVaccine", "op": "truthy" }
+          }
+        ]
+      }
+    ]
+  }
+}

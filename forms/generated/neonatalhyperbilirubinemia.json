@@ -1,0 +1,216 @@
+{
+  "title": "Neonatal Hyperbilirubinemia Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendations",
+    "logicKey": "neonatalhyperbilirubinemia",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "gestational-postnatal-age",
+        "shortLabel": "Gestational Age & Postnatal Age",
+        "title": "Gestational Age & Postnatal Age",
+        "fields": [
+          {
+            "id": "gestational-age-weeks",
+            "name": "gestationalAgeWeeks",
+            "label": "Gestational Age (weeks)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 39,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "gestational-age-category",
+            "name": "gestationalAgeCategory",
+            "label": "Gestational Age Category",
+            "type": "select",
+            "required": false,
+            "defaultValue": "term",
+            "options": [
+              { "label": "Extremely Preterm (<28 weeks)", "value": "extremely_preterm" },
+              { "label": "Very Preterm (28–31 weeks)", "value": "very_preterm" },
+              { "label": "Moderate Preterm (32–33 weeks)", "value": "moderate_preterm" },
+              { "label": "Late Preterm (34–36 weeks)", "value": "late_preterm" },
+              { "label": "Early Term (37–38 weeks)", "value": "early_term" },
+              { "label": "Term (≥39 weeks)", "value": "term" }
+            ]
+          },
+          {
+            "id": "age-hours",
+            "name": "ageHours",
+            "label": "Postnatal Age (hours)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 48,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "predischarge-bilirubin-zone",
+            "name": "predischargeBilirubinZone",
+            "label": "Predischarge Bilirubin Zone (if known)",
+            "type": "select",
+            "required": false,
+            "defaultValue": "unknown",
+            "options": [
+              { "label": "Unknown / not measured", "value": "unknown" },
+              { "label": "Low risk zone", "value": "low" },
+              { "label": "Low-intermediate zone", "value": "low_intermediate" },
+              { "label": "High-intermediate zone", "value": "high_intermediate" },
+              { "label": "High risk zone", "value": "high" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bilirubin-risk-factors",
+        "shortLabel": "Bilirubin & Risk Factors",
+        "title": "Bilirubin & Risk Factors",
+        "fields": [
+          {
+            "id": "total-serum-bilirubin",
+            "name": "totalSerumBilirubin",
+            "label": "Total Serum Bilirubin (mg/dL)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 10,
+            "unit": "mg/dL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "direct-bilirubin",
+            "name": "directBilirubin",
+            "label": "Direct (Conjugated) Bilirubin (mg/dL)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0.3,
+            "unit": "mg/dL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "has-isoimmunization",
+            "name": "hasIsoimmunization",
+            "label": "Isoimmunization (ABO/Rh incompatibility)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-g6pd-deficiency",
+            "name": "hasG6PDDeficiency",
+            "label": "G6PD Deficiency",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-albumin-low",
+            "name": "hasAlbuminLow",
+            "label": "Albumin <3.0 g/dL",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-sepsis",
+            "name": "hasSepsis",
+            "label": "Sepsis",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-acidosis",
+            "name": "hasAcidosis",
+            "label": "Acidosis",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-asphyxia",
+            "name": "hasAsphyxia",
+            "label": "Perinatal asphyxia",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "is-breastfeeding-only",
+            "name": "isBreastfeedingOnly",
+            "label": "Exclusively breastfeeding",
+            "type": "switch",
+            "required": false,
+            "defaultValue": true
+          },
+          {
+            "id": "has-weight-loss",
+            "name": "hasWeightLoss",
+            "label": "Weight loss >8–10% of birth weight",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "is-east-asian-descent",
+            "name": "isEastAsianDescent",
+            "label": "East Asian descent",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "current-treatment-status",
+        "shortLabel": "Current Treatment Status",
+        "title": "Current Treatment Status",
+        "fields": [
+          {
+            "id": "has-acute-biliary-encephalopathy",
+            "name": "hasAcuteBiliaryEncephalopathy",
+            "label": "Acute bilirubin encephalopathy signs (hypertonia, retrocollis)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-kernicterus",
+            "name": "hasKernicterus",
+            "label": "Kernicterus (chronic bilirubin encephalopathy)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "currently-on-phototherapy",
+            "name": "currentlyOnPhototherapy",
+            "label": "Currently on phototherapy",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "hours-on-phototherapy",
+            "name": "hoursOnPhototherapy",
+            "label": "Hours on phototherapy",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "currentlyOnPhototherapy", "op": "truthy" }
+          },
+          {
+            "id": "bilirubin-trend-rising",
+            "name": "bilirubinTrendRising",
+            "label": "Bilirubin trend rising despite phototherapy",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

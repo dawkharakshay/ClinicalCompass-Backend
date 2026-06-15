@@ -1,0 +1,30 @@
+{
+  "title": "Spinal Fusion Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "22612, 22630, 22633, 22551, 22554, 22558, 22842, 22845",
+      "credentials": "[Credentials]",
+      "icd_codes": "M51.16, M51.17, M48.06, M43.16, M50.12, M47.816, M47.812, M47.12",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\n{{insurance_name}}\n{{insurance_address}}\nAttn: Medical Director / Appeals Department\nRe: Prior Authorization Appeal — Lumbar Spinal Fusion\nPatient: {{patient_name}} | DOB: {{patient_dob}} | Member ID: {{member_id}}\nClaim/Auth #: {{claim_number}} | Date of Denial: [DATE OF DENIAL]\nCPT Code(s): 22612, 22614, 22840 | ICD-10: M51.16, M47.816\n\nDear Medical Director,\n\nI am writing to formally appeal the denial of prior authorization for Lumbar Spinal Fusion for my patient {{patient_name}}. The Clinical Compass™ Spinal Fusion Decision Support assessment yielded a recommendation of \"[Spinal Fusion Recommendation]\" (Class of Recommendation [COR]) based on the 2024 NASS Clinical Guidelines.\n\nCLINICAL JUSTIFICATION:\n• Patient presents with symptomatic lumbar spondylolisthesis/instability with neurogenic claudication or radiculopathy\n• MRI/CT evidence of structural pathology with neural compression\n• Oswestry Disability Index indicates severe functional impairment\n• Failure of ≥6 months of conservative therapy documented\n\nDIAGNOSIS:\n• Primary diagnosis: [DESCRIBE — degenerative spondylolisthesis, isthmic spondylolisthesis, degenerative disc disease, spinal stenosis]\n• Level(s) involved: [e.g., L4-L5, L5-S1]\n• Grade of spondylolisthesis (if applicable): [Grade I / II]\n• Neurological symptoms: [DESCRIBE — radiculopathy, neurogenic claudication, weakness, bowel/bladder dysfunction if present]\n\nCONSERVATIVE THERAPY DOCUMENTATION:\nThis patient has completed a comprehensive course of conservative management including:\n• Physical therapy: [DURATION — minimum 6 weeks, NUMBER OF SESSIONS, OUTCOMES]\n• NSAIDs / analgesic medications: [MEDICATIONS, DURATION, RESPONSE]\n• Epidural steroid injections: [NUMBER, DATES, RESPONSE — e.g., 3 ESIs with <50% relief]\n• Chiropractic / manual therapy (if applicable): [DETAILS]\n• Activity modification: [DETAILS]\n\nIMAGING FINDINGS:\n• MRI lumbar spine ({{letter_date}}): [DESCRIBE — disc herniation, foraminal stenosis, central canal stenosis, spondylolisthesis grade, facet arthropathy]\n• CT lumbar spine ({{letter_date}}, if applicable): [DESCRIBE — bony anatomy, instability on flexion/extension]\n• Flexion/extension radiographs: [DESCRIBE — dynamic instability, >3mm translation or >10° angular motion]\n\nFUNCTIONAL ASSESSMENT:\n• Oswestry Disability Index (ODI): [SCORE]% (severe disability >40%)\n• VAS Back Pain: [SCORE]/10 | VAS Leg Pain: [SCORE]/10\n• Walking tolerance: [DISTANCE before symptom onset]\n• Patient-reported functional limitations: [DESCRIBE — inability to work, perform ADLs, ambulate]\n\nMEDICAL NECESSITY:\nLumbar Spinal Fusion is medically necessary for this patient based on:\n1. Symptomatic lumbar instability/spondylolisthesis with neurological compromise\n2. MRI/CT evidence of structural pathology requiring stabilization\n3. Severe functional impairment documented by ODI score >40%\n4. Failure of ≥6 months of comprehensive conservative therapy\n5. Meets NASS guideline criteria for surgical intervention\n\nGUIDELINE SUPPORT:\nThe 2024 NASS Clinical Guidelines support lumbar fusion for Grade I-II degenerative spondylolisthesis with neurogenic claudication or radiculopathy refractory to conservative care. The SPORT Trial (Weinstein et al., NEJM 2007) and SLIP Trial (Ghogawala et al., NEJM 2016) demonstrate superior outcomes with instrumented fusion compared to non-operative treatment for this indication.\n\nWithout surgical stabilization, this patient faces continued neurological deterioration, progressive disability, and risk of permanent neurological damage. Deferral of indicated spinal fusion in the setting of documented instability and neurological compromise is associated with worse long-term outcomes.\n\nI respectfully request immediate reconsideration and approval of prior authorization for Lumbar Spinal Fusion. Please contact my office at {{practice_phone}} or {{practice_email}} if additional clinical documentation is required.\n\nSincerely,\n\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\n{{practice_phone}} | {{practice_email}}"
+  }
+}

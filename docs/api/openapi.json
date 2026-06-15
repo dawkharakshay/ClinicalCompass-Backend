@@ -1,0 +1,2401 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "ClinicalCompass API",
+    "summary": "Authentication API with database-backed opaque tokens.",
+    "description": "\n**ClinicalCompass API** \u2014 username/password authentication using opaque,\nserver-side tokens (no JWT).\n\n### Auth flow\n1. `POST /auth/register` to create a user.\n2. `POST /auth/login` with the username + password to receive an opaque\n   `access_token`.\n3. Send the token as `Authorization: Bearer <access_token>` on protected\n   endpoints.\n4. `POST /auth/logout` to revoke the token.\n\nTokens are random strings stored in the database and expire after 24 hours.\n",
+    "contact": {
+      "name": "ClinicalCompass",
+      "email": "support@example.com"
+    },
+    "license": {
+      "name": "MIT"
+    },
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/auth/username": {
+      "get": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Check whether a username is available",
+        "description": "Returns whether the given username is free. Use this to validate the username a user typed before registering.",
+        "operationId": "username_available_auth_username_get",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "examples": [
+                "jane.smith"
+              ],
+              "title": "Username"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsernameAvailableResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Generate an available username from a full name",
+        "description": "Derives a username from the given full name (e.g. 'Dr. Jane Smith' -> 'jane.smith'), checks it against existing users, and returns a free username plus a few alternatives. Creates nothing.",
+        "operationId": "generate_username_auth_username_post",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsernameGenerateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsernameGenerateResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/register": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Register a new user",
+        "description": "Creates a user account from full name, email, password and role. A username may be supplied; if omitted it is generated from the full name (e.g. 'Dr. Jane Smith' -> 'jane.smith', with a numeric suffix on collision). The password is hashed with bcrypt before storage. Username and email must each be unique.",
+        "operationId": "register_auth_register_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserOut"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Username or email already taken",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Log in and obtain an access token",
+        "description": "Validates the email and password and returns an opaque bearer token (no JWT) that expires after 24 hours.",
+        "operationId": "login_auth_login_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenOut"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid email or password",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "User account is disabled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/forgot-password": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Request a password-reset code (OTP)",
+        "description": "Emails a short-lived, one-time numeric code (OTP) to the account with the given email. The response is identical whether or not the email is registered, to avoid account enumeration. Any previously issued codes for the account are invalidated.\n\nThe code is only ever delivered by email and is never returned in the response. When no mailer is configured (local development) it is written to the server log instead.",
+        "operationId": "forgot_password_auth_forgot_password_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgotPasswordRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForgotPasswordResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/reset-password": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Reset the password using an emailed OTP",
+        "description": "Sets a new password given the email and the one-time code sent by /auth/forgot-password. On success the code is consumed and all of the user's existing access tokens are revoked, forcing a fresh login. The code is invalidated after too many incorrect attempts.",
+        "operationId": "reset_password_auth_reset_password_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "400": {
+            "description": "Invalid or expired code",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/logout": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Log out (revoke the current token)",
+        "description": "Deletes the supplied bearer token from the database, immediately revoking it.",
+        "operationId": "logout_auth_logout_post",
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/auth/me": {
+      "get": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Get the current authenticated user",
+        "description": "Returns the user that owns the supplied bearer token.",
+        "operationId": "me_auth_me_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserOut"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing, invalid, or expired token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "User account is disabled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/specialities": {
+      "get": {
+        "tags": [
+          "specialities"
+        ],
+        "summary": "List specialities (paginated)",
+        "description": "Returns a page of specialities. Use `limit` (1-100) and `offset` to paginate; `total` is the full count and `next`/`previous` are page URLs.",
+        "operationId": "list_specialities_specialities_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "search_query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Case-insensitive match on title or description",
+              "title": "Search Query"
+            },
+            "description": "Case-insensitive match on title or description"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "description": "Max items to return",
+              "default": 20,
+              "title": "Limit"
+            },
+            "description": "Max items to return"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Number of items to skip",
+              "default": 0,
+              "title": "Offset"
+            },
+            "description": "Number of items to skip"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpecialityPage"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/specialities/count": {
+      "get": {
+        "tags": [
+          "specialities"
+        ],
+        "summary": "Count of specialities",
+        "description": "Returns the total number of specialities.",
+        "operationId": "count_specialities_specialities_count_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountOut"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/specialities/{speciality_id}": {
+      "get": {
+        "tags": [
+          "specialities"
+        ],
+        "summary": "Get a speciality with its modules",
+        "operationId": "get_speciality_specialities__speciality_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "speciality_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Speciality Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpecialityWithModules"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Speciality not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/specialities/{speciality_id}/modules": {
+      "get": {
+        "tags": [
+          "specialities"
+        ],
+        "summary": "List modules in a speciality",
+        "operationId": "list_modules_specialities__speciality_id__modules_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "speciality_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Speciality Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ModuleOut"
+                  },
+                  "title": "Response List Modules Specialities  Speciality Id  Modules Get"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Speciality not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/modules": {
+      "get": {
+        "tags": [
+          "modules"
+        ],
+        "summary": "List/search modules (paginated)",
+        "description": "Returns a page of modules. Filter by `specialities` (one or more speciality ids, repeatable) and/or `search_query` (case-insensitive title match). Paginate with `limit`/`offset`; `next`/`previous` are URLs.",
+        "operationId": "list_modules_modules_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "specialities",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "integer"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter to these speciality ids (repeatable)",
+              "title": "Specialities"
+            },
+            "description": "Filter to these speciality ids (repeatable)"
+          },
+          {
+            "name": "search_query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Case-insensitive match on title or description",
+              "title": "Search Query"
+            },
+            "description": "Case-insensitive match on title or description"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "description": "Max items to return",
+              "default": 20,
+              "title": "Limit"
+            },
+            "description": "Max items to return"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Number of items to skip",
+              "default": 0,
+              "title": "Offset"
+            },
+            "description": "Number of items to skip"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModulePage"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/modules/count": {
+      "get": {
+        "tags": [
+          "modules"
+        ],
+        "summary": "Count of modules",
+        "description": "Returns the total number of modules across all specialities.",
+        "operationId": "count_modules_modules_count_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountOut"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/modules/{module_id}": {
+      "get": {
+        "tags": [
+          "modules"
+        ],
+        "summary": "Get a module (including its form)",
+        "operationId": "get_module_modules__module_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "module_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Module Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModuleDetail"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Module not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/modules/{module_id}/form": {
+      "get": {
+        "tags": [
+          "modules"
+        ],
+        "summary": "Get a module's form (stages -> fields)",
+        "operationId": "get_module_form_modules__module_id__form_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "module_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Module Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModuleForm"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Module not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/modules/{module_id}/auth-guide": {
+      "get": {
+        "tags": [
+          "modules"
+        ],
+        "summary": "Get a module's authorization guide (CPT/ICD/payer reference)",
+        "description": "Returns the module's prior-authorization guide (CPT codes, ICD-10 codes, payer rules, plus a verbatim `raw` block), or `null` when the module has no guide configured.",
+        "operationId": "get_module_auth_guide_modules__module_id__auth_guide_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "module_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Module Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/AuthGuideOut"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Response Get Module Auth Guide Modules  Module Id  Auth Guide Get"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Module not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/submissions": {
+      "post": {
+        "tags": [
+          "submissions"
+        ],
+        "summary": "Submit a module's form",
+        "description": "Stores the authenticated user's answers for the given module's form. The answers are kept verbatim as a JSON object keyed by field name.",
+        "operationId": "create_submission_submissions_post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FormSubmissionCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FormSubmissionOut"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Module not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "submissions"
+        ],
+        "summary": "List my form submissions (paginated)",
+        "description": "Returns a page of the authenticated user's own submissions, newest first. Filter to one module with `module_id`.",
+        "operationId": "list_submissions_submissions_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "module_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter to this module",
+              "title": "Module Id"
+            },
+            "description": "Filter to this module"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "description": "Max items to return",
+              "default": 20,
+              "title": "Limit"
+            },
+            "description": "Max items to return"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Number of items to skip",
+              "default": 0,
+              "title": "Offset"
+            },
+            "description": "Number of items to skip"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FormSubmissionPage"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/submissions/{submission_id}": {
+      "get": {
+        "tags": [
+          "submissions"
+        ],
+        "summary": "Get one of my submissions",
+        "operationId": "get_submission_submissions__submission_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "submission_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Submission Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FormSubmissionOut"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Submission not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/submissions/{submission_id}/appeal-letter": {
+      "get": {
+        "tags": [
+          "submissions"
+        ],
+        "summary": "Get the personalized appeal letter for a submission",
+        "description": "Builds a personalized appeal letter from the submission's answers using the module's stored appeal-letter template (defaults, derived values, conditional sections, and {{placeholder}} substitution). Falls back to the module's plain-text appeal letter (with placeholder substitution) when no template is configured.",
+        "operationId": "get_submission_appeal_letter_submissions__submission_id__appeal_letter_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "submission_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Submission Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppealLetterOut"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Submission not found, or no appeal letter configured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "tags": [
+          "meta"
+        ],
+        "summary": "Health check",
+        "description": "Returns `{\"status\": \"ok\"}` when the service is running.",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "type": "object",
+                  "title": "Response Health Health Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AppealLetterOut": {
+        "properties": {
+          "submission_id": {
+            "type": "integer",
+            "title": "Submission Id"
+          },
+          "module_id": {
+            "type": "integer",
+            "title": "Module Id"
+          },
+          "letter": {
+            "type": "string",
+            "title": "Letter",
+            "description": "The personalized appeal letter text."
+          }
+        },
+        "type": "object",
+        "required": [
+          "submission_id",
+          "module_id",
+          "letter"
+        ],
+        "title": "AppealLetterOut",
+        "description": "A rendered, personalized appeal letter for a submission.",
+        "example": {
+          "letter": "Dear UnitedHealthcare,\n\nRe: Jane Doe ...",
+          "module_id": 1,
+          "submission_id": 1
+        }
+      },
+      "AuthGuideOut": {
+        "properties": {},
+        "additionalProperties": true,
+        "type": "object",
+        "title": "AuthGuideOut",
+        "description": "A module's authorization guide, stored and returned verbatim.\n\nHybrid free-form shape: structured ``cptCodes``/``icd10Codes``/``payers``/\n``customSections`` for querying, plus a verbatim ``raw`` block (markdown +\ntables) that guarantees no source content is lost. Extra keys are allowed so\nheterogeneous guides are never rejected at the API boundary.",
+        "example": {
+          "cptCodes": [
+            {
+              "code": "50593",
+              "description": "Ablation, renal tumor(s)..."
+            }
+          ],
+          "icd10Codes": [
+            {
+              "code": "C64.1",
+              "description": "Malignant neoplasm of right kidney"
+            }
+          ],
+          "payers": [
+            {
+              "key": "cms",
+              "label": "CMS / Medicare (LCD L35041)",
+              "sections": []
+            }
+          ],
+          "raw": {
+            "markdown": "...",
+            "tables": []
+          },
+          "sourceFile": "RenalCryoablationAuthGuide.tsx",
+          "title": "Renal Cryoablation \u2014 Authorization Guide"
+        }
+      },
+      "CountOut": {
+        "properties": {
+          "resource": {
+            "type": "string",
+            "title": "Resource",
+            "examples": [
+              "specialities"
+            ]
+          },
+          "count": {
+            "type": "integer",
+            "title": "Count",
+            "examples": [
+              42
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "resource",
+          "count"
+        ],
+        "title": "CountOut",
+        "description": "A labeled count of a resource."
+      },
+      "ErrorResponse": {
+        "properties": {
+          "detail": {
+            "type": "string",
+            "title": "Detail",
+            "examples": [
+              "Invalid username or password"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "detail"
+        ],
+        "title": "ErrorResponse",
+        "description": "Standard FastAPI error envelope."
+      },
+      "ForgotPasswordRequest": {
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "title": "Email",
+            "examples": [
+              "drsmith@example.com"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "email"
+        ],
+        "title": "ForgotPasswordRequest"
+      },
+      "ForgotPasswordResponse": {
+        "properties": {
+          "message": {
+            "type": "string",
+            "title": "Message",
+            "description": "Generic confirmation, the same regardless of whether the email exists, to avoid account enumeration."
+          },
+          "expires_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Expires At",
+            "description": "When the code expires (null when no code was issued)."
+          }
+        },
+        "type": "object",
+        "required": [
+          "message"
+        ],
+        "title": "ForgotPasswordResponse",
+        "example": {
+          "expires_at": "2026-06-08T11:42:05.227328Z",
+          "message": "If the email is registered, a reset code has been sent."
+        }
+      },
+      "FormSubmissionCreate": {
+        "properties": {
+          "module_id": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Module Id",
+            "description": "The module whose form is being submitted."
+          },
+          "data": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Data",
+            "description": "The submitted answers keyed by field name. Stored verbatim."
+          }
+        },
+        "type": "object",
+        "required": [
+          "module_id"
+        ],
+        "title": "FormSubmissionCreate",
+        "description": "A user's answers for a module's form.",
+        "example": {
+          "data": {
+            "tStage": "T3",
+            "tumorSize": 4.5
+          },
+          "module_id": 1
+        }
+      },
+      "FormSubmissionOut": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "module_id": {
+            "type": "integer",
+            "title": "Module Id"
+          },
+          "user_id": {
+            "type": "integer",
+            "title": "User Id"
+          },
+          "data": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Data"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Updated At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "module_id",
+          "user_id",
+          "data",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "FormSubmissionOut"
+      },
+      "FormSubmissionPage": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/FormSubmissionOut"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "next": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next",
+            "description": "URL of the next page, or null on the last page",
+            "examples": [
+              "http://localhost/submissions?limit=20&offset=20"
+            ]
+          },
+          "previous": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Previous",
+            "description": "URL of the previous page, or null on the first page",
+            "examples": [
+              null
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "FormSubmissionPage",
+        "description": "A page of form submissions with next/previous page links."
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "LoginRequest": {
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "title": "Email",
+            "examples": [
+              "drsmith@example.com"
+            ]
+          },
+          "password": {
+            "type": "string",
+            "title": "Password",
+            "examples": [
+              "s3cret-pass"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "email",
+          "password"
+        ],
+        "title": "LoginRequest"
+      },
+      "ModuleDetail": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Title",
+            "examples": [
+              "Rectal Cancer"
+            ]
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description",
+            "examples": [
+              "Staging and treatment pathways"
+            ]
+          },
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "speciality_id": {
+            "type": "integer",
+            "title": "Speciality Id"
+          },
+          "image_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Image Url",
+            "examples": [
+              "/uploads/images/abc123.png"
+            ]
+          },
+          "form": {
+            "$ref": "#/components/schemas/ModuleForm"
+          },
+          "appeal_letter": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Appeal Letter"
+          },
+          "appeal_letter_template": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Appeal Letter Template",
+            "description": "Data-driven recipe for personalizing the appeal letter from a submission's answers (defaults, derived values, conditional sections, and a {{placeholder}} template)."
+          },
+          "auth_guide": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Auth Guide",
+            "description": "Prior-authorization guide: CPT codes, ICD-10 codes, payer-specific coverage/documentation rules, plus a verbatim `raw` block."
+          }
+        },
+        "type": "object",
+        "required": [
+          "title",
+          "id",
+          "speciality_id"
+        ],
+        "title": "ModuleDetail",
+        "description": "A single module including its form."
+      },
+      "ModuleForm": {
+        "properties": {
+          "steps": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Steps"
+          }
+        },
+        "additionalProperties": true,
+        "type": "object",
+        "title": "ModuleForm",
+        "description": "A module's form, stored and returned verbatim.\n\nShape: {\"steps\": [{\"id\", \"shortLabel\", \"title\", \"fields\": [field, ...]}]}.\nEach field is free-form (id, name, label, type, required, defaultValue,\noptions, optionLayout, min, max, step, unit, placeholder, keyboardType,\nmultiline, ...), so the frontend owns the exact field schema.",
+        "example": {
+          "steps": [
+            {
+              "fields": [
+                {
+                  "defaultValue": "T3",
+                  "id": "t-stage",
+                  "label": "T Stage",
+                  "name": "tStage",
+                  "options": [
+                    {
+                      "label": "T1 \u2014 Submucosa",
+                      "value": "T1"
+                    },
+                    {
+                      "label": "T3 \u2014 Through muscularis propria",
+                      "value": "T3"
+                    }
+                  ],
+                  "required": true,
+                  "type": "select"
+                },
+                {
+                  "defaultValue": 0,
+                  "id": "tumor-size",
+                  "label": "Tumor Size",
+                  "max": 15,
+                  "min": 0,
+                  "name": "tumorSize",
+                  "step": 0.5,
+                  "type": "slider",
+                  "unit": "cm"
+                }
+              ],
+              "id": "staging",
+              "shortLabel": "Staging",
+              "title": "Tumor Staging (MRI-based)"
+            }
+          ]
+        }
+      },
+      "ModuleOut": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Title",
+            "examples": [
+              "Rectal Cancer"
+            ]
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description",
+            "examples": [
+              "Staging and treatment pathways"
+            ]
+          },
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "speciality_id": {
+            "type": "integer",
+            "title": "Speciality Id"
+          },
+          "image_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Image Url",
+            "examples": [
+              "/uploads/images/abc123.png"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "title",
+          "id",
+          "speciality_id"
+        ],
+        "title": "ModuleOut"
+      },
+      "ModulePage": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ModuleOut"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "next": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next",
+            "description": "URL of the next page, or null on the last page",
+            "examples": [
+              "http://localhost/modules?limit=20&offset=20"
+            ]
+          },
+          "previous": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Previous",
+            "description": "URL of the previous page, or null on the first page",
+            "examples": [
+              null
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "ModulePage",
+        "description": "A page of modules with next/previous page links."
+      },
+      "ResetPasswordRequest": {
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "title": "Email",
+            "examples": [
+              "drsmith@example.com"
+            ]
+          },
+          "otp": {
+            "type": "string",
+            "maxLength": 10,
+            "minLength": 4,
+            "title": "Otp",
+            "description": "The one-time code sent to the user's email by /auth/forgot-password.",
+            "examples": [
+              "482915"
+            ]
+          },
+          "new_password": {
+            "type": "string",
+            "minLength": 8,
+            "title": "New Password",
+            "examples": [
+              "n3w-s3cret-pass"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "email",
+          "otp",
+          "new_password"
+        ],
+        "title": "ResetPasswordRequest"
+      },
+      "SpecialityOut": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Title",
+            "examples": [
+              "Oncology"
+            ]
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description",
+            "examples": [
+              "Cancer care pathways"
+            ]
+          },
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "image_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Image Url",
+            "examples": [
+              "/uploads/images/abc123.png"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "title",
+          "id"
+        ],
+        "title": "SpecialityOut"
+      },
+      "SpecialityPage": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/SpecialityOut"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "next": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next",
+            "description": "URL of the next page, or null on the last page",
+            "examples": [
+              "http://localhost/specialities?limit=20&offset=20"
+            ]
+          },
+          "previous": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Previous",
+            "description": "URL of the previous page, or null on the first page",
+            "examples": [
+              null
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "SpecialityPage",
+        "description": "A page of specialities with next/previous page links."
+      },
+      "SpecialityWithModules": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Title",
+            "examples": [
+              "Oncology"
+            ]
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description",
+            "examples": [
+              "Cancer care pathways"
+            ]
+          },
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "image_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Image Url",
+            "examples": [
+              "/uploads/images/abc123.png"
+            ]
+          },
+          "modules": {
+            "items": {
+              "$ref": "#/components/schemas/ModuleOut"
+            },
+            "type": "array",
+            "title": "Modules"
+          }
+        },
+        "type": "object",
+        "required": [
+          "title",
+          "id"
+        ],
+        "title": "SpecialityWithModules"
+      },
+      "TokenOut": {
+        "properties": {
+          "access_token": {
+            "type": "string",
+            "title": "Access Token"
+          },
+          "token_type": {
+            "type": "string",
+            "title": "Token Type",
+            "default": "bearer"
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Expires At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "access_token",
+          "expires_at"
+        ],
+        "title": "TokenOut",
+        "example": {
+          "access_token": "MDJ3cy0P_g5Rk8VD_fnkMAc_VSG2kU1MJRY34Ic52oU",
+          "expires_at": "2026-06-02T11:32:05.227328Z",
+          "token_type": "bearer"
+        }
+      },
+      "UserCreate": {
+        "properties": {
+          "username": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 50,
+                "minLength": 3,
+                "pattern": "^[a-zA-Z0-9._-]+$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Username",
+            "description": "Optional. If omitted, one is generated from the full name.",
+            "examples": [
+              "jane.smith"
+            ]
+          },
+          "full_name": {
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Full Name",
+            "examples": [
+              "Dr. Jane Smith"
+            ]
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "title": "Email",
+            "examples": [
+              "drsmith@example.com"
+            ]
+          },
+          "password": {
+            "type": "string",
+            "minLength": 8,
+            "title": "Password",
+            "examples": [
+              "s3cret-pass"
+            ]
+          },
+          "role": {
+            "$ref": "#/components/schemas/UserRole",
+            "examples": [
+              "licensed_professional"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "full_name",
+          "email",
+          "password",
+          "role"
+        ],
+        "title": "UserCreate"
+      },
+      "UserOut": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "username": {
+            "type": "string",
+            "title": "Username"
+          },
+          "full_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Full Name"
+          },
+          "role": {
+            "$ref": "#/components/schemas/UserRole"
+          },
+          "email": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "email"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Email"
+          },
+          "is_active": {
+            "type": "boolean",
+            "title": "Is Active"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "username",
+          "full_name",
+          "role",
+          "email",
+          "is_active",
+          "created_at"
+        ],
+        "title": "UserOut",
+        "example": {
+          "created_at": "2026-06-01T11:32:04.715581Z",
+          "email": "drsmith@example.com",
+          "full_name": "Dr. Jane Smith",
+          "id": 1,
+          "is_active": true,
+          "role": "licensed_professional",
+          "username": "drsmith"
+        }
+      },
+      "UserRole": {
+        "type": "string",
+        "enum": [
+          "medical_student",
+          "licensed_professional"
+        ],
+        "title": "UserRole",
+        "description": "Whether the user is a student or a licensed practitioner."
+      },
+      "UsernameAvailableResponse": {
+        "properties": {
+          "username": {
+            "type": "string",
+            "title": "Username",
+            "examples": [
+              "jane.smith"
+            ]
+          },
+          "available": {
+            "type": "boolean",
+            "title": "Available",
+            "description": "Whether the username is free to use",
+            "examples": [
+              true
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "username",
+          "available"
+        ],
+        "title": "UsernameAvailableResponse"
+      },
+      "UsernameGenerateRequest": {
+        "properties": {
+          "full_name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Full Name",
+            "examples": [
+              "Dr. Jane Smith"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "full_name"
+        ],
+        "title": "UsernameGenerateRequest"
+      },
+      "UsernameGenerateResponse": {
+        "properties": {
+          "full_name": {
+            "type": "string",
+            "title": "Full Name",
+            "examples": [
+              "Dr. Jane Smith"
+            ]
+          },
+          "username": {
+            "type": "string",
+            "title": "Username",
+            "description": "A free username derived from the full name",
+            "examples": [
+              "jane.smith"
+            ]
+          },
+          "alternatives": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Alternatives",
+            "examples": [
+              [
+                "jane.smith1",
+                "jane.smith2"
+              ]
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "full_name",
+          "username"
+        ],
+        "title": "UsernameGenerateResponse"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    },
+    "securitySchemes": {
+      "HTTPBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "auth",
+      "description": "Registration, login, logout, and the current-user endpoint."
+    },
+    {
+      "name": "specialities",
+      "description": "Read specialities and their modules."
+    },
+    {
+      "name": "modules",
+      "description": "Read individual modules."
+    },
+    {
+      "name": "submissions",
+      "description": "Submit a module's form and read back your submissions."
+    },
+    {
+      "name": "meta",
+      "description": "Service health and operational endpoints."
+    }
+  ]
+}

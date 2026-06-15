@@ -1,0 +1,325 @@
+{
+  "title": "PAD Revascularization Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Assessment",
+    "logicKey": "pad",
+    "hiddenDefaults": {
+      "hemodynamicallySignificant": true,
+      "abi": null,
+      "tbi": null,
+      "tcpo2": null,
+      "symptomDuration": null
+    },
+    "steps": [
+      {
+        "id": "subset",
+        "shortLabel": "Clinical Subset",
+        "title": "Step 1: Clinical Subset",
+        "fields": [
+          {
+            "id": "subset",
+            "name": "subset",
+            "label": "Clinical Subset",
+            "type": "radio",
+            "required": true,
+            "defaultValue": "",
+            "options": [
+              { "label": "Asymptomatic PAD", "value": "asymptomatic" },
+              { "label": "Claudication (Chronic Symptomatic PAD)", "value": "claudication" },
+              { "label": "Chronic Limb-Threatening Ischemia (CLTI)", "value": "clti" },
+              { "label": "Acute Limb Ischemia (ALI)", "value": "ali" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "patient-factors",
+        "shortLabel": "Patient Factors",
+        "title": "Step 2: Patient Risk Factors & Comorbidities",
+        "fields": [
+          { "id": "diabetes", "name": "diabetes", "label": "Diabetes mellitus", "type": "checkbox", "defaultValue": false },
+          { "id": "ckd", "name": "ckd", "label": "Chronic kidney disease (CKD)", "type": "checkbox", "defaultValue": false },
+          { "id": "eskd", "name": "eskd", "label": "End-stage kidney disease (ESKD)", "type": "checkbox", "defaultValue": false },
+          { "id": "frailty", "name": "frailty", "label": "Frailty", "type": "checkbox", "defaultValue": false },
+          { "id": "heart-failure", "name": "heartFailure", "label": "Heart failure", "type": "checkbox", "defaultValue": false },
+          { "id": "severe-lung-disease", "name": "severeLungDisease", "label": "Severe lung disease", "type": "checkbox", "defaultValue": false },
+          { "id": "obesity", "name": "obesity", "label": "Obesity (BMI ≥35)", "type": "checkbox", "defaultValue": false },
+          { "id": "active-smoker", "name": "activeSmoker", "label": "Active tobacco use", "type": "checkbox", "defaultValue": false },
+          { "id": "polyvascular-disease", "name": "polyvascularDisease", "label": "Polyvascular disease (CAD/CVD)", "type": "checkbox", "defaultValue": false },
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "number",
+            "defaultValue": null,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "previous-revascularization",
+            "name": "previousRevascularization",
+            "label": "Previous revascularization (endovascular or surgical)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "subset", "op": "eq", "value": "clti" }
+          }
+        ]
+      },
+      {
+        "id": "clinical-details",
+        "shortLabel": "Clinical Details",
+        "title": "Step 3: Clinical Details",
+        "fields": [
+          {
+            "id": "other-procedure-needed",
+            "name": "otherProcedureNeeded",
+            "label": "Is revascularization needed to facilitate another procedure (e.g., TAVR, EVAR, MCS)?",
+            "type": "radio",
+            "defaultValue": false,
+            "options": [
+              { "label": "Yes", "value": true },
+              { "label": "No", "value": false }
+            ],
+            "visibleWhen": { "field": "subset", "op": "eq", "value": "asymptomatic" }
+          },
+          {
+            "id": "gdmt-response",
+            "name": "gdmtResponse",
+            "label": "Response to GDMT (including structured exercise therapy)?",
+            "type": "radio",
+            "defaultValue": "",
+            "options": [
+              { "label": "Not yet tried / not optimized", "value": "not_tried" },
+              { "label": "Adequate — symptoms resolved or acceptable QOL", "value": "adequate" },
+              { "label": "Inadequate — functionally limiting symptoms persist", "value": "inadequate" }
+            ],
+            "visibleWhen": { "field": "subset", "op": "eq", "value": "claudication" }
+          },
+          {
+            "id": "functionally-limiting",
+            "name": "functionallyLimiting",
+            "label": "Is claudication functionally limiting (impairs daily activities, work, QOL)?",
+            "type": "radio",
+            "defaultValue": true,
+            "options": [
+              { "label": "Yes", "value": true },
+              { "label": "No", "value": false }
+            ],
+            "visibleWhen": {
+              "all": [
+                { "field": "subset", "op": "eq", "value": "claudication" },
+                { "field": "gdmtResponse", "op": "eq", "value": "inadequate" }
+              ]
+            }
+          },
+          {
+            "id": "anatomic-level",
+            "name": "anatomicLevel",
+            "label": "Anatomic level of disease",
+            "type": "radio",
+            "defaultValue": "",
+            "options": [
+              { "label": "Aortoiliac (inflow disease)", "value": "aortoiliac" },
+              { "label": "Femoropopliteal (SFA/popliteal)", "value": "femoropopliteal" },
+              { "label": "Common femoral artery (CFA)", "value": "common_femoral" },
+              { "label": "Infrapopliteal (tibial/pedal)", "value": "infrapopliteal" },
+              { "label": "Multilevel disease", "value": "multilevel" }
+            ],
+            "visibleWhen": {
+              "all": [
+                { "field": "subset", "op": "eq", "value": "claudication" },
+                { "field": "gdmtResponse", "op": "eq", "value": "inadequate" }
+              ]
+            }
+          },
+          {
+            "id": "surgical-risk-claudication",
+            "name": "surgicalRisk",
+            "label": "Perioperative surgical risk",
+            "type": "radio",
+            "defaultValue": "",
+            "options": [
+              { "label": "Acceptable", "value": "acceptable" },
+              { "label": "High risk", "value": "high" }
+            ],
+            "visibleWhen": {
+              "all": [
+                { "field": "subset", "op": "eq", "value": "claudication" },
+                { "field": "gdmtResponse", "op": "eq", "value": "inadequate" }
+              ]
+            }
+          },
+          {
+            "id": "clti-presentation",
+            "name": "cltiPresentation",
+            "label": "CLTI Presentation",
+            "type": "radio",
+            "defaultValue": "",
+            "options": [
+              { "label": "Ischemic rest pain only (no tissue loss)", "value": "rest_pain" },
+              { "label": "Minor tissue loss (non-healing wound/ulcer)", "value": "minor_tissue_loss" },
+              { "label": "Major tissue loss (gangrene)", "value": "major_tissue_loss" },
+              { "label": "Rest pain + tissue loss", "value": "combined" }
+            ],
+            "visibleWhen": { "field": "subset", "op": "eq", "value": "clti" }
+          },
+          {
+            "id": "revascularization-feasible",
+            "name": "revascularizationFeasible",
+            "label": "Is revascularization technically feasible?",
+            "type": "radio",
+            "defaultValue": null,
+            "options": [
+              { "label": "Yes", "value": true },
+              { "label": "No (no-option CLTI)", "value": false }
+            ],
+            "visibleWhen": { "field": "subset", "op": "eq", "value": "clti" }
+          },
+          {
+            "id": "conduit-availability",
+            "name": "conduitAvailability",
+            "label": "Great saphenous vein (GSV) conduit availability",
+            "type": "radio",
+            "defaultValue": "",
+            "options": [
+              { "label": "Adequate GSV (≥3 mm diameter, suitable for bypass)", "value": "adequate_gsv" },
+              { "label": "Inadequate GSV (harvested, thrombosed, or too small)", "value": "inadequate_gsv" },
+              { "label": "Unknown — vein mapping not yet performed", "value": "unknown" }
+            ],
+            "visibleWhen": {
+              "all": [
+                { "field": "subset", "op": "eq", "value": "clti" },
+                { "field": "revascularizationFeasible", "op": "truthy" }
+              ]
+            }
+          },
+          {
+            "id": "surgical-risk-clti",
+            "name": "surgicalRisk",
+            "label": "Perioperative surgical risk",
+            "type": "radio",
+            "defaultValue": "",
+            "options": [
+              { "label": "Acceptable", "value": "acceptable" },
+              { "label": "High risk", "value": "high" }
+            ],
+            "visibleWhen": {
+              "all": [
+                { "field": "subset", "op": "eq", "value": "clti" },
+                { "field": "revascularizationFeasible", "op": "truthy" }
+              ]
+            }
+          },
+          {
+            "id": "cfa-involvement",
+            "name": "cfaInvolvement",
+            "label": "CFA / profunda femoris artery involvement",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": {
+              "all": [
+                { "field": "subset", "op": "eq", "value": "clti" },
+                { "field": "revascularizationFeasible", "op": "truthy" }
+              ]
+            }
+          },
+          {
+            "id": "multilevel-disease",
+            "name": "multilevelDisease",
+            "label": "Multilevel disease (aortoiliac + infrainguinal)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": {
+              "all": [
+                { "field": "subset", "op": "eq", "value": "clti" },
+                { "field": "revascularizationFeasible", "op": "truthy" }
+              ]
+            }
+          },
+          {
+            "id": "wifi-wound",
+            "name": "wifiWound",
+            "label": "WIfI Wound",
+            "type": "select",
+            "defaultValue": null,
+            "options": [
+              { "label": "—", "value": null },
+              { "label": "0: None", "value": 0 },
+              { "label": "1: Minor", "value": 1 },
+              { "label": "2: Moderate", "value": 2 },
+              { "label": "3: Severe", "value": 3 }
+            ],
+            "visibleWhen": {
+              "all": [
+                { "field": "subset", "op": "eq", "value": "clti" },
+                { "field": "revascularizationFeasible", "op": "truthy" }
+              ]
+            }
+          },
+          {
+            "id": "wifi-ischemia",
+            "name": "wifiIschemia",
+            "label": "WIfI Ischemia",
+            "type": "select",
+            "defaultValue": null,
+            "options": [
+              { "label": "—", "value": null },
+              { "label": "0: ABI >0.80", "value": 0 },
+              { "label": "1: ABI 0.60–0.79", "value": 1 },
+              { "label": "2: ABI 0.40–0.59", "value": 2 },
+              { "label": "3: ABI <0.40", "value": 3 }
+            ],
+            "visibleWhen": {
+              "all": [
+                { "field": "subset", "op": "eq", "value": "clti" },
+                { "field": "revascularizationFeasible", "op": "truthy" }
+              ]
+            }
+          },
+          {
+            "id": "wifi-foot-infection",
+            "name": "wifiFootInfection",
+            "label": "WIfI Foot Infection",
+            "type": "select",
+            "defaultValue": null,
+            "options": [
+              { "label": "—", "value": null },
+              { "label": "0: None", "value": 0 },
+              { "label": "1: Mild", "value": 1 },
+              { "label": "2: Moderate", "value": 2 },
+              { "label": "3: Severe", "value": 3 }
+            ],
+            "visibleWhen": {
+              "all": [
+                { "field": "subset", "op": "eq", "value": "clti" },
+                { "field": "revascularizationFeasible", "op": "truthy" }
+              ]
+            }
+          },
+          {
+            "id": "ali-emergency-alert",
+            "type": "alert",
+            "severity": "error",
+            "text": "Acute Limb Ischemia is a vascular emergency. Immediate evaluation by an experienced clinician is required.",
+            "visibleWhen": { "field": "subset", "op": "eq", "value": "ali" }
+          },
+          {
+            "id": "ali-category",
+            "name": "aliCategory",
+            "label": "Rutherford ALI Category (based on sensory/motor deficit and Doppler signals)",
+            "type": "radio",
+            "defaultValue": "",
+            "options": [
+              { "label": "Category I — Viable", "value": "I" },
+              { "label": "Category IIa — Marginally Threatened", "value": "IIa" },
+              { "label": "Category IIb — Immediately Threatened", "value": "IIb" },
+              { "label": "Category III — Irreversible (Nonsalvageable)", "value": "III" }
+            ],
+            "visibleWhen": { "field": "subset", "op": "eq", "value": "ali" }
+          }
+        ]
+      }
+    ]
+  }
+}

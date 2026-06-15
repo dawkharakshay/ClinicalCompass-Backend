@@ -1,0 +1,359 @@
+{
+  "title": "Atopic Dermatitis Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "AtopicDermatitisAuthGuide.tsx",
+    "title": "AtopicDermatitis Clinical Compass",
+    "subtitle": "Atopic Dermatitis Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "96372",
+        "description": "Therapeutic, prophylactic, or diagnostic injection (specify substance or drug); subcutaneous or intramuscular",
+        "device": "Biologics (Dupilumab, Tralokinumab)",
+        "access": "Subcutaneous/Intramuscular",
+        "rvu": "1.000",
+        "includes": [
+          "Physician/provider time for preparation, patient education, administration, observation, and documentation of the injection."
+        ],
+        "note": "This code is for the administration of biologics like Dupilumab and Tralokinumab for Atopic Dermatitis."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "L20.84",
+        "description": "Intrinsic (allergic) eczema",
+        "notes": "Consider for specific allergic triggers.",
+        "required": false
+      },
+      {
+        "code": "L20.89",
+        "description": "Other atopic dermatitis",
+        "notes": "Use for other specified forms of atopic dermatitis.",
+        "required": false
+      },
+      {
+        "code": "L20.9",
+        "description": "Atopic dermatitis, unspecified",
+        "notes": "Primary diagnosis for general atopic dermatitis.",
+        "required": true
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with medical necessity",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is generally required for biologic agents used in the treatment of Atopic Dermatitis to ensure medical necessity and appropriate use criteria are met.",
+        "overview": "Medicare covers FDA-approved biologic therapies for moderate to severe Atopic Dermatitis when conventional therapies have failed or are contraindicated, and specific clinical criteria are met.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Diagnosis",
+            "items": ["Confirmed diagnosis of moderate to severe Atopic Dermatitis."]
+          },
+          {
+            "heading": "Coverage Criteria: Disease Activity",
+            "items": ["Documented evidence of disease activity (e.g., Eczema Area and Severity Index [EASI] score, Investigator's Global Assessment [IGA] score)."]
+          },
+          {
+            "heading": "Coverage Criteria: Prior Treatment Failure",
+            "items": ["Inadequate response to or intolerance of a trial of topical corticosteroids and/or other systemic immunosuppressants (e.g., cyclosporine, methotrexate) for a specified duration."]
+          },
+          {
+            "heading": "Coverage Criteria: Age",
+            "items": ["Patient meets age-specific indications for the biologic agent."]
+          },
+          {
+            "heading": "Coverage Criteria: Contraindications",
+            "items": ["Absence of contraindications to the requested biologic therapy."]
+          },
+          {
+            "heading": "Required Documentation: Clinical Notes",
+            "items": ["Detailed clinical notes documenting diagnosis, disease severity, previous treatments, and response."]
+          },
+          {
+            "heading": "Required Documentation: Lab Results",
+            "items": ["Relevant lab results (e.g., baseline labs, TB screening)."]
+          },
+          {
+            "heading": "Required Documentation: Prescription",
+            "items": ["Prescription for the specific biologic agent."]
+          },
+          {
+            "heading": "Required Documentation: Patient History",
+            "items": ["Comprehensive patient history including comorbidities."]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Physician submits prior authorization request with supporting clinical documentation.",
+              "Payer reviews documentation against medical policy criteria.",
+              "Approval or denial is issued, often with an appeal process available."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented prior treatment failure.",
+              "Insufficient documentation of disease severity.",
+              "Off-label use or failure to meet age criteria.",
+              "Incomplete submission of required clinical information."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": ["Reimbursement for biologic agents is typically based on average sales price (ASP) plus a percentage, or a negotiated rate."]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Ensure thorough documentation of disease severity and impact on quality of life.",
+              "Clearly document trials and failures of conventional therapies.",
+              "Provide all requested lab results and clinical notes with the initial submission."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS",
+            "status": "Covered",
+            "notes": "Follows national coverage determinations and local coverage determinations."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered with strict criteria",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid programs often require prior authorization for high-cost biologic medications to ensure cost-effectiveness and adherence to state-specific guidelines.",
+        "overview": "Medicaid coverage for Atopic Dermatitis biologics varies by state, but generally requires documentation of severe disease and failure of multiple conventional treatments.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Diagnosis",
+            "items": ["Confirmed diagnosis of severe Atopic Dermatitis."]
+          },
+          {
+            "heading": "Coverage Criteria: Disease Activity",
+            "items": ["Objective measures of disease severity (e.g., EASI, IGA, or body surface area affected)."]
+          },
+          {
+            "heading": "Coverage Criteria: Prior Treatment Failure",
+            "items": ["Documented failure of at least two systemic therapies (e.g., cyclosporine, methotrexate, phototherapy) and topical treatments."]
+          },
+          {
+            "heading": "Coverage Criteria: Age",
+            "items": ["Patient meets age-specific indications as per FDA and state guidelines."]
+          },
+          {
+            "heading": "Coverage Criteria: Prescriber",
+            "items": ["Prescribed by a dermatologist or allergist/immunologist."]
+          },
+          {
+            "heading": "Required Documentation: Clinical Records",
+            "items": ["Detailed medical records supporting diagnosis and severity."]
+          },
+          {
+            "heading": "Required Documentation: Treatment History",
+            "items": ["Documentation of all previous treatments, dosages, durations, and reasons for failure or intolerance."]
+          },
+          {
+            "heading": "Required Documentation: Physical Exam",
+            "items": ["Recent physical examination findings, including photographs if available."]
+          },
+          {
+            "heading": "Required Documentation: Patient Consent",
+            "items": ["Informed consent for biologic therapy."]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Provider submits prior authorization request through the state Medicaid portal or fax.",
+              "State Medicaid agency reviews clinical documentation.",
+              "Decision communicated to provider; appeals process available for denials."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet state-specific step therapy requirements.",
+              "Inadequate documentation of disease severity or treatment history.",
+              "Lack of medical necessity as defined by state policy.",
+              "Prescriber not a specialist."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": ["Medicaid reimbursement rates are typically lower than Medicare or private insurance and are set by individual state programs."]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with specific state Medicaid policies for Atopic Dermatitis biologics.",
+              "Ensure all step therapy requirements are clearly documented as failed or contraindicated.",
+              "Provide a comprehensive narrative justifying the medical necessity of the biologic."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (example)",
+            "status": "Covered with PA",
+            "notes": "Specific criteria apply, including step therapy and specialist prescription."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Covered with plan-specific criteria",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for biologic medications due to their high cost and specific usage criteria.",
+        "overview": "Private insurance coverage for Atopic Dermatitis biologics is highly variable and depends on the specific plan's formulary and medical policies.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Diagnosis",
+            "items": ["Confirmed diagnosis of moderate to severe Atopic Dermatitis."]
+          },
+          {
+            "heading": "Coverage Criteria: Disease Activity",
+            "items": ["Objective measures of disease severity (e.g., EASI, IGA, or body surface area affected)."]
+          },
+          {
+            "heading": "Coverage Criteria: Prior Treatment Failure",
+            "items": ["Documented failure of adequate trials of topical therapies and/or systemic immunosuppressants (e.g., methotrexate, cyclosporine, azathioprine)."]
+          },
+          {
+            "heading": "Coverage Criteria: Age",
+            "items": ["Patient meets age-specific indications for the requested biologic."]
+          },
+          {
+            "heading": "Coverage Criteria: Exclusions",
+            "items": ["Absence of contraindications or other exclusionary criteria as per plan policy."]
+          },
+          {
+            "heading": "Required Documentation: Medical Records",
+            "items": ["Comprehensive medical records including history, physical exams, and dermatologist's notes."]
+          },
+          {
+            "heading": "Required Documentation: Treatment History",
+            "items": ["Detailed log of previous treatments, including dates, durations, and outcomes."]
+          },
+          {
+            "heading": "Required Documentation: Severity Assessment",
+            "items": ["Validated severity scores (e.g., EASI, IGA, SCORAD) and impact on quality of life."]
+          },
+          {
+            "heading": "Required Documentation: Prescription",
+            "items": ["Prescription from a board-certified dermatologist or allergist."]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Provider submits prior authorization request via online portal, fax, or phone.",
+              "Insurance company reviews the request against its medical policy.",
+              "Approval or denial is issued, with an internal and external appeals process available."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet plan-specific step therapy requirements.",
+              "Incomplete or insufficient clinical documentation.",
+              "Lack of documented medical necessity.",
+              "Biologic not on the plan's formulary or preferred drug list."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": ["Reimbursement rates are negotiated between the provider and the private insurance company, varying significantly by plan and contract."]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify the patient's specific plan benefits and formulary before prescribing.",
+              "Submit all required documentation upfront to avoid delays.",
+              "Be prepared to appeal denials with additional clinical information and peer-to-peer reviews."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield (example)",
+            "status": "Covered with PA",
+            "notes": "Requires documented failure of conventional therapies and specific severity criteria."
+          },
+          {
+            "payer": "UnitedHealthcare (example)",
+            "status": "Covered with PA",
+            "notes": "Step therapy protocols apply; requires specialist prescription."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment",
+        "href": "/atopicdermatitis"
+      },
+      {
+        "heading": "CPT 96372 — Included in this code (do NOT bill separately)",
+        "kind": "list",
+        "items": [
+          "Physician/provider time for preparation, patient education, administration, observation, and documentation of the injection."
+        ]
+      }
+    ],
+    "raw": {
+      "markdown": "# AtopicDermatitis Clinical Compass\n## Atopic Dermatitis Insurance Authorization Guide\n\n[Back to Assessment] (link to /atopicdermatitis)\n\n## Procedure Codes\n\n### CPT 96372 (RVU 1.000)\nTherapeutic, prophylactic, or diagnostic injection (specify substance or drug); subcutaneous or intramuscular\n\n**Device/Access:** Biologics (Dupilumab, Tralokinumab) — Subcutaneous/Intramuscular\n\n**Included in this code (do NOT bill separately):**\n- Physician/provider time for preparation, patient education, administration, observation, and documentation of the injection.\n\n_This code is for the administration of biologics like Dupilumab and Tralokinumab for Atopic Dermatitis._\n\n## ICD-10 Diagnosis Codes\n\n- **L20.84** — Intrinsic (allergic) eczema. Consider for specific allergic triggers.\n- **L20.89** — Other atopic dermatitis. Use for other specified forms of atopic dermatitis.\n- **L20.9** (Primary) — Atopic dermatitis, unspecified. Primary diagnosis for general atopic dermatitis.\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\nPrior Auth Required | Coverage Status: Covered with medical necessity\n\n_Prior authorization is generally required for biologic agents used in the treatment of Atopic Dermatitis to ensure medical necessity and appropriate use criteria are met._\n\nMedicare covers FDA-approved biologic therapies for moderate to severe Atopic Dermatitis when conventional therapies have failed or are contraindicated, and specific clinical criteria are met.\n\n**Coverage Criteria**\n- Diagnosis: Confirmed diagnosis of moderate to severe Atopic Dermatitis.\n- Disease Activity: Documented evidence of disease activity (e.g., Eczema Area and Severity Index [EASI] score, Investigator's Global Assessment [IGA] score).\n- Prior Treatment Failure: Inadequate response to or intolerance of a trial of topical corticosteroids and/or other systemic immunosuppressants (e.g., cyclosporine, methotrexate) for a specified duration.\n- Age: Patient meets age-specific indications for the biologic agent.\n- Contraindications: Absence of contraindications to the requested biologic therapy.\n\n**Required Documentation**\n- Clinical Notes: Detailed clinical notes documenting diagnosis, disease severity, previous treatments, and response.\n- Lab Results: Relevant lab results (e.g., baseline labs, TB screening).\n- Prescription: Prescription for the specific biologic agent.\n- Patient History: Comprehensive patient history including comorbidities.\n\n**Submission Process**\n1. Physician submits prior authorization request with supporting clinical documentation.\n2. Payer reviews documentation against medical policy criteria.\n3. Approval or denial is issued, often with an appeal process available.\n\n**Common Denial Reasons**\n- Lack of documented prior treatment failure.\n- Insufficient documentation of disease severity.\n- Off-label use or failure to meet age criteria.\n- Incomplete submission of required clinical information.\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS | Covered | Follows national coverage determinations and local coverage determinations. |\n\n**Reimbursement Note:** Reimbursement for biologic agents is typically based on average sales price (ASP) plus a percentage, or a negotiated rate.\n\n**Authorization Tips**\n- Ensure thorough documentation of disease severity and impact on quality of life.\n- Clearly document trials and failures of conventional therapies.\n- Provide all requested lab results and clinical notes with the initial submission.\n\n### Medicaid\nPrior Auth Required | Coverage Status: Covered with strict criteria\n\n_Medicaid programs often require prior authorization for high-cost biologic medications to ensure cost-effectiveness and adherence to state-specific guidelines._\n\nMedicaid coverage for Atopic Dermatitis biologics varies by state, but generally requires documentation of severe disease and failure of multiple conventional treatments.\n\n**Coverage Criteria**\n- Diagnosis: Confirmed diagnosis of severe Atopic Dermatitis.\n- Disease Activity: Objective measures of disease severity (e.g., EASI, IGA, or body surface area affected).\n- Prior Treatment Failure: Documented failure of at least two systemic therapies (e.g., cyclosporine, methotrexate, phototherapy) and topical treatments.\n- Age: Patient meets age-specific indications as per FDA and state guidelines.\n- Prescriber: Prescribed by a dermatologist or allergist/immunologist.\n\n**Required Documentation**\n- Clinical Records: Detailed medical records supporting diagnosis and severity.\n- Treatment History: Documentation of all previous treatments, dosages, durations, and reasons for failure or intolerance.\n- Physical Exam: Recent physical examination findings, including photographs if available.\n- Patient Consent: Informed consent for biologic therapy.\n\n**Submission Process**\n1. Provider submits prior authorization request through the state Medicaid portal or fax.\n2. State Medicaid agency reviews clinical documentation.\n3. Decision communicated to provider; appeals process available for denials.\n\n**Common Denial Reasons**\n- Failure to meet state-specific step therapy requirements.\n- Inadequate documentation of disease severity or treatment history.\n- Lack of medical necessity as defined by state policy.\n- Prescriber not a specialist.\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (example) | Covered with PA | Specific criteria apply, including step therapy and specialist prescription. |\n\n**Reimbursement Note:** Medicaid reimbursement rates are typically lower than Medicare or private insurance and are set by individual state programs.\n\n**Authorization Tips**\n- Familiarize yourself with specific state Medicaid policies for Atopic Dermatitis biologics.\n- Ensure all step therapy requirements are clearly documented as failed or contraindicated.\n- Provide a comprehensive narrative justifying the medical necessity of the biologic.\n\n### Private Insurance\nPrior Auth Required | Coverage Status: Covered with plan-specific criteria\n\n_Most private insurance plans require prior authorization for biologic medications due to their high cost and specific usage criteria._\n\nPrivate insurance coverage for Atopic Dermatitis biologics is highly variable and depends on the specific plan's formulary and medical policies.\n\n**Coverage Criteria**\n- Diagnosis: Confirmed diagnosis of moderate to severe Atopic Dermatitis.\n- Disease Activity: Objective measures of disease severity (e.g., EASI, IGA, or body surface area affected).\n- Prior Treatment Failure: Documented failure of adequate trials of topical therapies and/or systemic immunosuppressants (e.g., methotrexate, cyclosporine, azathioprine).\n- Age: Patient meets age-specific indications for the requested biologic.\n- Exclusions: Absence of contraindications or other exclusionary criteria as per plan policy.\n\n**Required Documentation**\n- Medical Records: Comprehensive medical records including history, physical exams, and dermatologist's notes.\n- Treatment History: Detailed log of previous treatments, including dates, durations, and outcomes.\n- Severity Assessment: Validated severity scores (e.g., EASI, IGA, SCORAD) and impact on quality of life.\n- Prescription: Prescription from a board-certified dermatologist or allergist.\n\n**Submission Process**\n1. Provider submits prior authorization request via online portal, fax, or phone.\n2. Insurance company reviews the request against its medical policy.\n3. Approval or denial is issued, with an internal and external appeals process available.\n\n**Common Denial Reasons**\n- Failure to meet plan-specific step therapy requirements.\n- Incomplete or insufficient clinical documentation.\n- Lack of documented medical necessity.\n- Biologic not on the plan's formulary or preferred drug list.\n\n**Known Payer Policies**\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Blue Cross Blue Shield (example) | Covered with PA | Requires documented failure of conventional therapies and specific severity criteria. |\n| UnitedHealthcare (example) | Covered with PA | Step therapy protocols apply; requires specialist prescription. |\n\n**Reimbursement Note:** Reimbursement rates are negotiated between the provider and the private insurance company, varying significantly by plan and contract.\n\n**Authorization Tips**\n- Verify the patient's specific plan benefits and formulary before prescribing.\n- Submit all required documentation upfront to avoid delays.\n- Be prepared to appeal denials with additional clinical information and peer-to-peer reviews.\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "Description", "Device/Access", "RVU", "Includes", "Note"],
+          "rows": [
+            [
+              "96372",
+              "Therapeutic, prophylactic, or diagnostic injection (specify substance or drug); subcutaneous or intramuscular",
+              "Biologics (Dupilumab, Tralokinumab) — Subcutaneous/Intramuscular",
+              "1.000",
+              "Physician/provider time for preparation, patient education, administration, observation, and documentation of the injection.",
+              "This code is for the administration of biologics like Dupilumab and Tralokinumab for Atopic Dermatitis."
+            ]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["Code", "Description", "Notes", "Required"],
+          "rows": [
+            ["L20.84", "Intrinsic (allergic) eczema", "Consider for specific allergic triggers.", "false"],
+            ["L20.89", "Other atopic dermatitis", "Use for other specified forms of atopic dermatitis.", "false"],
+            ["L20.9", "Atopic dermatitis, unspecified", "Primary diagnosis for general atopic dermatitis.", "true"]
+          ]
+        },
+        {
+          "name": "Medicare — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS", "Covered", "Follows national coverage determinations and local coverage determinations."]
+          ]
+        },
+        {
+          "name": "Medicaid — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (example)", "Covered with PA", "Specific criteria apply, including step therapy and specialist prescription."]
+          ]
+        },
+        {
+          "name": "Private Insurance — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield (example)", "Covered with PA", "Requires documented failure of conventional therapies and specific severity criteria."],
+            ["UnitedHealthcare (example)", "Covered with PA", "Step therapy protocols apply; requires specialist prescription."]
+          ]
+        }
+      ]
+    }
+  }
+}

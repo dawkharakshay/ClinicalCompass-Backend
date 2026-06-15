@@ -1,0 +1,403 @@
+{
+  "title": "MASLD / MASH Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "MASLDAuthGuide.tsx",
+    "title": "MASLD Clinical Compass",
+    "subtitle": "Metabolic Dysfunction-Associated Steatotic Liver Disease Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "99213",
+        "description": "Office or other outpatient visit for the evaluation and management of an established patient, which requires at least 2 of 3 medical decision making components (low complexity) or 30-44 minutes of total time on the date of the encounter.",
+        "device": "N/A",
+        "access": "N/A",
+        "rvu": "0.97",
+        "includes": [
+          "Comprehensive history and examination",
+          "Medical decision making of low complexity",
+          "Counseling and coordination of care"
+        ],
+        "note": "Used for routine follow-up and management of MASLD. Specific advanced diagnostics or treatments may require separate coding or prior authorization."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "K76.0",
+        "description": "Fatty (change of) liver, not elsewhere classified",
+        "notes": "Primary diagnosis code for Metabolic Dysfunction-Associated Steatotic Liver Disease (MASLD). Often used in conjunction with other codes for metabolic comorbidities.",
+        "required": true
+      },
+      {
+        "code": "E66.9",
+        "description": "Obesity, unspecified",
+        "notes": "Common comorbidity with MASLD, often used to support medical necessity for interventions.",
+        "required": false
+      },
+      {
+        "code": "E11.9",
+        "description": "Type 2 diabetes mellitus without complications",
+        "notes": "Frequently co-occurs with MASLD and is a significant risk factor.",
+        "required": false
+      },
+      {
+        "code": "I10",
+        "description": "Essential (primary) hypertension",
+        "notes": "Another common metabolic comorbidity associated with MASLD.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with Medical Necessity",
+        "overview": "Medicare covers medically necessary services for the diagnosis and management of MASLD. Coverage typically includes evaluation and management services, laboratory tests, and imaging studies. Newer treatments may have specific coverage criteria.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required: false (No Prior Auth / FFS)",
+              "Generally, routine office visits (CPT 99213) for MASLD management do not require prior authorization. However, newer pharmacotherapies (e.g., resmetirom) or advanced diagnostic imaging (e.g., MRI elastography) may require prior authorization based on local coverage determinations (LCDs) or national coverage determinations (NCDs). Always verify with the specific Medicare Administrative Contractor (MAC)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - Diagnosis",
+            "items": [
+              "Clinical diagnosis of MASLD based on imaging (ultrasound, CT, MRI) or liver biopsy.",
+              "Exclusion of significant alcohol consumption and other causes of chronic liver disease.",
+              "Presence of metabolic risk factors (e.g., obesity, type 2 diabetes, dyslipidemia, hypertension)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - Treatment",
+            "items": [
+              "Documentation of lifestyle modifications (diet, exercise) attempted for at least 6 months.",
+              "For pharmacotherapy, specific criteria may apply, such as evidence of advanced fibrosis (F2-F4) or cirrhosis, and failure or contraindication to other treatments."
+            ]
+          },
+          {
+            "heading": "Required Documentation - Clinical Records",
+            "items": [
+              "Detailed physician notes documenting MASLD diagnosis, metabolic risk factors, and treatment plan.",
+              "Results of liver function tests, lipid panel, glucose, HbA1c.",
+              "Imaging reports (ultrasound, FibroScan, MRI elastography) confirming steatosis and/or fibrosis.",
+              "Liver biopsy results, if performed.",
+              "Documentation of lifestyle intervention counseling and patient adherence."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims electronically via EDI (837P).",
+              "Ensure all CPT and ICD-10 codes are accurate and reflect the services rendered and patient condition.",
+              "Attach supporting documentation (e.g., progress notes, lab results) if requested by the MAC or for specific services requiring medical review."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity for advanced diagnostics or new pharmacotherapies.",
+              "Insufficient documentation of metabolic risk factors or severity of liver disease.",
+              "Failure to demonstrate prior attempts at lifestyle modifications.",
+              "Incorrect coding or missing modifiers."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Reimbursement for MASLD management is generally aligned with standard E/M services and diagnostic tests. Novel treatments may have specific reimbursement pathways or require prior authorization and appeals processes."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Clearly document all metabolic risk factors and the diagnostic pathway for MASLD.",
+              "Emphasize patient education and counseling on lifestyle changes in clinical notes.",
+              "Stay updated on MAC-specific LCDs for MASLD-related services and new treatments.",
+              "For novel therapies, be prepared to submit extensive clinical documentation to support medical necessity."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Noridian Healthcare Solutions (MAC)",
+            "status": "Covered",
+            "notes": "Covers medically reasonable and necessary services for MASLD diagnosis and management."
+          },
+          {
+            "payer": "Palmetto GBA (MAC)",
+            "status": "Covered",
+            "notes": "Follows general Medicare guidelines; specific criteria for advanced imaging or therapies may apply."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Varies by State; Often Requires PA",
+        "overview": "Medicaid coverage for MASLD varies by state. While basic E/M and essential lab tests are typically covered, advanced imaging, specialist consultations, and pharmacologic treatments often require prior authorization and adherence to strict medical necessity criteria.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required: true",
+              "Prior authorization is often required for many services beyond routine office visits, especially for advanced diagnostics, specialist referrals, and all pharmacotherapies for MASLD. Requirements vary significantly by state Medicaid program. Always verify specific state guidelines."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - Diagnosis",
+            "items": [
+              "Clinical diagnosis of MASLD confirmed by imaging or biopsy.",
+              "Documentation of metabolic syndrome components.",
+              "Exclusion of other liver diseases."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - Treatment",
+            "items": [
+              "Evidence of significant liver fibrosis (e.g., F2 or higher) or cirrhosis.",
+              "Documented failure of at least 3-6 months of supervised lifestyle interventions.",
+              "Specific pharmacotherapy criteria, if applicable, based on state formulary and guidelines."
+            ]
+          },
+          {
+            "heading": "Required Documentation - Clinical Records",
+            "items": [
+              "Physician orders and progress notes.",
+              "Lab results (LFTs, glucose, lipids, viral hepatitis panel).",
+              "Imaging reports (ultrasound, FibroScan).",
+              "Referral notes from primary care to specialist, if applicable.",
+              "Documentation of patient participation in lifestyle modification programs."
+            ]
+          },
+          {
+            "heading": "Required Documentation - Prior Authorization Form",
+            "items": [
+              "Completed state-specific Medicaid prior authorization form.",
+              "Letter of medical necessity from the treating physician."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization requests through the state Medicaid portal or designated fax/mail.",
+              "Follow state-specific billing guidelines for claims submission.",
+              "Be prepared for potential delays and requests for additional information."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization for covered services.",
+              "Failure to meet state-specific medical necessity criteria.",
+              "Incomplete or illegible documentation.",
+              "Treatment requested is not on the state formulary or preferred drug list.",
+              "Insufficient evidence of disease progression or severity."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicaid reimbursement rates are typically lower than Medicare or private insurance. Adherence to strict coding and authorization protocols is crucial to avoid denials."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Thoroughly understand and adhere to your state’s specific Medicaid guidelines for MASLD.",
+              "Initiate prior authorization early for all potentially covered services beyond routine care.",
+              "Maintain meticulous records of all diagnostic findings, treatment plans, and patient responses.",
+              "Clearly articulate the medical necessity and expected benefits of the requested treatment in the PA request."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "California Medi-Cal",
+            "status": "Covered with PA",
+            "notes": "Covers MASLD management with medical necessity; specific criteria for advanced therapies."
+          },
+          {
+            "payer": "New York Medicaid",
+            "status": "Covered with PA",
+            "notes": "Requires prior authorization for many specialty medications and advanced diagnostics."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Varies by Plan; Often Requires PA",
+        "overview": "Private insurance coverage for MASLD is highly variable, depending on the specific plan (HMO, PPO, POS) and insurer. Most plans cover medically necessary diagnostic and management services, but prior authorization is a common requirement for non-routine care, particularly for new or expensive treatments.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "Prior Auth Required: true",
+              "Prior authorization is frequently required for specialist referrals, advanced diagnostic imaging (e.g., MRI elastography, liver biopsy), and all new pharmacotherapies for MASLD. Requirements vary widely by plan and insurer. Always verify benefits and authorization requirements for each patient."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - Diagnosis",
+            "items": [
+              "Diagnosis of MASLD established by appropriate clinical, laboratory, and imaging findings.",
+              "Documentation of metabolic risk factors (e.g., obesity, insulin resistance, dyslipidemia).",
+              "Exclusion of other causes of liver disease."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - Treatment",
+            "items": [
+              "Initial management with lifestyle modifications for a specified duration (e.g., 3-6 months).",
+              "For pharmacotherapy, criteria often include evidence of advanced fibrosis (F2-F4) or cirrhosis, and failure or contraindication to lifestyle interventions.",
+              "Specific criteria for bariatric surgery if considered for obesity management in MASLD."
+            ]
+          },
+          {
+            "heading": "Required Documentation - Clinical Records",
+            "items": [
+              "Comprehensive medical history and physical examination notes.",
+              "All relevant laboratory results (liver enzymes, glucose, lipids, fibrosis markers).",
+              "Imaging reports (ultrasound, FibroScan, MRI elastography).",
+              "Consultation notes from gastroenterologist/hepatologist, if applicable.",
+              "Documentation of patient engagement in diet and exercise programs."
+            ]
+          },
+          {
+            "heading": "Required Documentation - Prior Authorization Form",
+            "items": [
+              "Completed insurer-specific prior authorization form.",
+              "Letter of medical necessity detailing the patient’s condition, rationale for treatment, and expected outcomes."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization requests online via the insurer’s provider portal or by fax.",
+              "Adhere to the insurer’s specific claims submission guidelines.",
+              "Be prepared to provide additional clinical information or participate in peer-to-peer reviews if requested."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization.",
+              "Failure to meet specific plan medical policy criteria for advanced diagnostics or treatments.",
+              "Insufficient documentation of disease severity or progression.",
+              "Lack of documented trial and failure of conservative management (lifestyle changes).",
+              "Experimental or investigational status of requested treatment."
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Reimbursement rates vary significantly by plan and negotiated contracts. Prior authorization is a critical step to ensure coverage and avoid patient financial responsibility."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify patient benefits and prior authorization requirements before rendering services.",
+              "Familiarize yourself with the medical policies of common private insurers for MASLD.",
+              "Provide thorough and detailed clinical documentation, emphasizing medical necessity and adherence to guidelines.",
+              "Be proactive in submitting all required forms and supporting documentation to avoid delays."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Covered with PA",
+            "notes": "Requires PA for advanced imaging and new pharmacotherapies; criteria vary by state plan."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered with PA",
+            "notes": "Specific medical policies for MASLD/NASH, often requiring PA for non-routine treatments."
+          },
+          {
+            "payer": "Aetna",
+            "status": "Covered with PA",
+            "notes": "PA required for certain MASLD-related services and medications; follows evidence-based guidelines."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment (navigates to /masld)",
+        "href": "/masld"
+      },
+      {
+        "heading": "Procedure Codes (Card)",
+        "kind": "prose",
+        "text": "Card header: Procedure Codes. Each CPT code lists a badge with CPT number, RVU badge, description, Device/Access field, an 'Included in this code (do NOT bill separately):' list, and an italic note."
+      },
+      {
+        "heading": "ICD-10 Diagnosis Codes (Card)",
+        "kind": "prose",
+        "text": "Card header: ICD-10 Diagnosis Codes. Each ICD code shows a code badge (highlighted if required/primary), description, notes, and a 'Primary' badge when required is true (K76.0 is marked Primary)."
+      },
+      {
+        "heading": "Payer-Specific Authorization Requirements (Card)",
+        "kind": "prose",
+        "text": "Card header: Payer-Specific Authorization Requirements. Interactive tabs for Medicare, Medicaid, Private Insurance. For each payer the page shows a Prior Auth badge ('Prior Auth Required' or 'No Prior Auth (FFS)'), a coverage status badge, an amber prior-auth note callout, an overview, Coverage Criteria, Required Documentation, Submission Process (numbered), Common Denial Reasons, Known Payer Policies table, a blue Reimbursement Note callout, and Authorization Tips."
+      }
+    ],
+    "raw": {
+      "markdown": "# MASLD Clinical Compass\n## Metabolic Dysfunction-Associated Steatotic Liver Disease Insurance Authorization Guide\n\n[Button] Back to Assessment (onClick -> /masld)\n\n---\n\n## Procedure Codes (CPT Codes Card)\n\n### CPT 99213  |  RVU 0.97\nOffice or other outpatient visit for the evaluation and management of an established patient, which requires at least 2 of 3 medical decision making components (low complexity) or 30-44 minutes of total time on the date of the encounter.\n\nDevice/Access: N/A\n\nIncluded in this code (do NOT bill separately):\n- Comprehensive history and examination\n- Medical decision making of low complexity\n- Counseling and coordination of care\n\nNote: Used for routine follow-up and management of MASLD. Specific advanced diagnostics or treatments may require separate coding or prior authorization.\n\n---\n\n## ICD-10 Diagnosis Codes Card\n\n- **K76.0** (Primary) — Fatty (change of) liver, not elsewhere classified. Notes: Primary diagnosis code for Metabolic Dysfunction-Associated Steatotic Liver Disease (MASLD). Often used in conjunction with other codes for metabolic comorbidities.\n- **E66.9** — Obesity, unspecified. Notes: Common comorbidity with MASLD, often used to support medical necessity for interventions.\n- **E11.9** — Type 2 diabetes mellitus without complications. Notes: Frequently co-occurs with MASLD and is a significant risk factor.\n- **I10** — Essential (primary) hypertension. Notes: Another common metabolic comorbidity associated with MASLD.\n\n---\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\nBadges: No Prior Auth (FFS); Covered with Medical Necessity\n\nPrior Auth Note: Generally, routine office visits (CPT 99213) for MASLD management do not require prior authorization. However, newer pharmacotherapies (e.g., resmetirom) or advanced diagnostic imaging (e.g., MRI elastography) may require prior authorization based on local coverage determinations (LCDs) or national coverage determinations (NCDs). Always verify with the specific Medicare Administrative Contractor (MAC).\n\nOverview: Medicare covers medically necessary services for the diagnosis and management of MASLD. Coverage typically includes evaluation and management services, laboratory tests, and imaging studies. Newer treatments may have specific coverage criteria.\n\n#### Coverage Criteria\n**Diagnosis**\n- Clinical diagnosis of MASLD based on imaging (ultrasound, CT, MRI) or liver biopsy.\n- Exclusion of significant alcohol consumption and other causes of chronic liver disease.\n- Presence of metabolic risk factors (e.g., obesity, type 2 diabetes, dyslipidemia, hypertension).\n\n**Treatment**\n- Documentation of lifestyle modifications (diet, exercise) attempted for at least 6 months.\n- For pharmacotherapy, specific criteria may apply, such as evidence of advanced fibrosis (F2-F4) or cirrhosis, and failure or contraindication to other treatments.\n\n#### Required Documentation\n**Clinical Records**\n- Detailed physician notes documenting MASLD diagnosis, metabolic risk factors, and treatment plan.\n- Results of liver function tests, lipid panel, glucose, HbA1c.\n- Imaging reports (ultrasound, FibroScan, MRI elastography) confirming steatosis and/or fibrosis.\n- Liver biopsy results, if performed.\n- Documentation of lifestyle intervention counseling and patient adherence.\n\n#### Submission Process\n1. Submit claims electronically via EDI (837P).\n2. Ensure all CPT and ICD-10 codes are accurate and reflect the services rendered and patient condition.\n3. Attach supporting documentation (e.g., progress notes, lab results) if requested by the MAC or for specific services requiring medical review.\n\n#### Common Denial Reasons\n- Lack of documented medical necessity for advanced diagnostics or new pharmacotherapies.\n- Insufficient documentation of metabolic risk factors or severity of liver disease.\n- Failure to demonstrate prior attempts at lifestyle modifications.\n- Incorrect coding or missing modifiers.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Noridian Healthcare Solutions (MAC) | Covered | Covers medically reasonable and necessary services for MASLD diagnosis and management. |\n| Palmetto GBA (MAC) | Covered | Follows general Medicare guidelines; specific criteria for advanced imaging or therapies may apply. |\n\n#### Reimbursement Note\nReimbursement for MASLD management is generally aligned with standard E/M services and diagnostic tests. Novel treatments may have specific reimbursement pathways or require prior authorization and appeals processes.\n\n#### Authorization Tips\n- Clearly document all metabolic risk factors and the diagnostic pathway for MASLD.\n- Emphasize patient education and counseling on lifestyle changes in clinical notes.\n- Stay updated on MAC-specific LCDs for MASLD-related services and new treatments.\n- For novel therapies, be prepared to submit extensive clinical documentation to support medical necessity.\n\n---\n\n### Medicaid\nBadges: Prior Auth Required; Varies by State; Often Requires PA\n\nPrior Auth Note: Prior authorization is often required for many services beyond routine office visits, especially for advanced diagnostics, specialist referrals, and all pharmacotherapies for MASLD. Requirements vary significantly by state Medicaid program. Always verify specific state guidelines.\n\nOverview: Medicaid coverage for MASLD varies by state. While basic E/M and essential lab tests are typically covered, advanced imaging, specialist consultations, and pharmacologic treatments often require prior authorization and adherence to strict medical necessity criteria.\n\n#### Coverage Criteria\n**Diagnosis**\n- Clinical diagnosis of MASLD confirmed by imaging or biopsy.\n- Documentation of metabolic syndrome components.\n- Exclusion of other liver diseases.\n\n**Treatment**\n- Evidence of significant liver fibrosis (e.g., F2 or higher) or cirrhosis.\n- Documented failure of at least 3-6 months of supervised lifestyle interventions.\n- Specific pharmacotherapy criteria, if applicable, based on state formulary and guidelines.\n\n#### Required Documentation\n**Clinical Records**\n- Physician orders and progress notes.\n- Lab results (LFTs, glucose, lipids, viral hepatitis panel).\n- Imaging reports (ultrasound, FibroScan).\n- Referral notes from primary care to specialist, if applicable.\n- Documentation of patient participation in lifestyle modification programs.\n\n**Prior Authorization Form**\n- Completed state-specific Medicaid prior authorization form.\n- Letter of medical necessity from the treating physician.\n\n#### Submission Process\n1. Submit prior authorization requests through the state Medicaid portal or designated fax/mail.\n2. Follow state-specific billing guidelines for claims submission.\n3. Be prepared for potential delays and requests for additional information.\n\n#### Common Denial Reasons\n- Lack of prior authorization for covered services.\n- Failure to meet state-specific medical necessity criteria.\n- Incomplete or illegible documentation.\n- Treatment requested is not on the state formulary or preferred drug list.\n- Insufficient evidence of disease progression or severity.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| California Medi-Cal | Covered with PA | Covers MASLD management with medical necessity; specific criteria for advanced therapies. |\n| New York Medicaid | Covered with PA | Requires prior authorization for many specialty medications and advanced diagnostics. |\n\n#### Reimbursement Note\nMedicaid reimbursement rates are typically lower than Medicare or private insurance. Adherence to strict coding and authorization protocols is crucial to avoid denials.\n\n#### Authorization Tips\n- Thoroughly understand and adhere to your state’s specific Medicaid guidelines for MASLD.\n- Initiate prior authorization early for all potentially covered services beyond routine care.\n- Maintain meticulous records of all diagnostic findings, treatment plans, and patient responses.\n- Clearly articulate the medical necessity and expected benefits of the requested treatment in the PA request.\n\n---\n\n### Private Insurance\nBadges: Prior Auth Required; Varies by Plan; Often Requires PA\n\nPrior Auth Note: Prior authorization is frequently required for specialist referrals, advanced diagnostic imaging (e.g., MRI elastography, liver biopsy), and all new pharmacotherapies for MASLD. Requirements vary widely by plan and insurer. Always verify benefits and authorization requirements for each patient.\n\nOverview: Private insurance coverage for MASLD is highly variable, depending on the specific plan (HMO, PPO, POS) and insurer. Most plans cover medically necessary diagnostic and management services, but prior authorization is a common requirement for non-routine care, particularly for new or expensive treatments.\n\n#### Coverage Criteria\n**Diagnosis**\n- Diagnosis of MASLD established by appropriate clinical, laboratory, and imaging findings.\n- Documentation of metabolic risk factors (e.g., obesity, insulin resistance, dyslipidemia).\n- Exclusion of other causes of liver disease.\n\n**Treatment**\n- Initial management with lifestyle modifications for a specified duration (e.g., 3-6 months).\n- For pharmacotherapy, criteria often include evidence of advanced fibrosis (F2-F4) or cirrhosis, and failure or contraindication to lifestyle interventions.\n- Specific criteria for bariatric surgery if considered for obesity management in MASLD.\n\n#### Required Documentation\n**Clinical Records**\n- Comprehensive medical history and physical examination notes.\n- All relevant laboratory results (liver enzymes, glucose, lipids, fibrosis markers).\n- Imaging reports (ultrasound, FibroScan, MRI elastography).\n- Consultation notes from gastroenterologist/hepatologist, if applicable.\n- Documentation of patient engagement in diet and exercise programs.\n\n**Prior Authorization Form**\n- Completed insurer-specific prior authorization form.\n- Letter of medical necessity detailing the patient’s condition, rationale for treatment, and expected outcomes.\n\n#### Submission Process\n1. Submit prior authorization requests online via the insurer’s provider portal or by fax.\n2. Adhere to the insurer’s specific claims submission guidelines.\n3. Be prepared to provide additional clinical information or participate in peer-to-peer reviews if requested.\n\n#### Common Denial Reasons\n- Lack of prior authorization.\n- Failure to meet specific plan medical policy criteria for advanced diagnostics or treatments.\n- Insufficient documentation of disease severity or progression.\n- Lack of documented trial and failure of conservative management (lifestyle changes).\n- Experimental or investigational status of requested treatment.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Blue Cross Blue Shield | Covered with PA | Requires PA for advanced imaging and new pharmacotherapies; criteria vary by state plan. |\n| UnitedHealthcare | Covered with PA | Specific medical policies for MASLD/NASH, often requiring PA for non-routine treatments. |\n| Aetna | Covered with PA | PA required for certain MASLD-related services and medications; follows evidence-based guidelines. |\n\n#### Reimbursement Note\nReimbursement rates vary significantly by plan and negotiated contracts. Prior authorization is a critical step to ensure coverage and avoid patient financial responsibility.\n\n#### Authorization Tips\n- Always verify patient benefits and prior authorization requirements before rendering services.\n- Familiarize yourself with the medical policies of common private insurers for MASLD.\n- Provide thorough and detailed clinical documentation, emphasizing medical necessity and adherence to guidelines.\n- Be proactive in submitting all required forms and supporting documentation to avoid delays.\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "RVU", "Description", "Device/Access", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            [
+              "99213",
+              "0.97",
+              "Office or other outpatient visit for the evaluation and management of an established patient, which requires at least 2 of 3 medical decision making components (low complexity) or 30-44 minutes of total time on the date of the encounter.",
+              "N/A",
+              "Comprehensive history and examination; Medical decision making of low complexity; Counseling and coordination of care",
+              "Used for routine follow-up and management of MASLD. Specific advanced diagnostics or treatments may require separate coding or prior authorization."
+            ]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["Code", "Description", "Notes", "Required/Primary"],
+          "rows": [
+            ["K76.0", "Fatty (change of) liver, not elsewhere classified", "Primary diagnosis code for Metabolic Dysfunction-Associated Steatotic Liver Disease (MASLD). Often used in conjunction with other codes for metabolic comorbidities.", "true (Primary)"],
+            ["E66.9", "Obesity, unspecified", "Common comorbidity with MASLD, often used to support medical necessity for interventions.", "false"],
+            ["E11.9", "Type 2 diabetes mellitus without complications", "Frequently co-occurs with MASLD and is a significant risk factor.", "false"],
+            ["I10", "Essential (primary) hypertension", "Another common metabolic comorbidity associated with MASLD.", "false"]
+          ]
+        },
+        {
+          "name": "Medicare - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Noridian Healthcare Solutions (MAC)", "Covered", "Covers medically reasonable and necessary services for MASLD diagnosis and management."],
+            ["Palmetto GBA (MAC)", "Covered", "Follows general Medicare guidelines; specific criteria for advanced imaging or therapies may apply."]
+          ]
+        },
+        {
+          "name": "Medicaid - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["California Medi-Cal", "Covered with PA", "Covers MASLD management with medical necessity; specific criteria for advanced therapies."],
+            ["New York Medicaid", "Covered with PA", "Requires prior authorization for many specialty medications and advanced diagnostics."]
+          ]
+        },
+        {
+          "name": "Private Insurance - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield", "Covered with PA", "Requires PA for advanced imaging and new pharmacotherapies; criteria vary by state plan."],
+            ["UnitedHealthcare", "Covered with PA", "Specific medical policies for MASLD/NASH, often requiring PA for non-routine treatments."],
+            ["Aetna", "Covered with PA", "PA required for certain MASLD-related services and medications; follows evidence-based guidelines."]
+          ]
+        }
+      ]
+    }
+  }
+}

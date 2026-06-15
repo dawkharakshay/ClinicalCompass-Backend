@@ -1,0 +1,477 @@
+{
+  "title": "Prostatic Artery Embolization Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "MensHealthAuthGuide.tsx",
+    "title": "Men's Health Clinical Compass",
+    "subtitle": "PAE Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "37243",
+        "description": "Vascular embolization or occlusion, inclusive of all radiological supervision and interpretation, intraprocedural roadmapping, and imaging guidance necessary to complete the intervention; for tumors, organ ischemia, or infarction",
+        "device": "Embospheres, PVA particles, coils (various manufacturers)",
+        "access": "Bilateral prostatic artery catheterization via femoral or radial approach",
+        "rvu": "7.0",
+        "includes": [
+          "All vascular access for the procedure",
+          "Fluoroscopic guidance and roadmapping",
+          "Radiologic supervision and interpretation",
+          "Selective catheterization of prostatic arteries",
+          "Contrast injections and angiography during the procedure"
+        ],
+        "note": "Category I CPT code. No prior authorization required for Traditional Medicare FFS. Bill once per session regardless of bilateral embolization."
+      },
+      {
+        "code": "36245",
+        "description": "Selective catheter placement, arterial system; each first order abdominal, pelvic, or lower extremity artery branch, within a vascular family",
+        "device": "N/A — catheter placement code",
+        "access": "First-order selective catheterization (e.g., internal iliac artery)",
+        "rvu": "2.0",
+        "includes": [
+          "Catheter placement into first-order branch vessel"
+        ],
+        "note": "May be billed in addition to 37243 for catheterization work not bundled into the embolization code. Verify payer bundling rules."
+      },
+      {
+        "code": "36246",
+        "description": "Selective catheter placement, arterial system; initial second order abdominal, pelvic, or lower extremity artery branch within a vascular family",
+        "device": "N/A — catheter placement code",
+        "access": "Second-order selective catheterization (e.g., superior vesical artery)",
+        "rvu": "1.5",
+        "includes": [
+          "Catheter placement into second-order branch vessel"
+        ],
+        "note": "Bill for each additional second-order vessel catheterized. Subject to NCCI edits — verify bundling with 37243."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "N40.1",
+        "description": "Benign prostatic hyperplasia with lower urinary tract symptoms",
+        "notes": "Primary diagnosis for most PAE cases. Requires documented LUTS (IPSS ≥ 8).",
+        "required": true,
+        "type": "Primary"
+      },
+      {
+        "code": "N40.0",
+        "description": "Benign prostatic hyperplasia without lower urinary tract symptoms",
+        "notes": "Use when BPH is confirmed but LUTS not the primary complaint (e.g., urinary retention).",
+        "required": true,
+        "type": "Primary"
+      },
+      {
+        "code": "R33.8",
+        "description": "Other retention of urine",
+        "notes": "Secondary code when urinary retention is a presenting symptom.",
+        "required": false,
+        "type": "Secondary"
+      },
+      {
+        "code": "N13.8",
+        "description": "Other obstructive and reflux uropathy",
+        "notes": "Secondary code for obstructive uropathy secondary to BPH.",
+        "required": false,
+        "type": "Secondary"
+      },
+      {
+        "code": "R35.0",
+        "description": "Frequency of micturition",
+        "notes": "Secondary code for urinary frequency as a LUTS component.",
+        "required": false,
+        "type": "Secondary"
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare FFS (Traditional Medicare)",
+        "tabLabel": "Medicare FFS",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Traditional Medicare FFS does NOT require prior authorization for CPT 37243 (Category I). Medicare Advantage plans are separate — many DO require prior auth.",
+        "coverageStatus": "Covered",
+        "overview": "Traditional Medicare covers PAE as medically necessary for BPH when clinical criteria are met. CPT 37243 is a Category I code with established Medicare reimbursement. No NCD specifically for PAE; coverage is based on medical necessity under general embolization coverage.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Diagnosis",
+            "items": [
+              "Confirmed BPH (N40.0 or N40.1)",
+              "IPSS score ≥ 8 (moderate to severe symptoms)",
+              "Prostate volume ≥ 40 cc (documented by TRUS, MRI, or CT)"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Prior Treatment",
+            "items": [
+              "Trial of alpha-blocker therapy (≥ 3-6 months) — tamsulosin, alfuzosin, silodosin, or terazosin",
+              "5-alpha reductase inhibitor trial if prostate ≥ 40g",
+              "Documented failure, intolerance, or contraindication to medical therapy"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Clinical Indications",
+            "items": [
+              "Functionally limiting LUTS despite medical therapy",
+              "Urinary retention (acute or chronic)",
+              "Recurrent UTIs secondary to BPH",
+              "Bladder stones or renal insufficiency secondary to BPH"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Exclusions",
+            "items": [
+              "Active urinary tract infection (treat before procedure)",
+              "Uncorrectable coagulopathy",
+              "Allergy to iodinated contrast (relative — premedicate)",
+              "Prostate cancer not excluded (PSA + biopsy if indicated)"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Clinical Records",
+            "items": [
+              "Urology or IR consult note documenting BPH diagnosis and LUTS",
+              "IPSS (International Prostate Symptom Score) — documented score",
+              "Prostate volume measurement (TRUS, MRI, or CT report)",
+              "PSA level (to exclude prostate cancer)",
+              "Urinalysis and urine culture (to exclude UTI)"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Prior Treatment Records",
+            "items": [
+              "Prescription records or pharmacy history for alpha-blocker/5-ARI",
+              "Documentation of treatment duration and response (or lack thereof)",
+              "Reason for discontinuation if applicable"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Imaging",
+            "items": [
+              "Pelvic MRI or CT (preferred) or TRUS report with prostate volume",
+              "CTA or MRA if available for pre-procedure planning"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify patient has Traditional Medicare (not Medicare Advantage) — check Medicare card or eligibility portal",
+              "No prior authorization required for Traditional Medicare FFS",
+              "Document medical necessity in procedure note and operative report",
+              "Bill CPT 37243 as primary code; add 36245/36246 if applicable",
+              "Include ICD-10 N40.1 or N40.0 as primary diagnosis code",
+              "Submit claim to Medicare Part B (professional) or Part A (facility)"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Insufficient documentation of medical therapy failure (no duration or response documented)",
+              "Missing IPSS score in clinical notes",
+              "Prostate volume not documented or below threshold",
+              "Active UTI not treated prior to procedure",
+              "Prostate cancer not excluded (missing PSA or biopsy results)",
+              "Medicare Advantage plan denied — requires separate PA process"
+            ]
+          },
+          {
+            "heading": "Billing & Authorization Tips",
+            "items": [
+              "Always confirm Traditional Medicare vs. Medicare Advantage before scheduling — they have different rules",
+              "Document IPSS score numerically in the chart — not just \"moderate symptoms\"",
+              "Include prostate volume in cc in the procedure indication",
+              "If patient had TURP or other BPH surgery previously, document why PAE is now indicated",
+              "Medicare patient co-pay for CPT 37243 averages $1,179 at ASC — counsel patient in advance"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicare average patient cost for CPT 37243 is approximately $1,179 at ASC settings (2025 data). Hospital outpatient rates are higher. Professional fee billed separately from facility fee."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Medicare FFS (Traditional)",
+            "status": "Covered",
+            "notes": "Category I CPT — no PA required. Medical necessity documentation required."
+          },
+          {
+            "payer": "Medicare Advantage (varies)",
+            "status": "Variable — PA often required",
+            "notes": "Each MA plan sets its own PA requirements. Verify with specific plan."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "tabLabel": "Medicaid",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is required in most state Medicaid programs. Coverage and criteria vary significantly by state.",
+        "coverageStatus": "Covered (with PA, most states)",
+        "overview": "Most state Medicaid programs cover PAE for BPH with prior authorization. Coverage criteria generally mirror Medicare but may include additional state-specific requirements. Some states may classify PAE as investigational — verify with the specific state Medicaid program.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Standard Criteria",
+            "items": [
+              "Confirmed BPH with documented LUTS",
+              "IPSS ≥ 8",
+              "Prostate volume ≥ 40 cc",
+              "Failure of medical therapy (alpha-blocker ≥ 3-6 months)",
+              "Urologist or IR consultation documented"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — State-Specific",
+            "items": [
+              "Some states require urologist referral specifically",
+              "Some states require peer-to-peer review for approval",
+              "Verify state-specific prostate volume thresholds",
+              "Some states require prior TURP failure or contraindication"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Required for PA Submission",
+            "items": [
+              "Completed state PA form",
+              "Urology or IR consult note",
+              "IPSS score documentation",
+              "Prostate volume (imaging report)",
+              "Medical therapy trial documentation",
+              "PSA and urinalysis results"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Obtain state-specific PA form from Medicaid portal or payer website",
+              "Complete clinical information section with IPSS, prostate volume, and treatment history",
+              "Attach supporting clinical documentation (consult note, imaging, labs)",
+              "Submit via state Medicaid portal, fax, or mail per state requirements",
+              "Allow 5-15 business days for PA determination (urgent requests may be expedited)",
+              "If denied, initiate peer-to-peer review within the appeal window (typically 30-60 days)"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Incomplete PA form — missing required fields",
+              "Insufficient medical therapy trial documentation",
+              "State classifies PAE as investigational (check state policy)",
+              "Missing specialist (urology) referral",
+              "Prostate volume below state threshold"
+            ]
+          },
+          {
+            "heading": "Billing & Authorization Tips",
+            "items": [
+              "For dual-eligible patients (Medicare + Medicaid), bill Medicare first — Medicaid is secondary",
+              "Check your state Medicaid fee schedule — reimbursement is often 40-60% of Medicare rates",
+              "Some states have Medicaid managed care plans with their own PA processes — verify the correct plan",
+              "Document the specific alpha-blocker used, dose, duration, and reason for failure"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Medicaid reimbursement for CPT 37243 is typically 40-60% of Medicare rates and varies significantly by state. Some states may have carved-out radiology benefits through managed care organizations."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Medicaid (most states)",
+            "status": "Covered with PA",
+            "notes": "Prior auth required. Criteria similar to Medicare."
+          },
+          {
+            "payer": "Dual-eligible patients",
+            "status": "Bill Medicare first",
+            "notes": "Medicare pays primary; Medicaid covers remaining cost-sharing."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private / Commercial Insurance",
+        "tabLabel": "Private / Commercial",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is required by virtually all commercial payers. Coverage varies widely — some major payers consider PAE investigational.",
+        "coverageStatus": "Variable — PA required",
+        "overview": "Commercial payer coverage for PAE is highly variable. Aetna and UHC generally cover PAE with prior auth and medical necessity criteria. Humana and Cigna have historically classified PAE as investigational and non-covered in many plans. BCBS coverage varies significantly by regional plan. Always verify the specific plan policy before scheduling.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria — Typical PA Criteria",
+            "items": [
+              "Confirmed BPH with LUTS (IPSS ≥ 8)",
+              "Prostate volume ≥ 40-80 cc (varies by payer)",
+              "Failure of alpha-blocker therapy ≥ 6 months",
+              "No active UTI or bladder stones",
+              "No prostate cancer (PSA ≤ 4.0 or biopsy negative)",
+              "Urologist consultation and referral"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria — Additional Requirements (Some Payers)",
+            "items": [
+              "Urodynamic study results",
+              "Uroflowmetry documentation",
+              "Post-void residual volume measurement",
+              "MRI prostate for anatomy assessment"
+            ]
+          },
+          {
+            "heading": "Required Documentation — Clinical Documentation",
+            "items": [
+              "Urology consult note with BPH diagnosis and IPSS",
+              "Prostate volume (TRUS, MRI, or CT)",
+              "PSA level and biopsy results if PSA elevated",
+              "Alpha-blocker prescription history (≥ 6 months)",
+              "Urinalysis and urine culture",
+              "Uroflowmetry or urodynamics if available"
+            ]
+          },
+          {
+            "heading": "Required Documentation — PA Submission",
+            "items": [
+              "Completed payer-specific PA form",
+              "Letter of medical necessity from ordering physician",
+              "Supporting peer-reviewed literature (SHAM trial, ROPE registry)",
+              "CPT and ICD-10 codes on PA request"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify insurance benefits and PA requirements via payer portal or provider services line",
+              "Obtain payer-specific PA form and submit with complete clinical documentation",
+              "Include letter of medical necessity citing SHAM trial (NEJM 2021) and AUA BPH Guidelines",
+              "Allow 5-10 business days for PA determination",
+              "If denied, request peer-to-peer review with medical director within 5 business days",
+              "If upheld on peer-to-peer, file formal appeal with additional literature",
+              "Consider patient assistance programs for self-pay or denied cases"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Payer classifies PAE as investigational or experimental (Humana, Cigna)",
+              "Insufficient medical therapy trial duration (< 6 months)",
+              "Missing urology specialist referral",
+              "Prostate volume below payer threshold",
+              "Prostate cancer not excluded",
+              "Procedure performed at non-contracted facility"
+            ]
+          },
+          {
+            "heading": "Billing & Authorization Tips",
+            "items": [
+              "Always call provider services before scheduling to verify PA requirements and coverage status",
+              "For Humana/Cigna/Anthem denials, request peer-to-peer immediately — cite SHAM trial (Abt et al., NEJM 2021)",
+              "Include the ROPE registry data (>2,000 patients) in appeal letters to demonstrate safety and efficacy",
+              "AUA BPH Guidelines 2023 include PAE as a recognized treatment option — cite in PA letters",
+              "If denied as investigational, appeal citing FDA 510(k) clearance for embolic agents used",
+              "Document quality-of-life impact (IPSS, QoL score) to strengthen medical necessity argument"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Commercial reimbursement for CPT 37243 varies widely by plan and contract. Typical negotiated rates range from $2,000-$6,000 for the professional component. Facility fees are billed separately. Verify contracted rates before scheduling."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Aetna (CPB 0079)",
+            "status": "Covered with criteria",
+            "notes": "Medically necessary as alternative to TURP. Last review 04/15/2026."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered with PA",
+            "notes": "Prior auth required. Medical necessity criteria apply."
+          },
+          {
+            "payer": "BCBS (varies by region)",
+            "status": "Variable",
+            "notes": "Coverage varies by regional plan. Many plans cover with PA; some classify as investigational."
+          },
+          {
+            "payer": "Humana",
+            "status": "Investigational — Non-covered",
+            "notes": "Many Humana plans classify PAE as investigational. Verify specific plan."
+          },
+          {
+            "payer": "Cigna",
+            "status": "Investigational — Non-covered",
+            "notes": "Cigna generally classifies PAE as investigational for BPH."
+          },
+          {
+            "payer": "Anthem",
+            "status": "Investigational — Non-covered",
+            "notes": "Many Anthem plans classify PAE as investigational. Verify specific plan."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Navigation Actions",
+        "kind": "list",
+        "items": [
+          "Back to Assessment (button) → navigates to /menshealth",
+          "Generate Appeal Letter (button) → navigates to /menshealth/appeal"
+        ]
+      },
+      {
+        "heading": "Disclaimer",
+        "kind": "prose",
+        "text": "Disclaimer: Coverage policies change frequently. Always verify current payer policies directly with the insurance plan before scheduling procedures. This guide references Aetna CPB 0079 (reviewed 04/15/2026), AUA BPH Guidelines 2023, and SHAM trial data (Abt et al., NEJM 2021). Last updated: April 2026."
+      }
+    ],
+    "raw": {
+      "markdown": "# Men's Health Clinical Compass\n## PAE Insurance Authorization Guide\n\n_Route: /menshealth/auth-guide_\n_Static reference page — no server calls, no cloud storage. Displays CPT codes, ICD-10 codes, and required documentation by payer type._\n\n## Page Navigation Actions\n- Back to Assessment (button) → navigates to /menshealth\n- Generate Appeal Letter (button) → navigates to /menshealth/appeal\n\n---\n\n## Procedure Codes (CPT)\n\n### CPT 37243 — RVU 7.0\nVascular embolization or occlusion, inclusive of all radiological supervision and interpretation, intraprocedural roadmapping, and imaging guidance necessary to complete the intervention; for tumors, organ ischemia, or infarction\n- **Device:** Embospheres, PVA particles, coils (various manufacturers)\n- **Access:** Bilateral prostatic artery catheterization via femoral or radial approach\n\n**Included in this code (do NOT bill separately):**\n- All vascular access for the procedure\n- Fluoroscopic guidance and roadmapping\n- Radiologic supervision and interpretation\n- Selective catheterization of prostatic arteries\n- Contrast injections and angiography during the procedure\n\n_Note: Category I CPT code. No prior authorization required for Traditional Medicare FFS. Bill once per session regardless of bilateral embolization._\n\n### CPT 36245 — RVU 2.0\nSelective catheter placement, arterial system; each first order abdominal, pelvic, or lower extremity artery branch, within a vascular family\n- **Device:** N/A — catheter placement code\n- **Access:** First-order selective catheterization (e.g., internal iliac artery)\n\n**Included in this code (do NOT bill separately):**\n- Catheter placement into first-order branch vessel\n\n_Note: May be billed in addition to 37243 for catheterization work not bundled into the embolization code. Verify payer bundling rules._\n\n### CPT 36246 — RVU 1.5\nSelective catheter placement, arterial system; initial second order abdominal, pelvic, or lower extremity artery branch within a vascular family\n- **Device:** N/A — catheter placement code\n- **Access:** Second-order selective catheterization (e.g., superior vesical artery)\n\n**Included in this code (do NOT bill separately):**\n- Catheter placement into second-order branch vessel\n\n_Note: Bill for each additional second-order vessel catheterized. Subject to NCCI edits — verify bundling with 37243._\n\n---\n\n## ICD-10 Diagnosis Codes\n\n| Code | Description | Usage Notes | Type |\n| --- | --- | --- | --- |\n| N40.1 | Benign prostatic hyperplasia with lower urinary tract symptoms | Primary diagnosis for most PAE cases. Requires documented LUTS (IPSS ≥ 8). | Primary |\n| N40.0 | Benign prostatic hyperplasia without lower urinary tract symptoms | Use when BPH is confirmed but LUTS not the primary complaint (e.g., urinary retention). | Primary |\n| R33.8 | Other retention of urine | Secondary code when urinary retention is a presenting symptom. | Secondary |\n| N13.8 | Other obstructive and reflux uropathy | Secondary code for obstructive uropathy secondary to BPH. | Secondary |\n| R35.0 | Frequency of micturition | Secondary code for urinary frequency as a LUTS component. | Secondary |\n\n---\n\n## Prior Authorization by Payer Type\n\n### Medicare FFS (Traditional Medicare)\n**Prior Auth:** No Prior Auth (FFS) — **Coverage Status:** Covered\n\n> Traditional Medicare FFS does NOT require prior authorization for CPT 37243 (Category I). Medicare Advantage plans are separate — many DO require prior auth.\n\nTraditional Medicare covers PAE as medically necessary for BPH when clinical criteria are met. CPT 37243 is a Category I code with established Medicare reimbursement. No NCD specifically for PAE; coverage is based on medical necessity under general embolization coverage.\n\n**Coverage Criteria**\n\n_Diagnosis_\n- Confirmed BPH (N40.0 or N40.1)\n- IPSS score ≥ 8 (moderate to severe symptoms)\n- Prostate volume ≥ 40 cc (documented by TRUS, MRI, or CT)\n\n_Prior Treatment_\n- Trial of alpha-blocker therapy (≥ 3-6 months) — tamsulosin, alfuzosin, silodosin, or terazosin\n- 5-alpha reductase inhibitor trial if prostate ≥ 40g\n- Documented failure, intolerance, or contraindication to medical therapy\n\n_Clinical Indications_\n- Functionally limiting LUTS despite medical therapy\n- Urinary retention (acute or chronic)\n- Recurrent UTIs secondary to BPH\n- Bladder stones or renal insufficiency secondary to BPH\n\n_Exclusions_\n- Active urinary tract infection (treat before procedure)\n- Uncorrectable coagulopathy\n- Allergy to iodinated contrast (relative — premedicate)\n- Prostate cancer not excluded (PSA + biopsy if indicated)\n\n**Required Documentation**\n\n_Clinical Records_\n- Urology or IR consult note documenting BPH diagnosis and LUTS\n- IPSS (International Prostate Symptom Score) — documented score\n- Prostate volume measurement (TRUS, MRI, or CT report)\n- PSA level (to exclude prostate cancer)\n- Urinalysis and urine culture (to exclude UTI)\n\n_Prior Treatment Records_\n- Prescription records or pharmacy history for alpha-blocker/5-ARI\n- Documentation of treatment duration and response (or lack thereof)\n- Reason for discontinuation if applicable\n\n_Imaging_\n- Pelvic MRI or CT (preferred) or TRUS report with prostate volume\n- CTA or MRA if available for pre-procedure planning\n\n**Submission Process**\n1. Verify patient has Traditional Medicare (not Medicare Advantage) — check Medicare card or eligibility portal\n2. No prior authorization required for Traditional Medicare FFS\n3. Document medical necessity in procedure note and operative report\n4. Bill CPT 37243 as primary code; add 36245/36246 if applicable\n5. Include ICD-10 N40.1 or N40.0 as primary diagnosis code\n6. Submit claim to Medicare Part B (professional) or Part A (facility)\n\n**Common Denial Reasons**\n- Insufficient documentation of medical therapy failure (no duration or response documented)\n- Missing IPSS score in clinical notes\n- Prostate volume not documented or below threshold\n- Active UTI not treated prior to procedure\n- Prostate cancer not excluded (missing PSA or biopsy results)\n- Medicare Advantage plan denied — requires separate PA process\n\n**Known Payer Policies**\n\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicare FFS (Traditional) | Covered | Category I CPT — no PA required. Medical necessity documentation required. |\n| Medicare Advantage (varies) | Variable — PA often required | Each MA plan sets its own PA requirements. Verify with specific plan. |\n\n**Billing & Authorization Tips**\n- Always confirm Traditional Medicare vs. Medicare Advantage before scheduling — they have different rules\n- Document IPSS score numerically in the chart — not just \"moderate symptoms\"\n- Include prostate volume in cc in the procedure indication\n- If patient had TURP or other BPH surgery previously, document why PAE is now indicated\n- Medicare patient co-pay for CPT 37243 averages $1,179 at ASC — counsel patient in advance\n\n_Reimbursement Note: Medicare average patient cost for CPT 37243 is approximately $1,179 at ASC settings (2025 data). Hospital outpatient rates are higher. Professional fee billed separately from facility fee._\n\n### Medicaid\n**Prior Auth:** Prior Auth Required — **Coverage Status:** Covered (with PA, most states)\n\n> Prior authorization is required in most state Medicaid programs. Coverage and criteria vary significantly by state.\n\nMost state Medicaid programs cover PAE for BPH with prior authorization. Coverage criteria generally mirror Medicare but may include additional state-specific requirements. Some states may classify PAE as investigational — verify with the specific state Medicaid program.\n\n**Coverage Criteria**\n\n_Standard Criteria_\n- Confirmed BPH with documented LUTS\n- IPSS ≥ 8\n- Prostate volume ≥ 40 cc\n- Failure of medical therapy (alpha-blocker ≥ 3-6 months)\n- Urologist or IR consultation documented\n\n_State-Specific_\n- Some states require urologist referral specifically\n- Some states require peer-to-peer review for approval\n- Verify state-specific prostate volume thresholds\n- Some states require prior TURP failure or contraindication\n\n**Required Documentation**\n\n_Required for PA Submission_\n- Completed state PA form\n- Urology or IR consult note\n- IPSS score documentation\n- Prostate volume (imaging report)\n- Medical therapy trial documentation\n- PSA and urinalysis results\n\n**Submission Process**\n1. Obtain state-specific PA form from Medicaid portal or payer website\n2. Complete clinical information section with IPSS, prostate volume, and treatment history\n3. Attach supporting clinical documentation (consult note, imaging, labs)\n4. Submit via state Medicaid portal, fax, or mail per state requirements\n5. Allow 5-15 business days for PA determination (urgent requests may be expedited)\n6. If denied, initiate peer-to-peer review within the appeal window (typically 30-60 days)\n\n**Common Denial Reasons**\n- Incomplete PA form — missing required fields\n- Insufficient medical therapy trial documentation\n- State classifies PAE as investigational (check state policy)\n- Missing specialist (urology) referral\n- Prostate volume below state threshold\n\n**Known Payer Policies**\n\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Medicaid (most states) | Covered with PA | Prior auth required. Criteria similar to Medicare. |\n| Dual-eligible patients | Bill Medicare first | Medicare pays primary; Medicaid covers remaining cost-sharing. |\n\n**Billing & Authorization Tips**\n- For dual-eligible patients (Medicare + Medicaid), bill Medicare first — Medicaid is secondary\n- Check your state Medicaid fee schedule — reimbursement is often 40-60% of Medicare rates\n- Some states have Medicaid managed care plans with their own PA processes — verify the correct plan\n- Document the specific alpha-blocker used, dose, duration, and reason for failure\n\n_Reimbursement Note: Medicaid reimbursement for CPT 37243 is typically 40-60% of Medicare rates and varies significantly by state. Some states may have carved-out radiology benefits through managed care organizations._\n\n### Private / Commercial Insurance\n**Prior Auth:** Prior Auth Required — **Coverage Status:** Variable — PA required\n\n> Prior authorization is required by virtually all commercial payers. Coverage varies widely — some major payers consider PAE investigational.\n\nCommercial payer coverage for PAE is highly variable. Aetna and UHC generally cover PAE with prior auth and medical necessity criteria. Humana and Cigna have historically classified PAE as investigational and non-covered in many plans. BCBS coverage varies significantly by regional plan. Always verify the specific plan policy before scheduling.\n\n**Coverage Criteria**\n\n_Typical PA Criteria_\n- Confirmed BPH with LUTS (IPSS ≥ 8)\n- Prostate volume ≥ 40-80 cc (varies by payer)\n- Failure of alpha-blocker therapy ≥ 6 months\n- No active UTI or bladder stones\n- No prostate cancer (PSA ≤ 4.0 or biopsy negative)\n- Urologist consultation and referral\n\n_Additional Requirements (Some Payers)_\n- Urodynamic study results\n- Uroflowmetry documentation\n- Post-void residual volume measurement\n- MRI prostate for anatomy assessment\n\n**Required Documentation**\n\n_Clinical Documentation_\n- Urology consult note with BPH diagnosis and IPSS\n- Prostate volume (TRUS, MRI, or CT)\n- PSA level and biopsy results if PSA elevated\n- Alpha-blocker prescription history (≥ 6 months)\n- Urinalysis and urine culture\n- Uroflowmetry or urodynamics if available\n\n_PA Submission_\n- Completed payer-specific PA form\n- Letter of medical necessity from ordering physician\n- Supporting peer-reviewed literature (SHAM trial, ROPE registry)\n- CPT and ICD-10 codes on PA request\n\n**Submission Process**\n1. Verify insurance benefits and PA requirements via payer portal or provider services line\n2. Obtain payer-specific PA form and submit with complete clinical documentation\n3. Include letter of medical necessity citing SHAM trial (NEJM 2021) and AUA BPH Guidelines\n4. Allow 5-10 business days for PA determination\n5. If denied, request peer-to-peer review with medical director within 5 business days\n6. If upheld on peer-to-peer, file formal appeal with additional literature\n7. Consider patient assistance programs for self-pay or denied cases\n\n**Common Denial Reasons**\n- Payer classifies PAE as investigational or experimental (Humana, Cigna)\n- Insufficient medical therapy trial duration (< 6 months)\n- Missing urology specialist referral\n- Prostate volume below payer threshold\n- Prostate cancer not excluded\n- Procedure performed at non-contracted facility\n\n**Known Payer Policies**\n\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Aetna (CPB 0079) | Covered with criteria | Medically necessary as alternative to TURP. Last review 04/15/2026. |\n| UnitedHealthcare | Covered with PA | Prior auth required. Medical necessity criteria apply. |\n| BCBS (varies by region) | Variable | Coverage varies by regional plan. Many plans cover with PA; some classify as investigational. |\n| Humana | Investigational — Non-covered | Many Humana plans classify PAE as investigational. Verify specific plan. |\n| Cigna | Investigational — Non-covered | Cigna generally classifies PAE as investigational for BPH. |\n| Anthem | Investigational — Non-covered | Many Anthem plans classify PAE as investigational. Verify specific plan. |\n\n**Billing & Authorization Tips**\n- Always call provider services before scheduling to verify PA requirements and coverage status\n- For Humana/Cigna/Anthem denials, request peer-to-peer immediately — cite SHAM trial (Abt et al., NEJM 2021)\n- Include the ROPE registry data (>2,000 patients) in appeal letters to demonstrate safety and efficacy\n- AUA BPH Guidelines 2023 include PAE as a recognized treatment option — cite in PA letters\n- If denied as investigational, appeal citing FDA 510(k) clearance for embolic agents used\n- Document quality-of-life impact (IPSS, QoL score) to strengthen medical necessity argument\n\n_Reimbursement Note: Commercial reimbursement for CPT 37243 varies widely by plan and contract. Typical negotiated rates range from $2,000-$6,000 for the professional component. Facility fees are billed separately. Verify contracted rates before scheduling._\n\n---\n\n## Disclaimer\nDisclaimer: Coverage policies change frequently. Always verify current payer policies directly with the insurance plan before scheduling procedures. This guide references Aetna CPB 0079 (reviewed 04/15/2026), AUA BPH Guidelines 2023, and SHAM trial data (Abt et al., NEJM 2021). Last updated: April 2026.",
+      "tables": [
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Usage Notes", "Type"],
+          "rows": [
+            ["N40.1", "Benign prostatic hyperplasia with lower urinary tract symptoms", "Primary diagnosis for most PAE cases. Requires documented LUTS (IPSS ≥ 8).", "Primary"],
+            ["N40.0", "Benign prostatic hyperplasia without lower urinary tract symptoms", "Use when BPH is confirmed but LUTS not the primary complaint (e.g., urinary retention).", "Primary"],
+            ["R33.8", "Other retention of urine", "Secondary code when urinary retention is a presenting symptom.", "Secondary"],
+            ["N13.8", "Other obstructive and reflux uropathy", "Secondary code for obstructive uropathy secondary to BPH.", "Secondary"],
+            ["R35.0", "Frequency of micturition", "Secondary code for urinary frequency as a LUTS component.", "Secondary"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicare FFS",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicare FFS (Traditional)", "Covered", "Category I CPT — no PA required. Medical necessity documentation required."],
+            ["Medicare Advantage (varies)", "Variable — PA often required", "Each MA plan sets its own PA requirements. Verify with specific plan."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Medicaid (most states)", "Covered with PA", "Prior auth required. Criteria similar to Medicare."],
+            ["Dual-eligible patients", "Bill Medicare first", "Medicare pays primary; Medicaid covers remaining cost-sharing."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Private / Commercial",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Aetna (CPB 0079)", "Covered with criteria", "Medically necessary as alternative to TURP. Last review 04/15/2026."],
+            ["UnitedHealthcare", "Covered with PA", "Prior auth required. Medical necessity criteria apply."],
+            ["BCBS (varies by region)", "Variable", "Coverage varies by regional plan. Many plans cover with PA; some classify as investigational."],
+            ["Humana", "Investigational — Non-covered", "Many Humana plans classify PAE as investigational. Verify specific plan."],
+            ["Cigna", "Investigational — Non-covered", "Cigna generally classifies PAE as investigational for BPH."],
+            ["Anthem", "Investigational — Non-covered", "Many Anthem plans classify PAE as investigational. Verify specific plan."]
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "title": "RLS / PLMD Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "RLSPLMDAuthGuide.tsx",
+    "title": "RLS / PLMD Authorization Guide",
+    "subtitle": "Decision Support",
+    "cptCodes": [
+      {
+        "code": "95810",
+        "description": "Polysomnography (PSG) — PLMD diagnosis",
+        "authRequired": "Often",
+        "notes": "PLMI ≥15 events/hour (adults) required for PLMD diagnosis"
+      },
+      {
+        "code": "99213–99215",
+        "description": "Office visit — E&M (sleep/neurology)",
+        "authRequired": "Rarely",
+        "notes": "Document IRLSS score, iron studies, prior treatment history"
+      },
+      {
+        "code": "96372",
+        "description": "Therapeutic injection (IV iron infusion)",
+        "authRequired": "Often",
+        "notes": "Ferric carboxymaltose (Injectafer) — ferritin <75 ng/mL"
+      },
+      {
+        "code": "J1439",
+        "description": "Ferric carboxymaltose injection (Injectafer)",
+        "authRequired": "Often",
+        "notes": "STRONGLY RECOMMENDED per AASM 2024 CPG for iron-deficient RLS"
+      },
+      {
+        "code": "J1436",
+        "description": "Ferric gluconate injection",
+        "authRequired": "Often",
+        "notes": "Alternative IV iron formulation"
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "G25.81",
+        "description": "Restless legs syndrome",
+        "useWhen": "Primary RLS diagnosis — most commonly used"
+      },
+      {
+        "code": "G47.61",
+        "description": "Periodic limb movement disorder",
+        "useWhen": "PLMD confirmed on PSG (PLMI ≥15 events/hour)"
+      },
+      {
+        "code": "G47.69",
+        "description": "Other sleep-related movement disorders",
+        "useWhen": "RLS/PLMD not otherwise specified"
+      },
+      {
+        "code": "E61.1",
+        "description": "Iron deficiency",
+        "useWhen": "Comorbid iron deficiency driving RLS — code with G25.81"
+      },
+      {
+        "code": "N18.1–N18.9",
+        "description": "Chronic kidney disease",
+        "useWhen": "CKD-associated RLS (uremic RLS) — code as primary"
+      },
+      {
+        "code": "O26.89",
+        "description": "Other specified pregnancy complications",
+        "useWhen": "RLS in pregnancy"
+      }
+    ],
+    "payers": [
+      {
+        "key": "gabapentin-enacarbil-horizant",
+        "label": "Gabapentin Enacarbil (Horizant)",
+        "sections": [
+          {
+            "heading": "Prior Authorization Requirements",
+            "items": [
+              "RLS diagnosis (G25.81) with moderate-to-severe severity (IRLSS ≥11)",
+              "Iron studies documented (ferritin, transferrin saturation)",
+              "Step therapy: gabapentin or pregabalin trial often required by payers",
+              "Renal function documented (contraindicated CrCl <30 mL/min)"
+            ]
+          },
+          {
+            "heading": "Common Denial Reason",
+            "items": [
+              "Step therapy not met, non-formulary, renal contraindication"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pregabalin-lyrica",
+        "label": "Pregabalin (Lyrica)",
+        "sections": [
+          {
+            "heading": "Prior Authorization Requirements",
+            "items": [
+              "RLS or PLMD diagnosis",
+              "IRLSS score ≥11 or PSG-confirmed PLMI ≥15",
+              "Iron deficiency addressed or ruled out",
+              "Prior gabapentin trial often required"
+            ]
+          },
+          {
+            "heading": "Common Denial Reason",
+            "items": [
+              "Step therapy not met, Schedule V controlled substance restrictions"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "iv-ferric-carboxymaltose-injectafer",
+        "label": "IV Ferric Carboxymaltose (Injectafer)",
+        "sections": [
+          {
+            "heading": "Prior Authorization Requirements",
+            "items": [
+              "RLS diagnosis (G25.81)",
+              "Serum ferritin <75 ng/mL OR ferritin <100 + transferrin sat <20%",
+              "Oral iron trial failure or intolerance documentation",
+              "AASM 2024 CPG: Strongly recommended for iron-deficient RLS"
+            ]
+          },
+          {
+            "heading": "Common Denial Reason",
+            "items": [
+              "Oral iron not tried, ferritin above payer threshold, non-formulary"
+            ]
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "AASM 2024 Update: Dopamine Agonist Augmentation Warning",
+        "kind": "prose",
+        "text": "AASM 2024 CPG Change: Pramipexole (Mirapex) and ropinirole (Requip) are now CONDITIONALLY RECOMMENDED AGAINST as first-line therapy for RLS due to augmentation risk.\n\nAugmentation is defined as: symptoms worsening over time on dopamine agonist therapy, spreading to arms or trunk, occurring earlier in the day, or requiring dose escalation for the same effect. Prevalence: 8–68% of patients on long-term dopamine agonist therapy.\n\nClinical implication for prior auth appeals: If a payer requires a dopamine agonist trial before approving an alpha-2-delta ligand, cite AASM 2024 CPG and document that dopamine agonists are now conditionally recommended against due to augmentation risk. This is a valid medical exception to step therapy."
+      },
+      {
+        "heading": "Documentation Checklist",
+        "kind": "list",
+        "items": [
+          "IRLSS (International Restless Legs Syndrome Study Group Rating Scale) score documented",
+          "IRLSSG 5 essential diagnostic criteria met (urge to move, worsening at rest, relief with movement, evening/night predominance, not explained by another condition)",
+          "PSG report with PLMI if PLMD diagnosis (PLMI ≥15 events/hour adults)",
+          "Iron studies: serum ferritin and transferrin saturation",
+          "Prior treatment history: alpha-2-delta ligands, dopamine agonists (with augmentation assessment)",
+          "Renal function (eGFR) — required for gabapentin/pregabalin dosing",
+          "Augmentation assessment if prior dopamine agonist use",
+          "Comorbidities: CKD, pregnancy, depression, anxiety"
+        ]
+      },
+      {
+        "heading": "References",
+        "kind": "list",
+        "items": [
+          "1. Trotti LM, et al. \"Treatment of Restless Legs Syndrome and Periodic Limb Movement Disorder in Adults: An AASM Clinical Practice Guideline.\" J Clin Sleep Med. 2024.",
+          "2. Allen RP, et al. \"Restless legs syndrome/Willis-Ekbom disease diagnostic criteria: updated IRLSSG consensus criteria.\" Sleep Med. 2014;15(8):860–873.",
+          "3. Garcia-Borreguero D, et al. \"Guidelines for the first-line treatment of restless legs syndrome/Willis-Ekbom disease.\" Sleep Med. 2016;21:1–11.",
+          "4. AASM Practice Guidelines: aasm.org/clinical-resources/practice-standards/practice-guidelines/ (https://aasm.org/clinical-resources/practice-standards/practice-guidelines/)"
+        ]
+      },
+      {
+        "heading": "AASM Practice Guidelines Link",
+        "kind": "link",
+        "text": "aasm.org/clinical-resources/practice-standards/practice-guidelines/",
+        "href": "https://aasm.org/clinical-resources/practice-standards/practice-guidelines/"
+      },
+      {
+        "heading": "Generate Appeal Letter",
+        "kind": "link",
+        "text": "Generate Appeal Letter (button)",
+        "href": "/sleep/rls-plmd/appeal-letter"
+      }
+    ],
+    "raw": {
+      "markdown": "# RLS / PLMD Authorization Guide\n\n_Subtitle: Decision Support_\n_Specialty: Sleep Medicine_\n_onAppealLetter → /sleep/rls-plmd/appeal-letter_\n\n## CPT Codes — RLS/PLMD Evaluation & Treatment\n\n| CPT Code | Description | Auth Required | Notes |\n| --- | --- | --- | --- |\n| 95810 | Polysomnography (PSG) — PLMD diagnosis | Often | PLMI ≥15 events/hour (adults) required for PLMD diagnosis |\n| 99213–99215 | Office visit — E&M (sleep/neurology) | Rarely | Document IRLSS score, iron studies, prior treatment history |\n| 96372 | Therapeutic injection (IV iron infusion) | Often | Ferric carboxymaltose (Injectafer) — ferritin <75 ng/mL |\n| J1439 | Ferric carboxymaltose injection (Injectafer) | Often | STRONGLY RECOMMENDED per AASM 2024 CPG for iron-deficient RLS |\n| J1436 | Ferric gluconate injection | Often | Alternative IV iron formulation |\n\n## ICD-10-CM Diagnosis Codes\n\n| ICD-10 | Description | Use When |\n| --- | --- | --- |\n| G25.81 | Restless legs syndrome | Primary RLS diagnosis — most commonly used |\n| G47.61 | Periodic limb movement disorder | PLMD confirmed on PSG (PLMI ≥15 events/hour) |\n| G47.69 | Other sleep-related movement disorders | RLS/PLMD not otherwise specified |\n| E61.1 | Iron deficiency | Comorbid iron deficiency driving RLS — code with G25.81 |\n| N18.1–N18.9 | Chronic kidney disease | CKD-associated RLS (uremic RLS) — code as primary |\n| O26.89 | Other specified pregnancy complications | RLS in pregnancy |\n\n## AASM 2024 Update: Dopamine Agonist Augmentation Warning\n\n**AASM 2024 CPG Change:** Pramipexole (Mirapex) and ropinirole (Requip) are now **CONDITIONALLY RECOMMENDED AGAINST** as first-line therapy for RLS due to augmentation risk.\n\n**Augmentation** is defined as: symptoms worsening over time on dopamine agonist therapy, spreading to arms or trunk, occurring earlier in the day, or requiring dose escalation for the same effect. Prevalence: 8–68% of patients on long-term dopamine agonist therapy.\n\n**Clinical implication for prior auth appeals:** If a payer requires a dopamine agonist trial before approving an alpha-2-delta ligand, cite AASM 2024 CPG and document that dopamine agonists are now conditionally recommended against due to augmentation risk. This is a valid medical exception to step therapy.\n\n## Medication Prior Authorization Requirements\n\n### Gabapentin Enacarbil (Horizant)\n- RLS diagnosis (G25.81) with moderate-to-severe severity (IRLSS ≥11)\n- Iron studies documented (ferritin, transferrin saturation)\n- Step therapy: gabapentin or pregabalin trial often required by payers\n- Renal function documented (contraindicated CrCl <30 mL/min)\n\n**Common denial reason:** Step therapy not met, non-formulary, renal contraindication\n\n### Pregabalin (Lyrica)\n- RLS or PLMD diagnosis\n- IRLSS score ≥11 or PSG-confirmed PLMI ≥15\n- Iron deficiency addressed or ruled out\n- Prior gabapentin trial often required\n\n**Common denial reason:** Step therapy not met, Schedule V controlled substance restrictions\n\n### IV Ferric Carboxymaltose (Injectafer)\n- RLS diagnosis (G25.81)\n- Serum ferritin <75 ng/mL OR ferritin <100 + transferrin sat <20%\n- Oral iron trial failure or intolerance documentation\n- AASM 2024 CPG: Strongly recommended for iron-deficient RLS\n\n**Common denial reason:** Oral iron not tried, ferritin above payer threshold, non-formulary\n\n## Documentation Checklist\n- IRLSS (International Restless Legs Syndrome Study Group Rating Scale) score documented\n- IRLSSG 5 essential diagnostic criteria met (urge to move, worsening at rest, relief with movement, evening/night predominance, not explained by another condition)\n- PSG report with PLMI if PLMD diagnosis (PLMI ≥15 events/hour adults)\n- Iron studies: serum ferritin and transferrin saturation\n- Prior treatment history: alpha-2-delta ligands, dopamine agonists (with augmentation assessment)\n- Renal function (eGFR) — required for gabapentin/pregabalin dosing\n- Augmentation assessment if prior dopamine agonist use\n- Comorbidities: CKD, pregnancy, depression, anxiety\n\n## References\n1. Trotti LM, et al. \"Treatment of Restless Legs Syndrome and Periodic Limb Movement Disorder in Adults: An AASM Clinical Practice Guideline.\" J Clin Sleep Med. 2024.\n2. Allen RP, et al. \"Restless legs syndrome/Willis-Ekbom disease diagnostic criteria: updated IRLSSG consensus criteria.\" Sleep Med. 2014;15(8):860–873.\n3. Garcia-Borreguero D, et al. \"Guidelines for the first-line treatment of restless legs syndrome/Willis-Ekbom disease.\" Sleep Med. 2016;21:1–11.\n4. AASM Practice Guidelines: aasm.org/clinical-resources/practice-standards/practice-guidelines/ (https://aasm.org/clinical-resources/practice-standards/practice-guidelines/)\n\n[Button] Generate Appeal Letter → /sleep/rls-plmd/appeal-letter",
+      "tables": [
+        {
+          "name": "CPT Codes — RLS/PLMD Evaluation & Treatment",
+          "header": ["CPT Code", "Description", "Auth Required", "Notes"],
+          "rows": [
+            ["95810", "Polysomnography (PSG) — PLMD diagnosis", "Often", "PLMI ≥15 events/hour (adults) required for PLMD diagnosis"],
+            ["99213–99215", "Office visit — E&M (sleep/neurology)", "Rarely", "Document IRLSS score, iron studies, prior treatment history"],
+            ["96372", "Therapeutic injection (IV iron infusion)", "Often", "Ferric carboxymaltose (Injectafer) — ferritin <75 ng/mL"],
+            ["J1439", "Ferric carboxymaltose injection (Injectafer)", "Often", "STRONGLY RECOMMENDED per AASM 2024 CPG for iron-deficient RLS"],
+            ["J1436", "Ferric gluconate injection", "Often", "Alternative IV iron formulation"]
+          ]
+        },
+        {
+          "name": "ICD-10-CM Diagnosis Codes",
+          "header": ["ICD-10", "Description", "Use When"],
+          "rows": [
+            ["G25.81", "Restless legs syndrome", "Primary RLS diagnosis — most commonly used"],
+            ["G47.61", "Periodic limb movement disorder", "PLMD confirmed on PSG (PLMI ≥15 events/hour)"],
+            ["G47.69", "Other sleep-related movement disorders", "RLS/PLMD not otherwise specified"],
+            ["E61.1", "Iron deficiency", "Comorbid iron deficiency driving RLS — code with G25.81"],
+            ["N18.1–N18.9", "Chronic kidney disease", "CKD-associated RLS (uremic RLS) — code as primary"],
+            ["O26.89", "Other specified pregnancy complications", "RLS in pregnancy"]
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,307 @@
+{
+  "title": "Spine Antithrombotic Compass",
+  "auth_guide": {
+    "sourceFile": "SpineAntithromboticAuthGuide.tsx",
+    "title": "Spine Antithrombotic Clinical Compass",
+    "subtitle": "Bridging Anticoagulation for Spine Procedures Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "99213",
+        "description": "Office or other outpatient visit for the evaluation and management of an established patient, which requires at least 2 of 3 key components: expanded problem focused history; expanded problem focused examination; medical decision making of low complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's needs. Typically, 15 minutes are spent face-to-face with the patient and/or family.",
+        "device": "N/A",
+        "access": "N/A",
+        "rvu": "0.97",
+        "includes": [
+          "Review of patient's current anticoagulation regimen",
+          "Assessment of bleeding and thrombotic risk",
+          "Coordination of care with surgical team"
+        ],
+        "note": "Used for evaluation and management services related to bridging anticoagulation for spine procedures."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "Z79.01",
+        "description": "Long term (current) use of anticoagulants",
+        "notes": "Primary diagnosis for patients on chronic anticoagulant therapy requiring management for spine procedures.",
+        "required": true
+      },
+      {
+        "code": "M47.816",
+        "description": "Spondylosis without myelopathy or radiculopathy, lumbar region",
+        "notes": "Common underlying condition for spine procedures requiring antithrombotic management.",
+        "required": false
+      },
+      {
+        "code": "M54.5",
+        "description": "Low back pain",
+        "notes": "Symptom often leading to spine procedures.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Generally, Medicare does not require prior authorization for outpatient evaluation and management services (CPT 99213) related to antithrombotic management. However, the underlying spine procedure may require prior authorization.",
+        "overview": "Medicare covers medically necessary evaluation and management services for antithrombotic management related to spine procedures. Coverage is subject to standard Medicare guidelines and medical necessity criteria.",
+        "reimbursementNote": "Reimbursement for CPT 99213 is based on the Medicare Physician Fee Schedule. Co-insurance and deductibles apply.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Medical Necessity",
+            "items": [
+              "Patient requires bridging anticoagulation due to high risk of thromboembolism if anticoagulation is interrupted.",
+              "Spine procedure is medically necessary and covered by Medicare.",
+              "Management plan is documented and follows established clinical guidelines."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Detailed history and physical examination notes.",
+              "Documentation of current anticoagulant regimen and indication.",
+              "Assessment of bleeding and thrombotic risk (e.g., CHADS2-VASc score, HAS-BLED score).",
+              "Plan for perioperative anticoagulation management, including bridging strategy.",
+              "Consultation notes from cardiology or hematology, if applicable.",
+              "Operative report for the spine procedure."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims electronically using CMS-1500 form.",
+              "Ensure all CPT and ICD-10 codes are accurate and supported by documentation.",
+              "Attach any required medical records if requested during review."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of medical necessity for bridging anticoagulation.",
+              "Insufficient documentation to support the chosen management plan.",
+              "Incorrect coding or billing.",
+              "Spine procedure itself not covered or authorized."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Clearly document the rationale for bridging anticoagulation, including patient-specific risk factors.",
+              "Familiarize yourself with Medicare's local coverage determinations (LCDs) for spine procedures and anticoagulation management.",
+              "Ensure thorough communication and documentation among all involved providers (surgeon, anesthesiologist, cardiologist, primary care)."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS",
+            "status": "Covered",
+            "notes": "Follows general E/M guidelines and medical necessity for anticoagulation management."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered with PA",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid programs often require prior authorization for complex medical management, including bridging anticoagulation, especially if associated with a surgical procedure. Requirements vary by state.",
+        "overview": "Medicaid covers medically necessary antithrombotic management for spine procedures, but prior authorization is typically required. Coverage criteria and documentation requirements are state-specific.",
+        "reimbursementNote": "Reimbursement rates are determined by individual state Medicaid programs and may be lower than Medicare or private insurance.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Medical Necessity",
+            "items": [
+              "Patient is a Medicaid beneficiary and meets state-specific eligibility criteria.",
+              "Bridging anticoagulation is deemed medically necessary by a qualified physician.",
+              "Spine procedure is covered under the state's Medicaid plan."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: State-Specific Guidelines",
+            "items": [
+              "Adherence to state Medicaid clinical guidelines for perioperative anticoagulation.",
+              "Documentation of failure or contraindication to alternative, less intensive management strategies, if applicable."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization Request",
+            "items": [
+              "Completed state-specific prior authorization form.",
+              "Clinical notes supporting the medical necessity of bridging anticoagulation.",
+              "Relevant diagnostic test results.",
+              "Consultation reports.",
+              "Proposed treatment plan and expected duration of bridging."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request to the state Medicaid agency or managed care organization.",
+              "Once authorized, submit claims electronically using the appropriate state-specific forms.",
+              "Maintain detailed records of all communications and approvals."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization.",
+              "Failure to meet state-specific medical necessity criteria.",
+              "Incomplete or insufficient documentation.",
+              "Services deemed experimental or investigational by the state Medicaid program."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify state-specific Medicaid guidelines and prior authorization requirements well in advance of the procedure.",
+              "Utilize state Medicaid provider portals for submission and status checks.",
+              "Document all clinical decision-making thoroughly, especially regarding risk assessment and management choices."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (e.g., California Medi-Cal)",
+            "status": "Covered with PA",
+            "notes": "Requires PA for complex medical management and surgical procedures."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Covered with PA",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for bridging anticoagulation, especially when associated with elective spine procedures. Requirements vary significantly by plan and insurer.",
+        "overview": "Private insurance coverage for antithrombotic management related to spine procedures is common, but nearly all plans require prior authorization. Criteria and documentation depend on the specific insurance policy.",
+        "reimbursementNote": "Reimbursement varies widely by plan and may be subject to deductibles, co-pays, and co-insurance. In-network vs. out-of-network benefits apply.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Medical Necessity",
+            "items": [
+              "Patient's insurance plan is active and covers the proposed spine procedure.",
+              "Bridging anticoagulation is consistent with evidence-based guidelines and the patient's clinical status.",
+              "Risk-benefit analysis clearly supports the need for bridging."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Plan-Specific Requirements",
+            "items": [
+              "Adherence to the insurer's clinical policies for perioperative anticoagulation management.",
+              "Documentation of discussion with the patient regarding risks and benefits."
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization Request",
+            "items": [
+              "Completed insurer-specific prior authorization form.",
+              "Comprehensive clinical notes, including diagnosis, treatment plan, and rationale for bridging.",
+              "Results of relevant laboratory tests (e.g., INR, PTT).",
+              "Cardiology or hematology consultation, if indicated.",
+              "Details of the planned spine procedure."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request through the insurer's provider portal or by fax/mail.",
+              "Follow up regularly on the status of the authorization request.",
+              "Submit claims electronically after authorization is obtained, using the correct CPT and ICD-10 codes."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization or expired authorization.",
+              "Services deemed not medically necessary by the insurer's medical director.",
+              "Failure to provide adequate clinical documentation.",
+              "Procedure or management considered experimental or investigational.",
+              "Out-of-network provider issues."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Contact the patient's insurance company directly to understand specific prior authorization requirements and timelines.",
+              "Provide detailed clinical justification for bridging anticoagulation, referencing established guidelines.",
+              "Keep meticulous records of all authorization attempts, reference numbers, and communications."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield",
+            "status": "Covered with PA",
+            "notes": "Requires PA for perioperative anticoagulation management in many cases."
+          },
+          {
+            "payer": "UnitedHealthcare",
+            "status": "Covered with PA",
+            "notes": "Specific clinical criteria must be met for bridging anticoagulation."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment",
+        "href": "/spineantithrombotic"
+      }
+    ],
+    "raw": {
+      "markdown": "# Spine Antithrombotic Clinical Compass\n\n**Subtitle:** Bridging Anticoagulation for Spine Procedures Insurance Authorization Guide\n\n[Button] Back to Assessment (links to /spineantithrombotic)\n\n## Procedure Codes (CPT Codes)\n\n### CPT 99213 — RVU 0.97\n\nOffice or other outpatient visit for the evaluation and management of an established patient, which requires at least 2 of 3 key components: expanded problem focused history; expanded problem focused examination; medical decision making of low complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's needs. Typically, 15 minutes are spent face-to-face with the patient and/or family.\n\n**Device/Access:** N/A\n\n**Included in this code (do NOT bill separately):**\n- Review of patient's current anticoagulation regimen\n- Assessment of bleeding and thrombotic risk\n- Coordination of care with surgical team\n\n*Note: Used for evaluation and management services related to bridging anticoagulation for spine procedures.*\n\n## ICD-10 Diagnosis Codes\n\n- **Z79.01** (Primary) — Long term (current) use of anticoagulants. Primary diagnosis for patients on chronic anticoagulant therapy requiring management for spine procedures.\n- **M47.816** — Spondylosis without myelopathy or radiculopathy, lumbar region. Common underlying condition for spine procedures requiring antithrombotic management.\n- **M54.5** — Low back pain. Symptom often leading to spine procedures.\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\n\n**Status badges:** No Prior Auth (FFS) | Covered\n\n**Prior Auth Note:** Generally, Medicare does not require prior authorization for outpatient evaluation and management services (CPT 99213) related to antithrombotic management. However, the underlying spine procedure may require prior authorization.\n\n**Overview:** Medicare covers medically necessary evaluation and management services for antithrombotic management related to spine procedures. Coverage is subject to standard Medicare guidelines and medical necessity criteria.\n\n**Coverage Criteria**\n\n*Medical Necessity*\n- Patient requires bridging anticoagulation due to high risk of thromboembolism if anticoagulation is interrupted.\n- Spine procedure is medically necessary and covered by Medicare.\n- Management plan is documented and follows established clinical guidelines.\n\n**Required Documentation**\n\n*Clinical Documentation*\n- Detailed history and physical examination notes.\n- Documentation of current anticoagulant regimen and indication.\n- Assessment of bleeding and thrombotic risk (e.g., CHADS2-VASc score, HAS-BLED score).\n- Plan for perioperative anticoagulation management, including bridging strategy.\n- Consultation notes from cardiology or hematology, if applicable.\n- Operative report for the spine procedure.\n\n**Submission Process**\n1. Submit claims electronically using CMS-1500 form.\n2. Ensure all CPT and ICD-10 codes are accurate and supported by documentation.\n3. Attach any required medical records if requested during review.\n\n**Common Denial Reasons**\n- Lack of medical necessity for bridging anticoagulation.\n- Insufficient documentation to support the chosen management plan.\n- Incorrect coding or billing.\n- Spine procedure itself not covered or authorized.\n\n**Known Payer Policies**\n\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS | Covered | Follows general E/M guidelines and medical necessity for anticoagulation management. |\n\n**Reimbursement Note:** Reimbursement for CPT 99213 is based on the Medicare Physician Fee Schedule. Co-insurance and deductibles apply.\n\n**Authorization Tips**\n- Clearly document the rationale for bridging anticoagulation, including patient-specific risk factors.\n- Familiarize yourself with Medicare's local coverage determinations (LCDs) for spine procedures and anticoagulation management.\n- Ensure thorough communication and documentation among all involved providers (surgeon, anesthesiologist, cardiologist, primary care).\n\n### Medicaid\n\n**Status badges:** Prior Auth Required | Covered with PA\n\n**Prior Auth Note:** Medicaid programs often require prior authorization for complex medical management, including bridging anticoagulation, especially if associated with a surgical procedure. Requirements vary by state.\n\n**Overview:** Medicaid covers medically necessary antithrombotic management for spine procedures, but prior authorization is typically required. Coverage criteria and documentation requirements are state-specific.\n\n**Coverage Criteria**\n\n*Medical Necessity*\n- Patient is a Medicaid beneficiary and meets state-specific eligibility criteria.\n- Bridging anticoagulation is deemed medically necessary by a qualified physician.\n- Spine procedure is covered under the state's Medicaid plan.\n\n*State-Specific Guidelines*\n- Adherence to state Medicaid clinical guidelines for perioperative anticoagulation.\n- Documentation of failure or contraindication to alternative, less intensive management strategies, if applicable.\n\n**Required Documentation**\n\n*Prior Authorization Request*\n- Completed state-specific prior authorization form.\n- Clinical notes supporting the medical necessity of bridging anticoagulation.\n- Relevant diagnostic test results.\n- Consultation reports.\n- Proposed treatment plan and expected duration of bridging.\n\n**Submission Process**\n1. Submit prior authorization request to the state Medicaid agency or managed care organization.\n2. Once authorized, submit claims electronically using the appropriate state-specific forms.\n3. Maintain detailed records of all communications and approvals.\n\n**Common Denial Reasons**\n- Lack of prior authorization.\n- Failure to meet state-specific medical necessity criteria.\n- Incomplete or insufficient documentation.\n- Services deemed experimental or investigational by the state Medicaid program.\n\n**Known Payer Policies**\n\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid (e.g., California Medi-Cal) | Covered with PA | Requires PA for complex medical management and surgical procedures. |\n\n**Reimbursement Note:** Reimbursement rates are determined by individual state Medicaid programs and may be lower than Medicare or private insurance.\n\n**Authorization Tips**\n- Verify state-specific Medicaid guidelines and prior authorization requirements well in advance of the procedure.\n- Utilize state Medicaid provider portals for submission and status checks.\n- Document all clinical decision-making thoroughly, especially regarding risk assessment and management choices.\n\n### Private Insurance\n\n**Status badges:** Prior Auth Required | Covered with PA\n\n**Prior Auth Note:** Most private insurance plans require prior authorization for bridging anticoagulation, especially when associated with elective spine procedures. Requirements vary significantly by plan and insurer.\n\n**Overview:** Private insurance coverage for antithrombotic management related to spine procedures is common, but nearly all plans require prior authorization. Criteria and documentation depend on the specific insurance policy.\n\n**Coverage Criteria**\n\n*Medical Necessity*\n- Patient's insurance plan is active and covers the proposed spine procedure.\n- Bridging anticoagulation is consistent with evidence-based guidelines and the patient's clinical status.\n- Risk-benefit analysis clearly supports the need for bridging.\n\n*Plan-Specific Requirements*\n- Adherence to the insurer's clinical policies for perioperative anticoagulation management.\n- Documentation of discussion with the patient regarding risks and benefits.\n\n**Required Documentation**\n\n*Prior Authorization Request*\n- Completed insurer-specific prior authorization form.\n- Comprehensive clinical notes, including diagnosis, treatment plan, and rationale for bridging.\n- Results of relevant laboratory tests (e.g., INR, PTT).\n- Cardiology or hematology consultation, if indicated.\n- Details of the planned spine procedure.\n\n**Submission Process**\n1. Submit prior authorization request through the insurer's provider portal or by fax/mail.\n2. Follow up regularly on the status of the authorization request.\n3. Submit claims electronically after authorization is obtained, using the correct CPT and ICD-10 codes.\n\n**Common Denial Reasons**\n- Lack of prior authorization or expired authorization.\n- Services deemed not medically necessary by the insurer's medical director.\n- Failure to provide adequate clinical documentation.\n- Procedure or management considered experimental or investigational.\n- Out-of-network provider issues.\n\n**Known Payer Policies**\n\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Blue Cross Blue Shield | Covered with PA | Requires PA for perioperative anticoagulation management in many cases. |\n| UnitedHealthcare | Covered with PA | Specific clinical criteria must be met for bridging anticoagulation. |\n\n**Reimbursement Note:** Reimbursement varies widely by plan and may be subject to deductibles, co-pays, and co-insurance. In-network vs. out-of-network benefits apply.\n\n**Authorization Tips**\n- Contact the patient's insurance company directly to understand specific prior authorization requirements and timelines.\n- Provide detailed clinical justification for bridging anticoagulation, referencing established guidelines.\n- Keep meticulous records of all authorization attempts, reference numbers, and communications.",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "RVU", "Description", "Device/Access", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            [
+              "99213",
+              "0.97",
+              "Office or other outpatient visit for the evaluation and management of an established patient, which requires at least 2 of 3 key components: expanded problem focused history; expanded problem focused examination; medical decision making of low complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's needs. Typically, 15 minutes are spent face-to-face with the patient and/or family.",
+              "N/A",
+              "Review of patient's current anticoagulation regimen; Assessment of bleeding and thrombotic risk; Coordination of care with surgical team",
+              "Used for evaluation and management services related to bridging anticoagulation for spine procedures."
+            ]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["Code", "Description", "Notes", "Required/Primary"],
+          "rows": [
+            ["Z79.01", "Long term (current) use of anticoagulants", "Primary diagnosis for patients on chronic anticoagulant therapy requiring management for spine procedures.", "Primary"],
+            ["M47.816", "Spondylosis without myelopathy or radiculopathy, lumbar region", "Common underlying condition for spine procedures requiring antithrombotic management.", "No"],
+            ["M54.5", "Low back pain", "Symptom often leading to spine procedures.", "No"]
+          ]
+        },
+        {
+          "name": "Medicare — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS", "Covered", "Follows general E/M guidelines and medical necessity for anticoagulation management."]
+          ]
+        },
+        {
+          "name": "Medicaid — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., California Medi-Cal)", "Covered with PA", "Requires PA for complex medical management and surgical procedures."]
+          ]
+        },
+        {
+          "name": "Private Insurance — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Blue Cross Blue Shield", "Covered with PA", "Requires PA for perioperative anticoagulation management in many cases."],
+            ["UnitedHealthcare", "Covered with PA", "Specific clinical criteria must be met for bridging anticoagulation."]
+          ]
+        }
+      ]
+    }
+  }
+}

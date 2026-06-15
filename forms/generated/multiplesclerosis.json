@@ -1,0 +1,175 @@
+{
+  "title": "Multiple Sclerosis",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "multiplesclerosis",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "ms-type-activity",
+        "shortLabel": "MS Type & Activity",
+        "title": "MS Type & Activity",
+        "fields": [
+          {
+            "id": "ms-type",
+            "name": "msType",
+            "label": "MS Type",
+            "type": "select",
+            "defaultValue": "rrms",
+            "options": [
+              { "label": "RRMS — Relapsing-Remitting MS", "value": "rrms" },
+              { "label": "SPMS Active (relapses or new MRI activity)", "value": "spms_active" },
+              { "label": "SPMS Inactive", "value": "spms_inactive" },
+              { "label": "PPMS — Primary Progressive MS", "value": "ppms" },
+              { "label": "CIS — Clinically Isolated Syndrome", "value": "cis" },
+              { "label": "RIS — Radiologically Isolated Syndrome", "value": "radiologically_isolated" }
+            ]
+          },
+          {
+            "id": "disease-course",
+            "name": "diseaseCourse",
+            "label": "Disease Course / Activity",
+            "type": "select",
+            "defaultValue": "mild_moderate",
+            "options": [
+              { "label": "Mild to Moderate activity", "value": "mild_moderate" },
+              { "label": "Highly Active (2+ relapses/year or significant MRI burden)", "value": "highly_active" },
+              { "label": "Rapidly Evolving Severe (RRMS with ≥2 disabling relapses + new lesions)", "value": "rapidly_evolving" }
+            ]
+          },
+          {
+            "id": "relapse-count-past-2-years",
+            "name": "relapseCountPast2Years",
+            "label": "Relapses in Past 2 Years",
+            "type": "number",
+            "defaultValue": 1,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "new-t2-lesions-past-12-months",
+            "name": "newT2LesionsPast12Months",
+            "label": "New T2 Lesions in Past 12 Months",
+            "type": "number",
+            "defaultValue": 2,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "gad-enhancing-lesions",
+            "name": "gadEnhancingLesions",
+            "label": "Gadolinium-Enhancing Lesions",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "edss-score",
+            "name": "edssScore",
+            "label": "EDSS Score (0–10)",
+            "type": "number",
+            "defaultValue": 2.0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Patient Age (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "prior-dmt-jcv-status",
+        "shortLabel": "Prior DMT & JCV Status",
+        "title": "Prior DMT & JCV Status",
+        "fields": [
+          {
+            "id": "prior-dmt",
+            "name": "priorDMT",
+            "label": "Prior DMT",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "No prior DMT", "value": "none" },
+              { "label": "Interferon-β or Glatiramer acetate", "value": "interferon_glatiramer" },
+              { "label": "Dimethyl fumarate (Tecfidera)", "value": "dimethyl_fumarate" },
+              { "label": "Teriflunomide (Aubagio)", "value": "teriflunomide" },
+              { "label": "Natalizumab (Tysabri)", "value": "natalizumab" },
+              { "label": "Fingolimod / Siponimod / Ozanimod", "value": "fingolimod_siponimod" },
+              { "label": "Ocrelizumab / Ofatumumab", "value": "ocrelizumab_ofatumumab" },
+              { "label": "Alemtuzumab (Lemtrada)", "value": "alemtuzumab" },
+              { "label": "Cladribine (Mavenclad)", "value": "cladribine" }
+            ]
+          },
+          {
+            "id": "jcv-status",
+            "name": "jcvStatus",
+            "label": "JCV Antibody Status",
+            "type": "select",
+            "defaultValue": "unknown",
+            "options": [
+              { "label": "Negative", "value": "negative" },
+              { "label": "Positive — Low index (<0.9)", "value": "positive_low" },
+              { "label": "Positive — High index (≥0.9)", "value": "positive_high" },
+              { "label": "Unknown / Not tested", "value": "unknown" }
+            ]
+          },
+          {
+            "id": "jcv-index-value",
+            "name": "jcvIndexValue",
+            "label": "JCV Index Value (0–4)",
+            "type": "number",
+            "defaultValue": 0.5,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "jcvStatus", "op": "in", "value": ["positive_low", "positive_high"] }
+          },
+          {
+            "id": "wants-high-efficacy-first-line",
+            "name": "wantsHighEfficacyFirstLine",
+            "label": "Wants High-Efficacy Therapy First Line",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "comorbidities-preferences",
+        "shortLabel": "Comorbidities & Preferences",
+        "title": "Comorbidities & Preferences",
+        "fields": [
+          {
+            "id": "is-pregnant-or-planning",
+            "name": "isPregnantOrPlanning",
+            "label": "Pregnant or Planning Pregnancy",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-cardiac-history",
+            "name": "hasCardiacHistory",
+            "label": "Cardiac History (bradyarrhythmia, AV block)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-liver-disease",
+            "name": "hasLiverDisease",
+            "label": "Liver Disease",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "has-active-malignancy",
+            "name": "hasActiveMalignancy",
+            "label": "Active Malignancy",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

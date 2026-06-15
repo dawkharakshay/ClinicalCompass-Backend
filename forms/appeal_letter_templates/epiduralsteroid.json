@@ -1,0 +1,30 @@
+{
+  "title": "Epidural Steroid Injection Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "62321, 62323, 64479, 64480, 64483, 64484, 62311",
+      "credentials": "[Credentials]",
+      "icd_codes": "M54.4, M54.42, M54.41, M54.12, M54.13, M48.061, M51.16, M51.17",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\n\nRe: Medical Necessity Appeal — Epidural Steroid Injection (ESI)\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\n\nDear Medical Director / Utilization Review Committee,\n\nI am writing to formally appeal the denial of prior authorization for an epidural steroid injection (ESI) for my patient. This procedure is medically necessary and is supported by the highest level of evidence from current multisociety guidelines and peer-reviewed literature.\n\nCLINICAL SUMMARY\n\nMy patient presents with lumbar radiculopathy requiring [urgency] intervention. Following comprehensive clinical evaluation using the ESI Compass™ clinical decision support tool (based on ASIPP 2013 and NASS guidelines), the recommended intervention is: [ESI Recommendation].\n\nRegion: Lumbar spine\nApproach: Interlaminar\n\n\n\nGUIDELINE SUPPORT\n\nThis recommendation is based on the following evidence-based guidelines and peer-reviewed literature:\n\n1. ASIPP Guidelines (Manchikanti L et al., Pain Physician 2013;16:S1–S111): Level I evidence supporting ESI for cervical and lumbar radiculopathy with corresponding imaging findings after failure of conservative therapy.\n\n2. Cochrane Review (Staal JB et al., 2008): ESI provides short-term pain relief superior to placebo in patients with radiculopathy.\n\n3. Ann Intern Med (Pinto RZ et al., 2012;156:803–812): Significant short-term improvement in leg pain and disability with ESI for sciatica.\n\n4. NASS Coverage Policy Recommendations: ESI supported for radiculopathy with corresponding imaging findings after failure of conservative therapy ≥4–6 weeks.\n\nMEDICAL NECESSITY\n\nWithout this intervention, my patient faces:\n• Continued severe radicular pain limiting activities of daily living\n• Inability to participate in physical therapy due to uncontrolled pain\n• Risk of progression requiring more invasive surgical intervention\n• Significant functional impairment and reduced quality of life\n\nConservative measures including physical therapy, NSAIDs, and oral analgesics have been attempted and have provided inadequate relief. The patient's clinical presentation and imaging findings necessitate ESI as the next appropriate step in care.\n\nREQUESTED ACTION\n\nI respectfully request that you overturn the denial and authorize the requested epidural steroid injection. I am available to discuss this case further and can provide additional clinical documentation, imaging reports, and prior treatment records upon request.\n\n{{additional_clinical_notes}}\n\nSincerely,\n\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "title": "Vasectomy Reversal Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assessment",
+    "logicKey": "vasectomyreversal",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "obstructive-interval",
+        "shortLabel": "Obstructive Interval",
+        "title": "Obstructive Interval",
+        "fields": [
+          {
+            "id": "patient-age",
+            "name": "patientAge",
+            "label": "Patient Age (years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "years-since-vasectomy",
+            "name": "yearsSinceVasectomy",
+            "label": "Years Since Vasectomy",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "prior-vasectomy-reversal",
+            "name": "priorVasectomyReversal",
+            "label": "Prior vasectomy reversal attempt (failed)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "semen-analysis",
+        "shortLabel": "Semen Analysis",
+        "title": "Semen Analysis",
+        "fields": [
+          {
+            "id": "sperm-in-vas",
+            "name": "spermInVas",
+            "label": "Sperm Present in Vasal Fluid (intraoperative)",
+            "type": "select",
+            "required": false,
+            "defaultValue": "unknown",
+            "options": [
+              { "label": "Unknown / Pre-operative", "value": "unknown" },
+              { "label": "Yes — sperm or sperm heads present", "value": "yes" },
+              { "label": "No — no sperm in vasal fluid", "value": "no" }
+            ]
+          },
+          {
+            "id": "fsh-level",
+            "name": "fshLevel",
+            "label": "FSH Level (mIU/mL)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "unit": "mIU/mL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "testis-volume",
+            "name": "testisVolume",
+            "label": "Testicular Volume",
+            "type": "select",
+            "required": false,
+            "defaultValue": "normal",
+            "options": [
+              { "label": "Normal (≥15 mL)", "value": "normal" },
+              { "label": "Reduced (10–14 mL)", "value": "reduced" },
+              { "label": "Atrophic (<10 mL)", "value": "atrophic" }
+            ]
+          },
+          {
+            "id": "antisperm-antibodies",
+            "name": "antispermAntibodies",
+            "label": "Anti-sperm antibodies detected",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "partner-factors",
+        "shortLabel": "Partner Factors",
+        "title": "Partner Factors",
+        "fields": [
+          {
+            "id": "partner-age",
+            "name": "partnerAge",
+            "label": "Partner Age (years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "partner-fertility-evaluated",
+            "name": "partnerFertilityEvaluated",
+            "label": "Female partner fertility evaluation completed",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "partner-fertility-normal",
+            "name": "partnerFertilityNormal",
+            "label": "Female partner fertility evaluation normal",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": true,
+            "visibleWhen": { "field": "partnerFertilityEvaluated", "op": "truthy" }
+          },
+          {
+            "id": "previous-children-with-partner",
+            "name": "previousChildrenWithPartner",
+            "label": "Previous children with current partner",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "surgical-planning",
+        "shortLabel": "Surgical Planning",
+        "title": "Surgical Planning",
+        "fields": [
+          {
+            "id": "epididymal-obstruction",
+            "name": "epididymalObstruction",
+            "label": "Epididymal obstruction suspected or confirmed",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "intraoperative-algorithm",
+            "type": "alert",
+            "severity": "info",
+            "text": "Intraoperative Decision Algorithm (AUA/ASRM): • Sperm (motile or non-motile) in vasal fluid → Vasovasostomy • Sperm heads only → Vasovasostomy (acceptable outcome) • No sperm, creamy/pasty fluid → Vasoepididymostomy • No sperm, clear fluid → Vasoepididymostomy"
+          }
+        ]
+      }
+    ]
+  }
+}

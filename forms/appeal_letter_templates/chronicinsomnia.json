@@ -1,0 +1,30 @@
+{
+  "title": "Chronic Insomnia Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "99213–99215, 95810, 90837, 90834, H0004, 99406–99407",
+      "credentials": "[Credentials]",
+      "icd_codes": "G47.00, G47.01, G47.09, F51.01, F51.05, F51.09",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "To Whom It May Concern,\n\nI am writing to formally appeal the denial of prior authorization for [requestedMed] for my patient, {{patient_name}} (DOB: {{patient_dob}}, Member ID: {{member_id}}), dated [denialDate].\n\nCLINICAL SUMMARY\n\nThis patient carries a confirmed diagnosis of Chronic Insomnia Disorder (ICD-10: G47.09) meeting ICSD-3 criteria:\n• Frequency: ≥3 nights per week\n• Daytime impairment: documented (fatigue, cognitive dysfunction, occupational/social impairment)\n\nPRIOR TREATMENT HISTORY\n\nCognitive Behavioral Therapy for Insomnia (CBT-I) was attempted. See documentation.\n\n\nEVIDENCE BASE FOR REQUESTED TREATMENT\n\nThe requested medication, [requestedMed], carries a Strong recommendation in the American Academy of Sleep Medicine (AASM) 2017 Clinical Practice Guideline for the Pharmacologic Treatment of Chronic Insomnia in Adults (Sateia MJ, et al., J Clin Sleep Med. 2017;13(2):307–349). The AASM April 2026 Clinical Practice Guideline on combination CBT-I and pharmacotherapy further supports the use of pharmacologic agents in patients with partial or inadequate CBT-I response.\n\nBASIS FOR APPEAL\n\nChronic insomnia disorder is a recognized medical condition (ICD-10 G47.09) with significant morbidity. Untreated chronic insomnia is associated with a 2-fold increased risk of major depression (Baglioni C, et al., J Affect Disord. 2011), increased cardiovascular risk, impaired immune function, and a 2–3 fold increased risk of motor vehicle accidents. The requested treatment is medically necessary and consistent with AASM guidelines.\n\n\nREQUESTED ACTION\n\nI respectfully request immediate approval of [requestedMed] for this patient. I am available for a peer-to-peer review with the medical director at your earliest convenience.\n\nSincerely,\n\n[Physician Name, MD/DO]\n[Specialty: Sleep Medicine / Psychiatry]\n{{practice_name}}\n{{practice_phone}} | {{practice_fax}}\n{{npi}}\n\nReferences:\n1. Sateia MJ, et al. AASM CPG Pharmacologic Treatment of Chronic Insomnia. J Clin Sleep Med. 2017;13(2):307–349.\n2. Edinger JD, et al. AASM CPG Behavioral/Psychological Treatments for Chronic Insomnia. J Clin Sleep Med. 2021;17(2):255–262.\n3. AASM April 2026 CPG: Combination CBT-I + Pharmacotherapy. J Clin Sleep Med. 2026.\n4. Baglioni C, et al. Insomnia as a predictor of depression. J Affect Disord. 2011;135(1–3):10–19.\n5. AASM Practice Guidelines: https://aasm.org/clinical-resources/practice-standards/practice-guidelines/"
+  }
+}

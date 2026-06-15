@@ -1,0 +1,528 @@
+{
+  "title": "PAD Clinical Performance & Quality Measures Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Quality Report",
+    "logicKey": "padqualitymeasures",
+    "hiddenDefaults": {
+      "abiDocumented": false,
+      "disparityScreeningDocumented": false
+    },
+    "steps": [
+      {
+        "id": "patient",
+        "shortLabel": "Patient Profile",
+        "title": "Patient Profile",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Patient Age",
+            "type": "number",
+            "required": false,
+            "defaultValue": 65,
+            "unit": "years",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "pad-presentation",
+            "name": "padPresentation",
+            "label": "PAD Presentation",
+            "type": "buttongroup",
+            "required": false,
+            "defaultValue": "claudication",
+            "options": [
+              { "label": "Asymptomatic PAD", "value": "asymptomatic" },
+              { "label": "Claudication", "value": "claudication" },
+              { "label": "CLTI", "value": "clti" },
+              { "label": "Acute Limb Ischemia", "value": "ali" },
+              { "label": "Post-Revascularization", "value": "post_revascularization" }
+            ]
+          },
+          {
+            "id": "has-atherosclerosis",
+            "name": "hasAtherosclerosis",
+            "label": "Established PAD Diagnosis",
+            "type": "switch",
+            "required": false,
+            "defaultValue": true
+          },
+          {
+            "id": "has-hypertension",
+            "name": "hasHypertension",
+            "label": "Hypertension",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-diabetes",
+            "name": "hasDiabetes",
+            "label": "Diabetes Mellitus",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-foot-risk",
+            "name": "hasFootRisk",
+            "label": "High Foot Risk",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "abi-measured",
+            "name": "abiMeasured",
+            "label": "ABI Measured",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "abi-documented",
+            "name": "abiDocumented",
+            "label": "ABI Documented in Chart (≤12 months)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "ankle-arm-index",
+            "name": "ankleArmIndex",
+            "label": "ABI Value",
+            "type": "number",
+            "required": false,
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "abiMeasured", "op": "truthy" }
+          }
+        ]
+      },
+      {
+        "id": "medical_therapy",
+        "shortLabel": "Medical Therapy",
+        "title": "Medical Therapy Assessment",
+        "fields": [
+          {
+            "id": "statin-prescribed",
+            "name": "statinPrescribed",
+            "label": "Statin Prescribed at This Encounter",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "on-statin",
+            "name": "onStatinOrLipidLowering",
+            "label": "Statin Already on Medication List",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "statin-contraindicated",
+            "name": "statinContraindicated",
+            "label": "Statin Contraindicated / Intolerant",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "statin-declined",
+            "name": "statinDeclined",
+            "label": "Patient Declined Statin",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "antithrombotic-prescribed",
+            "name": "antithromboticTherapyPrescribed",
+            "label": "Antithrombotic Prescribed at This Encounter",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "on-antithrombotic",
+            "name": "onAntiplateletOrAnticoagulant",
+            "label": "Antithrombotic Already on Medication List",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "antithrombotic-contraindicated",
+            "name": "antithromboticContraindicated",
+            "label": "Antithrombotic Contraindicated",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "antithrombotic-declined",
+            "name": "antithromboticDeclined",
+            "label": "Patient Declined Antithrombotic",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "bp-measured",
+            "name": "bpMeasured",
+            "label": "Blood Pressure Measured",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "hasHypertension", "op": "truthy" }
+          },
+          {
+            "id": "bp-management-documented",
+            "name": "bpManagementDocumented",
+            "label": "BP Management Plan Documented",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "hasHypertension", "op": "truthy" }
+          },
+          {
+            "id": "bp-goal-achieved",
+            "name": "bpGoalAchieved",
+            "label": "BP Goal Achieved (SBP <130 mmHg)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "hasHypertension", "op": "truthy" }
+          },
+          {
+            "id": "bp-management-contraindicated",
+            "name": "bpManagementContraindicated",
+            "label": "BP Management Contraindicated",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "hasHypertension", "op": "truthy" }
+          },
+          {
+            "id": "bp-management-declined",
+            "name": "bpManagementDeclined",
+            "label": "Patient Declined BP Management",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "hasHypertension", "op": "truthy" }
+          },
+          {
+            "id": "systolic-bp",
+            "name": "systolicBP",
+            "label": "Systolic Blood Pressure",
+            "type": "number",
+            "required": false,
+            "unit": "mmHg",
+            "keyboardType": "decimal",
+            "visibleWhen": { "all": [
+              { "field": "hasHypertension", "op": "truthy" },
+              { "field": "bpMeasured", "op": "truthy" }
+            ] }
+          },
+          {
+            "id": "ace-prescribed",
+            "name": "aceInhibitorPrescribed",
+            "label": "ACE Inhibitor or ARB Prescribed",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "on-ace",
+            "name": "onACEInhibitorOrARB",
+            "label": "ACE Inhibitor/ARB Already on Medication List",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "ace-contraindicated",
+            "name": "aceInhibitorContraindicated",
+            "label": "ACE Inhibitor/ARB Contraindicated",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "ace-declined",
+            "name": "aceInhibitorDeclined",
+            "label": "Patient Declined ACE Inhibitor/ARB",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "hba1c-measured",
+            "name": "hba1cMeasured",
+            "label": "HbA1c Measured",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "hasDiabetes", "op": "truthy" }
+          },
+          {
+            "id": "diabetes-management-documented",
+            "name": "diabetesManagementDocumented",
+            "label": "Diabetes Management Plan Documented",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "hasDiabetes", "op": "truthy" }
+          },
+          {
+            "id": "diabetes-management-contraindicated",
+            "name": "diabetesManagementContraindicated",
+            "label": "Diabetes Management Contraindicated",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "hasDiabetes", "op": "truthy" }
+          },
+          {
+            "id": "diabetes-management-declined",
+            "name": "diabetesManagementDeclined",
+            "label": "Patient Declined Diabetes Management",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "hasDiabetes", "op": "truthy" }
+          },
+          {
+            "id": "hba1c-value",
+            "name": "hba1cValue",
+            "label": "HbA1c Value",
+            "type": "number",
+            "required": false,
+            "unit": "%",
+            "keyboardType": "decimal",
+            "visibleWhen": { "all": [
+              { "field": "hasDiabetes", "op": "truthy" },
+              { "field": "hba1cMeasured", "op": "truthy" }
+            ] }
+          },
+          {
+            "id": "ldlc-at-goal",
+            "name": "ldlcAtGoal",
+            "label": "LDL-C at Goal (<70 mg/dL)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "novel-lipid-considered",
+            "name": "novelLipidAgentConsidered",
+            "label": "Novel Lipid Agent Considered or Prescribed",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "ldlc-value",
+            "name": "ldlcValue",
+            "label": "LDL-C Value",
+            "type": "number",
+            "required": false,
+            "unit": "mg/dL",
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "lifestyle",
+        "shortLabel": "Lifestyle & Risk",
+        "title": "Lifestyle, Risk Factors & Equity",
+        "fields": [
+          {
+            "id": "tobacco-screened",
+            "name": "tobaccoUseScreened",
+            "label": "Tobacco Use Screened",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "tobacco-user",
+            "name": "tobaccoUser",
+            "label": "Current Tobacco User",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "cessation-counseling",
+            "name": "cessationCounselingProvided",
+            "label": "Cessation Counseling Provided",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "tobaccoUser", "op": "truthy" }
+          },
+          {
+            "id": "cessation-pharmacotherapy",
+            "name": "cessationPharmacotherapyOffered",
+            "label": "Cessation Pharmacotherapy Offered",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "tobaccoUser", "op": "truthy" }
+          },
+          {
+            "id": "exercise-referral",
+            "name": "exerciseTherapyReferralMade",
+            "label": "SET Referral Made or Enrollment Documented",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "claudicationSymptoms", "op": "truthy" }
+          },
+          {
+            "id": "exercise-declined",
+            "name": "exerciseTherapyDeclined",
+            "label": "Patient Declined SET Referral",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "claudicationSymptoms", "op": "truthy" }
+          },
+          {
+            "id": "foot-care-provided",
+            "name": "preventiveFootCareProvided",
+            "label": "Foot Examination Performed & Foot Care Education Provided",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "any": [
+              { "field": "hasDiabetes", "op": "truthy" },
+              { "field": "cltiDiagnosis", "op": "truthy" },
+              { "field": "hasFootRisk", "op": "truthy" }
+            ] }
+          },
+          {
+            "id": "foot-care-contraindicated",
+            "name": "footCareContraindicated",
+            "label": "Foot Care Contraindicated",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "any": [
+              { "field": "hasDiabetes", "op": "truthy" },
+              { "field": "cltiDiagnosis", "op": "truthy" },
+              { "field": "hasFootRisk", "op": "truthy" }
+            ] }
+          },
+          {
+            "id": "foot-care-declined",
+            "name": "footCareDeclined",
+            "label": "Patient Declined Foot Care",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "any": [
+              { "field": "hasDiabetes", "op": "truthy" },
+              { "field": "cltiDiagnosis", "op": "truthy" },
+              { "field": "hasFootRisk", "op": "truthy" }
+            ] }
+          },
+          {
+            "id": "race-ethnicity-documented",
+            "name": "raceEthnicityDocumented",
+            "label": "Race/Ethnicity Documented",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "social-determinants-documented",
+            "name": "socialDeterminantsDocumented",
+            "label": "Social Determinants of Health (SDOH) Documented",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "procedures",
+        "shortLabel": "Procedures & Follow-up",
+        "title": "Procedures, CLTI & Post-Revascularization",
+        "fields": [
+          {
+            "id": "had-revascularization",
+            "name": "hadRevascularization",
+            "label": "Patient Has Undergone Lower Extremity Revascularization",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "revascularization-type",
+            "name": "revascularizationType",
+            "label": "Revascularization Type",
+            "type": "buttongroup",
+            "required": false,
+            "options": [
+              { "label": "Endovascular", "value": "endovascular" },
+              { "label": "Surgical Bypass", "value": "surgical" },
+              { "label": "Hybrid", "value": "hybrid" }
+            ],
+            "visibleWhen": { "field": "hadRevascularization", "op": "truthy" }
+          },
+          {
+            "id": "saphenous-vein-assessed",
+            "name": "saphenousVeinAssessedPreOp",
+            "label": "Preoperative Duplex Ultrasound Saphenous Vein Mapping Performed",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "all": [
+              { "field": "hadRevascularization", "op": "truthy" },
+              { "field": "revascularizationType", "op": "eq", "value": "surgical" }
+            ] }
+          },
+          {
+            "id": "post-revasc-abi-documented",
+            "name": "abiDocumented",
+            "label": "Post-Revascularization ABI Documented (within 30 days)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "hadRevascularization", "op": "truthy" }
+          },
+          {
+            "id": "multidisciplinary-discussion-documented",
+            "name": "multidisciplinaryDiscussionDocumented",
+            "label": "Multidisciplinary Team Discussion Documented",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "cltiDiagnosis", "op": "truthy" }
+          },
+          {
+            "id": "multidisciplinary-team-involved",
+            "name": "multidisciplinaryTeamInvolved",
+            "label": "Multidisciplinary Team Involved in Care",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false,
+            "visibleWhen": { "field": "cltiDiagnosis", "op": "truthy" }
+          },
+          {
+            "id": "shared-decision-making",
+            "name": "multidisciplinaryDiscussionDocumented",
+            "label": "Shared Decision-Making Discussion Documented",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

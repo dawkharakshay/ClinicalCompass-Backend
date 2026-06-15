@@ -1,0 +1,151 @@
+{
+  "title": "Y-90 Radioembolization Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assess Candidacy",
+    "logicKey": "y90",
+    "hiddenDefaults": {
+      "tumorCount": null,
+      "childPughScore": null,
+      "ecogPerformanceStatus": null,
+      "priorTACE": null,
+      "taceRefractory": null,
+      "liverFunction": null,
+      "extrahepticSpread": null
+    },
+    "steps": [
+      {
+        "id": "patient-info",
+        "shortLabel": "Patient",
+        "title": "Patient Information",
+        "fields": [
+          {
+            "id": "patient-name",
+            "name": "patientName",
+            "label": "Patient Name",
+            "type": "text",
+            "required": false,
+            "defaultValue": ""
+          },
+          {
+            "id": "patient-id",
+            "name": "patientId",
+            "label": "Patient ID (Optional)",
+            "type": "text",
+            "required": false,
+            "defaultValue": ""
+          }
+        ]
+      },
+      {
+        "id": "diagnosis",
+        "shortLabel": "Diagnosis",
+        "title": "Primary Diagnosis",
+        "fields": [
+          {
+            "id": "diagnosis",
+            "name": "diagnosis",
+            "label": "Primary Diagnosis",
+            "type": "buttongroup",
+            "required": true,
+            "defaultValue": "hcc",
+            "options": [
+              { "label": "Hepatocellular Carcinoma (HCC)", "value": "hcc" },
+              { "label": "Intrahepatic Cholangiocarcinoma (iCCA)", "value": "icca" },
+              { "label": "Other Primary Liver Malignancy", "value": "other" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "clinical-details",
+        "shortLabel": "Clinical",
+        "title": "Clinical Details",
+        "fields": [
+          {
+            "id": "bclc-stage",
+            "name": "bclcStage",
+            "label": "BCLC Stage",
+            "type": "select",
+            "required": false,
+            "defaultValue": "",
+            "visibleWhen": { "field": "diagnosis", "op": "eq", "value": "hcc" },
+            "options": [
+              { "label": "Select BCLC Stage", "value": "" },
+              { "label": "BCLC 0 - Very Early", "value": "0" },
+              { "label": "BCLC A - Early", "value": "a" },
+              { "label": "BCLC B - Intermediate", "value": "b" },
+              { "label": "BCLC C - Advanced", "value": "c" },
+              { "label": "BCLC D - Terminal", "value": "d" }
+            ]
+          },
+          {
+            "id": "tumor-size",
+            "name": "tumorSize",
+            "label": "Tumor Size (cm)",
+            "type": "number",
+            "required": false,
+            "defaultValue": null,
+            "unit": "cm",
+            "keyboardType": "decimal",
+            "visibleWhen": { "field": "diagnosis", "op": "eq", "value": "hcc" }
+          },
+          {
+            "id": "portal-vein-involvement",
+            "name": "portalVeinInvolvement",
+            "label": "Portal Vein Involvement",
+            "type": "select",
+            "required": false,
+            "defaultValue": "",
+            "visibleWhen": { "field": "diagnosis", "op": "eq", "value": "hcc" },
+            "options": [
+              { "label": "Select PV Status", "value": "" },
+              { "label": "No portal vein involvement", "value": "none" },
+              { "label": "Branch PVT (Vp1-Vp3)", "value": "branch" },
+              { "label": "Main PVT (Vp4)", "value": "main" }
+            ]
+          },
+          {
+            "id": "tace-feasibility",
+            "name": "taceFeasibility",
+            "label": "Is TACE feasible or has prior TACE failed?",
+            "type": "select",
+            "required": false,
+            "defaultValue": "",
+            "visibleWhen": { "field": "diagnosis", "op": "eq", "value": "hcc" },
+            "options": [
+              { "label": "Select TACE Status", "value": "" },
+              { "label": "TACE-eligible, no prior TACE failure", "value": "eligible" },
+              { "label": "TACE-refractory or TACE-ineligible", "value": "refractory" },
+              { "label": "Diffuse/infiltrative HCC pattern", "value": "diffuse" }
+            ]
+          },
+          {
+            "id": "tace-note",
+            "label": "Y90 has demonstrated safety in portal vein thrombosis (PVT), unlike TACE. (Salem et al., YES-P Trial)",
+            "type": "alert",
+            "severity": "info",
+            "text": "Y90 has demonstrated safety in portal vein thrombosis (PVT), unlike TACE. (Salem et al., YES-P Trial)",
+            "visibleWhen": { "field": "diagnosis", "op": "eq", "value": "hcc" }
+          },
+          {
+            "id": "icca-treatment-line",
+            "name": "iccaTreatmentLine",
+            "label": "Treatment Line",
+            "type": "select",
+            "required": false,
+            "defaultValue": "",
+            "visibleWhen": { "field": "diagnosis", "op": "eq", "value": "icca" },
+            "options": [
+              { "label": "Select Treatment Line", "value": "" },
+              { "label": "First-line", "value": "first-line" },
+              { "label": "Second-line or Beyond", "value": "second-line" },
+              { "label": "Neoadjuvant / Downstaging", "value": "neoadjuvant" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

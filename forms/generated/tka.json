@@ -1,0 +1,175 @@
+{
+  "title": "Total Knee Arthroplasty Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Calculate",
+    "logicKey": "tka",
+    "hiddenDefaults": {
+      "koosPainScore": "",
+      "koosADLScore": "",
+      "kellgrenLawrence": "",
+      "symptomDurationMonths": "",
+      "activeKneeInfection": false,
+      "medicallyUnfit": false
+    },
+    "steps": [
+      {
+        "id": "patient-info",
+        "shortLabel": "Patient Info",
+        "title": "Step 1: Patient Information",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "number",
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "bmi",
+            "name": "bmi",
+            "label": "BMI (kg/m²)",
+            "type": "number",
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "affected-side",
+            "name": "affectedSide",
+            "label": "Affected Side",
+            "type": "radio",
+            "required": true,
+            "defaultValue": "",
+            "options": [
+              { "label": "right", "value": "right" },
+              { "label": "left", "value": "left" },
+              { "label": "bilateral", "value": "bilateral" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "clinical-assessment",
+        "shortLabel": "Clinical Assessment",
+        "title": "Step 2: Clinical Assessment",
+        "fields": [
+          {
+            "id": "pain-score",
+            "name": "painScore",
+            "label": "Pain Score (NRS 0–10)",
+            "type": "number",
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "conservative-therapy-months",
+            "name": "conservativeTherapyMonths",
+            "label": "Conservative Therapy Duration (months)",
+            "type": "number",
+            "defaultValue": "",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "conservative-therapies",
+            "name": "conservativeTherapies",
+            "label": "Conservative Therapies Tried (select all that apply)",
+            "type": "multiselect",
+            "defaultValue": [],
+            "options": [
+              { "label": "Physical therapy (≥6 weeks)", "value": "pt" },
+              { "label": "NSAIDs / analgesics (≥4 weeks)", "value": "nsaids" },
+              { "label": "Intraarticular corticosteroid injection", "value": "intraarticular" },
+              { "label": "Intraarticular hyaluronic acid injection", "value": "hyaluronic" },
+              { "label": "Knee bracing / orthotics", "value": "bracing" },
+              { "label": "Weight loss program", "value": "weight-loss" },
+              { "label": "Activity modification", "value": "activity-mod" }
+            ]
+          },
+          {
+            "id": "functional-limitations",
+            "name": "functionalLimitations",
+            "label": "Functional Limitations (select all that apply)",
+            "type": "multiselect",
+            "defaultValue": [],
+            "options": [
+              { "label": "Activities of daily living (dressing, bathing)", "value": "adl" },
+              { "label": "Ambulation / walking distance", "value": "ambulation" },
+              { "label": "Stair climbing", "value": "stairs" },
+              { "label": "Sleep disturbance due to pain", "value": "sleep" },
+              { "label": "Work or occupational function", "value": "work" },
+              { "label": "Recreational activities", "value": "recreation" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "imaging-comorbidities",
+        "shortLabel": "Imaging & Comorbidities",
+        "title": "Step 3: Imaging & Comorbidities",
+        "fields": [
+          {
+            "id": "kl-grade",
+            "name": "klGrade",
+            "label": "Kellgren-Lawrence Grade (weight-bearing X-ray)",
+            "type": "radio",
+            "required": true,
+            "defaultValue": "",
+            "options": [
+              { "label": "Grade 0 — No radiographic OA", "value": "0" },
+              { "label": "Grade 1 — Doubtful narrowing, possible osteophytes", "value": "1" },
+              { "label": "Grade 2 — Definite osteophytes, possible joint space narrowing", "value": "2" },
+              { "label": "Grade 3 — Moderate multiple osteophytes, definite joint space narrowing, some sclerosis", "value": "3" },
+              { "label": "Grade 4 — Large osteophytes, marked joint space narrowing, severe sclerosis, bony deformity", "value": "4" }
+            ]
+          },
+          {
+            "id": "comorbidities",
+            "name": "comorbidities",
+            "label": "Comorbidities (select all that apply)",
+            "type": "multiselect",
+            "defaultValue": [],
+            "options": [
+              { "label": "Uncontrolled diabetes (HbA1c >8%)", "value": "uncontrolled-dm" },
+              { "label": "Morbid obesity (BMI >40)", "value": "obesity-40" },
+              { "label": "Coronary artery disease", "value": "cad" },
+              { "label": "CKD Stage 3+", "value": "ckd" },
+              { "label": "Immunosuppression / biologic therapy", "value": "immunosuppression" },
+              { "label": "Active smoking", "value": "active-smoking" },
+              { "label": "Coagulopathy / anticoagulation", "value": "coagulopathy" }
+            ]
+          },
+          {
+            "id": "active-infection",
+            "name": "activeInfection",
+            "label": "Active local or systemic infection",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "prior-knee-infection",
+            "name": "priorKneeInfection",
+            "label": "Prior periprosthetic joint infection at this site",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "extensor-mechanism-deficiency",
+            "name": "extensorMechanismDeficiency",
+            "label": "Non-reconstructable extensor mechanism deficiency",
+            "type": "checkbox",
+            "defaultValue": false
+          },
+          {
+            "id": "severe-vascular-disease",
+            "name": "severeVascularDisease",
+            "label": "Severe peripheral vascular disease",
+            "type": "checkbox",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

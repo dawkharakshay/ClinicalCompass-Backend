@@ -1,0 +1,457 @@
+{
+  "title": "Pulmonary Embolism Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "pe",
+    "hiddenDefaults": {
+      "ivcFilterType": "none",
+      "anticoagContraindication": false,
+      "recurrentPEOnAnticoag": false
+    },
+    "steps": [
+      {
+        "id": "presentation",
+        "shortLabel": "Presentation",
+        "title": "Clinical Presentation",
+        "fields": [
+          {
+            "id": "name",
+            "name": "name",
+            "label": "Patient Name (optional)",
+            "type": "text",
+            "defaultValue": ""
+          },
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "weight",
+            "name": "weight",
+            "label": "Weight (kg)",
+            "type": "number",
+            "defaultValue": 0,
+            "unit": "kg",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "symptomatic",
+            "name": "symptomatic",
+            "label": "Symptomatic PE",
+            "type": "switch",
+            "defaultValue": true
+          },
+          {
+            "id": "subsegmental",
+            "name": "subsegmental",
+            "label": "Subsegmental PE only",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "cancer",
+            "name": "cancer",
+            "label": "Active cancer",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "heart-failure",
+            "name": "heartFailure",
+            "label": "Heart failure",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "chronic-lung-disease",
+            "name": "chronicLungDisease",
+            "label": "Chronic lung disease",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "syncope",
+            "name": "syncope",
+            "label": "Syncope",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "pregnancy-or-postpartum",
+            "name": "pregnancyOrPostpartum",
+            "label": "Pregnancy / postpartum",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "hemodynamics",
+        "shortLabel": "Hemodynamics",
+        "title": "Hemodynamics & Vitals",
+        "fields": [
+          {
+            "id": "heart-rate",
+            "name": "heartRate",
+            "label": "Heart Rate (bpm)",
+            "type": "number",
+            "defaultValue": 0,
+            "unit": "bpm",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "systolic-bp",
+            "name": "systolicBP",
+            "label": "Systolic BP (mmHg)",
+            "type": "number",
+            "defaultValue": 0,
+            "unit": "mmHg",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "diastolic-bp",
+            "name": "diastolicBP",
+            "label": "Diastolic BP (mmHg)",
+            "type": "number",
+            "defaultValue": 76,
+            "unit": "mmHg",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "respiratory-rate",
+            "name": "respiratoryRate",
+            "label": "Respiratory Rate (/min)",
+            "type": "number",
+            "defaultValue": 16,
+            "unit": "/min",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "spo2",
+            "name": "spO2",
+            "label": "SpO₂ (%)",
+            "type": "number",
+            "defaultValue": 96,
+            "unit": "%",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "temperature",
+            "name": "temperature",
+            "label": "Temperature (°C)",
+            "type": "number",
+            "defaultValue": 37,
+            "unit": "°C",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "altered-mental-status",
+            "name": "alteredMentalStatus",
+            "label": "Altered mental status",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "needs-vasopressors",
+            "name": "needsVasopressors",
+            "label": "Needs vasopressors",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "cardiac-arrest",
+            "name": "cardiacArrest",
+            "label": "Cardiac arrest",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "transient-hypotension",
+            "name": "transientHypotension",
+            "label": "Transient hypotension (SBP <90 that resolved)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "normotensive-shock",
+            "name": "normotensiveShock",
+            "label": "Normotensive shock",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "persistent-hypotension",
+            "name": "persistentHypotension",
+            "label": "Persistent hypotension / cardiogenic shock",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "refractory-shock",
+            "name": "refractoryShock",
+            "label": "Refractory cardiogenic shock / cardiac arrest",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "supplemental-o2",
+            "name": "supplementalO2",
+            "label": "Supplemental O₂ required",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "high-flow-o2",
+            "name": "highFlowO2",
+            "label": "High-flow O₂ (>6L NC or NRB)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "mechanical-ventilation",
+            "name": "mechanicalVentilation",
+            "label": "Mechanical ventilation",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "imaging-biomarkers",
+        "shortLabel": "Imaging & Biomarkers",
+        "title": "Imaging & Biomarkers",
+        "fields": [
+          {
+            "id": "rv-dilation",
+            "name": "rvDilation",
+            "label": "RV dilation (RV/LV ratio >0.9)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "rv-dysfunction",
+            "name": "rvDysfunction",
+            "label": "RV dysfunction on echo",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "tapse",
+            "name": "tapse",
+            "label": "TAPSE (cm) — leave blank if not measured",
+            "type": "number",
+            "defaultValue": null,
+            "unit": "cm",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "clot-burden",
+            "name": "clotBurden",
+            "label": "CT Clot Burden",
+            "type": "select",
+            "defaultValue": "moderate",
+            "options": [
+              { "label": "Low — subsegmental / peripheral", "value": "low" },
+              { "label": "Moderate — segmental / lobar", "value": "moderate" },
+              { "label": "High — saddle / bilateral main PA", "value": "high" }
+            ]
+          },
+          {
+            "id": "troponin",
+            "name": "troponin",
+            "label": "Troponin (ng/mL)",
+            "type": "number",
+            "defaultValue": 0.01,
+            "unit": "ng/mL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "bnp",
+            "name": "bnp",
+            "label": "BNP / NT-proBNP (pg/mL)",
+            "type": "number",
+            "defaultValue": 80,
+            "unit": "pg/mL",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "lactate",
+            "name": "lactate",
+            "label": "Lactate (mmol/L)",
+            "type": "number",
+            "defaultValue": 1.0,
+            "unit": "mmol/L",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "troponin-elevated",
+            "name": "troponinElevated",
+            "label": "Troponin elevated (above ULN)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "bnp-elevated",
+            "name": "bnpElevated",
+            "label": "BNP / NT-proBNP elevated",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "contraindications",
+        "shortLabel": "Contraindications",
+        "title": "Contraindications to Reperfusion",
+        "fields": [
+          {
+            "id": "contraindications-info",
+            "type": "alert",
+            "severity": "info",
+            "text": "These fields determine eligibility for systemic thrombolysis, catheter-directed therapy (CDT), and anticoagulation. Used for STORM-PE / HI-PEITHO trial applicability assessment."
+          },
+          {
+            "id": "recent-stroke",
+            "name": "recentStroke",
+            "label": "Recent hemorrhagic stroke (within 3 months)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "intracranial-neoplasm",
+            "name": "intracranialNeoplasm",
+            "label": "Intracranial neoplasm",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "active-bleeding",
+            "name": "activeBleeding",
+            "label": "Active bleeding (non-menstrual)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "aortic-dissection",
+            "name": "aorticDissection",
+            "label": "Aortic dissection",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "recent-head-trauma",
+            "name": "recentHeadTrauma",
+            "label": "Recent head trauma (within 3 weeks)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "recent-surgery",
+            "name": "recentSurgery",
+            "label": "Recent surgery (within 3 weeks)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "bleeding-diathesis",
+            "name": "bleedingDiathesis",
+            "label": "Bleeding diathesis / coagulopathy",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "thrombocytopenia",
+            "name": "thrombocytopenia",
+            "label": "Thrombocytopenia (platelets <100k)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "anticoagulant-use",
+            "name": "anticoagulantUse",
+            "label": "Therapeutic anticoagulation (INR >1.7)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "recent-gi-bleed",
+            "name": "recentGIBleed",
+            "label": "Recent GI bleed (within 3 months)",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "uncontrolled-htn",
+            "name": "uncontrolledHTN",
+            "label": "Uncontrolled hypertension (SBP >180)",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "dvt-ivc",
+        "shortLabel": "DVT / IVC",
+        "title": "DVT Assessment & IVC Filter",
+        "fields": [
+          {
+            "id": "proximal-dvt",
+            "name": "proximalDVT",
+            "label": "Proximal DVT present",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "dvt-location",
+            "name": "dvtLocation",
+            "label": "DVT Location",
+            "type": "select",
+            "defaultValue": "none",
+            "options": [
+              { "label": "None", "value": "none" },
+              { "label": "Popliteal", "value": "popliteal" },
+              { "label": "Femoral", "value": "femoral" },
+              { "label": "Iliac", "value": "iliac" },
+              { "label": "Iliofemoral", "value": "iliofemoral" }
+            ],
+            "visibleWhen": { "field": "proximalDVT", "op": "truthy" }
+          },
+          {
+            "id": "dvt-bilateral",
+            "name": "dvtBilateral",
+            "label": "Bilateral DVT",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "phlegmasia",
+            "name": "phlegmasia",
+            "label": "Phlegmasia cerulea dolens",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "ivc-filter-indicated",
+            "name": "ivcFilterIndicated",
+            "label": "Absolute contraindication to anticoagulation",
+            "type": "switch",
+            "defaultValue": false
+          },
+          {
+            "id": "ivc-filter-placed",
+            "name": "ivcFilterPlaced",
+            "label": "IVC filter already placed",
+            "type": "switch",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

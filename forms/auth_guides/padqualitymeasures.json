@@ -1,0 +1,600 @@
+{
+  "title": "PAD Clinical Performance & Quality Measures Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "PADQualityMeasures.tsx (+ padQMLogic.ts, PADQualityAppealLetter.tsx; payers reused from PADAuthGuide.tsx)",
+    "title": "PAD Clinical Performance & Quality Measures Clinical Compass",
+    "subtitle": "Peripheral Artery Disease — Performance & Quality Measures Authorization & Documentation Guide",
+    "cptCodes": [
+      {
+        "code": "93922",
+        "description": "Limited bilateral noninvasive physiologic studies of upper or lower extremity arteries (e.g., ABI with Doppler waveforms, 1–2 levels)",
+        "note": "Standard CPT descriptor (legacy appeal letter carried the bare code)."
+      },
+      {
+        "code": "93923",
+        "description": "Complete bilateral noninvasive physiologic studies of upper or lower extremity arteries (3 or more levels, or with provocative functional maneuvers)",
+        "note": "Standard CPT descriptor (legacy appeal letter carried the bare code)."
+      },
+      {
+        "code": "93924",
+        "description": "Noninvasive physiologic studies of lower extremity arteries, at rest and following treadmill stress testing",
+        "note": "Standard CPT descriptor (legacy appeal letter carried the bare code)."
+      },
+      {
+        "code": "37228",
+        "description": "Revascularization, endovascular, tibial/peroneal artery, unilateral, initial vessel; with transluminal angioplasty",
+        "note": "Standard CPT descriptor (legacy appeal letter carried the bare code)."
+      },
+      {
+        "code": "37229",
+        "description": "Revascularization, endovascular, tibial/peroneal artery, unilateral, initial vessel; with atherectomy (includes angioplasty when performed)",
+        "note": "Standard CPT descriptor (legacy appeal letter carried the bare code)."
+      },
+      {
+        "code": "37230",
+        "description": "Revascularization, endovascular, tibial/peroneal artery, unilateral, initial vessel; with transluminal stent placement(s) (includes angioplasty when performed)",
+        "note": "Standard CPT descriptor (legacy appeal letter carried the bare code)."
+      },
+      {
+        "code": "37231",
+        "description": "Revascularization, endovascular, tibial/peroneal artery, unilateral, initial vessel; with transluminal stent placement(s) and atherectomy (includes angioplasty when performed)",
+        "note": "Standard CPT descriptor (legacy appeal letter carried the bare code)."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "I73.9",
+        "description": "Peripheral vascular disease, unspecified",
+        "notes": "Standard ICD-10 descriptor (legacy appeal letter carried the bare code).",
+        "required": false
+      },
+      {
+        "code": "I70.201",
+        "description": "Unspecified atherosclerosis of native arteries of extremities, right leg",
+        "notes": "Standard ICD-10 descriptor (legacy appeal letter carried the bare code).",
+        "required": true
+      },
+      {
+        "code": "I70.211",
+        "description": "Atherosclerosis of native arteries of extremities with intermittent claudication, right leg",
+        "notes": "Standard ICD-10 descriptor (legacy appeal letter carried the bare code).",
+        "required": true
+      },
+      {
+        "code": "I70.221",
+        "description": "Atherosclerosis of native arteries of extremities with rest pain, right leg",
+        "notes": "Standard ICD-10 descriptor (legacy appeal letter carried the bare code).",
+        "required": true
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with Medical Necessity",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Medicare generally does not require prior authorization for medically necessary peripheral artery disease interventions, but documentation must support medical necessity.",
+        "overview": "Medicare covers endovascular revascularization procedures for PAD when deemed medically necessary and performed in an appropriate setting. Coverage typically follows national and local coverage determinations (NCD/LCDs).",
+        "reimbursementNote": "Reimbursement is based on the Medicare Physician Fee Schedule (MPFS) and Outpatient Prospective Payment System (OPPS) rates. RVUs are assigned to each CPT code.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Clinical Indications",
+            "items": [
+              "Symptomatic PAD (e.g., claudication, rest pain, non-healing wounds)",
+              "Objective evidence of PAD (e.g., ABI < 0.9, significant stenosis on imaging)",
+              "Failure of conservative management (e.g., exercise, risk factor modification)",
+              "Procedure performed by a qualified physician in an appropriate facility"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Vessel Specific Criteria",
+            "items": [
+              "Significant stenosis or occlusion (typically >50-70%) in target vessel",
+              "Lesion amenable to endovascular treatment"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Patient History and Physical",
+            "items": [
+              "Detailed history of PAD symptoms and duration",
+              "Physical examination findings (e.g., diminished pulses, skin changes)",
+              "Assessment of functional limitations due to PAD"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Diagnostic Test Results",
+            "items": [
+              "Ankle-Brachial Index (ABI) measurements",
+              "Duplex ultrasound, CTA, or MRA reports demonstrating vessel pathology",
+              "Angiography reports, if performed"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Conservative Management",
+            "items": [
+              "Documentation of supervised exercise program, if applicable",
+              "Records of pharmacotherapy (e.g., antiplatelets, statins) and lifestyle modifications"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Ensure all medical records support medical necessity as per NCD/LCDs.",
+              "Submit claims with appropriate CPT and ICD-10 codes.",
+              "Respond promptly to any Additional Documentation Requests (ADRs)."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity",
+              "Insufficient documentation of conservative therapy failure",
+              "Inappropriate coding or modifier usage",
+              "Services considered experimental or investigational"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Thoroughly document all symptoms, physical findings, and functional limitations.",
+              "Clearly state the failure of conservative management strategies.",
+              "Reference relevant NCD/LCDs in your documentation."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS",
+            "status": "Covered",
+            "notes": "Follows NCD 20.7 for Percutaneous Transluminal Angioplasty (PTA)."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Requires Prior Authorization",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid programs often require prior authorization for endovascular PAD procedures. Requirements vary by state.",
+        "overview": "Medicaid coverage for PAD interventions varies by state. Most states require prior authorization and adherence to specific medical necessity criteria, often similar to Medicare but with additional administrative steps.",
+        "reimbursementNote": "Reimbursement rates are determined by individual state Medicaid programs and may differ from Medicare rates.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Clinical Indications",
+            "items": [
+              "Severe claudication limiting daily activities",
+              "Rest pain or tissue loss (ulcers, gangrene)",
+              "Objective evidence of significant arterial disease",
+              "Documented failure of medical management and lifestyle changes"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Authorization Request Form",
+            "items": [
+              "Completed state-specific prior authorization form",
+              "Physician order for the procedure"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Medical Records",
+            "items": [
+              "Recent history and physical examination notes",
+              "Relevant diagnostic imaging reports (e.g., angiogram, duplex ultrasound)",
+              "Documentation of previous treatments and their outcomes"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify state-specific Medicaid guidelines for PAD interventions.",
+              "Submit prior authorization request with all required documentation.",
+              "Await approval before scheduling the procedure.",
+              "Submit claims with the approved authorization number."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization",
+              "Incomplete or insufficient documentation",
+              "Failure to meet state-specific medical necessity criteria",
+              "Procedure considered elective or cosmetic"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always check the specific Medicaid policy for your state.",
+              "Submit prior authorization requests well in advance.",
+              "Ensure all supporting documentation is comprehensive and clearly linked to medical necessity."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (Example)",
+            "status": "Requires PA",
+            "notes": "Specific criteria for claudication and critical limb ischemia."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Requires Prior Authorization",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for endovascular PAD procedures. Requirements vary significantly by plan.",
+        "overview": "Private insurance coverage for PAD interventions is highly variable. Most plans require prior authorization and have specific medical policies that outline coverage criteria, which may include a trial of conservative therapy.",
+        "reimbursementNote": "Reimbursement rates are based on negotiated contracts between the provider and the private insurance company.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Medical Necessity",
+            "items": [
+              "Significant functional impairment due to PAD symptoms",
+              "Objective evidence of hemodynamically significant stenosis",
+              "Documented failure of at least 3-6 months of conservative therapy (e.g., exercise, medication)"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Exclusions",
+            "items": [
+              "Asymptomatic PAD (unless specific high-risk features)",
+              "Procedures for cosmetic purposes"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Records",
+            "items": [
+              "Physician office notes detailing symptoms, physical exam, and impact on quality of life",
+              "Results of non-invasive vascular studies (ABI, PVR, duplex ultrasound)",
+              "Angiographic images and reports"
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization Form",
+            "items": [
+              "Completed and signed prior authorization request form",
+              "Letter of medical necessity from the treating physician"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Review the patient's specific insurance policy for PAD intervention coverage.",
+              "Submit a comprehensive prior authorization request, including all clinical documentation.",
+              "Follow up with the insurance company regularly for status updates.",
+              "Appeal any denials with additional clinical information if appropriate."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization",
+              "Failure to meet medical policy criteria (e.g., insufficient trial of conservative therapy)",
+              "Inadequate documentation of symptoms or objective findings",
+              "Procedure considered experimental or investigational by the plan"
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify benefits and prior authorization requirements with the specific plan.",
+              "Provide detailed clinical notes emphasizing the severity of symptoms and functional impairment.",
+              "Highlight the failure of conservative treatments and the necessity of the intervention."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Blue Cross Blue Shield (Example)",
+            "status": "Requires PA",
+            "notes": "Requires 3-month trial of conservative therapy for claudication."
+          },
+          {
+            "payer": "UnitedHealthcare (Example)",
+            "status": "Requires PA",
+            "notes": "Specific criteria for critical limb ischemia and claudication."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment — opens the PAD Quality Measures assessment.",
+        "href": "/pad-quality-measures"
+      },
+      {
+        "heading": "About these measures",
+        "kind": "prose",
+        "text": "Seven Performance Measures (PM-1 – PM-7), appropriate for public reporting and pay-for-performance, and eight Quality Measures (QM-1 – QM-8), for internal quality improvement, derived from the 2026 ACC/AHA Clinical Performance and Quality Measures for PAD and the 2024 ACC/AHA PAD Guideline. General exclusion rule: for all measures except PM-6 and PM-7, a clinician-documented determination that care is inappropriate excludes the patient; for all measures, patients who decline care are excluded. Supervised exercise therapy (PM-7) is Medicare-covered for symptomatic PAD."
+      },
+      {
+        "heading": "PM-1 — Ankle-Brachial Index (ABI) Testing (Performance Measure)",
+        "kind": "prose",
+        "text": "Patients with suspected or established PAD who have ABI testing documented within 12 months of the encounter.\n\n**Numerator:** Patients with documented ABI measurement within 12 months of the qualifying encounter.\n**Denominator:** All patients aged ≥18 years with a diagnosis of PAD or clinical suspicion of PAD (e.g., exertional leg symptoms, non-healing wound, absent pulses).\n**Exclusions:** Patients for whom ABI testing is clinically inappropriate (e.g., non-compressible vessels, known severe calcification) — clinician-documented exclusion; Patients who decline ABI testing\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE B-NR\n**Rationale:** The ABI is the gold-standard non-invasive test for diagnosing PAD. An ABI ≤0.90 is diagnostic of PAD. Consistent documentation ensures appropriate diagnosis and risk stratification."
+      },
+      {
+        "heading": "PM-2 — Statin Therapy for PAD (Performance Measure)",
+        "kind": "prose",
+        "text": "Patients with established PAD who are prescribed statin therapy for lipid management and cardiovascular risk reduction.\n\n**Numerator:** Patients with PAD who are prescribed statin therapy or have documented statin therapy at the qualifying encounter.\n**Denominator:** All patients aged ≥18 years with established PAD (ABI ≤0.90 or prior lower extremity revascularization or amputation for PAD).\n**Exclusions:** Patients with documented statin intolerance or contraindication (e.g., active liver disease, prior rhabdomyolysis); Patients who decline statin therapy\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE A\n**Rationale:** High-intensity statin therapy reduces major adverse cardiovascular events (MACE) and major adverse limb events (MALE) in patients with PAD. Statin use is a Class 1, LOE A recommendation in the 2024 ACC/AHA PAD Guideline."
+      },
+      {
+        "heading": "PM-3 — Antithrombotic Therapy for PAD (Performance Measure)",
+        "kind": "prose",
+        "text": "Patients with symptomatic PAD (claudication, CLTI, or prior revascularization) who are prescribed antithrombotic therapy (antiplatelet or anticoagulant).\n\n**Numerator:** Patients with symptomatic PAD who are prescribed antiplatelet therapy (aspirin, clopidogrel, or low-dose rivaroxaban + aspirin) or therapeutic anticoagulation.\n**Denominator:** All patients aged ≥18 years with symptomatic PAD (claudication, CLTI, or prior lower extremity revascularization).\n**Exclusions:** Patients with documented contraindication to antithrombotic therapy (e.g., active major bleeding, severe thrombocytopenia); Patients who decline antithrombotic therapy\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE A  ·  New in 2026\n**Rationale:** Antithrombotic therapy (single antiplatelet or low-dose rivaroxaban + aspirin) reduces MACE and MALE in symptomatic PAD. This is a Class 1 recommendation in the 2024 ACC/AHA PAD Guideline."
+      },
+      {
+        "heading": "PM-4 — Blood Pressure Management (Performance Measure)",
+        "kind": "prose",
+        "text": "Patients with PAD and hypertension who have blood pressure measured and documented with a management plan targeting SBP <130 mmHg.\n\n**Numerator:** Patients with PAD and hypertension who have documented blood pressure measurement AND a documented management plan (pharmacotherapy or lifestyle modification) at the qualifying encounter.\n**Denominator:** All patients aged ≥18 years with established PAD and a diagnosis of hypertension.\n**Exclusions:** Patients for whom blood pressure management is clinically inappropriate (clinician-documented); Patients who decline blood pressure management\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE A  ·  New in 2026\n**Rationale:** Hypertension is a major modifiable risk factor for PAD progression and cardiovascular events. Target SBP <130 mmHg is consistent with the 2024 ACC/AHA PAD Guideline and 2017 ACC/AHA Hypertension Guideline."
+      },
+      {
+        "heading": "PM-5 — ACE Inhibitor / ARB Therapy (Performance Measure)",
+        "kind": "prose",
+        "text": "Patients with symptomatic PAD who are prescribed ACE inhibitor or ARB therapy for cardiovascular risk reduction.\n\n**Numerator:** Patients with symptomatic PAD who are prescribed an ACE inhibitor or ARB at the qualifying encounter.\n**Denominator:** All patients aged ≥18 years with symptomatic PAD (claudication, CLTI, or prior revascularization).\n**Exclusions:** Patients with documented contraindication to ACE inhibitors and ARBs (e.g., bilateral renal artery stenosis, prior angioedema, pregnancy, hyperkalemia); Patients who decline ACE inhibitor/ARB therapy\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE A  ·  New in 2026\n**Rationale:** ACE inhibitors and ARBs reduce cardiovascular mortality and MACE in patients with PAD. Ramipril demonstrated a 22% relative risk reduction in cardiovascular events in the HOPE trial. This is a Class 1, LOE A recommendation."
+      },
+      {
+        "heading": "PM-6 — Tobacco Use Screening and Cessation Counseling (Performance Measure)",
+        "kind": "prose",
+        "text": "Patients with PAD who are screened for tobacco use, and if current users, are offered cessation counseling and pharmacotherapy.\n\n**Numerator:** Patients with PAD who are screened for tobacco use AND, if current users, are offered cessation counseling and pharmacotherapy (varenicline, bupropion, or NRT).\n**Denominator:** All patients aged ≥18 years with established PAD.\n**Exclusions:** Patients who decline tobacco screening; Patients who decline cessation counseling or pharmacotherapy (if current users)\n**Guideline class / LOE:** COR Class 3 (Harm) / LOE A\n**Rationale:** Tobacco use is the most powerful modifiable risk factor for PAD incidence, progression, and limb loss. Continued smoking after revascularization dramatically worsens outcomes. Cessation counseling + pharmacotherapy is Class 3 (Harm) for continued smoking — meaning continued tobacco use is harmful. PM-6 does NOT have the general clinician-appropriateness exclusion."
+      },
+      {
+        "heading": "PM-7 — Supervised Exercise Therapy (SET) Referral (Performance Measure)",
+        "kind": "prose",
+        "text": "Patients with claudication symptoms who are referred to or enrolled in a supervised exercise therapy (SET) program.\n\n**Numerator:** Patients with claudication who have a documented referral to or enrollment in a supervised exercise therapy program.\n**Denominator:** All patients aged ≥18 years with PAD and claudication symptoms.\n**Exclusions:** Patients who decline supervised exercise therapy referral; Patients with CLTI (rest pain, tissue loss) — SET is not indicated for CLTI\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE A\n**Rationale:** Supervised exercise therapy is the most effective non-invasive treatment for claudication, improving walking distance, quality of life, and cardiovascular outcomes. It is a Class 1, LOE A recommendation and is Medicare-covered for symptomatic PAD. PM-7 does NOT have the general clinician-appropriateness exclusion."
+      },
+      {
+        "heading": "QM-1 — Diabetes Management in PAD (Quality Measure)",
+        "kind": "prose",
+        "text": "Patients with PAD and diabetes mellitus who have HbA1c measured and a documented diabetes management plan.\n\n**Numerator:** Patients with PAD and diabetes who have documented HbA1c measurement AND a diabetes management plan (pharmacotherapy or referral to endocrinology/diabetes educator) at the qualifying encounter.\n**Denominator:** All patients aged ≥18 years with established PAD and a diagnosis of diabetes mellitus.\n**Exclusions:** Patients for whom diabetes management is clinically inappropriate (clinician-documented); Patients who decline diabetes management\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE B-NR  ·  New in 2026\n**Rationale:** Diabetes is a major risk factor for PAD severity, wound healing failure, and amputation. HbA1c target <7% (or individualized) reduces microvascular and macrovascular complications. This is a new 2026 measure reflecting the growing importance of cardiometabolic risk management in PAD."
+      },
+      {
+        "heading": "QM-2 — Preventive Foot Care (Quality Measure)",
+        "kind": "prose",
+        "text": "Patients with PAD and diabetes or CLTI who receive preventive foot care education and examination.\n\n**Numerator:** Patients with PAD and diabetes or CLTI who have documented foot examination AND foot care education (self-inspection, footwear, wound prevention) at the qualifying encounter.\n**Denominator:** All patients aged ≥18 years with established PAD and either diabetes mellitus or CLTI (rest pain, ischemic ulcer, or gangrene).\n**Exclusions:** Patients for whom foot care is clinically inappropriate (clinician-documented); Patients who decline foot care education or examination\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE B-NR  ·  New in 2026\n**Rationale:** Foot complications (ulceration, infection, gangrene) are the leading cause of amputation in patients with PAD and diabetes. Preventive foot care reduces amputation rates. This is a new 2026 quality measure."
+      },
+      {
+        "heading": "QM-3 — Novel Lipid-Lowering Therapy Consideration (Quality Measure)",
+        "kind": "prose",
+        "text": "Patients with PAD and LDL-C above goal despite maximally tolerated statin therapy who are considered for novel lipid-lowering agents (PCSK9 inhibitors, inclisiran, bempedoic acid, ezetimibe).\n\n**Numerator:** Patients with PAD, LDL-C ≥70 mg/dL despite maximally tolerated statin therapy, who have documented consideration of or prescription for novel lipid-lowering agents.\n**Denominator:** All patients aged ≥18 years with established PAD and LDL-C ≥70 mg/dL despite maximally tolerated statin therapy.\n**Exclusions:** Patients for whom novel lipid-lowering therapy is clinically inappropriate (clinician-documented); Patients who decline novel lipid-lowering therapy\n**Guideline class / LOE:** COR Class 2a (Moderate) / LOE B-R  ·  New in 2026\n**Rationale:** PCSK9 inhibitors (evolocumab, alirocumab) reduce MACE in high-risk PAD patients. Bempedoic acid and inclisiran are additional options for statin-intolerant patients. LDL-C <70 mg/dL is the target for very high-risk PAD. This is a new 2026 quality measure reflecting emerging evidence."
+      },
+      {
+        "heading": "QM-4 — Health Disparities Assessment (Quality Measure)",
+        "kind": "prose",
+        "text": "Patients with PAD who have race/ethnicity, social determinants of health (SDOH), and access-to-care barriers documented to evaluate disparities in PAD detection and management.\n\n**Numerator:** Patients with PAD who have documented race/ethnicity AND at least one SDOH domain (e.g., food insecurity, housing instability, transportation barriers, insurance status) at the qualifying encounter.\n**Denominator:** All patients aged ≥18 years with established PAD.\n**Exclusions:** Patients who decline to provide race/ethnicity or SDOH information\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE C-LD  ·  New in 2026\n**Rationale:** Black, Hispanic, and low-income patients have significantly higher rates of PAD, amputation, and mortality. Systematic documentation of disparities enables targeted quality improvement. This is a new 2026 quality measure reflecting the ACC/AHA's commitment to health equity."
+      },
+      {
+        "heading": "QM-5 — Saphenous Vein Assessment Prior to Revascularization (Quality Measure)",
+        "kind": "prose",
+        "text": "Patients undergoing lower extremity surgical revascularization who have preoperative saphenous vein mapping documented.\n\n**Numerator:** Patients undergoing lower extremity bypass surgery who have documented preoperative duplex ultrasound saphenous vein mapping.\n**Denominator:** All patients aged ≥18 years with PAD undergoing lower extremity bypass surgery (femoral-popliteal or femoral-tibial bypass).\n**Exclusions:** Patients undergoing endovascular-only revascularization (no bypass surgery planned); Emergency revascularization for acute limb ischemia where preoperative mapping is not feasible; Patients for whom vein mapping is clinically inappropriate (clinician-documented); Patients who decline vein mapping\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE B-NR  ·  New in 2026\n**Rationale:** Autologous saphenous vein is the preferred conduit for infrainguinal bypass. Preoperative vein mapping identifies suitable conduit, reduces operative time, and improves patency rates. This is a new 2026 quality measure."
+      },
+      {
+        "heading": "QM-6 — Multidisciplinary Team Discussion for CLTI (Quality Measure)",
+        "kind": "prose",
+        "text": "Patients with CLTI who have a documented multidisciplinary team discussion of treatment options (revascularization vs. primary amputation vs. medical management) prior to definitive treatment.\n\n**Numerator:** Patients with CLTI who have documented multidisciplinary team discussion (involving at minimum vascular surgery or IR and wound care or podiatry) prior to definitive treatment.\n**Denominator:** All patients aged ≥18 years with CLTI (rest pain, ischemic ulcer, or gangrene) being considered for revascularization or amputation.\n**Exclusions:** Patients with acute limb ischemia requiring emergency revascularization; Patients for whom multidisciplinary discussion is not feasible (e.g., rural setting without specialist access) — clinician-documented; Patients who decline multidisciplinary evaluation\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE B-NR  ·  New in 2026\n**Rationale:** CLTI is associated with 30% 1-year mortality and 25% major amputation rate. Multidisciplinary team discussions improve limb salvage rates and reduce unnecessary amputations. The BEST-CLI trial demonstrated that surgical bypass with adequate conduit is superior to endovascular therapy in good surgical candidates. This is a new 2026 quality measure."
+      },
+      {
+        "heading": "QM-7 — Shared Decision-Making Documentation (Quality Measure)",
+        "kind": "prose",
+        "text": "Patients with PAD who have documented shared decision-making discussion of treatment risks, benefits, and patient preferences.\n\n**Numerator:** Patients with PAD who have documented shared decision-making discussion (including patient preferences, treatment options, risks/benefits) at the qualifying encounter.\n**Denominator:** All patients aged ≥18 years with established PAD being considered for revascularization or major medical therapy change.\n**Exclusions:** Emergency revascularization for acute limb ischemia; Patients for whom shared decision-making is not feasible (e.g., altered mental status) — clinician-documented\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE C-LD\n**Rationale:** Patient-centered care requires that treatment decisions align with patient values and preferences. Shared decision-making improves treatment adherence, patient satisfaction, and outcomes. The 2024 ACC/AHA PAD Guideline emphasizes shared decision-making throughout."
+      },
+      {
+        "heading": "QM-8 — Post-Revascularization Surveillance (Quality Measure)",
+        "kind": "prose",
+        "text": "Patients who have undergone lower extremity revascularization who have documented post-procedural surveillance (ABI + duplex ultrasound) within 30 days and at 6 months.\n\n**Numerator:** Patients who underwent lower extremity revascularization who have documented ABI measurement AND duplex ultrasound within 30 days of the procedure.\n**Denominator:** All patients aged ≥18 years who underwent lower extremity revascularization (endovascular or surgical) within the measurement period.\n**Exclusions:** Patients for whom post-revascularization surveillance is clinically inappropriate (clinician-documented); Patients who decline post-revascularization surveillance\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE B-NR\n**Rationale:** Post-revascularization surveillance detects restenosis, occlusion, or graft failure early, enabling timely re-intervention and improving long-term patency. ABI + duplex ultrasound is the standard surveillance protocol per the 2024 ACC/AHA PAD Guideline."
+      },
+      {
+        "heading": "Guideline References",
+        "kind": "prose",
+        "text": "1. Goodney PP, Ross EG, Bruckel JT, et al. 2026 ACC/AHA Clinical Performance and Quality Measures for Patients With Peripheral Artery Disease. J Am Coll Cardiol. 2026 Jan 8. DOI: 10.1016/j.jacc.2025.09.003. PMID: 41505788\n2. Gornik HL, Aronow HD, Goodney PP, et al. 2024 ACC/AHA/AACVPR/APMA/ABC/SCAI/SVM/SVN/SVS/SIR/VESS Guideline for the Management of Lower Extremity Peripheral Artery Disease. Circulation. 2024;149(24):e1313–e410. PMID: 38743805"
+      }
+    ],
+    "raw": {
+      "markdown": "# PAD Clinical Performance & Quality Measures Clinical Compass\n## Peripheral Artery Disease — Performance & Quality Measures Authorization & Documentation Guide\n\nAssembled from legacy sources (no dedicated *AuthGuide page existed): padQMLogic.ts (measures), PADQualityAppealLetter.tsx (codes), PADQualityMeasures.tsx (citations), and the sibling PADAuthGuide.tsx payer blocks (reused from pad.json).\n\n## CPT Procedure / Diagnostic Codes\n- **93922** — Limited bilateral noninvasive physiologic studies of upper or lower extremity arteries (e.g., ABI with Doppler waveforms, 1–2 levels)\n- **93923** — Complete bilateral noninvasive physiologic studies of upper or lower extremity arteries (3 or more levels, or with provocative functional maneuvers)\n- **93924** — Noninvasive physiologic studies of lower extremity arteries, at rest and following treadmill stress testing\n- **37228** — Revascularization, endovascular, tibial/peroneal artery, unilateral, initial vessel; with transluminal angioplasty\n- **37229** — Revascularization, endovascular, tibial/peroneal artery, unilateral, initial vessel; with atherectomy (includes angioplasty when performed)\n- **37230** — Revascularization, endovascular, tibial/peroneal artery, unilateral, initial vessel; with transluminal stent placement(s) (includes angioplasty when performed)\n- **37231** — Revascularization, endovascular, tibial/peroneal artery, unilateral, initial vessel; with transluminal stent placement(s) and atherectomy (includes angioplasty when performed)\n\n## ICD-10 Diagnosis Codes\n- **I73.9** — Peripheral vascular disease, unspecified\n- **I70.201** (primary) — Unspecified atherosclerosis of native arteries of extremities, right leg\n- **I70.211** (primary) — Atherosclerosis of native arteries of extremities with intermittent claudication, right leg\n- **I70.221** (primary) — Atherosclerosis of native arteries of extremities with rest pain, right leg\n\n## Performance Measures (PM-1 – PM-7)\n### PM-1 — Ankle-Brachial Index (ABI) Testing\nPatients with suspected or established PAD who have ABI testing documented within 12 months of the encounter.\n\n**Numerator:** Patients with documented ABI measurement within 12 months of the qualifying encounter.\n**Denominator:** All patients aged ≥18 years with a diagnosis of PAD or clinical suspicion of PAD (e.g., exertional leg symptoms, non-healing wound, absent pulses).\n**Exclusions:** Patients for whom ABI testing is clinically inappropriate (e.g., non-compressible vessels, known severe calcification) — clinician-documented exclusion; Patients who decline ABI testing\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE B-NR\n**Rationale:** The ABI is the gold-standard non-invasive test for diagnosing PAD. An ABI ≤0.90 is diagnostic of PAD. Consistent documentation ensures appropriate diagnosis and risk stratification.\n\n### PM-2 — Statin Therapy for PAD\nPatients with established PAD who are prescribed statin therapy for lipid management and cardiovascular risk reduction.\n\n**Numerator:** Patients with PAD who are prescribed statin therapy or have documented statin therapy at the qualifying encounter.\n**Denominator:** All patients aged ≥18 years with established PAD (ABI ≤0.90 or prior lower extremity revascularization or amputation for PAD).\n**Exclusions:** Patients with documented statin intolerance or contraindication (e.g., active liver disease, prior rhabdomyolysis); Patients who decline statin therapy\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE A\n**Rationale:** High-intensity statin therapy reduces major adverse cardiovascular events (MACE) and major adverse limb events (MALE) in patients with PAD. Statin use is a Class 1, LOE A recommendation in the 2024 ACC/AHA PAD Guideline.\n\n### PM-3 — Antithrombotic Therapy for PAD\nPatients with symptomatic PAD (claudication, CLTI, or prior revascularization) who are prescribed antithrombotic therapy (antiplatelet or anticoagulant).\n\n**Numerator:** Patients with symptomatic PAD who are prescribed antiplatelet therapy (aspirin, clopidogrel, or low-dose rivaroxaban + aspirin) or therapeutic anticoagulation.\n**Denominator:** All patients aged ≥18 years with symptomatic PAD (claudication, CLTI, or prior lower extremity revascularization).\n**Exclusions:** Patients with documented contraindication to antithrombotic therapy (e.g., active major bleeding, severe thrombocytopenia); Patients who decline antithrombotic therapy\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE A  ·  New in 2026\n**Rationale:** Antithrombotic therapy (single antiplatelet or low-dose rivaroxaban + aspirin) reduces MACE and MALE in symptomatic PAD. This is a Class 1 recommendation in the 2024 ACC/AHA PAD Guideline.\n\n### PM-4 — Blood Pressure Management\nPatients with PAD and hypertension who have blood pressure measured and documented with a management plan targeting SBP <130 mmHg.\n\n**Numerator:** Patients with PAD and hypertension who have documented blood pressure measurement AND a documented management plan (pharmacotherapy or lifestyle modification) at the qualifying encounter.\n**Denominator:** All patients aged ≥18 years with established PAD and a diagnosis of hypertension.\n**Exclusions:** Patients for whom blood pressure management is clinically inappropriate (clinician-documented); Patients who decline blood pressure management\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE A  ·  New in 2026\n**Rationale:** Hypertension is a major modifiable risk factor for PAD progression and cardiovascular events. Target SBP <130 mmHg is consistent with the 2024 ACC/AHA PAD Guideline and 2017 ACC/AHA Hypertension Guideline.\n\n### PM-5 — ACE Inhibitor / ARB Therapy\nPatients with symptomatic PAD who are prescribed ACE inhibitor or ARB therapy for cardiovascular risk reduction.\n\n**Numerator:** Patients with symptomatic PAD who are prescribed an ACE inhibitor or ARB at the qualifying encounter.\n**Denominator:** All patients aged ≥18 years with symptomatic PAD (claudication, CLTI, or prior revascularization).\n**Exclusions:** Patients with documented contraindication to ACE inhibitors and ARBs (e.g., bilateral renal artery stenosis, prior angioedema, pregnancy, hyperkalemia); Patients who decline ACE inhibitor/ARB therapy\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE A  ·  New in 2026\n**Rationale:** ACE inhibitors and ARBs reduce cardiovascular mortality and MACE in patients with PAD. Ramipril demonstrated a 22% relative risk reduction in cardiovascular events in the HOPE trial. This is a Class 1, LOE A recommendation.\n\n### PM-6 — Tobacco Use Screening and Cessation Counseling\nPatients with PAD who are screened for tobacco use, and if current users, are offered cessation counseling and pharmacotherapy.\n\n**Numerator:** Patients with PAD who are screened for tobacco use AND, if current users, are offered cessation counseling and pharmacotherapy (varenicline, bupropion, or NRT).\n**Denominator:** All patients aged ≥18 years with established PAD.\n**Exclusions:** Patients who decline tobacco screening; Patients who decline cessation counseling or pharmacotherapy (if current users)\n**Guideline class / LOE:** COR Class 3 (Harm) / LOE A\n**Rationale:** Tobacco use is the most powerful modifiable risk factor for PAD incidence, progression, and limb loss. Continued smoking after revascularization dramatically worsens outcomes. Cessation counseling + pharmacotherapy is Class 3 (Harm) for continued smoking — meaning continued tobacco use is harmful. PM-6 does NOT have the general clinician-appropriateness exclusion.\n\n### PM-7 — Supervised Exercise Therapy (SET) Referral\nPatients with claudication symptoms who are referred to or enrolled in a supervised exercise therapy (SET) program.\n\n**Numerator:** Patients with claudication who have a documented referral to or enrollment in a supervised exercise therapy program.\n**Denominator:** All patients aged ≥18 years with PAD and claudication symptoms.\n**Exclusions:** Patients who decline supervised exercise therapy referral; Patients with CLTI (rest pain, tissue loss) — SET is not indicated for CLTI\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE A\n**Rationale:** Supervised exercise therapy is the most effective non-invasive treatment for claudication, improving walking distance, quality of life, and cardiovascular outcomes. It is a Class 1, LOE A recommendation and is Medicare-covered for symptomatic PAD. PM-7 does NOT have the general clinician-appropriateness exclusion.\n\n## Quality Measures (QM-1 – QM-8)\n### QM-1 — Diabetes Management in PAD\nPatients with PAD and diabetes mellitus who have HbA1c measured and a documented diabetes management plan.\n\n**Numerator:** Patients with PAD and diabetes who have documented HbA1c measurement AND a diabetes management plan (pharmacotherapy or referral to endocrinology/diabetes educator) at the qualifying encounter.\n**Denominator:** All patients aged ≥18 years with established PAD and a diagnosis of diabetes mellitus.\n**Exclusions:** Patients for whom diabetes management is clinically inappropriate (clinician-documented); Patients who decline diabetes management\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE B-NR  ·  New in 2026\n**Rationale:** Diabetes is a major risk factor for PAD severity, wound healing failure, and amputation. HbA1c target <7% (or individualized) reduces microvascular and macrovascular complications. This is a new 2026 measure reflecting the growing importance of cardiometabolic risk management in PAD.\n\n### QM-2 — Preventive Foot Care\nPatients with PAD and diabetes or CLTI who receive preventive foot care education and examination.\n\n**Numerator:** Patients with PAD and diabetes or CLTI who have documented foot examination AND foot care education (self-inspection, footwear, wound prevention) at the qualifying encounter.\n**Denominator:** All patients aged ≥18 years with established PAD and either diabetes mellitus or CLTI (rest pain, ischemic ulcer, or gangrene).\n**Exclusions:** Patients for whom foot care is clinically inappropriate (clinician-documented); Patients who decline foot care education or examination\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE B-NR  ·  New in 2026\n**Rationale:** Foot complications (ulceration, infection, gangrene) are the leading cause of amputation in patients with PAD and diabetes. Preventive foot care reduces amputation rates. This is a new 2026 quality measure.\n\n### QM-3 — Novel Lipid-Lowering Therapy Consideration\nPatients with PAD and LDL-C above goal despite maximally tolerated statin therapy who are considered for novel lipid-lowering agents (PCSK9 inhibitors, inclisiran, bempedoic acid, ezetimibe).\n\n**Numerator:** Patients with PAD, LDL-C ≥70 mg/dL despite maximally tolerated statin therapy, who have documented consideration of or prescription for novel lipid-lowering agents.\n**Denominator:** All patients aged ≥18 years with established PAD and LDL-C ≥70 mg/dL despite maximally tolerated statin therapy.\n**Exclusions:** Patients for whom novel lipid-lowering therapy is clinically inappropriate (clinician-documented); Patients who decline novel lipid-lowering therapy\n**Guideline class / LOE:** COR Class 2a (Moderate) / LOE B-R  ·  New in 2026\n**Rationale:** PCSK9 inhibitors (evolocumab, alirocumab) reduce MACE in high-risk PAD patients. Bempedoic acid and inclisiran are additional options for statin-intolerant patients. LDL-C <70 mg/dL is the target for very high-risk PAD. This is a new 2026 quality measure reflecting emerging evidence.\n\n### QM-4 — Health Disparities Assessment\nPatients with PAD who have race/ethnicity, social determinants of health (SDOH), and access-to-care barriers documented to evaluate disparities in PAD detection and management.\n\n**Numerator:** Patients with PAD who have documented race/ethnicity AND at least one SDOH domain (e.g., food insecurity, housing instability, transportation barriers, insurance status) at the qualifying encounter.\n**Denominator:** All patients aged ≥18 years with established PAD.\n**Exclusions:** Patients who decline to provide race/ethnicity or SDOH information\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE C-LD  ·  New in 2026\n**Rationale:** Black, Hispanic, and low-income patients have significantly higher rates of PAD, amputation, and mortality. Systematic documentation of disparities enables targeted quality improvement. This is a new 2026 quality measure reflecting the ACC/AHA's commitment to health equity.\n\n### QM-5 — Saphenous Vein Assessment Prior to Revascularization\nPatients undergoing lower extremity surgical revascularization who have preoperative saphenous vein mapping documented.\n\n**Numerator:** Patients undergoing lower extremity bypass surgery who have documented preoperative duplex ultrasound saphenous vein mapping.\n**Denominator:** All patients aged ≥18 years with PAD undergoing lower extremity bypass surgery (femoral-popliteal or femoral-tibial bypass).\n**Exclusions:** Patients undergoing endovascular-only revascularization (no bypass surgery planned); Emergency revascularization for acute limb ischemia where preoperative mapping is not feasible; Patients for whom vein mapping is clinically inappropriate (clinician-documented); Patients who decline vein mapping\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE B-NR  ·  New in 2026\n**Rationale:** Autologous saphenous vein is the preferred conduit for infrainguinal bypass. Preoperative vein mapping identifies suitable conduit, reduces operative time, and improves patency rates. This is a new 2026 quality measure.\n\n### QM-6 — Multidisciplinary Team Discussion for CLTI\nPatients with CLTI who have a documented multidisciplinary team discussion of treatment options (revascularization vs. primary amputation vs. medical management) prior to definitive treatment.\n\n**Numerator:** Patients with CLTI who have documented multidisciplinary team discussion (involving at minimum vascular surgery or IR and wound care or podiatry) prior to definitive treatment.\n**Denominator:** All patients aged ≥18 years with CLTI (rest pain, ischemic ulcer, or gangrene) being considered for revascularization or amputation.\n**Exclusions:** Patients with acute limb ischemia requiring emergency revascularization; Patients for whom multidisciplinary discussion is not feasible (e.g., rural setting without specialist access) — clinician-documented; Patients who decline multidisciplinary evaluation\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE B-NR  ·  New in 2026\n**Rationale:** CLTI is associated with 30% 1-year mortality and 25% major amputation rate. Multidisciplinary team discussions improve limb salvage rates and reduce unnecessary amputations. The BEST-CLI trial demonstrated that surgical bypass with adequate conduit is superior to endovascular therapy in good surgical candidates. This is a new 2026 quality measure.\n\n### QM-7 — Shared Decision-Making Documentation\nPatients with PAD who have documented shared decision-making discussion of treatment risks, benefits, and patient preferences.\n\n**Numerator:** Patients with PAD who have documented shared decision-making discussion (including patient preferences, treatment options, risks/benefits) at the qualifying encounter.\n**Denominator:** All patients aged ≥18 years with established PAD being considered for revascularization or major medical therapy change.\n**Exclusions:** Emergency revascularization for acute limb ischemia; Patients for whom shared decision-making is not feasible (e.g., altered mental status) — clinician-documented\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE C-LD\n**Rationale:** Patient-centered care requires that treatment decisions align with patient values and preferences. Shared decision-making improves treatment adherence, patient satisfaction, and outcomes. The 2024 ACC/AHA PAD Guideline emphasizes shared decision-making throughout.\n\n### QM-8 — Post-Revascularization Surveillance\nPatients who have undergone lower extremity revascularization who have documented post-procedural surveillance (ABI + duplex ultrasound) within 30 days and at 6 months.\n\n**Numerator:** Patients who underwent lower extremity revascularization who have documented ABI measurement AND duplex ultrasound within 30 days of the procedure.\n**Denominator:** All patients aged ≥18 years who underwent lower extremity revascularization (endovascular or surgical) within the measurement period.\n**Exclusions:** Patients for whom post-revascularization surveillance is clinically inappropriate (clinician-documented); Patients who decline post-revascularization surveillance\n**Guideline class / LOE:** COR Class 1 (Strong) / LOE B-NR\n**Rationale:** Post-revascularization surveillance detects restenosis, occlusion, or graft failure early, enabling timely re-intervention and improving long-term patency. ABI + duplex ultrasound is the standard surveillance protocol per the 2024 ACC/AHA PAD Guideline.\n\n## Guideline References\n1. Goodney PP, Ross EG, Bruckel JT, et al. 2026 ACC/AHA Clinical Performance and Quality Measures for Patients With Peripheral Artery Disease. J Am Coll Cardiol. 2026 Jan 8. DOI: 10.1016/j.jacc.2025.09.003. PMID: 41505788\n2. Gornik HL, Aronow HD, Goodney PP, et al. 2024 ACC/AHA/AACVPR/APMA/ABC/SCAI/SVM/SVN/SVS/SIR/VESS Guideline for the Management of Lower Extremity Peripheral Artery Disease. Circulation. 2024;149(24):e1313–e410. PMID: 38743805",
+      "tables": [
+        {
+          "name": "CPT Procedure / Diagnostic Codes",
+          "header": [
+            "CPT",
+            "Description"
+          ],
+          "rows": [
+            [
+              "93922",
+              "Limited bilateral noninvasive physiologic studies of upper or lower extremity arteries (e.g., ABI with Doppler waveforms, 1–2 levels)"
+            ],
+            [
+              "93923",
+              "Complete bilateral noninvasive physiologic studies of upper or lower extremity arteries (3 or more levels, or with provocative functional maneuvers)"
+            ],
+            [
+              "93924",
+              "Noninvasive physiologic studies of lower extremity arteries, at rest and following treadmill stress testing"
+            ],
+            [
+              "37228",
+              "Revascularization, endovascular, tibial/peroneal artery, unilateral, initial vessel; with transluminal angioplasty"
+            ],
+            [
+              "37229",
+              "Revascularization, endovascular, tibial/peroneal artery, unilateral, initial vessel; with atherectomy (includes angioplasty when performed)"
+            ],
+            [
+              "37230",
+              "Revascularization, endovascular, tibial/peroneal artery, unilateral, initial vessel; with transluminal stent placement(s) (includes angioplasty when performed)"
+            ],
+            [
+              "37231",
+              "Revascularization, endovascular, tibial/peroneal artery, unilateral, initial vessel; with transluminal stent placement(s) and atherectomy (includes angioplasty when performed)"
+            ]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": [
+            "ICD-10",
+            "Description",
+            "Primary"
+          ],
+          "rows": [
+            [
+              "I73.9",
+              "Peripheral vascular disease, unspecified",
+              "No"
+            ],
+            [
+              "I70.201",
+              "Unspecified atherosclerosis of native arteries of extremities, right leg",
+              "Yes"
+            ],
+            [
+              "I70.211",
+              "Atherosclerosis of native arteries of extremities with intermittent claudication, right leg",
+              "Yes"
+            ],
+            [
+              "I70.221",
+              "Atherosclerosis of native arteries of extremities with rest pain, right leg",
+              "Yes"
+            ]
+          ]
+        },
+        {
+          "name": "Performance & Quality Measures",
+          "header": [
+            "ID",
+            "Type",
+            "Title",
+            "COR",
+            "LOE",
+            "New 2026"
+          ],
+          "rows": [
+            [
+              "PM-1",
+              "performance",
+              "Ankle-Brachial Index (ABI) Testing",
+              "Class 1 (Strong)",
+              "B-NR",
+              "No"
+            ],
+            [
+              "PM-2",
+              "performance",
+              "Statin Therapy for PAD",
+              "Class 1 (Strong)",
+              "A",
+              "No"
+            ],
+            [
+              "PM-3",
+              "performance",
+              "Antithrombotic Therapy for PAD",
+              "Class 1 (Strong)",
+              "A",
+              "Yes"
+            ],
+            [
+              "PM-4",
+              "performance",
+              "Blood Pressure Management",
+              "Class 1 (Strong)",
+              "A",
+              "Yes"
+            ],
+            [
+              "PM-5",
+              "performance",
+              "ACE Inhibitor / ARB Therapy",
+              "Class 1 (Strong)",
+              "A",
+              "Yes"
+            ],
+            [
+              "PM-6",
+              "performance",
+              "Tobacco Use Screening and Cessation Counseling",
+              "Class 3 (Harm)",
+              "A",
+              "No"
+            ],
+            [
+              "PM-7",
+              "performance",
+              "Supervised Exercise Therapy (SET) Referral",
+              "Class 1 (Strong)",
+              "A",
+              "No"
+            ],
+            [
+              "QM-1",
+              "quality",
+              "Diabetes Management in PAD",
+              "Class 1 (Strong)",
+              "B-NR",
+              "Yes"
+            ],
+            [
+              "QM-2",
+              "quality",
+              "Preventive Foot Care",
+              "Class 1 (Strong)",
+              "B-NR",
+              "Yes"
+            ],
+            [
+              "QM-3",
+              "quality",
+              "Novel Lipid-Lowering Therapy Consideration",
+              "Class 2a (Moderate)",
+              "B-R",
+              "Yes"
+            ],
+            [
+              "QM-4",
+              "quality",
+              "Health Disparities Assessment",
+              "Class 1 (Strong)",
+              "C-LD",
+              "Yes"
+            ],
+            [
+              "QM-5",
+              "quality",
+              "Saphenous Vein Assessment Prior to Revascularization",
+              "Class 1 (Strong)",
+              "B-NR",
+              "Yes"
+            ],
+            [
+              "QM-6",
+              "quality",
+              "Multidisciplinary Team Discussion for CLTI",
+              "Class 1 (Strong)",
+              "B-NR",
+              "Yes"
+            ],
+            [
+              "QM-7",
+              "quality",
+              "Shared Decision-Making Documentation",
+              "Class 1 (Strong)",
+              "C-LD",
+              "No"
+            ],
+            [
+              "QM-8",
+              "quality",
+              "Post-Revascularization Surveillance",
+              "Class 1 (Strong)",
+              "B-NR",
+              "No"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

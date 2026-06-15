@@ -1,0 +1,260 @@
+{
+  "title": "Women's Health Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Save Assessment",
+    "logicKey": "womenshealth",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "demographics",
+        "shortLabel": "Demographics",
+        "title": "Demographics",
+        "fields": [
+          {
+            "id": "demographics-info",
+            "type": "alert",
+            "severity": "info",
+            "text": "Please provide basic patient demographics. Patient name and ID are not required."
+          },
+          {
+            "id": "age",
+            "name": "patientAge",
+            "label": "Age (years)",
+            "type": "number",
+            "required": true,
+            "defaultValue": "",
+            "min": 18,
+            "max": 120,
+            "unit": "years",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "sex",
+            "name": "patientSex",
+            "label": "Sex",
+            "type": "radio",
+            "required": true,
+            "defaultValue": "",
+            "options": [
+              { "label": "Female", "value": "F" },
+              { "label": "Male", "value": "M" },
+              { "label": "Other", "value": "Other" }
+            ]
+          },
+          {
+            "id": "bmi",
+            "name": "patientBMI",
+            "label": "BMI (optional)",
+            "type": "number",
+            "required": false,
+            "defaultValue": "",
+            "min": 10,
+            "max": 60,
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "symptoms",
+        "shortLabel": "Symptoms",
+        "title": "Symptoms",
+        "fields": [
+          {
+            "id": "chronic-pelvic-pain",
+            "name": "chronicPelvicPain",
+            "label": "Chronic Pelvic Pain",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "pain-duration",
+            "name": "painDuration",
+            "label": "Pain Duration",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "visibleWhen": { "field": "chronicPelvicPain", "op": "truthy" }
+          },
+          {
+            "id": "pain-location",
+            "name": "painLocation",
+            "label": "Pain Location",
+            "type": "radio",
+            "required": false,
+            "defaultValue": "",
+            "options": [
+              { "label": "Left", "value": "left" },
+              { "label": "Right", "value": "right" },
+              { "label": "Bilateral", "value": "bilateral" }
+            ],
+            "visibleWhen": { "field": "chronicPelvicPain", "op": "truthy" }
+          },
+          {
+            "id": "exacerbated-by-standing",
+            "name": "exacerbatedByStanding",
+            "label": "Exacerbated by Standing",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "postcoital-pain",
+            "name": "postcoitalPain",
+            "label": "Postcoital Pain",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "premenstrual-worsening",
+            "name": "premenstrualWorsening",
+            "label": "Premenstrual Worsening",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "vulvar-varicosities",
+            "name": "vulvarVaricosities",
+            "label": "Vulvar Varicosities",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "gravidity",
+            "name": "gravidity",
+            "label": "Gravidity",
+            "type": "text",
+            "required": false,
+            "defaultValue": ""
+          },
+          {
+            "id": "parity",
+            "name": "parity",
+            "label": "Parity",
+            "type": "text",
+            "required": false,
+            "defaultValue": ""
+          }
+        ]
+      },
+      {
+        "id": "hemodynamics",
+        "shortLabel": "Hemodynamics",
+        "title": "Hemodynamics",
+        "fields": [
+          {
+            "id": "lov-diameter",
+            "name": "lovDiameter",
+            "label": "Left Ovarian Vein Diameter (mm)",
+            "type": "number",
+            "required": false,
+            "defaultValue": "",
+            "unit": "mm",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "rov-diameter",
+            "name": "rovDiameter",
+            "label": "Right Ovarian Vein Diameter (mm)",
+            "type": "number",
+            "required": false,
+            "defaultValue": "",
+            "unit": "mm",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "lov-reflux-duration",
+            "name": "lovRefluxDuration",
+            "label": "Left Ovarian Vein Reflux Duration (sec)",
+            "type": "number",
+            "required": false,
+            "defaultValue": "",
+            "unit": "sec",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "rov-reflux-duration",
+            "name": "rovRefluxDuration",
+            "label": "Right Ovarian Vein Reflux Duration (sec)",
+            "type": "number",
+            "required": false,
+            "defaultValue": "",
+            "unit": "sec",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "cross-pelvic-flow",
+            "name": "crossPelvicFlow",
+            "label": "Cross-Pelvic Flow",
+            "type": "radio",
+            "required": false,
+            "defaultValue": "",
+            "options": [
+              { "label": "Absent", "value": "absent" },
+              { "label": "Present", "value": "present" }
+            ]
+          },
+          {
+            "id": "nutcracker-angle",
+            "name": "nutcrackerAngle",
+            "label": "Nutcracker Angle (degrees)",
+            "type": "number",
+            "required": false,
+            "defaultValue": "",
+            "unit": "degrees",
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "anatomy",
+        "shortLabel": "Anatomy",
+        "title": "Anatomy",
+        "fields": [
+          {
+            "id": "pelvic-varicosities",
+            "name": "pelvicVaricosities",
+            "label": "Pelvic Varicosities",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "uterine-vein-dilation",
+            "name": "uterineVeinDilation",
+            "label": "Uterine Vein Dilation",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "dilated-arcuate-veins",
+            "name": "dilatedArcuateVeins",
+            "label": "Dilated Arcuate Veins",
+            "type": "radio",
+            "required": false,
+            "defaultValue": "",
+            "options": [
+              { "label": "None", "value": "none" },
+              { "label": "Mild", "value": "mild" },
+              { "label": "Pronounced", "value": "pronounced" }
+            ]
+          },
+          {
+            "id": "may-thurner",
+            "name": "mayThurner",
+            "label": "May-Thurner Syndrome",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

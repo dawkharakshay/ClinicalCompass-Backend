@@ -1,0 +1,351 @@
+{
+  "title": "Pancreatic Mass Evaluation Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "PancreaticMassAuthGuide.tsx",
+    "title": "PancreaticMass Clinical Compass",
+    "subtitle": "Pancreatic Mass Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "43242",
+        "description": "Esophagogastroduodenoscopy, flexible, transoral; with transendoscopic ultrasound-guided intramural or transmural fine needle aspiration/biopsy(s)",
+        "device": "Endoscopic Ultrasound (EUS) with FNA",
+        "access": "Upper GI Endoscopy",
+        "rvu": "5.00",
+        "includes": [
+          "Endoscopic ultrasound examination",
+          "Fine needle aspiration/biopsy of pancreatic mass"
+        ],
+        "note": "Used for diagnostic sampling of pancreatic masses."
+      },
+      {
+        "code": "43238",
+        "description": "Esophagogastroduodenoscopy, flexible, transoral; with transendoscopic ultrasound-guided intramural or transmural fine needle aspiration/biopsy(s), (includes endoscopic ultrasound examination limited to the esophagus, stomach or duodenum, and adjacent structures)",
+        "device": "Endoscopic Ultrasound (EUS) with FNA",
+        "access": "Upper GI Endoscopy",
+        "rvu": "4.50",
+        "includes": [
+          "Endoscopic ultrasound examination of esophagus, stomach, duodenum",
+          "Fine needle aspiration/biopsy of adjacent structures"
+        ],
+        "note": "Similar to 43242, often used for lesions in specific areas."
+      },
+      {
+        "code": "48150",
+        "description": "Pancreatectomy, proximal subtotal with total duodenectomy, partial gastrectomy, cholecystectomy, and jejunostomy; with pancreaticojejunostomy",
+        "device": "Surgical Resection",
+        "access": "Open Abdominal Surgery",
+        "rvu": "40.00",
+        "includes": [
+          "Removal of pancreatic head, duodenum, gallbladder, part of stomach",
+          "Reconstruction of digestive tract"
+        ],
+        "note": "Commonly known as the Whipple procedure, used for resectable pancreatic head tumors."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "C25.0",
+        "description": "Malignant neoplasm of head of pancreas",
+        "notes": "Primary malignant tumor located in the head of the pancreas.",
+        "required": true
+      },
+      {
+        "code": "C25.1",
+        "description": "Malignant neoplasm of body of pancreas",
+        "notes": "Primary malignant tumor located in the body of the pancreas.",
+        "required": true
+      },
+      {
+        "code": "C25.2",
+        "description": "Malignant neoplasm of tail of pancreas",
+        "notes": "Primary malignant tumor located in the tail of the pancreas.",
+        "required": true
+      },
+      {
+        "code": "C25.9",
+        "description": "Malignant neoplasm of pancreas, unspecified",
+        "notes": "Primary malignant tumor of the pancreas where the specific location is not documented.",
+        "required": false
+      },
+      {
+        "code": "D13.6",
+        "description": "Benign neoplasm of pancreas",
+        "notes": "Non-cancerous growth or tumor of the pancreas.",
+        "required": false
+      },
+      {
+        "code": "K86.1",
+        "description": "Other chronic pancreatitis",
+        "notes": "Chronic inflammation of the pancreas, which can sometimes present as a mass.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with Medical Necessity",
+        "overview": "Medicare Part B covers outpatient services, including physician services, and Part A covers inpatient hospital stays. Coverage for pancreatic mass evaluation and treatment is typically provided when deemed medically necessary by a physician and aligns with established guidelines.",
+        "priorAuthRequired": false,
+        "priorAuthNote": "Medicare generally covers medically necessary diagnostic and treatment services for pancreatic masses, including EUS-FNA and Whipple procedures, when criteria are met. Specific coverage may depend on National and Local Coverage Determinations (NCDs/LCDs).",
+        "reimbursementNote": "Reimbursement rates are set by CMS and may vary based on geographic location and facility type. ",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: EUS-FNA",
+            "items": [
+              "Presence of a pancreatic mass or lesion identified by other imaging (e.g., CT, MRI).",
+              "Need for tissue diagnosis to determine malignancy or specific pathology. "
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Whipple Procedure (48150)",
+            "items": [
+              "Diagnosis of resectable pancreatic head adenocarcinoma or other suitable periampullary tumors. ",
+              "Patient deemed surgically fit with no evidence of distant metastasis. "
+            ]
+          },
+          {
+            "heading": "Required Documentation: General",
+            "items": [
+              "Detailed clinical history and physical examination notes. ",
+              "Results of prior imaging studies (CT, MRI, ultrasound). ",
+              "Pathology reports from any previous biopsies. "
+            ]
+          },
+          {
+            "heading": "Required Documentation: For Surgery",
+            "items": [
+              "Surgical consultation notes outlining the plan and rationale. ",
+              "Pre-operative assessments (cardiac, pulmonary, nutritional). "
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Physician submits claims directly to Medicare. ",
+              "Ensure all documentation supports medical necessity. "
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of medical necessity documentation. ",
+              "Services considered experimental or investigational. ",
+              "Incorrect coding or billing. "
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify patient eligibility and benefits prior to services. ",
+              "Maintain thorough and accurate medical records. "
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS",
+            "status": "Covered",
+            "notes": "NCDs and LCDs apply for specific diagnostic and therapeutic procedures. "
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Prior Authorization Required",
+        "overview": "Medicaid provides health coverage to low-income individuals and families. Coverage for pancreatic mass services is generally available if medically necessary, but strict adherence to state-specific prior authorization processes and medical necessity criteria is enforced. ",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid coverage for pancreatic mass evaluation and treatment typically requires prior authorization. Policies vary significantly by state. It is crucial to check state-specific Medicaid guidelines. ",
+        "reimbursementNote": "Reimbursement rates are typically lower than Medicare or private insurance and are determined by each state’s Medicaid program. ",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General",
+            "items": [
+              "Medical necessity established by a physician. ",
+              "Adherence to state-specific clinical guidelines for diagnostic and therapeutic interventions. "
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: EUS-FNA",
+            "items": [
+              "Documentation of a suspicious pancreatic lesion. ",
+              "Failure of less invasive diagnostic methods or their contraindication. "
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Whipple Procedure (48150)",
+            "items": [
+              "Confirmed diagnosis of resectable pancreatic cancer. ",
+              "Comprehensive pre-operative evaluation demonstrating patient suitability and absence of metastatic disease. "
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization",
+            "items": [
+              "Prior authorization request form. ",
+              "Clinical notes, imaging reports, and pathology results supporting medical necessity. ",
+              "Treatment plan. "
+            ]
+          },
+          {
+            "heading": "Required Documentation: Claims Submission",
+            "items": [
+              "All documentation submitted for prior authorization. ",
+              "Operative reports for surgical procedures. "
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request to the state Medicaid agency. ",
+              "Await approval before performing non-emergent procedures. ",
+              "Submit claims with approved authorization number. "
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization. ",
+              "Incomplete or insufficient documentation of medical necessity. ",
+              "Services not covered under the specific state Medicaid plan. "
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always obtain prior authorization in advance. ",
+              "Be familiar with your state’s specific Medicaid policies for oncology. "
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid (e.g., California Medi-Cal)",
+            "status": "Varies by State",
+            "notes": "Specific policies for oncology and advanced diagnostic procedures must be consulted. "
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Prior Authorization Required",
+        "overview": "Private insurance plans offer diverse coverage for pancreatic mass evaluation and treatment. While most medically necessary services are covered, prior authorization is a standard requirement. Patients may have deductibles, co-pays, and co-insurance. ",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for advanced diagnostic procedures like EUS-FNA and major surgeries such as the Whipple procedure. Coverage criteria vary widely by plan and insurer. ",
+        "reimbursementNote": "Reimbursement varies significantly by plan, network status, and negotiated rates. Patients are responsible for deductibles, co-insurance, and co-pays. ",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General",
+            "items": [
+              "Evidence of a pancreatic mass requiring further investigation or treatment. ",
+              "Clinical guidelines and evidence-based medicine supporting the chosen intervention. "
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: EUS-FNA",
+            "items": [
+              "Imaging findings (CT, MRI) suggestive of a pancreatic mass. ",
+              "Need for histological diagnosis for treatment planning. "
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Whipple Procedure (48150)",
+            "items": [
+              "Resectable pancreatic or periampullary malignancy confirmed by biopsy. ",
+              "Multi-disciplinary team evaluation confirming surgical candidacy. "
+            ]
+          },
+          {
+            "heading": "Required Documentation: Prior Authorization",
+            "items": [
+              "Completed prior authorization form with CPT and ICD-10 codes. ",
+              "Physician’s order and detailed clinical notes. ",
+              "All relevant diagnostic reports (imaging, lab, pathology). "
+            ]
+          },
+          {
+            "heading": "Required Documentation: Appeals",
+            "items": [
+              "Letter of medical necessity from treating physician. ",
+              "Peer-reviewed literature supporting the treatment. "
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request through the insurer’s portal or fax. ",
+              "Follow up regularly on authorization status. ",
+              "Submit claims after services are rendered, ensuring all codes match authorization. "
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization or expired authorization. ",
+              "Services deemed not medically necessary or experimental. ",
+              "Out-of-network provider or facility. ",
+              "Incomplete or conflicting documentation. "
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify benefits and obtain prior authorization. ",
+              "Document all communication with the insurance company. ",
+              "Be prepared to appeal denials with strong clinical justification. "
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Aetna",
+            "status": "Covered with Medical Necessity",
+            "notes": "EUS is covered for evaluating pancreatic abnormalities and staging tumors (CPB 0446). "
+          },
+          {
+            "payer": "Cigna",
+            "status": "Covered with Medical Necessity",
+            "notes": "Whipple surgery for pancreatic cancer is covered when medically appropriate. "
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment (navigates to /pancreaticmass)",
+        "href": "/pancreaticmass"
+      }
+    ],
+    "raw": {
+      "markdown": "# PancreaticMass Clinical Compass\n## Pancreatic Mass Insurance Authorization Guide\n\n[Button: Back to Assessment] (navigates to /pancreaticmass)\n\n---\n\n## Procedure Codes (CPT Codes)\n\n### CPT 43242 — RVU 5.00\nEsophagogastroduodenoscopy, flexible, transoral; with transendoscopic ultrasound-guided intramural or transmural fine needle aspiration/biopsy(s)\nDevice/Access: Endoscopic Ultrasound (EUS) with FNA\nIncluded in this code (do NOT bill separately):\n- Endoscopic ultrasound examination\n- Fine needle aspiration/biopsy of pancreatic mass\nNote: Used for diagnostic sampling of pancreatic masses.\n\n### CPT 43238 — RVU 4.50\nEsophagogastroduodenoscopy, flexible, transoral; with transendoscopic ultrasound-guided intramural or transmural fine needle aspiration/biopsy(s), (includes endoscopic ultrasound examination limited to the esophagus, stomach or duodenum, and adjacent structures)\nDevice/Access: Endoscopic Ultrasound (EUS) with FNA\nIncluded in this code (do NOT bill separately):\n- Endoscopic ultrasound examination of esophagus, stomach, duodenum\n- Fine needle aspiration/biopsy of adjacent structures\nNote: Similar to 43242, often used for lesions in specific areas.\n\n### CPT 48150 — RVU 40.00\nPancreatectomy, proximal subtotal with total duodenectomy, partial gastrectomy, cholecystectomy, and jejunostomy; with pancreaticojejunostomy\nDevice/Access: Surgical Resection\nIncluded in this code (do NOT bill separately):\n- Removal of pancreatic head, duodenum, gallbladder, part of stomach\n- Reconstruction of digestive tract\nNote: Commonly known as the Whipple procedure, used for resectable pancreatic head tumors.\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- C25.0 (Primary) — Malignant neoplasm of head of pancreas — Primary malignant tumor located in the head of the pancreas.\n- C25.1 (Primary) — Malignant neoplasm of body of pancreas — Primary malignant tumor located in the body of the pancreas.\n- C25.2 (Primary) — Malignant neoplasm of tail of pancreas — Primary malignant tumor located in the tail of the pancreas.\n- C25.9 — Malignant neoplasm of pancreas, unspecified — Primary malignant tumor of the pancreas where the specific location is not documented.\n- D13.6 — Benign neoplasm of pancreas — Non-cancerous growth or tumor of the pancreas.\n- K86.1 — Other chronic pancreatitis — Chronic inflammation of the pancreas, which can sometimes present as a mass.\n\n(Codes marked \"Primary\" are required = true.)\n\n---\n\n## Payer-Specific Authorization Requirements\n\n### Medicare\nStatus Badges: No Prior Auth (FFS); Covered with Medical Necessity\nPrior Auth Note: Medicare generally covers medically necessary diagnostic and treatment services for pancreatic masses, including EUS-FNA and Whipple procedures, when criteria are met. Specific coverage may depend on National and Local Coverage Determinations (NCDs/LCDs).\nOverview: Medicare Part B covers outpatient services, including physician services, and Part A covers inpatient hospital stays. Coverage for pancreatic mass evaluation and treatment is typically provided when deemed medically necessary by a physician and aligns with established guidelines.\n\nCoverage Criteria:\n- EUS-FNA:\n  - Presence of a pancreatic mass or lesion identified by other imaging (e.g., CT, MRI).\n  - Need for tissue diagnosis to determine malignancy or specific pathology.\n- Whipple Procedure (48150):\n  - Diagnosis of resectable pancreatic head adenocarcinoma or other suitable periampullary tumors.\n  - Patient deemed surgically fit with no evidence of distant metastasis.\n\nRequired Documentation:\n- General:\n  - Detailed clinical history and physical examination notes.\n  - Results of prior imaging studies (CT, MRI, ultrasound).\n  - Pathology reports from any previous biopsies.\n- For Surgery:\n  - Surgical consultation notes outlining the plan and rationale.\n  - Pre-operative assessments (cardiac, pulmonary, nutritional).\n\nSubmission Process:\n1. Physician submits claims directly to Medicare.\n2. Ensure all documentation supports medical necessity.\n\nCommon Denial Reasons:\n- Lack of medical necessity documentation.\n- Services considered experimental or investigational.\n- Incorrect coding or billing.\n\nKnown Payer Policies:\n| Payer | Status | Notes |\n| CMS | Covered | NCDs and LCDs apply for specific diagnostic and therapeutic procedures. |\n\nReimbursement Note: Reimbursement rates are set by CMS and may vary based on geographic location and facility type.\n\nAuthorization Tips:\n- Verify patient eligibility and benefits prior to services.\n- Maintain thorough and accurate medical records.\n\n### Medicaid\nStatus Badges: Prior Auth Required; Prior Authorization Required\nPrior Auth Note: Medicaid coverage for pancreatic mass evaluation and treatment typically requires prior authorization. Policies vary significantly by state. It is crucial to check state-specific Medicaid guidelines.\nOverview: Medicaid provides health coverage to low-income individuals and families. Coverage for pancreatic mass services is generally available if medically necessary, but strict adherence to state-specific prior authorization processes and medical necessity criteria is enforced.\n\nCoverage Criteria:\n- General:\n  - Medical necessity established by a physician.\n  - Adherence to state-specific clinical guidelines for diagnostic and therapeutic interventions.\n- EUS-FNA:\n  - Documentation of a suspicious pancreatic lesion.\n  - Failure of less invasive diagnostic methods or their contraindication.\n- Whipple Procedure (48150):\n  - Confirmed diagnosis of resectable pancreatic cancer.\n  - Comprehensive pre-operative evaluation demonstrating patient suitability and absence of metastatic disease.\n\nRequired Documentation:\n- Prior Authorization:\n  - Prior authorization request form.\n  - Clinical notes, imaging reports, and pathology results supporting medical necessity.\n  - Treatment plan.\n- Claims Submission:\n  - All documentation submitted for prior authorization.\n  - Operative reports for surgical procedures.\n\nSubmission Process:\n1. Submit prior authorization request to the state Medicaid agency.\n2. Await approval before performing non-emergent procedures.\n3. Submit claims with approved authorization number.\n\nCommon Denial Reasons:\n- Lack of prior authorization.\n- Incomplete or insufficient documentation of medical necessity.\n- Services not covered under the specific state Medicaid plan.\n\nKnown Payer Policies:\n| Payer | Status | Notes |\n| State Medicaid (e.g., California Medi-Cal) | Varies by State | Specific policies for oncology and advanced diagnostic procedures must be consulted. |\n\nReimbursement Note: Reimbursement rates are typically lower than Medicare or private insurance and are determined by each state’s Medicaid program.\n\nAuthorization Tips:\n- Always obtain prior authorization in advance.\n- Be familiar with your state’s specific Medicaid policies for oncology.\n\n### Private Insurance\nStatus Badges: Prior Auth Required; Prior Authorization Required\nPrior Auth Note: Most private insurance plans require prior authorization for advanced diagnostic procedures like EUS-FNA and major surgeries such as the Whipple procedure. Coverage criteria vary widely by plan and insurer.\nOverview: Private insurance plans offer diverse coverage for pancreatic mass evaluation and treatment. While most medically necessary services are covered, prior authorization is a standard requirement. Patients may have deductibles, co-pays, and co-insurance.\n\nCoverage Criteria:\n- General:\n  - Evidence of a pancreatic mass requiring further investigation or treatment.\n  - Clinical guidelines and evidence-based medicine supporting the chosen intervention.\n- EUS-FNA:\n  - Imaging findings (CT, MRI) suggestive of a pancreatic mass.\n  - Need for histological diagnosis for treatment planning.\n- Whipple Procedure (48150):\n  - Resectable pancreatic or periampullary malignancy confirmed by biopsy.\n  - Multi-disciplinary team evaluation confirming surgical candidacy.\n\nRequired Documentation:\n- Prior Authorization:\n  - Completed prior authorization form with CPT and ICD-10 codes.\n  - Physician’s order and detailed clinical notes.\n  - All relevant diagnostic reports (imaging, lab, pathology).\n- Appeals:\n  - Letter of medical necessity from treating physician.\n  - Peer-reviewed literature supporting the treatment.\n\nSubmission Process:\n1. Submit prior authorization request through the insurer’s portal or fax.\n2. Follow up regularly on authorization status.\n3. Submit claims after services are rendered, ensuring all codes match authorization.\n\nCommon Denial Reasons:\n- Lack of prior authorization or expired authorization.\n- Services deemed not medically necessary or experimental.\n- Out-of-network provider or facility.\n- Incomplete or conflicting documentation.\n\nKnown Payer Policies:\n| Payer | Status | Notes |\n| Aetna | Covered with Medical Necessity | EUS is covered for evaluating pancreatic abnormalities and staging tumors (CPB 0446). |\n| Cigna | Covered with Medical Necessity | Whipple surgery for pancreatic cancer is covered when medically appropriate. |\n\nReimbursement Note: Reimbursement varies significantly by plan, network status, and negotiated rates. Patients are responsible for deductibles, co-insurance, and co-pays.\n\nAuthorization Tips:\n- Always verify benefits and obtain prior authorization.\n- Document all communication with the insurance company.\n- Be prepared to appeal denials with strong clinical justification.\n",
+      "tables": [
+        {
+          "name": "Medicare - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS", "Covered", "NCDs and LCDs apply for specific diagnostic and therapeutic procedures. "]
+          ]
+        },
+        {
+          "name": "Medicaid - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid (e.g., California Medi-Cal)", "Varies by State", "Specific policies for oncology and advanced diagnostic procedures must be consulted. "]
+          ]
+        },
+        {
+          "name": "Private Insurance - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Aetna", "Covered with Medical Necessity", "EUS is covered for evaluating pancreatic abnormalities and staging tumors (CPB 0446). "],
+            ["Cigna", "Covered with Medical Necessity", "Whipple surgery for pancreatic cancer is covered when medically appropriate. "]
+          ]
+        }
+      ]
+    }
+  }
+}

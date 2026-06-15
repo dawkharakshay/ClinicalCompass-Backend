@@ -1,0 +1,30 @@
+{
+  "title": "Peyronie's Disease Surgery Clinical Compass",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "54110, 54111, 54112, 54360, 54400, 54405, 54406, 54408, J0775",
+      "credentials": "[Credentials]",
+      "icd_codes": "N48.6, N52.01, N52.02, N52.03, N52.1, N52.9, N48.89",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "To Whom It May Concern,\n\nI am writing to formally appeal the denial of prior authorization for surgical correction of Peyronie's disease for my patient. This procedure is medically necessary and is supported by the American Urological Association (AUA) Guideline on Peyronie's Disease (Nehra et al., J Urol. 2015;194(3):745-753).\n\nCLINICAL SUMMARY\n\nMy patient presents with Peyronie's disease (ICD-10 N48.6) with a penile curvature of [X]° in the [direction] direction. The disease has been stable for [X] months (no change in curvature, pain resolved). Erectile function assessment demonstrates [normal erections / mild-moderate ED / severe ED requiring IPP]. The deformity prevents satisfactory sexual intercourse.\n\nDENIAL REBUTTAL\n\nIf denied as \"cosmetic\": Peyronie's disease (N48.6) is a distinct medical condition characterized by fibrous plaque formation causing penile deformity, pain, and sexual dysfunction. It is not a cosmetic condition. The AUA explicitly classifies surgical correction as medically necessary for patients with stable disease and functionally significant curvature.\n\nIf denied as \"not medically necessary\": The AUA Guideline provides a Grade B recommendation for surgical correction in patients with stable Peyronie's disease and curvature ≥30° that prevents intercourse. All AUA criteria are met in this patient.\n\nPROPOSED PROCEDURE\n\n[Plication (CPT 54360) / Plaque excision with grafting (CPT 54111/54112) / Penile prosthesis implantation (CPT 54405)] is the appropriate surgical intervention based on the patient's curvature angle, erectile function, and deformity characteristics per AUA guidelines.\n\nEVIDENCE BASE\n\nThe AUA Guideline (Nehra et al., 2015) and EAU Guidelines on Penile Curvature (Hatzimouratidis et al., 2012) provide evidence-based recommendations for surgical correction of Peyronie's disease. These guidelines are based on extensive prospective data demonstrating significant improvement in sexual function and quality of life following surgical correction.\n\nCONCLUSION\n\nI respectfully request reconsideration and approval of this medically necessary procedure for my patient.\n\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\n{{letter_date}}"
+  }
+}

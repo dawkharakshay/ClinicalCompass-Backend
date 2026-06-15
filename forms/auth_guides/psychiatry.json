@@ -1,0 +1,464 @@
+{
+  "title": "Psychiatry Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "PsychiatryAuthGuide.tsx",
+    "title": "Psychiatry Clinical Compass",
+    "subtitle": "Psychiatric Services Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "90867",
+        "description": "Transcranial Magnetic Stimulation (TMS) treatment; initial 30 minutes of daily treatment, and each additional 30 minutes (List separately in addition to code for primary procedure)",
+        "device": "TMS Device",
+        "access": "Outpatient clinic",
+        "rvu": "1.50",
+        "includes": [
+          "Clinical assessment and monitoring",
+          "Coil positioning and mapping",
+          "Treatment delivery"
+        ],
+        "note": "Requires prior authorization and specific diagnostic criteria for Major Depressive Disorder (MDD) or Obsessive-Compulsive Disorder (OCD)."
+      },
+      {
+        "code": "90870",
+        "description": "Electroconvulsive therapy (ECT), including any accompanying electroencephalographic (EEG) monitoring; administered by a physician or other qualified health care professional",
+        "device": "ECT Device",
+        "access": "Inpatient or Outpatient hospital setting",
+        "rvu": "3.00",
+        "includes": [
+          "Pre-ECT evaluation",
+          "Anesthesia monitoring (if performed by psychiatrist)",
+          "Post-ECT recovery monitoring"
+        ],
+        "note": "Typically covered for severe depression, bipolar disorder, or catatonia unresponsive to other treatments. Anesthesia is often billed separately."
+      },
+      {
+        "code": "99213",
+        "description": "Office or other outpatient visit for the evaluation and management of an established patient, which requires at least 2 of 3 key components: problem focused history, problem focused examination, or straightforward medical decision making. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's needs. Typically, 15 minutes are spent face-to-face with the patient and/or family.",
+        "device": "N/A",
+        "access": "Outpatient clinic, Telehealth",
+        "rvu": "0.97",
+        "includes": [
+          "Medication review and adjustment",
+          "Symptom assessment",
+          "Care coordination"
+        ],
+        "note": "Commonly used for psychiatric medication management visits. Time-based coding may apply."
+      },
+      {
+        "code": "90792",
+        "description": "Psychiatric diagnostic evaluation with medical services",
+        "device": "N/A",
+        "access": "Outpatient clinic, Telehealth",
+        "rvu": "2.00",
+        "includes": [
+          "Comprehensive psychiatric history",
+          "Mental status examination",
+          "Diagnosis and treatment plan formulation"
+        ],
+        "note": "Used for initial psychiatric evaluations that include medical assessment and medication management components."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "F32.0",
+        "description": "Major depressive disorder, single episode, mild",
+        "notes": "Mild symptoms, minimal impairment.",
+        "required": false
+      },
+      {
+        "code": "F32.2",
+        "description": "Major depressive disorder, single episode, severe without psychotic features",
+        "notes": "Severe symptoms, significant impairment, no psychosis.",
+        "required": true
+      },
+      {
+        "code": "F33.1",
+        "description": "Major depressive disorder, recurrent, moderate",
+        "notes": "Recurrent episodes, moderate symptoms, some impairment.",
+        "required": false
+      },
+      {
+        "code": "F33.2",
+        "description": "Major depressive disorder, recurrent, severe without psychotic features",
+        "notes": "Recurrent episodes, severe symptoms, significant impairment, no psychosis.",
+        "required": true
+      },
+      {
+        "code": "F31.11",
+        "description": "Bipolar disorder, current episode manic without psychotic features, mild",
+        "notes": "Manic episode, mild symptoms, no psychosis.",
+        "required": false
+      },
+      {
+        "code": "F31.31",
+        "description": "Bipolar disorder, current episode depressed, mild",
+        "notes": "Depressive episode, mild symptoms.",
+        "required": false
+      },
+      {
+        "code": "F41.1",
+        "description": "Generalized anxiety disorder",
+        "notes": "Excessive anxiety and worry, occurring more days than not for at least 6 months.",
+        "required": false
+      },
+      {
+        "code": "F41.0",
+        "description": "Panic disorder [episodic paroxysmal anxiety]",
+        "notes": "Recurrent unexpected panic attacks.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with strict criteria",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicare Part B covers TMS for eligible patients diagnosed with Major Depressive Disorder (MDD) who meet specific criteria, including failure of prior antidepressant trials. ECT is generally covered for severe mental health conditions. Ketamine infusions for mental health are generally NOT covered, but Spravato (esketamine nasal spray) may be covered under specific conditions. Antipsychotics are covered under Part D.",
+        "overview": "Medicare covers a range of psychiatric services, with specific guidelines for advanced treatments like TMS and ECT. Coverage for newer treatments like ketamine is limited, primarily to FDA-approved formulations like esketamine, and often requires extensive documentation of treatment resistance.",
+        "reimbursementNote": "Reimbursement rates vary by geographic location and facility type. Ensure proper billing for facility and professional components.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Transcranial Magnetic Stimulation (TMS)",
+            "items": [
+              "Diagnosis of severe Major Depressive Disorder (MDD) or Obsessive-Compulsive Disorder (OCD).",
+              "Failure of at least four adequate antidepressant medication trials (for MDD).",
+              "Contraindications to ECT or intolerance to antidepressant medications."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Electroconvulsive Therapy (ECT)",
+            "items": [
+              "Diagnosis of severe MDD, bipolar disorder, or catatonia.",
+              "Failure to respond to adequate trials of psychopharmacology and psychotherapy.",
+              "Severe symptoms requiring rapid response (e.g., severe suicidality, psychotic features)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Esketamine (Spravato)",
+            "items": [
+              "Diagnosis of treatment-resistant MDD (TRD) or MDD with acute suicidal ideation or behavior.",
+              "Administered in a certified healthcare setting under direct supervision.",
+              "Concurrent oral antidepressant therapy required."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Antipsychotic Medications",
+            "items": [
+              "Diagnosis of schizophrenia, bipolar disorder, or other psychotic disorders.",
+              "Covered under Medicare Part D (prescription drug plan)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: General",
+            "items": [
+              "Detailed psychiatric evaluation and diagnosis.",
+              "Documentation of prior treatment failures (medications, psychotherapy).",
+              "Treatment plan outlining goals and expected duration."
+            ]
+          },
+          {
+            "heading": "Required Documentation: For TMS/ECT/Esketamine",
+            "items": [
+              "Medical necessity documentation.",
+              "Patient consent forms.",
+              "Clinical notes supporting criteria fulfillment."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request with all supporting clinical documentation.",
+              "Ensure CPT and ICD-10 codes align with covered indications.",
+              "Follow up on authorization status regularly."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented treatment resistance.",
+              "Incomplete clinical documentation.",
+              "Off-label use (especially for ketamine infusions).",
+              "Incorrect coding or missing modifiers."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Maintain thorough and accurate patient records.",
+              "Stay updated on Medicare Local Coverage Determinations (LCDs) and National Coverage Determinations (NCDs).",
+              "Clearly articulate medical necessity in all documentation."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "CMS (Medicare)", "status": "Covered", "notes": "TMS for MDD/OCD, ECT for severe mental illness, Esketamine for TRD/suicidal ideation." },
+          { "payer": "CMS (Medicare)", "status": "Non-covered", "notes": "Off-label ketamine infusions for psychiatric conditions." }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Varies by state, often restricted",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Medicaid coverage for psychiatric services, especially advanced treatments like TMS and ketamine, varies significantly by state. Most states cover TMS for MDD, but often with strict criteria. ECT is generally covered. Ketamine infusions are rarely covered due to off-label status and budget limitations.",
+        "overview": "Medicaid programs are state-administered, leading to diverse coverage policies. While many essential psychiatric services are covered, advanced or novel treatments may have more stringent requirements or be excluded entirely. Prior authorization is almost always required for specialized procedures.",
+        "reimbursementNote": "Medicaid reimbursement rates are typically lower than Medicare or private insurance. Timely submission is crucial.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Transcranial Magnetic Stimulation (TMS)",
+            "items": [
+              "Diagnosis of MDD, often treatment-resistant.",
+              "Documentation of failure of multiple antidepressant trials and psychotherapy.",
+              "Specific age and comorbidity restrictions may apply by state."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Electroconvulsive Therapy (ECT)",
+            "items": [
+              "Diagnosis of severe MDD, bipolar disorder, or catatonia.",
+              "Medical necessity established by a psychiatrist.",
+              "Often requires pre-authorization."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Esketamine (Spravato)",
+            "items": [
+              "Coverage is emerging in some states for TRD.",
+              "Strict adherence to FDA-approved indications and administration protocols.",
+              "Prior authorization is mandatory."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Ketamine Infusions (Off-label)",
+            "items": [
+              "Generally NOT covered due to off-label use for psychiatric conditions.",
+              "Some states may have pilot programs or exceptions, but rare."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Antipsychotic Medications",
+            "items": [
+              "Covered for appropriate diagnoses (e.g., schizophrenia, bipolar disorder).",
+              "May be subject to preferred drug lists and step therapy requirements."
+            ]
+          },
+          {
+            "heading": "Required Documentation: General",
+            "items": [
+              "Comprehensive psychiatric evaluation.",
+              "Documentation of medical necessity and treatment history.",
+              "State-specific forms and attestations."
+            ]
+          },
+          {
+            "heading": "Required Documentation: For TMS/ECT/Esketamine",
+            "items": [
+              "Detailed clinical notes supporting criteria.",
+              "Proof of treatment resistance.",
+              "Facility certification (for esketamine)."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify state-specific Medicaid policies before initiating treatment.",
+              "Submit detailed prior authorization requests through the state's portal.",
+              "Be prepared for potential appeals due to strict criteria."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet state-specific medical necessity criteria.",
+              "Lack of prior authorization.",
+              "Insufficient documentation of treatment trials.",
+              "Off-label use (especially for ketamine)."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Consult your state's Medicaid provider manual regularly.",
+              "Document all failed treatment attempts thoroughly.",
+              "Advocate for patients by understanding appeal processes."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "Colorado Medicaid", "status": "Non-covered", "notes": "TMS not covered in Colorado as of recent reports, despite advocacy efforts." },
+          { "payer": "Various State Medicaid", "status": "Covered", "notes": "TMS for MDD in most states, but with strict criteria." },
+          { "payer": "Various State Medicaid", "status": "Non-covered", "notes": "Ketamine infusions generally not covered." }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Generally covered with prior authorization",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Private insurance coverage for psychiatric services, including TMS, ECT, and esketamine, is generally good but almost always requires prior authorization and adherence to medical necessity criteria. Coverage for off-label ketamine infusions is rare.",
+        "overview": "Private insurance plans typically offer broader coverage for mental health services compared to public programs, but still impose strict medical necessity and prior authorization requirements for advanced treatments. Policies vary significantly between plans and carriers.",
+        "reimbursementNote": "Reimbursement rates are negotiated between providers and payers. Out-of-network benefits may apply with higher patient cost-sharing.",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Transcranial Magnetic Stimulation (TMS)",
+            "items": [
+              "Diagnosis of MDD or OCD, often treatment-resistant.",
+              "Failure of 2-4 adequate antidepressant trials and/or psychotherapy.",
+              "Absence of contraindications (e.g., seizure disorder, metallic implants)."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Electroconvulsive Therapy (ECT)",
+            "items": [
+              "Diagnosis of severe MDD, bipolar disorder, or catatonia.",
+              "Documented failure of less intensive treatments or need for rapid response.",
+              "Pre-authorization required."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Esketamine (Spravato)",
+            "items": [
+              "Diagnosis of TRD or MDD with acute suicidal ideation/behavior.",
+              "Administered in a certified REMS program facility.",
+              "Concurrent oral antidepressant required."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Ketamine Infusions (Off-label)",
+            "items": [
+              "Rarely covered; considered experimental/investigational by most payers.",
+              "Some plans may cover if part of a clinical trial or with extensive appeals."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Antipsychotic Medications",
+            "items": [
+              "Covered for FDA-approved indications.",
+              "May be subject to formulary restrictions, step therapy, or quantity limits."
+            ]
+          },
+          {
+            "heading": "Required Documentation: General",
+            "items": [
+              "Detailed clinical notes, including diagnosis and treatment history.",
+              "Medical necessity letter from treating physician.",
+              "Psychological testing results (if applicable)."
+            ]
+          },
+          {
+            "heading": "Required Documentation: For TMS/ECT/Esketamine",
+            "items": [
+              "Documentation of previous treatment failures.",
+              "Patient selection criteria fulfillment.",
+              "Facility accreditation (if required)."
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request through the payer's online portal or fax.",
+              "Provide all requested clinical documentation upfront to avoid delays.",
+              "Be prepared to appeal adverse decisions with additional clinical rationale."
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of prior authorization.",
+              "Failure to meet medical necessity criteria.",
+              "Insufficient documentation of treatment resistance.",
+              "Treatment deemed experimental or investigational (e.g., off-label ketamine)."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Verify benefits and eligibility prior to treatment.",
+              "Understand specific plan policies for mental health benefits.",
+              "Utilize peer-to-peer reviews for complex cases."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          { "payer": "UnitedHealthcare", "status": "Covered", "notes": "TMS and Spravato generally covered with medical necessity." },
+          { "payer": "Anthem Blue Cross", "status": "Covered", "notes": "TMS covered for MDD/OCD per policy guidelines." },
+          { "payer": "Cigna", "status": "Investigational", "notes": "Ketamine infusions for depression often considered investigational." }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment",
+        "href": "/psychiatry"
+      },
+      {
+        "heading": "Procedure Codes (CPT) — Included items note",
+        "kind": "prose",
+        "text": "Each CPT code lists items that are 'Included in this code (do NOT bill separately)'. Codes also display an RVU badge and Device/Access information."
+      },
+      {
+        "heading": "ICD-10 Diagnosis Codes — Primary marking",
+        "kind": "prose",
+        "text": "ICD-10 codes marked as required are displayed with a green 'Primary' badge. In this guide, F32.2 (Major depressive disorder, single episode, severe without psychotic features) and F33.2 (Major depressive disorder, recurrent, severe without psychotic features) are marked Primary/required."
+      }
+    ],
+    "raw": {
+      "markdown": "# Psychiatry Clinical Compass\n\n## Psychiatric Services Insurance Authorization Guide\n\n[Back to Assessment](/psychiatry)\n\n---\n\n## Procedure Codes (CPT)\n\n### CPT 90867 (RVU 1.50)\nTranscranial Magnetic Stimulation (TMS) treatment; initial 30 minutes of daily treatment, and each additional 30 minutes (List separately in addition to code for primary procedure)\n\n- Device/Access: TMS Device — Outpatient clinic\n\nIncluded in this code (do NOT bill separately):\n- Clinical assessment and monitoring\n- Coil positioning and mapping\n- Treatment delivery\n\n*Note:* Requires prior authorization and specific diagnostic criteria for Major Depressive Disorder (MDD) or Obsessive-Compulsive Disorder (OCD).\n\n### CPT 90870 (RVU 3.00)\nElectroconvulsive therapy (ECT), including any accompanying electroencephalographic (EEG) monitoring; administered by a physician or other qualified health care professional\n\n- Device/Access: ECT Device — Inpatient or Outpatient hospital setting\n\nIncluded in this code (do NOT bill separately):\n- Pre-ECT evaluation\n- Anesthesia monitoring (if performed by psychiatrist)\n- Post-ECT recovery monitoring\n\n*Note:* Typically covered for severe depression, bipolar disorder, or catatonia unresponsive to other treatments. Anesthesia is often billed separately.\n\n### CPT 99213 (RVU 0.97)\nOffice or other outpatient visit for the evaluation and management of an established patient, which requires at least 2 of 3 key components: problem focused history, problem focused examination, or straightforward medical decision making. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's needs. Typically, 15 minutes are spent face-to-face with the patient and/or family.\n\n- Device/Access: N/A — Outpatient clinic, Telehealth\n\nIncluded in this code (do NOT bill separately):\n- Medication review and adjustment\n- Symptom assessment\n- Care coordination\n\n*Note:* Commonly used for psychiatric medication management visits. Time-based coding may apply.\n\n### CPT 90792 (RVU 2.00)\nPsychiatric diagnostic evaluation with medical services\n\n- Device/Access: N/A — Outpatient clinic, Telehealth\n\nIncluded in this code (do NOT bill separately):\n- Comprehensive psychiatric history\n- Mental status examination\n- Diagnosis and treatment plan formulation\n\n*Note:* Used for initial psychiatric evaluations that include medical assessment and medication management components.\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **F32.0** — Major depressive disorder, single episode, mild — Mild symptoms, minimal impairment.\n- **F32.2** (Primary) — Major depressive disorder, single episode, severe without psychotic features — Severe symptoms, significant impairment, no psychosis.\n- **F33.1** — Major depressive disorder, recurrent, moderate — Recurrent episodes, moderate symptoms, some impairment.\n- **F33.2** (Primary) — Major depressive disorder, recurrent, severe without psychotic features — Recurrent episodes, severe symptoms, significant impairment, no psychosis.\n- **F31.11** — Bipolar disorder, current episode manic without psychotic features, mild — Manic episode, mild symptoms, no psychosis.\n- **F31.31** — Bipolar disorder, current episode depressed, mild — Depressive episode, mild symptoms.\n- **F41.1** — Generalized anxiety disorder — Excessive anxiety and worry, occurring more days than not for at least 6 months.\n- **F41.0** — Panic disorder [episodic paroxysmal anxiety] — Recurrent unexpected panic attacks.\n\n---\n\n## Payer-Specific Authorization Requirements\n\nTabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\n\n**Prior Auth Required** | Coverage Status: Covered with strict criteria\n\n*Prior Auth Note:* Medicare Part B covers TMS for eligible patients diagnosed with Major Depressive Disorder (MDD) who meet specific criteria, including failure of prior antidepressant trials. ECT is generally covered for severe mental health conditions. Ketamine infusions for mental health are generally NOT covered, but Spravato (esketamine nasal spray) may be covered under specific conditions. Antipsychotics are covered under Part D.\n\nOverview: Medicare covers a range of psychiatric services, with specific guidelines for advanced treatments like TMS and ECT. Coverage for newer treatments like ketamine is limited, primarily to FDA-approved formulations like esketamine, and often requires extensive documentation of treatment resistance.\n\n#### Coverage Criteria\n\n**Transcranial Magnetic Stimulation (TMS)**\n- Diagnosis of severe Major Depressive Disorder (MDD) or Obsessive-Compulsive Disorder (OCD).\n- Failure of at least four adequate antidepressant medication trials (for MDD).\n- Contraindications to ECT or intolerance to antidepressant medications.\n\n**Electroconvulsive Therapy (ECT)**\n- Diagnosis of severe MDD, bipolar disorder, or catatonia.\n- Failure to respond to adequate trials of psychopharmacology and psychotherapy.\n- Severe symptoms requiring rapid response (e.g., severe suicidality, psychotic features).\n\n**Esketamine (Spravato)**\n- Diagnosis of treatment-resistant MDD (TRD) or MDD with acute suicidal ideation or behavior.\n- Administered in a certified healthcare setting under direct supervision.\n- Concurrent oral antidepressant therapy required.\n\n**Antipsychotic Medications**\n- Diagnosis of schizophrenia, bipolar disorder, or other psychotic disorders.\n- Covered under Medicare Part D (prescription drug plan).\n\n#### Required Documentation\n\n**General**\n- Detailed psychiatric evaluation and diagnosis.\n- Documentation of prior treatment failures (medications, psychotherapy).\n- Treatment plan outlining goals and expected duration.\n\n**For TMS/ECT/Esketamine**\n- Medical necessity documentation.\n- Patient consent forms.\n- Clinical notes supporting criteria fulfillment.\n\n#### Submission Process\n1. Submit prior authorization request with all supporting clinical documentation.\n2. Ensure CPT and ICD-10 codes align with covered indications.\n3. Follow up on authorization status regularly.\n\n#### Common Denial Reasons\n- Lack of documented treatment resistance.\n- Incomplete clinical documentation.\n- Off-label use (especially for ketamine infusions).\n- Incorrect coding or missing modifiers.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS (Medicare) | Covered | TMS for MDD/OCD, ECT for severe mental illness, Esketamine for TRD/suicidal ideation. |\n| CMS (Medicare) | Non-covered | Off-label ketamine infusions for psychiatric conditions. |\n\n#### Reimbursement Note\nReimbursement rates vary by geographic location and facility type. Ensure proper billing for facility and professional components.\n\n#### Authorization Tips\n- Maintain thorough and accurate patient records.\n- Stay updated on Medicare Local Coverage Determinations (LCDs) and National Coverage Determinations (NCDs).\n- Clearly articulate medical necessity in all documentation.\n\n### Medicaid\n\n**Prior Auth Required** | Coverage Status: Varies by state, often restricted\n\n*Prior Auth Note:* Medicaid coverage for psychiatric services, especially advanced treatments like TMS and ketamine, varies significantly by state. Most states cover TMS for MDD, but often with strict criteria. ECT is generally covered. Ketamine infusions are rarely covered due to off-label status and budget limitations.\n\nOverview: Medicaid programs are state-administered, leading to diverse coverage policies. While many essential psychiatric services are covered, advanced or novel treatments may have more stringent requirements or be excluded entirely. Prior authorization is almost always required for specialized procedures.\n\n#### Coverage Criteria\n\n**Transcranial Magnetic Stimulation (TMS)**\n- Diagnosis of MDD, often treatment-resistant.\n- Documentation of failure of multiple antidepressant trials and psychotherapy.\n- Specific age and comorbidity restrictions may apply by state.\n\n**Electroconvulsive Therapy (ECT)**\n- Diagnosis of severe MDD, bipolar disorder, or catatonia.\n- Medical necessity established by a psychiatrist.\n- Often requires pre-authorization.\n\n**Esketamine (Spravato)**\n- Coverage is emerging in some states for TRD.\n- Strict adherence to FDA-approved indications and administration protocols.\n- Prior authorization is mandatory.\n\n**Ketamine Infusions (Off-label)**\n- Generally NOT covered due to off-label use for psychiatric conditions.\n- Some states may have pilot programs or exceptions, but rare.\n\n**Antipsychotic Medications**\n- Covered for appropriate diagnoses (e.g., schizophrenia, bipolar disorder).\n- May be subject to preferred drug lists and step therapy requirements.\n\n#### Required Documentation\n\n**General**\n- Comprehensive psychiatric evaluation.\n- Documentation of medical necessity and treatment history.\n- State-specific forms and attestations.\n\n**For TMS/ECT/Esketamine**\n- Detailed clinical notes supporting criteria.\n- Proof of treatment resistance.\n- Facility certification (for esketamine).\n\n#### Submission Process\n1. Verify state-specific Medicaid policies before initiating treatment.\n2. Submit detailed prior authorization requests through the state's portal.\n3. Be prepared for potential appeals due to strict criteria.\n\n#### Common Denial Reasons\n- Failure to meet state-specific medical necessity criteria.\n- Lack of prior authorization.\n- Insufficient documentation of treatment trials.\n- Off-label use (especially for ketamine).\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Colorado Medicaid | Non-covered | TMS not covered in Colorado as of recent reports, despite advocacy efforts. |\n| Various State Medicaid | Covered | TMS for MDD in most states, but with strict criteria. |\n| Various State Medicaid | Non-covered | Ketamine infusions generally not covered. |\n\n#### Reimbursement Note\nMedicaid reimbursement rates are typically lower than Medicare or private insurance. Timely submission is crucial.\n\n#### Authorization Tips\n- Consult your state's Medicaid provider manual regularly.\n- Document all failed treatment attempts thoroughly.\n- Advocate for patients by understanding appeal processes.\n\n### Private Insurance\n\n**Prior Auth Required** | Coverage Status: Generally covered with prior authorization\n\n*Prior Auth Note:* Private insurance coverage for psychiatric services, including TMS, ECT, and esketamine, is generally good but almost always requires prior authorization and adherence to medical necessity criteria. Coverage for off-label ketamine infusions is rare.\n\nOverview: Private insurance plans typically offer broader coverage for mental health services compared to public programs, but still impose strict medical necessity and prior authorization requirements for advanced treatments. Policies vary significantly between plans and carriers.\n\n#### Coverage Criteria\n\n**Transcranial Magnetic Stimulation (TMS)**\n- Diagnosis of MDD or OCD, often treatment-resistant.\n- Failure of 2-4 adequate antidepressant trials and/or psychotherapy.\n- Absence of contraindications (e.g., seizure disorder, metallic implants).\n\n**Electroconvulsive Therapy (ECT)**\n- Diagnosis of severe MDD, bipolar disorder, or catatonia.\n- Documented failure of less intensive treatments or need for rapid response.\n- Pre-authorization required.\n\n**Esketamine (Spravato)**\n- Diagnosis of TRD or MDD with acute suicidal ideation/behavior.\n- Administered in a certified REMS program facility.\n- Concurrent oral antidepressant required.\n\n**Ketamine Infusions (Off-label)**\n- Rarely covered; considered experimental/investigational by most payers.\n- Some plans may cover if part of a clinical trial or with extensive appeals.\n\n**Antipsychotic Medications**\n- Covered for FDA-approved indications.\n- May be subject to formulary restrictions, step therapy, or quantity limits.\n\n#### Required Documentation\n\n**General**\n- Detailed clinical notes, including diagnosis and treatment history.\n- Medical necessity letter from treating physician.\n- Psychological testing results (if applicable).\n\n**For TMS/ECT/Esketamine**\n- Documentation of previous treatment failures.\n- Patient selection criteria fulfillment.\n- Facility accreditation (if required).\n\n#### Submission Process\n1. Submit prior authorization request through the payer's online portal or fax.\n2. Provide all requested clinical documentation upfront to avoid delays.\n3. Be prepared to appeal adverse decisions with additional clinical rationale.\n\n#### Common Denial Reasons\n- Lack of prior authorization.\n- Failure to meet medical necessity criteria.\n- Insufficient documentation of treatment resistance.\n- Treatment deemed experimental or investigational (e.g., off-label ketamine).\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| UnitedHealthcare | Covered | TMS and Spravato generally covered with medical necessity. |\n| Anthem Blue Cross | Covered | TMS covered for MDD/OCD per policy guidelines. |\n| Cigna | Investigational | Ketamine infusions for depression often considered investigational. |\n\n#### Reimbursement Note\nReimbursement rates are negotiated between providers and payers. Out-of-network benefits may apply with higher patient cost-sharing.\n\n#### Authorization Tips\n- Verify benefits and eligibility prior to treatment.\n- Understand specific plan policies for mental health benefits.\n- Utilize peer-to-peer reviews for complex cases.\n",
+      "tables": [
+        {
+          "name": "CPT Procedure Codes",
+          "header": ["Code", "Description", "Device", "Access", "RVU", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            ["90867", "Transcranial Magnetic Stimulation (TMS) treatment; initial 30 minutes of daily treatment, and each additional 30 minutes (List separately in addition to code for primary procedure)", "TMS Device", "Outpatient clinic", "1.50", "Clinical assessment and monitoring; Coil positioning and mapping; Treatment delivery", "Requires prior authorization and specific diagnostic criteria for Major Depressive Disorder (MDD) or Obsessive-Compulsive Disorder (OCD)."],
+            ["90870", "Electroconvulsive therapy (ECT), including any accompanying electroencephalographic (EEG) monitoring; administered by a physician or other qualified health care professional", "ECT Device", "Inpatient or Outpatient hospital setting", "3.00", "Pre-ECT evaluation; Anesthesia monitoring (if performed by psychiatrist); Post-ECT recovery monitoring", "Typically covered for severe depression, bipolar disorder, or catatonia unresponsive to other treatments. Anesthesia is often billed separately."],
+            ["99213", "Office or other outpatient visit for the evaluation and management of an established patient, which requires at least 2 of 3 key components: problem focused history, problem focused examination, or straightforward medical decision making. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's needs. Typically, 15 minutes are spent face-to-face with the patient and/or family.", "N/A", "Outpatient clinic, Telehealth", "0.97", "Medication review and adjustment; Symptom assessment; Care coordination", "Commonly used for psychiatric medication management visits. Time-based coding may apply."],
+            ["90792", "Psychiatric diagnostic evaluation with medical services", "N/A", "Outpatient clinic, Telehealth", "2.00", "Comprehensive psychiatric history; Mental status examination; Diagnosis and treatment plan formulation", "Used for initial psychiatric evaluations that include medical assessment and medication management components."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Primary/Required"],
+          "rows": [
+            ["F32.0", "Major depressive disorder, single episode, mild", "Mild symptoms, minimal impairment.", "No"],
+            ["F32.2", "Major depressive disorder, single episode, severe without psychotic features", "Severe symptoms, significant impairment, no psychosis.", "Yes"],
+            ["F33.1", "Major depressive disorder, recurrent, moderate", "Recurrent episodes, moderate symptoms, some impairment.", "No"],
+            ["F33.2", "Major depressive disorder, recurrent, severe without psychotic features", "Recurrent episodes, severe symptoms, significant impairment, no psychosis.", "Yes"],
+            ["F31.11", "Bipolar disorder, current episode manic without psychotic features, mild", "Manic episode, mild symptoms, no psychosis.", "No"],
+            ["F31.31", "Bipolar disorder, current episode depressed, mild", "Depressive episode, mild symptoms.", "No"],
+            ["F41.1", "Generalized anxiety disorder", "Excessive anxiety and worry, occurring more days than not for at least 6 months.", "No"],
+            ["F41.0", "Panic disorder [episodic paroxysmal anxiety]", "Recurrent unexpected panic attacks.", "No"]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicare",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS (Medicare)", "Covered", "TMS for MDD/OCD, ECT for severe mental illness, Esketamine for TRD/suicidal ideation."],
+            ["CMS (Medicare)", "Non-covered", "Off-label ketamine infusions for psychiatric conditions."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Medicaid",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Colorado Medicaid", "Non-covered", "TMS not covered in Colorado as of recent reports, despite advocacy efforts."],
+            ["Various State Medicaid", "Covered", "TMS for MDD in most states, but with strict criteria."],
+            ["Various State Medicaid", "Non-covered", "Ketamine infusions generally not covered."]
+          ]
+        },
+        {
+          "name": "Known Payer Policies — Private Insurance",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["UnitedHealthcare", "Covered", "TMS and Spravato generally covered with medical necessity."],
+            ["Anthem Blue Cross", "Covered", "TMS covered for MDD/OCD per policy guidelines."],
+            ["Cigna", "Investigational", "Ketamine infusions for depression often considered investigational."]
+          ]
+        }
+      ]
+    }
+  }
+}

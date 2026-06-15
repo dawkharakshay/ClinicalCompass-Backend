@@ -1,0 +1,224 @@
+{
+  "title": "Glaucoma",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Generate Recommendation",
+    "logicKey": "glaucoma",
+    "hiddenDefaults": {
+      "targetIOP": null
+    },
+    "steps": [
+      {
+        "id": "diagnosis-iop",
+        "shortLabel": "Diagnosis & IOP",
+        "title": "Diagnosis & IOP",
+        "fields": [
+          {
+            "id": "glaucoma-type",
+            "name": "glaucomaType",
+            "label": "Glaucoma Type / Diagnosis",
+            "type": "select",
+            "required": false,
+            "defaultValue": "poag_mild",
+            "options": [
+              { "label": "Ocular Hypertension (OHT) — IOP >21, no damage", "value": "ocular_hypertension" },
+              { "label": "Glaucoma Suspect — suspicious disc or borderline VF", "value": "glaucoma_suspect" },
+              { "label": "POAG, Mild — MD > -6 dB", "value": "poag_mild" },
+              { "label": "POAG, Moderate — MD -6 to -12 dB", "value": "poag_moderate" },
+              { "label": "POAG, Severe — MD < -12 dB", "value": "poag_severe" },
+              { "label": "Normal-Tension Glaucoma (NTG) — IOP ≤21 mmHg", "value": "ntg" },
+              { "label": "Angle Closure Suspect — narrow angles, no damage", "value": "angle_closure_suspect" },
+              { "label": "PACG — Primary Angle-Closure Glaucoma", "value": "pacg" },
+              { "label": "Secondary Glaucoma (neovascular, uveitic, exfoliative)", "value": "secondary_glaucoma" }
+            ]
+          },
+          {
+            "id": "iop",
+            "name": "iop",
+            "label": "Presenting IOP (mmHg)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "unit": "mmHg",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "cct",
+            "name": "cct",
+            "label": "Central Corneal Thickness (CCT, μm)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 545,
+            "unit": "μm",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Patient Age (years)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0,
+            "keyboardType": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "structural-functional",
+        "shortLabel": "Structural & Functional Status",
+        "title": "Structural & Functional Status",
+        "fields": [
+          {
+            "id": "cd-ratio",
+            "name": "cdRatio",
+            "label": "Cup-to-Disc Ratio (C/D)",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0.7,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "cd-asymmetry",
+            "name": "cdAsymmetry",
+            "label": "C/D Asymmetry Between Eyes",
+            "type": "number",
+            "required": false,
+            "defaultValue": 0.1,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "visual-field-status",
+            "name": "visualFieldStatus",
+            "label": "Visual Field Status (24-2)",
+            "type": "select",
+            "required": false,
+            "defaultValue": "early_defect",
+            "options": [
+              { "label": "Normal", "value": "normal" },
+              { "label": "Suspect defect (borderline)", "value": "suspect_defect" },
+              { "label": "Early defect — MD > -6 dB", "value": "early_defect" },
+              { "label": "Moderate defect — MD -6 to -12 dB", "value": "moderate_defect" },
+              { "label": "Severe defect — MD < -12 dB", "value": "severe_defect" },
+              { "label": "Fixation-threatening defect", "value": "split_fixation" }
+            ]
+          },
+          {
+            "id": "md-db",
+            "name": "mdDb",
+            "label": "Mean Deviation (MD, dB) — enter as negative, e.g., -4.5",
+            "type": "number",
+            "required": false,
+            "defaultValue": -3.5,
+            "unit": "dB",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "contralateral-eye-lost",
+            "name": "contralateralEyeLost",
+            "label": "Contralateral Eye Lost (Monocular Patient)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "risk-therapy",
+        "shortLabel": "Risk Factors & Current Therapy",
+        "title": "Risk Factors & Current Therapy",
+        "fields": [
+          {
+            "id": "current-therapy",
+            "name": "currentTherapy",
+            "label": "Current Glaucoma Therapy",
+            "type": "select",
+            "required": false,
+            "defaultValue": "none",
+            "options": [
+              { "label": "No current therapy", "value": "none" },
+              { "label": "One topical medication", "value": "one_medication" },
+              { "label": "Two topical medications", "value": "two_medications" },
+              { "label": "Three or more medications", "value": "three_plus_medications" },
+              { "label": "Post-SLT", "value": "post_slt" },
+              { "label": "Post-trabeculectomy", "value": "post_trabeculectomy" },
+              { "label": "Post-MIGS", "value": "post_migs" }
+            ]
+          },
+          {
+            "id": "has-progression-on-current-therapy",
+            "name": "hasProgressionOnCurrentTherapy",
+            "label": "Documented Progression on Current Therapy",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "is-african-american",
+            "name": "isAfricanAmerican",
+            "label": "African American Race (4–5× higher POAG risk)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-family-history-glaucoma",
+            "name": "hasFamilyHistoryGlaucoma",
+            "label": "Family History of Glaucoma",
+            "type": "switch",
+            "required": false,
+            "defaultValue": true
+          },
+          {
+            "id": "has-diabetes",
+            "name": "hasDiabetes",
+            "label": "Diabetes Mellitus",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-high-myopia",
+            "name": "hasHighMyopia",
+            "label": "High Myopia (SE < -6 D)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-low-corneal-hysteresis",
+            "name": "hasLowCornealHysteresis",
+            "label": "Low Corneal Hysteresis (<9 mmHg)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-low-ocular-perfusion-pressure",
+            "name": "hasLowOcularPerfusionPressure",
+            "label": "Low Ocular Perfusion Pressure (<50 mmHg)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "has-vascular-risk-factors",
+            "name": "hasVascularRiskFactors",
+            "label": "Vascular Risk Factors (HTN, hypotension, vasospasm)",
+            "type": "switch",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "is-surgical-candidate",
+            "name": "isSurgicalCandidate",
+            "label": "Surgical Candidate",
+            "type": "switch",
+            "required": false,
+            "defaultValue": true
+          }
+        ]
+      }
+    ]
+  }
+}

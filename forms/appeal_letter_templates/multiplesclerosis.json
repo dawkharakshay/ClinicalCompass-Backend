@@ -1,0 +1,30 @@
+{
+  "title": "Multiple Sclerosis",
+  "appeal_letter_template": {
+    "defaults": {
+      "additional_clinical_notes": "",
+      "claim_number": "[Claim Number]",
+      "cpt_codes": "96365, 96413, J2323, J2350",
+      "credentials": "[Credentials]",
+      "icd_codes": "G35, G35.A, G35.B0, G35.C",
+      "insurance_address": "[Insurance Address]",
+      "insurance_name": "the plan",
+      "letter_date": "[Date]",
+      "medical_director": "Medical Director",
+      "member_id": "[Member ID]",
+      "npi": "[NPI]",
+      "patient_dob": "[Date of Birth]",
+      "patient_name": "[Patient Name]",
+      "physician_name": "[Physician Name]",
+      "policy_number": "[Policy Number]",
+      "practice_address": "[Practice Address]",
+      "practice_email": "[Email]",
+      "practice_fax": "[Fax]",
+      "practice_name": "[Practice Name]",
+      "practice_phone": "[Phone]",
+      "procedure_description": "[Procedure Description]",
+      "specialty": "[Specialty]"
+    },
+    "template": "{{letter_date}}\nRe: Medical Necessity Appeal — Disease-Modifying Therapy for Multiple Sclerosis\nCPT Code(s): {{cpt_codes}}\nICD-10 Code(s): {{icd_codes}}\nDear Medical Director / Utilization Review Committee,\n\nI am writing to appeal the denial of coverage for the recommended disease-modifying therapy for my patient, {{patient_name}}, who has been diagnosed with unspecified type of Multiple Sclerosis. This treatment is medically necessary and is in accordance with established clinical guidelines for Multiple Sclerosis.\n\nClinical Summary:\n{{patient_name}} presents with an active disease course and a clinical course consistent with active Multiple Sclerosis. Our assessment indicates that a disease-modifying therapy, and specifically, standard therapy is indicated based on the patient's clinical presentation and disease activity. Without appropriate disease-modifying therapy, {{patient_name}} is at high risk for further neurological deterioration, increased disability, and a significant reduction in quality of life.\n\nGuideline Support:\n1.  The AAN Practice Guidelines for Disease-Modifying Therapies in MS (2018) support the use of disease-modifying therapies to reduce relapse rates and slow disability progression in patients with MS.\n2.  The ECTRIMS/EAN Guideline on the Pharmacological Treatment of MS (2018) provides recommendations for initiating and switching disease-modifying therapies based on disease activity and patient characteristics.\n3.  The MS Coalition Recommendations for Rehabilitation in MS (2022) emphasize the importance of comprehensive care, including effective disease-modifying treatment, to optimize patient outcomes.\n4.  FDA Prescribing Information for High-Efficacy DMTs (2023) outlines the approved indications and efficacy data for various high-efficacy disease-modifying therapies, which are crucial for patients with active or aggressive MS.\n\nMedical Necessity Statement:\nGiven {{patient_name}}'s clinical presentation and disease activity, the recommended disease-modifying therapy is medically necessary to prevent further relapses, reduce the accumulation of disability, and preserve neurological function. The chosen therapy is supported by strong evidence from leading neurological guidelines.\n\nRisk Without Treatment:\nDelay or denial of this medically necessary treatment will likely lead to irreversible neurological damage, increased frequency and severity of relapses, progressive disability, and a substantial burden on the patient and healthcare system.\n\nRequested Action:\nI urge you to reconsider this denial and approve coverage for the recommended disease-modifying therapy for {{patient_name}}. My recommended next steps include: continue current management.\n\n{{additional_clinical_notes}}\nSincerely,\n{{physician_name}}, {{credentials}}\n{{practice_name}}\nNPI: {{npi}}\nPhone: {{practice_phone}}\nEmail: {{practice_email}}"
+  }
+}

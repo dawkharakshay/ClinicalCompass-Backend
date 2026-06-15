@@ -1,0 +1,431 @@
+{
+  "title": "IBD Preventive Care Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "IBDPreventiveCareAuthGuide.tsx",
+    "title": "IBDPreventiveCare Clinical Compass",
+    "subtitle": "IBD Preventive Care Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "99213",
+        "description": "Office or other outpatient visit for the evaluation and management of an established patient, which requires a medically appropriate history and/or examination and medical decision making of low complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs.",
+        "device": "N/A",
+        "access": "Direct patient encounter",
+        "rvu": "1.30",
+        "includes": [
+          "Medically appropriate history and/or examination",
+          "Low complexity medical decision making",
+          "Counseling and/or coordination of care (20-29 minutes total time on encounter date)"
+        ],
+        "note": "Used for general preventive care discussions, medication management, and overall health assessment in IBD patients, including vaccination status review and cancer screening discussions."
+      },
+      {
+        "code": "45378",
+        "description": "Colonoscopy, flexible, diagnostic, including collection of specimen(s) by brushing or washing, when performed (separate procedure).",
+        "device": "Colonoscope",
+        "access": "Endoscopic",
+        "rvu": "Varies (e.g., 5.0-7.0)",
+        "includes": [
+          "Full colonoscopy to the cecum",
+          "Biopsy(s) if needed",
+          "Collection of specimen(s) by brushing or washing"
+        ],
+        "note": "Used for colorectal cancer screening and surveillance in IBD patients, especially those with increased risk due to disease duration and extent."
+      },
+      {
+        "code": "90686",
+        "description": "Influenza virus vaccine, quadrivalent, split virus, preservative free, 0.5 mL dosage, for intramuscular use.",
+        "device": "Syringe",
+        "access": "Intramuscular injection",
+        "rvu": "0.10-0.20",
+        "includes": [
+          "Vaccine product",
+          "Administration (if billed with G0008 for Medicare or 90471 for commercial payers)"
+        ],
+        "note": "Annual influenza vaccination is recommended for all IBD patients, especially those on immunosuppressive therapy."
+      },
+      {
+        "code": "90736",
+        "description": "Herpes zoster vaccine, recombinant, subunita, adjuvanted, preservative free, 0.5 mL dosage, for intramuscular use.",
+        "device": "Syringe",
+        "access": "Intramuscular injection",
+        "rvu": "0.10-0.20",
+        "includes": [
+          "Vaccine product",
+          "Administration (if billed with G0008 for Medicare or 90471 for commercial payers)"
+        ],
+        "note": "Recombinant herpes zoster vaccine (Shingrix) is recommended for IBD patients aged 50 and older, or younger if on immunosuppression."
+      },
+      {
+        "code": "90746",
+        "description": "Hepatitis B vaccine (HepB), adult, recombinant, for intramuscular use.",
+        "device": "Syringe",
+        "access": "Intramuscular injection",
+        "rvu": "0.10-0.20",
+        "includes": [
+          "Vaccine product",
+          "Administration (if billed with G0008 for Medicare or 90471 for commercial payers)"
+        ],
+        "note": "Hepatitis B vaccination is recommended for all IBD patients, with serologic testing to confirm immunity."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "K50.90",
+        "description": "Crohn's disease, unspecified, without complications",
+        "notes": "Primary diagnosis for Crohn's disease. Specificity may vary based on location and complications.",
+        "required": true
+      },
+      {
+        "code": "K51.90",
+        "description": "Ulcerative colitis, unspecified, without complications",
+        "notes": "Primary diagnosis for Ulcerative colitis. Specificity may vary based on location and complications.",
+        "required": true
+      },
+      {
+        "code": "Z12.11",
+        "description": "Encounter for screening for malignant neoplasm of colon",
+        "notes": "Used in conjunction with screening colonoscopy (CPT 45378) for IBD patients at increased risk for colorectal cancer.",
+        "required": false
+      },
+      {
+        "code": "Z23",
+        "description": "Encounter for immunization",
+        "notes": "Used as a secondary diagnosis when administering vaccines for preventive care.",
+        "required": false
+      },
+      {
+        "code": "Z87.19",
+        "description": "Personal history of other diseases of the digestive system",
+        "notes": "May be used to indicate a history of IBD or other digestive conditions relevant to preventive care.",
+        "required": false
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered (Part B/D)",
+        "overview": "Medicare generally covers preventive services for IBD patients, including annual wellness visits, vaccinations (influenza, pneumococcal, hepatitis B, zoster), and colorectal cancer screenings. Coverage for specific services may fall under Part B (medical services) or Part D (vaccines).",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "No Prior Auth (FFS)",
+              "Most preventive services, including vaccinations and cancer screenings, are covered without prior authorization under Medicare Part B or D. However, specific criteria must be met."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - General Preventive Care (CPT 99213)",
+            "items": [
+              "Annual wellness visit",
+              "Medically necessary evaluation and management of IBD"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - Colorectal Cancer Screening (CPT 45378)",
+            "items": [
+              "Screening colonoscopy for high-risk individuals (e.g., IBD patients) every 24 months",
+              "Diagnostic colonoscopy for symptoms or abnormal findings"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - Vaccinations",
+            "items": [
+              "Influenza vaccine annually",
+              "Pneumococcal vaccines (PCV13 and PPSV23) as per ACIP guidelines",
+              "Hepatitis B vaccine for at-risk individuals",
+              "Recombinant Zoster vaccine for individuals ≥50 years old"
+            ]
+          },
+          {
+            "heading": "Required Documentation - General",
+            "items": [
+              "Medical record documentation supporting medical necessity",
+              "Clear documentation of IBD diagnosis and management plan"
+            ]
+          },
+          {
+            "heading": "Required Documentation - Colonoscopy",
+            "items": [
+              "Documentation of IBD diagnosis and risk factors for colorectal cancer",
+              "Pathology reports for any biopsies"
+            ]
+          },
+          {
+            "heading": "Required Documentation - Vaccinations",
+            "items": [
+              "Vaccine administration records",
+              "Patient counseling documentation"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims electronically using CMS-1500 form",
+              "Ensure correct CPT and ICD-10 codes are used",
+              "Attach supporting documentation if requested during audit"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of medical necessity documentation",
+              "Incorrect coding or modifier usage",
+              "Failure to meet frequency limits for screenings"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Reimbursement for preventive services is generally good, but adherence to specific guidelines and documentation requirements is crucial to avoid denials."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Stay updated on Medicare preventive service guidelines and ACIP vaccination schedules.",
+              "Clearly document all discussions regarding preventive care and patient risk factors.",
+              "Utilize appropriate modifiers (e.g., -33 for preventive services) when applicable."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS Medicare",
+            "status": "Covered",
+            "notes": "Annual wellness visits, various vaccinations, and colorectal cancer screenings are covered under specific conditions."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered (State-specific)",
+        "overview": "Medicaid coverage for IBD preventive care varies by state but generally includes comprehensive services for eligible individuals. Early and Periodic Screening, Diagnostic, and Treatment (EPSDT) services ensure coverage for preventive care for those under 21.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "No Prior Auth (FFS)",
+              "Medicaid programs typically cover a broad range of preventive services for IBD patients without prior authorization, following EPSDT guidelines for children and adolescents."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - General Preventive Care (CPT 99213)",
+            "items": [
+              "Routine check-ups and health screenings",
+              "Management of chronic conditions like IBD"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - Colorectal Cancer Screening (CPT 45378)",
+            "items": [
+              "Screening colonoscopy as per national guidelines for at-risk populations"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - Vaccinations",
+            "items": [
+              "All ACIP recommended vaccinations, including influenza, pneumococcal, hepatitis B, HPV, Tdap, and zoster."
+            ]
+          },
+          {
+            "heading": "Required Documentation - General",
+            "items": [
+              "Documentation of patient eligibility for Medicaid services",
+              "Medical record supporting services rendered"
+            ]
+          },
+          {
+            "heading": "Required Documentation - EPSDT (for <21)",
+            "items": [
+              "Comprehensive health and developmental history",
+              "Physical exam",
+              "Immunizations",
+              "Health education"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Follow state-specific Medicaid billing guidelines",
+              "Submit claims electronically via state Medicaid portal",
+              "Ensure timely submission of claims"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Patient eligibility issues",
+              "Service not covered by state plan",
+              "Incomplete documentation"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Reimbursement rates can be lower than Medicare or private insurance, but coverage for essential preventive services is generally robust."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state's specific Medicaid preventive care guidelines.",
+              "Ensure all EPSDT requirements are met for pediatric and adolescent IBD patients.",
+              "Maintain thorough and accurate medical records."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid Programs",
+            "status": "Covered",
+            "notes": "Preventive services are covered, often with a focus on EPSDT for younger patients and ACIP guidelines for all ages."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Covered (Plan-specific)",
+        "overview": "Private insurance coverage for IBD preventive care is typically strong, often covering a wide array of services including annual physicals, vaccinations, and cancer screenings. Patients should verify their specific plan benefits.",
+        "sections": [
+          {
+            "heading": "Prior Authorization",
+            "items": [
+              "No Prior Auth (FFS)",
+              "Many private insurance plans cover preventive services without prior authorization as mandated by the Affordable Care Act (ACA). However, specific plans may have varying coverage for certain screenings or vaccines."
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - General Preventive Care (CPT 99213)",
+            "items": [
+              "Annual physicals and wellness exams",
+              "Chronic disease management for IBD"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - Colorectal Cancer Screening (CPT 45378)",
+            "items": [
+              "Screening colonoscopy for average and high-risk individuals as per guidelines (e.g., AGA, ACG)"
+            ]
+          },
+          {
+            "heading": "Coverage Criteria - Vaccinations",
+            "items": [
+              "All ACIP recommended vaccinations (influenza, pneumococcal, hepatitis B, HPV, Tdap, zoster)",
+              "Coverage for specific vaccine brands may vary"
+            ]
+          },
+          {
+            "heading": "Required Documentation - General",
+            "items": [
+              "Medical record documentation supporting the preventive nature of the visit",
+              "Patient history and risk assessment"
+            ]
+          },
+          {
+            "heading": "Required Documentation - Screenings",
+            "items": [
+              "Referral from primary care physician (if required by plan)",
+              "Results of screening tests"
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit claims using standard electronic claim forms (e.g., ANSI 837P)",
+              "Verify patient's insurance benefits and eligibility prior to service",
+              "Follow payer-specific coding and documentation guidelines"
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Service not deemed preventive by plan (e.g., diagnostic vs. screening colonoscopy)",
+              "Out-of-network provider issues",
+              "Lack of referral (if required)"
+            ]
+          },
+          {
+            "heading": "Reimbursement Note",
+            "items": [
+              "Reimbursement rates are generally competitive, but variations exist between plans. In-network providers typically receive better rates."
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify patient's insurance benefits and any prior authorization requirements for specific services.",
+              "Educate patients on their preventive care benefits to encourage adherence.",
+              "Document clearly whether a service is screening or diagnostic to ensure proper billing."
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Major Private Insurers (e.g., Aetna, UnitedHealthcare, Anthem)",
+            "status": "Covered",
+            "notes": "Preventive services are typically covered at 100% with no cost-sharing when rendered by in-network providers."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Back to Assessment",
+        "kind": "link",
+        "text": "Back to Assessment",
+        "href": "/ibdpreventivecare"
+      }
+    ],
+    "raw": {
+      "markdown": "# IBDPreventiveCare Clinical Compass\n## IBD Preventive Care Insurance Authorization Guide\n\n[Back to Assessment](/ibdpreventivecare)\n\n---\n\n## Procedure Codes\n\n### CPT 99213 — RVU 1.30\nOffice or other outpatient visit for the evaluation and management of an established patient, which requires a medically appropriate history and/or examination and medical decision making of low complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs.\n\n**Device/Access:** N/A\n\n**Included in this code (do NOT bill separately):**\n- Medically appropriate history and/or examination\n- Low complexity medical decision making\n- Counseling and/or coordination of care (20-29 minutes total time on encounter date)\n\n*Used for general preventive care discussions, medication management, and overall health assessment in IBD patients, including vaccination status review and cancer screening discussions.*\n\n### CPT 45378 — RVU Varies (e.g., 5.0-7.0)\nColonoscopy, flexible, diagnostic, including collection of specimen(s) by brushing or washing, when performed (separate procedure).\n\n**Device/Access:** Colonoscope\n\n**Included in this code (do NOT bill separately):**\n- Full colonoscopy to the cecum\n- Biopsy(s) if needed\n- Collection of specimen(s) by brushing or washing\n\n*Used for colorectal cancer screening and surveillance in IBD patients, especially those with increased risk due to disease duration and extent.*\n\n### CPT 90686 — RVU 0.10-0.20\nInfluenza virus vaccine, quadrivalent, split virus, preservative free, 0.5 mL dosage, for intramuscular use.\n\n**Device/Access:** Syringe\n\n**Included in this code (do NOT bill separately):**\n- Vaccine product\n- Administration (if billed with G0008 for Medicare or 90471 for commercial payers)\n\n*Annual influenza vaccination is recommended for all IBD patients, especially those on immunosuppressive therapy.*\n\n### CPT 90736 — RVU 0.10-0.20\nHerpes zoster vaccine, recombinant, subunita, adjuvanted, preservative free, 0.5 mL dosage, for intramuscular use.\n\n**Device/Access:** Syringe\n\n**Included in this code (do NOT bill separately):**\n- Vaccine product\n- Administration (if billed with G0008 for Medicare or 90471 for commercial payers)\n\n*Recombinant herpes zoster vaccine (Shingrix) is recommended for IBD patients aged 50 and older, or younger if on immunosuppression.*\n\n### CPT 90746 — RVU 0.10-0.20\nHepatitis B vaccine (HepB), adult, recombinant, for intramuscular use.\n\n**Device/Access:** Syringe\n\n**Included in this code (do NOT bill separately):**\n- Vaccine product\n- Administration (if billed with G0008 for Medicare or 90471 for commercial payers)\n\n*Hepatitis B vaccination is recommended for all IBD patients, with serologic testing to confirm immunity.*\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **K50.90** (Primary): Crohn's disease, unspecified, without complications — Primary diagnosis for Crohn's disease. Specificity may vary based on location and complications.\n- **K51.90** (Primary): Ulcerative colitis, unspecified, without complications — Primary diagnosis for Ulcerative colitis. Specificity may vary based on location and complications.\n- **Z12.11**: Encounter for screening for malignant neoplasm of colon — Used in conjunction with screening colonoscopy (CPT 45378) for IBD patients at increased risk for colorectal cancer.\n- **Z23**: Encounter for immunization — Used as a secondary diagnosis when administering vaccines for preventive care.\n- **Z87.19**: Personal history of other diseases of the digestive system — May be used to indicate a history of IBD or other digestive conditions relevant to preventive care.\n\n---\n\n## Payer-Specific Authorization Requirements\n\nPayer tabs: Medicare | Medicaid | Private Insurance\n\n### Medicare\n\n**Status badges:** No Prior Auth (FFS) | Covered (Part B/D)\n\n**Prior Auth Note:** Most preventive services, including vaccinations and cancer screenings, are covered without prior authorization under Medicare Part B or D. However, specific criteria must be met.\n\n**Overview:** Medicare generally covers preventive services for IBD patients, including annual wellness visits, vaccinations (influenza, pneumococcal, hepatitis B, zoster), and colorectal cancer screenings. Coverage for specific services may fall under Part B (medical services) or Part D (vaccines).\n\n#### Coverage Criteria\n**General Preventive Care (CPT 99213)**\n- Annual wellness visit\n- Medically necessary evaluation and management of IBD\n\n**Colorectal Cancer Screening (CPT 45378)**\n- Screening colonoscopy for high-risk individuals (e.g., IBD patients) every 24 months\n- Diagnostic colonoscopy for symptoms or abnormal findings\n\n**Vaccinations**\n- Influenza vaccine annually\n- Pneumococcal vaccines (PCV13 and PPSV23) as per ACIP guidelines\n- Hepatitis B vaccine for at-risk individuals\n- Recombinant Zoster vaccine for individuals ≥50 years old\n\n#### Required Documentation\n**General**\n- Medical record documentation supporting medical necessity\n- Clear documentation of IBD diagnosis and management plan\n\n**Colonoscopy**\n- Documentation of IBD diagnosis and risk factors for colorectal cancer\n- Pathology reports for any biopsies\n\n**Vaccinations**\n- Vaccine administration records\n- Patient counseling documentation\n\n#### Submission Process\n1. Submit claims electronically using CMS-1500 form\n2. Ensure correct CPT and ICD-10 codes are used\n3. Attach supporting documentation if requested during audit\n\n#### Common Denial Reasons\n- Lack of medical necessity documentation\n- Incorrect coding or modifier usage\n- Failure to meet frequency limits for screenings\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n|---|---|---|\n| CMS Medicare | Covered | Annual wellness visits, various vaccinations, and colorectal cancer screenings are covered under specific conditions. |\n\n#### Reimbursement Note\nReimbursement for preventive services is generally good, but adherence to specific guidelines and documentation requirements is crucial to avoid denials.\n\n#### Authorization Tips\n- Stay updated on Medicare preventive service guidelines and ACIP vaccination schedules.\n- Clearly document all discussions regarding preventive care and patient risk factors.\n- Utilize appropriate modifiers (e.g., -33 for preventive services) when applicable.\n\n### Medicaid\n\n**Status badges:** No Prior Auth (FFS) | Covered (State-specific)\n\n**Prior Auth Note:** Medicaid programs typically cover a broad range of preventive services for IBD patients without prior authorization, following EPSDT guidelines for children and adolescents.\n\n**Overview:** Medicaid coverage for IBD preventive care varies by state but generally includes comprehensive services for eligible individuals. Early and Periodic Screening, Diagnostic, and Treatment (EPSDT) services ensure coverage for preventive care for those under 21.\n\n#### Coverage Criteria\n**General Preventive Care (CPT 99213)**\n- Routine check-ups and health screenings\n- Management of chronic conditions like IBD\n\n**Colorectal Cancer Screening (CPT 45378)**\n- Screening colonoscopy as per national guidelines for at-risk populations\n\n**Vaccinations**\n- All ACIP recommended vaccinations, including influenza, pneumococcal, hepatitis B, HPV, Tdap, and zoster.\n\n#### Required Documentation\n**General**\n- Documentation of patient eligibility for Medicaid services\n- Medical record supporting services rendered\n\n**EPSDT (for <21)**\n- Comprehensive health and developmental history\n- Physical exam\n- Immunizations\n- Health education\n\n#### Submission Process\n1. Follow state-specific Medicaid billing guidelines\n2. Submit claims electronically via state Medicaid portal\n3. Ensure timely submission of claims\n\n#### Common Denial Reasons\n- Patient eligibility issues\n- Service not covered by state plan\n- Incomplete documentation\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n|---|---|---|\n| State Medicaid Programs | Covered | Preventive services are covered, often with a focus on EPSDT for younger patients and ACIP guidelines for all ages. |\n\n#### Reimbursement Note\nReimbursement rates can be lower than Medicare or private insurance, but coverage for essential preventive services is generally robust.\n\n#### Authorization Tips\n- Familiarize yourself with your state's specific Medicaid preventive care guidelines.\n- Ensure all EPSDT requirements are met for pediatric and adolescent IBD patients.\n- Maintain thorough and accurate medical records.\n\n### Private Insurance\n\n**Status badges:** No Prior Auth (FFS) | Covered (Plan-specific)\n\n**Prior Auth Note:** Many private insurance plans cover preventive services without prior authorization as mandated by the Affordable Care Act (ACA). However, specific plans may have varying coverage for certain screenings or vaccines.\n\n**Overview:** Private insurance coverage for IBD preventive care is typically strong, often covering a wide array of services including annual physicals, vaccinations, and cancer screenings. Patients should verify their specific plan benefits.\n\n#### Coverage Criteria\n**General Preventive Care (CPT 99213)**\n- Annual physicals and wellness exams\n- Chronic disease management for IBD\n\n**Colorectal Cancer Screening (CPT 45378)**\n- Screening colonoscopy for average and high-risk individuals as per guidelines (e.g., AGA, ACG)\n\n**Vaccinations**\n- All ACIP recommended vaccinations (influenza, pneumococcal, hepatitis B, HPV, Tdap, zoster)\n- Coverage for specific vaccine brands may vary\n\n#### Required Documentation\n**General**\n- Medical record documentation supporting the preventive nature of the visit\n- Patient history and risk assessment\n\n**Screenings**\n- Referral from primary care physician (if required by plan)\n- Results of screening tests\n\n#### Submission Process\n1. Submit claims using standard electronic claim forms (e.g., ANSI 837P)\n2. Verify patient's insurance benefits and eligibility prior to service\n3. Follow payer-specific coding and documentation guidelines\n\n#### Common Denial Reasons\n- Service not deemed preventive by plan (e.g., diagnostic vs. screening colonoscopy)\n- Out-of-network provider issues\n- Lack of referral (if required)\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n|---|---|---|\n| Major Private Insurers (e.g., Aetna, UnitedHealthcare, Anthem) | Covered | Preventive services are typically covered at 100% with no cost-sharing when rendered by in-network providers. |\n\n#### Reimbursement Note\nReimbursement rates are generally competitive, but variations exist between plans. In-network providers typically receive better rates.\n\n#### Authorization Tips\n- Always verify patient's insurance benefits and any prior authorization requirements for specific services.\n- Educate patients on their preventive care benefits to encourage adherence.\n- Document clearly whether a service is screening or diagnostic to ensure proper billing.\n",
+      "tables": [
+        {
+          "name": "CPT Procedure Codes",
+          "header": ["Code", "Description", "Device", "Access", "RVU", "Includes", "Note"],
+          "rows": [
+            ["99213", "Office or other outpatient visit for the evaluation and management of an established patient, which requires a medically appropriate history and/or examination and medical decision making of low complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs.", "N/A", "Direct patient encounter", "1.30", "Medically appropriate history and/or examination; Low complexity medical decision making; Counseling and/or coordination of care (20-29 minutes total time on encounter date)", "Used for general preventive care discussions, medication management, and overall health assessment in IBD patients, including vaccination status review and cancer screening discussions."],
+            ["45378", "Colonoscopy, flexible, diagnostic, including collection of specimen(s) by brushing or washing, when performed (separate procedure).", "Colonoscope", "Endoscopic", "Varies (e.g., 5.0-7.0)", "Full colonoscopy to the cecum; Biopsy(s) if needed; Collection of specimen(s) by brushing or washing", "Used for colorectal cancer screening and surveillance in IBD patients, especially those with increased risk due to disease duration and extent."],
+            ["90686", "Influenza virus vaccine, quadrivalent, split virus, preservative free, 0.5 mL dosage, for intramuscular use.", "Syringe", "Intramuscular injection", "0.10-0.20", "Vaccine product; Administration (if billed with G0008 for Medicare or 90471 for commercial payers)", "Annual influenza vaccination is recommended for all IBD patients, especially those on immunosuppressive therapy."],
+            ["90736", "Herpes zoster vaccine, recombinant, subunita, adjuvanted, preservative free, 0.5 mL dosage, for intramuscular use.", "Syringe", "Intramuscular injection", "0.10-0.20", "Vaccine product; Administration (if billed with G0008 for Medicare or 90471 for commercial payers)", "Recombinant herpes zoster vaccine (Shingrix) is recommended for IBD patients aged 50 and older, or younger if on immunosuppression."],
+            ["90746", "Hepatitis B vaccine (HepB), adult, recombinant, for intramuscular use.", "Syringe", "Intramuscular injection", "0.10-0.20", "Vaccine product; Administration (if billed with G0008 for Medicare or 90471 for commercial payers)", "Hepatitis B vaccination is recommended for all IBD patients, with serologic testing to confirm immunity."]
+          ]
+        },
+        {
+          "name": "ICD-10 Diagnosis Codes",
+          "header": ["Code", "Description", "Notes", "Required (Primary)"],
+          "rows": [
+            ["K50.90", "Crohn's disease, unspecified, without complications", "Primary diagnosis for Crohn's disease. Specificity may vary based on location and complications.", "true"],
+            ["K51.90", "Ulcerative colitis, unspecified, without complications", "Primary diagnosis for Ulcerative colitis. Specificity may vary based on location and complications.", "true"],
+            ["Z12.11", "Encounter for screening for malignant neoplasm of colon", "Used in conjunction with screening colonoscopy (CPT 45378) for IBD patients at increased risk for colorectal cancer.", "false"],
+            ["Z23", "Encounter for immunization", "Used as a secondary diagnosis when administering vaccines for preventive care.", "false"],
+            ["Z87.19", "Personal history of other diseases of the digestive system", "May be used to indicate a history of IBD or other digestive conditions relevant to preventive care.", "false"]
+          ]
+        },
+        {
+          "name": "Medicare - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS Medicare", "Covered", "Annual wellness visits, various vaccinations, and colorectal cancer screenings are covered under specific conditions."]
+          ]
+        },
+        {
+          "name": "Medicaid - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid Programs", "Covered", "Preventive services are covered, often with a focus on EPSDT for younger patients and ACIP guidelines for all ages."]
+          ]
+        },
+        {
+          "name": "Private Insurance - Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Major Private Insurers (e.g., Aetna, UnitedHealthcare, Anthem)", "Covered", "Preventive services are typically covered at 100% with no cost-sharing when rendered by in-network providers."]
+          ]
+        }
+      ]
+    }
+  }
+}

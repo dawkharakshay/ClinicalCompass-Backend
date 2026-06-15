@@ -1,0 +1,115 @@
+{
+  "title": "Ovulation Induction Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Assessment",
+    "logicKey": "ovulationinduction",
+    "hiddenDefaults": {
+      "priorMetforminTrials": 0
+    },
+    "steps": [
+      {
+        "id": "diagnosis",
+        "shortLabel": "Diagnosis",
+        "title": "Diagnosis",
+        "fields": [
+          {
+            "id": "anovulation-cause",
+            "name": "anovulationCause",
+            "label": "Cause of Anovulation",
+            "type": "select",
+            "required": true,
+            "defaultValue": "pcos",
+            "options": [
+              { "label": "Polycystic ovary syndrome (PCOS)", "value": "pcos" },
+              { "label": "Hypothalamic anovulation (functional, weight-related)", "value": "hypothalamic" },
+              { "label": "Hyperprolactinemia", "value": "hyperprolactinemia" },
+              { "label": "Thyroid disorder (hypo- or hyperthyroidism)", "value": "thyroid" },
+              { "label": "Premature ovarian insufficiency (POI)", "value": "poi" },
+              { "label": "Unexplained anovulation", "value": "unexplained" }
+            ]
+          },
+          {
+            "id": "female-age",
+            "name": "femaleAge",
+            "label": "Patient Age",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "bmi",
+            "name": "bmi",
+            "label": "BMI (kg/m²)",
+            "type": "number",
+            "defaultValue": 0,
+            "unit": "kg/m²",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "hyperprolactinemia-treated",
+            "name": "hyperprolactinemiaTreated",
+            "label": "Hyperprolactinemia treated with dopamine agonist (cabergoline/bromocriptine)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "anovulationCause", "op": "eq", "value": "hyperprolactinemia" }
+          },
+          {
+            "id": "thyroid-treated",
+            "name": "thyroidTreated",
+            "label": "Thyroid disorder treated and TSH normalized",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visibleWhen": { "field": "anovulationCause", "op": "eq", "value": "thyroid" }
+          }
+        ]
+      },
+      {
+        "id": "prior-treatment",
+        "shortLabel": "Prior Treatment",
+        "title": "Prior Treatment",
+        "fields": [
+          {
+            "id": "prior-letrozole-trials",
+            "name": "priorLetrozoleTrials",
+            "label": "Prior Letrozole Cycles",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "prior-clomiphene-trials",
+            "name": "priorClomipheneTrials",
+            "label": "Prior Clomiphene (Clomid) Cycles",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "prior-gonadotropin-trials",
+            "name": "priorGonadotropinTrials",
+            "label": "Prior Gonadotropin (FSH/LH) Cycles",
+            "type": "number",
+            "defaultValue": 0,
+            "keyboardType": "numeric"
+          },
+          {
+            "id": "tubal-patency",
+            "name": "tubalPatency",
+            "label": "Tubal patency confirmed (HSG or SHG)",
+            "type": "checkbox",
+            "defaultValue": true
+          },
+          {
+            "id": "normal-semen-analysis",
+            "name": "normalSemenAnalysis",
+            "label": "Normal semen analysis (or male factor addressed)",
+            "type": "checkbox",
+            "defaultValue": true
+          }
+        ]
+      }
+    ]
+  }
+}

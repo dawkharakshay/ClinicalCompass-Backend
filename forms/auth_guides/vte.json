@@ -1,0 +1,369 @@
+{
+  "title": "Venous Thromboembolism Clinical Compass",
+  "auth_guide": {
+    "sourceFile": "VTEAuthGuide.tsx",
+    "title": "VTE Clinical Compass",
+    "subtitle": "Venous Thromboembolism Management Insurance Authorization Guide",
+    "cptCodes": [
+      {
+        "code": "37212",
+        "description": "Transcatheter therapy, venous infusion for thrombolysis, any method, including radiological supervision and interpretation, initial treatment day",
+        "device": "Catheter-directed thrombolysis (CDT)",
+        "access": "Venous access",
+        "rvu": "20.50",
+        "includes": [
+          "Catheter insertion and positioning",
+          "Infusion of thrombolytic agent",
+          "Radiological supervision and interpretation",
+          "Associated imaging guidance"
+        ],
+        "note": "Used for initial treatment day of thrombolysis in a vein."
+      },
+      {
+        "code": "37191",
+        "description": "Intravascular vena cava filter, endovascular approach including vascular access, vessel selection, and radiological supervision and interpretation, placement",
+        "device": "IVC filter",
+        "access": "Venous access (e.g., femoral, jugular)",
+        "rvu": "15.75",
+        "includes": [
+          "Vascular access and vessel selection",
+          "Filter deployment",
+          "Radiological supervision and interpretation",
+          "Associated imaging guidance"
+        ],
+        "note": "Placement of a filter in the inferior vena cava to prevent pulmonary embolism."
+      },
+      {
+        "code": "37187",
+        "description": "Mechanical thrombectomy, venous, arterial, or combined, including radiological supervision and interpretation, initial treatment day",
+        "device": "Mechanical thrombectomy device",
+        "access": "Venous access",
+        "rvu": "25.00",
+        "includes": [
+          "Catheter insertion and positioning",
+          "Mechanical removal of thrombus",
+          "Radiological supervision and interpretation",
+          "Associated imaging guidance"
+        ],
+        "note": "Used for initial treatment day of mechanical removal of thrombus from a vein."
+      }
+    ],
+    "icd10Codes": [
+      {
+        "code": "I82.409",
+        "description": "Acute embolism and thrombosis of unspecified deep veins of unspecified lower extremity",
+        "notes": "Primary diagnosis for acute DVT when specific location is not documented.",
+        "required": true
+      },
+      {
+        "code": "I82.4Z1",
+        "description": "Acute embolism and thrombosis of deep veins of right lower extremity",
+        "notes": "Specific code for acute DVT in the right lower extremity.",
+        "required": false
+      },
+      {
+        "code": "I82.4Z2",
+        "description": "Acute embolism and thrombosis of deep veins of left lower extremity",
+        "notes": "Specific code for acute DVT in the left lower extremity.",
+        "required": false
+      },
+      {
+        "code": "I26.99",
+        "description": "Other pulmonary embolism without acute cor pulmonale",
+        "notes": "Used for pulmonary embolism without further specification of acute cor pulmonale.",
+        "required": true
+      }
+    ],
+    "payers": [
+      {
+        "key": "medicare",
+        "label": "Medicare",
+        "coverageStatus": "Covered with medical necessity",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is generally required for advanced VTE treatments like CDT, IVC filter placement, and mechanical thrombectomy. Documentation must support medical necessity and failure of conservative management.",
+        "overview": "Medicare covers medically necessary services for the diagnosis and treatment of Venous Thromboembolism (VTE), including deep vein thrombosis (DVT) and pulmonary embolism (PE). Coverage is typically contingent on established clinical guidelines and documentation of medical necessity.",
+        "reimbursementNote": "Reimbursement for VTE treatments is generally bundled; ensure all components of the procedure are adequately documented to support the claim. RVU values are estimates and vary by locality. ",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: Catheter-Directed Thrombolysis (CDT)",
+            "items": [
+              "Acute DVT (symptoms < 14 days) of iliofemoral veins with significant limb threat (e.g., phlegmasia cerulea dolens).",
+              "Acute PE with hemodynamic instability where systemic thrombolysis is contraindicated or failed. "
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: IVC Filter Placement",
+            "items": [
+              "Absolute contraindication to anticoagulation (e.g., active bleeding, recent surgery with high bleeding risk).",
+              "Recurrent VTE despite adequate anticoagulation. "
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Mechanical Thrombectomy",
+            "items": [
+              "Acute DVT of iliofemoral veins with severe symptoms and limb compromise. "
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Detailed history and physical examination, including symptom onset and severity. ",
+              "Imaging reports (e.g., duplex ultrasound, CT venography, CT pulmonary angiography) confirming VTE. ",
+              "Documentation of contraindications to anticoagulation or failure of prior therapies. ",
+              "Assessment of limb viability and hemodynamic status. "
+            ]
+          },
+          {
+            "heading": "Required Documentation: Procedure-Specific Documentation",
+            "items": [
+              "Operative report detailing the procedure, findings, and any complications. ",
+              "Radiological reports for all imaging guidance. "
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Submit prior authorization request with clinical documentation and imaging reports. ",
+              "Ensure all CPT and ICD-10 codes are accurately reflected on the claim. ",
+              "Follow specific Medicare Advantage plan guidelines if applicable. "
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of documented medical necessity. ",
+              "Insufficient clinical evidence to support the chosen intervention. ",
+              "Failure to obtain prior authorization. ",
+              "Inappropriate coding or missing modifiers. "
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Clearly document the acuity of the VTE and the severity of symptoms. ",
+              "Highlight any contraindications to standard anticoagulation. ",
+              "Provide detailed imaging reports and interpretations. "
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "CMS National Coverage Determination (NCD)",
+            "status": "Covered",
+            "notes": "General coverage for VTE diagnosis and treatment."
+          },
+          {
+            "payer": "Medicare Administrative Contractor (MAC) LCDs",
+            "status": "Varies",
+            "notes": "Local coverage determinations may specify additional criteria or limitations."
+          }
+        ]
+      },
+      {
+        "key": "medicaid",
+        "label": "Medicaid",
+        "coverageStatus": "Covered with state-specific criteria",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Prior authorization is typically required for most interventional VTE treatments. Policies vary significantly by state Medicaid program. ",
+        "overview": "Medicaid programs cover VTE diagnosis and treatment, but specific coverage policies, prior authorization requirements, and covered services can differ significantly by state. Medical necessity must always be demonstrated. ",
+        "reimbursementNote": "Medicaid reimbursement rates are typically lower than Medicare or private payers and vary by state. ",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General VTE Treatment",
+            "items": [
+              "Diagnosis of acute DVT or PE confirmed by appropriate imaging. ",
+              "Treatment aligns with evidence-based guidelines. "
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Advanced Interventions (CDT, IVC Filter, Thrombectomy)",
+            "items": [
+              "Severe symptoms or limb/life-threatening VTE. ",
+              "Failure or contraindication to conventional anticoagulation. ",
+              "Specific state-defined criteria must be met. "
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical Documentation",
+            "items": [
+              "Comprehensive medical record supporting VTE diagnosis and severity. ",
+              "Documentation of conservative treatment attempts or contraindications. ",
+              "State-specific forms and attestations. "
+            ]
+          },
+          {
+            "heading": "Required Documentation: Imaging and Procedure Reports",
+            "items": [
+              "All relevant diagnostic and interventional imaging reports. ",
+              "Detailed procedure notes. "
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Verify state-specific Medicaid guidelines for VTE treatments. ",
+              "Submit prior authorization request through the state Medicaid portal. ",
+              "Ensure all required documentation is attached and complete. "
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Failure to meet state-specific medical necessity criteria. ",
+              "Incomplete or missing documentation. ",
+              "Lack of prior authorization. ",
+              "Services deemed experimental or investigational by the state program. "
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Familiarize yourself with your state’s specific Medicaid VTE guidelines. ",
+              "Document all clinical decision-making thoroughly. ",
+              "Be prepared for potential appeals due to varying state policies. "
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "State Medicaid Programs",
+            "status": "Varies by State",
+            "notes": "Each state has its own specific policies for VTE management."
+          }
+        ]
+      },
+      {
+        "key": "private",
+        "label": "Private Insurance",
+        "coverageStatus": "Covered with plan-specific criteria",
+        "priorAuthRequired": true,
+        "priorAuthNote": "Most private insurance plans require prior authorization for interventional VTE treatments. Coverage criteria and documentation requirements vary widely by plan. ",
+        "overview": "Private insurance coverage for VTE diagnosis and treatment is generally robust but is subject to the specific terms and conditions of each individual plan. Prior authorization is a common requirement for advanced procedures. ",
+        "reimbursementNote": "Reimbursement rates vary significantly by private insurance plan and negotiated contracts. ",
+        "sections": [
+          {
+            "heading": "Coverage Criteria: General Coverage",
+            "items": [
+              "Diagnosis of acute DVT or PE confirmed by objective testing. ",
+              "Treatment consistent with nationally recognized guidelines (e.g., ACCP, AHA). "
+            ]
+          },
+          {
+            "heading": "Coverage Criteria: Advanced Interventions",
+            "items": [
+              "Acute, symptomatic VTE with high-risk features or limb/life-threatening presentation. ",
+              "Documented failure or contraindication to anticoagulation. ",
+              "Specific criteria outlined in the payer’s medical policies. "
+            ]
+          },
+          {
+            "heading": "Required Documentation: Clinical and Imaging",
+            "items": [
+              "Comprehensive clinical notes, including all relevant diagnostic test results. ",
+              "Detailed reports from all imaging studies (ultrasound, CT, MRI). ",
+              "Documentation of prior treatment attempts and patient response. "
+            ]
+          },
+          {
+            "heading": "Required Documentation: Payer-Specific Forms",
+            "items": [
+              "Completion of the insurer’s specific prior authorization forms. ",
+              "Letter of medical necessity from the treating physician. "
+            ]
+          },
+          {
+            "heading": "Submission Process",
+            "items": [
+              "Review the patient’s specific insurance policy for VTE treatment guidelines. ",
+              "Submit prior authorization request via the payer’s online portal or fax. ",
+              "Follow up regularly on the status of the authorization. "
+            ]
+          },
+          {
+            "heading": "Common Denial Reasons",
+            "items": [
+              "Lack of adherence to plan-specific medical policies. ",
+              "Insufficient documentation of medical necessity. ",
+              "Failure to demonstrate failure of conservative management. ",
+              "Services deemed not medically necessary or experimental. "
+            ]
+          },
+          {
+            "heading": "Authorization Tips",
+            "items": [
+              "Always verify benefits and eligibility before initiating treatment. ",
+              "Obtain prior authorization for all interventional procedures. ",
+              "Maintain thorough and detailed medical records. "
+            ]
+          }
+        ],
+        "knownPolicies": [
+          {
+            "payer": "Various Private Insurers",
+            "status": "Varies by Plan",
+            "notes": "Each private insurer has unique medical policies for VTE management."
+          }
+        ]
+      }
+    ],
+    "customSections": [
+      {
+        "heading": "Page Navigation",
+        "kind": "link",
+        "text": "Back to Assessment (button links to /vte)",
+        "href": "/vte"
+      },
+      {
+        "heading": "Procedure Codes — Billing Note",
+        "kind": "prose",
+        "text": "For each CPT code, the listed 'Included in this code' items must NOT be billed separately. RVU values are displayed as a badge next to each CPT code (Device/Access is also shown per code)."
+      }
+    ],
+    "raw": {
+      "markdown": "# VTE Clinical Compass\n## Venous Thromboembolism Management Insurance Authorization Guide\n\n[Button] Back to Assessment (links to /vte)\n\n---\n\n## Procedure Codes (CPT Codes)\n\n### CPT 37212  |  RVU 20.50\nTranscatheter therapy, venous infusion for thrombolysis, any method, including radiological supervision and interpretation, initial treatment day\n- Device/Access: Catheter-directed thrombolysis (CDT) / Venous access\n- Included in this code (do NOT bill separately):\n  - Catheter insertion and positioning\n  - Infusion of thrombolytic agent\n  - Radiological supervision and interpretation\n  - Associated imaging guidance\n- Note: Used for initial treatment day of thrombolysis in a vein.\n\n### CPT 37191  |  RVU 15.75\nIntravascular vena cava filter, endovascular approach including vascular access, vessel selection, and radiological supervision and interpretation, placement\n- Device/Access: IVC filter / Venous access (e.g., femoral, jugular)\n- Included in this code (do NOT bill separately):\n  - Vascular access and vessel selection\n  - Filter deployment\n  - Radiological supervision and interpretation\n  - Associated imaging guidance\n- Note: Placement of a filter in the inferior vena cava to prevent pulmonary embolism.\n\n### CPT 37187  |  RVU 25.00\nMechanical thrombectomy, venous, arterial, or combined, including radiological supervision and interpretation, initial treatment day\n- Device/Access: Mechanical thrombectomy device / Venous access\n- Included in this code (do NOT bill separately):\n  - Catheter insertion and positioning\n  - Mechanical removal of thrombus\n  - Radiological supervision and interpretation\n  - Associated imaging guidance\n- Note: Used for initial treatment day of mechanical removal of thrombus from a vein.\n\n---\n\n## ICD-10 Diagnosis Codes\n\n- **I82.409** (Primary): Acute embolism and thrombosis of unspecified deep veins of unspecified lower extremity — Primary diagnosis for acute DVT when specific location is not documented.\n- **I82.4Z1**: Acute embolism and thrombosis of deep veins of right lower extremity — Specific code for acute DVT in the right lower extremity.\n- **I82.4Z2**: Acute embolism and thrombosis of deep veins of left lower extremity — Specific code for acute DVT in the left lower extremity.\n- **I26.99** (Primary): Other pulmonary embolism without acute cor pulmonale — Used for pulmonary embolism without further specification of acute cor pulmonale.\n\n---\n\n## Payer-Specific Authorization Requirements\n\n### Medicare\n[Prior Auth Required] [Covered with medical necessity]\n\n> Prior authorization is generally required for advanced VTE treatments like CDT, IVC filter placement, and mechanical thrombectomy. Documentation must support medical necessity and failure of conservative management.\n\nMedicare covers medically necessary services for the diagnosis and treatment of Venous Thromboembolism (VTE), including deep vein thrombosis (DVT) and pulmonary embolism (PE). Coverage is typically contingent on established clinical guidelines and documentation of medical necessity.\n\n#### Coverage Criteria\n**Catheter-Directed Thrombolysis (CDT)**\n- Acute DVT (symptoms < 14 days) of iliofemoral veins with significant limb threat (e.g., phlegmasia cerulea dolens).\n- Acute PE with hemodynamic instability where systemic thrombolysis is contraindicated or failed.\n**IVC Filter Placement**\n- Absolute contraindication to anticoagulation (e.g., active bleeding, recent surgery with high bleeding risk).\n- Recurrent VTE despite adequate anticoagulation.\n**Mechanical Thrombectomy**\n- Acute DVT of iliofemoral veins with severe symptoms and limb compromise.\n\n#### Required Documentation\n**Clinical Documentation**\n- Detailed history and physical examination, including symptom onset and severity.\n- Imaging reports (e.g., duplex ultrasound, CT venography, CT pulmonary angiography) confirming VTE.\n- Documentation of contraindications to anticoagulation or failure of prior therapies.\n- Assessment of limb viability and hemodynamic status.\n**Procedure-Specific Documentation**\n- Operative report detailing the procedure, findings, and any complications.\n- Radiological reports for all imaging guidance.\n\n#### Submission Process\n1. Submit prior authorization request with clinical documentation and imaging reports.\n2. Ensure all CPT and ICD-10 codes are accurately reflected on the claim.\n3. Follow specific Medicare Advantage plan guidelines if applicable.\n\n#### Common Denial Reasons\n- Lack of documented medical necessity.\n- Insufficient clinical evidence to support the chosen intervention.\n- Failure to obtain prior authorization.\n- Inappropriate coding or missing modifiers.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| CMS National Coverage Determination (NCD) | Covered | General coverage for VTE diagnosis and treatment. |\n| Medicare Administrative Contractor (MAC) LCDs | Varies | Local coverage determinations may specify additional criteria or limitations. |\n\n#### Reimbursement Note\nReimbursement for VTE treatments is generally bundled; ensure all components of the procedure are adequately documented to support the claim. RVU values are estimates and vary by locality.\n\n#### Authorization Tips\n- Clearly document the acuity of the VTE and the severity of symptoms.\n- Highlight any contraindications to standard anticoagulation.\n- Provide detailed imaging reports and interpretations.\n\n### Medicaid\n[Prior Auth Required] [Covered with state-specific criteria]\n\n> Prior authorization is typically required for most interventional VTE treatments. Policies vary significantly by state Medicaid program.\n\nMedicaid programs cover VTE diagnosis and treatment, but specific coverage policies, prior authorization requirements, and covered services can differ significantly by state. Medical necessity must always be demonstrated.\n\n#### Coverage Criteria\n**General VTE Treatment**\n- Diagnosis of acute DVT or PE confirmed by appropriate imaging.\n- Treatment aligns with evidence-based guidelines.\n**Advanced Interventions (CDT, IVC Filter, Thrombectomy)**\n- Severe symptoms or limb/life-threatening VTE.\n- Failure or contraindication to conventional anticoagulation.\n- Specific state-defined criteria must be met.\n\n#### Required Documentation\n**Clinical Documentation**\n- Comprehensive medical record supporting VTE diagnosis and severity.\n- Documentation of conservative treatment attempts or contraindications.\n- State-specific forms and attestations.\n**Imaging and Procedure Reports**\n- All relevant diagnostic and interventional imaging reports.\n- Detailed procedure notes.\n\n#### Submission Process\n1. Verify state-specific Medicaid guidelines for VTE treatments.\n2. Submit prior authorization request through the state Medicaid portal.\n3. Ensure all required documentation is attached and complete.\n\n#### Common Denial Reasons\n- Failure to meet state-specific medical necessity criteria.\n- Incomplete or missing documentation.\n- Lack of prior authorization.\n- Services deemed experimental or investigational by the state program.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| State Medicaid Programs | Varies by State | Each state has its own specific policies for VTE management. |\n\n#### Reimbursement Note\nMedicaid reimbursement rates are typically lower than Medicare or private payers and vary by state.\n\n#### Authorization Tips\n- Familiarize yourself with your state’s specific Medicaid VTE guidelines.\n- Document all clinical decision-making thoroughly.\n- Be prepared for potential appeals due to varying state policies.\n\n### Private Insurance\n[Prior Auth Required] [Covered with plan-specific criteria]\n\n> Most private insurance plans require prior authorization for interventional VTE treatments. Coverage criteria and documentation requirements vary widely by plan.\n\nPrivate insurance coverage for VTE diagnosis and treatment is generally robust but is subject to the specific terms and conditions of each individual plan. Prior authorization is a common requirement for advanced procedures.\n\n#### Coverage Criteria\n**General Coverage**\n- Diagnosis of acute DVT or PE confirmed by objective testing.\n- Treatment consistent with nationally recognized guidelines (e.g., ACCP, AHA).\n**Advanced Interventions**\n- Acute, symptomatic VTE with high-risk features or limb/life-threatening presentation.\n- Documented failure or contraindication to anticoagulation.\n- Specific criteria outlined in the payer’s medical policies.\n\n#### Required Documentation\n**Clinical and Imaging**\n- Comprehensive clinical notes, including all relevant diagnostic test results.\n- Detailed reports from all imaging studies (ultrasound, CT, MRI).\n- Documentation of prior treatment attempts and patient response.\n**Payer-Specific Forms**\n- Completion of the insurer’s specific prior authorization forms.\n- Letter of medical necessity from the treating physician.\n\n#### Submission Process\n1. Review the patient’s specific insurance policy for VTE treatment guidelines.\n2. Submit prior authorization request via the payer’s online portal or fax.\n3. Follow up regularly on the status of the authorization.\n\n#### Common Denial Reasons\n- Lack of adherence to plan-specific medical policies.\n- Insufficient documentation of medical necessity.\n- Failure to demonstrate failure of conservative management.\n- Services deemed not medically necessary or experimental.\n\n#### Known Payer Policies\n| Payer | Status | Notes |\n| --- | --- | --- |\n| Various Private Insurers | Varies by Plan | Each private insurer has unique medical policies for VTE management. |\n\n#### Reimbursement Note\nReimbursement rates vary significantly by private insurance plan and negotiated contracts.\n\n#### Authorization Tips\n- Always verify benefits and eligibility before initiating treatment.\n- Obtain prior authorization for all interventional procedures.\n- Maintain thorough and detailed medical records.\n",
+      "tables": [
+        {
+          "name": "CPT Codes",
+          "header": ["Code", "RVU", "Description", "Device", "Access", "Included (do NOT bill separately)", "Note"],
+          "rows": [
+            ["37212", "20.50", "Transcatheter therapy, venous infusion for thrombolysis, any method, including radiological supervision and interpretation, initial treatment day", "Catheter-directed thrombolysis (CDT)", "Venous access", "Catheter insertion and positioning; Infusion of thrombolytic agent; Radiological supervision and interpretation; Associated imaging guidance", "Used for initial treatment day of thrombolysis in a vein."],
+            ["37191", "15.75", "Intravascular vena cava filter, endovascular approach including vascular access, vessel selection, and radiological supervision and interpretation, placement", "IVC filter", "Venous access (e.g., femoral, jugular)", "Vascular access and vessel selection; Filter deployment; Radiological supervision and interpretation; Associated imaging guidance", "Placement of a filter in the inferior vena cava to prevent pulmonary embolism."],
+            ["37187", "25.00", "Mechanical thrombectomy, venous, arterial, or combined, including radiological supervision and interpretation, initial treatment day", "Mechanical thrombectomy device", "Venous access", "Catheter insertion and positioning; Mechanical removal of thrombus; Radiological supervision and interpretation; Associated imaging guidance", "Used for initial treatment day of mechanical removal of thrombus from a vein."]
+          ]
+        },
+        {
+          "name": "ICD-10 Codes",
+          "header": ["Code", "Description", "Notes", "Required (Primary)"],
+          "rows": [
+            ["I82.409", "Acute embolism and thrombosis of unspecified deep veins of unspecified lower extremity", "Primary diagnosis for acute DVT when specific location is not documented.", "true"],
+            ["I82.4Z1", "Acute embolism and thrombosis of deep veins of right lower extremity", "Specific code for acute DVT in the right lower extremity.", "false"],
+            ["I82.4Z2", "Acute embolism and thrombosis of deep veins of left lower extremity", "Specific code for acute DVT in the left lower extremity.", "false"],
+            ["I26.99", "Other pulmonary embolism without acute cor pulmonale", "Used for pulmonary embolism without further specification of acute cor pulmonale.", "true"]
+          ]
+        },
+        {
+          "name": "Medicare — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["CMS National Coverage Determination (NCD)", "Covered", "General coverage for VTE diagnosis and treatment."],
+            ["Medicare Administrative Contractor (MAC) LCDs", "Varies", "Local coverage determinations may specify additional criteria or limitations."]
+          ]
+        },
+        {
+          "name": "Medicaid — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["State Medicaid Programs", "Varies by State", "Each state has its own specific policies for VTE management."]
+          ]
+        },
+        {
+          "name": "Private Insurance — Known Payer Policies",
+          "header": ["Payer", "Status", "Notes"],
+          "rows": [
+            ["Various Private Insurers", "Varies by Plan", "Each private insurer has unique medical policies for VTE management."]
+          ]
+        }
+      ]
+    }
+  }
+}

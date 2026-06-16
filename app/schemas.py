@@ -35,6 +35,9 @@ class UserOut(BaseModel):
                 "full_name": "Dr. Jane Smith",
                 "role": "licensed_professional",
                 "email": "drsmith@example.com",
+                "avatar_url": "/uploads/avatars/user_1_a1b2c3d4.png",
+                "medical_speciality": "Radiation Oncology",
+                "current_institution": "Mayo Clinic",
                 "is_active": True,
                 "created_at": "2026-06-01T11:32:04.715581Z",
             }
@@ -46,8 +49,53 @@ class UserOut(BaseModel):
     full_name: str | None
     role: UserRole
     email: EmailStr | None
+    avatar_url: str | None = Field(
+        default=None,
+        description="Public URL of the user's profile photo, or null if none is set.",
+        examples=["/uploads/avatars/user_1_a1b2c3d4.png"],
+    )
+    medical_speciality: str | None = Field(
+        default=None,
+        description="The user's medical speciality (free text), or null if not set.",
+        examples=["Radiation Oncology"],
+    )
+    current_institution: str | None = Field(
+        default=None,
+        description="The user's current institution (free text), or null if not set.",
+        examples=["Mayo Clinic"],
+    )
     is_active: bool
     created_at: datetime
+
+
+class ProfileUpdate(BaseModel):
+    """Update the authenticated user's free-text profile details.
+
+    Both fields are optional; only the fields present in the request are
+    changed. Send an explicit ``null`` to clear a field.
+    """
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "medical_speciality": "Radiation Oncology",
+                "current_institution": "Mayo Clinic",
+            }
+        }
+    )
+
+    medical_speciality: str | None = Field(
+        default=None,
+        max_length=255,
+        description="The user's medical speciality (free text).",
+        examples=["Radiation Oncology"],
+    )
+    current_institution: str | None = Field(
+        default=None,
+        max_length=255,
+        description="The user's current institution (free text).",
+        examples=["Mayo Clinic"],
+    )
 
 
 class LoginRequest(BaseModel):
@@ -542,3 +590,104 @@ class SpecialityPage(BaseModel):
         description="URL of the previous page, or null on the first page",
         examples=[None],
     )
+
+
+class CollaborationCreate(BaseModel):
+    """A collaboration / contact request from the public site."""
+
+    name: str = Field(..., min_length=1, max_length=255, examples=["Dr. Jane Smith"])
+    email: EmailStr = Field(..., examples=["jane@example.com"])
+    speciality: str | None = Field(
+        default=None, max_length=255, examples=["Radiation Oncology"]
+    )
+    message: str = Field(..., min_length=1, max_length=5000,
+                         examples=["I'd like to collaborate on the rectal cancer module."])
+
+
+class CollaborationOut(BaseModel):
+    model_config = ConfigDict(
+        from_attributes=True,
+        json_schema_extra={
+            "example": {
+                "id": 1,
+                "name": "Dr. Jane Smith",
+                "email": "jane@example.com",
+                "speciality": "Radiation Oncology",
+                "message": "I'd like to collaborate on the rectal cancer module.",
+                "created_at": "2026-06-16T10:15:00Z",
+            }
+        },
+    )
+
+    id: int
+    name: str
+    email: EmailStr
+    speciality: str | None
+    message: str
+    created_at: datetime
+
+
+class AppealLetterRatingCreate(BaseModel):
+    """A user's rating/feedback for a generated appeal letter."""
+
+    letter_quality: int = Field(..., ge=1, le=5, description="Letter quality (1-5)", examples=[4])
+    effectiveness: int = Field(..., ge=1, le=5, description="Effectiveness for the appeal (1-5)", examples=[5])
+    appeal_outcome: str | None = Field(
+        default=None, max_length=255,
+        description="Optional outcome of the appeal (e.g. approved, denied, pending).",
+        examples=["approved"],
+    )
+    comments: str | None = Field(default=None, max_length=5000, examples=["Clear and well structured."])
+
+
+class AppealLetterRatingOut(BaseModel):
+    model_config = ConfigDict(
+        from_attributes=True,
+        json_schema_extra={
+            "example": {
+                "id": 1,
+                "letter_quality": 4,
+                "effectiveness": 5,
+                "appeal_outcome": "approved",
+                "comments": "Clear and well structured.",
+                "created_at": "2026-06-16T10:20:00Z",
+            }
+        },
+    )
+
+    id: int
+    letter_quality: int
+    effectiveness: int
+    appeal_outcome: str | None
+    comments: str | None
+    created_at: datetime
+
+
+class FeedbackCreate(BaseModel):
+    """General user feedback submission."""
+
+    category: str = Field(..., min_length=1, max_length=255, examples=["Bug report"])
+    subject: str = Field(..., min_length=1, max_length=255, examples=["Score bar not showing"])
+    message: str = Field(..., min_length=1, max_length=5000,
+                         examples=["The organ score bar doesn't render on the rectal module."])
+
+
+class FeedbackOut(BaseModel):
+    model_config = ConfigDict(
+        from_attributes=True,
+        json_schema_extra={
+            "example": {
+                "id": 1,
+                "category": "Bug report",
+                "subject": "Score bar not showing",
+                "message": "The organ score bar doesn't render on the rectal module.",
+                "created_at": "2026-06-16T10:25:00Z",
+            }
+        },
+    )
+
+    id: int
+    category: str
+    subject: str
+    message: str
+    created_at: datetime

@@ -18,6 +18,12 @@ wheels/
 *.db
 clinicalcompass.db
 
+# Database dumps — contain secrets/PII, never commit
+*.sql
+*.sql.gz
+*.dump
+dumps/
+
 # IDE / editor
 .idea/
 .vscode/

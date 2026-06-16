@@ -10,8 +10,11 @@ from starlette.requests import Request
 
 from app.database import SessionLocal
 from app.models import (
+    AppealLetterRating,
+    Collaboration,
     DenialCategory,
     DenialTemplate,
+    Feedback,
     FormSubmission,
     Module,
     Speciality,
@@ -79,7 +82,8 @@ class UserAdmin(ModelView, model=User):
     icon = "fa-solid fa-user"
     column_list = [
         User.id, User.username, User.full_name, User.email,
-        User.role, User.is_active, User.created_at,
+        User.role, User.medical_speciality, User.current_institution,
+        User.is_active, User.created_at,
     ]
     column_searchable_list = [User.username, User.email]
     column_sortable_list = [User.id, User.created_at]
@@ -158,6 +162,62 @@ class DenialTemplateAdmin(ModelView, model=DenialTemplate):
     column_sortable_list = [DenialTemplate.id, DenialTemplate.category]
 
 
+class CollaborationAdmin(ModelView, model=Collaboration):
+    name = "Collaboration"
+    name_plural = "Collaborations"
+    icon = "fa-solid fa-handshake"
+    column_list = [
+        Collaboration.id, Collaboration.name, Collaboration.email,
+        Collaboration.speciality, Collaboration.created_at,
+    ]
+    column_searchable_list = [
+        Collaboration.name, Collaboration.email, Collaboration.speciality,
+    ]
+    column_sortable_list = [Collaboration.id, Collaboration.created_at]
+    column_default_sort = ("id", True)  # newest first
+    # User-submitted: review and remove only, never create/edit.
+    can_create = False
+    can_edit = False
+    can_delete = True
+
+
+class AppealLetterRatingAdmin(ModelView, model=AppealLetterRating):
+    name = "Appeal Letter Rating"
+    name_plural = "Appeal Letter Ratings"
+    icon = "fa-solid fa-star"
+    column_list = [
+        AppealLetterRating.id, AppealLetterRating.letter_quality,
+        AppealLetterRating.effectiveness, AppealLetterRating.appeal_outcome,
+        AppealLetterRating.created_at,
+    ]
+    column_searchable_list = [AppealLetterRating.appeal_outcome, AppealLetterRating.comments]
+    column_sortable_list = [
+        AppealLetterRating.id, AppealLetterRating.letter_quality,
+        AppealLetterRating.effectiveness, AppealLetterRating.created_at,
+    ]
+    column_default_sort = ("id", True)  # newest first
+    # User-submitted feedback: review and remove only.
+    can_create = False
+    can_edit = False
+    can_delete = True
+
+
+class FeedbackAdmin(ModelView, model=Feedback):
+    name = "Feedback"
+    name_plural = "Feedback"
+    icon = "fa-solid fa-comment-dots"
+    column_list = [
+        Feedback.id, Feedback.category, Feedback.subject, Feedback.created_at,
+    ]
+    column_searchable_list = [Feedback.category, Feedback.subject, Feedback.message]
+    column_sortable_list = [Feedback.id, Feedback.category, Feedback.created_at]
+    column_default_sort = ("id", True)  # newest first
+    # User-submitted feedback: review and remove only.
+    can_create = False
+    can_edit = False
+    can_delete = True
+
+
 def setup_admin(app, engine) -> Admin:
     admin = Admin(
         app,
@@ -167,7 +227,8 @@ def setup_admin(app, engine) -> Admin:
     )
     for view in (
         UserAdmin, SpecialityAdmin, ModuleAdmin, TokenAdmin, FormSubmissionAdmin,
-        DenialCategoryAdmin, DenialTemplateAdmin,
+        DenialCategoryAdmin, DenialTemplateAdmin, CollaborationAdmin,
+        AppealLetterRatingAdmin, FeedbackAdmin,
     ):
         admin.add_view(view)
     return admin

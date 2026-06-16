@@ -1,10 +1,17 @@
 #!/bin/sh
-# Container entrypoint: optionally seed the catalog, then exec the CMD (uvicorn).
-# Seeding is idempotent and non-fatal — a seed failure must not stop the API.
-# Disable by setting SEED_ON_STARTUP=0.
+# Container entrypoint: migrate the schema, optionally seed the catalog, then
+# exec the CMD (uvicorn). Seeding is idempotent and non-fatal — a seed failure
+# must not stop the API. Disable seeding with SEED_ON_STARTUP=0.
 set -e
 
 export PYTHONPATH=/app
+
+# Apply database migrations before anything else touches the schema. This is the
+# canonical way the schema evolves: Base.metadata.create_all only creates missing
+# tables, it never adds new columns to an existing table. A migration failure is
+# fatal — the app must not start against a schema it could not bring up to date.
+echo "[entrypoint] applying database migrations..."
+uv run --no-dev alembic upgrade head
 
 if [ "${SEED_ON_STARTUP:-1}" = "1" ]; then
     echo "[entrypoint] seeding specialities + modules..."

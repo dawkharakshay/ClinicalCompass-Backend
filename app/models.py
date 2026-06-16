@@ -42,8 +42,17 @@ class User(Base):
     # Both null for password-only accounts; both set once an identity is linked.
     oauth_provider: Mapped[str | None] = mapped_column(String(16), nullable=True)
     oauth_subject: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    # Profile photo, stored on local disk and served from /uploads (see app.storage).
+    avatar = Column(ImageType(storage=storage), nullable=True)
+    # Free-text profile details the user can set on themselves.
+    medical_speciality: Mapped[str | None] = mapped_column(Text, nullable=True)
+    current_institution: Mapped[str | None] = mapped_column(Text, nullable=True)
     is_active: Mapped[bool] = mapped_column(default=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=_utcnow)
+
+    @property
+    def avatar_url(self) -> str | None:
+        return _image_url(self.avatar)
 
     tokens: Mapped[list["Token"]] = relationship(
         back_populates="user",
@@ -228,3 +237,50 @@ class DenialTemplate(Base):
     )
 
     category_obj: Mapped["DenialCategory"] = relationship(back_populates="templates")
+
+
+class Collaboration(Base):
+    """A collaboration / contact request submitted from the public site.
+
+    Public, unauthenticated submission (name, email, optional speciality,
+    message). Stored for admin follow-up; admins are also notified by email when
+    SMTP is configured.
+    """
+
+    __tablename__ = "collaborations"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    name: Mapped[str] = mapped_column(String(255))
+    email: Mapped[str] = mapped_column(String(255), index=True)
+    speciality: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    message: Mapped[str] = mapped_column(Text)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=_utcnow)
+
+
+class AppealLetterRating(Base):
+    """User rating/feedback for a generated appeal letter.
+
+    ``letter_quality`` and ``effectiveness`` are 1-5 ratings; ``appeal_outcome``
+    and ``comments`` are optional free text. Stored for admin review.
+    """
+
+    __tablename__ = "appeal_letter_ratings"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    letter_quality: Mapped[int] = mapped_column()
+    effectiveness: Mapped[int] = mapped_column()
+    appeal_outcome: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    comments: Mapped[str | None] = mapped_column(Text, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=_utcnow)
+
+
+class Feedback(Base):
+    """General user feedback (category, subject, message). Stored for admin review."""
+
+    __tablename__ = "feedback"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    category: Mapped[str] = mapped_column(String(255))
+    subject: Mapped[str] = mapped_column(String(255))
+    message: Mapped[str] = mapped_column(Text)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=_utcnow)

@@ -69,3 +69,23 @@ def send_password_reset_otp(to: str, otp: str, ttl_minutes: int) -> None:
         "password reset, you can safely ignore this email.\n"
     )
     _send(to, subject, body)
+
+
+def _admin_recipients() -> list[str]:
+    raw = os.getenv("ADMIN_EMAILS") or os.getenv("ADMIN_EMAIL") or ""
+    return [a.strip() for a in raw.split(",") if a.strip()]
+
+
+def send_collaboration_request(
+    name: str, email: str, speciality: str | None, message: str
+) -> None:
+    """Notify the configured admins of a new collaboration request."""
+    subject = f"New collaboration request from {name}"
+    body = (
+        f"Name: {name}\n"
+        f"Email: {email}\n"
+        f"Speciality: {speciality or '-'}\n\n"
+        f"Message:\n{message}\n"
+    )
+    for to in _admin_recipients():
+        _send(to, subject, body)

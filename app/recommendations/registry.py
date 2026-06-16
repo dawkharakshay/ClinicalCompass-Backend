@@ -94,15 +94,21 @@ def get_evidence(logic_key: str | None) -> list | None:
 
 
 def present_result(logic_key: str | None, native: dict) -> dict:
-    """Build the frontend-ready card from an engine's native output.
+    """Build the uniform RecommendationCard from an engine's native output.
 
-    Applies the module's ``present`` mapper when present (else passes the native
-    output through), then attaches the static ``evidence`` list when available.
-    The frontend can render the returned dict directly.
+    A module may export its own ``present(native) -> dict`` to fully control its
+    card; otherwise the generic mapper (:func:`app.recommendations.card.build_card`)
+    folds the native output into the uniform envelope — so every module yields the
+    same shape with no per-module code. The module's static ``EVIDENCE`` list, when
+    declared, is attached as the card's references.
     """
-    presenter = get_presenter(logic_key)
-    card = presenter(native) if presenter else dict(native)
+    from app.recommendations.card import build_card
+
     evidence = get_evidence(logic_key)
-    if evidence is not None and "evidence" not in card:
-        card["evidence"] = evidence
-    return card
+    presenter = get_presenter(logic_key)
+    if presenter:
+        card = presenter(native)
+        if evidence is not None and not card.get("evidence"):
+            card["evidence"] = evidence
+        return card
+    return build_card(native, logic_key=logic_key, evidence=evidence)

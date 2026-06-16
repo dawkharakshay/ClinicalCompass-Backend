@@ -451,35 +451,8 @@ def assess(data: dict) -> dict:
 
 
 # ─── Presentation ─────────────────────────────────────────────────────────────
-
-
-def present(result: dict) -> dict:
-    """Map the engine's native output to the frontend recommendation card.
-
-    The engine fields are renamed/reshaped into the display contract the
-    frontend renders directly (no client-side mapping). ``evidence`` is attached
-    by the presentation layer (see ``present_result``), not here.
-    """
-    ww_eligible = bool(result.get("wwEligible"))
-    card: dict = {
-        "title": result.get("strategyLabel"),
-        "category": result.get("evidenceLevel"),
-        "description": result.get("rationale"),
-        "surgicalApproach": result.get("surgicalApproachLabel"),
-        "organScore": result.get("organPreservationScore"),
-        "organScoreNote": result.get("organPreservationLabel"),
-        "watchAndWait": "WATCH-AND-WAIT: "
-        + ("ELIGIBLE" if ww_eligible else "NOT INDICATED"),
-        "guidelineSource": result.get("guidelineSource"),
-        "nextSteps": result.get("nextSteps", []),
-    }
-    # Display extras the legacy card also showed — present only when populated.
-    if result.get("urgency"):
-        card["urgency"] = result["urgency"]
-    if result.get("tntRegimenLabel"):
-        card["tntRegimen"] = result["tntRegimenLabel"]
-    if result.get("wwCriteria"):
-        card["watchAndWaitCriteria"] = result["wwCriteria"]
-    if result.get("keyWarnings"):
-        card["warnings"] = result["keyWarnings"]
-    return card
+# No module-specific ``present()``: the generic mapper
+# (app.recommendations.card.build_card) folds this engine's native output into
+# the uniform RecommendationCard. ``organPreservationScore`` is recognised as a
+# score (see card.SCORE_CONFIG), and the module ``EVIDENCE`` above is attached as
+# the card's references.

@@ -215,6 +215,130 @@
         }
       }
     },
+    "/auth/oauth/google": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Log in or sign up with Google",
+        "description": "Verifies a Google ID token (from the native Sign-In SDK) and returns an opaque bearer token. On a first sign-in a new account is created and `role` is required; if the verified Google email matches an existing account, the Google identity is linked to it.",
+        "operationId": "oauth_google_auth_oauth_google_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GoogleOAuthRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenOut"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid token or missing role",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "User account is disabled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/oauth/apple": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Log in or sign up with Apple",
+        "description": "Verifies an Apple identity token (from Sign in with Apple) and returns an opaque bearer token. On a first sign-in a new account is created and `role` is required; `full_name` should be sent on the first authorization because Apple only returns the name once. If the verified Apple email matches an existing account, the Apple identity is linked to it.",
+        "operationId": "oauth_apple_auth_oauth_apple_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppleOAuthRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenOut"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid token or missing role",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "User account is disabled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/auth/forgot-password": {
       "post": {
         "tags": [
@@ -1000,6 +1124,82 @@
         }
       }
     },
+    "/modules/{module_id}/recommendation": {
+      "get": {
+        "tags": [
+          "modules"
+        ],
+        "summary": "Get a module's result-generation logic (reference)",
+        "description": "Returns the module's recommendation logic reference (source files, a `hasLogic` flag, and a verbatim `raw.markdown` block), or `null` when the module has none. Documentation only \u2014 the backend does not execute it.",
+        "operationId": "get_module_recommendation_modules__module_id__recommendation_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "module_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Module Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/RecommendationOut"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Response Get Module Recommendation Modules  Module Id  Recommendation Get"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Module not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/submissions": {
       "post": {
         "tags": [
@@ -1295,6 +1495,727 @@
         }
       }
     },
+    "/submissions/{submission_id}/recommendation": {
+      "get": {
+        "tags": [
+          "submissions"
+        ],
+        "summary": "Compute the recommendation for a submission",
+        "description": "Runs the module's result-generation logic (ported 1:1 from the legacy engine) over the submission's answers and returns the engine's native output. The logic is selected by the module form's `logicKey`. Returns 404 when the submission's module has no ported recommendation engine.",
+        "operationId": "get_submission_recommendation_submissions__submission_id__recommendation_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "submission_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Submission Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecommendationResultOut"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Submission not found, or no recommendation logic available",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/denial-templates": {
+      "get": {
+        "tags": [
+          "denial-templates"
+        ],
+        "summary": "List/search denial templates (paginated)",
+        "description": "Returns a page of denial-appeal templates. Filter by `category`, `procedure` (templates tagged for that procedure or `General`), and/or `search` (case-insensitive match on title, denial reason, or text). Paginate with `limit`/`offset`; `next`/`previous` are URLs.",
+        "operationId": "list_denial_templates_denial_templates_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter to a denial category value",
+              "title": "Category"
+            },
+            "description": "Filter to a denial category value"
+          },
+          {
+            "name": "procedure",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter to templates tagged for this procedure (or \"General\")",
+              "title": "Procedure"
+            },
+            "description": "Filter to templates tagged for this procedure (or \"General\")"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Case-insensitive match on title/denial reason/text",
+              "title": "Search"
+            },
+            "description": "Case-insensitive match on title/denial reason/text"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "description": "Max items to return",
+              "default": 20,
+              "title": "Limit"
+            },
+            "description": "Max items to return"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Number of items to skip",
+              "default": 0,
+              "title": "Offset"
+            },
+            "description": "Number of items to skip"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DenialTemplatePage"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/denial-templates/count": {
+      "get": {
+        "tags": [
+          "denial-templates"
+        ],
+        "summary": "Count of denial templates",
+        "description": "Total number of denial templates, after any `category`/`procedure`/`search` filter.",
+        "operationId": "count_denial_templates_denial_templates_count_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Category"
+            }
+          },
+          {
+            "name": "procedure",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Procedure"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Search"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountOut"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/denial-templates/categories": {
+      "get": {
+        "tags": [
+          "denial-templates"
+        ],
+        "summary": "List denial categories (with template counts)",
+        "description": "Returns the denial-reason categories in source order, each with a count of templates. Pass `procedure` to count only templates applicable to that procedure (matches the legacy category chips).",
+        "operationId": "list_denial_categories_denial_templates_categories_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "procedure",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Count only templates for this procedure (or \"General\")",
+              "title": "Procedure"
+            },
+            "description": "Count only templates for this procedure (or \"General\")"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DenialCategoryOut"
+                  },
+                  "title": "Response List Denial Categories Denial Templates Categories Get"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/denial-templates/{template_id}": {
+      "get": {
+        "tags": [
+          "denial-templates"
+        ],
+        "summary": "Get a single denial template",
+        "operationId": "get_denial_template_denial_templates__template_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "template_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Template Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DenialTemplateOut"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Denial template not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/collaborations": {
+      "post": {
+        "tags": [
+          "collaborations"
+        ],
+        "summary": "Submit a collaboration request",
+        "description": "Public endpoint. Stores a collaboration/contact request (`name`, `email`, optional `speciality`, `message`) and notifies the admins by email when SMTP is configured. Returns the stored request.",
+        "operationId": "create_collaboration_collaborations_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CollaborationCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CollaborationOut"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/appeal-letter-ratings": {
+      "post": {
+        "tags": [
+          "appeal-letter-ratings"
+        ],
+        "summary": "Rate an appeal letter",
+        "description": "Public endpoint. Stores a rating for a generated appeal letter: `letter_quality` and `effectiveness` (1-5), with optional `appeal_outcome` and `comments`. Returns the stored rating.",
+        "operationId": "create_rating_appeal_letter_ratings_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppealLetterRatingCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppealLetterRatingOut"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/feedback": {
+      "post": {
+        "tags": [
+          "feedback"
+        ],
+        "summary": "Submit feedback",
+        "description": "Public endpoint. Stores user feedback (`category`, `subject`, `message`) and returns the stored record.",
+        "operationId": "create_feedback_feedback_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FeedbackCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedbackOut"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/profile": {
+      "put": {
+        "tags": [
+          "profile"
+        ],
+        "summary": "Set the current user's medical speciality and current institution",
+        "description": "Updates the authenticated user's free-text profile details: `medical_speciality` and `current_institution`. Only the fields included in the request body are changed; send an explicit `null` to clear a field. Returns the updated user.",
+        "operationId": "update_profile_profile_put",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileUpdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserOut"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing, invalid, or expired token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/profile/photo": {
+      "put": {
+        "tags": [
+          "profile"
+        ],
+        "summary": "Upload or replace the current user's profile photo",
+        "description": "Uploads a profile photo for the authenticated user as `multipart/form-data` (field name `file`). Replaces any existing photo. Accepts JPEG, PNG, WebP, or GIF up to 5 MB. Returns the updated user, whose `avatar_url` points at the stored image under `/uploads`.",
+        "operationId": "upload_profile_photo_profile_photo_put",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_upload_profile_photo_profile_photo_put"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserOut"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing, invalid, or expired token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "File exceeds the 5 MB limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported file type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "File is not a valid image",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "profile"
+        ],
+        "summary": "Remove the current user's profile photo",
+        "description": "Deletes the authenticated user's profile photo, if any. Always succeeds (no-op when no photo is set).",
+        "operationId": "delete_profile_photo_profile_photo_delete",
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "401": {
+            "description": "Missing, invalid, or expired token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
     "/health": {
       "get": {
         "tags": [
@@ -1354,6 +2275,176 @@
           "submission_id": 1
         }
       },
+      "AppealLetterRatingCreate": {
+        "properties": {
+          "letter_quality": {
+            "type": "integer",
+            "maximum": 5.0,
+            "minimum": 1.0,
+            "title": "Letter Quality",
+            "description": "Letter quality (1-5)",
+            "examples": [
+              4
+            ]
+          },
+          "effectiveness": {
+            "type": "integer",
+            "maximum": 5.0,
+            "minimum": 1.0,
+            "title": "Effectiveness",
+            "description": "Effectiveness for the appeal (1-5)",
+            "examples": [
+              5
+            ]
+          },
+          "appeal_outcome": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 255
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Appeal Outcome",
+            "description": "Optional outcome of the appeal (e.g. approved, denied, pending).",
+            "examples": [
+              "approved"
+            ]
+          },
+          "comments": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 5000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Comments",
+            "examples": [
+              "Clear and well structured."
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "letter_quality",
+          "effectiveness"
+        ],
+        "title": "AppealLetterRatingCreate",
+        "description": "A user's rating/feedback for a generated appeal letter."
+      },
+      "AppealLetterRatingOut": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "letter_quality": {
+            "type": "integer",
+            "title": "Letter Quality"
+          },
+          "effectiveness": {
+            "type": "integer",
+            "title": "Effectiveness"
+          },
+          "appeal_outcome": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Appeal Outcome"
+          },
+          "comments": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Comments"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "letter_quality",
+          "effectiveness",
+          "appeal_outcome",
+          "comments",
+          "created_at"
+        ],
+        "title": "AppealLetterRatingOut",
+        "example": {
+          "appeal_outcome": "approved",
+          "comments": "Clear and well structured.",
+          "created_at": "2026-06-16T10:20:00Z",
+          "effectiveness": 5,
+          "id": 1,
+          "letter_quality": 4
+        }
+      },
+      "AppleOAuthRequest": {
+        "properties": {
+          "identity_token": {
+            "type": "string",
+            "title": "Identity Token",
+            "description": "The Apple identity token (JWT) from Sign in with Apple. The subject and email are read from inside the verified token.",
+            "examples": [
+              "eyJhbGciOiJSUzI1NiIsImtpZCI6Ij..."
+            ]
+          },
+          "full_name": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 255
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Full Name",
+            "description": "The user's name. Apple returns this only on the FIRST authorization and never inside the token, so the client must forward it then or it is lost. Ignored for users who already exist.",
+            "examples": [
+              "Jane Smith"
+            ]
+          },
+          "role": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/UserRole"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Required when this is a first sign-in (a new account is created). Ignored for users who already exist.",
+            "examples": [
+              "licensed_professional"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "identity_token"
+        ],
+        "title": "AppleOAuthRequest"
+      },
       "AuthGuideOut": {
         "properties": {},
         "additionalProperties": true,
@@ -1388,6 +2479,129 @@
           "title": "Renal Cryoablation \u2014 Authorization Guide"
         }
       },
+      "Body_upload_profile_photo_profile_photo_put": {
+        "properties": {
+          "file": {
+            "type": "string",
+            "contentMediaType": "application/octet-stream",
+            "title": "File",
+            "description": "The image file to use as the profile photo."
+          }
+        },
+        "type": "object",
+        "required": [
+          "file"
+        ],
+        "title": "Body_upload_profile_photo_profile_photo_put"
+      },
+      "CollaborationCreate": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Name",
+            "examples": [
+              "Dr. Jane Smith"
+            ]
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "title": "Email",
+            "examples": [
+              "jane@example.com"
+            ]
+          },
+          "speciality": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 255
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Speciality",
+            "examples": [
+              "Radiation Oncology"
+            ]
+          },
+          "message": {
+            "type": "string",
+            "maxLength": 5000,
+            "minLength": 1,
+            "title": "Message",
+            "examples": [
+              "I'd like to collaborate on the rectal cancer module."
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "email",
+          "message"
+        ],
+        "title": "CollaborationCreate",
+        "description": "A collaboration / contact request from the public site."
+      },
+      "CollaborationOut": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "title": "Email"
+          },
+          "speciality": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Speciality"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "email",
+          "speciality",
+          "message",
+          "created_at"
+        ],
+        "title": "CollaborationOut",
+        "example": {
+          "created_at": "2026-06-16T10:15:00Z",
+          "email": "jane@example.com",
+          "id": 1,
+          "message": "I'd like to collaborate on the rectal cancer module.",
+          "name": "Dr. Jane Smith",
+          "speciality": "Radiation Oncology"
+        }
+      },
       "CountOut": {
         "properties": {
           "resource": {
@@ -1413,6 +2627,168 @@
         "title": "CountOut",
         "description": "A labeled count of a resource."
       },
+      "DenialCategoryOut": {
+        "properties": {
+          "value": {
+            "type": "string",
+            "title": "Value"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "color": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Color"
+          },
+          "count": {
+            "type": "integer",
+            "title": "Count",
+            "description": "Number of templates in this category (after any procedure filter)."
+          }
+        },
+        "type": "object",
+        "required": [
+          "value",
+          "label",
+          "count"
+        ],
+        "title": "DenialCategoryOut",
+        "description": "A denial-reason category, with a count of the templates it contains.",
+        "example": {
+          "color": "bg-red-100 text-red-800",
+          "count": 4,
+          "label": "Medical Necessity",
+          "value": "medical-necessity"
+        }
+      },
+      "DenialTemplateOut": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "category": {
+            "type": "string",
+            "title": "Category"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "denial_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Denial Reason"
+          },
+          "applicable_to": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Applicable To"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "references": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "References"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "category",
+          "title",
+          "text"
+        ],
+        "title": "DenialTemplateOut",
+        "description": "A pre-written appeal paragraph rebutting a specific denial reason.",
+        "example": {
+          "applicable_to": [
+            "ESI",
+            "Facet Joint",
+            "RFA",
+            "SCS",
+            "PAD",
+            "General"
+          ],
+          "category": "medical-necessity",
+          "denial_reason": "Procedure deemed not medically necessary",
+          "id": "mn-001",
+          "references": [
+            "ASIPP Guidelines 2013",
+            "CMS LCD L35937"
+          ],
+          "text": "This procedure is medically necessary for the treatment of [PATIENT NAME]'s ...",
+          "title": "General Medical Necessity \u2014 Chronic Pain with Functional Impairment"
+        }
+      },
+      "DenialTemplatePage": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/DenialTemplateOut"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "next": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next",
+            "description": "URL of the next page, or null on the last page",
+            "examples": [
+              "http://localhost/denial-templates?limit=20&offset=20"
+            ]
+          },
+          "previous": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Previous",
+            "description": "URL of the previous page, or null on the first page",
+            "examples": [
+              null
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "DenialTemplatePage",
+        "description": "A page of denial templates with next/previous page links."
+      },
       "ErrorResponse": {
         "properties": {
           "detail": {
@@ -1429,6 +2805,86 @@
         ],
         "title": "ErrorResponse",
         "description": "Standard FastAPI error envelope."
+      },
+      "FeedbackCreate": {
+        "properties": {
+          "category": {
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Category",
+            "examples": [
+              "Bug report"
+            ]
+          },
+          "subject": {
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Subject",
+            "examples": [
+              "Score bar not showing"
+            ]
+          },
+          "message": {
+            "type": "string",
+            "maxLength": 5000,
+            "minLength": 1,
+            "title": "Message",
+            "examples": [
+              "The organ score bar doesn't render on the rectal module."
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "category",
+          "subject",
+          "message"
+        ],
+        "title": "FeedbackCreate",
+        "description": "General user feedback submission."
+      },
+      "FeedbackOut": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "category": {
+            "type": "string",
+            "title": "Category"
+          },
+          "subject": {
+            "type": "string",
+            "title": "Subject"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "category",
+          "subject",
+          "message",
+          "created_at"
+        ],
+        "title": "FeedbackOut",
+        "example": {
+          "category": "Bug report",
+          "created_at": "2026-06-16T10:25:00Z",
+          "id": 1,
+          "message": "The organ score bar doesn't render on the rectal module.",
+          "subject": "Score bar not showing"
+        }
       },
       "ForgotPasswordRequest": {
         "properties": {
@@ -1595,6 +3051,37 @@
         "title": "FormSubmissionPage",
         "description": "A page of form submissions with next/previous page links."
       },
+      "GoogleOAuthRequest": {
+        "properties": {
+          "id_token": {
+            "type": "string",
+            "title": "Id Token",
+            "description": "The Google ID token (JWT) obtained from the native Google Sign-In SDK. The user's identity (subject, email, name) is read from inside the verified token, not from the request body.",
+            "examples": [
+              "eyJhbGciOiJSUzI1NiIsImtpZCI6Ij..."
+            ]
+          },
+          "role": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/UserRole"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Required when this is a first sign-in (a new account is created). Ignored for users who already exist.",
+            "examples": [
+              "licensed_professional"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "id_token"
+        ],
+        "title": "GoogleOAuthRequest"
+      },
       "HTTPValidationError": {
         "properties": {
           "detail": {
@@ -1719,6 +3206,19 @@
             ],
             "title": "Auth Guide",
             "description": "Prior-authorization guide: CPT codes, ICD-10 codes, payer-specific coverage/documentation rules, plus a verbatim `raw` block."
+          },
+          "recommendation": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Recommendation",
+            "description": "Reference copy of the module's result-generation logic (form data -> recommendation): source files, a `hasLogic` flag, and a verbatim `raw.markdown` block. Documentation only \u2014 not executed."
           }
         },
         "type": "object",
@@ -1888,6 +3388,113 @@
         ],
         "title": "ModulePage",
         "description": "A page of modules with next/previous page links."
+      },
+      "ProfileUpdate": {
+        "properties": {
+          "medical_speciality": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 255
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Medical Speciality",
+            "description": "The user's medical speciality (free text).",
+            "examples": [
+              "Radiation Oncology"
+            ]
+          },
+          "current_institution": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 255
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current Institution",
+            "description": "The user's current institution (free text).",
+            "examples": [
+              "Mayo Clinic"
+            ]
+          }
+        },
+        "type": "object",
+        "title": "ProfileUpdate",
+        "description": "Update the authenticated user's free-text profile details.\n\nBoth fields are optional; only the fields present in the request are\nchanged. Send an explicit ``null`` to clear a field.",
+        "example": {
+          "current_institution": "Mayo Clinic",
+          "medical_speciality": "Radiation Oncology"
+        }
+      },
+      "RecommendationOut": {
+        "properties": {},
+        "additionalProperties": true,
+        "type": "object",
+        "title": "RecommendationOut",
+        "description": "A module's result-generation logic, stored and returned verbatim.\n\nReference documentation (not executed): ``sourceFiles`` (the legacy *Logic.ts\npaths), ``hasLogic`` (false for coming-soon stubs), and a verbatim\n``raw.markdown`` block. Extra keys are allowed so the shape can evolve without\nrejecting stored content at the API boundary.",
+        "example": {
+          "hasLogic": true,
+          "raw": {
+            "markdown": "## 3. Result-Generation Logic ..."
+          },
+          "sourceFiles": [
+            "client/src/lib/acsLogic.ts"
+          ]
+        }
+      },
+      "RecommendationResultOut": {
+        "properties": {
+          "submission_id": {
+            "type": "integer",
+            "title": "Submission Id"
+          },
+          "module_id": {
+            "type": "integer",
+            "title": "Module Id"
+          },
+          "logic_key": {
+            "type": "string",
+            "title": "Logic Key",
+            "description": "The module's form logicKey that selected the engine."
+          },
+          "result": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Result",
+            "description": "The engine's native output (free-form)."
+          }
+        },
+        "type": "object",
+        "required": [
+          "submission_id",
+          "module_id",
+          "logic_key",
+          "result"
+        ],
+        "title": "RecommendationResultOut",
+        "description": "A computed recommendation for a submission.\n\n``result`` is the module's native, free-form engine output (the shape varies\nper module \u2014 risk levels, tiers, scores, recommendation lists, etc.), ported\n1:1 from the legacy logic. Extra keys are allowed so no engine's output is\nrejected at the API boundary.",
+        "example": {
+          "logic_key": "tha",
+          "module_id": 1,
+          "result": {
+            "contraindications": [],
+            "cor": "I",
+            "loe": "A",
+            "optimizationSteps": [],
+            "rationale": [
+              "Severe hip OA (KL \u22653) with significant pain ..."
+            ],
+            "recommendation": "THA Recommended",
+            "urgency": "Appropriate"
+          },
+          "submission_id": 1
+        }
       },
       "ResetPasswordRequest": {
         "properties": {
@@ -2208,6 +3815,51 @@
             ],
             "title": "Email"
           },
+          "avatar_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Avatar Url",
+            "description": "Public URL of the user's profile photo, or null if none is set.",
+            "examples": [
+              "/uploads/avatars/user_1_a1b2c3d4.png"
+            ]
+          },
+          "medical_speciality": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Medical Speciality",
+            "description": "The user's medical speciality (free text), or null if not set.",
+            "examples": [
+              "Radiation Oncology"
+            ]
+          },
+          "current_institution": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current Institution",
+            "description": "The user's current institution (free text), or null if not set.",
+            "examples": [
+              "Mayo Clinic"
+            ]
+          },
           "is_active": {
             "type": "boolean",
             "title": "Is Active"
@@ -2230,11 +3882,14 @@
         ],
         "title": "UserOut",
         "example": {
+          "avatar_url": "/uploads/avatars/user_1_a1b2c3d4.png",
           "created_at": "2026-06-01T11:32:04.715581Z",
+          "current_institution": "Mayo Clinic",
           "email": "drsmith@example.com",
           "full_name": "Dr. Jane Smith",
           "id": 1,
           "is_active": true,
+          "medical_speciality": "Radiation Oncology",
           "role": "licensed_professional",
           "username": "drsmith"
         }
@@ -2392,6 +4047,26 @@
     {
       "name": "submissions",
       "description": "Submit a module's form and read back your submissions."
+    },
+    {
+      "name": "denial-templates",
+      "description": "Browse/search the Denial Template Library: pre-written appeal paragraphs by denial reason and procedure."
+    },
+    {
+      "name": "collaborations",
+      "description": "Submit collaboration / contact requests (public)."
+    },
+    {
+      "name": "appeal-letter-ratings",
+      "description": "Rate a generated appeal letter (public)."
+    },
+    {
+      "name": "feedback",
+      "description": "Submit general user feedback (public)."
+    },
+    {
+      "name": "profile",
+      "description": "Manage the authenticated user's profile, including the profile photo."
     },
     {
       "name": "meta",

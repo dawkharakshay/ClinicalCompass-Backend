@@ -11,9 +11,13 @@ from app.database import (
     engine
 )
 from app.routers import (
+    appeal_letter_ratings,
     auth,
+    collaborations,
     denial_templates,
+    feedback,
     modules,
+    profile,
     specialities,
     submissions,
 )
@@ -60,6 +64,22 @@ tags_metadata = [
         "appeal paragraphs by denial reason and procedure.",
     },
     {
+        "name": "collaborations",
+        "description": "Submit collaboration / contact requests (public).",
+    },
+    {
+        "name": "appeal-letter-ratings",
+        "description": "Rate a generated appeal letter (public).",
+    },
+    {
+        "name": "feedback",
+        "description": "Submit general user feedback (public).",
+    },
+    {
+        "name": "profile",
+        "description": "Manage the authenticated user's profile, including the profile photo.",
+    },
+    {
         "name": "meta",
         "description": "Service health and operational endpoints.",
     },
@@ -68,7 +88,11 @@ tags_metadata = [
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Create tables on startup. For real migrations, use Alembic instead.
+    # Schema is owned by Alembic (`alembic upgrade head`, run from the container
+    # entrypoint). This create_all is a convenience for environments that bypass
+    # the entrypoint (e.g. a bare `uvicorn` in local dev or the SQLite tests): it
+    # only creates missing tables and never alters existing ones, so it is a
+    # no-op once migrations have run.
     Base.metadata.create_all(bind=engine)
     yield
 
@@ -89,6 +113,10 @@ app.include_router(specialities.router)
 app.include_router(modules.router)
 app.include_router(submissions.router)
 app.include_router(denial_templates.router)
+app.include_router(collaborations.router)
+app.include_router(appeal_letter_ratings.router)
+app.include_router(feedback.router)
+app.include_router(profile.router)
 
 # Serve uploaded images at /uploads (proxied through nginx).
 app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")

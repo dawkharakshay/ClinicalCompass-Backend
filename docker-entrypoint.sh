@@ -28,6 +28,8 @@ if [ "${SEED_ON_STARTUP:-1}" = "1" ]; then
     uv run --no-dev python scripts/seed_denial_templates.py || echo "[entrypoint] seed_denial_templates failed (continuing)"
     echo "[entrypoint] attaching bundled logos..."
     uv run --no-dev python scripts/seed_logos.py || echo "[entrypoint] seed_logos failed (continuing)"
+    echo "[entrypoint] attaching speciality photos..."
+    uv run --no-dev python scripts/seed_speciality_images.py || echo "[entrypoint] seed_speciality_images failed (continuing)"
 else
     echo "[entrypoint] SEED_ON_STARTUP=0 — skipping seed"
 fi

@@ -8,3 +8,7 @@ docs/
 utils/docs/
 .pytest_cache
 .ruff_cache
+
+# Server-only TLS material and ops backups — never part of the build context
+certbot/
+*.bak.*

@@ -18,6 +18,8 @@ if [ "${SEED_ON_STARTUP:-1}" = "1" ]; then
     uv run --no-dev python scripts/seed_modules.py || echo "[entrypoint] seed_modules failed (continuing)"
     echo "[entrypoint] loading module forms..."
     uv run --no-dev python scripts/seed_forms.py || echo "[entrypoint] seed_forms failed (continuing)"
+    echo "[entrypoint] ensuring patient age + weight fields..."
+    uv run --no-dev python scripts/seed_demographics.py || echo "[entrypoint] seed_demographics failed (continuing)"
     echo "[entrypoint] loading appeal-letter templates..."
     uv run --no-dev python scripts/seed_appeal_letter_templates.py || echo "[entrypoint] seed_appeal_letter_templates failed (continuing)"
     echo "[entrypoint] loading auth guides..."

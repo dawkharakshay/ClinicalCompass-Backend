@@ -1,5 +1,5 @@
 {
-  "title": "Women's Health Clinical Compass",
+  "title": "Pelvic Venous Disease Clinical Compass",
   "form": {
     "version": 1,
     "layout": "wizard",
@@ -29,19 +29,6 @@
             "max": 120,
             "unit": "years",
             "keyboardType": "decimal"
-          },
-          {
-            "id": "sex",
-            "name": "patientSex",
-            "label": "Sex",
-            "type": "radio",
-            "required": true,
-            "defaultValue": "",
-            "options": [
-              { "label": "Female", "value": "F" },
-              { "label": "Male", "value": "M" },
-              { "label": "Other", "value": "Other" }
-            ]
           },
           {
             "id": "bmi",
@@ -252,6 +239,78 @@
             "type": "checkbox",
             "required": false,
             "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "ceap",
+        "shortLabel": "CEAP",
+        "title": "CEAP Classification (for V3 — pelvic-origin lower extremity)",
+        "fields": [
+          {
+            "id": "ceap-info",
+            "type": "alert",
+            "severity": "info",
+            "text": "Complete only for patients with V3 disease (pelvic varices extending to the lower extremities). The SVP instrument is complementary to CEAP for pelvic-origin lower-extremity signs/symptoms; both are reported side by side."
+          },
+          {
+            "id": "ceap-clinical-class",
+            "name": "ceapClinicalClass",
+            "label": "C — Clinical Class",
+            "type": "select",
+            "required": false,
+            "defaultValue": "",
+            "options": [
+              { "label": "C0 — No visible/palpable signs", "value": "0" },
+              { "label": "C1 — Telangiectasias / reticular veins", "value": "1" },
+              { "label": "C2 — Varicose veins (≥3mm)", "value": "2" },
+              { "label": "C3 — Edema without skin changes", "value": "3" },
+              { "label": "C4 — Skin changes (pigmentation, eczema, LDS)", "value": "4" },
+              { "label": "C5 — Healed venous ulcer", "value": "5" },
+              { "label": "C6 — Active venous ulcer", "value": "6" }
+            ]
+          },
+          {
+            "id": "ceap-etiology",
+            "name": "ceapEtiology",
+            "label": "E — Etiology",
+            "type": "select",
+            "required": false,
+            "defaultValue": "",
+            "options": [
+              { "label": "Ec — Congenital", "value": "Ec" },
+              { "label": "Ep — Primary (undetermined cause)", "value": "Ep" },
+              { "label": "Es — Secondary (post-thrombotic/post-traumatic)", "value": "Es" },
+              { "label": "En — No identifiable cause", "value": "En" }
+            ]
+          },
+          {
+            "id": "ceap-anatomy",
+            "name": "ceapAnatomy",
+            "label": "A — Anatomy",
+            "type": "select",
+            "required": false,
+            "defaultValue": "",
+            "options": [
+              { "label": "As — Superficial veins", "value": "As" },
+              { "label": "Ap — Perforator veins", "value": "Ap" },
+              { "label": "Ad — Deep veins", "value": "Ad" },
+              { "label": "An — No venous location identified", "value": "An" }
+            ]
+          },
+          {
+            "id": "ceap-pathophysiology",
+            "name": "ceapPathophysiology",
+            "label": "P — Pathophysiology",
+            "type": "select",
+            "required": false,
+            "defaultValue": "",
+            "options": [
+              { "label": "Pr — Reflux", "value": "Pr" },
+              { "label": "Po — Obstruction", "value": "Po" },
+              { "label": "Pr,o — Reflux and obstruction", "value": "Pr,o" },
+              { "label": "Pn — No venous pathophysiology identifiable", "value": "Pn" }
+            ]
           }
         ]
       }

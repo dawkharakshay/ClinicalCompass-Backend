@@ -14,6 +14,8 @@ echo "[entrypoint] applying database migrations..."
 uv run --no-dev alembic upgrade head
 
 if [ "${SEED_ON_STARTUP:-1}" = "1" ]; then
+    echo "[entrypoint] renaming legacy module titles..."
+    uv run --no-dev python scripts/seed_module_renames.py || echo "[entrypoint] seed_module_renames failed (continuing)"
     echo "[entrypoint] seeding specialities + modules..."
     uv run --no-dev python scripts/seed_modules.py || echo "[entrypoint] seed_modules failed (continuing)"
     echo "[entrypoint] loading module forms..."

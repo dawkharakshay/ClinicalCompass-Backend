@@ -1,0 +1,244 @@
+{
+  "title": "Geniculate Artery Embolization Clinical Compass",
+  "form": {
+    "version": 1,
+    "layout": "wizard",
+    "submitLabel": "Compute GAE Suitability",
+    "logicKey": "gaecompass",
+    "hiddenDefaults": {},
+    "steps": [
+      {
+        "id": "patient-demographics",
+        "shortLabel": "Demographics",
+        "title": "Patient Demographics",
+        "fields": [
+          {
+            "id": "age",
+            "name": "age",
+            "label": "Age (years)",
+            "type": "number",
+            "required": true,
+            "defaultValue": "",
+            "min": 0,
+            "max": 120,
+            "unit": "years",
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "sex",
+            "name": "sex",
+            "label": "Sex",
+            "type": "select",
+            "required": false,
+            "defaultValue": "",
+            "options": [
+              { "label": "Female", "value": "female" },
+              { "label": "Male", "value": "male" }
+            ]
+          },
+          {
+            "id": "bmi",
+            "name": "bmi",
+            "label": "BMI",
+            "type": "number",
+            "required": false,
+            "defaultValue": "",
+            "min": 10,
+            "max": 70,
+            "keyboardType": "decimal"
+          },
+          {
+            "id": "laterality",
+            "name": "laterality",
+            "label": "Affected Knee",
+            "type": "select",
+            "required": false,
+            "defaultValue": "right",
+            "options": [
+              { "label": "Right", "value": "right" },
+              { "label": "Left", "value": "left" }
+            ]
+          },
+          {
+            "id": "symptom-duration",
+            "name": "symptomDuration",
+            "label": "Symptom Duration",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "placeholder": "e.g. 18 months"
+          }
+        ]
+      },
+      {
+        "id": "symptom-functional",
+        "shortLabel": "Symptoms",
+        "title": "Symptom & Functional Scores",
+        "fields": [
+          {
+            "id": "pain-score",
+            "name": "painScore",
+            "label": "Pain Intensity",
+            "type": "slider",
+            "required": false,
+            "defaultValue": 5,
+            "min": 0,
+            "max": 10,
+            "step": 0.5,
+            "leftLabel": "No pain",
+            "rightLabel": "Worst pain"
+          },
+          {
+            "id": "functional-limitation",
+            "name": "functionalLimitation",
+            "label": "Functional Limitation",
+            "type": "slider",
+            "required": false,
+            "defaultValue": 5,
+            "min": 0,
+            "max": 10,
+            "step": 0.5,
+            "leftLabel": "No limitation",
+            "rightLabel": "Severe"
+          },
+          {
+            "id": "qol-impact",
+            "name": "qolImpact",
+            "label": "Quality of Life Impact",
+            "type": "slider",
+            "required": false,
+            "defaultValue": 5,
+            "min": 0,
+            "max": 10,
+            "step": 0.5,
+            "leftLabel": "No impact",
+            "rightLabel": "Severe"
+          },
+          {
+            "id": "oxford-knee-score",
+            "name": "oxfordKneeScore",
+            "label": "Oxford Knee Score (OKS) — optional",
+            "type": "number",
+            "required": false,
+            "defaultValue": "",
+            "min": 0,
+            "max": 48,
+            "keyboardType": "number-pad"
+          },
+          {
+            "id": "koos-score",
+            "name": "koosScore",
+            "label": "KOOS Score — optional",
+            "type": "number",
+            "required": false,
+            "defaultValue": "",
+            "min": 0,
+            "max": 100,
+            "keyboardType": "number-pad"
+          },
+          {
+            "id": "symptom-duration-over-6-months",
+            "name": "symptomDurationOver6Months",
+            "label": "Symptom duration exceeds 6 months",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "radiographic-criteria",
+        "shortLabel": "Radiographic",
+        "title": "Radiographic Criteria",
+        "fields": [
+          {
+            "id": "kl-grade",
+            "name": "klGrade",
+            "label": "Kellgren-Lawrence (KL) Grade",
+            "type": "select",
+            "required": true,
+            "defaultValue": "",
+            "options": [
+              { "label": "0 — Normal", "value": "0" },
+              { "label": "1 — Doubtful", "value": "1" },
+              { "label": "2 — Mild OA", "value": "2" },
+              { "label": "3 — Moderate", "value": "3" },
+              { "label": "4 — Severe", "value": "4" }
+            ]
+          },
+          {
+            "id": "subchondral-disruption",
+            "name": "subchondralDisruption",
+            "label": "Subchondral bone plate disruption on MRI (optional)",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "id": "exclusion-eligibility",
+        "shortLabel": "Eligibility",
+        "title": "Exclusion & Eligibility",
+        "fields": [
+          {
+            "id": "conservative-therapy-failed",
+            "name": "conservativeTherapyFailed",
+            "label": "Conservative therapy has been exhausted or failed",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "prior-interventions",
+            "name": "priorInterventions",
+            "label": "Prior conservative interventions tried",
+            "type": "multiselect",
+            "required": false,
+            "defaultValue": [],
+            "options": [
+              { "label": "NSAIDs", "value": "NSAIDs" },
+              { "label": "Physical Therapy", "value": "Physical Therapy" },
+              { "label": "Corticosteroid Injection", "value": "Corticosteroid Injection" },
+              { "label": "Hyaluronic Acid", "value": "Hyaluronic Acid" },
+              { "label": "PRP Injection", "value": "PRP Injection" },
+              { "label": "Bracing/Orthotics", "value": "Bracing/Orthotics" }
+            ]
+          },
+          {
+            "id": "no-infection",
+            "name": "noInfection",
+            "label": "No active intra-articular infection",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "no-inflammatory-arthritis",
+            "name": "noInflammatoryArthritis",
+            "label": "No rheumatoid/inflammatory arthritis",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "no-meniscal-tear",
+            "name": "noMeniscalTear",
+            "label": "No focal, uncorrected meniscal tear requiring surgery",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          },
+          {
+            "id": "no-coagulopathy",
+            "name": "noCoagulopathy",
+            "label": "No uncorrectable coagulopathy",
+            "type": "checkbox",
+            "required": false,
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  }
+}

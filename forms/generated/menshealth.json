@@ -17,21 +17,6 @@
     },
     "steps": [
       {
-        "id": "patient-information",
-        "shortLabel": "Patient",
-        "title": "Patient Information",
-        "fields": [
-          {
-            "id": "patient-name",
-            "name": "patientName",
-            "label": "Patient Name",
-            "type": "text",
-            "required": false,
-            "defaultValue": ""
-          }
-        ]
-      },
-      {
         "id": "symptom-assessment",
         "shortLabel": "Symptoms",
         "title": "Symptom Assessment",

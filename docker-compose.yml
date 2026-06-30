@@ -82,6 +82,9 @@ services:
       # Push — FCM server key (empty = stub) + admin key gating /notifications/send.
       FCM_SERVER_KEY: ${PE_FCM_SERVER_KEY:-}
       PUSH_ADMIN_KEY: ${PE_PUSH_ADMIN_KEY:-}
+      # Social login — comma-separated OAuth client IDs accepted as the token aud.
+      GOOGLE_CLIENT_IDS: ${PE_GOOGLE_CLIENT_IDS:-}
+      APPLE_CLIENT_IDS: ${PE_APPLE_CLIENT_IDS:-}
     depends_on:
       pe-db:
         condition: service_healthy

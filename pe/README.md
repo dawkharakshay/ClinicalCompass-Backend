@@ -20,6 +20,7 @@ The full endpoint contract lives in [`BACKEND_API.md`](./BACKEND_API.md).
 | Group | Endpoints |
 |---|---|
 | Auth | `POST /auth/signup`, `/auth/login`, `/auth/logout`, `/auth/refresh`, `GET /auth/session`, `POST /auth/forgot-password`, `/auth/reset-password` |
+| Social login | `POST /auth/oauth/google`, `POST /auth/oauth/apple` |
 | Profiles | `GET /profile`, `PATCH /profile` |
 | Patient classifications | `GET` / `POST` `/patient-classifications`, `DELETE /patient-classifications/{id}` |
 | ECMO assessments | `GET` / `POST` `/ecmo-assessments`, `DELETE /ecmo-assessments/{id}` |
@@ -27,9 +28,13 @@ The full endpoint contract lives in [`BACKEND_API.md`](./BACKEND_API.md).
 | Notifications | `POST /notifications/send` (admin, gated by `X-Admin-Key`) |
 | Meta | `GET /health` |
 
-> Google OAuth (`/auth/oauth/google`) is listed as optional in the spec and is
-> **not** implemented. The notification sender uses FCM; with `FCM_SERVER_KEY`
-> unset it runs in stub mode (resolves tokens, logs, reports `sent: 0`).
+> **Social login** (`/auth/oauth/{google,apple}`) verifies the provider's
+> OpenID Connect identity token (JWKS signature + issuer/audience/expiry; ported
+> from the main app's `app/oauth.py`), then find-or-create-or-links the account
+> (auto-linking onto an existing account only on a *verified* matching email).
+> Set `PE_GOOGLE_CLIENT_IDS` / `PE_APPLE_CLIENT_IDS` to the client IDs accepted
+> as the token `aud`; an unset provider returns 400. The notification sender uses
+> FCM; with `FCM_SERVER_KEY` unset it runs in stub mode (`sent: 0`).
 
 ## Layout
 

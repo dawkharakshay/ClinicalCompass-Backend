@@ -37,17 +37,28 @@ def _uuid() -> uuid.UUID:
 
 
 class User(Base):
-    """Authentication record — replaces Supabase ``auth.users``."""
+    """Authentication record — replaces Supabase ``auth.users``.
+
+    Accounts authenticate either by password or by a federated identity
+    (Google / Apple). ``password_hash`` is null for OAuth-only accounts.
+    """
 
     __tablename__ = "users"
+    # A given provider identity (sub) maps to at most one user.
+    __table_args__ = (
+        UniqueConstraint("oauth_provider", "oauth_subject", name="uq_users_oauth_identity"),
+    )
 
     id: Mapped[uuid.UUID] = mapped_column(Uuid, primary_key=True, default=_uuid)
     email: Mapped[str] = mapped_column(String(255), unique=True, nullable=False, index=True)
-    password_hash: Mapped[str] = mapped_column(String(255), nullable=False)
+    password_hash: Mapped[str | None] = mapped_column(String(255), nullable=True)
     is_active: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), nullable=False, default=_utcnow
     )
+    # Federated identity: provider ("google"/"apple") + its stable subject claim.
+    oauth_provider: Mapped[str | None] = mapped_column(String(16), nullable=True)
+    oauth_subject: Mapped[str | None] = mapped_column(String(255), nullable=True)
 
     profile: Mapped["Profile"] = relationship(
         back_populates="user", cascade="all, delete-orphan", uselist=False

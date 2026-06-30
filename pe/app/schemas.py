@@ -33,6 +33,27 @@ class ResetPasswordRequest(BaseModel):
     password: str = Field(min_length=8)
 
 
+class GoogleOAuthRequest(BaseModel):
+    id_token: str = Field(
+        description="The Google ID token (JWT) from the native Google Sign-In SDK. "
+        "Identity (subject, email, name) is read from the verified token."
+    )
+    # Optional: set the profile's hospital affiliation on first sign-in.
+    hospital_affiliation: str | None = None
+
+
+class AppleOAuthRequest(BaseModel):
+    identity_token: str = Field(
+        description="The Apple identity token (JWT) from Sign in with Apple."
+    )
+    full_name: str | None = Field(
+        default=None,
+        description="The user's name. Apple returns this only on the FIRST "
+        "authorization, so the client must send it then.",
+    )
+    hospital_affiliation: str | None = None
+
+
 class UserOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 

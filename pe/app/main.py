@@ -17,6 +17,7 @@ from app.routers import (
     classifications,
     device_tokens,
     ecmo,
+    feedback,
     notifications,
     profile,
 )
@@ -58,6 +59,7 @@ app.include_router(classifications.router)
 app.include_router(ecmo.router)
 app.include_router(device_tokens.router)
 app.include_router(notifications.router)
+app.include_router(feedback.router)
 
 
 @app.get("/health", tags=["meta"], summary="Health check")

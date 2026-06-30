@@ -26,7 +26,13 @@ The full endpoint contract lives in [`BACKEND_API.md`](./BACKEND_API.md).
 | ECMO assessments | `GET` / `POST` `/ecmo-assessments`, `DELETE /ecmo-assessments/{id}` |
 | Device tokens | `POST` (upsert) / `DELETE` `/device-tokens` |
 | Notifications | `POST /notifications/send` (admin, gated by `X-Admin-Key`) |
+| Feedback | `POST /feedback`, `GET /feedback` (own); `GET /feedback/flagged` (admin) |
 | Meta | `GET /health` |
+
+Feedback captures usefulness (👍 `useful` / 👎 `not_useful` / ⚠️ `potential_issue`)
+and clinical-judgment match (`yes`/`partial`/`no`). A `potential_issue` **requires
+a `concern`** description and is stored `flagged=True`; `GET /feedback/flagged`
+(admin, `X-Admin-Key`) returns those reports newest-first with the user + time.
 
 > **Social login** (`/auth/oauth/{google,apple}`) verifies the provider's
 > OpenID Connect identity token (JWKS signature + issuer/audience/expiry; ported

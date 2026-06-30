@@ -5,25 +5,17 @@ own user. It is gated by the ``X-Admin-Key`` header (compared to PUSH_ADMIN_KEY)
 rather than a user JWT.
 """
 
-import uuid
-
-from fastapi import APIRouter, Depends, Header, HTTPException, status
+from fastapi import APIRouter, Depends
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app import push
-from app.config import PUSH_ADMIN_KEY
 from app.database import get_db
+from app.deps import require_admin_key
 from app.models import DeviceToken
 from app.schemas import NotificationResult, NotificationSend
 
 router = APIRouter(prefix="/notifications", tags=["notifications"])
-
-
-def require_admin_key(x_admin_key: str | None = Header(default=None)) -> None:
-    # Fail closed: if no key is configured, the endpoint is unusable rather than open.
-    if not PUSH_ADMIN_KEY or x_admin_key != PUSH_ADMIN_KEY:
-        raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Invalid admin key")
 
 
 @router.post("/send", response_model=NotificationResult, dependencies=[Depends(require_admin_key)])

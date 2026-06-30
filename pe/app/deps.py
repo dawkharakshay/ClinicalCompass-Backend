@@ -2,10 +2,11 @@
 
 import uuid
 
-from fastapi import Depends, HTTPException, status
+from fastapi import Depends, Header, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from sqlalchemy.orm import Session
 
+from app.config import PUSH_ADMIN_KEY
 from app.database import get_db
 from app.models import User
 from app.security import decode_access_token
@@ -40,3 +41,12 @@ def get_current_user(
             status_code=status.HTTP_403_FORBIDDEN, detail="User account is disabled"
         )
     return user
+
+
+def require_admin_key(x_admin_key: str | None = Header(default=None)) -> None:
+    """Gate server-to-server / admin endpoints on the shared PUSH_ADMIN_KEY.
+
+    Fails closed: if no key is configured, the endpoint is unusable rather than open.
+    """
+    if not PUSH_ADMIN_KEY or x_admin_key != PUSH_ADMIN_KEY:
+        raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Invalid admin key")

@@ -15,6 +15,7 @@ from sqlalchemy import (
     ForeignKey,
     Integer,
     String,
+    Text,
     Uuid,
     UniqueConstraint,
 )
@@ -162,6 +163,40 @@ class RefreshToken(Base):
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), nullable=False, default=_utcnow
     )
+
+
+class Feedback(Base):
+    """Feedback on a clinical recommendation.
+
+    ``usefulness`` is the 👍/👎/⚠️ tap; ``clinical_judgment`` is the match
+    question. A "potential_issue" sets ``flagged=True`` so those reports are easy
+    to find and review separately, alongside the submitting user and timestamp.
+    ``subject_type``/``subject_id`` optionally tie the feedback to what was rated
+    (e.g. a patient_classification or ecmo_candidacy_assessment).
+    """
+
+    __tablename__ = "feedback"
+
+    id: Mapped[uuid.UUID] = mapped_column(Uuid, primary_key=True, default=_uuid)
+    user_id: Mapped[uuid.UUID] = mapped_column(
+        Uuid, ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True
+    )
+    # "useful" | "not_useful" | "potential_issue"
+    usefulness: Mapped[str] = mapped_column(String(20), nullable=False)
+    # "yes" | "partial" | "no"
+    clinical_judgment: Mapped[str | None] = mapped_column(String(10), nullable=True)
+    comments: Mapped[str | None] = mapped_column(Text, nullable=True)
+    # Description of the concern, captured when usefulness == "potential_issue".
+    concern: Mapped[str | None] = mapped_column(Text, nullable=True)
+    # True for potential-issue reports — indexed so the review queue is cheap.
+    flagged: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False, index=True)
+    subject_type: Mapped[str | None] = mapped_column(String(50), nullable=True)
+    subject_id: Mapped[uuid.UUID | None] = mapped_column(Uuid, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
+
+    user: Mapped[User] = relationship()
 
 
 class PasswordResetToken(Base):

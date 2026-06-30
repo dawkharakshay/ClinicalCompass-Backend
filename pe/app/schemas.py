@@ -4,7 +4,10 @@ import uuid
 from datetime import datetime
 from typing import Any, Literal
 
-from pydantic import BaseModel, ConfigDict, EmailStr, Field
+from pydantic import BaseModel, ConfigDict, EmailStr, Field, model_validator
+
+Usefulness = Literal["useful", "not_useful", "potential_issue"]
+ClinicalJudgment = Literal["yes", "partial", "no"]
 
 
 # --- Auth ---------------------------------------------------------------------
@@ -160,3 +163,50 @@ class NotificationSend(BaseModel):
 class NotificationResult(BaseModel):
     success: bool
     sent: int
+
+
+# --- Feedback -----------------------------------------------------------------
+class FeedbackCreate(BaseModel):
+    usefulness: Usefulness  # 👍 useful | 👎 not_useful | ⚠️ potential_issue
+    clinical_judgment: ClinicalJudgment | None = None  # matched judgment?
+    comments: str | None = None
+    # Required when usefulness == "potential_issue": describe the concern.
+    concern: str | None = None
+    # Optional context: what was rated (e.g. "classification" / "ecmo") + its id.
+    subject_type: str | None = None
+    subject_id: uuid.UUID | None = None
+
+    @model_validator(mode="after")
+    def _concern_required_for_issue(self) -> "FeedbackCreate":
+        if self.usefulness == "potential_issue" and not (self.concern and self.concern.strip()):
+            raise ValueError("concern is required when usefulness is 'potential_issue'")
+        return self
+
+
+class FeedbackOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: uuid.UUID
+    usefulness: str
+    clinical_judgment: str | None
+    comments: str | None
+    concern: str | None
+    flagged: bool
+    subject_type: str | None
+    subject_id: uuid.UUID | None
+    created_at: datetime
+
+
+class FlaggedFeedbackOut(BaseModel):
+    """A flagged potential-issue report, with the submitting user + time."""
+
+    id: uuid.UUID
+    user_id: uuid.UUID
+    user_email: EmailStr
+    usefulness: str
+    clinical_judgment: str | None
+    comments: str | None
+    concern: str | None
+    subject_type: str | None
+    subject_id: uuid.UUID | None
+    created_at: datetime

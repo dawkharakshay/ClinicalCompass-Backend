@@ -22,12 +22,14 @@ The full endpoint contract lives in [`BACKEND_API.md`](./BACKEND_API.md).
 | Auth | `POST /auth/signup`, `/auth/login`, `/auth/logout`, `/auth/refresh`, `GET /auth/session`, `POST /auth/forgot-password`, `/auth/reset-password` |
 | Social login | `POST /auth/oauth/google`, `POST /auth/oauth/apple` |
 | Profiles | `GET /profile`, `PATCH /profile` |
-| Patient classifications | `GET` / `POST` `/patient-classifications`, `DELETE /patient-classifications/{id}` |
-| ECMO assessments | `GET` / `POST` `/ecmo-assessments`, `DELETE /ecmo-assessments/{id}` |
 | Device tokens | `POST` (upsert) / `DELETE` `/device-tokens` |
-| Notifications | `POST /notifications/send` (admin, gated by `X-Admin-Key`) |
 | Feedback | `POST /feedback`, `GET /feedback` (own); `GET /feedback/flagged` (admin) |
 | Meta | `GET /health` |
+
+> **Temporarily disabled** (routers removed, but models + migrations retained so
+> they can be re-added without data loss): `patient-classifications`,
+> `ecmo-assessments`, `notifications`. Re-add by restoring the routers and
+> re-registering them in `app/main.py`.
 
 Feedback captures usefulness (👍 `useful` / 👎 `not_useful` / ⚠️ `potential_issue`)
 and clinical-judgment match (`yes`/`partial`/`no`). A `potential_issue` **requires

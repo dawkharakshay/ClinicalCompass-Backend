@@ -14,11 +14,8 @@ from fastapi import FastAPI
 from app.database import Base, engine
 from app.routers import (
     auth,
-    classifications,
     device_tokens,
-    ecmo,
     feedback,
-    notifications,
     profile,
 )
 
@@ -55,10 +52,7 @@ app = FastAPI(
 
 app.include_router(auth.router)
 app.include_router(profile.router)
-app.include_router(classifications.router)
-app.include_router(ecmo.router)
 app.include_router(device_tokens.router)
-app.include_router(notifications.router)
 app.include_router(feedback.router)
 
 

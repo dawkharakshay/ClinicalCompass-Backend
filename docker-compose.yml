@@ -43,6 +43,51 @@ services:
     expose:
       - "8000"
 
+  # --- PE backend: independent DB + API, served behind nginx at /pe/ ---
+  pe-db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${PE_POSTGRES_USER:-pe}
+      POSTGRES_PASSWORD: ${PE_POSTGRES_PASSWORD:-pe}
+      POSTGRES_DB: ${PE_POSTGRES_DB:-pe}
+    volumes:
+      - pe_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${PE_POSTGRES_USER:-pe} -d ${PE_POSTGRES_DB:-pe}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  pe-api:
+    build: ./pe
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: ${PE_DATABASE_URL:-postgresql+psycopg://pe:pe@pe-db:5432/pe}
+      ROOT_PATH: /pe
+      # Auth — JWT signing key + token lifetimes. CHANGE JWT_SECRET in production.
+      JWT_SECRET: ${PE_JWT_SECRET:-dev-only-change-me}
+      ACCESS_TOKEN_TTL_MINUTES: ${PE_ACCESS_TOKEN_TTL_MINUTES:-30}
+      REFRESH_TOKEN_TTL_DAYS: ${PE_REFRESH_TOKEN_TTL_DAYS:-30}
+      # Public app URL used to build password-reset links.
+      APP_BASE_URL: ${PE_APP_BASE_URL:-http://localhost:8080}
+      # Email / SMTP for password-reset delivery (empty host = dev: link logged).
+      SMTP_HOST: ${PE_SMTP_HOST:-}
+      SMTP_PORT: ${PE_SMTP_PORT:-587}
+      SMTP_USERNAME: ${PE_SMTP_USERNAME:-}
+      SMTP_PASSWORD: ${PE_SMTP_PASSWORD:-}
+      SMTP_FROM: ${PE_SMTP_FROM:-no-reply@pecompass.local}
+      SMTP_STARTTLS: ${PE_SMTP_STARTTLS:-true}
+      SMTP_USE_SSL: ${PE_SMTP_USE_SSL:-false}
+      # Push — FCM server key (empty = stub) + admin key gating /notifications/send.
+      FCM_SERVER_KEY: ${PE_FCM_SERVER_KEY:-}
+      PUSH_ADMIN_KEY: ${PE_PUSH_ADMIN_KEY:-}
+    depends_on:
+      pe-db:
+        condition: service_healthy
+    expose:
+      - "8000"
+
   nginx:
     image: nginx:1.27-alpine
     restart: unless-stopped
@@ -52,7 +97,9 @@ services:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
     depends_on:
       - api
+      - pe-api
 
 volumes:
   pgdata:
   uploads:
+  pe_pgdata:

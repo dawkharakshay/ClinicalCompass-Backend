@@ -19,7 +19,7 @@ The full endpoint contract lives in [`BACKEND_API.md`](./BACKEND_API.md).
 
 | Group | Endpoints |
 |---|---|
-| Auth | `POST /auth/signup`, `/auth/login`, `/auth/logout`, `/auth/refresh`, `GET /auth/session`, `POST /auth/forgot-password`, `/auth/reset-password` |
+| Auth | `POST /auth/signup`, `/auth/login`, `/auth/logout`, `/auth/refresh`, `GET /auth/session`, `POST /auth/forgot-password`, `/auth/reset-password`, `DELETE /auth/account` |
 | Social login | `POST /auth/oauth/google`, `POST /auth/oauth/apple` |
 | Profiles | `GET /profile`, `PATCH /profile` |
 | Device tokens | `POST` (upsert) / `DELETE` `/device-tokens` |
@@ -90,4 +90,11 @@ uv sync
 export DATABASE_URL="sqlite:///./pe.db"   # or any Postgres
 uv run alembic upgrade head
 uv run uvicorn app.main:app --reload --port 8001 --root-path /pe
+```
+
+## Tests
+
+```bash
+cd pe
+uv run pytest        # in-memory SQLite (FKs on), no external services needed
 ```

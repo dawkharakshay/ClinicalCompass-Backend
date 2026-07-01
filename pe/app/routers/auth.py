@@ -226,6 +226,22 @@ def session(user: User = Depends(get_current_user)) -> SessionOut:
     return SessionOut(user=UserOut.model_validate(user))
 
 
+@router.delete("/account", status_code=status.HTTP_204_NO_CONTENT)
+def delete_account(
+    user: User = Depends(get_current_user), db: Session = Depends(get_db)
+) -> Response:
+    """Permanently delete the caller's account and all associated data.
+
+    Irreversible. Cascades (``ON DELETE CASCADE``) to the profile, refresh and
+    password-reset tokens, device tokens, saved classifications/assessments, and
+    feedback. The access token stops working immediately (the user no longer
+    exists) and every refresh token is removed, so all sessions are ended.
+    """
+    db.delete(user)
+    db.commit()
+    return Response(status_code=status.HTTP_204_NO_CONTENT)
+
+
 @router.post("/forgot-password", status_code=status.HTTP_200_OK)
 def forgot_password(payload: ForgotPasswordRequest, db: Session = Depends(get_db)) -> dict:
     """Always returns 200 — never reveal whether an email is registered."""

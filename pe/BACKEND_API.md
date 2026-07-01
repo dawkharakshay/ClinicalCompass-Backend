@@ -78,6 +78,12 @@ Replaces `updateUser({ password })` after recovery.
 { "token": "<reset-token-from-email>", "password": "newpass" }   // → 200
 ```
 
+### DELETE `/auth/account` *(auth)*
+Permanently delete the caller's account and **all** associated data. Irreversible.
+Cascades (`ON DELETE CASCADE`) to the profile, refresh/reset tokens, device tokens,
+saved classifications/assessments, and feedback. The access token stops working
+immediately and every refresh token is removed (all sessions ended). → `204`
+
 ### (Optional) Google OAuth — `/auth/oauth/google`
 Currently handled via Lovable (`lovable.auth.signInWithOAuth("google")`). Only build if you want
 to keep Google sign-in; otherwise drop it.
@@ -212,7 +218,7 @@ Server-to-server / admin endpoint. Looks up the user's device tokens and deliver
 
 | # | Group | Endpoints |
 |---|---|---|
-| 1 | Auth | signup, login, logout, refresh, session, forgot-password, reset-password (+ optional Google OAuth) |
+| 1 | Auth | signup, login, logout, refresh, session, forgot-password, reset-password, delete-account (+ optional Google OAuth) |
 | 2 | Profiles | GET /profile, PATCH /profile |
 | 3 | Patient Classifications | GET, POST, DELETE /:id |
 | 4 | ECMO Assessments | POST (GET/DELETE optional) |

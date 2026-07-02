@@ -557,7 +557,7 @@ def assess(data: dict) -> dict:
 
     # Reflux duration >1 second on Valsalva = pathological
     lov_reflux = parse_float(data.get("lovRefluxDuration"))
-    if not math.isnan(lov_reflux) and lov_reflux > 1000:
+    if not math.isnan(lov_reflux) and lov_reflux > 1:
         score += 1
         criteria_met_count += 1
 
@@ -584,9 +584,9 @@ def assess(data: dict) -> dict:
     # ── LOV incompetence assessment ──────────────────────────────────
     # Combined diameter + reflux criteria. NB: NaN comparisons are False in
     # both JS and Python, so the missing-value behaviour matches.
-    if lov_diam >= 6 and lov_reflux > 1000:
+    if lov_diam >= 6 and lov_reflux > 1:
         lov_incompetence = "detected"
-    elif lov_diam >= 5 or lov_reflux > 500:
+    elif lov_diam >= 5 or lov_reflux > 0.5:
         lov_incompetence = "inconclusive"
     else:
         lov_incompetence = "absent"

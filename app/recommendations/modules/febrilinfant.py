@@ -7,7 +7,7 @@ PECARN 2019.
 
 from __future__ import annotations
 
-from app.recommendations.jslib import truthy
+from app.recommendations.jslib import parse_float, truthy
 
 LOGIC_KEY = "febrilinfant"
 
@@ -141,9 +141,12 @@ def assess(data: dict) -> dict:
     crp = data.get("cReactiveProtein")
     urinalysis_positive = data.get("urinalysisPositive")
 
-    anc_low = anc is not None and anc < 4090
-    procal_low = procal is not None and procal < 0.5
-    crp_low = crp is not None and crp < 20  # noqa: F841 (mirrors TS; unused downstream)
+    # Numbers arrive as raw strings in production; JS coerces (`anc < 4090`)
+    # while Python would raise. parse_float mirrors JS: absent/blank -> NaN,
+    # and `NaN < x` is False — identical to the TS `!== null &&` short-circuit.
+    anc_low = parse_float(anc) < 4090
+    procal_low = parse_float(procal) < 0.5
+    crp_low = parse_float(crp) < 20  # noqa: F841 (mirrors TS; unused downstream)
     ua_positive = urinalysis_positive is True
 
     if not truthy(well_appearing):

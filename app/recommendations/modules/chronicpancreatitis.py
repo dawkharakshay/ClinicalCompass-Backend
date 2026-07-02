@@ -6,9 +6,16 @@ Ported 1:1 from old_static_code/client/src/lib/chronicPancreatitisLogic.ts
 
 from __future__ import annotations
 
-from app.recommendations.jslib import coalesce
+from app.recommendations.jslib import coalesce, num, parse_float
 
 LOGIC_KEY = "chronicpancreatitis"
+
+
+def _fmt_num(value: float) -> str:
+    """Render a number the way a JS template literal would (drop trailing .0)."""
+    if value == int(value):
+        return str(int(value))
+    return str(value)
 
 _REFERENCES = [
     {
@@ -39,7 +46,13 @@ def assess(data: dict) -> dict:
     next_steps: list[str] = []
 
     igg4_level = data.get("igg4Level")
-    pseudocyst_size = data.get("pseudocystSizeCm")
+    # TS UI: `value ? parseFloat(value) || 0 : undefined` -> a number, or undefined
+    # when blank. Numbers arrive here as raw strings, so coerce; blank/absent
+    # maps to None (TS undefined).
+    pseudocyst_size_raw = data.get("pseudocystSizeCm")
+    pseudocyst_size = (
+        None if pseudocyst_size_raw in (None, "") else num(pseudocyst_size_raw, 0)
+    )
     pseudocyst_symptoms = data.get("pseudocystSymptoms")
     duct_anatomy = data.get("ductAnatomy")
 
@@ -64,7 +77,7 @@ def assess(data: dict) -> dict:
         urgent_flags.append(
             "Splenic vein thrombosis: risk of gastric varices and bleeding — anticoagulation discussion + splenectomy if bleeding"
         )
-    if igg4_level is not None and igg4_level > 135:
+    if parse_float(igg4_level) > 135:
         urgent_flags.append(
             f"IgG4 {igg4_level} mg/dL (>135): autoimmune pancreatitis type 1 — trial of prednisone 40mg/day x4 weeks before invasive intervention"
         )
@@ -265,12 +278,13 @@ def assess(data: dict) -> dict:
     etiology = str(coalesce(data.get("etiology"), "")).replace("_", " ")
     pain_pattern = str(coalesce(data.get("painPattern"), "")).replace("_", " ")
     duct_anatomy_str = str(coalesce(duct_anatomy, "")).replace("_", " ")
-    mpd = data.get("mpdDiameterMm")
+    mpd_raw = data.get("mpdDiameterMm")
+    mpd = None if mpd_raw in (None, "") else num(mpd_raw, 0)
     rationale = (
         f"Etiology: {etiology}. "
         f"Pain pattern: {pain_pattern}. "
         f"Duct anatomy: {duct_anatomy_str}. "
-        f"MPD diameter: {f'{mpd}mm' if mpd else 'not measured'}. "
+        f"MPD diameter: {f'{_fmt_num(mpd)}mm' if mpd else 'not measured'}. "
         f"Stones: {'Yes' if data.get('hasStones') else 'No'}. "
         f"Exocrine insufficiency: {'Yes' if data.get('hasExocrineInsufficiency') else 'No'}. "
         f"Type 3c DM: {'Yes' if data.get('hasType3cDiabetes') else 'No'}."
@@ -280,7 +294,7 @@ def assess(data: dict) -> dict:
         primary_recommendation = (
             "Suspected malignancy in chronic pancreatitis: EUS-FNB + CT staging required urgently."
         )
-    elif igg4_level is not None and igg4_level > 135:
+    elif parse_float(igg4_level) > 135:
         primary_recommendation = (
             "Autoimmune pancreatitis type 1 (IgG4 >135): prednisone trial before invasive intervention."
         )

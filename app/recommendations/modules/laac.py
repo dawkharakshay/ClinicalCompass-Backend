@@ -62,11 +62,24 @@ def _calc_hasbled(data: dict) -> int:
     return min(score, 9)
 
 
-def _fmt(x: float) -> str:
-    """Render a JS number the way template-literal interpolation would."""
-    if x == int(x) and not math.isinf(x):
-        return str(int(x))
-    return repr(x)
+def _fmt(x) -> str:
+    """Render a value the way JS ``${x}`` template-literal interpolation would.
+
+    Form data arrives as raw strings and the TS interpolates them verbatim, so a
+    string is emitted unchanged (e.g. "24", "24.0", "0024"). Genuine numbers use
+    JS number formatting; ``None`` -> "".
+    """
+    if x is None:
+        return ""
+    if isinstance(x, bool):
+        return "true" if x else "false"
+    if isinstance(x, (int, float)):
+        if x != x:  # NaN
+            return "NaN"
+        if not math.isinf(x) and x == int(x):
+            return str(int(x))
+        return repr(x)
+    return str(x)
 
 
 def assess(data: dict) -> dict:
@@ -167,19 +180,20 @@ def assess(data: dict) -> dict:
         )
 
     # LAA anatomy
+    raw_ostium = data.get("laaSizeOstium")
     if laa_size_ostium >= 17 and laa_size_ostium <= 31:
         key_findings.append(
-            f"LAA ostium {_fmt(laa_size_ostium)} mm — within Watchman FLX sizing range (17–31 mm)"
+            f"LAA ostium {_fmt(raw_ostium)} mm — within Watchman FLX sizing range (17–31 mm)"
         )
         score += 10
     elif laa_size_ostium > 31:
         warnings.append(
-            f"LAA ostium {_fmt(laa_size_ostium)} mm — exceeds Watchman FLX range; consider Amulet (up to 34 mm) or surgical ligation"
+            f"LAA ostium {_fmt(raw_ostium)} mm — exceeds Watchman FLX range; consider Amulet (up to 34 mm) or surgical ligation"
         )
         score -= 5
     elif laa_size_ostium < 17 and laa_size_ostium > 0:
         warnings.append(
-            f"LAA ostium {_fmt(laa_size_ostium)} mm — below minimum device size; verify with 3D TEE"
+            f"LAA ostium {_fmt(raw_ostium)} mm — below minimum device size; verify with 3D TEE"
         )
         score -= 5
 

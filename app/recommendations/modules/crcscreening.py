@@ -6,7 +6,7 @@ Ported 1:1 from old_static_code/client/src/lib/crcScreeningLogic.ts
 
 from __future__ import annotations
 
-from app.recommendations.jslib import truthy
+from app.recommendations.jslib import parse_float, truthy
 
 LOGIC_KEY = "crcscreening"
 
@@ -140,7 +140,7 @@ def assess(data: dict) -> dict:
                 "Flexible sigmoidoscopy every 5 years + annual FIT (alternative to colonoscopy)."
             )
     elif risk_category == "increased_risk_family_history":
-        if family_history_age is not None and family_history_age < 60:
+        if parse_float(family_history_age) < 60:
             screening_initiation_age = (
                 "Age 40 OR 10 years before the youngest affected relative's diagnosis (whichever is earlier). "
                 "First-degree relative with CRC diagnosed <60 years."
@@ -264,8 +264,7 @@ def assess(data: dict) -> dict:
 
     if len(next_steps) == 0:
         if (
-            age_years is not None
-            and age_years >= 45
+            parse_float(age_years) >= 45
             and risk_category == "average_risk"
             and not truthy(data.get("lastColonoscopyYear"))
         ):
@@ -275,8 +274,7 @@ def assess(data: dict) -> dict:
             )
             next_steps.append("Order FIT if patient prefers noninvasive test")
         elif (
-            age_years is not None
-            and age_years < 45
+            parse_float(age_years) < 45
             and risk_category == "average_risk"
         ):
             next_steps.append(
@@ -311,11 +309,11 @@ def assess(data: dict) -> dict:
         primary_recommendation = (
             "IBD: colonoscopy with chromoendoscopy every 1–3 years starting 8 years after extensive colitis onset."
         )
-    elif risk_category == "average_risk" and age_years is not None and age_years >= 45:
+    elif risk_category == "average_risk" and parse_float(age_years) >= 45:
         primary_recommendation = (
             "Average-risk CRC screening: colonoscopy every 10 years (preferred) or annual FIT starting age 45."
         )
-    elif risk_category == "average_risk" and age_years is not None and age_years < 45:
+    elif risk_category == "average_risk" and parse_float(age_years) < 45:
         primary_recommendation = (
             "Below screening age — begin CRC screening at age 45 (USPSTF) or age 40 (ACG for Black patients)."
         )

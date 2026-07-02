@@ -10,6 +10,8 @@ Gornik HL et al. J Am Coll Cardiol. 2024;83(24):2497-2604. PMID 38752899
 
 from __future__ import annotations
 
+from app.recommendations.jslib import num, parse_float
+
 LOGIC_KEY = "pad"
 
 
@@ -35,9 +37,8 @@ def assess_risk_amplifiers(input: dict) -> list[str]:
         amplifiers.append("Obesity (increased surgical complication risk)")
     if input.get("polyvascularDisease"):
         amplifiers.append("Polyvascular disease (increased MACE risk)")
-    age = input.get("age")
-    if age is not None and age >= 75:
-        amplifiers.append("Age >=75 years (increased perioperative risk)")
+    if num(input.get("age")) >= 75:
+        amplifiers.append("Age ≥75 years (increased perioperative risk)")
     return amplifiers
 
 
@@ -48,9 +49,9 @@ def calculate_wifi_stage(wound: int, ischemia: int, foot_infection: int) -> dict
     if total <= 1:
         return {"stage": 1, "label": "Stage 1 (Very Low)", "ampRisk": "<1%", "benefitFromRevasc": "Low"}
     if total <= 3:
-        return {"stage": 2, "label": "Stage 2 (Low)", "ampRisk": "1-10%", "benefitFromRevasc": "Moderate"}
+        return {"stage": 2, "label": "Stage 2 (Low)", "ampRisk": "1–10%", "benefitFromRevasc": "Moderate"}
     if total <= 6:
-        return {"stage": 3, "label": "Stage 3 (Moderate)", "ampRisk": "10-30%", "benefitFromRevasc": "High"}
+        return {"stage": 3, "label": "Stage 3 (Moderate)", "ampRisk": "10–30%", "benefitFromRevasc": "High"}
     return {"stage": 4, "label": "Stage 4 (High)", "ampRisk": ">30%", "benefitFromRevasc": "Very High"}
 
 
@@ -189,7 +190,7 @@ def _assess_claudication_pad(input: dict, risk_amplifiers: list[str]) -> dict:
             "keyMessages": [
                 "GDMT including structured exercise has not been adequately trialed — optimize before considering revascularization.",
                 "Cilostazol is recommended for symptom improvement (contraindicated in heart failure).",
-                "Reassess after 3-6 months of GDMT + structured exercise.",
+                "Reassess after 3–6 months of GDMT + structured exercise.",
             ],
         }
 
@@ -320,7 +321,9 @@ def _assess_clti(input: dict, risk_amplifiers: list[str]) -> dict:
     # WIfI staging note
     wifi_note: str | None = None
     if wifi_wound is not None and wifi_ischemia is not None and wifi_foot_infection is not None:
-        wifi_result = calculate_wifi_stage(wifi_wound, wifi_ischemia, wifi_foot_infection)
+        wifi_result = calculate_wifi_stage(
+            parse_float(wifi_wound), parse_float(wifi_ischemia), parse_float(wifi_foot_infection)
+        )
         wifi_note = (
             f"WIfI {wifi_result['label']} — 1-year amputation risk: {wifi_result['ampRisk']}. "
             f"Benefit from revascularization: {wifi_result['benefitFromRevasc']}."
@@ -397,9 +400,9 @@ def _assess_clti(input: dict, risk_amplifiers: list[str]) -> dict:
             "cor": "1",
             "loe": "A",
             "text": "Bypass to popliteal or infrapopliteal arteries should be constructed with autogenous vein (great saphenous vein) if available.",
-            "rationale": "COR 1, LOE A. Autogenous vein provides superior patency for infrainguinal bypass. GSV >=3 mm diameter is the criterion for adequacy (BEST-CLI trial).",
+            "rationale": "COR 1, LOE A. Autogenous vein provides superior patency for infrainguinal bypass. GSV ≥3 mm diameter is the criterion for adequacy (BEST-CLI trial).",
         })
-        conduit_note = "Great saphenous vein (GSV) >=3 mm available — autogenous vein bypass is preferred. Vein mapping with duplex ultrasound is recommended."
+        conduit_note = "Great saphenous vein (GSV) ≥3 mm available — autogenous vein bypass is preferred. Vein mapping with duplex ultrasound is recommended."
 
         if surgical_risk == "acceptable":
             additional_recs.append({
@@ -476,7 +479,7 @@ def _assess_clti(input: dict, risk_amplifiers: list[str]) -> dict:
         "keyMessages": [
             "Revascularization is the standard of care for CLTI — not the exception.",
             "Multispecialty care team evaluation is essential before amputation.",
-            "Conduit availability (GSV >=3 mm) is a key determinant of surgical vs. endovascular strategy.",
+            "Conduit availability (GSV ≥3 mm) is a key determinant of surgical vs. endovascular strategy.",
             "BEST-CLI: surgical bypass superior in patients with adequate GSV; BASIL-2: endovascular may be preferred for infrapopliteal disease.",
             "Goal of revascularization: in-line blood flow to the foot / angiosome-directed perfusion.",
             "Optimize GDMT, wound care, glycemic control, and infection management concurrently.",

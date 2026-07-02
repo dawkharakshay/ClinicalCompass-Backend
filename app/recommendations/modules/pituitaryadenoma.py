@@ -9,7 +9,9 @@ Functioning Pituitary Adenomas and Endocrine Society guidelines.
 
 from __future__ import annotations
 
-from app.recommendations.jslib import coalesce, truthy
+import math
+
+from app.recommendations.jslib import num, parse_float, truthy
 
 LOGIC_KEY = "pituitaryadenoma"
 
@@ -73,7 +75,7 @@ def assess(data: dict) -> dict:
 
     # ── Prolactinoma pathway ──────────────────────────────────────────────
     if tumor_type == "prolactinoma":
-        prolactin = coalesce(data.get("prolactinLevelNgMl"), 0)
+        prolactin = num(data.get("prolactinLevelNgMl"), 0)
 
         # Pregnancy considerations
         if truthy(data.get("pregnancyDesired")) and tumor_size == "macroadenoma":
@@ -192,9 +194,9 @@ def assess(data: dict) -> dict:
     # ── Cushing's disease (ACTH-secreting) pathway ───────────────────────
     if tumor_type == "cushings_acth":
         # Postoperative cortisol assessment
-        postop_cortisol = data.get("postopCortisolUgDl")
-        hours_post = data.get("hoursPostSurgery")
-        if postop_cortisol is not None and hours_post is not None:
+        postop_cortisol = parse_float(data.get("postopCortisolUgDl"))
+        hours_post = parse_float(data.get("hoursPostSurgery"))
+        if not math.isnan(postop_cortisol) and not math.isnan(hours_post):
             if postop_cortisol < 2 and hours_post <= 72:
                 cushings_warnings = list(warnings)
                 cushings_warnings.append(

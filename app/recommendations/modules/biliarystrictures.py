@@ -6,7 +6,7 @@ Ported 1:1 from old_static_code/client/src/lib/biliaryStricturesLogic.ts
 
 from __future__ import annotations
 
-from app.recommendations.jslib import coalesce, truthy
+from app.recommendations.jslib import coalesce, parse_float, truthy
 
 LOGIC_KEY = "biliarystrictures"
 
@@ -84,7 +84,7 @@ def assess(data: dict) -> dict:
         urgent_flags.append(
             "ACUTE CHOLANGITIS (Charcot's triad): urgent biliary decompression required — ERCP within 24–48h. IV antibiotics (piperacillin-tazobactam or ceftriaxone + metronidazole)."
         )
-    if bilirubin is not None and bilirubin > 15:
+    if parse_float(bilirubin) > 15:
         urgent_flags.append(
             f"Severe jaundice (bilirubin {bilirubin} mg/dL): biliary drainage required before any systemic therapy — ERCP or EUS-BD"
         )
@@ -96,7 +96,7 @@ def assess(data: dict) -> dict:
         urgent_flags.append(
             "PSC with dominant stricture: high risk of cholangiocarcinoma — ERCP with brush cytology + FISH, cholangioscopy with biopsy, and CA 19-9 + IgG4 measurement"
         )
-    if igg4 is not None and igg4 > 135:
+    if parse_float(igg4) > 135:
         urgent_flags.append(
             f"IgG4 {igg4} mg/dL (>135): IgG4-related sclerosing cholangitis — steroid trial (prednisone 40mg/day x4 weeks) before biliary stenting if clinically stable"
         )
@@ -108,7 +108,7 @@ def assess(data: dict) -> dict:
     if imaging_malignant:
         malignancy_risk_score += 2
         malignancy_features.append("Malignant imaging features (mass, vascular involvement)")
-    if ca199 is not None and ca199 > 100:
+    if parse_float(ca199) > 100:
         malignancy_risk_score += 2
         malignancy_features.append(f"CA 19-9 {ca199} U/mL (>100)")
     if has_weight_loss:
@@ -120,10 +120,10 @@ def assess(data: dict) -> dict:
     if has_psc:
         malignancy_risk_score += 1
         malignancy_features.append("PSC (13x higher CCA risk)")
-    if stricture_length is not None and stricture_length > 2:
+    if parse_float(stricture_length) > 2:
         malignancy_risk_score += 1
         malignancy_features.append(f"Long stricture ({stricture_length}cm)")
-    if age_years is not None and age_years > 60:
+    if parse_float(age_years) > 60:
         malignancy_risk_score += 1
         malignancy_features.append("Age >60")
 
@@ -144,7 +144,7 @@ def assess(data: dict) -> dict:
         )
         + (
             "IgG4 elevated — consider IgG4-related cholangiopathy (benign) before assuming malignancy. "
-            if (igg4 is not None and igg4 > 135)
+            if (parse_float(igg4) > 135)
             else ""
         )
         + "Benign causes to exclude: PSC, IgG4-related cholangiopathy, post-surgical stricture, chronic pancreatitis, Mirizzi syndrome."
@@ -189,7 +189,7 @@ def assess(data: dict) -> dict:
                 "   Avoid if resectable — theoretical seeding risk (controversial). "
                 "6) NEXT-GENERATION SEQUENCING (NGS) on bile/brush cytology: emerging — improves diagnostic yield."
             )
-            if prior_attempts is not None and prior_attempts >= 1:
+            if parse_float(prior_attempts) >= 1:
                 next_steps.append(
                     "Cholangioscopy (SpyGlass DS) with targeted biopsy — preferred for indeterminate stricture after failed ERCP cytology"
                 )
@@ -356,7 +356,7 @@ def assess(data: dict) -> dict:
         primary_recommendation = (
             "PSC with dominant stricture: ERCP dilation + cholangioscopy to exclude cholangiocarcinoma."
         )
-    elif igg4 is not None and igg4 > 135:
+    elif parse_float(igg4) > 135:
         primary_recommendation = (
             "IgG4-related sclerosing cholangitis: steroid trial (prednisone 40mg/day) before biliary stenting."
         )

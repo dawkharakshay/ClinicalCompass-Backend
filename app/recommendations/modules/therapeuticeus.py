@@ -6,7 +6,7 @@ Ported 1:1 from old_static_code/client/src/lib/therapeuticEUSLogic.ts
 
 from __future__ import annotations
 
-from app.recommendations.jslib import truthy
+from app.recommendations.jslib import parse_float, truthy
 
 LOGIC_KEY = "therapeuticeus"
 
@@ -38,15 +38,24 @@ def _underscores(value: object) -> str:
     return str(value).replace("_", " ")
 
 
+def _fmt_num(x: float) -> str:
+    """Render a number the way JS string interpolation would (whole numbers
+    without a trailing ``.0``). Only called on real (non-NaN) numbers."""
+    return str(int(x)) if x == int(x) else str(x)
+
+
 def assess(data: dict) -> dict:
     urgent_flags: list[str] = []
     next_steps: list[str] = []
 
     indication = data.get("indication")
     obstruction_level = data.get("obstructionLevel")
-    cbd_diameter_mm = data.get("cbdDiameterMm")
-    inr_value = data.get("inrValue")
-    platelet_count = data.get("plateletCount")
+    # Numeric fields arrive as raw strings (or absent); TS treats them as
+    # `number | undefined`. parse_float -> NaN mirrors `undefined` (guarded via
+    # x == x below), matching TS `!== undefined && <compare>` semantics.
+    cbd_diameter_mm = parse_float(data.get("cbdDiameterMm"))
+    inr_value = parse_float(data.get("inrValue"))
+    platelet_count = parse_float(data.get("plateletCount"))
 
     has_acute_cholecystitis = truthy(data.get("hasAcuteCholecystitis"))
     is_surgical_high_risk = truthy(data.get("isSurgicalHighRisk"))
@@ -59,13 +68,13 @@ def assess(data: dict) -> dict:
     is_resectable = truthy(data.get("isResectable"))
 
     # ─── Urgent Flags ─────────────────────────────────────────────────────────
-    if has_coagulopathy and inr_value is not None and inr_value > 1.5:
+    if has_coagulopathy and inr_value == inr_value and inr_value > 1.5:
         urgent_flags.append(
-            f"Coagulopathy (INR {inr_value}): correct to INR <1.5 before EUS-BD — FFP, vitamin K, or hold anticoagulation"
+            f"Coagulopathy (INR {_fmt_num(inr_value)}): correct to INR <1.5 before EUS-BD — FFP, vitamin K, or hold anticoagulation"
         )
-    if platelet_count is not None and platelet_count < 50000:
+    if platelet_count == platelet_count and platelet_count < 50000:
         urgent_flags.append(
-            f"Thrombocytopenia (platelets {platelet_count}): transfuse to >50,000 before EUS-BD"
+            f"Thrombocytopenia (platelets {_fmt_num(platelet_count)}): transfuse to >50,000 before EUS-BD"
         )
     if has_acute_cholecystitis and not is_surgical_high_risk:
         urgent_flags.append(
@@ -101,7 +110,7 @@ def assess(data: dict) -> dict:
         next_steps.append("Surgical consultation for interval cholecystectomy")
     elif (
         obstruction_level == "distal_cbd"
-        and cbd_diameter_mm is not None
+        and cbd_diameter_mm == cbd_diameter_mm
         and cbd_diameter_mm >= 12
     ):
         eus_bd_approach = (
@@ -225,7 +234,7 @@ def assess(data: dict) -> dict:
         next_steps.append("Interventional endoscopy referral at expert center")
         next_steps.append("Multidisciplinary discussion (GI, surgery, IR)")
 
-    cbd_text = f"{cbd_diameter_mm}mm" if truthy(cbd_diameter_mm) else "not measured"
+    cbd_text = f"{_fmt_num(cbd_diameter_mm)}mm" if truthy(cbd_diameter_mm) else "not measured"
     rationale = (
         f"Indication: {_underscores(indication)}. "
         f"ERCP failure reason: {_underscores(data.get('erpFailureReason'))}. "

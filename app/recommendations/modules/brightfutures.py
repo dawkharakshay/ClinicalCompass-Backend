@@ -11,6 +11,8 @@ provided", so we compare against None directly rather than using num()/||.
 
 from __future__ import annotations
 
+from app.recommendations.jslib import parse_float
+
 LOGIC_KEY = "brightfutures"
 
 _VISIT_AGE_YEARS = {
@@ -156,7 +158,7 @@ def assess(data: dict) -> dict:
 
     # Obesity / BMI screening
     if bmi_percentile is not None:
-        if bmi_percentile >= 95:
+        if parse_float(bmi_percentile) >= 95:
             urgent_flags.append(
                 "BMI ≥95th percentile: OBESITY — initiate AAP 2023 intensive health behavior and lifestyle treatment (IHBLT). Consider pharmacotherapy (≥12 years) or bariatric surgery (≥13 years) per AAP CPG 2023."
             )
@@ -169,7 +171,7 @@ def assess(data: dict) -> dict:
                     "frequency": "At diagnosis and follow-up",
                 }
             )
-        elif bmi_percentile >= 85:
+        elif parse_float(bmi_percentile) >= 85:
             urgent_flags.append(
                 "BMI 85–94th percentile: OVERWEIGHT — counsel on healthy lifestyle. Assess for comorbidities. Refer to weight management if lifestyle counseling insufficient."
             )
@@ -207,9 +209,9 @@ def assess(data: dict) -> dict:
 
     # Autism screening (M-CHAT-R/F)
     if (visit_age == "18_months" or visit_age == "24_months") and m_chat_score is not None:
-        if m_chat_score >= 3:
+        if parse_float(m_chat_score) >= 3:
             m_chat_risk = "high"
-        elif m_chat_score >= 2:
+        elif parse_float(m_chat_score) >= 2:
             m_chat_risk = "medium"
         else:
             m_chat_risk = "low"
@@ -328,7 +330,7 @@ def assess(data: dict) -> dict:
     # Depression screening
     if age_years >= 12:
         phq2_result = f"PHQ-2 score: {phq2_score}" if phq2_score is not None else "Administer PHQ-2"
-        if phq2_score is not None and phq2_score >= 2:
+        if phq2_score is not None and parse_float(phq2_score) >= 2:
             phq2_action = "PHQ-2 POSITIVE: Administer PHQ-9. Score ≥10: refer to mental health. Score ≥20 or SI: urgent psychiatric evaluation"
         else:
             phq2_action = "PHQ-2 negative: continue annual screening"
@@ -341,16 +343,16 @@ def assess(data: dict) -> dict:
                 "frequency": "Annually ≥12 years (AAP/USPSTF)",
             }
         )
-        if phq2_score is not None and phq2_score >= 2:
+        if phq2_score is not None and parse_float(phq2_score) >= 2:
             urgent_flags.append(
                 f"PHQ-2 POSITIVE (score {phq2_score}): Administer PHQ-9. Assess for suicidal ideation. Refer to mental health services."
             )
-            if phq9_score is not None and phq9_score >= 20:
+            if phq9_score is not None and parse_float(phq9_score) >= 20:
                 urgent_flags.append(
                     f"PHQ-9 SEVERE (score {phq9_score}): URGENT psychiatric evaluation. Assess for active suicidal ideation and safety plan."
                 )
                 referrals.append("URGENT: Psychiatric evaluation for severe depression (PHQ-9 ≥20).")
-            elif phq9_score is not None and phq9_score >= 10:
+            elif phq9_score is not None and parse_float(phq9_score) >= 10:
                 referrals.append("Mental health referral for moderate-severe depression (PHQ-9 ≥10).")
 
     # Substance use screening

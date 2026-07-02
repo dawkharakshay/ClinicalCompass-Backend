@@ -7,7 +7,7 @@ separate *Logic.ts file).
 
 from __future__ import annotations
 
-from app.recommendations.jslib import parse_float, truthy
+from app.recommendations.jslib import num, parse_float, truthy
 
 LOGIC_KEY = "ovulationinduction"
 
@@ -35,10 +35,10 @@ def assess(data: dict) -> dict:
 
     anovulation_cause = data.get("anovulationCause")
     bmi_raw = data.get("bmi")
-    bmi = parse_float(bmi_raw)
-    prior_letrozole = parse_float(data.get("priorLetrozoleTrials"))
-    prior_clomiphene = parse_float(data.get("priorClomipheneTrials"))
-    prior_gonadotropin = parse_float(data.get("priorGonadotropinTrials"))
+    bmi = num(bmi_raw, 0)
+    prior_letrozole = num(data.get("priorLetrozoleTrials"), 0)
+    prior_clomiphene = num(data.get("priorClomipheneTrials"), 0)
+    prior_gonadotropin = num(data.get("priorGonadotropinTrials"), 0)
     hyperprolactinemia_treated = truthy(data.get("hyperprolactinemiaTreated"))
     thyroid_treated = truthy(data.get("thyroidTreated"))
 

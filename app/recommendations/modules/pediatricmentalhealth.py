@@ -6,9 +6,10 @@ Ported 1:1 from old_static_code/client/src/lib/pediatricMentalHealthLogic.ts
 
 from __future__ import annotations
 
+import math
 from typing import Any
 
-from app.recommendations.jslib import truthy
+from app.recommendations.jslib import parse_float, truthy
 
 LOGIC_KEY = "pediatricmentalhealth"
 
@@ -39,8 +40,11 @@ _REFERENCES = [
 def _num_or_none(x: Any) -> float | None:
     """Mirror a nullable JS ``number | null``.
 
-    A missing field, ``None``, or an empty string maps to ``null`` (not
-    obtained). Anything else is coerced to a float (preserving a literal 0).
+    Mirrors the frontend field transform ``e.target.value === "" ? null :
+    parseFloat(e.target.value) || 0``: an empty string maps to ``null`` (not
+    obtained); any other string is parsed with JS ``parseFloat`` semantics and a
+    non-numeric result falls back to ``0`` (matching the ``|| 0``). A real
+    ``None`` also maps to ``null``.
     """
     if x is None:
         return None
@@ -48,13 +52,11 @@ def _num_or_none(x: Any) -> float | None:
         return float(x)
     if isinstance(x, (int, float)):
         return float(x)
-    s = str(x).strip()
+    s = str(x)
     if s == "":
         return None
-    try:
-        return float(s)
-    except ValueError:
-        return None
+    v = parse_float(s)
+    return 0.0 if math.isnan(v) else v
 
 
 def _fmt(x: float | None) -> str:
@@ -355,21 +357,17 @@ def assess(data: dict) -> dict:
             "Bullying exposure (in-person or cyberbullying): Screen for depression and "
             "anxiety. Involve school counselor. Provide resources for reporting bullying."
         )
-    if screen_time is not None and _num_or_none(screen_time) is not None and _num_or_none(screen_time) > 3:
-        st = screen_time
+    screen_val = _num_or_none(screen_time)
+    if screen_val is not None and screen_val > 3:
         guidance.append(
-            f"Excessive screen time ({st} hours/day): Limit recreational screen time to "
+            f"Excessive screen time ({_fmt(screen_val)} hours/day): Limit recreational screen time to "
             "≤2 hours/day for school-age children. No screens 1 hour before bedtime. "
             "Discuss social media mental health effects."
         )
-    if (
-        physical_activity is not None
-        and _num_or_none(physical_activity) is not None
-        and _num_or_none(physical_activity) < 60
-    ):
-        pa = physical_activity
+    activity_val = _num_or_none(physical_activity)
+    if activity_val is not None and activity_val < 60:
         guidance.append(
-            f"Insufficient physical activity ({pa} min/day): Recommend 60 min/day MVPA. "
+            f"Insufficient physical activity ({_fmt(activity_val)} min/day): Recommend 60 min/day MVPA. "
             "Physical activity reduces depression and anxiety symptoms."
         )
     if has_sleep:

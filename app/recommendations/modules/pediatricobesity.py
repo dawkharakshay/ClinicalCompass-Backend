@@ -42,13 +42,23 @@ def _js_str(v) -> str:
     return str(v)
 
 
+def _fmt_num(value: float) -> str:
+    """Render a number the way a JS template literal would (drop trailing .0)."""
+    if value == int(value):
+        return str(int(value))
+    return str(value)
+
+
 def assess(data: dict) -> dict:
+    # TS UI parses every numeric field with `parseFloat(value) || 0`, so the
+    # engine receives numbers (0 for blanks). Reproduce that with num(...); this
+    # also makes the strict `priorTreatmentAttempts === 0` and the numeric
+    # template interpolations match TS for raw-string inputs.
     age_years = num(data.get("ageYears"), 0)
     obesity_category = data.get("obesityCategory")
-    bmi_percentile = data.get("bmiPercentile")
-    bmi_percent_of_p95_raw = data.get("bmiPercentOfP95")
-    bmi_percent_of_p95 = num(bmi_percent_of_p95_raw, 0)
-    prior_treatment_attempts = data.get("priorTreatmentAttempts")
+    bmi_percentile = num(data.get("bmiPercentile"), 0)
+    bmi_percent_of_p95 = num(data.get("bmiPercentOfP95"), 0)
+    prior_treatment_attempts = num(data.get("priorTreatmentAttempts"), 0)
 
     urgent_flags: list[str] = []
     comorbidity_mgmt: list[str] = []
@@ -210,8 +220,8 @@ def assess(data: dict) -> dict:
     else:
         _category_label = _js_str(obesity_category).replace("_", " ").upper()
         primary_rec = (
-            f"PEDIATRIC OBESITY — {_category_label} (BMI {_js_str(bmi_percentile)}th %ile, "
-            f"{_js_str(bmi_percent_of_p95_raw)}% of 95th %ile). {treatment_intensity.split(':')[0]}. "
+            f"PEDIATRIC OBESITY — {_category_label} (BMI {_fmt_num(bmi_percentile)}th %ile, "
+            f"{_fmt_num(bmi_percent_of_p95)}% of 95th %ile). {treatment_intensity.split(':')[0]}. "
             f"Evidence Level A (AAP CPG 2023)."
         )
 
@@ -228,9 +238,9 @@ def assess(data: dict) -> dict:
         "familyCounselingPoints": counseling_points,
         "evidenceLevel": "A",
         "rationale": (
-            f"Age {_js_str(data.get('ageYears'))} years. BMI {_js_str(bmi_percentile)}th %ile "
-            f"({_js_str(bmi_percent_of_p95_raw)}% of 95th %ile). Category: {_js_str(obesity_category)}. "
-            f"Prior treatment attempts: {_js_str(prior_treatment_attempts)}. Comorbidities: "
+            f"Age {_fmt_num(age_years)} years. BMI {_fmt_num(bmi_percentile)}th %ile "
+            f"({_fmt_num(bmi_percent_of_p95)}% of 95th %ile). Category: {_js_str(obesity_category)}. "
+            f"Prior treatment attempts: {_fmt_num(prior_treatment_attempts)}. Comorbidities: "
             f"T2DM={_js_str(data.get('hasType2Diabetes'))}, HTN={_js_str(data.get('hasHypertension'))}, "
             f"OSA={_js_str(data.get('hasOSA'))}, NASH={_js_str(data.get('hasNASH'))}. "
             f"Recommendations per AAP CPG 2023 and ASMBS 2023."

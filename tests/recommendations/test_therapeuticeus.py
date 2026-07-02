@@ -104,7 +104,9 @@ def test_urgent_flags_coagulopathy_and_thrombocytopenia():
         }
     )
     flags = " ".join(result["urgentFlags"])
-    assert "Coagulopathy (INR 2.0)" in flags
+    # TS interpolates `${input.inrValue}` where inrValue is a number, so JS
+    # renders 2.0 as "2" (String(2.0) === "2"). Match the TS source exactly.
+    assert "Coagulopathy (INR 2)" in flags
     assert "Thrombocytopenia (platelets 40000)" in flags
 
 

@@ -633,7 +633,7 @@ def _evaluate_lymphoma(data: dict) -> dict:
                 "PET-guided approach: ABVD × 2 → PET. If PET-negative (Deauville 1–2): RT may be omitted. If PET-positive: ISRT 30 Gy.",
             )
             if deauville >= 3:
-                flags.append(f"Deauville score {deauville} — ISRT recommended after chemotherapy")
+                flags.append(f"Deauville score {deauville:g} — ISRT recommended after chemotherapy")
             if truthy(data.get("bulkyDisease")):
                 flags.append("Bulky disease (≥10 cm) — ISRT 30 Gy recommended regardless of PET response")
             return _result("lymphoma", primary, [], "Consolidation", flags, safety, mdt, refs, "Category 1", "ASTRO Lymphoma RT Consensus 2024")

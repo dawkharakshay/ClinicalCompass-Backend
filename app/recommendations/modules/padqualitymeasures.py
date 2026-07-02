@@ -582,9 +582,7 @@ def score_pad_qm_measure(measure: dict, data: dict) -> dict:
             passed = False
             details = "Preoperative saphenous vein mapping not documented. Measure FAILS."
         else:
-            passed = data.get("saphenousVeinAssessedPreOp") is True or to_bool(
-                data.get("saphenousVeinAssessedPreOp")
-            )
+            passed = data.get("saphenousVeinAssessedPreOp") is True
             details = (
                 "Preoperative saphenous vein mapping documented. Measure PASSES."
                 if passed

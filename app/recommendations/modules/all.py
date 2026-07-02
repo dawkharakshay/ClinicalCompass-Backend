@@ -9,6 +9,8 @@ Sources (per the TS):
 
 from __future__ import annotations
 
+from app.recommendations.jslib import parse_float
+
 LOGIC_KEY = "all"
 
 
@@ -48,7 +50,7 @@ def assess(data: dict) -> dict:
     # In TS, `age` and `ecogPS` are typed numbers and the booleans are real
     # booleans; the enums are string literals. We read them directly, mirroring
     # the JS reference equality / strict comparisons exactly.
-    age = data.get("age")
+    age = parse_float(data.get("age"))
     age_group = get_age_group(age)
     key_warnings: list[str] = []
     mrd_guided_actions: list[str] = []
@@ -67,7 +69,7 @@ def assess(data: dict) -> dict:
     has_bcrabl1_like = data.get("hasBCRABL1Like")
     has_hypodiploidy = data.get("hasHypodiploidy")
     has_tp53 = data.get("hasTP53Mutation")
-    prior_lines = data.get("priorLines")
+    prior_lines = parse_float(data.get("priorLines"))
     prior_blinatumomab = data.get("priorBlinatumomab")
     prior_cart_cell = data.get("priorCARTCell")
     prior_hct = data.get("priorHCT")

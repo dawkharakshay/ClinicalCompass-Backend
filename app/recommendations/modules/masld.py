@@ -9,7 +9,10 @@ liver biopsy indication, transplant evaluation.
 
 from __future__ import annotations
 
+import math
 from typing import Any
+
+from app.recommendations.jslib import parse_float
 
 LOGIC_KEY = "masld"
 
@@ -48,8 +51,12 @@ def _to_fixed2(x: float) -> str:
 
 
 def _present(x: Any) -> bool:
-    """JS ``x !== undefined`` — present iff not None (0 counts as present)."""
-    return x is not None
+    """JS ``x !== undefined`` — present iff a valid number was supplied.
+
+    Numeric fields arrive as raw strings (see coerce.py); ``parse_float``
+    yields NaN for missing/blank/non-numeric values, which mirrors the TS
+    ``number | undefined`` "undefined" case that skips the numeric branch."""
+    return not math.isnan(parse_float(x))
 
 
 def assess(data: dict) -> dict:
@@ -65,6 +72,12 @@ def assess(data: dict) -> dict:
     fib4_score = data.get("fib4Score")
     lsm_kpa = data.get("lsm_kPa")
     alcohol = data.get("alcoholUseGramsPerDay")
+    # Numeric fields arrive as raw strings; parse for comparisons while the
+    # raw values remain for template interpolation (matches TS number output).
+    meld_num = parse_float(meld_score)
+    fib4_num = parse_float(fib4_score)
+    lsm_num = parse_float(lsm_kpa)
+    alcohol_num = parse_float(alcohol)
     mash_status = data.get("mashStatus")
     estimated_stage = data.get("estimatedFibrosisStage")
     diabetes_status = data.get("diabetesStatus")
@@ -78,7 +91,7 @@ def assess(data: dict) -> dict:
         urgent_flags.append(
             "DECOMPENSATED CIRRHOSIS: hepatology referral urgently — liver transplant evaluation, SBP prophylaxis, lactulose/rifaximin"
         )
-    if _present(meld_score) and meld_score >= 15:
+    if _present(meld_score) and meld_num >= 15:
         urgent_flags.append(
             f"MELD score {meld_score} ≥15: liver transplant evaluation recommended — refer to transplant center"
         )
@@ -86,7 +99,7 @@ def assess(data: dict) -> dict:
         urgent_flags.append(
             "Esophageal varices: non-selective beta-blocker (propranolol/carvedilol) for primary prophylaxis; EGD surveillance every 1–3 years"
         )
-    if _present(alcohol) and alcohol > 20:
+    if _present(alcohol) and alcohol_num > 20:
         urgent_flags.append(
             f"Significant alcohol use ({alcohol}g/day): diagnosis may be ALD or mixed ALD/MASLD — alcohol cessation counseling required before MASLD pharmacotherapy"
         )
@@ -96,16 +109,16 @@ def assess(data: dict) -> dict:
     fibrosis_risk = "low"
 
     if _present(fib4_score):
-        if fib4_score < 1.3:
+        if fib4_num < 1.3:
             fibrosis_risk = "low"
             fibrosis_assessment = (
-                f"FIB-4 {_to_fixed2(fib4_score)} (<1.3): LOW risk of advanced fibrosis. "
+                f"FIB-4 {_to_fixed2(fib4_num)} (<1.3): LOW risk of advanced fibrosis. "
                 "No further fibrosis testing needed in low-risk patients. Reassess FIB-4 every 1–2 years."
             )
-        elif fib4_score <= 2.67:
+        elif fib4_num <= 2.67:
             fibrosis_risk = "intermediate"
             fibrosis_assessment = (
-                f"FIB-4 {_to_fixed2(fib4_score)} (1.3–2.67): INTERMEDIATE risk. "
+                f"FIB-4 {_to_fixed2(fib4_num)} (1.3–2.67): INTERMEDIATE risk. "
                 "Proceed to secondary noninvasive test — FibroScan (LSM) or ELF score. "
                 "Consider liver biopsy if secondary test indeterminate."
             )
@@ -116,20 +129,20 @@ def assess(data: dict) -> dict:
         else:
             fibrosis_risk = "high"
             fibrosis_assessment = (
-                f"FIB-4 {_to_fixed2(fib4_score)} (>2.67): HIGH risk of advanced fibrosis (F3–F4). "
+                f"FIB-4 {_to_fixed2(fib4_num)} (>2.67): HIGH risk of advanced fibrosis (F3–F4). "
                 "Hepatology referral + liver biopsy or advanced imaging (MR elastography) recommended."
             )
             next_steps.append("Hepatology referral")
             next_steps.append("Liver biopsy or MR elastography for fibrosis staging")
             next_steps.append("HCC surveillance if cirrhosis confirmed")
     elif _present(lsm_kpa):
-        if lsm_kpa < 8:
+        if lsm_num < 8:
             fibrosis_risk = "low"
             fibrosis_assessment = (
                 f"FibroScan LSM {lsm_kpa}kPa (<8kPa): LOW risk of advanced fibrosis (F0–F1). "
                 "Annual monitoring with FIB-4."
             )
-        elif lsm_kpa < 12:
+        elif lsm_num < 12:
             fibrosis_risk = "intermediate"
             fibrosis_assessment = (
                 f"FibroScan LSM {lsm_kpa}kPa (8–12kPa): INTERMEDIATE — may have F2–F3 fibrosis. "
@@ -219,7 +232,7 @@ def assess(data: dict) -> dict:
 
     # ─── Liver Biopsy Indication ─────────────────────────────────────────────
     liver_biopsy_indication = ""
-    if fibrosis_risk == "high" or (_present(fib4_score) and fib4_score > 2.67):
+    if fibrosis_risk == "high" or (_present(fib4_score) and fib4_num > 2.67):
         liver_biopsy_indication = (
             "Liver biopsy INDICATED (AGA 2024): "
             "High-risk noninvasive fibrosis assessment (FIB-4 >2.67 or LSM ≥12kPa). "
@@ -299,7 +312,7 @@ def assess(data: dict) -> dict:
 
     # ─── Transplant Consideration ────────────────────────────────────────────
     transplant_consideration = "No immediate transplant evaluation indicated."
-    if _present(meld_score) and meld_score >= 15:
+    if _present(meld_score) and meld_num >= 15:
         transplant_consideration = (
             f"MELD {meld_score} ≥15: liver transplant evaluation recommended. "
             "MASLD/MASH is now the leading indication for liver transplant in the US. "
@@ -316,7 +329,7 @@ def assess(data: dict) -> dict:
     diabetes_label = (
         str(diabetes_status).replace("_", " ") if diabetes_status is not None else "None"
     )
-    fib4_label = _to_fixed2(fib4_score) if _present(fib4_score) else "not calculated"
+    fib4_label = _to_fixed2(fib4_num) if _present(fib4_score) else "not calculated"
 
     rationale = (
         f"MASLD/MASH status: {mash_status_label}. "

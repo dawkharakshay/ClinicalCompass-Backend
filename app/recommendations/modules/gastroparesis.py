@@ -8,7 +8,7 @@ Based on AGA (2022/2025) and ACG (2022) clinical guidelines on gastroparesis.
 
 from __future__ import annotations
 
-from app.recommendations.jslib import coalesce, truthy
+from app.recommendations.jslib import coalesce, parse_float, truthy
 
 LOGIC_KEY = "gastroparesis"
 
@@ -62,10 +62,10 @@ def assess(data: dict) -> dict:
     if (
         truthy(data.get("requiresNutritionalSupport"))
         and weight_loss_kg is not None
-        and weight_loss_kg > 5
+        and parse_float(weight_loss_kg) > 5
     ):
         urgent_flags.append(
-            f"Significant weight loss ({weight_loss_kg}kg): nutritional assessment "
+            f"Significant weight loss ({_fmt(parse_float(weight_loss_kg))}kg): nutritional assessment "
             "and enteral nutrition support required"
         )
     if truthy(data.get("isOnOpioids")):
@@ -103,9 +103,9 @@ def assess(data: dict) -> dict:
         medications_to_avoid.append(
             "Metoclopramide, domperidone — QT-prolonging; caution with QT prolongation"
         )
-    if etiology == "diabetic" and hba1c_percent is not None and hba1c_percent > 9:
+    if etiology == "diabetic" and hba1c_percent is not None and parse_float(hba1c_percent) > 9:
         urgent_flags.append(
-            f"Poorly controlled diabetes (HbA1c {hba1c_percent}%): glycemic "
+            f"Poorly controlled diabetes (HbA1c {_fmt(parse_float(hba1c_percent))}%): glycemic "
             "optimization is critical — hyperglycemia acutely worsens gastric "
             "motility. Target HbA1c <8%."
         )
@@ -285,3 +285,10 @@ def assess(data: dict) -> dict:
         "rationale": rationale,
         "references": _REFERENCES,
     }
+
+
+def _fmt(x: float) -> str:
+    """Render a number the way JS string interpolation would (no trailing .0)."""
+    if x == int(x):
+        return str(int(x))
+    return repr(x)

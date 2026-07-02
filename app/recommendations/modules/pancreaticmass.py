@@ -6,7 +6,7 @@ Ported 1:1 from old_static_code/client/src/lib/pancreaticMassLogic.ts
 
 from __future__ import annotations
 
-from app.recommendations.jslib import truthy
+from app.recommendations.jslib import parse_float, truthy
 
 LOGIC_KEY = "pancreaticmass"
 
@@ -48,7 +48,7 @@ def assess(data: dict) -> dict:
             "chemotherapy discussion (FOLFIRINOX or gemcitabine/nab-paclitaxel). "
             "Palliative care consultation."
         )
-    if ca199 is not None and ca199 > 1000:
+    if parse_float(ca199) > 1000:
         urgent_flags.append(
             f"CA 19-9 {_js_str(ca199)} U/mL (>1000): very high likelihood of "
             "pancreatic adenocarcinoma — expedite tissue acquisition and oncology "
@@ -56,8 +56,7 @@ def assess(data: dict) -> dict:
         )
     if (
         data.get("hasNewOnsetDiabetes")
-        and age_years is not None
-        and age_years > 50
+        and parse_float(age_years) > 50
         and mass_type == "solid_mass"
     ):
         urgent_flags.append(
@@ -346,7 +345,7 @@ def assess(data: dict) -> dict:
         )
 
     mass_size_cm = data.get("massSizeCm")
-    size_str = f"{_js_str(mass_size_cm)}cm" if truthy(mass_size_cm) else "not measured"
+    size_str = f"{_js_str(mass_size_cm)}cm" if truthy(parse_float(mass_size_cm)) else "not measured"
     rationale = (
         f"Mass type: {_js_str(mass_type).replace('_', ' ')}. "
         f"Location: {_js_str(data.get('massLocation'))}. "

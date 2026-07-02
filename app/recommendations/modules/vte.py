@@ -19,7 +19,7 @@ summary``.
 
 from __future__ import annotations
 
-from app.recommendations.jslib import coalesce, truthy
+from app.recommendations.jslib import coalesce, num, truthy
 
 LOGIC_KEY = "vte"
 
@@ -337,7 +337,7 @@ def _assess_cat(input: dict) -> dict:
             "remarks": "Discontinue thromboprophylaxis at hospital discharge (Rec 5). Pharmacological preferred over mechanical thromboprophylaxis (Rec 2).",
         }
     elif context == "ambulatory_systemic_therapy":
-        khorana = coalesce(input.get("khoranaScore"), 0)
+        khorana = num(input.get("khoranaScore"), 0)
         if khorana >= 2:
             primary_rec = {
                 "id": "cat_rec6",

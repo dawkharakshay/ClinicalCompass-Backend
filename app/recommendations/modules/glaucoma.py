@@ -14,17 +14,23 @@ LOGIC_KEY = "glaucoma"
 
 
 def _display_num(x):
-    """Return the value as JS would interpolate it into a template string.
+    """Return the value as JS ``${x}`` template interpolation would.
 
-    Form data arrives as strings; the TS interpolates the raw `number`. We mirror
-    the numeric appearance (e.g. "0.7", "24", "550") rather than a quoted string.
+    Form data arrives as raw strings and the TS interpolates them verbatim, so a
+    string is emitted unchanged (e.g. "0.7", "24", "550", "540.0"). Genuine
+    numbers use JS number formatting; ``None`` -> "".
     """
-    v = parse_float(x)
-    if v != v:  # NaN
-        return str(x)
-    if v == int(v):
-        return str(int(v))
-    return repr(v)
+    if x is None:
+        return ""
+    if isinstance(x, bool):
+        return "true" if x else "false"
+    if isinstance(x, (int, float)):
+        if x != x:  # NaN
+            return "NaN"
+        if x == int(x):
+            return str(int(x))
+        return repr(x)
+    return str(x)
 
 
 def assess(data: dict) -> dict:

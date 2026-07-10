@@ -180,6 +180,23 @@ def present(native: dict) -> dict:
     if score_items:
         sections.append({"id": "scores", "label": "Risk Scores", "type": "keyvalue",
                          "items": score_items})
+    # Treatment Eligibility — the per-therapy Eligible/Contraindicated verdict the
+    # old PECompass.tsx "Treatment Eligibility" card showed. Rendered as a keyvalue
+    # section (no frontend change needed); the specific absolute/relative
+    # contraindications that drive each verdict remain in the alerts above.
+    te_items: list[dict] = []
+    for lbl, obj in (
+        ("Systemic Thrombolysis", contra.get("systemicThrombolysis") or {}),
+        ("Catheter-Directed Therapy (CDT)", contra.get("cdt") or {}),
+    ):
+        if obj:
+            te_items.append({
+                "key": lbl,
+                "value": "Eligible" if obj.get("eligible") else "Contraindicated",
+            })
+    if te_items:
+        sections.append({"id": "treatmentEligibility", "label": "Treatment Eligibility",
+                         "type": "keyvalue", "items": te_items})
     if esc.get("category"):
         sections.append({"id": "esc_equivalent",
                          "label": f"ESC 2019 Equivalent — {esc['category']}",

@@ -209,8 +209,14 @@ def _section_for(label: str, value: Any) -> dict | None:
                     "items": ["; ".join(f"{_humanize(k)}: {v}" for k, v in x.items()) for x in value]}
         return {"label": label, "type": "list", "items": [str(x) for x in value]}
     if isinstance(value, dict):
-        items = [{"key": _humanize(k), "value": str(v)} for k, v in value.items()
-                 if isinstance(v, (str, int, float))]
+        items = []
+        for k, v in value.items():
+            if isinstance(v, (str, int, float)):
+                items.append({"key": _humanize(k), "value": str(v)})
+            elif isinstance(v, list) and v and all(isinstance(x, str) for x in v):
+                # list-valued sub-field (e.g. firstLineIntervention) — join like the
+                # old frontend's ``.join(', ')`` rather than silently dropping it.
+                items.append({"key": _humanize(k), "value": ", ".join(v)})
         if items:
             return {"label": label, "type": "keyvalue", "items": items}
     return None

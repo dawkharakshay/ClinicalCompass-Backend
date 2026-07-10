@@ -49,7 +49,34 @@ def _get_pituitary_references() -> list[dict]:
     ]
 
 
+def _derive_tumor_size(data: dict) -> dict:
+    """Reproduce the legacy form's tumor-size categorization.
+
+    The old React form's size slider set the categorical ``tumorSize`` from the
+    measured ``tumorSizeMm`` (<10 microadenoma, >40 giant, else macroadenoma —
+    PituitaryAdenomaCompass.tsx); the user never chose the category directly. The
+    generic seeded form submits only ``tumorSizeMm``, so without this the many
+    ``tumorSize == "macroadenoma"/"microadenoma"`` branches (surgery-vs-medical
+    pathways, size-specific warnings) misfire and the assessment diverges from
+    the legacy app. Derive it the same way when a caller omits it, while honoring
+    an explicit ``tumorSize`` (preserving the port's input contract).
+    """
+    if data.get("tumorSize"):
+        return data
+    mm = parse_float(data.get("tumorSizeMm"))
+    if math.isnan(mm):
+        return data
+    if mm < 10:
+        data["tumorSize"] = "microadenoma"
+    elif mm > 40:
+        data["tumorSize"] = "giant"
+    else:
+        data["tumorSize"] = "macroadenoma"
+    return data
+
+
 def assess(data: dict) -> dict:
+    data = _derive_tumor_size(dict(data))
     tumor_type = data.get("tumorType")
     tumor_size = data.get("tumorSize")
     cavernous = data.get("cavernousSinusInvasion")

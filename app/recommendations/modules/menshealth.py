@@ -10,6 +10,37 @@ from app.recommendations.jslib import num, truthy
 
 LOGIC_KEY = "menshealth"
 
+# Static reference list surfaced as the card's "Supporting Guidelines & Evidence"
+# section (auto-attached by app.recommendations.registry.get_evidence). Ported 1:1
+# from the inline `references={[...]}` array in
+# old_static_code/client/src/pages/MensHealthCompass.tsx.
+EVIDENCE = [
+    {
+        "title": "SIR Quality Improvement Guidelines for Prostatic Artery Embolization for Benign Prostatic Hyperplasia",
+        "source": "Sapoval M, Itkin M, Dariushnia SR, et al. (SIR Standards of Practice Committee)",
+        "description": "J Vasc Interv Radiol. 2021;32(8):1176–1183. PMID: 34175245",
+        "pmid": "34175245",
+    },
+    {
+        "title": "AUA Guideline on Benign Prostatic Hyperplasia (BPH): Surgical Management",
+        "source": "American Urological Association",
+        "description": "J Urol. 2023;209(6):1098–1109. PMID: 36893282",
+        "pmid": "36893282",
+    },
+    {
+        "title": "Prostatic Artery Embolization Versus Transurethral Resection of the Prostate: Randomized Controlled Trial (ROPE Study)",
+        "source": "Gao YA, Huang Y, Zhang R, et al.",
+        "description": "Radiology. 2014;270(3):920–928. PMID: 24325091",
+        "pmid": "24325091",
+    },
+    {
+        "title": "Prostatic Artery Embolization for Benign Prostatic Obstruction: Long-Term Results from a Randomized Controlled Trial",
+        "source": "Pisco JM, Rio Tinto H, Campos Pinheiro L, et al.",
+        "description": "Radiology. 2016;279(2):601–609. PMID: 26709888",
+        "pmid": "26709888",
+    },
+]
+
 
 def assess(data: dict) -> dict:
     ipss_score = num(data.get("ipssScore"), 0)

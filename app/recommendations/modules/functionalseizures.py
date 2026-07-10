@@ -72,7 +72,14 @@ def assess(data: dict) -> dict:
     currently_on_antiseizure_meds = to_bool(data.get("currentlyOnAntiseizureMeds"))
     currently_in_psychotherapy = to_bool(data.get("currentlyInPsychotherapy"))
     has_emergency_presentations = to_bool(data.get("hasEmergencyPresentations"))
-    is_pediatric = to_bool(data.get("isPediatric"))
+    # Legacy form derived isPediatric from the age input
+    # (FunctionalSeizuresCompass.tsx: update("isPediatric", age < 18)); the seeded
+    # form submits patientAgeYears but not isPediatric, so reproduce when absent.
+    is_pediatric = (
+        num(data.get("patientAgeYears"), 0) < 18
+        if data.get("isPediatric") is None
+        else to_bool(data.get("isPediatric"))
+    )
 
     diagnosis_delay_years = num(data.get("diagnosisDelayYears"), 0)
 

@@ -73,6 +73,12 @@ def assess(data: dict) -> dict:
     pt_duration = num(data.get("ptDurationMonths"), 0)
     weight_loss_months = num(data.get("weightLossAttemptMonths"), 0)
     bmi = num(data.get("bmi"), 0)
+    if bmi <= 0 and height > 0 and weight > 0:
+        # Legacy form auto-computed BMI in the height/weight onChange handlers
+        # (BreastReductionCompass.tsx: (weight/(height*height))*703, toFixed(1),
+        #  height in inches, weight in lbs); the seeded form submits only height
+        # and weight, so reproduce it. floor(x*10+0.5)/10 == JS toFixed(1) for x>0.
+        bmi = math.floor((weight / (height * height)) * 703 * 10 + 0.5) / 10
     asa = num(data.get("asa"), 0)
 
     # Calculate BSA and Schnur minimum if not provided

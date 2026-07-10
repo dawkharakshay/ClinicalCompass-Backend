@@ -62,8 +62,16 @@ _REFERENCES = [
 
 def assess(data: dict) -> dict:
     migraine_subtype = data.get("migraineSubtype")
-    frequency = data.get("frequency")
     headache_days_per_month = num(data.get("headacheDaysPerMonth"), 0)
+    # Legacy form derived frequency from headache days
+    # (MigraineCompass.tsx: v>=15?"chronic":v>=8?"high":v>=4?"moderate":"low");
+    # the seeded form submits only headacheDaysPerMonth, so reproduce when absent.
+    frequency = data.get("frequency")
+    if frequency is None:
+        _d = headache_days_per_month
+        frequency = (
+            "chronic" if _d >= 15 else "high" if _d >= 8 else "moderate" if _d >= 4 else "low"
+        )
     acute_therapy_response = data.get("acuteTherapyResponse")
     preventive_history = data.get("preventiveHistory")
     has_cardiovascular_disease = to_bool(data.get("hasCardiovascularDisease"))
@@ -71,8 +79,14 @@ def assess(data: dict) -> dict:
     has_hemiplegic_migraine = to_bool(data.get("hasHemiplegicMigraine"))
     has_basilar_migraine = to_bool(data.get("hasBasilarMigraine"))
     is_pregnant_or_planning = to_bool(data.get("isPregnantOrPlanning"))
-    has_moh = to_bool(data.get("hasMOH"))
     acute_medication_days_per_month = num(data.get("acuteMedicationDaysPerMonth"), 0)
+    # Legacy form derived hasMOH from acute-medication days
+    # (MigraineCompass.tsx: update("hasMOH", v >= 10)); reproduce when absent.
+    has_moh = (
+        acute_medication_days_per_month >= 10
+        if data.get("hasMOH") is None
+        else to_bool(data.get("hasMOH"))
+    )
     has_depression = to_bool(data.get("hasDepression"))
     has_epilepsy = to_bool(data.get("hasEpilepsy"))
     has_weight_concerns = to_bool(data.get("hasWeightConcerns"))

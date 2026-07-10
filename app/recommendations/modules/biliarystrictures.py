@@ -54,7 +54,14 @@ def assess(data: dict) -> dict:
     has_stent_occlusion = truthy(data.get("hasStentOcclusion"))
     has_psc = truthy(data.get("hasPSC"))
     has_dominant_stricture = truthy(data.get("hasDominantStricture"))
-    has_biliary_stenosis = truthy(data.get("hasBiliaryStenosis"))
+    # Legacy form hardcoded this true with no user control (BiliaryStricturesCompass.tsx
+    # defaultInput hasBiliaryStenosis: true), so the old app always sent true; the
+    # seeded form omits it, so default true when absent to preserve that behavior.
+    has_biliary_stenosis = (
+        True
+        if data.get("hasBiliaryStenosis") is None
+        else truthy(data.get("hasBiliaryStenosis"))
+    )
     imaging_malignant = truthy(data.get("imagingFindingsMalignantFeatures"))
     has_ct = truthy(data.get("hasCTScan"))
     has_mrcp = truthy(data.get("hasMRCP"))

@@ -86,7 +86,14 @@ def assess(data: dict) -> dict:
     has_thromboembolism_history = to_bool(data.get("hasThromboembolismHistory"))
     has_malignancy_history = to_bool(data.get("hasMalignancyHistory"))
     is_pregnant_or_planning = to_bool(data.get("isPregnantOrPlanning"))
-    has_significant_pruritus = to_bool(data.get("hasSignificantPruritus"))
+    # Legacy form derived this from the pruritus slider
+    # (AtopicDermatitisCompass.tsx: update("hasSignificantPruritus", v >= 7));
+    # the seeded form submits only pruritusNrs, so reproduce it when absent.
+    has_significant_pruritus = (
+        pruritus_nrs >= 7
+        if data.get("hasSignificantPruritus") is None
+        else to_bool(data.get("hasSignificantPruritus"))
+    )
     has_eczema_herpeticum = to_bool(data.get("hasEczemaHerpeticum"))
     has_bacterial_superinfection = to_bool(data.get("hasBacterialSuperinfection"))
 

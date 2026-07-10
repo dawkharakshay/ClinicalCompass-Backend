@@ -105,7 +105,15 @@ def assess(data: dict) -> dict:
     semen_quality = data.get("semenQuality")
     prior_treatment = data.get("priorTreatment")
 
-    is_adolescent = to_bool(data.get("isAdolescent"))
+    # Legacy form derived isAdolescent from the age slider and isolatedRightSided
+    # from the laterality selector (VaricoceleCompass.tsx:
+    # update("isAdolescent", v < 18); update("isolatedRightSided", v === "right"));
+    # the seeded form submits only age and laterality, so reproduce when absent.
+    is_adolescent = (
+        parse_float(data.get("age")) < 18
+        if data.get("isAdolescent") is None
+        else to_bool(data.get("isAdolescent"))
+    )
     testicular_atrophy = to_bool(data.get("testicularAtrophy"))
     sdf_elevated = to_bool(data.get("sdfElevated"))
     prior_art_failure = to_bool(data.get("priorArtFailure"))
@@ -113,7 +121,11 @@ def assess(data: dict) -> dict:
     prefer_minimally_invasive = to_bool(data.get("preferMinimallyInvasive"))
     general_anesthesia_risk = to_bool(data.get("generalAnesthesiaRisk"))
     anatomic_access_concern = to_bool(data.get("anatomicAccessConcern"))
-    isolated_right_sided = to_bool(data.get("isolatedRightSided"))
+    isolated_right_sided = (
+        laterality == "right"
+        if data.get("isolatedRightSided") is None
+        else to_bool(data.get("isolatedRightSided"))
+    )
 
     infertility_duration = parse_float(data.get("infertilityDuration"))
     partner_age = parse_float(data.get("partnerAge"))

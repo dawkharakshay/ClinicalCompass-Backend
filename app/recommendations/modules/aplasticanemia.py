@@ -115,6 +115,15 @@ def assess(data: dict) -> dict:
     age = num(data.get("age"), 0)
     ecog_ps = num(data.get("ecogPS"), 0)
     severity = data.get("severity")
+    if severity is None:
+        # Legacy form auto-classified severity from the CBC before assessment
+        # (AplasticAnemiaCompass.tsx: classifyAASeverity({anc, reticulocytes,
+        # platelets})); the seeded form submits the CBC but not severity.
+        severity = classify_aa_severity(
+            num(data.get("anc"), 0),
+            num(data.get("reticulocytes"), 0),
+            num(data.get("platelets"), 0),
+        )
     etiology = data.get("etiology")
     inherited_type = data.get("inheritedType")
 

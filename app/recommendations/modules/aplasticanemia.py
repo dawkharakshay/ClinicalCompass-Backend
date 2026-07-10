@@ -18,6 +18,51 @@ from app.recommendations.jslib import num, to_bool
 
 LOGIC_KEY = "aplasticanemia"
 
+# Static reference list surfaced as the card's "Supporting Guidelines & Evidence"
+# section (auto-attached by app.recommendations.registry.get_evidence). Ported 1:1
+# from the inline `const REFERENCES = [...]` array in
+# old_static_code/client/src/pages/AplasticAnemiaCompass.tsx. URL-only entries fold
+# the link into the description since _normalize_evidence keeps only
+# title/source/description/pmid.
+EVIDENCE = [
+    {
+        "title": "American Society of Hematology 2022 Guidelines for Aplastic Anemia",
+        "source": "Bhatt VR et al.",
+        "description": "Comprehensive ASH guidelines for diagnosis and management of aplastic anemia including transplant and IST recommendations.",
+        "pmid": "35255491",
+    },
+    {
+        "title": "Eltrombopag Added to Standard Immunosuppression for Aplastic Anemia",
+        "source": "Townsley DM et al.",
+        "description": "NEJM: hATG + CsA + eltrombopag achieved 94% overall response rate at 6 months in SAA.",
+        "pmid": "28564562",
+    },
+    {
+        "title": "Horse versus Rabbit Antithymocyte Globulin in Acquired Aplastic Anemia",
+        "source": "Scheinberg P et al.",
+        "description": "NEJM: hATG (horse ATG) superior to rATG (rabbit ATG) for first-line SAA treatment.",
+        "pmid": "21345103",
+    },
+    {
+        "title": "Danazol Treatment for Telomere Diseases",
+        "source": "Townsley DM et al.",
+        "description": "NEJM: Danazol improved telomere length and blood counts in telomere disease (dyskeratosis congenita).",
+        "pmid": "27959701",
+    },
+    {
+        "title": "EBMT/EHA Severe Aplastic Anemia Guidelines 2024",
+        "source": "Risitano AM et al.",
+        "description": "Updated EBMT/EHA guidelines for SAA management including haploidentical HCT recommendations. Available at: ebmt.org/education/guidelines.",
+        "pmid": None,
+    },
+    {
+        "title": "NCCN Clinical Practice Guidelines: Aplastic Anemia v1.2025",
+        "source": "National Comprehensive Cancer Network",
+        "description": "NCCN guidelines for aplastic anemia diagnosis, staging, and treatment.",
+        "pmid": None,
+    },
+]
+
 
 _SEVERITY_LABEL = {
     "non_severe": "Non-Severe AA",

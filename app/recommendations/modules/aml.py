@@ -16,6 +16,49 @@ from app.recommendations.jslib import parse_float, truthy
 
 LOGIC_KEY = "aml"
 
+# Static reference list surfaced as the card's "Supporting Guidelines & Evidence"
+# section (auto-attached by app.recommendations.registry.get_evidence). Ported 1:1
+# from the inline `const REFERENCES = [...]` array in
+# old_static_code/client/src/pages/AMLCompass.tsx.
+EVIDENCE = [
+    {
+        "title": "ASH 2025 Guidelines for Treating Newly Diagnosed AML in Older Adults",
+        "source": "Sekeres MA, Mattison R, Artz A, et al.",
+        "description": "Blood Advances. 2025. Covers fitness assessment, HMA+venetoclax vs induction, FLT3/IDH1/IDH2 targeted therapy, and transplant decisions.",
+        "pmid": "39970951",
+    },
+    {
+        "title": "Diagnosis and Management of AML in Adults: 2022 ELN Recommendations",
+        "source": "Döhner H, Wei AH, Appelbaum FR, et al.",
+        "description": "Blood. 2022;140(12):1345–1377. Defines ELN 2022 risk stratification (favorable/intermediate/adverse) and treatment algorithms.",
+        "pmid": "34521987",
+    },
+    {
+        "title": "ELN 2024 Recommendations for Diagnosis and Management of Acute Myeloid Leukemia",
+        "source": "Döhner H, Estey E, Grimwade D, et al.",
+        "description": "Blood. 2024. Updates ELN 2022 risk stratification with new molecular markers and treatment recommendations.",
+        "pmid": "38838239",
+    },
+    {
+        "title": "Azacitidine and Venetoclax in Previously Untreated AML (VIALE-A Trial)",
+        "source": "DiNardo CD, Jonas BA, Pullarkat V, et al.",
+        "description": "N Engl J Med. 2020;383(7):617–629. Demonstrated superior OS with AZA+VEN vs AZA alone (14.7 vs 9.6 months) in unfit patients.",
+        "pmid": "32558338",
+    },
+    {
+        "title": "Midostaurin plus Chemotherapy for AML with a FLT3 Mutation (RATIFY Trial)",
+        "source": "Stone RM, Mandrekar SJ, Sanford BL, et al.",
+        "description": "N Engl J Med. 2017;377(5):454–464. Established midostaurin + 7+3 as standard for FLT3-mutated AML in fit patients.",
+        "pmid": "28644114",
+    },
+    {
+        "title": "CPX-351 versus Conventional Cytarabine + Daunorubicin in Secondary AML",
+        "source": "Lancet JE, Uy GL, Cortes JE, et al.",
+        "description": "J Clin Oncol. 2018;36(26):2684–2692. CPX-351 demonstrated superior OS vs 7+3 in older patients with secondary AML.",
+        "pmid": "29812993",
+    },
+]
+
 
 def _int_field(value: object) -> int:
     """Coerce a numeric enum (ecogPS, hctCI) to int, preserving 0.

@@ -16,6 +16,55 @@ from app.recommendations.jslib import num, truthy
 
 LOGIC_KEY = "amyloidosis"
 
+# Static reference list surfaced as the card's "Supporting Guidelines & Evidence"
+# section (auto-attached by app.recommendations.registry.get_evidence). Ported 1:1
+# from the inline `const REFERENCES = [...]` array in
+# old_static_code/client/src/pages/AmyloidosisCompass.tsx.
+EVIDENCE = [
+    {
+        "title": "Diagnosis and Treatment of Cardiac Transthyretin Amyloidosis (ATTR-CM)",
+        "source": "Gillmore JD et al.",
+        "description": "Lancet: Non-biopsy diagnosis criteria for ATTR-CM (Perugini bone scan grade 2–3 + MGUS excluded).",
+        "pmid": "35240070",
+    },
+    {
+        "title": "Tafamidis Treatment for Patients with Transthyretin Amyloid Cardiomyopathy (ATTR-ACT)",
+        "source": "Maurer MS et al.",
+        "description": "NEJM: Tafamidis reduced all-cause mortality and CV hospitalizations in ATTR-CM.",
+        "pmid": "30145929",
+    },
+    {
+        "title": "Patisiran, an RNAi Therapeutic, for Hereditary Transthyretin Amyloidosis (APOLLO)",
+        "source": "Benson MD et al.",
+        "description": "NEJM: Patisiran reduced neuropathy progression in hATTR polyneuropathy.",
+        "pmid": "29972757",
+    },
+    {
+        "title": "Daratumumab-Based Treatment for Immunoglobulin Light-Chain Amyloidosis (ANDROMEDA)",
+        "source": "Kastritis E et al.",
+        "description": "NEJM: Daratumumab + VCd vs VCd alone — 91.3% vs 76.9% hematologic response in AL amyloidosis.",
+        "pmid": "33951374",
+    },
+    {
+        "title": "Acoramidis for Transthyretin Amyloid Cardiomyopathy (ATTRibute-CM)",
+        "source": "Gillmore JD et al.",
+        "description": "NEJM: Acoramidis (AG10) reduced all-cause mortality and CV hospitalizations in ATTR-CM.",
+        "pmid": "38739481",
+    },
+    {
+        "title": "2023 ACC Expert Consensus Decision Pathway for ATTR-CM",
+        "source": "Kittleson MM et al.",
+        "description": "ACC Expert Consensus: Diagnostic algorithm and treatment pathway for ATTR cardiomyopathy.",
+        "pmid": "37236727",
+    },
+    {
+        "title": "Mayo Staging System for AL Amyloidosis (Mayo 2012)",
+        "source": "Dispenzieri A et al.",
+        "description": "Revised Mayo staging using NT-proBNP, troponin T, and eGFR for AL amyloidosis prognosis.",
+        "pmid": "22453247",
+    },
+]
+
 
 _AL_STAGE_LABEL = {
     "stage1": "Stage I (Median OS >5 years)",

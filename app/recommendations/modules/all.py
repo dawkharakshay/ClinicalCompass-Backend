@@ -13,6 +13,56 @@ from app.recommendations.jslib import parse_float
 
 LOGIC_KEY = "all"
 
+# Static reference list surfaced as the card's "Supporting Guidelines & Evidence"
+# section (auto-attached by app.recommendations.registry.get_evidence). Ported 1:1
+# from the inline `const REFERENCES = [...]` array in
+# old_static_code/client/src/pages/ALLCompass.tsx. URL-only entries fold the link
+# into the description since _normalize_evidence keeps only title/source/description/pmid.
+EVIDENCE = [
+    {
+        "title": "NCCN Clinical Practice Guidelines in Oncology: Acute Lymphoblastic Leukemia v2.2025",
+        "source": "National Comprehensive Cancer Network",
+        "description": "Comprehensive ALL management guidelines including CAR-T eligibility criteria and treatment algorithms. Available at: nccn.org/guidelines/guidelines-detail?category=1&id=1410.",
+        "pmid": None,
+    },
+    {
+        "title": "Tisagenlecleucel in Children and Young Adults with B-Cell Lymphoblastic Leukemia (ELIANA)",
+        "source": "Maude SL et al.",
+        "description": "Phase 2 trial: 81% remission rate with tisagenlecleucel in pediatric/young adult r/r B-ALL.",
+        "pmid": "29385370",
+    },
+    {
+        "title": "Brexucabtagene Autoleucel for Relapsed/Refractory B-ALL in Adults (ZUMA-3)",
+        "source": "Shah BD et al.",
+        "description": "Phase 2 trial: 71% complete remission rate with brexucabtagene autoleucel in adult r/r B-ALL.",
+        "pmid": "34097854",
+    },
+    {
+        "title": "Blinatumomab versus Chemotherapy for Advanced Acute Lymphoblastic Leukemia (TOWER)",
+        "source": "Kantarjian H et al.",
+        "description": "Phase 3 trial: Blinatumomab improved OS vs chemotherapy in r/r Ph-negative B-ALL.",
+        "pmid": "28097305",
+    },
+    {
+        "title": "Inotuzumab Ozogamicin versus Standard Therapy for ALL (INO-VATE)",
+        "source": "Kantarjian HM et al.",
+        "description": "Phase 3 trial: Inotuzumab ozogamicin improved CR rate and OS in r/r B-ALL.",
+        "pmid": "27292104",
+    },
+    {
+        "title": "Ponatinib plus Reduced-Intensity Chemotherapy for Ph+ ALL (GIMEMA LAL2116)",
+        "source": "Foà R et al.",
+        "description": "Chemotherapy-free induction with ponatinib + steroids achieved 98% CMR in Ph+ ALL.",
+        "pmid": "33264543",
+    },
+    {
+        "title": "ESMO Clinical Practice Guidelines: Acute Lymphoblastic Leukaemia in Adults",
+        "source": "Gökbuget N et al.",
+        "description": "ESMO 2024 guidelines for adult ALL management including CAR-T and BiTE therapy. Available at: esmo.org/guidelines/haematological-malignancies/acute-lymphoblastic-leukaemia-in-adults.",
+        "pmid": None,
+    },
+]
+
 
 # ─── Helpers ──────────────────────────────────────────────────────────────────
 def get_age_group(age: float) -> str:

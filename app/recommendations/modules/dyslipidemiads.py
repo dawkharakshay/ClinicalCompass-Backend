@@ -15,6 +15,45 @@ from app.recommendations.jslib import num, truthy
 
 LOGIC_KEY = "dyslipidemiads"
 
+# Static reference list surfaced as the card's "Supporting Guidelines & Evidence"
+# section (auto-attached by app.recommendations.registry.get_evidence). Ported 1:1
+# from the inline `const dyslipidemiReferences = [...]` array in
+# old_static_code/client/src/pages/DyslipidemiaDSCompass.tsx. URL-only entries fold
+# the link into the description since _normalize_evidence keeps only
+# title/source/description/pmid.
+EVIDENCE = [
+    {
+        "title": "2026 ACC/AHA/AACVPR/ABC/ACPM/ADA/AGS/APhA/ASPC/NLA/PCNA Guideline on the Management of Dyslipidemia",
+        "source": "Grundy SM, Stone NJ, Bailey AL, et al.",
+        "description": "J Am Coll Cardiol. 2026 (in press). Comprehensive guideline addressing evaluation, management, and monitoring of dyslipidemia including LDL-C, HDL-C, triglycerides, and Lp(a). Covers primordial, primary, and secondary prevention. Available at: jacc.org/guidelines/dyslipidemia.",
+        "pmid": None,
+    },
+    {
+        "title": "2018 AHA/ACC/AACVPR/AAPA/ABC/ACPM/ADA/AGS/APhA/ASPC/NLA/PCNA Guideline on the Management of Blood Cholesterol",
+        "source": "Grundy SM, Stone NJ, Bailey AL, et al.",
+        "description": "J Am Coll Cardiol. 2019;73(24):e285–e350. PMID: 30423393",
+        "pmid": "30423393",
+    },
+    {
+        "title": "FOURIER Trial: Evolocumab and Clinical Outcomes in Patients With Cardiovascular Disease",
+        "source": "Sabatine MS, Giugliano RP, Keech AC, et al.",
+        "description": "N Engl J Med. 2017;376(18):1713–1722. PMID: 28304224",
+        "pmid": "28304224",
+    },
+    {
+        "title": "ODYSSEY OUTCOMES Trial: Alirocumab and Cardiovascular Outcomes After ACS",
+        "source": "Schwartz GG, Steg PG, Szarek M, et al.",
+        "description": "N Engl J Med. 2018;379(22):2097–2107. PMID: 30403574",
+        "pmid": "30403574",
+    },
+    {
+        "title": "ORION-10 Trial: Inclisiran in Patients at High Cardiovascular Risk With Elevated LDL Cholesterol",
+        "source": "Ray KK, Wright RS, Kallend D, et al.",
+        "description": "N Engl J Med. 2020;382(16):1507–1519. PMID: 32187462",
+        "pmid": "32187462",
+    },
+]
+
 
 def _js_number(x: float) -> str:
     """Render a number the way JS string interpolation does: an integral

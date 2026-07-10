@@ -18,6 +18,48 @@ from app.recommendations.jslib import parse_float, truthy
 
 LOGIC_KEY = "osa"
 
+# Static reference list surfaced as the card's "Supporting Guidelines & Evidence"
+# section (auto-attached by app.recommendations.registry.get_evidence). Ported 1:1
+# from old_static_code/client/src/pages/OSACompass.tsx `REFERENCES`.
+EVIDENCE = [
+    {
+        "title": "AASM Clinical Practice Guideline: Treatment of OSA in Adults 2024",
+        "source": "American Academy of Sleep Medicine. 2024",
+        "description": "Updated AASM guideline covering CPAP, oral appliances, positional therapy, hypoglossal nerve stimulation (Inspire), and surgical options for OSA.",
+        "pmid": "38692572",
+    },
+    {
+        "title": "AAO-HNS Clinical Practice Guideline: Adult Snoring 2019",
+        "source": "Ishman SL et al. Otolaryngol Head Neck Surg. 2019",
+        "description": "AAO-HNS guideline on evaluation and management of adult snoring and OSA including surgical options: UPPP, tonsillectomy, MMA, and nasal surgery.",
+        "pmid": "30920341",
+    },
+    {
+        "title": "STAR Trial: Hypoglossal Nerve Stimulation (Inspire) for OSA",
+        "source": "Strollo PJ et al. N Engl J Med. 2014",
+        "description": "STAR trial: Inspire HNS reduced AHI by 68% (median) and ODI by 70% at 12 months in CPAP-intolerant moderate-severe OSA. FDA approved 2014.",
+        "pmid": "24401051",
+    },
+    {
+        "title": "EFFECT Trial: CPAP vs Inspire HNS in Moderate-Severe OSA",
+        "source": "Thaler E et al. Sleep. 2024",
+        "description": "EFFECT: Inspire HNS non-inferior to CPAP for AHI reduction in moderate-severe OSA. Inspire superior for patient-reported outcomes and adherence.",
+        "pmid": "38692572",
+    },
+    {
+        "title": "SELECT Trial: Semaglutide for CV Risk in OSA/Obesity",
+        "source": "Lincoff AM et al. N Engl J Med. 2023",
+        "description": "SELECT: semaglutide reduced MACE by 20% in overweight/obese patients with CVD. Weight loss of 10%+ significantly reduces OSA severity.",
+        "pmid": "37952131",
+    },
+    {
+        "title": "Oral Appliance Therapy for OSA: AASM/AADSM Clinical Practice Guideline",
+        "source": "Ramar K et al. J Clin Sleep Med. 2015",
+        "description": "AASM/AADSM guideline: oral appliances recommended for mild-moderate OSA or CPAP-intolerant patients. Mandibular advancement devices preferred.",
+        "pmid": "26094920",
+    },
+]
+
 
 def _num(x) -> float:
     """parseFloat-like read that preserves a literal 0 (NaN -> 0).

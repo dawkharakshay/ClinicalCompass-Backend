@@ -11,6 +11,37 @@ from app.recommendations.jslib import coalesce, parse_float, truthy
 
 LOGIC_KEY = "pavf"
 
+# Static reference list surfaced as the card's "Supporting Guidelines & Evidence"
+# section (auto-attached by app.recommendations.registry.get_evidence). Ported 1:1
+# from the inline `references={[...]}` array in
+# old_static_code/client/src/pages/PAVFCompass.tsx.
+EVIDENCE = [
+    {
+        "title": "SIR Practice Guidance Document: Percutaneous Arteriovenous Fistula Creation for Hemodialysis Access",
+        "source": "Dolmatch BL, Dariushnia SR, Baskin KM, et al. (SIR Standards of Practice Committee)",
+        "description": "J Vasc Interv Radiol. 2025;36(4):567–581. PMID: 39222673",
+        "pmid": "39222673",
+    },
+    {
+        "title": "KDOQI Clinical Practice Guideline for Vascular Access: 2019 Update",
+        "source": "Lok CE, Huber TS, Lee T, et al.",
+        "description": "Am J Kidney Dis. 2020;75(4 Suppl 2):S1–S164. PMID: 32778223",
+        "pmid": "32778223",
+    },
+    {
+        "title": "Endovascular Arteriovenous Fistula Creation: 12-Month Results From the Ellipsys Pivotal Trial",
+        "source": "Lok CE, Rajan DK, Clement J, et al.",
+        "description": "J Am Soc Nephrol. 2020;31(8):1782–1792. PMID: 32561651",
+        "pmid": "32561651",
+    },
+    {
+        "title": "Percutaneous Arteriovenous Fistula Creation With the WavelinQ 4F System: 12-Month Results",
+        "source": "Hull JE, Jennings WC, Cooper RI, et al.",
+        "description": "J Vasc Interv Radiol. 2017;28(4):508–514. PMID: 28117203",
+        "pmid": "28117203",
+    },
+]
+
 BARBEAU_DESCRIPTIONS = {
     "A": "Type A — No damping of pulse tracing immediately after compression. Patent palmar arch.",
     "B": "Type B — Damping of pulse tracing. Adequate collateral flow.",

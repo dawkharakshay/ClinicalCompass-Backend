@@ -12,6 +12,54 @@ from app.recommendations.jslib import parse_float, to_bool
 
 LOGIC_KEY = "varicocele"
 
+# Static reference list surfaced as the card's "Supporting Guidelines & Evidence"
+# section (auto-attached by app.recommendations.registry.get_evidence). Ported 1:1
+# from old_static_code/client/src/pages/VaricoceleCompass.tsx `REFERENCES`.
+EVIDENCE = [
+    {
+        "title": "AUA/ASRM Male Infertility Best Practice Policy 2022",
+        "source": "American Urological Association / American Society for Reproductive Medicine. 2022",
+        "description": "AUA/ASRM guideline: surgical varicocelectomy recommended for men with palpable varicocele, infertility, and abnormal semen parameters (Moderate Rec, Grade B). Treatment not recommended for subclinical varicoceles.",
+        "pmid": "35101220",
+    },
+    {
+        "title": "EAU Guidelines on Male Infertility 2024",
+        "source": "European Association of Urology. 2024",
+        "description": "EAU 2024: treat infertile men with clinical varicocele and abnormal semen parameters (Strong). Microscopic varicocelectomy is the most effective treatment with the lowest recurrence rate. Embolization is a guideline-endorsed alternative.",
+        "pmid": "38220291",
+    },
+    {
+        "title": "CIRSE Standards of Practice on Varicocele Embolisation 2023",
+        "source": "Müller-Wille R et al. Cardiovasc Intervent Radiol. 2023",
+        "description": "CIRSE 2023 standards: percutaneous embolization is a safe, effective, minimally invasive alternative to surgery. Preferred for recurrent varicocele after surgical repair. Technical success 85–95%.",
+        "pmid": "36622425",
+    },
+    {
+        "title": "SIR Quality Improvement Guidelines for Percutaneous Transcatheter Embolization 2021",
+        "source": "Dariushnia SR et al. J Vasc Interv Radiol. 2021",
+        "description": "SIR QI guidelines covering indications, success rates, and complication thresholds for percutaneous embolization including varicocele. Defines acceptable technical success and complication benchmarks.",
+        "pmid": "33610449",
+    },
+    {
+        "title": "Sclero-embolization vs Surgical Ligation: Systematic Review and Meta-analysis 2025",
+        "source": "Chen H et al. World J Urol. 2025",
+        "description": "2025 meta-analysis: sclero-embolization had lower overall complication rates vs surgical ligation (OR 0.65, 95% CI 0.47–0.91, p=0.01). Comparable semen parameter improvement. Higher recurrence rate with embolization.",
+        "pmid": "41137990",
+    },
+    {
+        "title": "Recent Guidelines and Perspectives for Varicocele 2025",
+        "source": "Kim DK et al. World J Mens Health. 2025",
+        "description": "Comprehensive 2025 review of AUA/ASRM, EAU, and ASRM guidelines. Summarizes treatment indications, grading systems, embolization vs surgery evidence, NOA management, and adolescent varicocele approach.",
+        "pmid": "40034026",
+    },
+    {
+        "title": "Percutaneous Embolization of Varicocele: Technique, Indications, and Complications",
+        "source": "Halpern J et al. Asian J Androl. 2016",
+        "description": "Comprehensive review of percutaneous varicocele embolization technique: retrograde approach, embolic agent selection (coils, sclerosants), technical pitfalls, and complication management. Failure to access spermatic vein: 8–30%.",
+        "pmid": "26658060",
+    },
+]
+
 
 def _build_fertility_context(data: dict) -> str:
     infertility_duration = parse_float(data.get("infertilityDuration"))

@@ -11,6 +11,48 @@ from app.recommendations.jslib import coalesce, parse_float, truthy
 
 LOGIC_KEY = "thyroidnodule"
 
+# Static reference list surfaced as the card's "Supporting Guidelines & Evidence"
+# section (auto-attached by app.recommendations.registry.get_evidence). Ported 1:1
+# from old_static_code/client/src/pages/ThyroidNoduleCompass.tsx `REFERENCES`.
+EVIDENCE = [
+    {
+        "title": "ATA Management Guidelines for Thyroid Nodules 2023 Update",
+        "source": "Haugen BR et al. Thyroid. 2023",
+        "description": "Updated ATA guidelines for thyroid nodule evaluation, FNA indications, molecular testing, and management of differentiated thyroid cancer.",
+        "pmid": "39325028",
+    },
+    {
+        "title": "ACR TI-RADS Lexicon and Reporting System 2017",
+        "source": "Tessler FN et al. J Am Coll Radiol. 2017",
+        "description": "ACR TI-RADS: standardized ultrasound reporting system for thyroid nodules. TR1-TR5 categories with size-based FNA thresholds.",
+        "pmid": "28372962",
+    },
+    {
+        "title": "Bethesda System for Reporting Thyroid Cytopathology 3rd Edition 2023",
+        "source": "Ali SZ, Cibas ES. Springer. 2023",
+        "description": "Updated Bethesda categories I-VI with revised malignancy risk estimates: I (5-10%), II (0-3%), III (6-18%), IV (10-40%), V (45-75%), VI (94-96%).",
+        "pmid": "37154917",
+    },
+    {
+        "title": "AACE/ACE/AME Medical Guidelines for Thyroid Nodule Management 2023",
+        "source": "Gharib H et al. Endocr Pract. 2023",
+        "description": "AACE/ACE/AME guidelines on thyroid nodule evaluation, FNA, and management including molecular testing for indeterminate cytology.",
+        "pmid": "37116862",
+    },
+    {
+        "title": "Active Surveillance for Low-Risk Papillary Thyroid Microcarcinoma",
+        "source": "Brito JP et al. Thyroid. 2021",
+        "description": "Active surveillance is a safe alternative to immediate surgery for low-risk papillary thyroid microcarcinoma (≤1 cm, no high-risk features).",
+        "pmid": "33076717",
+    },
+    {
+        "title": "Molecular Testing for Thyroid Nodules: ThyroSeq v3 and Afirma GSC",
+        "source": "Nikiforov YE et al. J Clin Endocrinol Metab. 2021",
+        "description": "Molecular testing (Afirma GSC, ThyroSeq v3) for indeterminate thyroid nodules (Bethesda III/IV) reduces unnecessary surgery. NPV 95-96%.",
+        "pmid": "33693718",
+    },
+]
+
 
 # ─── TI-RADS Scoring ─────────────────────────────────────────────────────────
 

@@ -11,9 +11,20 @@ from __future__ import annotations
 
 import math
 
+from app.recommendations.card import build_card
 from app.recommendations.jslib import num, truthy
 
 LOGIC_KEY = "dyslipidemiads"
+
+# Follow-up monitoring guidance shown in the old results UI's "Follow-up
+# Monitoring" card (DyslipidemiaDSResults.tsx). The generic mapper only surfaced
+# the bare ``monitoringInterval`` value, dropping these steps — restore them.
+_MONITORING_STEPS = [
+    "Check lipid panel after 4-12 weeks to assess response",
+    "Adjust therapy if LDL-C not at goal",
+    "Monitor for statin-related muscle symptoms",
+    "Annual assessment of adherence and tolerability",
+]
 
 # Static reference list surfaced as the card's "Supporting Guidelines & Evidence"
 # section (auto-attached by app.recommendations.registry.get_evidence). Ported 1:1
@@ -345,3 +356,46 @@ def _to_fixed(x: float, digits: int) -> str:
     scaled = x * factor
     rounded = math.floor(scaled + 0.5) if scaled >= 0 else math.ceil(scaled - 0.5)
     return f"{rounded / factor:.{digits}f}"
+
+
+def present(native: dict) -> dict:
+    """Card mapper override for two display fixes the generic mapper can't make:
+
+    * ``ldlCGoal`` is a bare integer, so it rendered as "LDL C Goal: 70" with no
+      units — the old UI showed "<70 mg/dL". Reformat it with the ``mg/dL`` unit.
+    * ``monitoringInterval`` rendered alone, dropping the follow-up monitoring
+      steps the old UI listed — fold both into a "Follow-up Monitoring" section.
+
+    The ``assess()`` output is left untouched (engine contract / tests); the
+    module's ``EVIDENCE`` list is attached by the registry after this returns.
+    """
+    card = build_card(native, logic_key=LOGIC_KEY)
+    goal = native.get("ldlCGoal")
+    interval = native.get("monitoringInterval")
+
+    sections = []
+    for sec in card["sections"]:
+        sid = sec.get("id")
+        if sid == "ldlcgoal" and goal is not None:
+            sec = {
+                "label": "LDL-C Treatment Goal",
+                "type": "keyvalue",
+                "items": [{"key": "Target LDL-C", "value": f"<{goal} mg/dL"}],
+                "id": "ldlcgoal",
+            }
+        elif sid == "monitoringinterval":
+            continue  # folded into the richer Follow-up Monitoring section below
+        sections.append(sec)
+
+    monitoring_items = _MONITORING_STEPS[:]
+    if interval:
+        monitoring_items = [f"Lipid panel recheck: {interval}"] + monitoring_items
+    sections.append({
+        "label": "Follow-up Monitoring",
+        "type": "list",
+        "items": monitoring_items,
+        "id": "followupmonitoring",
+    })
+
+    card["sections"] = sections
+    return card

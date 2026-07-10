@@ -8,9 +8,39 @@ Patients With Acute Coronary Syndromes (Rao SV et al. Circulation. 2025).
 
 from __future__ import annotations
 
+from datetime import datetime, timedelta
+
 from app.recommendations.jslib import js_minutes_between, js_round, num, truthy
 
 LOGIC_KEY = "acs"
+
+# Fixed reference instant for reconstructing the legacy placeholder timestamps.
+# Only the *difference* between the two timestamps is ever used, so any constant
+# works; a literal avoids a non-deterministic ``datetime.now()`` call.
+_LEGACY_TIME_REF = datetime(2000, 1, 1)
+
+
+def _apply_legacy_form_defaults(data: dict) -> dict:
+    """Reproduce the constant/placeholder inputs the legacy ACS form always sent.
+
+    ``ACSCompass.tsx`` built the engine input with ``radialAccess: x || true`` and
+    ``canAccessCathLab: x || true`` (both therefore *always* true), and set
+    ``symptomOnsetTime = presentationTime − age·60000ms`` (a documented
+    "Placeholder"), so onset-to-presentation always equalled the patient's age in
+    minutes. The generic seeded form submits none of these, so reproduce them when
+    absent to keep the backend bug-for-bug identical to the old app.
+    """
+    if data.get("radialAccess") is None:
+        data["radialAccess"] = True
+    if data.get("canAccessCathLab") is None:
+        data["canAccessCathLab"] = True
+    if data.get("symptomOnsetTime") is None and data.get("presentationTime") is None:
+        age_minutes = num(data.get("age"), 0)
+        data["symptomOnsetTime"] = (
+            _LEGACY_TIME_REF - timedelta(minutes=age_minutes)
+        ).isoformat()
+        data["presentationTime"] = _LEGACY_TIME_REF.isoformat()
+    return data
 
 
 def _classify_acs_type(data: dict) -> str:
@@ -206,6 +236,7 @@ def _recommend_vascular_access(data: dict) -> str:
 
 
 def assess(data: dict) -> dict:
+    data = _apply_legacy_form_defaults(dict(data))
     acs_type = _classify_acs_type(data)
     risk_level = "HIGH" if acs_type == "STEMI" else _calculate_nste_risk_level(data)
     bleeding_risk = _assess_bleeding_risk(data)

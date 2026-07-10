@@ -698,5 +698,27 @@ def get_modality_label(modality: str) -> str | None:
     }.get(modality)
 
 
+def _attach_care_requirements(result: dict) -> dict:
+    """Surface the three care-requirement booleans as a rendered section.
+
+    The old React card showed a "Care Requirements" grid of GDMT / Exercise
+    Therapy / Multispecialty Team (✓ or –). The generic card mapper drops bare
+    booleans, so build an explicit keyvalue section it can render instead.
+    """
+    labels = [
+        ("gdmtRequired", "GDMT"),
+        ("exerciseTherapyRequired", "Exercise Therapy"),
+        ("multispecialtyTeamRequired", "Multispecialty Team"),
+    ]
+    items = [
+        {"key": label, "value": "Required" if result.get(key) else "Not required"}
+        for key, label in labels
+        if key in result
+    ]
+    if items:
+        result["careRequirements"] = items
+    return result
+
+
 def assess(data: dict) -> dict:
-    return assess_pad_revascularization(data)
+    return _attach_care_requirements(assess_pad_revascularization(data))

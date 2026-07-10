@@ -14,6 +14,48 @@ from app.recommendations.jslib import parse_float, truthy
 
 LOGIC_KEY = "obesity"
 
+# Static reference list surfaced as the card's "Supporting Guidelines & Evidence"
+# section (auto-attached by app.recommendations.registry.get_evidence). Ported 1:1
+# from old_static_code/client/src/pages/ObesityCompass.tsx `REFERENCES`.
+EVIDENCE = [
+    {
+        "title": "ASMBS/IFSO 2022 Indications for Metabolic and Bariatric Surgery",
+        "source": "Eisenberg D et al. Surg Obes Relat Dis. 2022",
+        "description": "Updated indications for bariatric surgery: BMI ≥35 with any comorbidity, or BMI ≥30 with T2DM/metabolic syndrome. Removed requirement for failed conservative therapy.",
+        "pmid": "35853783",
+    },
+    {
+        "title": "AHA/ACC 2023 Guideline for the Management of Obesity",
+        "source": "Grundy SM et al. Circulation. 2023",
+        "description": "Comprehensive AHA/ACC guideline covering lifestyle modification, pharmacotherapy (GLP-1 agonists), and surgical/endoscopic interventions for obesity.",
+        "pmid": "37228131",
+    },
+    {
+        "title": "SURMOUNT-1: Tirzepatide for Obesity",
+        "source": "Jastreboff AM et al. N Engl J Med. 2022",
+        "description": "SURMOUNT-1: tirzepatide 15 mg achieved 22.5% mean body weight reduction vs 2.4% placebo at 72 weeks in adults without T2DM.",
+        "pmid": "35658024",
+    },
+    {
+        "title": "SELECT Trial: Semaglutide for Cardiovascular Risk Reduction",
+        "source": "Lincoff AM et al. N Engl J Med. 2023",
+        "description": "SELECT: semaglutide 2.4 mg reduced MACE by 20% (HR 0.80) in overweight/obese patients with established CVD but without T2DM.",
+        "pmid": "37952131",
+    },
+    {
+        "title": "ASGE 2023 Guideline: Endoscopic Bariatric and Metabolic Therapies",
+        "source": "ASGE Standards of Practice Committee. Gastrointest Endosc. 2023",
+        "description": "ASGE guideline on endoscopic sleeve gastroplasty (ESG) and other endoscopic bariatric procedures. ESG FDA-approved 2024 for BMI ≥30.",
+        "pmid": "37230994",
+    },
+    {
+        "title": "OASIS-1 Trial: Endoscopic Sleeve Gastroplasty",
+        "source": "Abu Dayyeh BK et al. Lancet. 2022",
+        "description": "OASIS-1: ESG achieved 13.6% total body weight loss vs 0.8% sham at 52 weeks. FDA approved ESG for BMI ≥30 in 2024.",
+        "pmid": "36116424",
+    },
+]
+
 
 def classify_bmi(bmi: float) -> str:
     if bmi < 30:

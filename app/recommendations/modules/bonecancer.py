@@ -18,6 +18,37 @@ from app.recommendations.jslib import includes, num, truthy
 
 LOGIC_KEY = "bonecancer"
 
+# Static reference list surfaced as the card's "Supporting Guidelines & Evidence"
+# section (auto-attached by app.recommendations.registry.get_evidence). Ported 1:1
+# from the inline `references={[...]}` array in
+# old_static_code/client/src/pages/BoneCancerCompass.tsx.
+EVIDENCE = [
+    {
+        "title": "NCCN Clinical Practice Guidelines in Oncology: Bone Cancer (Version 2.2026)",
+        "source": "National Comprehensive Cancer Network",
+        "description": "NCCN Guidelines. Available at: nccn.org. Updated 2026.",
+        "pmid": None,
+    },
+    {
+        "title": "ESMO Clinical Practice Guidelines: Bone Sarcomas",
+        "source": "Casali PG, Bielack S, Abecassis N, et al.",
+        "description": "Ann Oncol. 2018;29(Suppl 4):iv79–iv95. PMID: 29771315",
+        "pmid": "29771315",
+    },
+    {
+        "title": "SIR Reporting Standards for the Treatment of Bone Tumors With Percutaneous Ablation",
+        "source": "Tomasian A, Jennings JW",
+        "description": "J Vasc Interv Radiol. 2021;32(8):1184–1193. PMID: 34175246",
+        "pmid": "34175246",
+    },
+    {
+        "title": "Percutaneous Ablation of Bone Tumors: Systematic Review and Meta-Analysis",
+        "source": "Deschamps F, de Baere T, Hakime A, et al.",
+        "description": "Cardiovasc Intervent Radiol. 2016;39(10):1385–1394. PMID: 27339483",
+        "pmid": "27339483",
+    },
+]
+
 
 def assess(data: dict) -> dict:
     score = 100

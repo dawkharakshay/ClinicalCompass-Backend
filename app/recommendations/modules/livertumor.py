@@ -17,6 +17,48 @@ from app.recommendations.jslib import parse_float, to_bool
 
 LOGIC_KEY = "livertumor"
 
+# Static reference list surfaced as the card's "Supporting Guidelines & Evidence"
+# section (auto-attached by app.recommendations.registry.get_evidence). Ported 1:1
+# from old_static_code/client/src/pages/LiverTumorCompass.tsx `REFERENCES`.
+EVIDENCE = [
+    {
+        "title": "EASL Clinical Practice Guidelines on HCC 2025",
+        "source": "European Association for the Study of the Liver, 2025",
+        "description": "Comprehensive guidelines on HCC surveillance, diagnosis, staging (BCLC), and treatment including resection, ablation, TACE, TARE, systemic therapy, and transplantation.",
+        "pmid": "39690085",
+    },
+    {
+        "title": "AASLD Practice Guidance on HCC 2025",
+        "source": "American Association for the Study of Liver Diseases, 2025",
+        "description": "Updated AASLD guidance covering BCLC staging, treatment allocation, and systemic therapy options for HCC.",
+        "pmid": "39992051",
+    },
+    {
+        "title": "ESMO Clinical Practice Guideline: HCC 2025",
+        "source": "European Society for Medical Oncology, 2025",
+        "description": "ESMO guideline covering systemic therapy, immunotherapy combinations, and treatment sequencing for advanced HCC.",
+        "pmid": "39986353",
+    },
+    {
+        "title": "IMbrave150 Trial: Atezolizumab + Bevacizumab for Advanced HCC",
+        "source": "Finn RS et al. N Engl J Med. 2020",
+        "description": "IMbrave150: atezolizumab + bevacizumab improved OS (HR 0.66) and PFS (HR 0.59) vs sorafenib as first-line therapy for advanced HCC.",
+        "pmid": "31912578",
+    },
+    {
+        "title": "HIMALAYA Trial: Durvalumab + Tremelimumab for Advanced HCC",
+        "source": "Abou-Alfa GK et al. Nat Med. 2022",
+        "description": "HIMALAYA: STRIDE regimen (durvalumab + tremelimumab) improved OS vs sorafenib (HR 0.78) as first-line therapy for advanced HCC.",
+        "pmid": "35145305",
+    },
+    {
+        "title": "KEYNOTE-177: Pembrolizumab for MSI-H/dMMR Metastatic Colorectal Cancer",
+        "source": "André T et al. N Engl J Med. 2020",
+        "description": "KEYNOTE-177: pembrolizumab superior to chemotherapy as first-line for MSI-H/dMMR mCRC (PFS HR 0.60).",
+        "pmid": "32396838",
+    },
+]
+
 
 def _num(x) -> float:
     """Numeric coercion preserving 0 (JS treats typed numbers literally).

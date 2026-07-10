@@ -287,6 +287,27 @@ def _numval(data: dict, key: str):
         return None
 
 
+def _derive_presentation_flags(data: dict) -> dict:
+    """Reproduce the legacy form's PAD-Presentation-derived booleans.
+
+    In the old React form (PADQualityMeasures.tsx) choosing a PAD Presentation
+    button auto-set ``claudicationSymptoms`` and ``cltiDiagnosis`` — the user
+    could never set them independently, so they were always equal to
+    ``padPresentation === "claudication"`` / ``=== "clti"``. The generic seeded
+    form only submits ``padPresentation``, so without this the claudication- and
+    CLTI-dependent measures (notably PM-7 SET referral, plus QM-2/6/7) would
+    silently drop to Not Applicable and the assessment would diverge from the
+    legacy app. Derive the flags only when a caller has not supplied them, so the
+    engine still accepts them as explicit inputs (preserving the port contract).
+    """
+    pres = data.get("padPresentation")
+    if data.get("claudicationSymptoms") is None:
+        data["claudicationSymptoms"] = pres == "claudication"
+    if data.get("cltiDiagnosis") is None:
+        data["cltiDiagnosis"] = pres == "clti"
+    return data
+
+
 # ─── Scoring Engine ───────────────────────────────────────────────────────────
 
 
@@ -701,6 +722,7 @@ _RECOMMENDATION_BY_ID = {
 
 
 def assess(data: dict) -> dict:
+    data = _derive_presentation_flags(dict(data))
     scores = [score_pad_qm_measure(measure, data) for measure in PAD_QM_MEASURES]
 
     pms = [s for s in scores if s["measure"]["type"] == "performance"]

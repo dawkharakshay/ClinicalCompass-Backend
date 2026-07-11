@@ -22,5 +22,8 @@ RUN chmod +x /app/docker-entrypoint.sh
 EXPOSE 8000
 
 # Entrypoint migrates the schema before starting the API; CMD is what it execs.
+# --forwarded-allow-ips=* trusts nginx's X-Forwarded-Proto/For so the app builds
+# https (not http) redirect URLs behind the reverse proxy — matters for the
+# admin login redirect and any absolute URL the app generates.
 ENTRYPOINT ["/app/docker-entrypoint.sh"]
-CMD ["uv", "run", "--no-dev", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uv", "run", "--no-dev", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--forwarded-allow-ips", "*"]

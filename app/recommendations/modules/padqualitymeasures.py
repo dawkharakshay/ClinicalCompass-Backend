@@ -789,3 +789,154 @@ def assess(data: dict) -> dict:
         "priorityGaps": priority_gaps,
         "recommendations": recommendations,
     }
+
+
+# ─── Card presentation ──────────────────────────────────────────────────────
+# assess() returns nested per-measure dicts (each ``score`` carries a full
+# ``measure`` object) that the generic build_card cannot fold — it stringifies
+# the whole measure dict as one bullet (the raw ``Measure: {'id': 'PM-1', ...}``
+# dump seen in the app). This present() mirrors the old PADQualityMeasures.tsx
+# results screen: overall pass rate as the score bar, per-domain pass rates as
+# badges, priority gaps as a danger alert, the individual PM/QM verdicts as
+# keyvalue sections, and the gap recommendations as numbered next steps.
+
+_RESULT_LABEL = {
+    "pass": "PASS",
+    "fail": "FAIL",
+    "excluded": "EXCLUDED",
+    "not_applicable": "N/A",
+}
+
+_PADQM_EVIDENCE = [
+    {
+        "title": "2026 ACC/AHA Clinical Performance and Quality Measures for "
+                 "Patients With Peripheral Artery Disease",
+        "source": "Goodney PP, Ross EG, Bruckel JT, et al. J Am Coll Cardiol. 2026 Jan 8.",
+        "description": "DOI: 10.1016/j.jacc.2025.09.003",
+        "pmid": "41505788",
+    },
+    {
+        "title": "2024 ACC/AHA Guideline for the Management of Lower Extremity "
+                 "Peripheral Artery Disease",
+        "source": "Gornik HL, Aronow HD, Goodney PP, et al. Circulation. "
+                  "2024;149(24):e1313-e410.",
+        "description": None,
+        "pmid": "38743805",
+    },
+]
+
+
+def _rate_tone(rate: float) -> str:
+    if rate >= 80:
+        return "success"
+    if rate >= 60:
+        return "warning"
+    return "danger"
+
+
+def _measure_section(scores: list[dict], mtype: str, section_id: str, label: str) -> dict | None:
+    """One PM/QM domain → a keyvalue section (``id · VERDICT`` → ``title — details``)."""
+    items = []
+    for s in scores:
+        m = s["measure"]
+        if m["type"] != mtype:
+            continue
+        rlabel = _RESULT_LABEL.get(s["result"], str(s["result"]).upper())
+        items.append({
+            "key": f"{m['id']} · {rlabel}",
+            "value": f"{m['title']} — {s['details']}",
+        })
+    if not items:
+        return None
+    return {"id": section_id, "label": label, "type": "keyvalue", "items": items}
+
+
+def present(native: dict) -> dict:
+    native = dict(native or {})
+    scores = native.get("scores") or []
+    pm = native.get("performanceMeasuresSummary") or {}
+    qm = native.get("qualityMeasuresSummary") or {}
+    overall = native.get("overallPassRate") or 0
+    gaps = native.get("priorityGaps") or []
+    recs = native.get("recommendations") or []
+
+    eligible = [s for s in scores if s.get("eligible") and not s.get("excluded")]
+    met_n = len([s for s in eligible if s.get("passed")])
+    eligible_n = len(eligible)
+
+    if overall >= 70:
+        level = "high"
+    elif overall >= 50:
+        level = "moderate"
+    elif overall >= 30:
+        level = "low-moderate"
+    else:
+        level = "low"
+
+    badges = [
+        {"label": "Performance", "value": f"{pm.get('passRate', 0)}%",
+         "tone": _rate_tone(pm.get("passRate", 0))},
+        {"label": "Quality", "value": f"{qm.get('passRate', 0)}%",
+         "tone": _rate_tone(qm.get("passRate", 0))},
+    ]
+
+    score = {
+        "label": "Overall Pass Rate",
+        "value": overall,
+        "max": 100,
+        "level": level,
+        "note": f"{met_n} of {eligible_n} eligible measures met",
+    }
+
+    alerts = []
+    if gaps:
+        alerts.append({
+            "tone": "danger",
+            "title": f"Priority Gaps ({len(gaps)} measures failing)",
+            "items": [f"{g['measure']['id']} — {g['measure']['title']}" for g in gaps],
+        })
+
+    summary = (
+        "Assessed against the 2026 ACC/AHA Clinical Performance and Quality "
+        "Measures for PAD — 7 performance measures (PM-1–PM-7) and 8 quality "
+        f"measures (QM-1–QM-8). {met_n} of {eligible_n} eligible measures met "
+        f"({overall}% overall)."
+    )
+
+    sections = [{
+        "id": "measure_summary", "label": "Measure Summary", "type": "keyvalue",
+        "items": [
+            {"key": "Performance Measures",
+             "value": f"{pm.get('passed', 0)} passed · {pm.get('failed', 0)} failed · "
+                      f"{pm.get('excluded', 0)} excluded · {pm.get('notApplicable', 0)} N/A"},
+            {"key": "Quality Measures",
+             "value": f"{qm.get('passed', 0)} passed · {qm.get('failed', 0)} failed · "
+                      f"{qm.get('excluded', 0)} excluded · {qm.get('notApplicable', 0)} N/A"},
+        ],
+    }]
+    pm_sec = _measure_section(scores, "performance", "performance_measures",
+                              "Performance Measures (PM-1–PM-7)")
+    if pm_sec:
+        sections.append(pm_sec)
+    qm_sec = _measure_section(scores, "quality", "quality_measures",
+                              "Quality Measures (QM-1–QM-8)")
+    if qm_sec:
+        sections.append(qm_sec)
+
+    return {
+        "module": LOGIC_KEY,
+        "title": "PAD Clinical Performance & Quality Measures",
+        "subtitle": f"{overall}% overall pass rate · {met_n}/{eligible_n} eligible measures met",
+        "badges": badges,
+        "score": score,
+        "alerts": alerts,
+        "summary": summary,
+        "sections": sections,
+        "nextSteps": [str(r) for r in recs],
+        "evidence": [dict(e) for e in _PADQM_EVIDENCE],
+        "guidelineSource": (
+            "2026 ACC/AHA Clinical Performance and Quality Measures for Patients "
+            "With Peripheral Artery Disease (Goodney PP, et al.). J Am Coll Cardiol. "
+            "2026. PMID: 41505788."
+        ),
+    }

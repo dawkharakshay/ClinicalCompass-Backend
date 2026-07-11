@@ -85,6 +85,10 @@ services:
       # Social login — comma-separated OAuth client IDs accepted as the token aud.
       GOOGLE_CLIENT_IDS: ${PE_GOOGLE_CLIENT_IDS:-}
       APPLE_CLIENT_IDS: ${PE_APPLE_CLIENT_IDS:-}
+      # Admin panel (/pe/admin) — allowlisted emails log in with their password.
+      ADMIN_EMAILS: ${PE_ADMIN_EMAILS:-}
+      ADMIN_EMAIL: ${PE_ADMIN_EMAIL:-}
+      ADMIN_SECRET_KEY: ${PE_ADMIN_SECRET_KEY:-dev-only-change-me}
     depends_on:
       pe-db:
         condition: service_healthy

@@ -35,3 +35,11 @@ SMTP_USE_SSL = os.getenv("SMTP_USE_SSL", "false").lower() == "true"
 FCM_SERVER_KEY = os.getenv("FCM_SERVER_KEY", "")
 # Shared secret that gates the server-to-server /notifications/send endpoint.
 PUSH_ADMIN_KEY = os.getenv("PUSH_ADMIN_KEY", "")
+
+# --- Admin panel (/pe/admin) --------------------------------------------------
+# The SQLAdmin UI is gated by an email allowlist (ADMIN_EMAILS + ADMIN_EMAIL)
+# whose members log in with their normal account password. ADMIN_SECRET_KEY
+# signs the admin session cookie — CHANGE it in production.
+ADMIN_SECRET_KEY = os.getenv("ADMIN_SECRET_KEY", "dev-only-change-me")
+ADMIN_EMAILS = os.getenv("ADMIN_EMAILS", "")
+ADMIN_EMAIL = os.getenv("ADMIN_EMAIL", "")

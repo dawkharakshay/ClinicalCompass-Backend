@@ -24,6 +24,7 @@ The full endpoint contract lives in [`BACKEND_API.md`](./BACKEND_API.md).
 | Profiles | `GET /profile`, `PATCH /profile` |
 | Device tokens | `POST` (upsert) / `DELETE` `/device-tokens` |
 | Feedback | `POST /feedback`, `GET /feedback` (own); `GET /feedback/flagged` (admin) |
+| Admin UI | `GET /admin` — SQLAdmin CRUD UI (public `/pe/admin`), see below |
 | Meta | `GET /health` |
 
 > **Temporarily disabled** (routers removed, but models + migrations retained so
@@ -35,6 +36,20 @@ Feedback captures usefulness (👍 `useful` / 👎 `not_useful` / ⚠️ `potent
 and clinical-judgment match (`yes`/`partial`/`no`). A `potential_issue` **requires
 a `concern`** description and is stored `flagged=True`; `GET /feedback/flagged`
 (admin, `X-Admin-Key`) returns those reports newest-first with the user + time.
+
+## Admin UI (`/pe/admin`)
+
+A [SQLAdmin](https://aminalaee.dev/sqladmin/) Django-style CRUD UI, mirroring the
+main app's `/admin`. Mounted at `/admin` on the app (public `/pe/admin` behind
+nginx via `root_path`). Access is gated by an **email allowlist**: set
+`ADMIN_EMAILS` (comma-separated) and/or `ADMIN_EMAIL`; those users log in with
+their normal PE account **password** (verified against `users.password_hash`).
+The session cookie is signed with `ADMIN_SECRET_KEY` — change it in production.
+Compose maps `PE_ADMIN_EMAILS` / `PE_ADMIN_EMAIL` / `PE_ADMIN_SECRET_KEY` onto
+these. Views: users + profiles (editable), and feedback, patient
+classifications, ECMO assessments, device/refresh/reset tokens
+(review-and-delete only). With no allowlist configured, login always fails
+(fails closed).
 
 > **Social login** (`/auth/oauth/{google,apple}`) verifies the provider's
 > OpenID Connect identity token (JWKS signature + issuer/audience/expiry; ported

@@ -11,6 +11,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
+from app.admin import setup_admin
 from app.database import Base, engine
 from app.routers import (
     auth,
@@ -54,6 +55,9 @@ app.include_router(auth.router)
 app.include_router(profile.router)
 app.include_router(device_tokens.router)
 app.include_router(feedback.router)
+
+# SQLAdmin UI at /admin (public /pe/admin behind nginx), gated by ADMIN_EMAILS.
+setup_admin(app, engine)
 
 
 @app.get("/health", tags=["meta"], summary="Health check")

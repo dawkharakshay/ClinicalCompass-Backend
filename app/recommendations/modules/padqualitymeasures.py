@@ -308,6 +308,30 @@ def _derive_presentation_flags(data: dict) -> dict:
     return data
 
 
+def _derive_numeric_flags(data: dict) -> dict:
+    """Reproduce the legacy form's number-input-derived booleans.
+
+    In the old React form (PADQualityMeasures.tsx) entering ``systolicBP`` ran
+    ``bpGoalAchieved = v !== undefined && v < 130`` and entering ``ldlcValue`` ran
+    ``ldlcAtGoal = v !== undefined && v < 70`` — so whenever the numeric value was
+    present these booleans were derived from it, never set independently. The
+    generic seeded form instead surfaces ``bpGoalAchieved`` / ``ldlcAtGoal`` as
+    standalone switches defaulting to False, so a clinician who types an in-goal
+    SBP (e.g. 125) without also flipping the toggle would get PM-4 reporting
+    "Goal SBP <130 mmHg NOT yet achieved" where the legacy app reported it
+    achieved. Mirror the legacy onChange: when the numeric field is supplied,
+    derive the flag from it (overriding the seeded default) so the assessment
+    matches the old app. See [[module-form-derived-fields]].
+    """
+    sbp = _numval(data, "systolicBP")
+    if sbp is not None:
+        data["bpGoalAchieved"] = sbp < 130
+    ldlc = _numval(data, "ldlcValue")
+    if ldlc is not None:
+        data["ldlcAtGoal"] = ldlc < 70
+    return data
+
+
 # ─── Scoring Engine ───────────────────────────────────────────────────────────
 
 
@@ -722,7 +746,7 @@ _RECOMMENDATION_BY_ID = {
 
 
 def assess(data: dict) -> dict:
-    data = _derive_presentation_flags(dict(data))
+    data = _derive_numeric_flags(_derive_presentation_flags(dict(data)))
     scores = [score_pad_qm_measure(measure, data) for measure in PAD_QM_MEASURES]
 
     pms = [s for s in scores if s["measure"]["type"] == "performance"]

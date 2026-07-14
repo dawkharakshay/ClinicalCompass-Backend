@@ -98,6 +98,48 @@ class ProfileUpdate(BaseModel):
     )
 
 
+class RegisterVerifyRequest(UserCreate):
+    """Step 2 of registration v2: the same registration payload, plus the OTP.
+
+    The client re-sends the full data it submitted in step 1 together with the
+    one-time code emailed to it. The code is validated against the pending
+    registration for ``email`` before the account is created.
+    """
+
+    otp: str = Field(
+        ...,
+        min_length=4,
+        max_length=10,
+        description="The one-time code emailed by POST /auth/v2/register.",
+        examples=["482915"],
+    )
+
+
+class RegisterOtpResponse(BaseModel):
+    """Response to step 1 of registration v2 (the OTP request)."""
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "message": "A verification code has been sent to your email.",
+                "email": "drsmith@example.com",
+                "expires_at": "2026-06-08T11:42:05.227328Z",
+            }
+        }
+    )
+
+    message: str = Field(
+        ..., description="Human-readable confirmation that a code was sent."
+    )
+    email: EmailStr = Field(..., description="The email the code was sent to.")
+    expires_at: datetime = Field(..., description="When the code expires.")
+    dev_otp: str | None = Field(
+        default=None,
+        description="The plaintext code, returned ONLY when no mailer is "
+        "configured (local development). Always null in production.",
+    )
+
+
 class LoginRequest(BaseModel):
     email: EmailStr = Field(..., examples=["drsmith@example.com"])
     password: str = Field(..., examples=["s3cret-pass"])

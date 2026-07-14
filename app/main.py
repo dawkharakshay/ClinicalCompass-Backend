@@ -18,6 +18,7 @@ from app.routers import (
     feedback,
     modules,
     profile,
+    registration_v2,
     specialities,
     submissions,
 )
@@ -109,6 +110,7 @@ app = FastAPI(
 )
 
 app.include_router(auth.router)
+app.include_router(registration_v2.router)
 app.include_router(specialities.router)
 app.include_router(modules.router)
 app.include_router(submissions.router)

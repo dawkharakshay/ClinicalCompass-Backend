@@ -98,6 +98,30 @@ class PasswordResetToken(Base):
     user: Mapped["User"] = relationship(back_populates="reset_tokens")
 
 
+class PendingRegistration(Base):
+    """A short-lived, OTP-verified pending registration (registration v2).
+
+    Step 1 of the two-step v2 sign-up stores the emailed OTP here (as a bcrypt
+    hash, never the code itself) keyed by ``email``. Step 2 verifies the code
+    and creates the real ``User`` — this row is a throwaway that is deleted once
+    the code is consumed or expires. ``attempts`` caps how many times a code may
+    be guessed before it is invalidated.
+
+    No password or profile data is persisted here: the client re-sends the full
+    registration payload on step 2, so a database leak never exposes a pending
+    account's credentials.
+    """
+
+    __tablename__ = "pending_registrations"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    email: Mapped[str] = mapped_column(String(255), unique=True, index=True)
+    token: Mapped[str] = mapped_column(String(64), index=True)
+    attempts: Mapped[int] = mapped_column(default=0)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=_utcnow)
+    expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+
+
 class Speciality(Base):
     """A top-level grouping that contains many modules."""
 

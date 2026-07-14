@@ -71,6 +71,18 @@ def send_password_reset_otp(to: str, otp: str, ttl_minutes: int) -> None:
     _send(to, subject, body)
 
 
+def send_registration_otp(to: str, otp: str, ttl_minutes: int) -> None:
+    """Email a registration verification OTP to a prospective user."""
+    subject = "Your ClinicalCompass verification code"
+    body = (
+        f"Welcome to ClinicalCompass!\n\n"
+        f"Your registration verification code is: {otp}\n\n"
+        f"It expires in {ttl_minutes} minutes. If you did not try to create an "
+        "account, you can safely ignore this email.\n"
+    )
+    _send(to, subject, body)
+
+
 def _admin_recipients() -> list[str]:
     raw = os.getenv("ADMIN_EMAILS") or os.getenv("ADMIN_EMAIL") or ""
     return [a.strip() for a in raw.split(",") if a.strip()]

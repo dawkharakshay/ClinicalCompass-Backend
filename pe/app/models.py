@@ -200,7 +200,13 @@ class Feedback(Base):
 
 
 class PasswordResetToken(Base):
-    """Single-use, expiring password-reset token (only its hash is stored)."""
+    """One-time, short-lived OTP authorizing a password reset.
+
+    ``token_hash`` stores a bcrypt hash of the numeric OTP (never the code
+    itself), so a database leak does not expose live reset codes. ``attempts``
+    caps how many times a code may be guessed before it is invalidated. The row
+    is deleted once the code is consumed, expires, or the guess budget runs out.
+    """
 
     __tablename__ = "password_reset_tokens"
 
@@ -208,8 +214,8 @@ class PasswordResetToken(Base):
     user_id: Mapped[uuid.UUID] = mapped_column(
         Uuid, ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True
     )
-    token_hash: Mapped[str] = mapped_column(String(64), unique=True, nullable=False, index=True)
-    used: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    token_hash: Mapped[str] = mapped_column(String(64), nullable=False, index=True)
+    attempts: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
     expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), nullable=False, default=_utcnow

@@ -13,14 +13,16 @@ JWT_SECRET = os.getenv("JWT_SECRET", "dev-only-change-me-please-use-a-long-rando
 JWT_ALGORITHM = "HS256"
 ACCESS_TOKEN_TTL = timedelta(minutes=int(os.getenv("ACCESS_TOKEN_TTL_MINUTES", "30")))
 REFRESH_TOKEN_TTL = timedelta(days=int(os.getenv("REFRESH_TOKEN_TTL_DAYS", "30")))
-RESET_TOKEN_TTL = timedelta(hours=int(os.getenv("RESET_TOKEN_TTL_HOURS", "1")))
 
-# --- Public app URL (for password-reset links) --------------------------------
-# The reset email points the user at <APP_BASE_URL>/reset-password?token=...
-APP_BASE_URL = os.getenv("APP_BASE_URL", "http://localhost:8080").rstrip("/")
+# --- Password-reset OTP -------------------------------------------------------
+# Forgot-password emails a short-lived numeric code (OTP) rather than a link.
+OTP_LENGTH = int(os.getenv("PASSWORD_RESET_OTP_LENGTH", "6"))
+OTP_TTL = timedelta(minutes=int(os.getenv("PASSWORD_RESET_OTP_TTL_MINUTES", "10")))
+# Wrong guesses allowed before a code is burned.
+OTP_MAX_ATTEMPTS = int(os.getenv("PASSWORD_RESET_OTP_MAX_ATTEMPTS", "5"))
 
 # --- Email / SMTP (password-reset delivery) -----------------------------------
-# Leave SMTP_HOST empty for dev: the reset link is logged instead of emailed.
+# Leave SMTP_HOST empty for dev: the reset code is logged instead of emailed.
 SMTP_HOST = os.getenv("SMTP_HOST", "")
 SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))
 SMTP_USERNAME = os.getenv("SMTP_USERNAME", "")

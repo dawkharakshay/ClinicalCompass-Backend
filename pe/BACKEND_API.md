@@ -67,15 +67,21 @@ Replaces `getSession()` / `getUser()`. Requires auth.
 ```
 
 ### POST `/auth/forgot-password`
-Send a reset link pointing to the app's `/reset-password` page.
+Email a short-lived numeric reset code (OTP) to the account.
 ```jsonc
-{ "email": "dr@hospital.org" }   // → 200 always (don't leak which emails exist)
+{ "email": "dr@hospital.org" }
+// → 200 always (don't leak which emails exist)
+// { "message": "If that email exists, a reset code has been sent.",
+//   "expires_at": "2026-07-20T12:34:56Z" | null }   // code is emailed, never returned
 ```
 
 ### POST `/auth/reset-password`
-Replaces `updateUser({ password })` after recovery.
+Replaces `updateUser({ password })` after recovery. Send the email + the emailed
+code + the new password. On success the code is consumed and every session is
+revoked. The code is invalidated after too many wrong guesses or once it expires.
 ```jsonc
-{ "token": "<reset-token-from-email>", "password": "newpass" }   // → 200
+{ "email": "dr@hospital.org", "otp": "482915", "new_password": "newpass" }
+// → 200 { "message": "Password updated." }   // 400 if the code is invalid/expired
 ```
 
 ### DELETE `/auth/account` *(auth)*

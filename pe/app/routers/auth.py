@@ -12,16 +12,17 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app import security
-from app.config import APP_BASE_URL
+from app.config import OTP_MAX_ATTEMPTS, OTP_TTL
 from app.database import get_db
 from app.deps import get_current_user
-from app.email import send_password_reset
+from app.email import send_password_reset_otp
 from app.models import PasswordResetToken, Profile, RefreshToken, User
 from app.oauth import OAuthError, OAuthIdentity, verify_apple, verify_google
 from app.schemas import (
     AccessRefresh,
     AppleOAuthRequest,
     ForgotPasswordRequest,
+    ForgotPasswordResponse,
     GoogleOAuthRequest,
     LoginRequest,
     RefreshRequest,
@@ -242,46 +243,88 @@ def delete_account(
     return Response(status_code=status.HTTP_204_NO_CONTENT)
 
 
-@router.post("/forgot-password", status_code=status.HTTP_200_OK)
-def forgot_password(payload: ForgotPasswordRequest, db: Session = Depends(get_db)) -> dict:
-    """Always returns 200 — never reveal whether an email is registered."""
+@router.post("/forgot-password", response_model=ForgotPasswordResponse)
+def forgot_password(
+    payload: ForgotPasswordRequest, db: Session = Depends(get_db)
+) -> ForgotPasswordResponse:
+    """Email a short-lived numeric reset code (OTP).
+
+    Always returns 200 with the same body — never reveal whether an email is
+    registered. Any previously issued codes for the account are invalidated.
+    """
+    generic = ForgotPasswordResponse(
+        message="If that email exists, a reset code has been sent."
+    )
+
     user = db.scalar(select(User).where(User.email == payload.email.lower()))
-    if user is not None:
-        raw = security.generate_opaque_token()
-        db.add(
-            PasswordResetToken(
-                user_id=user.id,
-                token_hash=security.hash_token(raw),
-                expires_at=security.reset_token_expiry(),
-            )
-        )
-        db.commit()
-        reset_url = f"{APP_BASE_URL}/reset-password?token={raw}"
-        send_password_reset(user.email, reset_url)
-    return {"message": "If that email exists, a reset link has been sent."}
+    if user is None or not user.is_active:
+        return generic
+
+    # Invalidate any outstanding codes before issuing a new one.
+    for old in db.scalars(
+        select(PasswordResetToken).where(PasswordResetToken.user_id == user.id)
+    ):
+        db.delete(old)
+
+    otp = security.generate_otp()
+    reset = PasswordResetToken(
+        user_id=user.id,
+        token_hash=security.hash_otp(otp),
+        expires_at=security.otp_expiry(),
+    )
+    db.add(reset)
+    db.commit()
+    db.refresh(reset)
+
+    # Email delivery must never 500 the request: a failure would both leak which
+    # emails exist (error vs. success) and break the reset flow. Log and return
+    # the same generic response regardless.
+    try:
+        send_password_reset_otp(user.email, otp, int(OTP_TTL.total_seconds() // 60))
+    except Exception:
+        logger.exception("Failed to send password-reset OTP to %s", user.email)
+
+    # The code is only ever emailed — never returned in the response.
+    generic.expires_at = reset.expires_at
+    return generic
 
 
 @router.post("/reset-password", status_code=status.HTTP_200_OK)
 def reset_password(payload: ResetPasswordRequest, db: Session = Depends(get_db)) -> dict:
-    token = db.scalar(
-        select(PasswordResetToken).where(
-            PasswordResetToken.token_hash == security.hash_token(payload.token)
+    """Set a new password given the email and the emailed OTP.
+
+    On success the code is consumed and every active session is revoked. The
+    code is invalidated after too many incorrect attempts or once it expires.
+    """
+    invalid = HTTPException(status.HTTP_400_BAD_REQUEST, "Invalid or expired code")
+
+    user = db.scalar(select(User).where(User.email == payload.email.lower()))
+    reset = (
+        db.scalar(
+            select(PasswordResetToken).where(PasswordResetToken.user_id == user.id)
         )
+        if user is not None
+        else None
     )
-    if (
-        token is None
-        or token.used
-        or _aware(token.expires_at) < datetime.now(timezone.utc)
-    ):
-        raise HTTPException(status.HTTP_400_BAD_REQUEST, "Invalid or expired reset token")
+    if reset is None:
+        raise invalid
 
-    user = db.get(User, token.user_id)
-    if user is None:
-        raise HTTPException(status.HTTP_400_BAD_REQUEST, "Invalid reset token")
+    if _aware(reset.expires_at) < datetime.now(timezone.utc):
+        db.delete(reset)
+        db.commit()
+        raise invalid
 
-    user.password_hash = security.hash_password(payload.password)
-    token.used = True
-    # Revoke existing sessions after a password change.
+    if not security.verify_otp(payload.otp, reset.token_hash):
+        reset.attempts += 1
+        # Burn the code once the guess budget is exhausted.
+        if reset.attempts >= OTP_MAX_ATTEMPTS:
+            db.delete(reset)
+        db.commit()
+        raise invalid
+
+    user.password_hash = security.hash_password(payload.new_password)
+    # Consume the code and revoke existing sessions after a password change.
+    db.delete(reset)
     for rt in db.scalars(
         select(RefreshToken).where(
             RefreshToken.user_id == user.id, RefreshToken.revoked.is_(False)

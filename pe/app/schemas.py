@@ -31,9 +31,25 @@ class ForgotPasswordRequest(BaseModel):
     email: EmailStr
 
 
+class ForgotPasswordResponse(BaseModel):
+    message: str = Field(
+        description="Generic confirmation, the same regardless of whether the "
+        "email exists, to avoid account enumeration."
+    )
+    expires_at: datetime | None = Field(
+        default=None, description="When the code expires (null when no code was issued)."
+    )
+
+
 class ResetPasswordRequest(BaseModel):
-    token: str
-    password: str = Field(min_length=8)
+    email: EmailStr
+    otp: str = Field(
+        min_length=4,
+        max_length=10,
+        description="The one-time code sent to the user's email by /auth/forgot-password.",
+        examples=["482915"],
+    )
+    new_password: str = Field(min_length=8)
 
 
 class GoogleOAuthRequest(BaseModel):

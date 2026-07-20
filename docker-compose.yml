@@ -69,9 +69,10 @@ services:
       JWT_SECRET: ${PE_JWT_SECRET:-dev-only-change-me}
       ACCESS_TOKEN_TTL_MINUTES: ${PE_ACCESS_TOKEN_TTL_MINUTES:-30}
       REFRESH_TOKEN_TTL_DAYS: ${PE_REFRESH_TOKEN_TTL_DAYS:-30}
-      # Public app URL used to build password-reset links.
-      APP_BASE_URL: ${PE_APP_BASE_URL:-http://localhost:8080}
-      # Email / SMTP for password-reset delivery (empty host = dev: link logged).
+      # Forgot-password OTP: code length, lifetime, and wrong-guess budget.
+      PASSWORD_RESET_OTP_TTL_MINUTES: ${PE_PASSWORD_RESET_OTP_TTL_MINUTES:-10}
+      PASSWORD_RESET_OTP_MAX_ATTEMPTS: ${PE_PASSWORD_RESET_OTP_MAX_ATTEMPTS:-5}
+      # Email / SMTP for password-reset delivery (empty host = dev: code logged).
       SMTP_HOST: ${PE_SMTP_HOST:-}
       SMTP_PORT: ${PE_SMTP_PORT:-587}
       SMTP_USERNAME: ${PE_SMTP_USERNAME:-}

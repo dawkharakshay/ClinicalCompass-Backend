@@ -188,10 +188,10 @@ class PasswordResetTokenAdmin(ModelView, model=PasswordResetToken):
     icon = "fa-solid fa-unlock-keyhole"
     column_list = [
         PasswordResetToken.id, PasswordResetToken.user_id,
-        PasswordResetToken.used, PasswordResetToken.expires_at,
+        PasswordResetToken.attempts, PasswordResetToken.expires_at,
         PasswordResetToken.created_at,
     ]
-    column_sortable_list = [PasswordResetToken.used, PasswordResetToken.expires_at]
+    column_sortable_list = [PasswordResetToken.attempts, PasswordResetToken.expires_at]
     column_default_sort = ("created_at", True)
     can_create = False
     can_edit = False

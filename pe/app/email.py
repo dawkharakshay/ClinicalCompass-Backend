@@ -1,4 +1,4 @@
-"""Minimal SMTP email delivery for password-reset links.
+"""Minimal SMTP email delivery for password-reset codes.
 
 In dev (no ``SMTP_HOST``) the message is logged instead of sent, so the reset
 flow is exercisable without an SMTP server.
@@ -38,12 +38,12 @@ def send_email(to: str, subject: str, body: str) -> None:
         server.quit()
 
 
-def send_password_reset(to: str, reset_url: str) -> None:
+def send_password_reset_otp(to: str, otp: str, ttl_minutes: int) -> None:
     send_email(
         to,
-        "Reset your PE Compass password",
+        "Your PE Compass password reset code",
         "We received a request to reset your PE Compass password.\n\n"
-        f"Reset it here: {reset_url}\n\n"
-        "If you didn't request this, you can ignore this email. "
-        "The link expires in 1 hour.",
+        f"Your password reset code is: {otp}\n\n"
+        f"It expires in {ttl_minutes} minutes. If you didn't request this, you "
+        "can safely ignore this email.",
     )

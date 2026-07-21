@@ -20,6 +20,7 @@ from app.models import (
     CommunityPost,
     DeviceToken,
     Discussion,
+    DiscussionComment,
     DiscussionVote,
     EcmoCandidacyAssessment,
     Feedback,
@@ -238,6 +239,23 @@ class DiscussionVoteAdmin(ModelView, model=DiscussionVote):
     can_delete = True
 
 
+class DiscussionCommentAdmin(ModelView, model=DiscussionComment):
+    name = "Discussion Comment"
+    name_plural = "Discussion Comments"
+    icon = "fa-solid fa-comment-medical"
+    column_list = [
+        DiscussionComment.id, DiscussionComment.discussion_id,
+        DiscussionComment.user_id, DiscussionComment.created_at,
+    ]
+    column_searchable_list = [DiscussionComment.body]
+    column_sortable_list = [DiscussionComment.created_at]
+    column_default_sort = ("created_at", True)
+    # User-submitted content: review and remove only.
+    can_create = False
+    can_edit = False
+    can_delete = True
+
+
 class CommunityPostAdmin(ModelView, model=CommunityPost):
     name = "Community Post"
     name_plural = "Community Posts"
@@ -297,7 +315,7 @@ def setup_admin(app, engine) -> Admin:
     )
     for view in (
         UserAdmin, ProfileAdmin, FeedbackAdmin,
-        DiscussionAdmin, DiscussionVoteAdmin,
+        DiscussionAdmin, DiscussionVoteAdmin, DiscussionCommentAdmin,
         CommunityPostAdmin, CommunityCommentAdmin, CommunityPollVoteAdmin,
         PatientClassificationAdmin, EcmoCandidacyAssessmentAdmin,
         DeviceTokenAdmin, RefreshTokenAdmin, PasswordResetTokenAdmin,

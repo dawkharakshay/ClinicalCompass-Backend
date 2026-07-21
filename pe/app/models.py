@@ -256,6 +256,33 @@ class DiscussionVote(Base):
     user: Mapped[User] = relationship()
 
 
+class DiscussionComment(Base):
+    """A user's comment on a :class:`Discussion` (flat — no threaded replies).
+
+    Deleting the discussion cascades to its comments (``ON DELETE CASCADE``). A
+    user may delete only their own comments.
+    """
+
+    __tablename__ = "discussion_comments"
+
+    id: Mapped[uuid.UUID] = mapped_column(Uuid, primary_key=True, default=_uuid)
+    discussion_id: Mapped[uuid.UUID] = mapped_column(
+        Uuid, ForeignKey("discussions.id", ondelete="CASCADE"), nullable=False, index=True
+    )
+    user_id: Mapped[uuid.UUID] = mapped_column(
+        Uuid, ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True
+    )
+    body: Mapped[str] = mapped_column(Text, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow, onupdate=_utcnow
+    )
+
+    user: Mapped[User] = relationship()
+
+
 class CommunityPost(Base):
     """A community post or question authored by a user.
 

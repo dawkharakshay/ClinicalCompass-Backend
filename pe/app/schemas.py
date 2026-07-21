@@ -246,6 +246,26 @@ class DiscussionOut(BaseModel):
     created_at: datetime
 
 
+class DiscussionCommentCreate(BaseModel):
+    body: str = Field(min_length=1)
+
+
+class DiscussionCommentOut(BaseModel):
+    id: uuid.UUID
+    discussion_id: uuid.UUID
+    user_id: uuid.UUID
+    author_name: str | None  # author's profile display name, if set
+    body: str
+    created_at: datetime
+
+
+class PaginatedDiscussionComments(BaseModel):
+    items: list[DiscussionCommentOut]
+    total: int
+    limit: int
+    offset: int
+
+
 # --- Community (posts, comments, polls) ---------------------------------------
 PostType = Literal["question", "post"]
 

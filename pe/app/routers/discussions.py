@@ -24,9 +24,17 @@ from app.schemas import (
     DiscussionVoteSummary,
     PaginatedDiscussionComments,
     PaginatedDiscussions,
+    UserRef,
 )
 
 router = APIRouter(prefix="/discussions", tags=["discussions"])
+
+
+def _user_ref(
+    user_id: uuid.UUID, display_name: str | None, caller_id: uuid.UUID
+) -> UserRef:
+    """Build a ``{id, display_name, self}`` ref for ``user_id`` as seen by the caller."""
+    return UserRef(id=user_id, display_name=display_name, is_self=user_id == caller_id)
 
 
 @router.get("", response_model=PaginatedDiscussions)
@@ -50,15 +58,8 @@ def list_discussions(
             .offset(offset)
         )
     )
-    items = [
-        DiscussionOut(
-            id=d.id,
-            assessment_result=d.assessment_result,
-            complication=d.complication,
-            created_at=d.created_at,
-        )
-        for d in rows
-    ]
+    names = _display_names(db, {d.created_by for d in rows if d.created_by is not None})
+    items = [_discussion_out(d, names.get(d.created_by), user.id) for d in rows]
     return PaginatedDiscussions(items=items, total=total, limit=limit, offset=offset)
 
 
@@ -69,12 +70,33 @@ def _discussion_or_404(db: Session, discussion_id: uuid.UUID) -> Discussion:
     return discussion
 
 
-def _discussion_out(d: Discussion) -> DiscussionOut:
+def _display_names(db: Session, user_ids: set[uuid.UUID]) -> dict[uuid.UUID, str | None]:
+    """Map each user id to its profile display name (one query; missing → absent)."""
+    if not user_ids:
+        return {}
+    return {
+        uid: name
+        for uid, name in db.execute(
+            select(Profile.user_id, Profile.display_name).where(
+                Profile.user_id.in_(user_ids)
+            )
+        ).all()
+    }
+
+
+def _discussion_out(
+    d: Discussion, author_name: str | None, caller_id: uuid.UUID
+) -> DiscussionOut:
     return DiscussionOut(
         id=d.id,
         assessment_result=d.assessment_result,
         complication=d.complication,
         created_at=d.created_at,
+        user=(
+            _user_ref(d.created_by, author_name, caller_id)
+            if d.created_by is not None
+            else None
+        ),
     )
 
 
@@ -92,11 +114,13 @@ def create_discussion(
     discussion = Discussion(
         assessment_result=payload.assessment_result,
         complication=payload.complication,
+        created_by=user.id,
     )
     db.add(discussion)
     db.commit()
     db.refresh(discussion)
-    return _discussion_out(discussion)
+    name = db.scalar(select(Profile.display_name).where(Profile.user_id == user.id))
+    return _discussion_out(discussion, name, user.id)
 
 
 @router.delete(
@@ -237,12 +261,15 @@ def retract_vote(
 
 
 # --- Comments (flat) ----------------------------------------------------------
-def _comment_out(comment: DiscussionComment, author_name: str | None) -> DiscussionCommentOut:
+def _comment_out(
+    comment: DiscussionComment, author_name: str | None, caller_id: uuid.UUID
+) -> DiscussionCommentOut:
     return DiscussionCommentOut(
         id=comment.id,
         discussion_id=comment.discussion_id,
         user_id=comment.user_id,
         author_name=author_name,
+        user=_user_ref(comment.user_id, author_name, caller_id),
         body=comment.body,
         created_at=comment.created_at,
     )
@@ -270,7 +297,7 @@ def add_comment(
     db.commit()
     db.refresh(comment)
     name = db.scalar(select(Profile.display_name).where(Profile.user_id == user.id))
-    return _comment_out(comment, name)
+    return _comment_out(comment, name, user.id)
 
 
 @router.get("/{discussion_id}/comments", response_model=PaginatedDiscussionComments)
@@ -300,17 +327,8 @@ def list_comments(
         )
     )
     # Resolve author display names in one query.
-    names = {}
-    if rows:
-        names = {
-            uid: name
-            for uid, name in db.execute(
-                select(Profile.user_id, Profile.display_name).where(
-                    Profile.user_id.in_({c.user_id for c in rows})
-                )
-            ).all()
-        }
-    items = [_comment_out(c, names.get(c.user_id)) for c in rows]
+    names = _display_names(db, {c.user_id for c in rows})
+    items = [_comment_out(c, names.get(c.user_id), user.id) for c in rows]
     return PaginatedDiscussionComments(items=items, total=total, limit=limit, offset=offset)
 
 

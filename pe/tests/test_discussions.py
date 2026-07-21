@@ -122,7 +122,11 @@ def test_list_excludes_vote_fields(client, db):
     h = _signup(client, "a@x.com")
     _seed(db, 1)
     item = client.get("/discussions", headers=h).json()["items"][0]
-    assert set(item.keys()) == {"id", "assessment_result", "complication", "created_at"}
+    assert set(item.keys()) == {
+        "id", "assessment_result", "complication", "created_at", "user"
+    }
+    # seeded (ownerless) discussions have no author
+    assert item["user"] is None
 
 
 def test_vote_response_is_summary_not_discussion(client, db):
@@ -175,7 +179,12 @@ def test_create_discussion(client, db):
     assert r.status_code == 201, r.text
     body = r.json()
     assert body["assessment_result"] == "High risk" and body["complication"] == "Bleeding"
-    assert set(body.keys()) == {"id", "assessment_result", "complication", "created_at"}
+    assert set(body.keys()) == {
+        "id", "assessment_result", "complication", "created_at", "user"
+    }
+    # the creator is attached; self is true for the author, display_name resolved
+    assert set(body["user"].keys()) == {"id", "display_name", "self"}
+    assert body["user"]["self"] is True and body["user"]["display_name"] == "Jane Doe"
     # it is now listable
     assert db.get(Discussion, uuid.UUID(body["id"])) is not None
 
@@ -230,3 +239,33 @@ def test_delete_missing_discussion_404(client):
     assert (
         client.delete(f"/discussions/{uuid.uuid4()}", headers=h).status_code == 404
     )
+
+
+# --- author `user` block on the discussion list -------------------------------
+def test_list_discussion_user_self_true_for_author(client):
+    author = _signup(client, "author@x.com")
+    client.post(
+        "/discussions",
+        json={"assessment_result": "AR", "complication": "C"},
+        headers=author,
+    )
+    item = client.get("/discussions", headers=author).json()["items"][0]
+    assert item["user"] == {
+        "id": item["user"]["id"],
+        "display_name": "Jane Doe",
+        "self": True,
+    }
+
+
+def test_list_discussion_user_self_false_for_other_viewer(client):
+    author = _signup(client, "author@x.com")
+    created = client.post(
+        "/discussions",
+        json={"assessment_result": "AR", "complication": "C"},
+        headers=author,
+    ).json()
+    other = _signup(client, "other@x.com")
+    item = client.get("/discussions", headers=other).json()["items"][0]
+    assert item["user"]["id"] == created["user"]["id"]  # still the author
+    assert item["user"]["display_name"] == "Jane Doe"
+    assert item["user"]["self"] is False  # viewer is not the author

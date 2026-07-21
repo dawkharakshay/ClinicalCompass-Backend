@@ -200,10 +200,12 @@ class Feedback(Base):
 
 
 class Discussion(Base):
-    """A discussion topic authored by an admin in /pe/admin.
+    """A discussion topic authored by an app user (or an admin in /pe/admin).
 
     Pairs an ``assessment_result`` with a ``complication``; app users then vote
     yes/no on it (see :class:`DiscussionVote`). One vote per user per discussion.
+    ``created_by`` records the author; it is nullable for legacy/admin-seeded
+    rows and is set to NULL (not cascaded) if the author's account is deleted.
     """
 
     __tablename__ = "discussions"
@@ -211,6 +213,9 @@ class Discussion(Base):
     id: Mapped[uuid.UUID] = mapped_column(Uuid, primary_key=True, default=_uuid)
     assessment_result: Mapped[str] = mapped_column(Text, nullable=False)
     complication: Mapped[str] = mapped_column(Text, nullable=False)
+    created_by: Mapped[uuid.UUID | None] = mapped_column(
+        Uuid, ForeignKey("users.id", ondelete="SET NULL"), nullable=True, index=True
+    )
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), nullable=False, default=_utcnow
     )

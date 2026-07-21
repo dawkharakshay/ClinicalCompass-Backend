@@ -229,6 +229,17 @@ class FlaggedFeedbackOut(BaseModel):
 
 
 # --- Discussions --------------------------------------------------------------
+class UserRef(BaseModel):
+    """A compact reference to a user, as seen by the current caller.
+
+    ``self`` is true when this user is the caller (serialized as ``self`` — the
+    field is ``is_self`` internally to avoid shadowing Python's ``self``)."""
+
+    id: uuid.UUID
+    display_name: str | None = None
+    is_self: bool = Field(serialization_alias="self")
+
+
 class DiscussionCreate(BaseModel):
     """A new discussion topic: an assessment result paired with a complication."""
 
@@ -244,6 +255,7 @@ class DiscussionOut(BaseModel):
     assessment_result: str
     complication: str
     created_at: datetime
+    user: UserRef | None = None  # author; null for legacy/admin-seeded rows
 
 
 class PaginatedDiscussions(BaseModel):
@@ -270,7 +282,8 @@ class DiscussionCommentOut(BaseModel):
     id: uuid.UUID
     discussion_id: uuid.UUID
     user_id: uuid.UUID
-    author_name: str | None  # author's profile display name, if set
+    author_name: str | None  # author's profile display name, if set (kept for compat)
+    user: UserRef  # author {id, display_name, self}
     body: str
     created_at: datetime
 

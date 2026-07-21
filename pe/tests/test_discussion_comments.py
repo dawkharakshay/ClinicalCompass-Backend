@@ -30,8 +30,13 @@ def test_add_and_list_comments_paginated(client, db):
     for i in range(3):
         r = client.post(f"/discussions/{did}/comments", json={"body": f"c{i}"}, headers=h)
         assert r.status_code == 201, r.text
-        assert r.json()["author_name"] == "Jane Doe"
-        assert r.json()["discussion_id"] == did
+        body = r.json()
+        assert body["author_name"] == "Jane Doe"
+        assert body["discussion_id"] == did
+        # nested author ref: {id, display_name, self}
+        assert body["user"]["id"] == body["user_id"]
+        assert body["user"]["display_name"] == "Jane Doe"
+        assert body["user"]["self"] is True
 
     r = client.get(f"/discussions/{did}/comments?limit=2&offset=0", headers=h)
     assert r.status_code == 200
@@ -39,6 +44,22 @@ def test_add_and_list_comments_paginated(client, db):
     assert data["total"] == 3 and data["limit"] == 2 and data["offset"] == 0
     assert [c["body"] for c in data["items"]] == ["c0", "c1"]  # oldest first
     assert len(client.get(f"/discussions/{did}/comments?limit=2&offset=2", headers=h).json()["items"]) == 1
+
+
+def test_list_comments_user_self_reflects_viewer(client, db):
+    author = _signup(client, "author@x.com")
+    did = _seed_discussion(db)
+    client.post(f"/discussions/{did}/comments", json={"body": "mine"}, headers=author)
+
+    # the author sees self=True
+    mine = client.get(f"/discussions/{did}/comments", headers=author).json()["items"][0]
+    assert mine["user"]["self"] is True and mine["user"]["display_name"] == "Jane Doe"
+
+    # a different viewer sees the same author but self=False
+    other = _signup(client, "other@x.com")
+    theirs = client.get(f"/discussions/{did}/comments", headers=other).json()["items"][0]
+    assert theirs["user"]["id"] == mine["user"]["id"]
+    assert theirs["user"]["self"] is False
 
 
 def test_add_comment_requires_auth(client, db):

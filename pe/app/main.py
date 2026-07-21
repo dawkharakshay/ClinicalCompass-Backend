@@ -16,6 +16,7 @@ from app.database import Base, engine
 from app.routers import (
     auth,
     device_tokens,
+    discussions,
     feedback,
     profile,
 )
@@ -55,6 +56,7 @@ app.include_router(auth.router)
 app.include_router(profile.router)
 app.include_router(device_tokens.router)
 app.include_router(feedback.router)
+app.include_router(discussions.router)
 
 # SQLAdmin UI at /admin (public /pe/admin behind nginx), gated by ADMIN_EMAILS.
 setup_admin(app, engine)

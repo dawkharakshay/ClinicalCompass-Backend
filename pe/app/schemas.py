@@ -226,3 +226,21 @@ class FlaggedFeedbackOut(BaseModel):
     subject_type: str | None
     subject_id: uuid.UUID | None
     created_at: datetime
+
+
+# --- Discussions --------------------------------------------------------------
+class DiscussionVoteRequest(BaseModel):
+    vote: bool = Field(description="True to vote yes, False to vote no.")
+
+
+class DiscussionOut(BaseModel):
+    """A discussion with its yes/no tally and the caller's own vote."""
+
+    id: uuid.UUID
+    assessment_result: str
+    complication: str
+    yes_count: int
+    no_count: int
+    # The caller's vote (True=yes, False=no), or null if they haven't voted.
+    my_vote: bool | None
+    created_at: datetime

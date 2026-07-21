@@ -199,6 +199,63 @@ class Feedback(Base):
     user: Mapped[User] = relationship()
 
 
+class Discussion(Base):
+    """A discussion topic authored by an admin in /pe/admin.
+
+    Pairs an ``assessment_result`` with a ``complication``; app users then vote
+    yes/no on it (see :class:`DiscussionVote`). One vote per user per discussion.
+    """
+
+    __tablename__ = "discussions"
+
+    id: Mapped[uuid.UUID] = mapped_column(Uuid, primary_key=True, default=_uuid)
+    assessment_result: Mapped[str] = mapped_column(Text, nullable=False)
+    complication: Mapped[str] = mapped_column(Text, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow, onupdate=_utcnow
+    )
+
+    votes: Mapped[list["DiscussionVote"]] = relationship(
+        back_populates="discussion", cascade="all, delete-orphan"
+    )
+
+
+class DiscussionVote(Base):
+    """One user's yes/no vote on a :class:`Discussion`.
+
+    ``vote`` is True for yes, False for no. A user may vote at most once per
+    discussion (enforced by the unique constraint); re-voting updates the row.
+    """
+
+    __tablename__ = "discussion_votes"
+    __table_args__ = (
+        UniqueConstraint(
+            "discussion_id", "user_id", name="uq_discussion_votes_discussion_user"
+        ),
+    )
+
+    id: Mapped[uuid.UUID] = mapped_column(Uuid, primary_key=True, default=_uuid)
+    discussion_id: Mapped[uuid.UUID] = mapped_column(
+        Uuid, ForeignKey("discussions.id", ondelete="CASCADE"), nullable=False, index=True
+    )
+    user_id: Mapped[uuid.UUID] = mapped_column(
+        Uuid, ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True
+    )
+    vote: Mapped[bool] = mapped_column(Boolean, nullable=False)  # True=yes, False=no
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow, onupdate=_utcnow
+    )
+
+    discussion: Mapped["Discussion"] = relationship(back_populates="votes")
+    user: Mapped[User] = relationship()
+
+
 class PasswordResetToken(Base):
     """One-time, short-lived OTP authorizing a password reset.
 

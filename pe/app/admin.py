@@ -16,6 +16,8 @@ from app.config import ADMIN_EMAIL, ADMIN_EMAILS, ADMIN_SECRET_KEY
 from app.database import SessionLocal
 from app.models import (
     DeviceToken,
+    Discussion,
+    DiscussionVote,
     EcmoCandidacyAssessment,
     Feedback,
     PasswordResetToken,
@@ -198,6 +200,41 @@ class PasswordResetTokenAdmin(ModelView, model=PasswordResetToken):
     can_delete = True
 
 
+class DiscussionAdmin(ModelView, model=Discussion):
+    name = "Discussion"
+    name_plural = "Discussions"
+    icon = "fa-solid fa-comments"
+    column_list = [
+        Discussion.id, Discussion.assessment_result, Discussion.complication,
+        Discussion.created_at,
+    ]
+    column_searchable_list = [Discussion.assessment_result, Discussion.complication]
+    column_sortable_list = [Discussion.created_at]
+    column_default_sort = ("created_at", True)
+    form_excluded_columns = [Discussion.votes, Discussion.created_at, Discussion.updated_at]
+    # Admins author the discussion topics users vote on.
+    can_create = True
+    can_edit = True
+    can_delete = True
+
+
+class DiscussionVoteAdmin(ModelView, model=DiscussionVote):
+    name = "Discussion Vote"
+    name_plural = "Discussion Votes"
+    icon = "fa-solid fa-check-to-slot"
+    column_list = [
+        DiscussionVote.id, DiscussionVote.discussion_id, DiscussionVote.user_id,
+        DiscussionVote.vote, DiscussionVote.created_at,
+    ]
+    column_labels = {DiscussionVote.vote: "Vote (yes=✓)"}
+    column_sortable_list = [DiscussionVote.vote, DiscussionVote.created_at]
+    column_default_sort = ("created_at", True)
+    # User-submitted votes: review and remove only.
+    can_create = False
+    can_edit = False
+    can_delete = True
+
+
 def setup_admin(app, engine) -> Admin:
     """Mount the SQLAdmin UI at ``/admin`` (public ``/pe/admin`` behind nginx)."""
     admin = Admin(
@@ -208,6 +245,7 @@ def setup_admin(app, engine) -> Admin:
     )
     for view in (
         UserAdmin, ProfileAdmin, FeedbackAdmin,
+        DiscussionAdmin, DiscussionVoteAdmin,
         PatientClassificationAdmin, EcmoCandidacyAssessmentAdmin,
         DeviceTokenAdmin, RefreshTokenAdmin, PasswordResetTokenAdmin,
     ):

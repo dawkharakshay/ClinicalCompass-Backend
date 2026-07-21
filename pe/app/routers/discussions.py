@@ -1,10 +1,10 @@
 """Discussions and yes/no voting — tables ``discussions`` / ``discussion_votes``.
 
-Admins author discussions (an assessment result paired with a complication) —
-either in /pe/admin or via the ``X-Admin-Key``-gated create/delete API here.
-App users list them and cast a yes/no vote; each user has at most one vote per
-discussion, and re-voting updates it. Every response carries the running yes/no
-tally plus the caller's own vote.
+Any authenticated user can author a discussion (an assessment result paired with
+a complication) or delete one, via the create/delete API here; admins can also
+author them in /pe/admin. Users list them and cast a yes/no vote; each user has
+at most one vote per discussion, and re-voting updates it. Every response carries
+the running yes/no tally plus the caller's own vote.
 """
 
 import uuid
@@ -14,7 +14,7 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from app.database import get_db
-from app.deps import get_current_user, require_admin_key
+from app.deps import get_current_user
 from app.models import Discussion, DiscussionComment, DiscussionVote, Profile, User
 from app.schemas import (
     DiscussionCommentCreate,
@@ -82,17 +82,13 @@ def _discussion_out(d: Discussion) -> DiscussionOut:
     "",
     response_model=DiscussionOut,
     status_code=status.HTTP_201_CREATED,
-    dependencies=[Depends(require_admin_key)],
 )
 def create_discussion(
     payload: DiscussionCreate,
+    user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
 ) -> DiscussionOut:
-    """Author a new discussion topic (admin-gated via ``X-Admin-Key``).
-
-    Discussions are ownerless topics users vote on, so creation is restricted to
-    admins rather than app users.
-    """
+    """Author a new discussion topic. Any authenticated user may create one."""
     discussion = Discussion(
         assessment_result=payload.assessment_result,
         complication=payload.complication,
@@ -106,13 +102,13 @@ def create_discussion(
 @router.delete(
     "/{discussion_id}",
     status_code=status.HTTP_204_NO_CONTENT,
-    dependencies=[Depends(require_admin_key)],
 )
 def delete_discussion(
     discussion_id: uuid.UUID,
+    user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
 ) -> None:
-    """Delete a discussion and its votes/comments (admin-gated via ``X-Admin-Key``).
+    """Delete a discussion and its votes/comments. Any authenticated user may delete one.
 
     Votes and comments are removed by the ``ON DELETE CASCADE`` FKs / relationship
     cascade on :class:`~app.models.Discussion`.

@@ -162,3 +162,90 @@ def test_delete_vote_still_means_no_not_retract(client, db):
     did = _seed(db)[0]
     assert client.delete(f"/discussions/{did}/vote", headers=h).json()["my_vote"] is False
     assert client.delete(f"/discussions/{did}/vote/me", headers=h).json()["my_vote"] is None
+
+
+# --- create / delete discussion (admin-gated) ---------------------------------
+ADMIN_KEY = "test-admin-key"
+
+
+def _set_admin_key(monkeypatch, key=ADMIN_KEY):
+    # deps.py binds PUSH_ADMIN_KEY at import; patch the bound copy it checks.
+    monkeypatch.setattr("app.deps.PUSH_ADMIN_KEY", key)
+
+
+def test_create_discussion_with_admin_key(client, db, monkeypatch):
+    _set_admin_key(monkeypatch)
+    r = client.post(
+        "/discussions",
+        json={"assessment_result": "High risk", "complication": "Bleeding"},
+        headers={"X-Admin-Key": ADMIN_KEY},
+    )
+    assert r.status_code == 201, r.text
+    body = r.json()
+    assert body["assessment_result"] == "High risk" and body["complication"] == "Bleeding"
+    assert set(body.keys()) == {"id", "assessment_result", "complication", "created_at"}
+    # it is now listable
+    assert db.get(Discussion, uuid.UUID(body["id"])) is not None
+
+
+def test_create_discussion_requires_admin_key(client, monkeypatch):
+    _set_admin_key(monkeypatch)
+    # no header
+    assert (
+        client.post(
+            "/discussions",
+            json={"assessment_result": "x", "complication": "y"},
+        ).status_code
+        == 401
+    )
+    # wrong header
+    assert (
+        client.post(
+            "/discussions",
+            json={"assessment_result": "x", "complication": "y"},
+            headers={"X-Admin-Key": "nope"},
+        ).status_code
+        == 401
+    )
+
+
+def test_create_discussion_rejects_blank_fields(client, monkeypatch):
+    _set_admin_key(monkeypatch)
+    r = client.post(
+        "/discussions",
+        json={"assessment_result": "", "complication": "y"},
+        headers={"X-Admin-Key": ADMIN_KEY},
+    )
+    assert r.status_code == 422
+
+
+def test_delete_discussion_cascades_votes_and_comments(client, db, monkeypatch):
+    _set_admin_key(monkeypatch)
+    h = _signup(client, "a@x.com")
+    did = _seed(db)[0]
+    client.post(f"/discussions/{did}/vote", headers=h)  # a vote
+    client.post(f"/discussions/{did}/comments", json={"body": "hi"}, headers=h)  # a comment
+    r = client.delete(f"/discussions/{did}", headers={"X-Admin-Key": ADMIN_KEY})
+    assert r.status_code == 204
+    assert db.get(Discussion, uuid.UUID(did)) is None
+    # votes + comments went with it (ON DELETE CASCADE)
+    assert client.get(f"/discussions/{did}/vote", headers=h).status_code == 404
+
+
+def test_delete_discussion_requires_admin_key(client, db, monkeypatch):
+    _set_admin_key(monkeypatch)
+    did = _seed(db)[0]
+    assert client.delete(f"/discussions/{did}").status_code == 401
+    assert (
+        client.delete(f"/discussions/{did}", headers={"X-Admin-Key": "nope"}).status_code == 401
+    )
+
+
+def test_delete_missing_discussion_404(client, monkeypatch):
+    _set_admin_key(monkeypatch)
+    assert (
+        client.delete(
+            f"/discussions/{uuid.uuid4()}", headers={"X-Admin-Key": ADMIN_KEY}
+        ).status_code
+        == 404
+    )

@@ -1,9 +1,10 @@
 """Discussions and yes/no voting — tables ``discussions`` / ``discussion_votes``.
 
-Admins author discussions (an assessment result paired with a complication) in
-/pe/admin. App users list them and cast a yes/no vote; each user has at most one
-vote per discussion, and re-voting updates it. Every response carries the running
-yes/no tally plus the caller's own vote.
+Admins author discussions (an assessment result paired with a complication) —
+either in /pe/admin or via the ``X-Admin-Key``-gated create/delete API here.
+App users list them and cast a yes/no vote; each user has at most one vote per
+discussion, and re-voting updates it. Every response carries the running yes/no
+tally plus the caller's own vote.
 """
 
 import uuid
@@ -13,11 +14,12 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from app.database import get_db
-from app.deps import get_current_user
+from app.deps import get_current_user, require_admin_key
 from app.models import Discussion, DiscussionComment, DiscussionVote, Profile, User
 from app.schemas import (
     DiscussionCommentCreate,
     DiscussionCommentOut,
+    DiscussionCreate,
     DiscussionOut,
     DiscussionVoteSummary,
     PaginatedDiscussionComments,
@@ -65,6 +67,59 @@ def _discussion_or_404(db: Session, discussion_id: uuid.UUID) -> Discussion:
     if discussion is None:
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Discussion not found")
     return discussion
+
+
+def _discussion_out(d: Discussion) -> DiscussionOut:
+    return DiscussionOut(
+        id=d.id,
+        assessment_result=d.assessment_result,
+        complication=d.complication,
+        created_at=d.created_at,
+    )
+
+
+@router.post(
+    "",
+    response_model=DiscussionOut,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[Depends(require_admin_key)],
+)
+def create_discussion(
+    payload: DiscussionCreate,
+    db: Session = Depends(get_db),
+) -> DiscussionOut:
+    """Author a new discussion topic (admin-gated via ``X-Admin-Key``).
+
+    Discussions are ownerless topics users vote on, so creation is restricted to
+    admins rather than app users.
+    """
+    discussion = Discussion(
+        assessment_result=payload.assessment_result,
+        complication=payload.complication,
+    )
+    db.add(discussion)
+    db.commit()
+    db.refresh(discussion)
+    return _discussion_out(discussion)
+
+
+@router.delete(
+    "/{discussion_id}",
+    status_code=status.HTTP_204_NO_CONTENT,
+    dependencies=[Depends(require_admin_key)],
+)
+def delete_discussion(
+    discussion_id: uuid.UUID,
+    db: Session = Depends(get_db),
+) -> None:
+    """Delete a discussion and its votes/comments (admin-gated via ``X-Admin-Key``).
+
+    Votes and comments are removed by the ``ON DELETE CASCADE`` FKs / relationship
+    cascade on :class:`~app.models.Discussion`.
+    """
+    discussion = _discussion_or_404(db, discussion_id)
+    db.delete(discussion)
+    db.commit()
 
 
 def _my_vote(db: Session, discussion_id: uuid.UUID, user_id: uuid.UUID) -> DiscussionVote | None:

@@ -229,6 +229,13 @@ class FlaggedFeedbackOut(BaseModel):
 
 
 # --- Discussions --------------------------------------------------------------
+class DiscussionCreate(BaseModel):
+    """A new discussion topic: an assessment result paired with a complication."""
+
+    assessment_result: str = Field(min_length=1)
+    complication: str = Field(min_length=1)
+
+
 class DiscussionOut(BaseModel):
     """A discussion topic. Vote tallies are NOT here — fetch them separately via
     ``GET /discussions/{id}/vote`` (see :class:`DiscussionVoteSummary`)."""

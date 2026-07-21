@@ -15,6 +15,9 @@ from starlette.requests import Request
 from app.config import ADMIN_EMAIL, ADMIN_EMAILS, ADMIN_SECRET_KEY
 from app.database import SessionLocal
 from app.models import (
+    CommunityComment,
+    CommunityPollVote,
+    CommunityPost,
     DeviceToken,
     Discussion,
     DiscussionVote,
@@ -235,6 +238,55 @@ class DiscussionVoteAdmin(ModelView, model=DiscussionVote):
     can_delete = True
 
 
+class CommunityPostAdmin(ModelView, model=CommunityPost):
+    name = "Community Post"
+    name_plural = "Community Posts"
+    icon = "fa-solid fa-users-rectangle"
+    column_list = [
+        CommunityPost.id, CommunityPost.user_id, CommunityPost.type,
+        CommunityPost.title, CommunityPost.poll_question, CommunityPost.created_at,
+    ]
+    column_searchable_list = [CommunityPost.title, CommunityPost.body]
+    column_sortable_list = [CommunityPost.type, CommunityPost.created_at]
+    column_default_sort = ("created_at", True)
+    # User-submitted content: review and remove only.
+    can_create = False
+    can_edit = False
+    can_delete = True
+
+
+class CommunityCommentAdmin(ModelView, model=CommunityComment):
+    name = "Community Comment"
+    name_plural = "Community Comments"
+    icon = "fa-solid fa-comment"
+    column_list = [
+        CommunityComment.id, CommunityComment.post_id, CommunityComment.user_id,
+        CommunityComment.parent_comment_id, CommunityComment.created_at,
+    ]
+    column_searchable_list = [CommunityComment.body]
+    column_sortable_list = [CommunityComment.created_at]
+    column_default_sort = ("created_at", True)
+    can_create = False
+    can_edit = False
+    can_delete = True
+
+
+class CommunityPollVoteAdmin(ModelView, model=CommunityPollVote):
+    name = "Community Poll Vote"
+    name_plural = "Community Poll Votes"
+    icon = "fa-solid fa-square-poll-vertical"
+    column_list = [
+        CommunityPollVote.id, CommunityPollVote.post_id, CommunityPollVote.user_id,
+        CommunityPollVote.vote, CommunityPollVote.created_at,
+    ]
+    column_labels = {CommunityPollVote.vote: "Vote (yes=✓)"}
+    column_sortable_list = [CommunityPollVote.vote, CommunityPollVote.created_at]
+    column_default_sort = ("created_at", True)
+    can_create = False
+    can_edit = False
+    can_delete = True
+
+
 def setup_admin(app, engine) -> Admin:
     """Mount the SQLAdmin UI at ``/admin`` (public ``/pe/admin`` behind nginx)."""
     admin = Admin(
@@ -246,6 +298,7 @@ def setup_admin(app, engine) -> Admin:
     for view in (
         UserAdmin, ProfileAdmin, FeedbackAdmin,
         DiscussionAdmin, DiscussionVoteAdmin,
+        CommunityPostAdmin, CommunityCommentAdmin, CommunityPollVoteAdmin,
         PatientClassificationAdmin, EcmoCandidacyAssessmentAdmin,
         DeviceTokenAdmin, RefreshTokenAdmin, PasswordResetTokenAdmin,
     ):

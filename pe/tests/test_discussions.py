@@ -131,3 +131,34 @@ def test_vote_response_is_summary_not_discussion(client, db):
     did = _seed(db)[0]
     body = client.post(f"/discussions/{did}/vote", headers=h).json()
     assert set(body.keys()) == {"discussion_id", "yes_count", "no_count", "my_vote"}
+
+
+# --- retract vote -------------------------------------------------------------
+def test_retract_vote_clears_my_vote(client, db):
+    h = _signup(client, "a@x.com")
+    did = _seed(db)[0]
+    client.post(f"/discussions/{did}/vote", headers=h)  # yes -> yes_count 1
+    r = client.delete(f"/discussions/{did}/vote/me", headers=h)
+    assert r.status_code == 200
+    body = r.json()
+    assert body["my_vote"] is None and body["yes_count"] == 0 and body["no_count"] == 0
+
+
+def test_retract_is_idempotent_when_not_voted(client, db):
+    h = _signup(client, "a@x.com")
+    did = _seed(db)[0]
+    r = client.delete(f"/discussions/{did}/vote/me", headers=h)  # never voted
+    assert r.status_code == 200 and r.json()["my_vote"] is None
+
+
+def test_retract_missing_discussion_404(client):
+    h = _signup(client, "a@x.com")
+    assert client.delete(f"/discussions/{uuid.uuid4()}/vote/me", headers=h).status_code == 404
+
+
+def test_delete_vote_still_means_no_not_retract(client, db):
+    """DELETE /vote sets 'no'; DELETE /vote/me retracts — they must differ."""
+    h = _signup(client, "a@x.com")
+    did = _seed(db)[0]
+    assert client.delete(f"/discussions/{did}/vote", headers=h).json()["my_vote"] is False
+    assert client.delete(f"/discussions/{did}/vote/me", headers=h).json()["my_vote"] is None

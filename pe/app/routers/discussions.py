@@ -167,6 +167,24 @@ def get_vote_summary(
     return _vote_summary(db, discussion_id, user.id)
 
 
+@router.delete("/{discussion_id}/vote/me", response_model=DiscussionVoteSummary)
+def retract_vote(
+    discussion_id: uuid.UUID,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+) -> DiscussionVoteSummary:
+    """Retract the caller's vote entirely, so ``my_vote`` returns to null.
+
+    Idempotent — a no-op (still 200) if the caller hasn't voted.
+    """
+    _discussion_or_404(db, discussion_id)
+    existing = _my_vote(db, discussion_id, user.id)
+    if existing is not None:
+        db.delete(existing)
+        db.commit()
+    return _vote_summary(db, discussion_id, user.id)
+
+
 # --- Comments (flat) ----------------------------------------------------------
 def _comment_out(comment: DiscussionComment, author_name: str | None) -> DiscussionCommentOut:
     return DiscussionCommentOut(

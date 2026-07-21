@@ -229,21 +229,30 @@ class FlaggedFeedbackOut(BaseModel):
 
 
 # --- Discussions --------------------------------------------------------------
-class DiscussionVoteRequest(BaseModel):
-    vote: bool = Field(description="True to vote yes, False to vote no.")
-
-
 class DiscussionOut(BaseModel):
-    """A discussion with its yes/no tally and the caller's own vote."""
+    """A discussion topic. Vote tallies are NOT here — fetch them separately via
+    ``GET /discussions/{id}/vote`` (see :class:`DiscussionVoteSummary`)."""
 
     id: uuid.UUID
     assessment_result: str
     complication: str
+    created_at: datetime
+
+
+class PaginatedDiscussions(BaseModel):
+    items: list[DiscussionOut]
+    total: int
+    limit: int
+    offset: int
+
+
+class DiscussionVoteSummary(BaseModel):
+    """Just the vote tally for one discussion + the caller's own vote."""
+
+    discussion_id: uuid.UUID
     yes_count: int
     no_count: int
-    # The caller's vote (True=yes, False=no), or null if they haven't voted.
-    my_vote: bool | None
-    created_at: datetime
+    my_vote: bool | None  # true=yes | false=no | null=not voted
 
 
 class DiscussionCommentCreate(BaseModel):

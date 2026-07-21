@@ -9,7 +9,7 @@ yes/no tally plus the caller's own vote.
 import uuid
 
 from fastapi import APIRouter, Depends, HTTPException, Query, status
-from sqlalchemy import case, func, select
+from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from app.database import get_db
@@ -19,113 +19,152 @@ from app.schemas import (
     DiscussionCommentCreate,
     DiscussionCommentOut,
     DiscussionOut,
-    DiscussionVoteRequest,
+    DiscussionVoteSummary,
     PaginatedDiscussionComments,
+    PaginatedDiscussions,
 )
 
 router = APIRouter(prefix="/discussions", tags=["discussions"])
 
 
-def _single_out(db: Session, discussion: Discussion, user_id) -> DiscussionOut:
-    """Build a DiscussionOut for one discussion (tally + the caller's vote)."""
-    yes_count = (
-        db.scalar(
-            select(func.count())
-            .select_from(DiscussionVote)
-            .where(DiscussionVote.discussion_id == discussion.id, DiscussionVote.vote.is_(True))
-        )
-        or 0
-    )
-    no_count = (
-        db.scalar(
-            select(func.count())
-            .select_from(DiscussionVote)
-            .where(DiscussionVote.discussion_id == discussion.id, DiscussionVote.vote.is_(False))
-        )
-        or 0
-    )
-    my_vote = db.scalar(
-        select(DiscussionVote.vote).where(
-            DiscussionVote.discussion_id == discussion.id,
-            DiscussionVote.user_id == user_id,
-        )
-    )
-    return DiscussionOut(
-        id=discussion.id,
-        assessment_result=discussion.assessment_result,
-        complication=discussion.complication,
-        yes_count=yes_count,
-        no_count=no_count,
-        my_vote=my_vote,
-        created_at=discussion.created_at,
-    )
-
-
-@router.get("", response_model=list[DiscussionOut])
+@router.get("", response_model=PaginatedDiscussions)
 def list_discussions(
-    user: User = Depends(get_current_user), db: Session = Depends(get_db)
-) -> list[DiscussionOut]:
-    """All discussions, newest first, with yes/no tallies and the caller's vote."""
-    # One grouped query for the tallies (yes/no counts per discussion)...
-    rows = db.execute(
-        select(
-            Discussion,
-            func.count(case((DiscussionVote.vote.is_(True), 1))).label("yes_count"),
-            func.count(case((DiscussionVote.vote.is_(False), 1))).label("no_count"),
-        )
-        .outerjoin(DiscussionVote, DiscussionVote.discussion_id == Discussion.id)
-        .group_by(Discussion.id)
-        .order_by(Discussion.created_at.desc())
-    ).all()
-    # ...and one query for the caller's own votes across all discussions.
-    my_votes = {
-        discussion_id: vote
-        for discussion_id, vote in db.execute(
-            select(DiscussionVote.discussion_id, DiscussionVote.vote).where(
-                DiscussionVote.user_id == user.id
-            )
-        ).all()
-    }
-    return [
-        DiscussionOut(
-            id=discussion.id,
-            assessment_result=discussion.assessment_result,
-            complication=discussion.complication,
-            yes_count=yes_count,
-            no_count=no_count,
-            my_vote=my_votes.get(discussion.id),
-            created_at=discussion.created_at,
-        )
-        for discussion, yes_count, no_count in rows
-    ]
-
-
-@router.post("/{discussion_id}/vote", response_model=DiscussionOut)
-def cast_vote(
-    discussion_id: uuid.UUID,
-    payload: DiscussionVoteRequest,
+    limit: int = Query(20, ge=1, le=100),
+    offset: int = Query(0, ge=0),
     user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
-) -> DiscussionOut:
-    """Cast (or change) the caller's yes/no vote on a discussion."""
+) -> PaginatedDiscussions:
+    """Discussions (topic only), newest first, paginated.
+
+    Vote tallies are NOT included here — fetch them per discussion via
+    ``GET /discussions/{id}/vote``.
+    """
+    total = db.scalar(select(func.count()).select_from(Discussion)) or 0
+    rows = list(
+        db.scalars(
+            select(Discussion)
+            .order_by(Discussion.created_at.desc())
+            .limit(limit)
+            .offset(offset)
+        )
+    )
+    items = [
+        DiscussionOut(
+            id=d.id,
+            assessment_result=d.assessment_result,
+            complication=d.complication,
+            created_at=d.created_at,
+        )
+        for d in rows
+    ]
+    return PaginatedDiscussions(items=items, total=total, limit=limit, offset=offset)
+
+
+def _discussion_or_404(db: Session, discussion_id: uuid.UUID) -> Discussion:
     discussion = db.get(Discussion, discussion_id)
     if discussion is None:
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Discussion not found")
+    return discussion
 
-    existing = db.scalar(
+
+def _my_vote(db: Session, discussion_id: uuid.UUID, user_id: uuid.UUID) -> DiscussionVote | None:
+    return db.scalar(
         select(DiscussionVote).where(
-            DiscussionVote.discussion_id == discussion.id,
-            DiscussionVote.user_id == user.id,
+            DiscussionVote.discussion_id == discussion_id,
+            DiscussionVote.user_id == user_id,
         )
     )
+
+
+def _set_vote(db: Session, discussion: Discussion, user_id: uuid.UUID, value: bool) -> None:
+    """Upsert the caller's vote to ``value`` (True=yes, False=no)."""
+    existing = _my_vote(db, discussion.id, user_id)
     if existing is not None:
-        existing.vote = payload.vote  # re-voting updates the existing row
+        existing.vote = value
     else:
-        db.add(
-            DiscussionVote(discussion_id=discussion.id, user_id=user.id, vote=payload.vote)
+        db.add(DiscussionVote(discussion_id=discussion.id, user_id=user_id, vote=value))
+
+
+def _vote_summary(
+    db: Session, discussion_id: uuid.UUID, user_id: uuid.UUID
+) -> DiscussionVoteSummary:
+    """Build the yes/no tally + the caller's own vote for one discussion."""
+    yes_count = db.scalar(
+        select(func.count()).select_from(DiscussionVote).where(
+            DiscussionVote.discussion_id == discussion_id, DiscussionVote.vote.is_(True)
         )
+    ) or 0
+    no_count = db.scalar(
+        select(func.count()).select_from(DiscussionVote).where(
+            DiscussionVote.discussion_id == discussion_id, DiscussionVote.vote.is_(False)
+        )
+    ) or 0
+    existing = _my_vote(db, discussion_id, user_id)
+    return DiscussionVoteSummary(
+        discussion_id=discussion_id,
+        yes_count=yes_count,
+        no_count=no_count,
+        my_vote=existing.vote if existing is not None else None,
+    )
+
+
+@router.post(
+    "/{discussion_id}/vote",
+    response_model=DiscussionVoteSummary,
+    status_code=status.HTTP_201_CREATED,
+)
+def vote_yes(
+    discussion_id: uuid.UUID,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+) -> DiscussionVoteSummary:
+    """Cast a **YES** vote (creates or sets the caller's vote to yes)."""
+    discussion = _discussion_or_404(db, discussion_id)
+    _set_vote(db, discussion, user.id, True)
     db.commit()
-    return _single_out(db, discussion, user.id)
+    return _vote_summary(db, discussion.id, user.id)
+
+
+@router.delete("/{discussion_id}/vote", response_model=DiscussionVoteSummary)
+def vote_no(
+    discussion_id: uuid.UUID,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+) -> DiscussionVoteSummary:
+    """Cast a **NO** vote (creates or sets the caller's vote to no)."""
+    discussion = _discussion_or_404(db, discussion_id)
+    _set_vote(db, discussion, user.id, False)
+    db.commit()
+    return _vote_summary(db, discussion.id, user.id)
+
+
+@router.put("/{discussion_id}/vote", response_model=DiscussionVoteSummary)
+def change_vote(
+    discussion_id: uuid.UUID,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+) -> DiscussionVoteSummary:
+    """Flip the caller's existing vote to the opposite (404 if not voted yet)."""
+    discussion = _discussion_or_404(db, discussion_id)
+    existing = _my_vote(db, discussion.id, user.id)
+    if existing is None:
+        raise HTTPException(
+            status.HTTP_404_NOT_FOUND, "You have not voted on this discussion yet"
+        )
+    existing.vote = not existing.vote  # flip yes<->no
+    db.commit()
+    return _vote_summary(db, discussion.id, user.id)
+
+
+@router.get("/{discussion_id}/vote", response_model=DiscussionVoteSummary)
+def get_vote_summary(
+    discussion_id: uuid.UUID,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+) -> DiscussionVoteSummary:
+    """The yes/no tally for a discussion plus the caller's own vote."""
+    _discussion_or_404(db, discussion_id)
+    return _vote_summary(db, discussion_id, user.id)
 
 
 # --- Comments (flat) ----------------------------------------------------------

@@ -7,10 +7,12 @@ email allowlist. Allowlisted users log in with their normal account password
 review-and-delete only — never created or edited here.
 """
 
-from sqladmin import Admin, ModelView
+from sqladmin import Admin, ModelView,BaseView, expose
 from sqladmin.authentication import AuthenticationBackend
 from sqlalchemy import select
 from starlette.requests import Request
+from jinja2 import ChoiceLoader, FileSystemLoader
+from app.routers.dashboard import get_dashboard
 
 from app.config import ADMIN_EMAIL, ADMIN_EMAILS, ADMIN_SECRET_KEY
 from app.database import SessionLocal
@@ -72,6 +74,7 @@ class UserAdmin(ModelView, model=User):
     name = "User"
     name_plural = "Users"
     icon = "fa-solid fa-user"
+    can_delete = False
     column_list = [
         User.id, User.email, User.is_active,
         User.oauth_provider, User.created_at,
@@ -252,6 +255,37 @@ class DiscussionCommentAdmin(ModelView, model=DiscussionComment):
     can_edit = False
     can_delete = True
 
+class DashboardAdmin(BaseView):
+    name = "Dashboard"
+    icon = "fa-solid fa-chart-line"
+
+    @expose("/dashboard")
+    async def dashboard(self, request: Request):
+        db = SessionLocal()
+        # data = get_dashboard(db)
+        # print(data)
+        try:
+            data = get_dashboard(db)
+
+            context = {
+                "request": request,
+
+                **data["kpis"],
+                **data["feedback_summary"],
+
+                "monthly_users": data["monthly_users"],
+                "monthly_assessments": data["monthly_assessments"],
+                "discussion_activity": data["discussion_activity"],
+            }
+
+            return await self.templates.TemplateResponse(
+                request,
+                "dashboard.html",
+                context,
+            )
+
+        finally:
+            db.close()
 
 def setup_admin(app, engine) -> Admin:
     """Mount the SQLAdmin UI at ``/admin`` (public ``/pe/admin`` behind nginx)."""
@@ -261,8 +295,14 @@ def setup_admin(app, engine) -> Admin:
         authentication_backend=AdminAuth(secret_key=ADMIN_SECRET_KEY),
         title="PE Compass Admin",
     )
+
+    admin.templates.env.loader = ChoiceLoader([
+        FileSystemLoader("/app/app/templates"),
+        admin.templates.env.loader,
+    ])
+
     for view in (
-        UserAdmin, ProfileAdmin, FeedbackAdmin,
+        DashboardAdmin,UserAdmin, ProfileAdmin, FeedbackAdmin,
         DiscussionAdmin, DiscussionVoteAdmin, DiscussionCommentAdmin,
         PatientClassificationAdmin, EcmoCandidacyAssessmentAdmin,
         DeviceTokenAdmin, RefreshTokenAdmin, PasswordResetTokenAdmin,

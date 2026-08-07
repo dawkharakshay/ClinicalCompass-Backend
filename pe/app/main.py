@@ -18,7 +18,7 @@ from app.routers import (
     device_tokens,
     discussions,
     feedback,
-    profile,
+    profile, dashboard,
 )
 
 ROOT_PATH = os.getenv("ROOT_PATH", "/pe")
@@ -57,6 +57,8 @@ app.include_router(profile.router)
 app.include_router(device_tokens.router)
 app.include_router(feedback.router)
 app.include_router(discussions.router)
+app.include_router(dashboard.router)
+
 
 # SQLAdmin UI at /admin (public /pe/admin behind nginx), gated by ADMIN_EMAILS.
 setup_admin(app, engine)

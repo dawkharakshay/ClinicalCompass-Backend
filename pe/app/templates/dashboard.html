@@ -1,0 +1,970 @@
+{% extends "sqladmin/layout.html" %}
+
+{% block head %}
+{{ super() }}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+:root{
+
+    --primary:#4F7DF3;
+    --primary-light:#EDF4FF;
+
+    --success:#4FAF8B;
+    --success-light:#EEF9F4;
+
+    --warning:#E6A96A;
+    --warning-light:#FFF6EC;
+
+    --danger:#E67C7C;
+    --danger-light:#FFF2F2;
+
+    --purple:#8C7AE6;
+    --purple-light:#F4F2FD;
+
+    --cyan:#64C5D8;
+    --cyan-light:#EDF9FC;
+
+    --bg:#F5F8FC;
+    --card:#FFFFFF;
+
+    --text:#263238;
+    --muted:#7A889A;
+
+    --border:#E7EDF5;
+
+}
+
+*{
+    font-family:"Inter",sans-serif;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* ================= HEADER ================= */
+
+.dashboard-title{
+    font-size:32px;
+    font-weight:700;
+    color:var(--text);
+    margin-bottom:6px;
+}
+
+.dashboard-subtitle{
+    color:var(--muted);
+    font-size:15px;
+    margin-bottom:32px;
+}
+
+/* ================= KPI ================= */
+
+.kpi-card{
+
+    border:1px solid var(--border);
+    border-radius:18px;
+    background:var(--card);
+
+    box-shadow:
+        0 2px 6px rgba(15,23,42,.03),
+        0 12px 28px rgba(15,23,42,.05);
+
+    transition:.25s ease;
+
+}
+
+.kpi-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 10px 25px rgba(37,99,235,.08);
+
+}
+
+.kpi-body{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:24px;
+
+}
+
+.kpi-title{
+
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--muted);
+
+}
+
+.kpi-value{
+
+    font-size:36px;
+    font-weight:700;
+    margin-top:8px;
+    color:var(--text);
+
+}
+
+.icon-circle{
+
+    width:62px;
+    height:62px;
+
+    border-radius:16px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:24px;
+
+}
+
+/* Soft Clinical Colors */
+
+
+.users-bg{
+    background:var(--primary-light);
+    color:var(--primary);
+}
+
+.feedback-bg{
+    background:var(--success-light);
+    color:var(--success);
+}
+
+.discussion-bg{
+    background:var(--warning-light);
+    color:var(--warning);
+}
+
+.assessment-bg{
+    background:var(--purple-light);
+    color:var(--purple);
+}
+/* ================= CHARTS ================= */
+
+.chart-card{
+
+    margin-top:28px;
+
+    border:1px solid var(--border);
+    border-radius:18px;
+
+    background:white;
+
+    box-shadow:
+        0 2px 6px rgba(15,23,42,.03),
+        0 12px 24px rgba(15,23,42,.04);
+
+}
+
+.chart-card .card-body{
+
+    padding:24px;
+
+}
+
+.chart-header{
+
+    font-size:18px;
+    font-weight:600;
+    color:var(--text);
+    margin-bottom:20px;
+
+}
+
+/* ================= FEEDBACK ================= */
+
+.feedback-card{
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    background:white;
+
+    padding:22px;
+
+    box-shadow:
+        0 2px 6px rgba(15,23,42,.03),
+        0 10px 22px rgba(15,23,42,.04);
+
+    transition:.25s;
+
+}
+
+.feedback-card:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.feedback-number{
+
+    font-size:34px;
+    font-weight:700;
+    color:var(--text);
+
+}
+
+.feedback-icon{
+
+    font-size:38px;
+
+}
+
+.good{
+
+    color:var(--success);
+
+}
+
+.bad{
+
+    color:var(--danger);
+
+}
+
+.warn{
+
+    color:var(--warning);
+
+}
+
+/* ================= TABLE ================= */
+
+.table{
+
+    color:var(--text);
+
+}
+
+.table thead{
+
+    background:#f8fafc;
+
+}
+
+.table th{
+
+    border-bottom:1px solid var(--border);
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+}
+
+.table td{
+
+    vertical-align:middle;
+
+    border-color:#eef2f7;
+
+}
+
+/* ================= BADGES ================= */
+
+.badge{
+
+    padding:.55rem .8rem;
+    border-radius:8px;
+    font-weight:600;
+
+}
+
+.badge-success{
+
+    background:var(--success-light);
+    color:var(--success);
+
+}
+
+.badge-warning{
+
+    background:var(--warning-light);
+    color:var(--warning);
+
+}
+
+.badge-danger{
+
+    background:var(--danger-light);
+    color:var(--danger);
+
+}
+
+/* ================= CANVAS ================= */
+
+canvas{
+
+    max-height:330px !important;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+.kpi-body{
+
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px;
+
+}
+
+.icon-circle{
+
+    width:54px;
+    height:54px;
+
+}
+
+.kpi-value{
+
+    font-size:30px;
+
+}
+
+}
+
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+<div class="mb-4">
+
+<h3 class="dashboard-title">
+PE Compass Dashboard
+</h3>
+
+<div class="dashboard-subtitle">
+Clinical Analytics & System Overview
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col-lg-3 col-md-6">
+
+<div class="card kpi-card">
+
+<div class="kpi-body d-flex justify-content-between">
+
+<div>
+
+<div class="kpi-title">
+Users
+</div>
+
+<div class="kpi-value">
+{{ users }}
+</div>
+
+</div>
+
+<div class="icon-circle users-bg">
+
+<i class="fa-solid fa-users"></i>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="card kpi-card">
+
+<div class="kpi-body d-flex justify-content-between">
+
+<div>
+
+<div class="kpi-title">
+Assessments
+</div>
+
+<div class="kpi-value">
+{{ total_assessments }}
+</div>
+
+</div>
+
+<div class="icon-circle assessment-bg">
+
+<i class="fa-solid fa-notes-medical"></i>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="card kpi-card">
+
+<div class="kpi-body d-flex justify-content-between">
+
+<div>
+
+<div class="kpi-title">
+Discussions
+</div>
+
+<div class="kpi-value">
+{{ discussions }}
+</div>
+
+</div>
+
+<div class="icon-circle discussion-bg">
+
+<i class="fa-solid fa-comments"></i>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="card kpi-card">
+
+<div class="kpi-body d-flex justify-content-between">
+
+<div>
+
+<div class="kpi-title">
+Feedback
+</div>
+
+<div class="kpi-value">
+{{ feedback }}
+</div>
+
+</div>
+
+<div class="icon-circle feedback-bg">
+
+<i class="fa-solid fa-comment-medical"></i>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+    <!-- ================= FEEDBACK SUMMARY ================= -->
+
+
+<div class="row mt-4">
+
+    <!-- Helpful -->
+    <div class="col-lg-3 col-md-6 mb-3">
+
+        <div class="card kpi-card">
+
+            <div class="kpi-body">
+
+                <div>
+                    <div class="kpi-title">
+                        Helpful
+                    </div>
+
+                    <div class="kpi-value text-success">
+                        {{ useful }}
+                    </div>
+
+                </div>
+
+                <div class="icon-circle feedback-bg">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Not Helpful -->
+    <div class="col-lg-3 col-md-6 mb-3">
+
+        <div class="card kpi-card">
+
+            <div class="kpi-body">
+
+                <div>
+                    <div class="kpi-title">
+                        Not Helpful
+                    </div>
+
+                    <div class="kpi-value text-danger">
+                        {{ not_useful }}
+                    </div>
+
+                </div>
+
+                <div class="icon-circle"
+                     style="background:#FFF2F2;color:#E67C7C;">
+                    <i class="fa-solid fa-thumbs-down"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Potential Issues -->
+    <div class="col-lg-3 col-md-6 mb-3">
+
+        <div class="card kpi-card">
+
+            <div class="kpi-body">
+
+                <div>
+                    <div class="kpi-title">
+                        Issues
+                    </div>
+
+                    <div class="kpi-value text-warning">
+                        {{ potential_issue }}
+                    </div>
+
+                </div>
+
+                <div class="icon-circle"
+                     style="background:#FFF6EC;color:#E6A96A;">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Total Feedback -->
+    <div class="col-lg-3 col-md-6 mb-3">
+
+        <div class="card kpi-card">
+
+            <div class="kpi-body">
+
+                <div>
+                    <div class="kpi-title">
+                        Total Feedback
+                    </div>
+
+                    <div class="kpi-value"
+                         style="color:#4F7DF3;">
+                        {{ feedback }}
+                    </div>
+
+                </div>
+
+                <div class="icon-circle users-bg">
+                    <i class="fa-solid fa-comment-medical"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= CHARTS ================= -->
+
+<div class="row">
+
+    <div class="col-lg-8 mb-4">
+
+        <div class="card chart-card">
+
+            <div class="card-header bg-white">
+
+                <span class="chart-header">
+                    Monthly User Registrations
+                </span>
+
+            </div>
+
+            <div class="card-body">
+
+                <canvas id="usersChart" height="110"></canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-4 mb-4">
+
+        <div class="card chart-card">
+
+            <div class="card-header bg-white">
+
+                <span class="chart-header">
+                    Feedback Distribution
+                </span>
+
+            </div>
+
+            <div class="card-body">
+
+                <canvas id="feedbackChart"></canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-lg-6 mb-4">
+
+        <div class="card chart-card">
+
+            <div class="card-header bg-white">
+
+                <span class="chart-header">
+                    Monthly Assessments
+                </span>
+
+            </div>
+
+            <div class="card-body">
+
+                <canvas id="assessmentChart"></canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-6 mb-4">
+
+        <div class="card chart-card">
+
+            <div class="card-header bg-white">
+
+                <span class="chart-header">
+                    Discussion Activity
+                </span>
+
+            </div>
+
+            <div class="card-body">
+
+                <canvas id="discussionChart"></canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div><!-- ===================== CHART JS ===================== -->
+
+<script>
+
+    const userLabels = [
+    {% for item in monthly_users %}
+    "{{ item.month }}",
+    {% endfor %}
+    ];
+
+    const userData = [
+    {% for item in monthly_users %}
+    {{ item.count }},
+    {% endfor %}
+    ];
+
+    new Chart(document.getElementById("usersChart"),{
+
+    type:"bar",
+
+    data:{
+
+    labels:userLabels,
+
+    datasets:[{
+
+    label:"Users",
+
+    data:userData,
+
+    backgroundColor:"#2563eb",
+
+    borderRadius:8
+
+    }]
+
+    },
+
+    options:{
+
+    responsive:true,
+
+    plugins:{
+    legend:{
+    display:false
+    }
+    }
+
+    }
+
+    });
+
+
+
+    const assessmentLabels=[
+
+    {% for item in monthly_assessments %}
+    "{{ item.month }}",
+    {% endfor %}
+
+    ];
+
+    const assessmentData=[
+
+    {% for item in monthly_assessments %}
+    {{ item.count }},
+    {% endfor %}
+
+    ];
+
+    new Chart(document.getElementById("assessmentChart"),{
+
+    type:"line",
+
+    data:{
+
+    labels:assessmentLabels,
+
+    datasets:[{
+
+    label:"Assessments",
+
+    data:assessmentData,
+
+    fill:true,
+
+    borderColor:"#8b5cf6",
+
+    backgroundColor:"rgba(139,92,246,.15)",
+
+    tension:.4
+
+    }]
+
+    },
+
+    options:{
+
+    responsive:true
+
+    }
+
+    });
+
+
+
+    const discussionLabels=[
+
+    {% for item in discussion_activity %}
+    "{{ item.date }}",
+    {% endfor %}
+
+    ];
+
+    const discussionData=[
+
+    {% for item in discussion_activity %}
+    {{ item.count }},
+    {% endfor %}
+
+    ];
+
+    new Chart(document.getElementById("discussionChart"),{
+
+    type:"line",
+
+    data:{
+
+    labels:discussionLabels,
+
+    datasets:[{
+
+    label:"Discussions",
+
+    data:discussionData,
+
+    borderColor:"#f59e0b",
+
+    backgroundColor:"rgba(245,158,11,.15)",
+
+    fill:true,
+
+    tension:.35
+
+    }]
+
+    },
+
+    options:{
+
+    responsive:true
+
+    }
+
+    });
+
+
+
+    new Chart(document.getElementById("feedbackChart"),{
+
+    type:"doughnut",
+
+    data:{
+
+    labels:[
+
+    "Helpful",
+
+    "Not Helpful",
+
+    "Potential Issue"
+
+    ],
+
+    datasets:[{
+
+    data:[
+
+    {{ useful }},
+
+    {{ not_useful }},
+
+    {{ potential_issue }}
+
+    ],
+
+    backgroundColor:[
+
+    "#22c55e",
+
+    "#ef4444",
+
+    "#f59e0b"
+
+    ]
+
+    }
+    ]
+
+    },
+
+    options:{
+
+    responsive:true,
+
+    plugins:{
+
+    legend:{
+
+    position:"bottom"
+
+    }
+
+    }
+
+    }
+
+    });
+
+</script>
+
+
+
+<hr class="mt-5">
+
+<div class="row">
+
+<div class="col-12">
+
+<div class="card chart-card">
+
+<div class="card-body text-center">
+
+<h5 class="mb-3">
+
+PE Compass Admin Dashboard
+
+</h5>
+
+<p class="text-muted mb-0">
+
+Clinical analytics, user engagement, assessments,
+feedback monitoring and discussion insights.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

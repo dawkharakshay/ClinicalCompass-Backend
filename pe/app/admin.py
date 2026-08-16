@@ -75,6 +75,8 @@ class UserAdmin(ModelView, model=User):
     name_plural = "Users"
     icon = "fa-solid fa-user"
     can_delete = False
+    can_edit = False
+    can_create = False
     column_list = [
         User.id, User.email, User.is_active,
         User.oauth_provider, User.created_at,
@@ -95,6 +97,9 @@ class ProfileAdmin(ModelView, model=Profile):
     name = "Profile"
     name_plural = "Profiles"
     icon = "fa-solid fa-id-card"
+    can_delete = False
+    can_edit = False
+    can_create = False
     column_list = [
         Profile.id, Profile.user_id, Profile.display_name,
         Profile.hospital_affiliation, Profile.updated_at,
@@ -303,9 +308,14 @@ def setup_admin(app, engine) -> Admin:
 
     for view in (
         DashboardAdmin,UserAdmin, ProfileAdmin, FeedbackAdmin,
-        DiscussionAdmin, DiscussionVoteAdmin, DiscussionCommentAdmin,
-        PatientClassificationAdmin, EcmoCandidacyAssessmentAdmin,
-        DeviceTokenAdmin, RefreshTokenAdmin, PasswordResetTokenAdmin,
+        # DiscussionAdmin,
+        # DiscussionVoteAdmin,
+        # DiscussionCommentAdmin,
+        # PatientClassificationAdmin,
+        # EcmoCandidacyAssessmentAdmin,
+        # DeviceTokenAdmin,
+        # RefreshTokenAdmin,
+        # PasswordResetTokenAdmin,
     ):
         admin.add_view(view)
     return admin
